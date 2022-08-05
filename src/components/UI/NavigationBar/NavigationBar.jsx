@@ -8,7 +8,6 @@ icons.forEach (icon => {
     icon.addEventListener('click', () => {
         icon.classList.toggle("open");
     });
-
 });
 
 export const NavigationBar = () => {

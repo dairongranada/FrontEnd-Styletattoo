@@ -1,5 +1,5 @@
 import { Route,Routes } from 'react-router-dom';
-import './Scss/App.scss';
+import './index.scss';
 
 
 /*======================  C O M P O N E N T E S ===============================*/ 

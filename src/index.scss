@@ -1,38 +1,102 @@
-/* Abstracts  */
-@use './Scss/abstracts/mixins';
+// Abstracts  
+@use './Scss/abstracts/mixin';
 @use './Scss/abstracts/variables';
 
-/* Base  */
+// Base  
 @use './Scss/base/base';
 @use './Scss/base/global';
 
 
-body { background-color: #b0b0b0; font-family: 'IBM Plex Serif'; color: #fff; height: 100vh;}
 
+
+// B A R R A    DE   N A N E G A C I O N 
 
 nav {
-    background-color: var(--colorNegro);
+    background-color: var(--colorBlack);
     height: 70px; padding: 15px;
-    color: rgb(255, 255, 255);
+    color: var(--colorWhite);
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-
-
 
 .mainMenu {display: flex;}
 
 .mainMenu li a{
 display: inline-block;text-transform: uppercase;
 font-size: 5px;padding: 15px;
-color: rgb(255, 255, 255);font-size: 18px;
+color: var(--colorWhite); font-size: 18px;
 transition: 0.2s ease;
 }
-.mainMenu li a:hover {color:  var(--colorPrincipal);}
-.icon-5 {font-size: 2rem;margin: 20px;display: flex;cursor: pointer;}
 
+.mainMenu li a:hover {color:  var(--colorOrange);}
 .TextNav h1{padding: 20px;margin: 6px;cursor: pointer;}
 .TextNav img {width: 70px;margin: 23px}
 
 
+// F   O   O   T   E   R 
+
+// PROXIMAMENTE... :)
+
+
+
+// E R R O R  {404} 
+
+.Error404{
+    background-color: var(--colorGray);
+    width: 100%;height: 90vh;
+    display: flex;gap: 50px;
+    justify-content: center;
+    padding: 3rem;
+    
+    .Content_img_Error404{
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+
+        img{
+            width: 25rem;
+            border-radius: 5px;
+        }
+    }
+
+    .Content_text_Error404{
+        display: flex; flex-direction:column;
+        justify-content: center;
+        h1{font-size: 150px;}
+        h3{font-size: 30px;}
+        p{text-align: center; font-size: 15px;}
+
+        .BackHome{
+            text-align: center;
+            cursor: pointer;
+            padding: 10px 20px;
+            color: var(--colorWhite);
+            border: 1px solid var(--colorWhite);
+            font-size:15px;
+            margin: 10px 0;
+        }
+        .BackHome:hover{
+            background-color: var(--colorOrange);
+            color: var(--colorWhite);
+        }
+    }
+}
+
+@media (max-width: 700px){
+    .Error404 {
+        height: auto;
+        flex-direction: column-reverse;
+
+        .Content_img_Error404 img {
+            width: 17rem;
+            height: 20rem;
+            border-radius: 5px;
+        }
+        .Content_text_Error404 h3 {
+            font-size: 25px;
+            text-align: center;
+        }
+    }
+
+}

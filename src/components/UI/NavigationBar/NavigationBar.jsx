@@ -14,12 +14,13 @@ export const NavigationBar = () => {
     return (
         <nav>
             <ul>
-                <li><h2>STYLE<span>TATTO</span></h2> </li>
+                <li><a href="/"><h2>STYLE<span>TATTO</span></h2></a></li>
             </ul>
             <div className="icon nav-icon-5" onClick={icons} ><span></span><span></span><span></span></div>
             <ul className="mainMenu">
                 <li><Link to="/" >INICIO</Link></li>
                 <li><Link to="/Tatuadores">TATUADORES</Link></li>
+                <li><Link to="/citas">CITAS</Link></li>
             </ul>
         </nav>
     )

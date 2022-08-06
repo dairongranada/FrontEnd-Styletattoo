@@ -3,6 +3,8 @@ import React from 'react'
 
 export const PageHome = () => {
     return (
-        <div>PageHome</div>
+        <div>
+            <h2>Page home</h2>
+        </div>
     )
 }

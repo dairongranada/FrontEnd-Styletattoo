@@ -1,4 +1,66 @@
-// PAGE HOME
+
+//  P A G E    E R R O R  {404} 
+
+.Error404{
+    background-color: var(--colorGray);
+    width: 100%;height: 90vh;
+    display: flex;gap: 50px;
+    justify-content: center;
+    padding: 3rem;
+    
+    .Content_img_Error404{
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+
+        img{
+            width: 25rem;
+            border-radius: 5px;
+        }
+    }
+
+    .Content_text_Error404{
+        display: flex; flex-direction:column;
+        justify-content: center;
+        h1{font-size: 150px;}
+        h3{font-size: 30px;}
+        p{text-align: center; font-size: 15px;}
+
+        .BackHome{
+            text-align: center;
+            cursor: pointer;
+            padding: 10px 20px;
+            color: var(--colorWhite);
+            border: 1px solid var(--colorWhite);
+            font-size:15px;
+            margin: 10px 0;
+        }
+        .BackHome:hover{
+            background-color: var(--colorOrange);
+            color: var(--colorWhite);
+        }
+    }
+}
+
+@media (max-width: 700px){
+    .Error404 {
+        height: auto;
+        flex-direction: column-reverse;
+
+        .Content_img_Error404 img {
+            width: 17rem;
+            height: 20rem;
+            border-radius: 5px;
+        }
+        .Content_text_Error404 h3 {
+            font-size: 25px;
+            text-align: center;
+        }
+    }
+}
+
+
+// P A G E  H O M E
 
 .MainView{
     background-image: url('./images/Fondos/Fondo_MainView.jpg');
@@ -37,10 +99,11 @@
 
         .separatorTwo{    
             border-style: solid;
-            border-color: #ffffff;
+            border-color: var(--colorOrange2);
             width: 30rem;
             border-bottom-width: 7px;
             margin: 5px 0 20px 0px;
+            box-shadow: 1px 3px 8px  var(--colorOrange2);
         }
     }
 
@@ -93,16 +156,13 @@
 }
 
 @media (max-width: 600px) {
-
     .news_Img {left: 3rem;bottom: -17rem;}
-
     .NewTattooists{
         .TitleTattooists{
             h1{ font-size: 25px;}
     
             .separatorTwo{    
                 border-style: solid;
-                border-color: #ffffff;
                 width: 15rem;
                 border-bottom-width: 3px;
                 margin: 5px 0 20px 0px;

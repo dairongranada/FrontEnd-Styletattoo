@@ -11,13 +11,7 @@
     color: var(--colorBlack);
 }
 
-.separator {
-    border-style: solid;
-    border-color: #ffffff;
-    width: 80px;
-    border-bottom-width: 7px;
-    margin: 5px 0 20px 0px;
-}
+
 
 li {
     list-style: none;
@@ -44,7 +38,21 @@ p{
 }
 
 
-/*** ESTILOS BOTÓN  ***/
+
+// ============ ESTILOS GLOBALES  ============  //
+
+
+// Clase Global Para Un Div Vacio Si 
+// Quieren Hacer Una Linea Separadora
+.separator {
+    border-style: solid;
+    border-color: #ffffff;
+    width: 80px;
+    border-bottom-width: 7px;
+    margin: 5px 0 20px 0px;
+}
+
+// Clase Global Para Un boton :)
 .buttons_global_StyleTatto {
     color: var(--colorWhite);
     border: 2px solid var(--colorWhite);

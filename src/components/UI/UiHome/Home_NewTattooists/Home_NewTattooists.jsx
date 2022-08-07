@@ -6,9 +6,6 @@ import ImgTattooistsOne from '../../../.././images/Tatuadores/tatuador1.png'
 import ImgTattooistsTwo from '../../../.././images/Tatuadores/tatuador2.png'
 import ImgTattooistsThree from '../../../.././images/Tatuadores/tatuador4.jpg'
 
-import { ImgTemplate } from '../.././ImgTemplate/ImgTemplate'
-import newsCards from '../../../../images/Icons/new.png'
-
 
 
 
@@ -16,7 +13,6 @@ export const Home_NewTattooists = () => {
     return (
         <section className='NewTattooists'>
             <div className='TitleTattooists'>
-            <ImgTemplate classN= 'news_Img' srcImg ={newsCards}/>
                 <h1>ARTISTAS</h1>
                 <div className='separatorTwo'></div>
             </div>

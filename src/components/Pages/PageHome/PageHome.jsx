@@ -1,10 +1,10 @@
 import React from 'react'
-
+import { LayoutsHome } from '../../Layouts/LayoutsHome/LayoutsHome'
 
 export const PageHome = () => {
     return (
         <div>
-            <h2>Page home</h2>
+            <LayoutsHome/>
         </div>
     )
 }

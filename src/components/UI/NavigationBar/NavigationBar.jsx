@@ -14,7 +14,7 @@ export const NavigationBar = () => {
     return (
         <nav>
             <ul>
-                <li><a href="/"><h2>STYLE<span>TATTO</span></h2></a></li>
+                <li><a href="/"><h3>STYLE<span> TATTO</span></h3></a></li>
             </ul>
             <div className="icon nav-icon-5" onClick={icons} ><span></span><span></span><span></span></div>
             <ul className="mainMenu">

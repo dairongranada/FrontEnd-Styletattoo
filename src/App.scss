@@ -1,1 +1,180 @@
+// PAGE HOME
 
+.MainView{
+    background-image: url('./images/Fondos/Fondo_MainView.jpg');
+    width: 100%; height: 100vh; 
+    background-size: cover;
+    display: flex; flex-direction: column;
+    justify-content: center;align-items: center; gap: 10px;
+
+    div{
+        margin: 20px 0;
+        display: flex;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .MainView{
+        text-align: center;
+        h1 {color: var(--colorOrange2);font-size: 40px;}
+        h2 {Font-size: 40px;}
+        div{flex-direction: column}
+    }
+}
+
+////////////////////////////
+
+.NewTattooists{
+    width: 100%; height: auto; padding: 2rem;
+
+    .TitleTattooists{
+        display: flex; flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h1{letter-spacing: 10px; margin: 2rem 0 0 0;}
+
+        .separatorTwo{    
+            border-style: solid;
+            border-color: #ffffff;
+            width: 30rem;
+            border-bottom-width: 7px;
+            margin: 5px 0 20px 0px;
+        }
+    }
+
+    .CardsTattooists{
+        display: flex; gap: 20px; flex-wrap: wrap;
+        align-items: center; justify-content: center;
+        margin: 20px;
+    }
+    .SeeTattooists{
+        width: 100%; margin-top: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/////////   ====  C  A   R   D    S  ====    /////////
+
+.news_Img {
+    position: absolute;
+    width: 63px;
+    z-index: 10;
+    left: 8rem;
+    bottom: -19rem;
+}
+
+.ArtistasIndex{
+    display: flex; flex-direction: column;
+    gap: 5px;
+
+    .ImgTattooists{
+        box-shadow: 1px 10px 10px var(--colorBlack);
+        overflow: hidden;
+        width: 350px;
+        height: 350px;
+
+        img {
+            width: 100%; 
+            border: 2px solid var(--colorSecundario);
+            filter: grayscale(100);
+            transition: 2s;
+        }
+    }   
+
+    h3{margin: 10px 0 0 10px;font-weight: 600; text-decoration: underline; } 
+    a {margin: 0 0 0 10px;color: var(--colorWhite2); font-size: 15px;font-weight: 500;
+
+        span {font-weight: 500; color: var(--colorOrange2);}
+    }
+}
+
+@media (max-width: 600px) {
+
+    .news_Img {left: 3rem;bottom: -17rem;}
+
+    .NewTattooists{
+        .TitleTattooists{
+            h1{ font-size: 25px;}
+    
+            .separatorTwo{    
+                border-style: solid;
+                border-color: #ffffff;
+                width: 15rem;
+                border-bottom-width: 3px;
+                margin: 5px 0 20px 0px;
+            }
+        }
+    }
+
+    .ArtistasIndex{
+        .ImgTattooists{width: 280px;height: 280px;}   
+    }
+}
+////////////////////////////
+
+.Tattooists_Services{
+    background-image: url('./images/Fondos/fondServices.jpg');
+    width: 100%; height: auto; background-position: center;
+    background-size: cover; padding: 50px 0;
+
+    .Title_Services{ 
+        width: 100%; height: auto;
+        padding: 5rem 0;
+        text-align: center; 
+
+        h1{
+            font-size: 45px;
+        }
+    }
+
+    .Services{
+        width: 100%;
+        display: flex;justify-content: center;
+        align-items: center; gap: 15rem; flex-wrap: wrap;
+    }
+
+    .Services_content{
+        display: flex; justify-content: center;
+        flex-direction: column; align-items: center;
+        gap: 15px; flex-wrap: wrap;
+
+        img{
+            width: 100px; transition: all 0.7s;
+        }
+        img:hover{
+            transform: scale(1.2);
+            transition: all 0.7s;
+        }
+
+        h1{ font-size: 30px;}
+    }
+
+}
+
+@media (max-width: 600px) {
+    .Tattooists_Services {
+        .Services {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 6rem;
+            flex-wrap: wrap;
+        }
+    }
+}
+
+
+
+
+// PAGE PERFIL T
+
+// PAGE PERFIL U
+
+// PAGE CITAS
+
+// PAGE TATUAODRES

@@ -18,7 +18,7 @@ export const RoutesOne = () => {
             <Route path='/perfilUsuarios' element = {<PageProfileU/>}/>
             <Route path='/perfilTatuadores' element = {<PageProfileT/>}/>
             <Route path='/citas' element = {<PageQuotes/>}/>
-            <Route path='/tatuadores' element = {<PageTattooists />}/>
+            <Route path='/tatuadores' element = {<PageTattooists/>}/>
         </Routes>
     )
 }

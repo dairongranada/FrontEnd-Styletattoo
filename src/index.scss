@@ -9,35 +9,6 @@
 
 
 
-// B A R R A    DE   N A V E G A C I O N 
-
-nav {
-    color: var(--colorWhite);
-    background-color: var(--colorBlack);
-    height: 70px; padding: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    .mainMenu {display: flex;
-        li a{
-            display: inline-block;text-transform: uppercase;
-            font-size: 5px;padding: 15px;
-            color: var(--colorWhite); font-size: 18px;
-            transition: 0.2s ease;
-            }
-        li a:hover {color:  var(--colorOrange);}
-    }
-    .TextNav {
-        h1{
-            padding: 20px;
-            margin: 6px;
-            cursor: pointer;
-        }
-    }
-}
-
-
 
 
 // F   O   O   T   E   R 

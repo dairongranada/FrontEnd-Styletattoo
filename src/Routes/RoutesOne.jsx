@@ -22,7 +22,6 @@ export const RoutesOne = () => {
             <Route path='/citas' element = {<PageQuotes/>}/>
             <Route path='/tatuadores' element = {<PageTattooists/>}/>
             <Route path='/IngresarSesion' element = {<PageFormSe/>}/>
-
         </Routes>
     )
 }

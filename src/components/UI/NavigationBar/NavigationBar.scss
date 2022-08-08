@@ -11,20 +11,8 @@
     display: none;
 }
 
-*,*::before,*::after{
-    margin: 0;
-    padding: 0;
-    outline: 0;
-    box-sizing: border-box;
-}
-
-body{
-    font-family: 'Open Sans',Arial, Helvetica, sans-serif;
-    background-color:var(--colorBlack);
-}
-
 .menu {
-    background-color: red;
+    background-color: var(--colorGray);
     height: 75px;
     width: 100%;
     display: flex;
@@ -119,7 +107,7 @@ ul.open{
         font-weight: bold;
     }
     .menu-items li a:hover{
-        color: red;
+        color: var(--colorGrays);
     }
     .logo{
         font-size: 25px;

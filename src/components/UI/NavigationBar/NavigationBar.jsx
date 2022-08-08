@@ -20,8 +20,8 @@ export const NavigationBar = () => {
             <label className='logo'>Style teatto</label>
         <ul className='menu-items'>
             <li className='active'><Link to="/" >INICIO</Link></li>
-            <li className='active'><Link to="/Tatuadores">TATUADORES</Link></li>
-            <li className='active'><Link to="/citas">CITAS</Link></li>
+            <li ><Link to="/Tatuadores">TATUADORES</Link></li>
+            <li ><Link to="/citas">CITAS</Link></li>
         </ul>
         <span onClick={menu} className="material-symbols-outlined">
             menu

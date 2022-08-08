@@ -8,6 +8,8 @@ import { PageProfileU } from '../components/Pages/PageProfileU/PageProfileU';
 import { PageQuotes } from '../components/Pages/PageQuotes/PageQuotes';
 import { PageTattooists } from '../components/Pages/PageTattooists/PageTattooists';
 import { Page404 } from '../components/Pages/Page404/Page404';
+import { PageFormSe } from '../components/Pages/PageFormSe/PageFormSe';
+
 
 
 export const RoutesOne = () => {
@@ -19,6 +21,8 @@ export const RoutesOne = () => {
             <Route path='/perfilTatuadores' element = {<PageProfileT/>}/>
             <Route path='/citas' element = {<PageQuotes/>}/>
             <Route path='/tatuadores' element = {<PageTattooists/>}/>
+            <Route path='/IngresarSesion' element = {<PageFormSe/>}/>
+
         </Routes>
     )
 }

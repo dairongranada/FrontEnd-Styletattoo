@@ -8,7 +8,7 @@ export const Home_MainView = () => {
                 <h2>EN TU PIEL</h2>
                 <p>¿ No tienes una cuenta ?</p>
                 <div>
-                    <a className='buttons_global_StyleTatto' href="/">INICIAR SESION</a>
+                    <a className='buttons_global_StyleTatto' href="/IngresarSesion">INICIAR SESION</a>
                     <a className='buttons_global_StyleTatto' href="/"> REGISTRASE</a>
                 </div>
         </section>

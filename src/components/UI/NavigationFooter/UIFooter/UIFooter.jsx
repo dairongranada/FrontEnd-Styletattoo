@@ -6,7 +6,7 @@ export const UIFooter = () => {
         <footer>
             <div className='Main_Container' >
                 <div className="left box">
-                    <h2>Nosotros<span class="material-symbols-outlined"> group </span></h2>
+                    <h2>Nosotros<span className="material-symbols-outlined"> group </span></h2>
                     <div className="content">
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam quas consequuntur a 
@@ -17,18 +17,18 @@ export const UIFooter = () => {
                 </div>
 
                 <div className="center box ">
-                    <h2>Navegar<span class="material-symbols-outlined arrow">arrow_downward </span></h2>
+                    <h2>Navegar<span className="material-symbols-outlined arrow">arrow_downward </span></h2>
                     <div className="content">
                         <div className="place">
-                            <a href="/"><span class="material-symbols-outlined">house</span> </a>                           
+                            <a href="/"><span className="material-symbols-outlined">house</span> </a>                           
                             <span><a href="/">Home</a></span> 
                         </div>
                         <div className="place">
-                            <a href="/Tatuadores"><span class="material-symbols-outlined"> recent_actors </span></a>
+                            <a href="/Tatuadores"><span className="material-symbols-outlined"> recent_actors </span></a>
                             <span><a href="/Tatuadores">Tatuadores</a></span> 
                         </div>
                         <div className="place">
-                            <a href="/Citas"><span class="material-symbols-outlined"> outgoing_mail </span></a>
+                            <a href="/Citas"><span className="material-symbols-outlined"> outgoing_mail </span></a>
                             <span><a href="/Citas">Citas</a></span> 
                         </div>
                     </div>

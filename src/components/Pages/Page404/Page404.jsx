@@ -1,5 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import error404 from '../../../images/Tattos/tatto5.jpg'
+
 
 export const Page404 = () => {
     return (
@@ -12,7 +14,7 @@ export const Page404 = () => {
                 <div className='separator'></div>
                 <h3>PÁGINA PERDIDA</h3>
                 <p>Oops!</p>
-                <a className='BackHome' href="/">IR AL INICIO</a>
+                <Link className='BackHome' href="/">IR AL INICIO</Link>
             </div>
         </div>
     )

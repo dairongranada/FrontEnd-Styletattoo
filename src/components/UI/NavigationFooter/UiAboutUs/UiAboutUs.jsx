@@ -1,23 +1,37 @@
 import React from 'react'
+import emailjs from '@emailjs/browser';
 
 export const UiAboutUs = ({NameAbout,classSpanLogo,NameSpanLogo}) => {
+
+
+const sendEmail = (event)=>{
+    event.preventDevault();
+    emailjs.sendForm('service_4mrciiq','template_mr2pmtq',event.target)
+    .then(response => console.log(response))
+    .catch(err => console.error(err))
+}
+
+
     return (
-        <div  className='AboutUs box'>
+        <div className='AboutUs box'>
             <h2>{NameAbout}<span class={classSpanLogo}>{NameSpanLogo}</span></h2>
             <div className="content">
-                <form action="#">
+
+                <form onSubmit={sendEmail}>
                     <div className='email'>
                         <div className="text">Email</div>
-                        <input type="text" required />
+                        <input type="text" name='user_email'  required />
                     </div>
                     <div className='msg'>
                         <div className="text">Mensaje</div>
-                        <textarea  cols="25" rows="2" required ></textarea>
+                        <textarea name='user_message'  cols="25" rows="2"  required ></textarea>
                     </div>
                     <div>
                         <button type='submit' className='buttons_global_StyleTatto' >Enviar</button>
                     </div>
                 </form>
+
+
             </div>
         </div>
     )

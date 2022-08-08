@@ -1,27 +1,32 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import '../../UI/NavigationBar/NavigationBar.scss'
 
-
-const icons = document.querySelectorAll('.icon');
-
-icons.forEach (icon => { 
-    icon.addEventListener('click', () => {
-        icon.classList.toggle("open");
-    });
-});
 
 export const NavigationBar = () => {
+
+    const menu = ()=>{
+        const btn_menu = document.querySelector('.material-symbols-outlined')
+        if(btn_menu){
+            btn_menu.addEventListener('click',() => {
+                const menu_items = document.querySelector('.menu_items')
+                menu_items.classList.toggle('open')
+            })
+           } 
+    }
     return (
-        <nav>
-            <ul>
-                <li><a href="/"><h3>STYLE<span> TATTO</span></h3></a></li>
-            </ul>
-            <div className="icon nav-icon-5" onClick={icons} ><span></span><span></span><span></span></div>
-            <ul className="mainMenu">
-                <li><Link to="/" >INICIO</Link></li>
-                <li><Link to="/Tatuadores">TATUADORES</Link></li>
-                <li><Link to="/citas">CITAS</Link></li>
-            </ul>
+        <div>
+        <nav className='menu'id='js-nav'>
+            <label className='logo'>Style teatto</label>
+        <ul className='menu-items'>
+            <li className='active'><Link to="/" >INICIO</Link></li>
+            <li className='active'><Link to="/Tatuadores">TATUADORES</Link></li>
+            <li className='active'><Link to="/citas">CITAS</Link></li>
+        </ul>
+        <span onClick={menu} className="material-symbols-outlined">
+            menu
+        </span>
         </nav>
+        </div>
     )
 }

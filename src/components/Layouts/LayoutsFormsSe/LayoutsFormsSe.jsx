@@ -3,17 +3,17 @@ import './LayoutsFormsSe.scss'
 
 export const LayoutsFormsSe = () => {
     return (
-        <div className="contentLogin">
-            <div className="login">
+        <div className="Content_FormsPrincipal">
+            <div className="Content_Forms">
                 <form>
                     <h1>INICIO DE SESION</h1>
                         <div className="inputContent">
-                            <input required type="text" />
-                            <label>Nombre Usuario</label>
+                            <input className='input_global_style' required type="text" />
+                            <label className='label_global_style' >Nombre Usuario</label>
                         </div>
                         <div className="inputContent">
-                            <input required type="password" />
-                            <label>Contraseña </label>
+                            <input className='input_global_style' required type="password" />
+                            <label className='label_global_style'>Contraseña </label>
                         </div>
                         <div className="Checkbox">
                             <input type="checkbox"/>

@@ -41,9 +41,11 @@ p{
 
 // ============ ESTILOS GLOBALES  ============  //
 
-
+// =================================
 // Clase Global Para Un Div Vacio Si 
 // Quieren Hacer Una Linea Separadora
+// =================================
+
 .separator {
     border-style: solid;
     border-color: #ffffff;
@@ -52,7 +54,9 @@ p{
     margin: 5px 0 20px 0px;
 }
 
+// =================================
 // Clase Global Para Un boton :)
+// =================================
 .buttons_global_StyleTatto {
     color: var(--colorWhite);
     border: 2px solid var(--colorWhite);
@@ -86,3 +90,74 @@ p{
     transition: all 0.3s ease-out;
     transform: skewX(-45deg) scale(1, 1);
 }
+
+
+
+// =================================
+// Clase Global Para Los Formularios
+// =================================
+
+
+// Div
+.Content_FormsPrincipal{
+    background-position: center; background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 88vh;
+
+    // Div
+    .Content_Forms{
+        background-color: var(--colorGray2);
+        width: 380px;
+        height: 450px;
+        padding: 22px;
+        font-size: 15px;
+        box-sizing: border-box;
+
+        h1{text-align: center;font-size: 20px;margin-top: 50px;}
+
+        // Div
+        .inputContent{
+            position: relative;
+            margin-top: 36px;
+
+            // Input
+            .input_global_style{
+                margin-top: 20px;
+                display: block;
+                margin: bottom 20px;
+                width: 100%;
+                font-size: 15px;
+            }
+            
+            // Label
+            .label_global_style{
+                position: absolute;
+                top: 10px;
+                left: 5px;
+                transition: .3s ;
+                pointer-events: none;
+                color: var(--colorGray3);
+            }
+    
+            .input_global_style:focus~.label_global_style,.input_global_style:valid~.label_global_style{
+                top: -10px;
+                color: var(--colorWhite2);
+            }
+    
+            .input_global_style[type="text"],
+            .input_global_style[type="password"]{  /* Aca lo que hice fue solo modificar los inputs de text y password */
+                border: none;
+                border-bottom: 1px solid #fff;
+                background: transparent;
+                outline: none;
+                height: 40px;
+                color: #fff;
+            }
+        }
+    }
+    button{ width: 100%; margin: 1.52rem 0 1.52rem 0; }
+}
+

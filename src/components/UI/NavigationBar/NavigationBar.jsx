@@ -17,15 +17,15 @@ export const NavigationBar = () => {
     return (
         <div>
         <nav className='menu'id='js-nav'>
-            <label className='logo'>Style teatto</label>
+            <label className='logo'>Style Tatto</label>
         <ul className='menu-items'>
             <li className='active'><Link to="/" >INICIO</Link></li>
             <li ><Link to="/Tatuadores">TATUADORES</Link></li>
             <li ><Link to="/citas">CITAS</Link></li>
         </ul>
-        <span onClick={menu} className="material-symbols-outlined">
+        <span onClick={menu} id='burguer' className="material-symbols-outlined">
             menu
-        </span>
+       </span>
         </nav>
         </div>
     )

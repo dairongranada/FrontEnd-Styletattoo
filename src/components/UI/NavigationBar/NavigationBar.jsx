@@ -17,7 +17,7 @@ export const NavigationBar = () => {
     return (
         <div>
         <nav className='menu'id='js-nav'>
-            <label className='logo'>Style teatto</label>
+            <label className='logo'>Style Tatto</label>
         <ul className='menu-items'>
             <li className='active'><Link to="/" >INICIO</Link></li>
             <li ><Link to="/Tatuadores">TATUADORES</Link></li>

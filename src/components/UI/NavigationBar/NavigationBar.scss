@@ -16,6 +16,7 @@
     align-items: center;
     border-bottom: 1px solid #fff;
     box-shadow: 5px 0 10px rgba(0 ,0 , 0, .6);
+    
 }
 
 .logo{
@@ -29,7 +30,6 @@
     display: flex;
     list-style: none;
     margin-right: 30px;
-
 }
 .menu-items li{
     border-radius: 3px;
@@ -77,7 +77,7 @@ ul.open{
     .menu{
         height: 65px;
     }
-    .material-symbols-outlined{
+    #burguer{
         display: inline-flex;
     }
     .menu-items{

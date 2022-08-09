@@ -7,23 +7,23 @@
 }
 
 
+
 .menu {
-    background-color: var(--colorGray);
-    height: 75px;
+    background-color: var(--colorBlack);
+    height: auto;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #fff;
     box-shadow: 5px 0 10px rgba(0 ,0 , 0, .6);
+    padding: 10px;
     
 }
 
 .logo{
-    color: #fff;
-    font-size: 35px;
-    padding: 0 80px;
-    font-weight: bold;
+    width: 80px;
+    margin-left:  100px;
 }
 
 .menu-items{

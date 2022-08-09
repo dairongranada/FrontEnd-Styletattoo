@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import '../../UI/NavigationBar/NavigationBar.scss'
+import { ImgTemplate } from '../ImgTemplate/ImgTemplate';
+import logo from '../../../images/Icons/logo.jpg'
 
 
 export const NavigationBar = () => {
@@ -17,7 +19,7 @@ export const NavigationBar = () => {
     return (
         <div>
         <nav className='menu'id='js-nav'>
-            <label className='logo'>Style Tatto</label>
+            <ImgTemplate srcImg={logo} classN='logo' />
         <ul className='menu-items'>
             <li className='active'><Link to="/" >INICIO</Link></li>
             <li ><Link to="/Tatuadores">TATUADORES</Link></li>

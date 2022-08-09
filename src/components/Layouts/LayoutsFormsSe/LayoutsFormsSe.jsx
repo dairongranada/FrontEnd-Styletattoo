@@ -3,7 +3,7 @@ import './LayoutsFormsSe.scss'
 
 export const LayoutsFormsSe = () => {
     return (
-        <div className="Content_FormsPrincipal">
+        <div className="Content_FormsPrincipal BackGround">
             <div className="Content_Forms">
                 <form>
                     <h1>INICIO DE SESION</h1>

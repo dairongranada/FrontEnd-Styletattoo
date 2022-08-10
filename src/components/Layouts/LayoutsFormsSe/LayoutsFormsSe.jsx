@@ -17,7 +17,7 @@ export const LayoutsFormsSe = () => {
                         </div>
                         <div className="Checkbox">
                             <input type="checkbox"/>
-                            <p>¿ Deseas Guardar Sesion ? </p>
+                            <label> ¿Deseas Guardar Sesion?</label>
                         </div>
                         <div>
                             <button className="buttons_global_StyleTatto">Iniciar sesión</button>

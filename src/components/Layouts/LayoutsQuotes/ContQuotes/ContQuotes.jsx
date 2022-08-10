@@ -7,9 +7,12 @@ export const ContQuotes = () => {
         <div className='ShadowCont'>
             <form className='FormQuot'>
                 <h3>Intruce la Infromacion</h3>
-                <input type="text" required placeholder='Fecha'/>
-                <p>Hora</p> <input type="time"/>
-                <div id='addfile' className='buttons_global_StyleTatto'>
+                <p>Fecha</p>
+                <input className='input_global_style' type="text" required />
+                <br />
+                <h3>hora</h3>
+                <input type="time"/>
+                <div className='buttons_global_StyleTatto' id='addfile'>
                     <p>Muestranos tu idea</p>
                     <input id='btnEnviar' type="file" required/>
                 </div>

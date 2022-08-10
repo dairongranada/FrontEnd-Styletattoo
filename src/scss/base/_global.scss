@@ -161,3 +161,12 @@ p{
     button{ width: 100%; margin: 1.52rem 0 1.52rem 0; }
 }
 
+@media(max-width:900px){
+    .Content_FormsPrincipal {
+        height: 113vh;
+
+        .Content_Forms {
+            width: 343px;
+        }
+    }
+}

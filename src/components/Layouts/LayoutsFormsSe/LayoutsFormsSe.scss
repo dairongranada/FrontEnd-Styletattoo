@@ -3,11 +3,12 @@
     background-image: url('../.././../images/Fondos/Login.jpg');
         
     .Checkbox{
-        display: flex;
+        margin-top: 15px;
+        display: flex; gap: 1rem;
         justify-content: flex-start
 
-        p{
-            font-size: 10px;
+        label{
+            font-size: 8px;
             color: var(--colorGray3);
         }
     }

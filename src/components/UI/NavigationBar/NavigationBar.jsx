@@ -14,7 +14,7 @@ export const NavigationBar = () => {
                 const menu_items = document.querySelector('.menu-items')
                 menu_items.classList.toggle('open')
             })
-           } 
+        } 
     }
     return (
         <div>
@@ -27,7 +27,7 @@ export const NavigationBar = () => {
         </ul>
         <span onClick={menu} id='burguer' className="material-symbols-outlined">
             menu
-       </span>
+        </span>
         </nav>
         </div>
     )

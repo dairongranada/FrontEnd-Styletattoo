@@ -11,7 +11,7 @@ export const NavigationBar = () => {
         const btn_menu = document.querySelector('.material-symbols-outlined')
         if(btn_menu){
             btn_menu.addEventListener('click',() => {
-                const menu_items = document.querySelector('.menu_items')
+                const menu_items = document.querySelector('.menu-items')
                 menu_items.classList.toggle('open')
             })
            } 

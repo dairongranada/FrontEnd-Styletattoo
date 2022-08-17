@@ -1,11 +1,10 @@
 import { Routes, Route } from 'react-router-dom'
-import './index.scss';
 import './App.scss';
 import { Header } from './components/Layouts/Header/Header';
 import { Footer } from './components/Layouts/Footer/Footer';
 
 
-/*======================  V I E W S    C O M P O N E N T S  ===============================*/ 
+/*======================  V I E W S    C O M P O N E N T S  =========================*/ 
 
 import { PageHome } from './components/Pages/PageHome/PageHome'
 import { PageProfileT } from './components/Pages/PageProfileT/PageProfileT';
@@ -23,7 +22,7 @@ function App() {
     <div className="App">
       <Header/>
           <Routes>
-              <Route path='*' exact element= {<Page404 />} />
+              <Route path='*' element= {<Page404/>} />
               <Route path='/' exact element= {<PageHome />} />
               <Route path='/perfilUsuarios' exact element= {<PageProfileU/>}/>
               <Route path='/perfilTatuadores' exact element= {<PageProfileT/>}/>

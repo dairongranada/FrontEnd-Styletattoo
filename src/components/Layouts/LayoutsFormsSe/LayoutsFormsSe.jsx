@@ -24,7 +24,7 @@ export const LayoutsFormsSe = () => {
                         </div>
                     <div className= "questions">
                         <a href="/"> ¿A olvidado Su contraseña? </a>
-                        <a href="/">¿No tienes una una Cuenta?</a>
+                        <a href="/">¿No tienes una Cuenta?</a>
                     </div>
                 </form>
             </div>

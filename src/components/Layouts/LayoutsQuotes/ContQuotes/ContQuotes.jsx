@@ -8,7 +8,7 @@ export const ContQuotes = () => {
             <form className='FormQuot'>
                 <h3>Introduce la Informacion</h3>
                 <p>Fecha</p>
-                <input className='input_global_style' type="text" required />
+                <input className='input_global_style' type="date" required />
                 <br />
                 <h3>Hora</h3>
                 <input type="time"/>

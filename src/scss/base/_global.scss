@@ -64,7 +64,7 @@ p{
     padding: 10px 20px;
     border-radius: 3px; 
     position: relative;
-    z-index: 1;
+    z-index: 1; margin-top: 15px;
     overflow: hidden;
     transition: 0.5s;
 }
@@ -109,14 +109,15 @@ p{
 
     // Div
     .Content_Forms{
-        background-color: var(--colorGray2);
+        background-color: rgba(0, 0, 0, 0.571);
+        box-shadow: 1px 1px 50px var(--colorBlack);
         width: 380px;
         height: 450px;
         padding: 22px;
         font-size: 15px;
         box-sizing: border-box;
 
-        h1{text-align: center;font-size: 20px;margin-top: 50px;}
+        h1{text-align: center;font-size: 30px;margin-top: 20px;}
 
         // Div
         .inputContent{
@@ -163,10 +164,28 @@ p{
 
 @media(max-width:900px){
     .Content_FormsPrincipal {
-        height: 113vh;
+        height: 80vh;
 
         .Content_Forms {
             width: 343px;
+        }
+    }
+}
+
+
+@media(max-width:480px){
+    .buttons_global_StyleTatto{
+        font-size: 18px;
+    }
+
+    .Content_FormsPrincipal{
+        height: 95vh;
+
+        .Content_Forms {
+            height: 500px;
+            width: 380px;
+        
+            h1{font-size: 40px;}
         }
     }
 }

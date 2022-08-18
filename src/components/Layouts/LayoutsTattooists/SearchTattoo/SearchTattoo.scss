@@ -1,0 +1,42 @@
+input[type="text"]{
+    display: block;
+    margin: auto;
+    width: 18rem;
+    height: 1.5rem;
+    border-radius: 6px;
+}
+
+input[type="text"]::placeholder{
+    color: black;
+    padding: 1px;
+}
+
+.card{
+    width: 25%;
+    display: grid;
+    align-items: center;
+    height: 14rem;
+    border: 1px solid;
+    border-radius: 0.5rem;
+    margin: auto;
+    margin-top: 25px;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+}
+
+h2.titleTattoo{
+    font-size: 1.5rem;
+    color:  #ffffff;
+    text-align: center;
+    margin-top: 15px;
+}
+
+img.imgtattoo{
+    width: 60%;
+    display: grid;
+    align-items: center;
+    height: 10rem;
+    margin: auto;
+    filter: grayscale(100%);
+}

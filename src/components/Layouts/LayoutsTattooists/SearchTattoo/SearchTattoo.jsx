@@ -19,7 +19,7 @@ export const SearchTattoo = () => {
   return (
     <div className='div-card'>
       <input classname="input" onChange={filterTattoo} type="text" placeholder='Ingrese un nombre' />
-      <main>
+      <main className='main-contenido'>
         {
           searchTattoo.map((tattoo, index) => {
             return <div className='card' key={index}>

@@ -12,18 +12,19 @@ input[type="text"]::placeholder{
     text-align: center;
 }
 
+.main-contenido{
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+}
+
 .card{
-    width: 25%;
+    width: 14rem;
     display: grid;
     align-items: center;
-    height: 14rem;
     border: 1px solid;
     border-radius: 0.5rem;
-    margin: auto;
     margin-top: 25px;
-    flex-direction: column;
-    flex-wrap: wrap;
-
 }
 
 h2.titleTattoo{
@@ -40,4 +41,5 @@ img.imgtattoo{
     height: 10rem;
     margin: auto;
     filter: grayscale(100%);
+    padding: 0.8rem;
 }

@@ -25,7 +25,6 @@ export const SearchTattoo = () => {
             return <div className='card' key={index}>
                     <h2 className='titleTattoo'>{tattoo.name}</h2>
                     <img class="imgtattoo" src={tattoo.image} alt={tattoo.name} />
-   
                   </div>})}
       </main>
     </div>

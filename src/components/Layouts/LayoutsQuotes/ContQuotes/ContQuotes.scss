@@ -55,6 +55,18 @@
     }
 
 
+    @media screen and (max-width: 1600px){
+        .backgruondCont{
+            .ShadowCont{
+                .FormQuot{
+                    #textMessage{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
     @media screen and (max-width: 1396px){
         .backgruondCont{
             .ShadowCont{

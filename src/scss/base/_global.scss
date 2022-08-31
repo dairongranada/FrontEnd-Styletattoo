@@ -109,8 +109,7 @@ p{
 
     // Div
     .Content_Forms{
-        background-color: rgba(0, 0, 0, 0.571);
-        box-shadow: 1px 1px 50px var(--colorBlack);
+        background-color: #000000ba;
         width: 380px;
         height: 450px;
         padding: 22px;
@@ -161,6 +160,8 @@ p{
     }
     button{ width: 100%; margin: 1.52rem 0 1.52rem 0; }
 }
+
+
 
 @media(max-width:900px){
     .Content_FormsPrincipal {

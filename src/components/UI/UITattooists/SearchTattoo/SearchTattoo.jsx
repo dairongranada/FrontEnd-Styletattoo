@@ -1,5 +1,8 @@
 import React,{useState} from 'react'
 import './SearchTattoo.scss'
+
+
+
 export const SearchTattoo = () => {
 
     const tattoo = [
@@ -16,15 +19,17 @@ export const SearchTattoo = () => {
         const filter = tattoo.filter(tattoo => tattoo.name.includes(data))
         setsearchTattoo(filter);
     }
+
   return (
-    <div className='div-card'>
-      <input classname="input" onChange={filterTattoo} type="text" placeholder='Ingrese un nombre' />
+    <div className='Content_Tattooists'>
+      <input className="Filter_Tatto" onChange={filterTattoo} type="text" placeholder='Ingrese un nombre' />
       <main className='main-contenido'>
+        
         {
           searchTattoo.map((tattoo, index) => {
             return <div className='card' key={index}>
-                    <h2 className='titleTattoo'>{tattoo.name}</h2>
-                    <img class="imgtattoo" src={tattoo.image} alt={tattoo.name} />
+                      <img className="imgtattoo" src={tattoo.image} alt={tattoo.name} />
+                      <h5 className='titleTattoo'>{tattoo.name}</h5>
                   </div>})}
       </main>
     </div>

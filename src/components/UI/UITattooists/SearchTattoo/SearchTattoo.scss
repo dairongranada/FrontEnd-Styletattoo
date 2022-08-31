@@ -1,0 +1,59 @@
+.Content_Tattooists{
+    background-image: url('');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: auto;
+    padding: 30px;
+    text-align: center;
+    
+
+    .Filter_Tatto{
+        border: none;
+        border-bottom: 1px solid #fff;
+        background: transparent;
+        outline: none;
+        height: 40px;
+        width: 300px;
+        color: #fff;
+        text-align: center;
+        margin-bottom: 1.545rem;
+    }
+
+    .main-contenido{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3rem;
+        justify-content: center;
+
+        .card{
+            width: 14rem;
+            display: grid;
+            align-items: center;
+            border: 1px solid;
+            border-radius: 0.5rem;
+            margin-top: 25px;
+        }
+
+        .imgtattoo{
+            width: 60%;
+            display: grid;
+            align-items: center;
+            height: 10rem;
+            margin: auto;
+            filter: grayscale(100%);
+            padding: 0.8rem;
+        }
+
+    }
+
+}
+
+
+
+
+
+
+
+
+

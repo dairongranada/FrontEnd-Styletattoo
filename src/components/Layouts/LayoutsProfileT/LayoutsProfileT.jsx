@@ -34,21 +34,17 @@ export const LayoutsProfileT = () => {
                     <img src= {porta1} alt="" />
                     <img src= {porta2} alt="" />
                     <img src= {porta3} alt="" />
-
                 </div>
                 <div className='conimg' >
                     <img src= {porta4} alt="" />
                     <img src= {porta5} alt="" />
                     <img src= {porta6} alt="" />
-
                 </div>
                 <div className='conimg' >
                     <img src= {porta7} alt="" />
                     <img src= {porta8} alt="" />
                     <img src= {porta9} alt="" />
-
                 </div>
-
             </div>
         </div>
     </div>

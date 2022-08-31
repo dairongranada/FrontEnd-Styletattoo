@@ -17,7 +17,7 @@ export const ContQuotes = () => {
                     <input id='btnEnviar' type="file" required/>
                 </div>
                 <p>Dejanos un mensaje</p>
-                <textarea name="" id="" cols="48" rows="6"></textarea>
+                <textarea name="" id="textMessage" cols="48" rows="6"></textarea>
                 <button className='buttons_global_StyleTatto'>Enviar</button>
             </form>
         </div>

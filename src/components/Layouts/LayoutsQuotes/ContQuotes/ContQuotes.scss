@@ -53,3 +53,57 @@
             }
         }
     }
+
+
+    @media screen and (max-width: 1396px){
+        .backgruondCont{
+            .ShadowCont{
+                .FormQuot{
+                    #textMessage{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 963px) {
+        .backgruondCont{
+            .ShadowCont{
+                .FormQuot{
+                    width: 55%;
+                    height: auto;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 693px){
+        .backgruondCont{
+            .ShadowCont{
+                .FormQuot{
+                    width: 55%;
+                    height: auto;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 545px){
+        .backgruondCont{
+            .ShadowCont{
+                .FormQuot{
+                    width: 75%;
+                    height: auto;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 375px) {
+        .backgruondCont{
+            .ShadowCont{
+                .FormQuot{
+                    width: 95%;
+                    height: auto;
+                }
+            }
+        }
+    }
+    

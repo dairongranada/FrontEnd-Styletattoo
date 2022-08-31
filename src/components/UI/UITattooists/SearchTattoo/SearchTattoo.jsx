@@ -27,9 +27,11 @@ export const SearchTattoo = () => {
         
         {
           searchTattoo.map((tattoo, index) => {
-            return <div className='card' key={index}>
-                      <img className="imgtattoo" src={tattoo.image} alt={tattoo.name} />
-                      <h5 className='titleTattoo'>{tattoo.name}</h5>
+            return <div className='ArtistasIndex' key={index}>
+                <div className='ImgTattooists' ><img src={tattoo.image} alt={tattoo.name} /></div>                    
+                <h3 className='titleTattoo'>{tattoo.name}</h3>
+
+
                   </div>})}
       </main>
     </div>

@@ -6,7 +6,7 @@ footer{
     width: 100%;
     height: auto;
     padding: 2.5rem 0 0 0;
-    background-color: var(--colorGray);
+    background-color: var(--colorBlack);
 
     .Main_Container{
         display: flex;
@@ -104,7 +104,7 @@ footer{
         center{
             padding: 5px;
             font-size: 15px;
-            background: #151515;
+            background: #111111;
             
             a{color: var(--colorOrange2);}
             a:hover{text-decoration: underline;}

@@ -27,25 +27,6 @@
         gap: 3rem;
         justify-content: center;
 
-        .card{
-            width: 14rem;
-            display: grid;
-            align-items: center;
-            border: 1px solid;
-            border-radius: 0.5rem;
-            margin-top: 25px;
-        }
-
-        .imgtattoo{
-            width: 60%;
-            display: grid;
-            align-items: center;
-            height: 10rem;
-            margin: auto;
-            filter: grayscale(100%);
-            padding: 0.8rem;
-        }
-
     }
 
 }

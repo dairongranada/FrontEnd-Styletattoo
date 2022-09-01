@@ -1,0 +1,68 @@
+.main {
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.contentProfile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
+  background-color: rgba(73, 73, 73, 0.533);
+  width: 30rem;
+  border-radius: 10px;
+  border: 2px #fff solid;
+}
+
+.contentImg {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(23, 23, 23, 0.558);
+  align-items: center;
+  width: 12rem;
+  height: 12rem;
+  border-radius: 100rem;
+  box-shadow: -5px 5px 5px #fff;
+}
+.contentImg img {
+  width: 5rem;
+  height: 5rem;
+}
+
+.contentText {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  width: 100%;
+}
+.contentText p strong {
+  color: #000;
+  font-size: 20px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.contentText p {
+  color: #fff;
+}
+
+.contentButtons {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.styleButton {
+  text-align: center;
+  padding: 10px;
+  color: #000;
+  background-color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.styleButton:hover {
+  background-color: #000;
+  color: #fff;
+}/*# sourceMappingURL=LayoutsProfileU.css.map */

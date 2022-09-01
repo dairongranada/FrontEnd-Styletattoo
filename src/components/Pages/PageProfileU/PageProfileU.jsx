@@ -1,7 +1,8 @@
 import React from 'react'
+import { LayoutsProfileU } from '../../Layouts/LayoutsProfileU/LayoutsProfileU'
 
 export const PageProfileU = () => {
     return (
-        <div>PageProfileU</div>
+        <LayoutsProfileU/>
     )
 }

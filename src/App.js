@@ -29,6 +29,7 @@ function App() {
               <Route path='/citas' exact element= {<PageQuotes/>}/>
               <Route path='/tatuadores' exact element= {<PageTattooists/>}/>
               <Route path='/IngresarSesion' exact element= {<PageFormSe/>}/>
+              <Route path='/usuario' exact element={<PageProfileU/>}></Route>
           </Routes>
       <Footer/>
     </div>

@@ -30,7 +30,7 @@ export const SearchTattoo = () => {
           sombras, realismo, sombras, color, realismo color, oriental, tradicional, 
           neotradicional, libre, liners, black work, black and grey y cover up</p>
       </div>
-      <input className="Filter_Tatto" onChange={filterTattoo} type="text" placeholder='Ingrese un nombre' />
+      <input className="Filter_Tatto" onChange={filterTattoo} type="text" placeholder='Buscar Artista' />
       
       
       
@@ -44,7 +44,7 @@ export const SearchTattoo = () => {
                       <img src={tattoo.image} alt={tattoo.name} />
                       <h3 className="member-name">{tattoo.name}</h3>
                       <p className="member-description">{tattoo.descripcion}</p>
-                      <a href="http://localhost:3000/Tatuadores" className="button">VER MI PERFIL!</a>
+                      <a href="/perfilTatuadores" className="button">VER MI PERFIL!</a>
                   </div>
                 </div>
               })}

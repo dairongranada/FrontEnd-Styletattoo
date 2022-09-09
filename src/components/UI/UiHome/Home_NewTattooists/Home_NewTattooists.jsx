@@ -13,8 +13,7 @@ export const Home_NewTattooists = () => {
     return (
         <section className='NewTattooists'>
             <div className='TitleTattooists'>
-                <h1>ARTISTAS</h1>
-                <div className='separatorTwo'></div>
+                <h1 className='titleMP4'>ARTISTAS</h1>
             </div>
             <div className='CardsTattooists'>
                 <Home_CardsTattooists  ImgTattooists={ImgTattooistsOne}  NameTattooists='Dairon' SocialTattooists='DaironGranada'  />

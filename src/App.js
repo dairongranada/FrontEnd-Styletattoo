@@ -26,7 +26,7 @@ function App() {
     <div className="App">
       <Header/>
           <Routes>
-              <Route path='*' element= {<Page404/>} />
+              <Route path='/*' element= {<Page404/>} />
               <Route path='/' exact element= {<PageHome />} />
               <Route path='/perfilUsuarios' exact element= {<PageProfileU/>}/>
               <Route path='/perfilTatuadores' exact element= {<PageProfileT/>}/>

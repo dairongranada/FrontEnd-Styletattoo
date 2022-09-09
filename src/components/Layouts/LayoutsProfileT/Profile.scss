@@ -1,71 +1,86 @@
-.conbanner{
-    width: 100%;
-    height: auto;
-
-    .Banner{
-        width: 100%;
-        height: 40vh;
-    }
-    .conimgp{
-        width: 25%;
-        height: 25%;
-        position: absolute;
-        transform: translate(87vh, -11vh);
-
-        .imgp{
+*{
+    font-family: var(--font-Rubik);
+}
+.contPather{
+    display: flex;
+    background-color: var(--colorGray);
+    .contPe{
+        padding: 25px;
+        background-color: var(--colorGray);
+        width: 33%;
+        .contImg{
             width: 50%;
-            height: 100%;
-            border-radius: 100%;
-
+            margin-bottom: 25px;
+            margin-left: 10%;
+            .Profile{
+                width: 100%;
+                height: auto;
+                border-radius: 100px;
+            }
+        }
+        .contInfo{
+            height: auto;
+            width: 73%;
+            margin-left: 10%;
+            .inf{
+                height: 7vh;
+            }
+            .contButtons{
+                width: 100%;
+                display: flex;
+                gap: 10px;
+                margin-bottom: 20px;           
+            }
         }
     }
-}
-
-.connombre{
-    margin-top: 8%;
-    width: 100%;
-    text-align: center;
-
-}
-
-.conportafolio{
-    width: 100%;
-    margin-top: 15px;
-    text-align: center;
-}
-
-.contenedorT{
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-
-    .colum1{
-        display: flex;
-        justify-content: space-around;
-        flex-direction: column;
-        width: 90%;
-        padding: 5%;
-        background-color: black;
-
-        .conimg{
-            display: flex;
+    .ContTrabajos{
+        height: auto;
+        width: 65%;
+        padding: 25px;
+        .contPortafolio{
             width: 100%;
-            margin-bottom: 20px;
             display: flex;
             justify-content: center;
-            justify-content: space-around;
-            margin-top: 15px;
-
-            img{
-                width: 25%;
-                height: 43vh;
+            .contPortafolio2{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: auto;
+                background-color: black;
+                padding: 25px;
+                .Portafolio{
+                    margin-top: 35px;
+                    width: 100%;
+                    text-align: center;
+                    .PortafoliosTittle{
+                        font-size: 30px;
+                    }
+                }
+            }
+            .Trabajos{
+                width: 100%;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                .Tattos{
+                    width: 100%;
+                    height: auto;
+                    margin-top: 25px;
+                    display: flex;
+                    justify-content: space-around;
+                    .ContTatto{
+                        width: 20%;
+                        height: auto;
+                        .Tatto{
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
             }
         }
     }
 }
-
 
 
 

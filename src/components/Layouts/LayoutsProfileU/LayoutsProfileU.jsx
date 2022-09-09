@@ -1,29 +1,40 @@
 import React from 'react'
 import { ImgTemplate } from '../../UI/ImgTemplate/ImgTemplate'
 import '../LayoutsProfileU/LayoutsProfileU.css'
-import ImgProfile  from '../../../images/Icons/perfilUser.png'
+import ImgProfile  from '../../../images/Icons/perfilUserM.png'
 
 export const LayoutsProfileU = () => {
   return (
     <main className='main'>
       <div className='contentProfile'>
         <div className='contentImg'>
+          <div>
           <ImgTemplate srcImg={ImgProfile}/>
+          </div>
         </div>
         <div className='contentText'>
           <p><strong>Nombre:</strong></p>
-          <p>steven montoya torres</p>
+          <p>nombre</p>
+          <hr />
+          <p><strong>Apellidos:</strong></p>
+          <p>apellidos</p>
           <hr />
           <p><strong>Correo:</strong></p>
-          <p>montoyatorressteven0@gmail.com</p>
+          <p>correo</p>
           <hr />
           <p><strong>telefono:</strong></p>
-          <p>+57 3225376757</p>
+          <p>numero telefonico</p>
+          <hr />
+          <p><strong>sexo:</strong></p>
+          <p>genero</p>
+          <hr />
+          <p><strong>fecha de nacimiento:</strong></p>
+          <p>fecha</p>
           <hr />
         </div>
         <div className='contentButtons'>
-          <button className='styleButton'>modificar perfil</button>
-          <button className='styleButton'>ver citas</button>
+          <button className='styleButton'><a href="#">modificar perfil</a></button>
+          <button className='styleButton'><a href="#">ver citas</a></button>
         </div>
       </div>
     </main>

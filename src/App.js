@@ -13,9 +13,8 @@ import { PageQuotes } from './components/Pages/PageQuotes/PageQuotes';
 import { PageTattooists } from './components/Pages/PageTattooists/PageTattooists';
 import { Page404 } from './components/Pages/Page404/Page404';
 import { PageFormSe } from './components/Pages/PageFormSe/PageFormSe';
+import { LayoutsChangeData } from './components/Layouts/LayoutsProfileU/LayoutsChangeData/LayoutsChangeData';
 
-
-import { PagePiercings } from './components/Pages/___PagePiercings/PagePiercings';
 
 
 
@@ -26,18 +25,17 @@ function App() {
     <div className="App">
       <Header/>
           <Routes>
-              <Route path='/*' element= {<Page404/>} />
+              <Route path='*' element= {<Page404/>} />
               <Route path='/' exact element= {<PageHome />} />
               <Route path='/perfilUsuarios' exact element= {<PageProfileU/>}/>
               <Route path='/perfilTatuadores' exact element= {<PageProfileT/>}/>
               <Route path='/citas' exact element= {<PageQuotes/>}/>
               <Route path='/tatuadores' exact element= {<PageTattooists/>}/>
-
+              <Route path='/cambioDataUser' exact element = {<LayoutsChangeData/>}/>
 
               <Route path='/IngresarSesion' exact element= {<PageFormSe/>}/>
 
 
-              <Route path='/Piercings' exact element= {<PagePiercings/>}/>
 
           </Routes>
       <Footer/>

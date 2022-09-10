@@ -1,0 +1,98 @@
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #000;
+  padding: 5%;
+  border-radius: 5px;
+}
+form h1 {
+  text-decoration: underline;
+  color: #fff;
+  margin-bottom: 35px;
+}
+form p {
+  color: #fff;
+}
+
+.contentData {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 2px;
+  padding: 25px;
+  width: 95%;
+}
+.contentData p {
+  color: #000;
+}
+.contentData .contentsData {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+}
+.contentData .contentsData p {
+  color: #fff;
+  font-size: 15px;
+  margin: 10px;
+}
+.contentData .contentsData .contentInfo {
+  width: 50%;
+}
+.contentData .contentsData .contentInfo input {
+  width: 100%;
+  height: 25px;
+  outline: none;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  margin-bottom: 3px;
+}
+.contentData .contentDataLine {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: 15px;
+}
+.contentData input {
+  padding: 10px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+.contentData select {
+  padding: 10px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+.contentData .contentDataLine hr {
+  background-color: #000;
+  height: 3px;
+}
+
+.button {
+  background-color: #fff;
+  color: #000;
+  padding: 10px;
+  margin: 20px;
+  width: 20%;
+  font-size: 15px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+.button:hover {
+  text-decoration: underline;
+}/*# sourceMappingURL=LayoutsChangeData.css.map */

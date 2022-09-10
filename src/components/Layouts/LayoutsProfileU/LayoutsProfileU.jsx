@@ -33,7 +33,7 @@ export const LayoutsProfileU = () => {
           <hr />
         </div>
         <div className='contentButtons'>
-          <button className='styleButton'><a href="#">modificar perfil</a></button>
+          <button className='styleButton'><a href='/cambioDataUser'>modificar perfil</a></button>
           <button className='styleButton'><a href="#">ver citas</a></button>
         </div>
       </div>

@@ -5,6 +5,7 @@
     background-size: cover;
     display: flex; flex-direction: column;
     justify-content: center;align-items: center; gap: 10px;
+    
 
     div{
         margin: 20px 0;
@@ -16,8 +17,7 @@
 @media (max-width: 600px) {
     .MainView{
         text-align: center;
-        h1 {color: var(--colorOrange2);font-size: 40px;}
-        h2 {Font-size: 40px;}
+        h1,h2 {font-size: 40px;}
         div{flex-direction: column}
     }
 }
@@ -96,7 +96,7 @@
     .news_Img {left: 3rem;bottom: -17rem;}
     .NewTattooists{
         .TitleTattooists{
-            h1{ font-size: 25px;}
+            h1{font-size: 40px;}
     
             .separatorTwo{    
                 border-style: solid;

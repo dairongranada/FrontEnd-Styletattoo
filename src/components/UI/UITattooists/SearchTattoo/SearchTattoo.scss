@@ -6,8 +6,17 @@
     height: auto;
     padding: 30px;
     text-align: center;
-    
 
+    .Content_TattooistsTitle{
+        margin: 70px 0 70px 0;
+        padding: 20px;
+
+        p{
+            padding: 10px;
+            font-size: 18px;
+            color: var(--colorWhite2);
+        }
+    }
     
     .Filter_Tatto{
         border: none;
@@ -15,7 +24,7 @@
         background: transparent;
         outline: none;
         height: 40px;
-        width: 300px;
+        width: 450px;
         color: #fff;
         text-align: center;
         margin-bottom: 1.545rem;
@@ -26,6 +35,7 @@
         flex-wrap: wrap;
         gap: 3rem;
         justify-content: center;
+        margin-top: 30px;
 
     }
 
@@ -34,7 +44,84 @@
 
 
 
+.our-team-section{
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
 
+.member-container{
+    width: 400px;
+    height: auto;
+    background-color: #f9f9f9;
+    box-shadow: 0px 4px 12px rgba(160, 160, 160, 0.4);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem 2rem 2rem 2rem;
+    box-sizing: border-box;
+    transition: 0.5s;
+    cursor: pointer;
+
+    img{
+        width:300px;
+        height:300px;
+
+    }
+}
+
+.member-container:hover{
+    transform: translateY(-20px);
+    box-shadow: 0px 10px 18px rgba(160, 160, 160, 0.9);
+}
+
+@media (max-width: 1500px){
+    .member-container{
+        margin-bottom: 10rem;
+    }
+}
+
+
+.member-name{
+    font-size: 24px;
+    font-weight: 600;
+    position: relative;
+    margin: 1rem 0 0 0;
+    color: #202020;
+}
+
+.member-name::after{
+    content: "";
+    background-color: #202020;
+    height: 4px;
+    width: 100px;
+    top: 105%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 5px;
+}
+
+.member-description{
+    font-size: 18px;
+    line-height: 28px;
+    text-align: center;
+    color: var(--colorBlack);
+    margin-top: 10px;
+}
+
+.button{
+    text-decoration: none;
+    color: white;
+    background-color: #202020;
+    font-weight: 600;
+    padding: 13px 20px;
+    margin-top: 1rem;
+}
 
 
 

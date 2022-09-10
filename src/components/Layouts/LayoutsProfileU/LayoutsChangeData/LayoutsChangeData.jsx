@@ -75,7 +75,7 @@ export const LayoutsChangeData = () => {
                         </div>
                     </div>
                 </div>
-                <button className='button'>enviar</button>
+                <button className='buttonData'>enviar</button>
             </form>
         </main>
     )

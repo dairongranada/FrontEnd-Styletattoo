@@ -97,7 +97,7 @@ form{
     }
 }
 
-.button{
+.buttonData{
     background-color: $color_white;
     color:$color_black;
     padding: 10px;
@@ -109,6 +109,6 @@ form{
     border-radius: 5px;
 }
 
-.button:hover{
+.buttonData:hover{
     text-decoration: underline;
 }

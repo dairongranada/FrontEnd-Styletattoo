@@ -67,6 +67,7 @@ p{
 // =================================
 // Clase Global Para Un boton :)
 // =================================
+
 .buttons_global_StyleTatto {
     color: var(--colorWhite);
     border: 2px solid var(--colorWhite);
@@ -77,28 +78,33 @@ p{
     z-index: 1; margin-top: 15px;
     overflow: hidden;
     transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 230px;
+    text-align: center;
 }
 
 .buttons_global_StyleTatto:hover {
     color: var(--colorBlack);
 }
     .buttons_global_StyleTatto::after {
-    content: "";
-    background: var(--colorWhite);
-    position: absolute;
-    z-index: -1;
-    display: block;
-    left: -20%;
-    right: -20%;
-    top: 0;
-    bottom: 0;
-    transform: skewX(-45deg) scale(0, 1);
-    transition: all 0.2s ease;
+        content: "";
+        background: var(--colorWhite);
+        position: absolute;
+        z-index: -1;
+        display: block;
+        left: -20%;
+        right: -20%;
+        top: 0;
+        bottom: 0;
+        transform: skewX(-45deg) scale(0, 1);
+        transition: all 0.2s ease;
     }
     
     .buttons_global_StyleTatto:hover::after {
-    transition: all 0.3s ease-out;
-    transform: skewX(-45deg) scale(1, 1);
+        transition: all 0.3s ease-out;
+        transform: skewX(-45deg) scale(1, 1);
 }
 
 
@@ -187,6 +193,7 @@ p{
 @media(max-width:480px){
     .buttons_global_StyleTatto{
         font-size: 18px;
+        width: 250px;
     }
 
     .Content_FormsPrincipal{
@@ -200,3 +207,7 @@ p{
         }
     }
 }
+
+
+
+

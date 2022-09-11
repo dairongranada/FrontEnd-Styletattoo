@@ -2,16 +2,7 @@
 .BackGround{
     background-image: url('../.././../images/Fondos/Login.jpg');
         
-    .Checkbox{
-        margin-top: 15px;
-        display: flex; gap: 1rem;
-        justify-content: flex-start
 
-        label{
-            font-size: 8px;
-            color: var(--colorGray3);
-        }
-    }
 
     .questions{
         display: flex;
@@ -31,8 +22,6 @@
         }
     }
 }
-
-
 
 
 

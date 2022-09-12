@@ -1,7 +1,3 @@
-.pather{
-    width: 25%;
-}
-
 .container{
     width: 100%;
     position: relative;
@@ -21,7 +17,6 @@
 }
 
 
-
 .container .card .face.facel{
     position: relative;
     background:#333;
@@ -36,18 +31,19 @@
     background:#787878;
     transform: translateY(0);
 }
+
 .container .card .face.facel .content{
     opacity:0.2;
     transition:0.5s;
 }
-
 
 .container .card:hover .face.facel .content{ 
     opacity: 1;
 }
 
 .container .card .face.facel .content img{ 
-    max-width:100px;
+    width:180px;
+    border-radius: 50%;
 }
 
 .container.card .face.face1 .content h3{
@@ -77,9 +73,10 @@
 .container .card .face.face2 .content p{
     margin: 0;
     padding:0;
+    color: #333;
 }
 
-.container .card .face.face2 .content a{ 
+.container .card .face.face2 .content .btnA_menu{ 
     margin: 15px 0;
     display: inline-block;
     text-decoration: none;
@@ -89,7 +86,16 @@
     border: 1px solid #333;
 }
 
-.container .card .face.face2 .content a:hover{ 
+.container .card .face.face2 .content .btnA_menu:hover{ 
     background: #333;
     color: #fff;
+}
+
+
+.nameTattooists{font-weight: 900;}
+
+.descripTattooists{
+    font-size: 15px; 
+    text-indent: 1cm;
+    line-height: 22px;
 }

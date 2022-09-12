@@ -17,9 +17,9 @@ export const Home_NewTattooists = () => {
                 <h1 className='titleMP4'>ARTISTAS</h1>
             </div>
             <div className='contCards'>
-                <Home_CardsTattooists  ImgTattooists={ImgTattooistsOne}  NameTattooists='Dairon' SocialTattooists='DaironGranada'  />
-                <Home_CardsTattooists  ImgTattooists={ImgTattooistsTwo}  NameTattooists='Lorem' SocialTattooists='Lorem ipsum dolor sit.'  />
-                <Home_CardsTattooists  ImgTattooists={ImgTattooistsThree}  NameTattooists='lorem2' SocialTattooists='Lorem ipsum dolor sit.'  />
+                <Home_CardsTattooists  ImgTattooists={ImgTattooistsOne}  NameTattooists='Dairon' SocialTattooists='Soy Dairon Granada Sor Artista del tatuaje mis estilos princiales son : Realista, Blackwork'/>
+                <Home_CardsTattooists  ImgTattooists={ImgTattooistsTwo}  NameTattooists='Lorem' SocialTattooists='Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum alias est delectus culpa?'/>
+                <Home_CardsTattooists  ImgTattooists={ImgTattooistsThree}  NameTattooists='lorem2' SocialTattooists='Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta officia tempora eveniet alias?'/>
             </div>
             <div className='SeeTattooists'><a className='buttons_global_StyleTatto' href="/tatuadores">VER MAS TATUADORES</a></div>
         </section>

@@ -9,13 +9,13 @@ export const Home_CardsTattooists = ({ImgTattooists,NameTattooists,SocialTattooi
                     <div class="face facel">
                         <div class="content">
                             <img src={ImgTattooists}/>
-                            <h3>{NameTattooists}</h3>
                         </div>
                     </div>
                     <div class="face face2">
                         <div class="content">
-                            <a href="/"> <span>@ </span>{SocialTattooists}</a>
-                            <a href="#">Ver Mi Perfil</a>
+                            <p className='nameTattooists' >{NameTattooists}</p>
+                            <p className='descripTattooists'href="/">{SocialTattooists}</p>
+                            <a href="#" className='btnA_menu'>Ver Mi Perfil</a>
                         </div>
                     </div>
                 </div>

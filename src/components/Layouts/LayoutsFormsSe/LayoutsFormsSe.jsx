@@ -15,10 +15,6 @@ export const LayoutsFormsSe = () => {
                             <input className='input_global_style' required type="password" />
                             <label className='label_global_style'>Contraseña </label>
                         </div>
-                        <div className="Checkbox">
-                            <input type="checkbox"/>
-                            <label> ¿Deseas Guardar Sesion?</label>
-                        </div>
                         <div>
                             <button className="buttons_global_StyleTatto">Iniciar sesión</button>
                         </div>

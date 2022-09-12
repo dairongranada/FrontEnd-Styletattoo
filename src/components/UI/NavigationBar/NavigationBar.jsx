@@ -1,7 +1,7 @@
 import React from 'react'
 import '../../UI/NavigationBar/NavigationBar.scss'
 import { ImgTemplate } from '../ImgTemplate/ImgTemplate';
-import logo from '../../../images/Icons/logo.jpg'
+import logo from '../../../images/Icons/logo2.png'
 
 
 export const NavigationBar = () => {

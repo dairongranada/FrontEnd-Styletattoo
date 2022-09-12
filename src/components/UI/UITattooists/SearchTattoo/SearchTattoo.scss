@@ -4,11 +4,9 @@
     background-position: center;
     width: 100%;
     height: auto;
-    padding: 30px;
     text-align: center;
 
     .Content_TattooistsTitle{
-        margin: 70px 0 70px 0;
         padding: 20px;
 
         p{
@@ -17,7 +15,7 @@
             color: var(--colorWhite2);
         }
     }
-    
+
     .Filter_Tatto{
         border: none;
         border-bottom: 1px solid #fff;
@@ -36,13 +34,8 @@
         gap: 3rem;
         justify-content: center;
         margin-top: 30px;
-
     }
-
 }
-
-
-
 
 .our-team-section{
     margin: auto;
@@ -70,7 +63,6 @@
     img{
         width:300px;
         height:300px;
-
     }
 }
 
@@ -123,6 +115,9 @@
     margin-top: 1rem;
 }
 
+img.imgtattooists{
+    filter: grayscale(100%);
+}
 
 
 

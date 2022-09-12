@@ -12,7 +12,11 @@ import { PageProfileU } from './components/Pages/PageProfileU/PageProfileU';
 import { PageQuotes } from './components/Pages/PageQuotes/PageQuotes';
 import { PageTattooists } from './components/Pages/PageTattooists/PageTattooists';
 import { Page404 } from './components/Pages/Page404/Page404';
+
 import { PageFormSe } from './components/Pages/PageFormSe/PageFormSe';
+import { PageRegistroT } from './components/Pages/PageRegistroT/PageRegistroT.jsx';
+import { PageRegistroU } from './components/Pages/PageRegistroU/PageRegistroU.jsx';
+
 
 
 
@@ -32,6 +36,8 @@ function App() {
               <Route path='/tatuadores' exact element= {<PageTattooists/>}/>
 
               <Route path='/IngresarSesion' exact element= {<PageFormSe/>}/>
+              <Route path='/RegistroUsuario' exact element= {<PageRegistroU/>}/>
+              <Route path='/RegistroTatuador' exact element= {<PageRegistroT/>}/>
 
 
           </Routes>

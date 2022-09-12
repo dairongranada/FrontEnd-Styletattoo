@@ -3,7 +3,7 @@ import './Home_CardsTattooists.scss'
 
 export const Home_CardsTattooists = ({ImgTattooists,NameTattooists,SocialTattooists}) => {
     return (
-        <div>
+        <div className='pather'>
             <div class="container">
                 <div class="card">
                     <div class="face facel">

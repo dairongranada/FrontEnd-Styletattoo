@@ -44,7 +44,7 @@ export const SearchTattoo = () => {
                       <img src={tattoo.image} alt={tattoo.name} />
                       <h3 className="member-name">{tattoo.name}</h3>
                       <p className="member-description">{tattoo.descripcion}</p>
-                      <a href="/perfilTatuadores" className="button">VER MI PERFIL!</a>
+                      <a href="/perfilTatuadores" className="buttonProfile">VER MI PERFIL!</a>
                   </div>
                 </div>
               })}

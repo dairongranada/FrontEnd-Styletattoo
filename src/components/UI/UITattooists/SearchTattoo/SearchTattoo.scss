@@ -114,7 +114,7 @@
     margin-top: 10px;
 }
 
-.button{
+.buttonProfile{
     text-decoration: none;
     color: white;
     background-color: #202020;
@@ -123,6 +123,8 @@
     margin-top: 1rem;
 }
 
-
+.buttonProfile:hover{
+    color: var(--colorOrange2);
+}
 
 

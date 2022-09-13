@@ -12,7 +12,7 @@ export const SearchTattoo = () => {
     const [searchTattoo, setsearchTattoo] = useState(tattoo)
     const filterTattoo = (event) =>{
         const data = event.target.value;
-        const filter = tattoo.filter(tattoo => tattoo.name.includes(data))
+        const filter = tattoo.filter  (tattoo => tattoo.name.includes(data))
         setsearchTattoo(filter);
     }
 
@@ -25,8 +25,20 @@ export const SearchTattoo = () => {
           sombras, realismo, sombras, color, realismo color, oriental, tradicional, 
           neotradicional, libre, liners, black work, black and grey y cover up</p>
       </div>
-      <input className="Filter_Tatto" onChange={filterTattoo} type="text" placeholder='Buscar Artista' />
-  
+      
+      <div className='contSearch'>
+        <div className="search-box">
+          <input className="Buscador12" onChange={filterTattoo} type="text" placeholder='Buscar Artista' />
+          <a href="##" className="material-symbols-outlined">
+              <i className="fas fa-search">
+                <svg xmlns="http://www.w3.org/2000/svg" className="input-icon" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+                </svg>
+              </i>
+          </a>
+        </div>
+      </div>
+ 
       <main className='main-contenido'>
         {searchTattoo.map((tattoo, index) => {
             return<div className="our-team-section" key={index}>
@@ -42,5 +54,3 @@ export const SearchTattoo = () => {
     </div>
   )
 }
-
-

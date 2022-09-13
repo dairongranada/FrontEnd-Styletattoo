@@ -4,7 +4,7 @@ import '../LayoutsProfileT/Profile.scss'
 import '../../../scss/base/_global.scss'
 import img1 from '../../../images/Tattos/portafolio1.jpg'
 import img2 from '../../../images/Tattos/portafolio2.jpg'
-import img3 from '../../../images/Tattos/portafolio3.jpg'
+import img3 from '../../../images/Tattos/portafolio10.jpg'
 
 import img4 from '../../../images/Tattos/portafolio4.jpg'
 import img5 from '../../../images/Tattos/portafolio5.jpg'
@@ -41,14 +41,26 @@ export const LayoutsProfileT = () => {
 
                     <div className='Trabajos'>
                         <div className='Tattos'>
-                            <img className='ContTatto' src={img1} alt="" />
-                            <img className='ContTatto' src={img2} alt="" />
-                            <img className='ContTatto' src={img3} alt="" />
+                            <div className='Tatto'>
+                                <img className='ContTatto' src={img1} alt="" />
+                            </div>
+                            <div className='Tatto'>
+                                <img className='ContTatto' src={img2} alt="" />
+                            </div>
+                            <div className='Tatto'>
+                                <img className='ContTatto' src={img3} alt="" />
+                            </div>
                         </div>
                         <div className='Tattos'>
-                            <img className='ContTatto' src={img4} alt="" />
-                            <img className='ContTatto' src={img5} alt="" />
-                            <img className='ContTatto' src={img6} alt="" />
+                            <div className='Tatto'>
+                                <img className='ContTatto' src={img4} alt="" />
+                            </div>
+                            <div className='Tatto'>
+                                <img className='ContTatto' src={img5} alt="" />
+                            </div>
+                            <div className='Tatto'>
+                                <img className='ContTatto' src={img6} alt="" />
+                            </div>
                         </div>
                     </div>
                 </div>

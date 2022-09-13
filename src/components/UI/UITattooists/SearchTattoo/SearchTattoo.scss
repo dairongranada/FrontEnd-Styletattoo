@@ -80,7 +80,6 @@
     justify-content: center;
 }
 .search-box{
-    background-color: var(--colorGray5);
     height: 50px;
     border-radius: 40px;
     padding: 10px;
@@ -101,6 +100,7 @@ svg :hover{
     border: none;
     outline: none;
     padding: 0;
+    border-bottom: 1px solid #fff;
     background: none;
     font-size: 1.1rem;
     transition: 0.5s ease;
@@ -109,13 +109,12 @@ svg :hover{
     text-align: center;
 }
 svg{
-    color: var(--colorOrange2);
+    color: var(--colorWhite2);
     float: right;
     width: 50px;
     font-size: 1.3rem;
     height: 27px;
     border-radius: 50%;
-    background: var(--colorGray5);
     display: flex;
     justify-content: center;
     align-items: center;

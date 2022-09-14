@@ -16,6 +16,8 @@ import { Page404 } from './components/Pages/Page404/Page404';
 import { PageFormSe } from './components/Pages/PageFormSe/PageFormSe';
 import { PageRegistroT } from './components/Pages/PageRegistroT/PageRegistroT.jsx';
 import { PageRegistroU } from './components/Pages/PageRegistroU/PageRegistroU.jsx';
+import { PageTattos } from './components/Pages/___PageTattos/PageTattos';
+import { PagePiercings } from './components/Pages/___PagePiercings/PagePiercings';
 
 
 
@@ -33,12 +35,14 @@ function App() {
               <Route path='/perfilUsuarios' exact element= {<PageProfileU/>}/>
               <Route path='/perfilTatuadores' exact element= {<PageProfileT/>}/>
               <Route path='/citas' exact element= {<PageQuotes/>}/>
-              <Route path='/tatuadores' exact element= {<PageTattooists/>}/>
+              <Route path='/artistas' exact element= {<PageTattooists/>}/>
 
               <Route path='/IngresarSesion' exact element= {<PageFormSe/>}/>
               <Route path='/RegistroUsuario' exact element= {<PageRegistroU/>}/>
               <Route path='/RegistroTatuador' exact element= {<PageRegistroT/>}/>
 
+              <Route path='/infoTatuajes' exact element= {<PageTattos/>}/>
+              <Route path='/infoPiercings' exact element= {<PagePiercings/>}/>
 
           </Routes>
       <Footer/>

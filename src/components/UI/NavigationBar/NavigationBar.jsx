@@ -21,7 +21,7 @@ export const NavigationBar = () => {
                 <ImgTemplate srcImg={logo} classN='logo' />
                 <ul className='menu-items'>
                     <li className='active'><a href="/" >INICIO</a></li>
-                    <li><a href="/Tatuadores">ARTISTAS</a></li>
+                    <li><a href="/artistas">ARTISTAS</a></li>
                     <li><a href="/citas">CITAS</a></li>
                 </ul>
                 <span onClick={menu} id='burguer' className="material-symbols-outlined">

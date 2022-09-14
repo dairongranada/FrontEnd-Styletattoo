@@ -13,10 +13,10 @@ export const Home_MainView = () => {
                     </ul>
                     <ul className="menu-horizontal">
                         <li>
-                            <a href="#" className='buttons_global_StyleTatto'>REGISTRATE COMO</a>
-                                <ul className="menu-vertical">
-                                <li><a href="#">USUARIO</a></li>
-                                <li><a href="#">ARTISTA</a></li>
+                            <ul className='buttons_global_StyleTatto'>REGISTRATE COMO</ul>
+                            <ul className="menu-vertical">
+                                <li><a href="/RegistroUsuario">USUARIO</a></li>
+                                <li><a href="/RegistroArtista">ARTISTA</a></li>
                             </ul>
                         </li>
                     </ul>

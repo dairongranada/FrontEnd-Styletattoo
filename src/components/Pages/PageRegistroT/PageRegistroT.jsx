@@ -4,7 +4,7 @@ import './PageRegistroT.scss'
 export const PageRegistroT = () => {
   return (
     <div>
-         <div className="Content_FormsPrincipal BackGround">
+         <div className="Content_FormsPrincipal BackGroundFormA">
             <div className="Content_Forms">
                 <form>
                     <h1>REGISTRO ARTISTAS</h1>
@@ -17,10 +17,11 @@ export const PageRegistroT = () => {
                             <label className='label_global_style'>Contraseña </label>
                         </div>
                         <div>
-                            <button className="buttons_global_StyleTatto">Iniciar sesión</button>
+                            <button className="buttons_global_StyleTatto">Registrarse</button>
                         </div>
                         <div className= "questions">
-                            <a href="/">Ya tienes una Cuenta?</a>
+                            <a href="/">¿Ya tienes una Cuenta?</a>
+                            <a href="/">¿Ya tienes una Cuenta?</a>
                         </div>
                 </form>
             </div>

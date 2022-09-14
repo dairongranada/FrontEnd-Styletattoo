@@ -19,7 +19,7 @@ export const LayoutsFormsSe = () => {
                             <button className="buttons_global_StyleTatto">Iniciar sesión</button>
                         </div>
                     <div className= "questions">
-                        <a href="/"> ¿A olvidado Su contraseña? </a>
+                        <a href="#"> ¿A olvidado Su contraseña? </a>
                         <a href="/">¿No tienes una Cuenta?</a>
                     </div>
                 </form>

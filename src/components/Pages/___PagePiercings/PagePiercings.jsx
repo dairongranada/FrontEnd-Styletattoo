@@ -4,6 +4,7 @@ export const PagePiercings = () => {
     return (
         <div>
             
+            
         </div>
     )
 }

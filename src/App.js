@@ -39,7 +39,7 @@ function App() {
 
               <Route path='/IngresarSesion' exact element= {<PageFormSe/>}/>
               <Route path='/RegistroUsuario' exact element= {<PageRegistroU/>}/>
-              <Route path='/RegistroTatuador' exact element= {<PageRegistroT/>}/>
+              <Route path='/RegistroArtista' exact element= {<PageRegistroT/>}/>
 
               <Route path='/infoTatuajes' exact element= {<PageTattos/>}/>
               <Route path='/infoPiercings' exact element= {<PagePiercings/>}/>

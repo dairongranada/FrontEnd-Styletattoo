@@ -18,6 +18,8 @@ import { PageRegistroT } from './components/Pages/PageRegistroT/PageRegistroT.js
 import { PageRegistroU } from './components/Pages/PageRegistroU/PageRegistroU.jsx';
 import { PageTattos } from './components/Pages/___PageTattos/PageTattos';
 import { PagePiercings } from './components/Pages/___PagePiercings/PagePiercings';
+import { PageConsejos } from './components/Pages/__PageConsejos/PageConsejos';
+
 
 
 
@@ -43,6 +45,7 @@ function App() {
 
               <Route path='/infoTatuajes' exact element= {<PageTattos/>}/>
               <Route path='/infoPiercings' exact element= {<PagePiercings/>}/>
+              <Route path='/consejos' exact element= {<PageConsejos/>}/>
 
           </Routes>
       <Footer/>

@@ -23,6 +23,8 @@ export const NavigationBar = () => {
                     <li className='active'><a href="/" >INICIO</a></li>
                     <li><a href="/artistas">ARTISTAS</a></li>
                     <li><a href="/citas">CITAS</a></li>
+                    <li><a href="/consejos">CONSEJOS</a></li>
+
                 </ul>
                 <span onClick={menu} id='burguer' className="material-symbols-outlined">
                     menu

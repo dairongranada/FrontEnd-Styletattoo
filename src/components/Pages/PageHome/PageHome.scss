@@ -23,11 +23,12 @@
 
 ////////////////////////////
 
-.SeeTattooists{
-    width: 100%; height: 120px;
+.SeeTattooists {
+    width: 100%;
+    height: 120px;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
 }
 
 
@@ -85,40 +86,40 @@
 }
 
 
-.menu-horizontal{
+.menuhorizontal{
 	list-style: none;
 	display: flex;
 	justify-content: space-around;
 }
-.menu-horizontal > li > a{
+.menuhorizontal > li > a{
 	display: block;
 	color: white;
 	text-decoration: none;
 }
 
-.menu-vertical{
+.menuvertical{
 	position: absolute;
 	display: none;
 	list-style: none;
 	width: 200px;
 	background-color: rgba(0, 0, 0, .5);
 }
-.menu-horizontal li:hover .menu-vertical{
+.menuhorizontal li:hover .menuvertical{
 	display: block;
 }
-.menu-vertical li:hover{
+.menuvertical li:hover{
 	background-color: var(--colorWhite);
     color: var(--colorBlack);
 }
 
-.menu-vertical li a{
+.menuvertical li a{
 	display: block;
 	color: white;
 	text-decoration: none;  
 	padding: 15px 15px 15px 20px;
 }
 
-.menu-vertical li a:hover{
+.menuvertical li a:hover{
     color: var(--colorBlack);
 
 }

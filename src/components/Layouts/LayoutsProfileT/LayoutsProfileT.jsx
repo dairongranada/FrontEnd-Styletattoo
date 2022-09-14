@@ -20,16 +20,21 @@ export const LayoutsProfileT = () => {
     <div className='contPather'>
         <div className='contPe'>
             <div className='contImg'>
+                
                 <img className='Profile' src={imgP} alt="" />
+
+
+
             </div>
+            <a href=""><span class="material-symbols-outlined">edit</span></a>
             <div className='contInfo'>
                 <div className='inf'><p>Nombre: Carlos</p></div>
                 <div className='inf'><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores tempore aperiam dolor sit.</p></div>
 
                 <div className='contButtons'>
                     <button className='buttons_global_StyleTatto'>Agendar Cita</button>
-                    <button className='buttons_global_StyleTatto'>Seguir</button>
-                    <button className='buttons_global_StyleTatto'>Editar</button>
+                    
+                   
                 </div>
             </div>
         </div>

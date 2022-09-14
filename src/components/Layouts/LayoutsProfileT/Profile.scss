@@ -32,6 +32,9 @@
             border-radius: 100%;
             // z-index: -1;
             animation: spin 3.5s linear infinite;
+            
+        }.material-symbols-outlined{
+            color: var(--colorOrange2);
         }
         @keyframes spin{
             to{ transform: rotate(360deg);}

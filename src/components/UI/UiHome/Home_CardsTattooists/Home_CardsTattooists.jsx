@@ -4,18 +4,18 @@ import './Home_CardsTattooists.scss'
 export const Home_CardsTattooists = ({ImgTattooists,NameTattooists,SocialTattooists}) => {
     return (
         <div className='pather'>
-            <div class="container">
-                <div class="card">
-                    <div class="face facel">
-                        <div class="content">
-                            <img src={ImgTattooists}/>
+            <div className="container">
+                <div className="cardsTattooists">
+                    <div className="face facel">
+                        <div className="content">
+                            <img src={ImgTattooists} alt={ImgTattooists} />
                         </div>
                     </div>
-                    <div class="face face2">
-                        <div class="content">
+                    <div className="face face2">
+                        <div className="content">
                             <p className='nameTattooists' >{NameTattooists}</p>
                             <p className='descripTattooists'href="/">{SocialTattooists}</p>
-                            <a href="#" className='btnA_menu'>Ver Mi Perfil</a>
+                            <a href="/perfilTatuadores" className='btnA_menu'>Ver Mi Perfil</a>
                         </div>
                     </div>
                 </div>

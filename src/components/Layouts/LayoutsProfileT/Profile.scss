@@ -9,14 +9,29 @@
         background-color: var(--colorGray);
         width: 33%;
         .contImg{
-            width: 50%;
+            max-width: 50%;
+            position: relative;
             margin-bottom: 25px;
             margin-left: 10%;
             .Profile{
                 width: 100%;
                 height: auto;
                 border-radius: 100%;
+                display: block;
             }
+        }.contImg::before{
+            content: "";
+            position: absolute;
+            inset: -15px;
+            border: 6px solid transparent;
+            border-top-color: #fff;
+            border-bottom-color: #fff;
+            border-radius: 100%;
+            // z-index: -1;
+            animation: spin 3s linear infinite;
+        }
+        @keyframes spin{
+            to{ transform: rotate(360deg);}
         }
         .contInfo{
             height: auto;
@@ -70,7 +85,7 @@
                     justify-content: space-around;
                     .Tatto{
                         width: 20%;
-                        height: 250px;
+                        height: 195px;
                         filter: grayscale(100%);
                         transition: 0.3s;
                         overflow: hidden;

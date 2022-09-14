@@ -52,6 +52,7 @@
         width: 100%;
         display: flex;justify-content: center;
         align-items: center; gap: 15rem; flex-wrap: wrap;
+        flex-direction: column;
     }
 
     .Services_content{
@@ -79,6 +80,7 @@
             align-items: center;
             gap: 7rem;
             flex-wrap: wrap;
+            flex-direction: column;
         }
     }
 }

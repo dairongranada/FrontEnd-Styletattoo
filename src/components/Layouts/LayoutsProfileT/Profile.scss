@@ -9,12 +9,15 @@
         background-color: var(--colorGray);
         width: 33%;
         .contImg{
-            max-width: 50%;
+            margin-top: 20px;
+            max-width: 180px;
             position: relative;
             margin-bottom: 25px;
             margin-left: 10%;
+            display: flex;
+            justify-content: center;
             .Profile{
-                width: 100%;
+                width: 90%;
                 height: auto;
                 border-radius: 100%;
                 display: block;
@@ -23,12 +26,12 @@
             content: "";
             position: absolute;
             inset: -15px;
-            border: 6px solid transparent;
+            border: 5px solid transparent;
             border-top-color: #fff;
             border-bottom-color: #fff;
             border-radius: 100%;
             // z-index: -1;
-            animation: spin 3s linear infinite;
+            animation: spin 3.5s linear infinite;
         }
         @keyframes spin{
             to{ transform: rotate(360deg);}

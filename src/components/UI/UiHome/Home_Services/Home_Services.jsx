@@ -11,12 +11,12 @@ export const Home_Services = ({srcImg}) => {
 
             <div className='Services' >
                 <div className='Services_content'>
-                    <a href="/tatuadores"><ImgTemplate srcImg={imgServices}/></a>
+                    <a href="/infoTatuajes"><ImgTemplate srcImg={imgServices}/></a>
                     <h1>Tatuajes</h1>
                 </div>
 
                 <div className='Services_content'>
-                    <a href="/tatuadores"><ImgTemplate srcImg={imgServicesTwo}/></a>
+                    <a href="/infoPiercings"><ImgTemplate srcImg={imgServicesTwo}/></a>
                     <h1>piercings</h1>
                 </div>
             </div>   

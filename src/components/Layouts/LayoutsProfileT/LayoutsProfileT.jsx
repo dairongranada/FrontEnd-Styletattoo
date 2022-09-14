@@ -1,4 +1,5 @@
-import React from 'react'
+import React , {useState} from 'react'
+import {ModalProfileT} from './ModalProfileT/ModalProfileT.jsx'
 import imgP from '../../../images/Tatuadores/tatuador1.png'
 import '../LayoutsProfileT/Profile.scss'
 import '../../../scss/base/_global.scss'
@@ -13,6 +14,8 @@ import img6 from '../../../images/Tattos/portafolio6.jpg'
 
 
 export const LayoutsProfileT = () => {
+    const [estadomodal, setEstadomodal] = useState(false)
+
   return (
     <div className='contPather'>
         <div className='contPe'>
@@ -21,9 +24,7 @@ export const LayoutsProfileT = () => {
             </div>
             <div className='contInfo'>
                 <div className='inf'><p>Nombre: Carlos</p></div>
-                <div className='inf'><p>Seguidores: 120.000</p></div>
-                <div className='inf'><p>Trabajos Subidos: 45</p></div>
-                <div className='inf'><p>Direccion: Cra5ta #19-30</p></div>
+                <div className='inf'><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores tempore aperiam dolor sit.</p></div>
 
                 <div className='contButtons'>
                     <button className='buttons_global_StyleTatto'>Agendar Cita</button>
@@ -42,30 +43,35 @@ export const LayoutsProfileT = () => {
                     <div className='Trabajos'>
                         <div className='Tattos'>
                             <div className='Tatto'>
-                                <img className='ContTatto' src={img1} alt="" />
+                                <img onClick={() => setEstadomodal(!estadomodal)} className='ContTatto' src={img1} alt="" />
                             </div>
                             <div className='Tatto'>
-                                <img className='ContTatto' src={img2} alt="" />
+                                <img onClick={() => setEstadomodal(!estadomodal)} className='ContTatto' src={img2} alt="" />
                             </div>
                             <div className='Tatto'>
-                                <img className='ContTatto' src={img3} alt="" />
+                                <img onClick={() => setEstadomodal(!estadomodal)} className='ContTatto' src={img3} alt="" />
                             </div>
                         </div>
                         <div className='Tattos'>
                             <div className='Tatto'>
-                                <img className='ContTatto' src={img4} alt="" />
+                                <img onClick={() => setEstadomodal(!estadomodal)} className='ContTatto' src={img4} alt="" />
                             </div>
                             <div className='Tatto'>
-                                <img className='ContTatto' src={img5} alt="" />
+                                <img onClick={() => setEstadomodal(!estadomodal)} className='ContTatto' src={img5} alt="" />
                             </div>
                             <div className='Tatto'>
-                                <img className='ContTatto' src={img6} alt="" />
+                                <img onClick={() => setEstadomodal(!estadomodal)} className='ContTatto' src={img6} alt="" />
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <ModalProfileT
+            estado = {estadomodal}
+            cambiarEstado = {setEstadomodal}
+        />
     </div>
     
   )

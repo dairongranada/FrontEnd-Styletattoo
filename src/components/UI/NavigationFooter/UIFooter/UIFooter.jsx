@@ -24,7 +24,7 @@ export const UIFooter = () => {
                             <span><a href="/">Home</a></span> 
                         </div>
                         <div className="place">
-                            <a href="/Tatuadores"><span className="material-symbols-outlined"> recent_actors </span></a>
+                            <a href="/artistas"><span className="material-symbols-outlined"> recent_actors </span></a>
                             <span><a href="/artistas">Artistas</a></span> 
                         </div>
                         <div className="place">

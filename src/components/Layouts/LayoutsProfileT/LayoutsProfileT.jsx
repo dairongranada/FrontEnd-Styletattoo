@@ -15,6 +15,13 @@ import '../../../scss/base/_global.scss'
 
 export const LayoutsProfileT = () => {
     const [estadomodal, setEstadomodal] = useState(false)
+    
+    //  C O N T A D O R    D E    M E   G U S T A
+    const [contador, setContador] = useState(0)
+
+    const count = () => {
+        setContador(1)
+    }
 
   return (
     <div className='contPather'>
@@ -28,8 +35,8 @@ export const LayoutsProfileT = () => {
                             <div className='editProfile'><a href="#"><span className="material-symbols-outlined">edit</span>Editar</a></div>
                             <div><label className='labelNameArtist'>Nombre</label><p>Carlos Melo Toca</p></div>
                             <div className='favoriteSymbols'
-                                ><span class="material-symbols-outlined">favorite</span>
-                                <p>50</p>
+                                ><span onClick={count} class="material-symbols-outlined">favorite</span>
+                                <p>{contador}</p>
                             </div>
                         </div>
                     </div>

@@ -35,7 +35,7 @@ export const LayoutsProfileT = () => {
                             <div className='editProfile'><a href="#"><span className="material-symbols-outlined">edit</span>Editar</a></div>
                             <div><label className='labelNameArtist'>Nombre</label><p>Carlos Melo Toca</p></div>
                             <div className='favoriteSymbols'
-                                ><span onClick={count} class="material-symbols-outlined">favorite</span>
+                                ><span onClick={count} className="material-symbols-outlined">favorite</span>
                                 <p>{contador}</p>
                             </div>
                         </div>

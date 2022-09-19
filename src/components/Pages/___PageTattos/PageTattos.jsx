@@ -1,6 +1,6 @@
 import React from 'react'
 import './PageTattos.scss'
-import img4 from '../../../images/Tattos/portafolio7.jpg'
+import img4 from '../../../images/Tattos/page.jpg'
 
 export const PageTattos = () => {
   return (

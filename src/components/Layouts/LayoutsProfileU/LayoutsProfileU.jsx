@@ -13,7 +13,7 @@ export const LayoutsProfileU = () => {
           <div className='contImgUser'>
             <img className='User' src={user1} alt="" />
             <div className='contLa'>
-              <a href=""><span class="material-symbols-outlined">edit</span> Editar</a>
+              <a href=""><span className="material-symbols-outlined">edit</span> Editar</a>
             </div>
           </div>
           <div className='contInfoUser'>

@@ -17,7 +17,6 @@ const sendEmail = (event)=>{
         <div className='AboutUs box'>
             <h2>{NameAbout}<span className={classSpanLogo}>{NameSpanLogo}</span></h2>
             <div className="content">
-
                 <form onSubmit={sendEmail}>
                     <div className='email'>
                         <div className="text">Email</div>

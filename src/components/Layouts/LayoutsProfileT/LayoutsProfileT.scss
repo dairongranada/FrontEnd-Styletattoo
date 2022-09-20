@@ -27,8 +27,10 @@
                 }
 
                 .labelNameArtist {
-                    color: var(--bs-gray-700);
-                    width: 11px;
+                    color: var(--colorGray3);
+                    font-size: 15px;
+                    width: 9px;
+
                 }
 
                 .favoriteSymbols{
@@ -38,6 +40,8 @@
 
                     p{font-size: 16px; color: var(--colorOrange2);} 
                 }
+
+                p{color: var(--colorWhite2); }
 
             }
 
@@ -197,7 +201,7 @@
 
 //  R E S P O N S I V E
 
-@media(max-width:900px){
+@media(max-width:1000px){
     .contPather {
         flex-direction: column;
         align-items: center;
@@ -218,11 +222,18 @@
 }
 
 
-@media(max-width:500px){
+@media(max-width:600px){
     .contPe {
         .ProfileArtistic {
             flex-direction: column;
             align-items: center;
+        }
+
+        .contInfo{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: center;
         }
     }
 }

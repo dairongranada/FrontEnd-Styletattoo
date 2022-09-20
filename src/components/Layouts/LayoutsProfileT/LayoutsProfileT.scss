@@ -92,6 +92,8 @@
 
     }
 
+    
+
 /////////////////////////////////////////////////////
     // P O R T A F O L I O 
     .ContTrabajos{
@@ -140,13 +142,14 @@
 
                     
                     .Tatto{
-                        width: 150px;
+                        width: 80vh;
                         height: 195px;
                         filter: grayscale(100%);
                         transition: 0.3s;
                         overflow: hidden;
                         position: relative;
-
+                        display: flex;
+                        gap: 20px;
 
 
                         .ContTatto{
@@ -166,6 +169,29 @@
             }
         }
     }
+    .modalImg{
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: rgba(0,0,0,.5);
+        .contModal{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .imge{
+                height: 70%;
+            }
+            svg{
+                position: absolute;
+                transform: translate(31vh, -31vh);
+            }
+        }
+    }
+    
 }
 
 

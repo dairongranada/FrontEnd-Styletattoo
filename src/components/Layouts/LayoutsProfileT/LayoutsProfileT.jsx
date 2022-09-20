@@ -1,6 +1,6 @@
 import React , {useState} from 'react'
-import {ModalProfileT} from './ModalProfileT/ModalProfileT.jsx'
 import imgP from '../../../images/Tatuadores/tatuador1.png'
+// import {RViewerTrigger, RViewer} from 'react-viewerjs'
 
 import img1 from '../../../images/Tattos/portafolio1.jpg'
 import img2 from '../../../images/Tattos/portafolio2.jpg'
@@ -14,13 +14,73 @@ import '../LayoutsProfileT/LayoutsProfileT.scss'
 import '../../../scss/base/_global.scss'
 
 export const LayoutsProfileT = () => {
-    const [estadomodal, setEstadomodal] = useState(false)
     
     //  C O N T A D O R    D E    M E   G U S T A
     const [contador, setContador] = useState(0)
 
     const count = () => {
         setContador(1)
+    }
+
+
+
+
+    // A R R A Y S   A P I S
+
+    const imagenes = [
+        {
+            img: img1,
+            id: 1
+        },
+        {
+            img: img2,
+            id: 2
+        },
+        {
+            img: img3,
+            id:3
+        }
+    ]
+
+
+    const imganes2 = [
+        {
+            img: img4,
+            id: 4
+        },
+        {
+            img: img5,
+            id: 5
+        },
+        {
+            img: img6,
+            id:6
+        }
+    ]
+
+    const [modal, setModal] = useState(false)
+    const [tempimg, setTempimg] = useState('')
+
+    const render =()=> {
+        const firtsModal = document.getElementById('modalImg')
+        firtsModal.style.visibility = "hidden"
+
+    }
+    window.addEventListener('load', render)
+
+    const getImg = (img) => {
+        const modaL = document.getElementById('modalImg')
+        modaL.style.visibility = "visible"
+
+       
+        setTempimg(img)
+        setModal(true)
+    }
+
+    const ocultarModal =() => {
+        const modaL = document.getElementById('modalImg')
+        modaL.style.visibility = "hidden"
+
     }
 
   return (
@@ -66,24 +126,21 @@ export const LayoutsProfileT = () => {
                     <div className='Trabajos'>
                         <div className='Tattos'>
                             <div className='Tatto'>
-                                <img onClick={() => setEstadomodal(!estadomodal)} className='ContTatto' src={img1} alt="" />
-                            </div>
-                            <div className='Tatto'>
-                                <img onClick={() => setEstadomodal(!estadomodal)} className='ContTatto' src={img2} alt="" />
-                            </div>
-                            <div className='Tatto'>
-                                <img onClick={() => setEstadomodal(!estadomodal)} className='ContTatto' src={img3} alt="" />
+                                {imagenes.map((imagen, index) => {
+                                    return(
+                                        <img onClick={() => getImg(imagen.img)} key={index} className='ContTatto' src={imagen.img} alt="" />
+                                    )
+                                })}
                             </div>
                         </div>
+
                         <div className='Tattos'>
                             <div className='Tatto'>
-                                <img onClick={() => setEstadomodal(!estadomodal)} className='ContTatto' src={img4} alt="" />
-                            </div>
-                            <div className='Tatto'>
-                                <img onClick={() => setEstadomodal(!estadomodal)} className='ContTatto' src={img5} alt="" />
-                            </div>
-                            <div className='Tatto'>
-                                <img onClick={() => setEstadomodal(!estadomodal)} className='ContTatto' src={img6} alt="" />
+                                {imganes2.map((imagen, index) => {
+                                    return(
+                                        <img onClick={() => getImg(imagen.img)} key={index} className='ContTatto' src={imagen.img} alt="" />
+                                    )
+                                })}
                             </div>
                         </div>
                     </div>
@@ -91,8 +148,18 @@ export const LayoutsProfileT = () => {
             </div>
         </div>
 
-        <ModalProfileT estado = {estadomodal}cambiarEstado = {setEstadomodal}/>
+
+
+        <div id='modalImg' className='modalImg ' >
+            <div className='contModal'>
+                <img className='imge' src={tempimg} alt="" />
+                <svg id='close' onClick={() => ocultarModal()} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-x-lg" viewBox="0 0 16 16">
+                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                </svg>
+            </div>
+        </div>
+
+
     </div>
-    
   )
 }

@@ -19,9 +19,7 @@ export const LayoutsProfileT = () => {
     //  C O N T A D O R    D E    M E   G U S T A
     const [contador, setContador] = useState(0)
 
-    const count = () => {
-        setContador(1)
-    }
+    const count = () => {setContador(1)}
 
   return (
     <div className='contPather'>
@@ -34,6 +32,7 @@ export const LayoutsProfileT = () => {
                         <div className='editSeparator'>
                             <div className='editProfile'><a href="#"><span className="material-symbols-outlined">edit</span>Editar</a></div>
                             <div><label className='labelNameArtist'>Nombre</label><p>Carlos Melo Toca</p></div>
+                            <div><label className='labelNameArtist'>Correo</label><p>CorreoPrueba@StyleTatto.co</p></div>
                             <div className='favoriteSymbols'
                                 ><span onClick={count} className="material-symbols-outlined">favorite</span>
                                 <p>{contador}</p>
@@ -50,7 +49,7 @@ export const LayoutsProfileT = () => {
                         </p>
                     </div>
                     <div className='contButtons'>
-                        <button className='buttons_global_StyleTatto'>Agendar Cita</button>
+                        <button className='buttons_global_StyleTatto'>Agendar cita</button>
                     </div>
                 </div>
         </div>

@@ -56,7 +56,6 @@ export const LayoutsProfileT = () => {
         }
     ]
 
-    const [modal, setModal] = useState(false)
     const [tempimg, setTempimg] = useState('')
 
     const render =()=> {
@@ -72,7 +71,6 @@ export const LayoutsProfileT = () => {
 
        
         setTempimg(img)
-        setModal(true)
     }
 
     const ocultarModal =() => {

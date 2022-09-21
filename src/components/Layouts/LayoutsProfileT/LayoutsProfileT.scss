@@ -174,12 +174,11 @@
         }
     }
     .modalImg{
-        width: 100vw;
-        height: 100vh;
-        position: fixed;
-        top: 0;
-        left: 0;
-        background: rgba(0,0,0,.5);
+        visibility: hidden;
+        position: fixed; z-index: 3;
+        top:0px; width: 100%; height:100%;
+        backdrop-filter: blur(12px); /* EFECTO BLUR*/
+        background-color: rgba(0, 0, 0, 0.3);
         .contModal{
             width: 100%;
             height: 100%;
@@ -187,16 +186,20 @@
             justify-content: center;
             align-items: center;
             .imge{
-                height: 70%;
+                height: 450px;
+                box-shadow: 0 20px 50px rgba(19, 19, 19, 0.8);
+            
             }
             svg{
                 position: absolute;
+                color:var(--colorWhite);
                 transform: translate(31vh, -31vh);
             }
         }
     }
     
 }
+
 
 
 //  R E S P O N S I V E
@@ -236,5 +239,19 @@
             justify-content: center;
         }
     }
+    .contPather {
+        .modalImg{
+            .contModal{
+                svg {
+                    position: absolute;
+                    transform: translate(28vh, -32vh);
+                }
+    
+                .imge {height: 350px;}
+            } 
+        } 
+    }
+
+
 }
 

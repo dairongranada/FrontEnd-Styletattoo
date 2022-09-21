@@ -78,7 +78,6 @@ export const LayoutsProfileT = () => {
     const ocultarModal =() => {
         const modaL = document.getElementById('modalImg')
         modaL.style.visibility = "hidden"
-
     }
 
   return (
@@ -100,7 +99,6 @@ export const LayoutsProfileT = () => {
                         </div>
                     </div>
                 </div>    
-
                 <div className='contInfo'>
                     <div className='infoDescription'>
                         <p>Lorem ipsum dolor sit amet consectetur 
@@ -113,10 +111,7 @@ export const LayoutsProfileT = () => {
                     </div>
                 </div>
         </div>
-
-
-
-        <div className='ContTrabajos'>
+        <div className ='ContTrabajos'>
             <div className='contPortafolio'>
                 <div className='contPortafolio2'>
                     <div className='Portafolio'>
@@ -149,7 +144,7 @@ export const LayoutsProfileT = () => {
 
 
 
-        <div id='modalImg' className='modalImg ' >
+        <div id='modalImg' className='modalImg'>
             <div className='contModal'>
                 <img className='imge' src={tempimg} alt="" />
                 <svg id='close' onClick={() => ocultarModal()} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-x-lg" viewBox="0 0 16 16">

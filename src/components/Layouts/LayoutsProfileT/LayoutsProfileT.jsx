@@ -75,7 +75,7 @@ export const LayoutsProfileT = () => {
     const confirmUp = () => {
         const modaL = document.getElementById('contmodalUp')
         modaL.style.visibility = "hidden"
-        
+
     }
 
     const imageUp =() => {

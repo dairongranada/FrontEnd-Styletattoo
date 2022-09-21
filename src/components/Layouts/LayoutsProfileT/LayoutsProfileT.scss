@@ -1,6 +1,7 @@
 .contPather{
     display: flex;
     background-color: var(--colorGray);
+    padding: 0 1.524rem ;
 
     .contPe{
         display: flex;
@@ -8,8 +9,10 @@
         justify-content: center;align-items: center;
         padding: 25px;
         background-color: var(--colorGray);
-        width: 40%;
+        width: 35%;
+        box-shadow: 1px 2px 10px black;
         margin-top: 2rem;
+        height: 400px;
 
         .ProfileArtistic{
             display: flex;align-items: flex-end; gap: 3rem;

@@ -13,7 +13,7 @@ import '../../../scss/base/_global.scss'
 export const LayoutsProfileT = () => {
     
     //  C O N T A D O R    D E    M E   G U S T A
-    
+
     const [contador, setContador] = useState(0)
 
     const count = () => {setContador(1)}
@@ -100,7 +100,7 @@ export const LayoutsProfileT = () => {
                     })}
                     <div className='infArtist'>
                     <div className='editSeparator'>
-                            <div className='editProfile'><a href="#"><span className="material-symbols-outlined">edit</span>Editar</a></div>
+                            <div className='editProfile'><a  onClick={() => imageUp()}  href="#"><span className="material-symbols-outlined">edit</span>Editar</a></div>
                             <div><label className='labelNameArtist'>Nombre</label><p>Carlos Melo Toca</p></div>
                             <div><label className='labelNameArtist'>Correo</label><p>CorreoPrueba@StyleTatto.co</p></div>
                             <div className='favoriteSymbols'

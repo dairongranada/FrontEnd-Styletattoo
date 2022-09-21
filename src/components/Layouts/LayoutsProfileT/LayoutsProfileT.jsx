@@ -37,11 +37,7 @@ export const LayoutsProfileT = () => {
         {
             img: img3,
             id:3
-        }
-    ]
-
-
-    const imganes2 = [
+        },
         {
             img: img4,
             id: 4
@@ -55,6 +51,7 @@ export const LayoutsProfileT = () => {
             id:6
         }
     ]
+
 
     const [tempimg, setTempimg] = useState('')
 
@@ -126,7 +123,7 @@ export const LayoutsProfileT = () => {
                             </div>
                         </div>
 
-                        <div className='Tattos'>
+                        {/* <div className='Tattos'>
                             <div className='Tatto'>
                                 {imganes2.map((imagen, index) => {
                                     return(
@@ -134,7 +131,7 @@ export const LayoutsProfileT = () => {
                                     )
                                 })}
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>

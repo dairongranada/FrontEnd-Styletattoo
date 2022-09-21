@@ -1,11 +1,8 @@
 import React , {useState} from 'react'
 import imgP from '../../../images/Tatuadores/tatuador1.png'
-// import {RViewerTrigger, RViewer} from 'react-viewerjs'
-
 import img1 from '../../../images/Tattos/portafolio1.jpg'
 import img2 from '../../../images/Tattos/portafolio2.jpg'
 import img3 from '../../../images/Tattos/portafolio10.jpg'
-
 import img4 from '../../../images/Tattos/portafolio4.jpg'
 import img5 from '../../../images/Tattos/portafolio5.jpg'
 import img6 from '../../../images/Tattos/portafolio6.jpg'
@@ -16,14 +13,21 @@ import '../../../scss/base/_global.scss'
 export const LayoutsProfileT = () => {
     
     //  C O N T A D O R    D E    M E   G U S T A
+    
     const [contador, setContador] = useState(0)
 
     const count = () => {setContador(1)}
 
+    // A R R A Y S   A P I  T A T U A D O R
 
+    const tatuador = [
+        {
+            tatu: imgP,
+            id: 1
+        },
+        ]
 
-
-    // A R R A Y S   A P I S
+    // A R R A Y S   A P I   P O R T A F O L I O
 
     const imagenes = [
         {
@@ -55,11 +59,9 @@ export const LayoutsProfileT = () => {
 
     const [tempimg, setTempimg] = useState('')
 
-    const getImg = (img) => {
+    const getImg = (img , tatu) => {
         const modaL = document.getElementById('modalImg')
         modaL.style.visibility = "visible"
-
-       
         setTempimg(img)
     }
 
@@ -91,9 +93,13 @@ export const LayoutsProfileT = () => {
 
         <div className='contPe'>   
                 <div className='ProfileArtistic'>
-                    <div className='contImg'><img className='Profile' src={imgP} alt=""/></div>
+                {tatuador.map((person, index) => {
+                    return(
+                    <div className='contImg'><img key={index} className='Profile' src={person.tatu} alt=""/></div>
+                    )
+                    })}
                     <div className='infArtist'>
-                        <div className='editSeparator'>
+                    <div className='editSeparator'>
                             <div className='editProfile'><a href="#"><span className="material-symbols-outlined">edit</span>Editar</a></div>
                             <div><label className='labelNameArtist'>Nombre</label><p>Carlos Melo Toca</p></div>
                             <div><label className='labelNameArtist'>Correo</label><p>CorreoPrueba@StyleTatto.co</p></div>
@@ -135,16 +141,6 @@ export const LayoutsProfileT = () => {
                                 })}
                             </div>
                         </div>
-
-                        {/* <div className='Tattos'>
-                            <div className='Tatto'>
-                                {imganes2.map((imagen, index) => {
-                                    return(
-                                        <img onClick={() => getImg(imagen.img)} key={index} className='ContTatto' src={imagen.img} alt="" />
-                                    )
-                                })}
-                            </div>
-                        </div> */}
                     </div>
                 </div>
             </div>

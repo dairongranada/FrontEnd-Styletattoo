@@ -60,10 +60,8 @@
                 width: 100%;
                 display: flex;
                 
-                
                 button{
                     width: 100%;
-                    cursor: pointer;
                 }
             }
         }
@@ -161,17 +159,18 @@
 
                     
                     .Tatto{
-                        width: 80%;
+                        width: 100%;
                         height: auto;
                         filter: grayscale(100%);
                         transition: 0.3s;
                         overflow: hidden;
                         position: relative;
                         display: flex;
-                        gap: 20px;
+                        justify-content: center;
+                        // gap: 20px;
                         flex-direction: row;
                         flex-wrap: wrap;
-                        gap: 2.5rem;
+                        gap: 1.5rem;
                         .contImageT{
                             width: 150px;
                             height: 200px;

@@ -117,7 +117,9 @@ export const LayoutsProfileT = () => {
                             <div className='Tatto'>
                                 {imagenes.map((imagen, index) => {
                                     return(
-                                        <img onClick={() => getImg(imagen.img)} key={index} className='ContTatto' src={imagen.img} alt="" />
+                                        <div className='contImageT'>
+                                            <img onClick={() => getImg(imagen.img)} key={index} className='ContTatto' src={imagen.img} alt="" />
+                                        </div>
                                     )
                                 })}
                             </div>

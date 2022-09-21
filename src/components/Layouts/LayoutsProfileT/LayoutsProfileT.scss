@@ -141,7 +141,7 @@
                     display: flex;
                     justify-content: space-around;
                     flex-wrap: wrap;
-                    gap: 2rem;
+                    // gap: 2rem;
 
 
                     
@@ -156,19 +156,24 @@
                         gap: 20px;
                         flex-direction: row;
                         flex-wrap: wrap;
-
-
-                        .ContTatto{
+                        gap: 2.5rem;
+                        .contImageT{
                             width: 150px;
                             height: 200px;
-                            transition: 0.3s;
-                            cursor: pointer;
-
-                        }.ContTatto:hover{
-                            width: 160px;
-                            height: 210px;
-                            transition: 0.4s;
+                            
+                            .ContTatto{
+                                width: 150px;
+                                height: 200px;
+                                transition: 0.3s;
+                                cursor: pointer;
+    
+                            }.ContTatto:hover{
+                                width: 170px;
+                                height: 220px;
+                                transition: 0.4s;
+                            }
                         }
+
 
                     }
                     .Tatto:hover{filter: grayscale(0);}

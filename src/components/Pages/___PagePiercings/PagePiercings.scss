@@ -61,6 +61,10 @@
             height: auto;
             display: flex;
             justify-content: end;
+
+            li{
+                margin-right: 60px;
+            }
         }
     } 
 }

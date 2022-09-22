@@ -251,6 +251,45 @@
     
 }
 
+#editprofile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .contButtonUp{ 
+       
+        .buttons_global_StyleTatto{
+            position: absolute;
+            transform: translate(-1px, -20px);
+            width: 17%;
+            background-color: var(--colorGray);
+            text-align: center;
+            .confirmarUp{
+                opacity: 0;
+                position: absolute;
+                top: 0;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        #btnConfirmar{
+            margin-top: 13%;
+            height: 55px;
+        }
+
+        #btneditemail{
+            margin-top: 90px;
+            height: 55px;
+        }
+
+        #btneditname{
+            margin-top: 9%;
+            height: 55px;
+        }
+}
+}
 
 
 //  R E S P O N S I V E

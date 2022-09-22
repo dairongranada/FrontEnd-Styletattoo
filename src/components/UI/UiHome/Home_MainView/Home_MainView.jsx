@@ -12,15 +12,8 @@ export const Home_MainView = () => {
                         <li><a className='buttons_global_StyleTatto' href="/IngresarSesion">INICIAR SESION</a></li>
                     </ul>
                     <ul className="menuhorizontal">
-                        <li>
-                            <ul className='buttons_global_StyleTatto'>REGISTRATE COMO</ul>
-                            <ul className="menuvertical">
-                                <li><a href="/RegistroUsuario">USUARIO</a></li>
-                                <li><a href="/RegistroArtista">ARTISTA</a></li>
-                            </ul>
-                        </li>
+                        <li><a className='buttons_global_StyleTatto' href="/Registro">REGISTRATE !!</a></li>
                     </ul>
-
                 </div>
         </section>
     )

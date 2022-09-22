@@ -1,5 +1,10 @@
 
-.BackGround{background-image: url('../.././../images/Fondos/Login.jpg');}
+.BackGroundFormA{
+    background-image: url('../.././../images/Fondos/Login.jpg');
+    width: 100%;
+    height: 100vh;
+    text-decoration:none;
+}
 
 
 
@@ -25,38 +30,40 @@
 
         // Div
         .inputContent{
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
             position: relative;
-            margin-top: 36px;
+            margin-top: 16px;
 
             // Input
-            .input_global_style{
-                margin-top: 20px;
+            .input_global_styleRegistro{
                 display: block;
-                margin: bottom 20px;
-                width: 100%;
-                font-size: 15px;
-                font-weight: 400;
-
+                width: 150px;
+                font-weight: 500;
             }
+
+            .EmailInput{width: 100%;}
             
             // Label
-            .label_global_style{
+            .label_global_styleRegistro{
                 position: absolute;
                 top: 10px;
-                font-weight: 300;
-                left: 5px;
+                margin-top: 8px;
+                font-size: 13px;
+                font-weight: 400;
                 transition: .3s ;
                 pointer-events: none;
                 color: var(--colorGray3);
             }
     
-            .input_global_style:focus~.label_global_style,.input_global_style:valid~.label_global_style{
+            .input_global_styleRegistro:focus~.label_global_styleRegistro,.input_global_styleRegistro:valid~.label_global_styleRegistro{
                 top: -10px;
                 color: var(--colorWhite2);
             }
     
-            .input_global_style[type="text"],
-            .input_global_style[type="password"]{  /* Aca lo que hice fue solo modificar los inputs de text y password */
+            .input_global_styleRegistro[type="text"],
+            .input_global_styleRegistro[type="password"]{  /* Aca lo que hice fue solo modificar los inputs de text y password */
                 border: none;
                 border-bottom: 1px solid #fff;
                 background: transparent;
@@ -101,7 +108,7 @@
 
 
 @media(max-width:480px){
-    .buttons_global_StyleTatto{
+    .buttons_global_StyleRegistroTatto{
         font-size: 18px;
         width: 250px;
     }
@@ -117,19 +124,5 @@
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { UiAboutUs } from '.././UiAboutUs/UiAboutUs'
 
 export const UIFooter = () => {
@@ -20,16 +21,16 @@ export const UIFooter = () => {
                     <h2>Navegar<span className="material-symbols-outlined arrow">arrow_downward </span></h2>
                     <div className="content">
                         <div className="place">
-                            <a href="/"><span className="material-symbols-outlined">house</span> </a>                           
-                            <span><a href="/">Home</a></span> 
+                            <Link to="/"><span className="material-symbols-outlined">house</span></Link>                           
+                            <span><Link to="/">Home</Link></span> 
                         </div>
                         <div className="place">
-                            <a href="/artistas"><span className="material-symbols-outlined"> recent_actors </span></a>
-                            <span><a href="/artistas">Artistas</a></span> 
+                            <Link to="/artistas"><span className="material-symbols-outlined"> recent_actors </span></Link>
+                            <span><Link to="/artistas">Artistas</Link></span> 
                         </div>
                         <div className="place">
-                            <a href="/Citas"><span className="material-symbols-outlined"> outgoing_mail </span></a>
-                            <span><a href="/Citas">Citas</a></span> 
+                            <Link to="/Citas"><span className="material-symbols-outlined"> outgoing_mail </span></Link>
+                            <span><Link to="/Citas">Citas</Link></span> 
                         </div>
                     </div>
                 </div>
@@ -37,7 +38,7 @@ export const UIFooter = () => {
             </div>
             <div className="botton">
                 <center>
-                    <span className='Credits'>Create By <a href="/">Style Tatto</a>  |  </span>
+                    <span className='Credits'>Create By <Link to="/">Style Tatto</Link>  |  </span>
                     <span>©</span> <span>2022 All rights reserved.</span>
                 </center>
             </div>

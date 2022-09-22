@@ -59,15 +59,20 @@ export const LayoutsProfileT = () => {
 
     const [tempimg, setTempimg] = useState('')
 
+    const [temperfil, setTemperfil] = useState('')
+
     const getImg = (img , tatu) => {
         const modaL = document.getElementById('modalImg')
         modaL.style.visibility = "visible"
         setTempimg(img)
+        setTemperfil(tatu)
     }
 
     const ocultarModal =() => {
         const modaL = document.getElementById('modalImg')
+        const perfil = document.getElementById('modalperfil')
         modaL.style.visibility = "hidden" 
+        perfil.style.visibility = "hidden"
     }
 
     const ocultarImageUp= () => {
@@ -82,6 +87,11 @@ export const LayoutsProfileT = () => {
         modaL.style.visibility = "hidden"
         editprofile.style.visibility = "hidden"
 
+    }
+
+    const openimgperfil = () => {
+        const modal = document.getElementById('modalperfil')
+        modal.style.visibility = "visible"
     }
 
     const imageUp =() => {
@@ -103,7 +113,7 @@ export const LayoutsProfileT = () => {
                 <div className='ProfileArtistic'>
                 {tatuador.map((person, index) => {
                     return(
-                    <div className='contImg'><img key={index} className='Profile' src={person.tatu} alt=""/></div>
+                    <div  onClick={() => openimgperfil()}  className='contImg'><img key={index} className='Profile' src={person.tatu} alt=""/></div>
                     )
                     })}
                     <div className='infArtist'>
@@ -164,7 +174,21 @@ export const LayoutsProfileT = () => {
                 </svg>
             </div>
         </div>
-        
+            {tatuador.map((tatuador, index) => {
+
+                                return(
+                                    <div id='modalperfil' className='modalImg'>
+                                    <div className='contModal'>
+                                        <img onClick={() => getImg(tatuador.tatu)}  key={index} className='imge' src={tatuador.tatu} alt="" />
+                                        <svg id='close' onClick={() => ocultarModal()} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-x-lg" viewBox="0 0 16 16">
+                                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                                </svg>
+                             </div>
+                         </div>
+                )
+       
+                }
+            )}
 
         <div id='contmodalUp' className='modalImg'>
             <div className='contButtonUp'>
@@ -179,7 +203,7 @@ export const LayoutsProfileT = () => {
                 <button onClick={() => confirmUp()} id='btnConfirmar' className='buttons_global_StyleTatto'>Confirmar</button>
             </div>
         </div>
-        
+
 
         <div id='editprofile' className='modalImg'>
             <div className='contButtonUp'>

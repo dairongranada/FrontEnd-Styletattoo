@@ -1,0 +1,66 @@
+*{
+    font-family: Rajdhani,sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.BigCont{
+    width: 100%;
+    height: auto;
+    background-image: url('../../../images/Fondos/contact.jpg');
+    background-size: cover; 
+    .ContInfoP{
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.686);
+        padding: 7%;
+        .InfImgO{
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: space-around;
+            .ContInfor{
+                width: 40%;
+                height: auto;
+                h3{
+                    margin-bottom: 30px;
+                    font-size: 35px;
+                }
+            }
+            .contImg{
+                width: 40%;
+                height: 40%;
+                box-shadow: 1px 8px 10px black;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+        .InfImgT{
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: space-around;
+            margin-top: 55px;
+            .contImgT{
+                width: 40%;
+                height: 25%;
+                box-shadow: 1px 8px 10px black;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }   
+            }
+            .ContInforT{
+                width: 45%;
+                height: auto;
+            }
+        }
+        .ContViewButton{
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: end;
+        }
+    } 
+}

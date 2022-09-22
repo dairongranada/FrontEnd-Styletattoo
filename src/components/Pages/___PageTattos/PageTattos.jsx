@@ -14,6 +14,7 @@ export const PageTattos = () => {
               Expedita, quas ad quae commodi dolore ipsam voluptatum voluptate labore natus omnis unde laboriosam exercitationem nemo quo, reiciendis et pariatur qui repellat vitae neque magni quasi adipisci a sunt? Impedit?
               Magni veritatis consequuntur sed reprehenderit mollitia voluptatem, temporibus atque. Non laborum amet veritatis corrupti. Harum velit iusto quasi dolorum totam voluptatibus laboriosam magni. Fugit, mollitia sunt. Voluptatem accusamus nostrum temporibus!
             </p>
+            <li><a className='buttons_global_StyleTatto' href="/artistas">MAS</a></li>
         </div>
         <div className='contImg'>
           <img src={tatu} alt="" />

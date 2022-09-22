@@ -1,23 +1,24 @@
 import React from 'react'
 import './PageTattos.scss'
-import img4 from '../../../images/Tattos/page.jpg'
+import tatu from '../../../images/Tattos/pircings_dark.jpg'
 
 export const PageTattos = () => {
   return (
-    <div> 
-      <img src={img4} alt="" />
-      <div className="page-tattos">
-        <h1>TATTO</h1>
-        <p>Cuida bien tu tatuaje
-El cuidado de tu nuevo tatuaje depende del tipo y la magnitud del trabajo realizado. No obstante, normalmente, tendrás que tener los siguientes cuidados:
-
-Mantén la piel tatuada limpia. Usa agua y jabón común con suavidad. Mientras te duchas, evita los chorros de agua directos sobre la piel recién tatuada. Para secar el área, da toques suaves, no frotes.
-Usa humectante. Aplica un humectante suave sobre la piel tatuada, varias veces al día.
-Evita la exposición al sol. No expongas el área tatuada al sol durante por lo menos algunas semanas.
-Evita nadar. Mantente fuera de piscinas, tinas de agua caliente, ríos, lagos y otras masas de agua mientras tu tatuaje se cura.
-Elije la ropa con cuidado. No uses nada que podría adherirse al tatuaje.
-Espera hasta 2 semanas para que se cure. No quites las costras, esto aumenta el riesgo de infección y puede dañar el diseño y provocar cicatrices.
-Si piensas que tu tatuaje podría estar infectado o te preocupa que no se esté curando correctamente, comunícate con tu médico. Si tu tatuaje no es lo que esperabas y te interesa quitártelo, consulta a tu dermatólogo acerca de la cirugía láser u otras opciones para la remoción de tatuajes.</p>
+    <div className='contPrimary'> 
+      <div className='contBack'>
+        <div className='contInfo' >
+          <h3>Todo sobre Tatuajes</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem qui molestiae voluptas corporis! Officiis dolor, iusto et deserunt sed vel eligendi perferendis voluptate quod natus debitis, minima ullam sapiente minus?
+              Minima eos laudantium dolores dolorem in omnis quia odio, architecto dolor vero veniam sed. Totam, dignissimos? Blanditiis accusamus porro a iure omnis laudantium fugiat ipsum. Repellendus, sit ratione! Eveniet, vel.
+              Expedita, quas ad quae commodi dolore ipsam voluptatum voluptate labore natus omnis unde laboriosam exercitationem nemo quo, reiciendis et pariatur qui repellat vitae neque magni quasi adipisci a sunt? Impedit?
+              Magni veritatis consequuntur sed reprehenderit mollitia voluptatem, temporibus atque. Non laborum amet veritatis corrupti. Harum velit iusto quasi dolorum totam voluptatibus laboriosam magni. Fugit, mollitia sunt. Voluptatem accusamus nostrum temporibus!
+            </p>
+        </div>
+        <div className='contImg'>
+          <img src={tatu} alt="" />
+        </div>
+    
       </div>
     </div>
   )

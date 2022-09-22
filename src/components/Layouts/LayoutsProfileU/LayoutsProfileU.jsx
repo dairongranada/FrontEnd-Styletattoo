@@ -7,13 +7,28 @@ import './LayoutsProfileU.scss'
 
 
 export const LayoutsProfileU = () => {
+
+
+  const EditProfileImg = () => {
+    const modal = document.getElementById('editprofile')
+    modal.style.visibility ="visible"
+}
+const ocultarImageUp= () => {
+  const editprofile = document.getElementById('editprofile')
+  editprofile.style.visibility = "hidden"
+}
+const confirmUp = () => {
+  const editprofile = document.getElementById('editprofile')
+  editprofile.style.visibility = "hidden"
+
+}
   return (
       <div className='Content_profleUser'>
         <div className='FaceUser'>
           <div className='contImgUser'>
             <img className='User' src={user1} alt="" />
             <div className='contLa'>
-              <a href=""><span className="material-symbols-outlined">edit</span> Editar</a>
+              <a onClick={() => EditProfileImg()}  href="#"><span  className="material-symbols-outlined">edit</span> Editar</a>
             </div>
           </div>
           <div className='contInfoUser'>
@@ -56,6 +71,21 @@ export const LayoutsProfileU = () => {
               </div>
             </div>
           </div>    
+        </div>
+        <div id='editprofile' className='modalImg'>
+            <div className='contButtonUp'>
+                <h2>Editar perfil</h2>
+                <div id='contaianputUp' className='buttons_global_StyleTatto'>
+                    <p >Actualizar foto de perfil</p>
+                    <input className='confirmarUp' type="file" />
+                </div>
+                <svg id='close' onClick={() => ocultarImageUp()} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-x-lg" viewBox="0 0 16 16">
+                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                </svg>
+                <button onClick={() => confirmUp()} id='btnConfirmar' className='buttons_global_StyleTatto'>Confirmar</button>
+                <button  id='btneditemail' className='buttons_global_StyleTatto'>Editar correo</button>
+                <button  id='btneditname' className='buttons_global_StyleTatto'>Editar Nombre</button>
+            </div>
         </div>
       </div>
   )

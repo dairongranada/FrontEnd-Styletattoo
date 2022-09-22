@@ -89,3 +89,68 @@
         }
     }
 }
+
+#editprofile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .contButtonUp{ 
+       
+        .buttons_global_StyleTatto{
+            position: absolute;
+            transform: translate(-1px, -20px);
+            width: 17%;
+            background-color: var(--colorGray);
+            text-align: center;
+            .confirmarUp{
+                opacity: 0;
+                position: absolute;
+                top: 0;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        #btnConfirmar{
+            margin-top: 13%;
+            height: 55px;
+        }
+
+        #btneditemail{
+            margin-top: 90px;
+            height: 55px;
+        }
+
+        #btneditname{
+            margin-top: 9%;
+            height: 55px;
+        }
+}
+}
+
+.modalImg{
+    visibility: hidden;
+    position: fixed; z-index: 3;
+    top:0px; width: 100%; height:100%;
+    backdrop-filter: blur(12px); /* EFECTO BLUR*/
+    background-color: rgba(0, 0, 0, 0.5);
+    .contModal{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .imge{
+            height: 450px;
+            box-shadow: 0 20px 50px rgba(19, 19, 19, 0.8);
+        
+        }
+        svg{
+            position: absolute;
+            color:var(--colorWhite);
+            transform: translate(31vh, -31vh);
+        }
+    }
+}

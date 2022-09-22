@@ -72,7 +72,6 @@
                 gap: 40px;
                 .cit{
                     width: 47%;
-                    // border-radius: 5px;
                     background-color: rgb(59, 59, 59);
                     padding: 10px;
                     display: flex;
@@ -83,6 +82,12 @@
                         width: 50%;
                         height: auto;
                         border-radius: 100%;
+                    }
+                }.Calend{
+                    .infor{
+                        button{
+                            cursor: pointer;
+                        }
                     }
                 }
             }
@@ -116,16 +121,19 @@
         #btnConfirmar{
             margin-top: 13%;
             height: 55px;
+            cursor: pointer;
         }
 
         #btneditemail{
             margin-top: 90px;
             height: 55px;
+            cursor: pointer;
         }
 
         #btneditname{
             margin-top: 9%;
             height: 55px;
+            cursor: pointer;
         }
 }
 }

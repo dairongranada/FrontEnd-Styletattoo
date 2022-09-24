@@ -18,7 +18,7 @@ export const NavigationBar = () => {
     return (
         <div>
             <nav className='menu'id='js-nav'>
-                <ImgTemplate srcImg={logo} classN='logo' />
+                <ImgTemplate srcImg={logo} className='logo' />
                 <ul className='menu-items'>
                     <li className='active'><a href="/" >INICIO</a></li>
                     <li><a href="/artistas">ARTISTAS</a></li>

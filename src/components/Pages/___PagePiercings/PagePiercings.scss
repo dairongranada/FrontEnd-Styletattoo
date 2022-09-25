@@ -23,7 +23,7 @@
                 height: auto;
                 h3{
                     margin-bottom: 30px;
-                    font-size: 35px;
+                    font-size: 45px;
                 }
             }
             .contImg{
@@ -61,6 +61,10 @@
             height: auto;
             display: flex;
             justify-content: end;
+
+            li{
+                margin-right: 60px;
+            }
         }
     } 
 }

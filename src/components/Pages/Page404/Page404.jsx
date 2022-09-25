@@ -3,7 +3,6 @@ import error404 from '../../../images/Tattos/tatto5.jpg'
 import './Page404.scss'
 import { Link } from 'react-router-dom'
 
-import { Link } from "react-router-dom";
 
 
 export const Page404 = () => {

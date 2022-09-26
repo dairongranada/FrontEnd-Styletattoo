@@ -14,6 +14,8 @@
         .ContFaceUser{
             width: 90%;
             height: auto;
+            display: flex;
+            justify-content: center;
             .FaceUser{
                 width: 100%;
                 height: auto;

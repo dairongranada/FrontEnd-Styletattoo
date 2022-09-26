@@ -1,5 +1,6 @@
 import React from 'react'
 import user1 from '../../../images/Tatuadores/user1.jpg'
+import user2 from '../../../images/Tatuadores/user2.jpg'
 import tatuador1 from '../../../images/Tatuadores/tatuador1.png'
 import tatuador2 from '../../../images/Tatuadores/tatuador2.png'
 import './LayoutsProfileU.scss'

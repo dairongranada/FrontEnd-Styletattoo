@@ -2,8 +2,8 @@
     width: 100%;
     height: 100vh;
     display: flex;
-    justify-content: space-around;
-    padding: 25px;
+    justify-content: space-between;
+    padding: 5px;
     .contProfileU{
         width: 22%;
         height: 100%;
@@ -11,6 +11,8 @@
         justify-content: start;
         flex-direction: column;
         margin-top: 12px;
+        border-right: solid 1px gray;
+        padding: 12px;
         .ContFaceUser{
             width: 90%;
             height: auto;
@@ -24,6 +26,7 @@
         }
         .contNameU{
             width: 90%;
+            margin-top: 1rem;
             text-align: center;
         }
         .optionsUser{
@@ -31,6 +34,7 @@
             .option{
                 width: 100%;
                 padding: 5px;
+                border-bottom: solid 1px white;
             }
             .option:hover{
                 background-color: black;
@@ -54,11 +58,17 @@
                 width: 95%;
                 height: auto;
                 margin-bottom: 15px;
-                input{
+                .boxInf{
                     background: none;
                     width: 100%;
                     color: var(--colorWhite);
                     padding: .657rem;
+                    border: solid 1px white;
+                }
+                label{
+                    font-size: 15px;
+                    font-weight: 300;
+                    color: var(--colorWhite2);
                 }
             }
         }.contButtonSave{

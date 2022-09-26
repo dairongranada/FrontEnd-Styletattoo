@@ -30,23 +30,23 @@ const confirmUp = () => {
             <img className='FaceUser' src={user1} alt="" />
           </div>
           <div className='contNameU'>
-            <h3 className='NameU'>laura sofia</h3>
+            <h3 className='NameU'>Laura Sofia</h3>
           </div>
           <div className='optionsUser'>
             <div className='option'>
-              <p>edit Photo</p>
+              <p>Edit Photo</p>
             </div>
             <div className='option'>
-              <p>modif name</p>
+              <p>Modif Name</p>
             </div>
             <div className='option'>
-              <p>edit password</p>
+              <p>Edit Password</p>
             </div>
             <div className='option'>
-              <p>modif email</p>
+              <p>Modif Email</p>
             </div>
             <div className='option'>
-              <p>close session</p>
+              <p>Citas Agendadas</p>
             </div>
           </div>
         </div>

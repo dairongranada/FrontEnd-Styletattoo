@@ -28,23 +28,20 @@ const confirmUp = () => {
 
         <div className='contProfileU'>
           <div className='ContFaceUser'>
-            <img className='FaceUser' src={user1} alt="" />
+            <img className='FaceUser' src={user2} alt="" />
           </div>
           <div className='contNameU'>
-            <h3 className='NameU'>Laura Sofia</h3>
+            <h3 className='NameU'>Laura Vallejo Jaramillo</h3>
           </div>
           <div className='optionsUser'>
             <div className='option'>
-              <p>Edit Photo</p>
+              <p>Editar Foto De Perfil</p>
             </div>
             <div className='option'>
-              <p>Modif Name</p>
+              <p>Editar Nombre</p>
             </div>
             <div className='option'>
-              <p>Edit Password</p>
-            </div>
-            <div className='option'>
-              <p>Modif Email</p>
+              <p>Editar Contraseña</p>
             </div>
             <div className='option'>
               <p>Citas Agendadas</p>
@@ -61,38 +58,22 @@ const confirmUp = () => {
 
           <div className='datesBasics'>
             <div className='contN'>
-            <label htmlFor="text">Name</label>
+            <label htmlFor="text">Nombres</label>
               <input className='boxInf' type="text"  value='laura'/>
             </div>
             <div className='contN'>
-              <label htmlFor="password">password</label>
-              <input className='boxInf' type="text" value='1234'/>
+              <label htmlFor="text">Apellidos</label>
+              <input className='boxInf' type="text" value='Vallejo Jaramillo'/>
             </div>
             <div className='contN'>
-              <label htmlFor="email">Email</label>
+              <label htmlFor="email">Correo</label>
               <input className='boxInf' type="text" value='Hedline'/>
             </div>
           </div>
           <div className='contButtonSave'>
-            <button className='buttons_global_StyleTatto'>Save</button>
+            <button className='buttons_global_StyleTatto'>Guardar</button>
           </div>
         </div>
       </div>
   )
 }
-
-// {/* <div id='editprofile' className='modalImg'>
-//             <div className='contButtonUp'>
-//                 <h2>Editar perfil</h2>
-//                 <div id='contaianputUp' className='buttons_global_StyleTatto'>
-//                     <p >Actualizar foto de perfil</p>
-//                     <input className='confirmarUp' type="file" />
-//                 </div>
-//                 <svg id='close' onClick={() => ocultarImageUp()} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-x-lg" viewBox="0 0 16 16">
-//                     <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
-//                 </svg>
-//                 <button onClick={() => confirmUp()} id='btnConfirmar' className='buttons_global_StyleTatto'>Confirmar</button>
-//                 <button  id='btneditemail' className='buttons_global_StyleTatto'>Editar correo</button>
-//                 <button  id='btneditname' className='buttons_global_StyleTatto'>Editar Nombre</button>
-//             </div>
-//         </div> */}

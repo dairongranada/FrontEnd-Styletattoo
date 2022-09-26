@@ -106,121 +106,124 @@ export const LayoutsProfileT = () => {
 
 
   return (
-    <div className='contPather'>
+    <div className='BigContent'>
+
+        <div className='contPather'>
 
 
-        <div className='contPe'>   
-                <div className='ProfileArtistic'>
-                {tatuador.map((person, index) => {  
-                    return(
-                    <div  onClick={() => openimgperfil()}  className='contImg'><img key={index} className='Profile' src={person.tatu} alt=""/></div>
-                    )
-                    })}
-                    <div className='infArtist'>
-                    <div className='editSeparator'>
-                            <div className='editProfile'><a  onClick={() => EditProfileImg()}  href="#"><span className="material-symbols-outlined">edit</span>Editar</a></div>
-                            <div><label className='labelNameArtist'>Nombre</label><p>Carlos Melo Toca</p></div>
-                            <div><label className='labelNameArtist'>Correo</label><p>CorreoPrueba@StyleTatto.co</p></div>
-                            <div className='favoriteSymbols'
-                                ><span onClick={count} className="material-symbols-outlined">favorite</span>
-                                <p>{contador}</p>
+            <div className='contPe'>   
+                    <div className='ProfileArtistic'>
+                    {tatuador.map((person, index) => {  
+                        return(
+                        <div  onClick={() => openimgperfil()}  className='contImg'><img key={index} className='Profile' src={person.tatu} alt=""/></div>
+                        )
+                        })}
+                        <div className='infArtist'>
+                        <div className='editSeparator'>
+                                <div className='editProfile'><a  onClick={() => EditProfileImg()}  href="#"><span className="material-symbols-outlined">edit</span>Editar</a></div>
+                                <div><label className='labelNameArtist'>Nombre</label><p>Carlos Melo Toca</p></div>
+                                <div><label className='labelNameArtist'>Correo</label><p>CorreoPrueba@StyleTatto.co</p></div>
+                                <div className='favoriteSymbols'
+                                    ><span onClick={count} className="material-symbols-outlined">favorite</span>
+                                    <p>{contador}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>    
+                    <div className='contInfo'>
+                        <div className='infoDescription'>
+                            <p>Lorem ipsum dolor sit amet consectetur 
+                                adipisicing elit. Dolores tempore 
+                                aperiam dolor sit.
+                            </p>
+                        </div>
+                        <div className='contButtons'>
+                            <button className='buttons_global_StyleTatto'>Agendar cita</button>
+                        </div>
+                    </div>
+            </div>
+            <div className ='ContTrabajos'>
+                <div className='contPortafolio'>
+                    <div className='contPortafolio2'>
+                        <div className='Portafolio'>
+                            <h2 className='PortafoliosTittle'>P R O Y E C T O S </h2>
+                            <span onClick={() => imageUp()} className="material-symbols-outlined">file_upload <p>adjuntar</p></span>
+                        </div>
+                        <div className='Trabajos'>
+                            <div className='Tattos'>
+                                <div className='Tatto'>
+                                    {imagenes.map((imagen, index) => {
+                                        return(
+                                            <div className='contImageT'>
+                                                <img onClick={() => getImg(imagen.img)} key={index} className='ContTatto' src={imagen.img} alt="" />
+                                            </div>
+                                        )
+                                    })}
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>    
-                <div className='contInfo'>
-                    <div className='infoDescription'>
-                        <p>Lorem ipsum dolor sit amet consectetur 
-                            adipisicing elit. Dolores tempore 
-                            aperiam dolor sit.
-                        </p>
-                    </div>
-                    <div className='contButtons'>
-                        <button className='buttons_global_StyleTatto'>Agendar cita</button>
-                    </div>
                 </div>
-        </div>
-        <div className ='ContTrabajos'>
-            <div className='contPortafolio'>
-                <div className='contPortafolio2'>
-                    <div className='Portafolio'>
-                        <h2 className='PortafoliosTittle'>P R O Y E C T O S </h2>
-                        <span onClick={() => imageUp()} className="material-symbols-outlined">file_upload <p>adjuntar</p></span>
-                    </div>
-                    <div className='Trabajos'>
-                        <div className='Tattos'>
-                            <div className='Tatto'>
-                                {imagenes.map((imagen, index) => {
+            </div>
+
+
+
+            <div id='modalImg' className='modalImg'>
+                <div className='contModal'>
+                    <img className='imge' src={tempimg} alt="" />
+                    <svg id='close' onClick={() => ocultarModal()} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-x-lg" viewBox="0 0 16 16">
+                        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                    </svg>
+                </div>
+            </div>
+                {tatuador.map((tatuador, index2) => {       
+
                                     return(
-                                        <div className='contImageT'>
-                                            <img onClick={() => getImg(imagen.img)} key={index} className='ContTatto' src={imagen.img} alt="" />
-                                        </div>
-                                    )
-                                })}
+                                        <div id='modalperfil' className='modalImg'>
+                                        <div className='contModal'>
+                                            <img onClick={() => getImg(tatuador.tatu)}  key={index2} className='imge' id='img' src={tatuador.tatu} alt="" />
+                                            <svg id='close' onClick={() => ocultarModal()} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-x-lg" viewBox="0 0 16 16">
+                                        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                                    </svg>
+                                </div>
                             </div>
-                        </div>
+                    )
+        
+                    }
+                )}
+
+            <div id='contmodalUp' className='modalImg'>
+                <div className='contButtonUp'>
+                    <h2>Añade tu trabajo</h2>
+                    <div id='contaianputUp' className='buttons_global_StyleTatto'>
+                        <p >Añadir</p>
+                        <input className='confirmarUp' type="file" />
                     </div>
+                    <svg id='close' onClick={() => ocultarImageUp()} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-x-lg" viewBox="0 0 16 16">
+                        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                    </svg>
+                    <button onClick={() => confirmUp()} id='btnConfirmar' className='buttons_global_StyleTatto'>Confirmar</button>
                 </div>
             </div>
-        </div>
 
 
-
-        <div id='modalImg' className='modalImg'>
-            <div className='contModal'>
-                <img className='imge' src={tempimg} alt="" />
-                <svg id='close' onClick={() => ocultarModal()} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-x-lg" viewBox="0 0 16 16">
-                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
-                </svg>
-            </div>
-        </div>
-            {tatuador.map((tatuador, index2) => {       
-
-                                return(
-                                    <div id='modalperfil' className='modalImg'>
-                                    <div className='contModal'>
-                                        <img onClick={() => getImg(tatuador.tatu)}  key={index2} className='imge' id='img' src={tatuador.tatu} alt="" />
-                                        <svg id='close' onClick={() => ocultarModal()} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-x-lg" viewBox="0 0 16 16">
-                                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
-                                </svg>
-                             </div>
-                         </div>
-                )
-       
-                }
-            )}
-
-        <div id='contmodalUp' className='modalImg'>
-            <div className='contButtonUp'>
-                <h2>Añade tu trabajo</h2>
-                <div id='contaianputUp' className='buttons_global_StyleTatto'>
-                    <p >Añadir</p>
-                    <input className='confirmarUp' type="file" />
+            <div id='editprofile' className='modalImg'>
+                <div className='contButtonUp'>
+                    <h2>Editar perfil</h2>
+                    <div id='contaianputUp' className='buttons_global_StyleTatto'>
+                        <p >Actualizar foto de perfil</p>
+                        <input className='confirmarUp' type="file" />
+                    </div>
+                    <svg id='close' onClick={() => ocultarImageUp()} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-x-lg" viewBox="0 0 16 16">
+                        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                    </svg>
+                    <button onClick={() => confirmUp()} id='btnConfirmar' className='buttons_global_StyleTatto'>Confirmar</button>
+                    <button  id='btneditemail' className='buttons_global_StyleTatto'>Editar correo</button>
+                    <button  id='btneditname' className='buttons_global_StyleTatto'>Editar Nombre</button>
                 </div>
-                <svg id='close' onClick={() => ocultarImageUp()} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-x-lg" viewBox="0 0 16 16">
-                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
-                </svg>
-                <button onClick={() => confirmUp()} id='btnConfirmar' className='buttons_global_StyleTatto'>Confirmar</button>
             </div>
+
         </div>
-
-
-        <div id='editprofile' className='modalImg'>
-            <div className='contButtonUp'>
-                <h2>Editar perfil</h2>
-                <div id='contaianputUp' className='buttons_global_StyleTatto'>
-                    <p >Actualizar foto de perfil</p>
-                    <input className='confirmarUp' type="file" />
-                </div>
-                <svg id='close' onClick={() => ocultarImageUp()} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-x-lg" viewBox="0 0 16 16">
-                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
-                </svg>
-                <button onClick={() => confirmUp()} id='btnConfirmar' className='buttons_global_StyleTatto'>Confirmar</button>
-                <button  id='btneditemail' className='buttons_global_StyleTatto'>Editar correo</button>
-                <button  id='btneditname' className='buttons_global_StyleTatto'>Editar Nombre</button>
-            </div>
-        </div>
-
     </div>
   )
 }

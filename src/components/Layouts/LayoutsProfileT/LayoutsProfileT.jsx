@@ -198,7 +198,7 @@ export const LayoutsProfileT = () => {
                     <button  id='btneditemail' className='buttons_global_StyleTatto'>Editar correo</button>
                     <button  id='btneditname' className='buttons_global_StyleTatto'>Editar Nombre</button>
                 </div>
-            </div>
+            </div>       
 
         </div>
         <div id='modalImg' className='modalImg'>

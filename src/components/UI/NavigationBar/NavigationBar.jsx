@@ -15,12 +15,13 @@ export const NavigationBar = () => {
         } 
     }
 
+
     return (
-        <div>
+        <div className='barNavigate'>            
             <nav className='menu'id='js-nav'>
                 <ImgTemplate srcImg={logo} className='logo' />
                 <ul className='menu-items'>
-                    <li className='active'><a href="/" >INICIO</a></li>
+                    <li className='active'><a className='active' href="/" >INICIO</a></li>
                     <li><a href="/artistas">ARTISTAS</a></li>
                     <li><a href="/consejos">CONSEJOS</a></li>
                     <li><a href="/perfilUsuarios">PERFIL</a></li>

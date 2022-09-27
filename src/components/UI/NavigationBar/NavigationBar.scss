@@ -6,9 +6,11 @@
     display: none;
   }
   
+
+
   .menu {
     background-color: var(--colorBlack);
-    height: auto;
+    height: 50px;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -19,7 +21,7 @@
   }
   
   .logo {
-    width: 80px;
+    width: 50px;
   }
   
   .menu-items {
@@ -31,14 +33,19 @@
     li {
       border-radius: 3px;
       margin: 0 5px;
+      
+      .active {
+        color: var(--colorOrange2);
+      }
   
       a {
         padding: 7px 13px;
         text-decoration: none;
-        font-size: 18px;
+        font-size: 13px;
         display: block;
         text-transform: uppercase;
         color: #fff;
+        font-style: italic;
       }
   
       &:hover {
@@ -68,7 +75,7 @@
   
   @media (max-width: 952px) {
     .logo {
-      font-size: 30px;
+      font-size: 50px;
       padding-left: 35px;
     }
   

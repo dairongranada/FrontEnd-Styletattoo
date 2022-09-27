@@ -52,7 +52,7 @@ const confirmUp = () => {
         <div className='contPublicP'>
           <div className='contTittle'>
             <h3>Public Profile</h3>
-            <p>add information about yourself</p>
+            <p>Agrege informacion sobre usted</p>
             <hr />
           </div>
 

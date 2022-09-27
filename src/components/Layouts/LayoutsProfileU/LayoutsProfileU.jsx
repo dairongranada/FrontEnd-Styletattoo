@@ -6,20 +6,6 @@ import './LayoutsProfileU.scss'
 
 export const LayoutsProfileU = () => {
 
-
-  const EditProfileImg = () => {
-    const modal = document.getElementById('editprofile')
-    modal.style.visibility ="visible"
-}
-const ocultarImageUp= () => {
-  const editprofile = document.getElementById('editprofile')
-  editprofile.style.visibility = "hidden"
-}
-const confirmUp = () => {
-  const editprofile = document.getElementById('editprofile')
-  editprofile.style.visibility = "hidden"
-
-}
   return (
       <div className='Content_profleUser'>
 

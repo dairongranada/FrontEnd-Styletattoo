@@ -204,7 +204,7 @@
         visibility: hidden;
         position: fixed; z-index: 3;
         top:0px; width: 100%; height:100%;
-        backdrop-filter: blur(12px); /* EFECTO BLUR*/
+        backdrop-filter: blur(5px); /* EFECTO BLUR*/
         background-color: rgba(0, 0, 0, 0.5);
         .contModal{
             width: 100%;

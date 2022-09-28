@@ -19,12 +19,12 @@ export const NavigationBar = () => {
     return (
         <div className='barNavigate'>            
             <nav className='menu'id='js-nav'>
-                <ImgTemplate srcImg={logo} className='logo' />
+                <a href="/"><ImgTemplate srcImg={logo} className='logo' /></a>   
                 <ul className='menu-items'>
-                    <li className='active'><a className='active' href="/" >INICIO</a></li>
-                    <li><a href="/artistas">ARTISTAS</a></li>
-                    <li><a href="/consejos">CONSEJOS</a></li>
-                    <li><a href="/perfilUsuario">PERFIL</a></li>
+                    <li><a className='option2' href="/" >INICIO</a></li>
+                    <li><a className='option2' href="/artistas">ARTISTAS</a></li>
+                    <li><a className='option2' href="/consejos">CONSEJOS</a></li>
+                    <li><a className='option2' href="/perfilUsuarios">PERFIL</a></li>
                 </ul>
                 <span onClick={menu} id='burguer' className="material-symbols-outlined">
                     menu

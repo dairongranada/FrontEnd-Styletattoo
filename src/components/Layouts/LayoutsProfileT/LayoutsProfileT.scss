@@ -198,44 +198,13 @@
                     }
                 }
             }
-        }
-
-    
-        #contmodalUp{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            .contButtonUp{        
-                .buttons_global_StyleTatto{
-                    position: absolute;
-                    transform: translate(-1px, -20px);
-                    width: 32%;
-                    background-color: var(--colorGray);
-                    text-align: center;
-                    .confirmarUp{
-                        opacity: 0;
-                        position: absolute;
-                        top: 0;
-                        right: 0;
-                        left: 0;
-                        bottom: 0;
-                        width: 100%;
-                        height: 100%;
-                    }
-                }
-                #btnConfirmar{
-                    margin-top: 90px;
-                    height: 55px;
-                }
-            }
-        }
-        
+        }    
     }
     .modalImg{
         visibility: hidden;
         position: fixed; z-index: 3;
         top:0px; width: 100%; height:100%;
-        backdrop-filter: blur(12px); /* EFECTO BLUR*/
+        backdrop-filter: blur(5px); /* EFECTO BLUR*/
         background-color: rgba(0, 0, 0, 0.5);
         .contModal{
             width: 100%;
@@ -256,6 +225,34 @@
                 position: absolute;
                 color:var(--colorWhite);
                 transform: translate(31vh, -31vh);
+            }
+        }
+    }
+    #contmodalUp{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .contButtonUp{        
+            .buttons_global_StyleTatto{
+                position: absolute;
+                transform: translate(-1px, -20px);
+                width: 32%;
+                background-color: var(--colorGray);
+                text-align: center;
+                .confirmarUp{
+                    opacity: 0;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            #btnConfirmar{
+                margin-top: 90px;
+                height: 55px;
             }
         }
     }

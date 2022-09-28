@@ -1,6 +1,6 @@
 import React from 'react'
 import'../___PagePiercings/PagePiercings.scss'
-import img4 from '../../../images/Tattos/citapircing.jpg'
+import img4 from '../../../images/Tattos/pircingOreja.jpg'
 import img5 from '../../../images/Tattos/pircingblue.jpg'
 
 

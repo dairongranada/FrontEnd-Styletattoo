@@ -9,6 +9,7 @@ export const PageConsejos = () => {
       <div className='contseondConsejos'>
         <h3>Consejos</h3>
         <img className='imgconsejos' src={tatu} alt="" />
+        <button className='buttons_global_StyleTatto'>LEER MAS</button>
       </div>
     </div>
   )

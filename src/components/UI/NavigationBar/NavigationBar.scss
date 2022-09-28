@@ -5,17 +5,8 @@
     cursor: pointer;
     display: none;
   }
-  nav{
-    
-    height: 100vh;
-    width: 100vw;
-    min-width: 600px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin: auto;
-}
-.option{
+
+a{
     position: relative;
     text-decoration: none;
     font-family: 'Poppins',sans-serif;
@@ -24,7 +15,7 @@
     letter-spacing: 0.5px;
     padding: 0 10px;
 }
-.option:after{
+a:after{
     content: "";
     position: absolute;
     background-color: orange;
@@ -32,16 +23,14 @@
     height: 3px;
     left: 0;
     bottom: -10px;
-    transition: 0.3s;
+    transition: 0.5s;
 }
-.option:hover{
+a:hover{
     color: white;
 }
-.option:hover:after{
+a:hover:after{
     width: 100%;
 }
-
-
   .menu {
     background-color: var(--colorBlack);
     height: 50px;
@@ -91,7 +80,6 @@
   
   li.active {
     background-color: rgba(0, 0, 0, 0.3);
-    transition: 4s;
   }
   
   .btn menu {
@@ -121,6 +109,9 @@
   @media (max-width: 858px) {
     .menu {
       height: 65px;
+      .logo{
+        width: 80px;
+      }
     }
   
     #burguer {

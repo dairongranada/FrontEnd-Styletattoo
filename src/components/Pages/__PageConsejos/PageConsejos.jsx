@@ -9,7 +9,7 @@ export const PageConsejos = () => {
       <div className='contseondConsejos'>
         <h3>Consejos</h3>
         <img className='imgconsejos' src={tatu} alt="" />
-        <button className='buttons_global_StyleTatto'>LEER MAS</button>
+        <li><a className='buttons_global_StyleTatto' href="/artistas">LEER MAS SOBRE</a></li>
       </div>
     </div>
   )

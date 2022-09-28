@@ -21,26 +21,36 @@ import { PageFormRe } from './components/Pages/PageFormRe/PageFormRe';
 import { PageTattos } from './components/Pages/___PageTattos/PageTattos';
 import { PagePiercings } from './components/Pages/___PagePiercings/PagePiercings';
 import { PageConsejos } from './components/Pages/__PageConsejos/PageConsejos';
-
+import { ProtedtedRoute } from './Helpers/ProtectRoutes/ProtedtedRoute';
 
 
 
 function App() {
+
+  // const user = useAuth()
+
   return (
     <div className="App">
       <Header/>
             <AuthProvider>
               <Routes>
+                {/* ECCSXTRAS */ }
                 <Route path="*" element= {<Page404 />} />
                 <Route path='/' exact element= {<PageHome />} />
-                <Route path='/perfilUsuarios' exact element= {<PageProfileU />}/>
-                <Route path='/perfilTatuadores' exact element= {<PageProfileT />}/>
-                <Route path='/citas' exact element= {<PageQuotes />}/>
-                <Route path='/artistas' exact element= {<PageTattooists/>}/>
 
+                {/* LOGIN Y REGISTRO */ }
                 <Route path='/IngresarSesion' exact element= {<PageFormSe />}/>
                 <Route path='/Registro' exact element= {<PageFormRe/>}/>
 
+                {/* TATUADORES */ }                             {/*Ruta Protegida */}
+                <Route path='/perfilTatuadores' exact element= {<PageProfileT/>}/>
+                <Route path='/artistas' exact element= {<PageTattooists/>}/>
+                <Route path='/citas' exact element= {<ProtedtedRoute><PageQuotes/></ProtedtedRoute>}/>
+
+                {/* USUARIOS */ }
+                <Route path='/perfilUsuario' exact element= {<ProtedtedRoute><PageProfileU/></ProtedtedRoute>}/>
+
+                  {/* COSAS NO IMPORTANTES como(Elena <3) */ }
                 <Route path='/infoTatuajes' exact element= {<PageTattos/>}/>
                 <Route path='/infoPiercings' exact element= {<PagePiercings/>}/>
                 <Route path='/consejos' exact element= {<PageConsejos/>}/>

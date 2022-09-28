@@ -1,17 +1,31 @@
 import React from 'react'
-import user2 from '../../../images/Tatuadores/user2.jpg'
+import { useNavigate } from 'react-router'
+import { useAuth } from '../../.././context/AuthContext'
 import './LayoutsProfileU.scss'
 
 
 
 export const LayoutsProfileU = () => {
 
+  const navigate = useNavigate()
+  const { user, logout,loading } = useAuth()
+
+  const  handleLogout = async() => {
+    await logout()
+    navigate('/IngresarSesion')
+  }
+
+
+  if(loading){
+    return <h1>Loading</h1>
+  }
+
   return (
       <div className='Content_profleUser'>
 
         <div className='contProfileU'>
           <div className='ContFaceUser'>
-            <img className='FaceUser' src={user2} alt="" />
+            <img className='FaceUser' src='#'alt='#' />
           </div>
           <div className='contNameU'>
             <h3 className='NameU'>Laura Vallejo Jaramillo</h3>
@@ -28,6 +42,9 @@ export const LayoutsProfileU = () => {
             </div>
             <div className='option'>
               <p>Citas Agendadas</p>
+            </div>
+            <div className='option Logout'>
+              <p><button  onClick={handleLogout} >Cerrar Sesion</ button></p>
             </div>
           </div>
         </div>
@@ -50,7 +67,7 @@ export const LayoutsProfileU = () => {
             </div>
             <div className='contN'>
               <label htmlFor="email">Correo</label>
-              <input className='boxInf' type="text" value='Hedline'/>
+              <input name='email' className='boxInf' type="text" value={user.email} />
             </div>
           </div>
           <div className='contButtonSave'>

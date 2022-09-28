@@ -6,9 +6,18 @@
 @use './Scss/base/global';
 
 
+
+
+
+
+::selection {
+    background: var(--colorOrange2);
+    color: var(--colorBlack);
+}
+
 /*Scrollbar styles*/
 ::-webkit-scrollbar{
-    width: 5px;
+    width: 9px;
 }
 
 ::-webkit-scrollbar-track{
@@ -17,10 +26,58 @@
 
 ::-webkit-scrollbar-thumb{
     background: var(--colorOrange2);
-    border-radius: 10px;
+    border-radius: 12px;
 }
 
 ::-webkit-scrollbar-thumb:hover{
     background: var(--colorOrange2);
 }
+
+
+
+/* L O A D I N G   A N I M A T I O N  <[<3] :V [<3] />  */
+.centerLoading{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+.ringLoading{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    animation: ring 0.5s ease-in-out infinite;
+}
+@keyframes ring {
+    0%{transform:  rotate(0deg);box-shadow: 1px 5px 2px var(--colorOrange2);}
+
+    50%{transform:  rotate(180deg);box-shadow: 1px 5px 2px var(--colorOrange2);}
+
+    100%{transform:  rotate(360deg);box-shadow: 1px 5px 2px var(--colorOrange2);}
+}
+
+.ringLoading::before{
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    box-shadow: 0 0 5px rgb(255, 255, 255, .3);
+    border-radius: 50%;
+}
+.spanLoading{
+    color: #737373;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height:  200px;
+    animation: text 3s ease-in-out infinite;
+}
+@keyframes text {
+    50%{color: black;}
+}
+
 

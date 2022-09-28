@@ -40,8 +40,15 @@
                 background-color: black;
                 color: white;
             }
+            .Logout button{
+                color: var(--colorOrange2);
+                background-color: transparent;
+                border-color: transparent;
+                cursor: pointer;
+            }
         }
     }
+
     .contPublicP{
         width: 70%;
         height: auto;

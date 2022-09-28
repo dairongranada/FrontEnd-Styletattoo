@@ -1,8 +1,19 @@
-html, body { 
-    background-color: var(--colorGray); 
-    font-family: var(--font-Rubik); 
-    color: #fff; 
+html, body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100vw;
 }
+
+body{
+    width: 100%;
+    overflow-x: hidden;
+    background: linear-gradient(20deg, #0e0d0dfa, #121212fa);
+    position: relative;
+    color: var(--colorWhite);
+}
+
+
 
 ol, ul {
     padding-left: 0rem;

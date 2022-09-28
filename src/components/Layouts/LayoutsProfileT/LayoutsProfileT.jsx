@@ -138,7 +138,7 @@ export const LayoutsProfileT = () => {
                             </p>
                         </div>
                         <div className='contButtons'>
-                            <button className='buttons_global_StyleTatto'>Agendar cita</button>
+                        <a href='/citas'><button className='buttons_global_StyleTatto'>Agendar cita</button></a>
                         </div>
                     </div>
             </div>

@@ -1,10 +1,20 @@
 
-.BackGround{background-image: url('../.././../images/Fondos/Login.jpg');}
+.BackGround{
+    background-image: url('../.././../images/Fondos/Login.jpg');
+
+    .ErrorMenssage{
+        text-align: center;
+        color: #ffff; margin-top: 2.56rem;
+        padding: 5px; width: 100%; height: auto;
+        background-color: #ff0000;
+
+    }
+}
 
 
 
 // Div
-.Content_FormsPrincipal{
+.Content_FormsPrincipalLogin{
     background-position: center; background-size: cover;
     display: flex;
     justify-content: center;
@@ -21,7 +31,7 @@
         font-size: 15px;
         box-sizing: border-box;
 
-        h1{text-align: center;font-size: 30px;margin-top: 20px;}
+        h2{text-align: center;font-size: 33px;margin: 20px 0 5px 0;}
 
         // Div
         .inputContent{
@@ -29,8 +39,7 @@
             margin-top: 36px;
 
             // Input
-            .input_global_style{
-                margin-top: 20px;
+            .input_global_styleLogin{
                 display: block;
                 margin: bottom 20px;
                 width: 100%;
@@ -50,13 +59,15 @@
                 color: var(--colorGray3);
             }
     
-            .input_global_style:focus~.label_global_style,.input_global_style:valid~.label_global_style{
+            .input_global_styleLogin:focus~.label_global_style,
+            .input_global_styleLogin:valid~.label_global_style{
                 top: -10px;
                 color: var(--colorWhite2);
             }
     
-            .input_global_style[type="text"],
-            .input_global_style[type="password"]{  /* Aca lo que hice fue solo modificar los inputs de text y password */
+            .input_global_styleLogin[type="password"],
+            .input_global_styleLogin[type="text"]{  
+                /* Aca lo que hice fue solo modificar los inputs de text y password */
                 border: none;
                 border-bottom: 1px solid #fff;
                 background: transparent;
@@ -91,8 +102,6 @@
 
 @media(max-width:900px){
     .Content_FormsPrincipal {
-        height: 80vh;
-
         .Content_Forms {
             width: 343px;
         }
@@ -107,8 +116,6 @@
     }
 
     .Content_FormsPrincipal{
-        height: 95vh;
-
         .Content_Forms {
             height: 500px;
             width: 380px;

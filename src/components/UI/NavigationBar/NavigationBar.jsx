@@ -21,10 +21,10 @@ export const NavigationBar = () => {
             <nav className='menu'id='js-nav'>
                 <ImgTemplate srcImg={logo} className='logo' />
                 <ul className='menu-items'>
-                    <li className='active'><a href="/" >INICIO</a></li>
-                    <li><a href="/artistas">ARTISTAS</a></li>
-                    <li><a href="/consejos">CONSEJOS</a></li>
-                    <li><a href="/perfilUsuarios">PERFIL</a></li>
+                    <li className='active'><a className='option' href="/" >INICIO</a></li>
+                    <li><a className='option' href="/artistas">ARTISTAS</a></li>
+                    <li><a className='option' href="/consejos">CONSEJOS</a></li>
+                    <li><a className='option' href="/perfilUsuarios">PERFIL</a></li>
                 </ul>
                 <span onClick={menu} id='burguer' className="material-symbols-outlined">
                     menu

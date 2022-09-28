@@ -6,7 +6,7 @@
     display: none;
   }
 
-a{
+.option{
     position: relative;
     text-decoration: none;
     font-family: 'Poppins',sans-serif;
@@ -15,7 +15,7 @@ a{
     letter-spacing: 0.5px;
     padding: 0 10px;
 }
-a:after{
+.option:after{
     content: "";
     position: absolute;
     background-color: orange;
@@ -23,12 +23,12 @@ a:after{
     height: 3px;
     left: 0;
     bottom: -10px;
-    transition: 0.5s;
+    transition: 0.5 s;
 }
-a:hover{
+.option:hover{
     color: white;
 }
-a:hover:after{
+.option:hover:after{
     width: 100%;
 }
   .menu {

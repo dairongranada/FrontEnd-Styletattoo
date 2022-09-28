@@ -1,0 +1,15 @@
+.contConsejos{
+    .contseondConsejos{
+        display: flex;
+        flex-direction: column;
+
+        h3{
+            text-align: center;
+            font-size: 50px;
+        }
+        .imgconsejos{
+            height: 500px;
+            width: 900px;
+        }
+    }
+}

@@ -6,7 +6,7 @@
     display: none;
   }
 
-.option{
+.option2{
     position: relative;
     text-decoration: none;
     font-family: 'Poppins',sans-serif;
@@ -15,7 +15,7 @@
     letter-spacing: 0.5px;
     padding: 0 10px;
 }
-.option:after{
+.option2:after{
     content: "";
     position: absolute;
     background-color: orange;
@@ -25,10 +25,10 @@
     bottom: -10px;
     transition: 0.5 s;
 }
-.option:hover{
+.option2:hover{
     color: white;
 }
-.option:hover:after{
+.option2:hover:after{
     width: 100%;
 }
   .menu {

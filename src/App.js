@@ -20,7 +20,6 @@ import { PageFormSe } from './components/Pages/PageFormSe/PageFormSe';
 import { PageFormRe } from './components/Pages/PageFormRe/PageFormRe';
 import { PageTattos } from './components/Pages/___PageTattos/PageTattos';
 import { PagePiercings } from './components/Pages/___PagePiercings/PagePiercings';
-import { PageConsejos } from './components/Pages/__PageConsejos/PageConsejos';
 import { ProtedtedRoute } from './Helpers/ProtectRoutes/ProtedtedRoute';
 
 
@@ -52,8 +51,11 @@ function App() {
                   {/* COSAS NO IMPORTANTES como(Elena <3) */ }
                 <Route path='/infoTatuajes' exact element= {<PageTattos/>}/>
                 <Route path='/infoPiercings' exact element= {<PagePiercings/>}/>
+<<<<<<< HEAD
                 <Route path='/consejos' exact element= {<PageConsejos/>}/>
 
+=======
+>>>>>>> 5b0384f67015abb80ee4b96ffbfdb81395e422e1
               </Routes>
             </AuthProvider>
       <Footer/>

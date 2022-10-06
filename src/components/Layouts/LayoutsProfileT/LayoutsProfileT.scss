@@ -93,7 +93,7 @@
                 border-bottom-color: #fff;
                 border-radius: 100%;
                 // z-index: -1;
-                animation: spin 3.5s linear infinite;
+                animation: spin 5.5s linear infinite;
                 
             }
             .material-symbols-outlined{color: var(--colorOrange2);}
@@ -224,7 +224,7 @@
             svg{
                 position: absolute;
                 color:var(--colorWhite);
-                transform: translate(31vh, -31vh);
+                transform: translate(21vh, -21vh);
             }
         }
     }
@@ -232,7 +232,12 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        .contButtonUp{        
+        .contButtonUp{
+            svg{
+                position: absolute;
+                color:var(--colorWhite);
+                transform: translate(62vh, -8vh);
+            }        
             .buttons_global_StyleTatto{
                 position: absolute;
                 transform: translate(-1px, -20px);

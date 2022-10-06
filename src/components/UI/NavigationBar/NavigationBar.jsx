@@ -11,10 +11,8 @@ export const NavigationBar = () => {
         if(btn_menu){
             const menu_items = document.querySelector('.menu-items')
             menu_items.classList.toggle('open')
-            
         } 
     }
-
 
     return (
         <div className='barNavigate'>            

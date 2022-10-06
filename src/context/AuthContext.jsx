@@ -15,7 +15,7 @@ export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null)
 
 
-    const singUp = ( email,password,name,apellido ) => createUserWithEmailAndPassword( auth,email,password,name,apellido,)
+    const singUp = ( email,password,displayName,apellido ) => createUserWithEmailAndPassword( auth,email,password,displayName,apellido)
     const loginUp = async( email,password ) => signInWithEmailAndPassword( auth,email,password )
 
 

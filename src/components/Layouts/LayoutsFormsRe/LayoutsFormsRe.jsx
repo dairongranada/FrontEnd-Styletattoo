@@ -7,8 +7,9 @@ import { useNavigate } from "react-router-dom";
 
 
 export const LayoutsFormsRe = () => {
-    const [user, setUser] = useState({
-        name: '',
+
+     const [user, setUser] = useState({
+        displayName: '',
         apellido: '',
         email: '',
         password: '',
@@ -28,7 +29,7 @@ export const LayoutsFormsRe = () => {
         e.preventDefault()
         setMenssageError('')
         try { 
-            await singUp(user.email, user.password,user.name,user.apellido)   
+            await singUp(user.email, user.password,user.displayName,user.apellido)  
             navigate('/artistas')      
         }catch (er) {
             if (er.code === 'auth/invalid-email') {
@@ -36,17 +37,14 @@ export const LayoutsFormsRe = () => {
             } if (er.code === 'auth/weak-password') {
                 setMenssageError('StyleTattoo: La contraseña debe tener al menos 6 caracteres ')
             } if (er.code === 'auth/internal-error') {
-                setMenssageError('StyleTattoo: Tienes Campos Sin Llenar')
-            } if (er.code === 'auth/email-already-in-use') {
-                setMenssageError('StyleTattoo: El email ya se Encuentra En Uso')
-            }  
+                setMenssageError('StyleTattoo: Tienes Campos Sin Llenar')} if (er.code === 'auth/email-already-in-use') {
+                setMenssageError('StyleTattoo: El email ya se Encuentra En Uso')}  
             console.log(er.code);
             console.log(er.message);
-
         }
 
     }
-
+    console.log(user);
 
 
   return (
@@ -57,7 +55,7 @@ export const LayoutsFormsRe = () => {
                     <div><h2>Registro</h2></div>
                     <div className="inputContent">
                             <div>
-                                <input name='name'className='input_global_styleRegistro' required  type="text" 
+                                <input name='displayName'className='input_global_styleRegistro' required  type="text" 
                                     onChange={handlechange}
                                 />
                                 <label  htmlFor='name' className='label_global_styleRegistro' >Nombres</label>

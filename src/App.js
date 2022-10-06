@@ -28,9 +28,8 @@ import { ProtedtedRoute } from './Helpers/ProtectRoutes/ProtedtedRoute';
 function App() {
 
   // const user = useAuth()
-
   return (
-    <div className="App">
+    <div>
       <Header/>
             <AuthProvider>
               <Routes>
@@ -54,6 +53,7 @@ function App() {
                 <Route path='/infoTatuajes' exact element= {<PageTattos/>}/>
                 <Route path='/infoPiercings' exact element= {<PagePiercings/>}/>
                 <Route path='/consejos' exact element= {<PageConsejos/>}/>
+
               </Routes>
             </AuthProvider>
       <Footer/>

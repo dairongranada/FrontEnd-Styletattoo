@@ -233,12 +233,6 @@ export const LayoutsProfileT = () => {
             </div>
         </div>
 
-
-
-
-
-
-
     </div>
   )
 }

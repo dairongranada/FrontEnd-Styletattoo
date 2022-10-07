@@ -113,10 +113,10 @@ export const LayoutsProfileT = () => {
 
             <div className='contPe'>   
                     <div className='ProfileArtistic'>
-                    {tatuador.map((person, index) => {  
-                        return(
-                        <div  onClick={() => openimgperfil()}  className='contImg'><img key={index} className='Profile' src={person.tatu} alt=""/></div>
-                        )
+                        {tatuador.map((person, index) => {  
+                            return(
+                            <div  onClick={() => openimgperfil()}  className='contImg'><img key={index} className='Profile' src={person.tatu} alt=""/></div>
+                            )
                         })}
                         <div className='infArtist'>
                         <div className='editSeparator'>

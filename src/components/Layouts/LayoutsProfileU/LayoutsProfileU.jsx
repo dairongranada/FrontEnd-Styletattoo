@@ -1,36 +1,22 @@
 import './LayoutsProfileU.scss' 
 import { React,useEffect,useState } from 'react'
 import { useNavigate } from 'react-router'
-import { useAuth } from '../../.././context/AuthContext'
 
 
 /* F I R E B A S E */
 import  imgProfiles  from '../../.././images/Icons/profile.jpeg'
-import { uploadAvatars } from '../../.././firebase'
-
 export const LayoutsProfileU = () => {
 
-  const navigate = useNavigate()
-  
-  const { user, logout } = useAuth()
-
-  const  handleLogout = async() => {
-    await logout()
-    navigate('/IngresarSesion')
-  }
   const [ imgProfileU, setImgProfileU ] = useState()
-
-  useEffect(()=>{
-   setImgProfileU(imgProfiles)
-  })
+  useEffect(()=>{setImgProfileU(imgProfiles)})
 
   return (
       <div className='Content_profleUser'>
 
         <div className='contProfileU'>
-          <input type="file" name='file' onChange={e=> uploadAvatars(e.target.files[0])} />
+          <input type="file" name='file' onChange={e=> console.log(e.target.files[0])} />
           <div className='ContFaceUser'>
-            <img className='FaceUser' src={imgProfileU}  />
+            <img className='FaceUser' src={imgProfileU} alt={imgProfileU} />
           </div>
           <div className='contNameU'>
             <h3 className='NameU'>Laura Vallejo Jaramillo</h3>
@@ -46,7 +32,7 @@ export const LayoutsProfileU = () => {
               <p>Citas Agendadas</p>
             </div>
             <div className='option Logout'>
-              <p><button  onClick={handleLogout} >Cerrar Sesion</ button></p>
+              <p><button >Cerrar Sesion</ button></p>
             </div>
           </div>
         </div>
@@ -69,7 +55,7 @@ export const LayoutsProfileU = () => {
             </div>
             <div className='contN'>
               <label htmlFor="email">Correo</label>
-              <input name='email' className='boxInf' type="text" defaultValue={user.email} />
+              <input name='email' className='boxInf' type="text"defaultValue='Vallejojaramillo@gmai.com' />
             </div>
           </div>
           <div className='contButtonSave'>

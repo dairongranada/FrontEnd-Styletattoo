@@ -3,7 +3,6 @@ import './App.scss';
 import { Header } from './components/Layouts/Header/Header';
 import { Footer } from './components/Layouts/Footer/Footer';
 
-import { AuthProvider } from './context/AuthContext'
 
 
 
@@ -20,7 +19,6 @@ import { PageFormSe } from './components/Pages/PageFormSe/PageFormSe';
 import { PageFormRe } from './components/Pages/PageFormRe/PageFormRe';
 import { PageTattos } from './components/Pages/___PageTattos/PageTattos';
 import { PagePiercings } from './components/Pages/___PagePiercings/PagePiercings';
-import { ProtedtedRoute } from './Helpers/ProtectRoutes/ProtedtedRoute';
 
 
 
@@ -30,7 +28,6 @@ function App() {
   return (
     <div>
       <Header/>
-            <AuthProvider>
               <Routes>
                 {/* ECCSXTRAS */ }
                 <Route path="*" element= {<Page404 />} />
@@ -43,17 +40,16 @@ function App() {
                 {/* TATUADORES */ }                             {/*Ruta Protegida */}
                 <Route path='/perfilTatuadores' exact element= {<PageProfileT/>}/>
                 <Route path='/artistas' exact element= {<PageTattooists/>}/>
-                <Route path='/citas' exact element= {<ProtedtedRoute><PageQuotes/></ProtedtedRoute>}/>
+                <Route path='/citas' exact element= {<PageQuotes/>}/>
 
                 {/* USUARIOS */ }
-                <Route path='/perfilUsuario' exact element= {<ProtedtedRoute><PageProfileU/></ProtedtedRoute>}/>
+                <Route path='/perfilUsuario' exact element= {<PageProfileU/>}/>
 
                   {/* COSAS NO IMPORTANTES como(Elena <3) */ }
                 <Route path='/infoTatuajes' exact element= {<PageTattos/>}/>
                 <Route path='/infoPiercings' exact element= {<PagePiercings/>}/>
 
               </Routes>
-            </AuthProvider>
       <Footer/>
     </div>
   );

@@ -7,8 +7,8 @@ export function ProtedtedRoute({ children }) {
 
         if (loading) return(
             <div className="centerLoading">
-                <div class="ringLoading"></div>
-                <span className="spanLoading">Loading...</span>
+                <div className="ringLoading"></div>
+                <span className="spanLoading">Cargando...</span>
             </div>
         )
 

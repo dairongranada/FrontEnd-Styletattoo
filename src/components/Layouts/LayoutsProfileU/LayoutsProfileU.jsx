@@ -30,7 +30,7 @@ export const LayoutsProfileU = () => {
         <div className='contProfileU'>
           <input type="file" name='file' onChange={e=> uploadAvatars(e.target.files[0])} />
           <div className='ContFaceUser'>
-            <img className='FaceUser' src={imgProfileU}  alt='#' />
+            <img className='FaceUser' src={imgProfileU}  />
           </div>
           <div className='contNameU'>
             <h3 className='NameU'>Laura Vallejo Jaramillo</h3>

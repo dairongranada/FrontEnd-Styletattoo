@@ -1,5 +1,5 @@
 import './LayoutsProfileU.scss' 
-import { React,useState } from 'react'
+import { React,useEffect,useState } from 'react'
 import { useNavigate } from 'react-router'
 import { useAuth } from '../../.././context/AuthContext'
 
@@ -18,9 +18,11 @@ export const LayoutsProfileU = () => {
     await logout()
     navigate('/IngresarSesion')
   }
-  const [ imgProfileU, setImgProfileU ] = useState({imgProfiles})
+  const [ imgProfileU, setImgProfileU ] = useState()
 
-
+  useEffect(()=>{
+   setImgProfileU(imgProfiles)
+  })
 
   return (
       <div className='Content_profleUser'>
@@ -28,7 +30,7 @@ export const LayoutsProfileU = () => {
         <div className='contProfileU'>
           <input type="file" name='file' onChange={e=> uploadAvatars(e.target.files[0])} />
           <div className='ContFaceUser'>
-            <img className='FaceUser' src={imgProfiles}  alt='#' />
+            <img className='FaceUser' src={imgProfileU}  alt='#' />
           </div>
           <div className='contNameU'>
             <h3 className='NameU'>Laura Vallejo Jaramillo</h3>

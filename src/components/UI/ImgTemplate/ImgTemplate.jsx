@@ -1,7 +1,7 @@
 import React from 'react'
 
-export const ImgTemplate = ({srcImg,className}) => {
+export const ImgTemplate = ({srcImg,className,alt}) => {
     return (
-        <img className={className}  src={srcImg}/>
+        <img className={className}  src={srcImg} alt={alt}/>
     )
 }

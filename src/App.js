@@ -51,11 +51,7 @@ function App() {
                   {/* COSAS NO IMPORTANTES como(Elena <3) */ }
                 <Route path='/infoTatuajes' exact element= {<PageTattos/>}/>
                 <Route path='/infoPiercings' exact element= {<PagePiercings/>}/>
-<<<<<<< HEAD
-                <Route path='/consejos' exact element= {<PageConsejos/>}/>
 
-=======
->>>>>>> 5b0384f67015abb80ee4b96ffbfdb81395e422e1
               </Routes>
             </AuthProvider>
       <Footer/>

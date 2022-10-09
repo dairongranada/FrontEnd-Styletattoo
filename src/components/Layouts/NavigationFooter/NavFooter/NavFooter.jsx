@@ -1,8 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { UiAboutUs } from '.././UiAboutUs/UiAboutUs'
+import { NavAboutUsFooter } from '../NavAboutUsFooter/NavAboutUsFooter'
+import '.././NavFooter.scss'
 
-export const UIFooter = () => {
+
+export const NavFooter = () => {
     return (
         <footer>
             <div className='Main_Container' >
@@ -10,9 +12,9 @@ export const UIFooter = () => {
                     <h2>Nosotros<span className="material-symbols-outlined"> group </span></h2>
                     <div className="content">
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam quas consequuntur a 
-                            obcaecati veniam enim, cumque minima minus, quis magni sequi voluptate exercitationem 
-                            vel animi impedit nihil molestias sed id!
+                            Nuestro equipo de desarrollo está conformado por 6 personas, 
+                            las cuales se encargaron de crear la mejor herramienta de gestión 
+                            de citas para tus tatuajes
                         </p>
                     </div>
                 </div>
@@ -34,11 +36,11 @@ export const UIFooter = () => {
                         </div>
                     </div>
                 </div>
-                <UiAboutUs NameAbout='Sugerencias' classSpanLogo='material-symbols-outlined' NameSpanLogo='mark_email_unread'/> 
+                <NavAboutUsFooter NameAbout='Sugerencias' classSpanLogo='material-symbols-outlined' NameSpanLogo='mark_email_unread'/> 
             </div>
             <div className="botton">
                 <center>
-                    <span className='Credits'>Create By <Link to="/">Style Tatto</Link>  |  </span>
+                    <span className='Credits'>Create By <a href="/">Style Tatto</a> | </span>
                     <span>©</span> <span>2022 All rights reserved.</span>
                 </center>
             </div>

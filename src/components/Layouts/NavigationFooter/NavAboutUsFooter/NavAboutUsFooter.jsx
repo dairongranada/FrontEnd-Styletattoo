@@ -1,7 +1,7 @@
 import React from 'react'
 import emailjs from '@emailjs/browser';
 
-export const UiAboutUs = ({NameAbout,classSpanLogo,NameSpanLogo}) => {
+export const NavAboutUsFooter = ({NameAbout,classSpanLogo,NameSpanLogo}) => {
 
 
 const sendEmail = (event)=>{

@@ -20,7 +20,6 @@ export const Home_Services = ({srcImg}) => {
                     <h1>piercings</h1>
                 </div>
             </div>   
-
         </div>
     )
 }

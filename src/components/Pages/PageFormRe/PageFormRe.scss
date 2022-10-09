@@ -51,7 +51,7 @@
             margin-top: 16px;
 
             // Input
-            .input_global_styleRegistro{
+            .global_styleRegistroIn{
                 display: block;
                 width: 150px;
                 font-weight: 500;
@@ -71,14 +71,14 @@
                 color: var(--colorGray3);
             }
     
-            .input_global_styleRegistro:focus~.label_global_styleRegistro,.input_global_styleRegistro:valid~.label_global_styleRegistro{
+            .global_styleRegistroIn:focus~.label_global_styleRegistro,.global_styleRegistroIn:valid~.label_global_styleRegistro{
                 top: -10px;
                 color: var(--colorWhite2);
             }
     
-            .input_global_styleRegistro[type="text"],
-            .input_global_styleRegistro[type="email"],
-            .input_global_styleRegistro[type="password"]{  /* Aca lo que hice fue solo modificar los inputs de text y password */
+            .global_styleRegistroIn[type="text"],
+            .global_styleRegistroIn[type="email"],
+            .global_styleRegistroIn[type="password"]{  /* Aca lo que hice fue solo modificar los inputs de text y password */
                 border: none;
                 border-bottom: 1px solid #fff;
                 background: transparent;

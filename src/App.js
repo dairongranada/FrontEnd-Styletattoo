@@ -1,9 +1,10 @@
 import { Routes, Route } from 'react-router-dom'
 import './App.scss';
-import { Header } from './components/Layouts/Header/Header';
-import { Footer } from './components/Layouts/Footer/Footer';
 
 
+
+import { NavigationBar } from './components/Layouts/NavigationBar/NavigationBar';
+import { NavFooter } from './components/Layouts/NavigationFooter/NavFooter/NavFooter';
 
 
 /*======================  V I E W S    C O M P O N E N T S  =========================*/ 
@@ -27,7 +28,7 @@ function App() {
   // const user = useAuth()
   return (
     <div>
-      <Header/>
+      <NavigationBar/>
               <Routes>
                 {/* ECCSXTRAS */ }
                 <Route path="*" element= {<Page404 />} />
@@ -50,7 +51,7 @@ function App() {
                 <Route path='/infoPiercings' exact element= {<PagePiercings/>}/>
 
               </Routes>
-      <Footer/>
+      <NavFooter/>
     </div>
   );
 }

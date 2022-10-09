@@ -1,5 +1,5 @@
 import React from 'react'
-import '../Home_NewTattooists/Home_NewTattooists.scss'
+import './Home_NewTattooists.scss'
 
 
 import { Home_CardsTattooists } from '.././Home_CardsTattooists/Home_CardsTattooists'

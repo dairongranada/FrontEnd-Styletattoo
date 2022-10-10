@@ -17,6 +17,27 @@ export const PageProfileU = () => {
 
   const loguot = ()=> {cookies.remove()}
 
+
+
+  //Funcionalidad de Opciones
+  const EditF = () => {
+    const EditFoto = document.getElementById('ContImageUserEdit')
+    EditFoto.style.visibility = "visible"
+
+    const DatesBasics = document.getElementById('datesBasics')
+    DatesBasics.style.visibility = "hidden"
+  }
+
+  const EditNames = () => {
+    const EditFoto = document.getElementById('ContImageUserEdit')
+    EditFoto.style.visibility = "hidden"
+
+    const DatesBasics = document.getElementById('datesBasics')
+    DatesBasics.style.visibility = "visible"
+  }
+
+
+
   return (
       <div className='Content_profleUser'>
 
@@ -29,7 +50,10 @@ export const PageProfileU = () => {
             <h3 className='NameU'>{cookies.get("name")} {cookies.get("lastName")}</h3>
           </div>
           <div className='optionsUser'>
-            <div className='option'>
+            <div id='EditF' onClick={EditNames} className='option'>
+              <p>Editar Nombre o Email</p>
+            </div>
+            <div id='EditF' onClick={EditF} className='option'>
               <p>Editar Foto De Perfil</p>
             </div>
             <div className='option'>
@@ -51,7 +75,7 @@ export const PageProfileU = () => {
             <hr/>
           </div>
 
-          <div className='datesBasics'>
+          <div id='datesBasics' className='datesBasics'>
             <div className='contN'>
             <label htmlFor="text">Nombre</label>
               <input name='name' className='boxInf' type="text"  defaultValue={cookies.get("name")}/>
@@ -65,9 +89,25 @@ export const PageProfileU = () => {
               <input name='email' className='boxInf' type="text"value={cookies.get("email")} />
             </div>
           </div>
+
+          {/* editar img perfil */}
+          <div id='ContImageUserEdit' className='ContImageUserEdit'>
+            <h3>Edita Tu Foto</h3>
+            <img className='FaceUserEdit' src={imgProfileU} alt="" />
+            <div className='Edit'>
+              <span class="material-symbols-outlined">
+                photo_camera
+              </span>
+              <p>editar</p>
+            </div>
+          </div>
+
+
           <div className='contButtonSave'>
             <button className='buttons_global_StyleTatto'>Guardar</button>
           </div>
+
+
         </div>
       </div>
   )

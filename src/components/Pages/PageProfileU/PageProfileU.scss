@@ -82,6 +82,35 @@
             display: flex;
             justify-content: center;
         }
+
+        // E d i t a r    f o t o    d e   p e r f i l
+
+        .ContImageUserEdit{
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: absolute;
+            transform: translate(-15%, -96%);
+            visibility: hidden;
+            h3{
+                font-size: 30px;
+            }
+            .FaceUserEdit{
+                width: 200px;
+                height: 200px;
+                border-radius: 100%;
+            }
+            .Edit{
+                display: flex;
+                width: 10%;
+                justify-content: space-evenly;
+                color: var(--colorOrange2);
+                cursor: pointer;
+            }
+        }
     }
 }
 

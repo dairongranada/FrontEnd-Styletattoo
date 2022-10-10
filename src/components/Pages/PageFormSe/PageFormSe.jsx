@@ -47,7 +47,6 @@ export const PageFormSe = () => {
                 console.log(respuesta);
                 navigate('/perfilUsuario')   
 
-
             }else{alert("usuario Incorrecto!");}
         })
         .catch(error =>{

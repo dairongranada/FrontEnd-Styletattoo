@@ -5,7 +5,7 @@ import { GoArrowSmallLeft } from 'react-icons/go';
 import './sass/userRegister.scss'
 
 
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik, Form, Field } from 'formik';
 import axios from 'axios'
 import md5 from 'md5'
 
@@ -78,7 +78,7 @@ export const RegisterUser = ( {change_step} ) => {
                         if (!valores.email){ 
                             ers.email = "Porfavor ingresa un Correo"
                         }else if(!/^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/.test(valores.email)) {
-                            ers.email = "Porfavor ingresa un Correo valido"}
+                            ers.email = "Porfavor ingresa un Correo valido @"}
                         
                         // VALIDACION CONTRASEÑA
                         if (!valores.password){ 
@@ -118,7 +118,6 @@ export const RegisterUser = ( {change_step} ) => {
                           })
                           .catch(function (error) {console.log(error);});
                     }
-                    window.location("/")
 
                     }}
 
@@ -192,7 +191,7 @@ export const RegisterUser = ( {change_step} ) => {
                                     </div>
                                 </div>
                                 <div className='Btn_Register'>
-                                    <button className="buttons_global_StyleTatto">Registrarse</button>
+                                    <button type='submit' className="buttons_global_StyleTatto">Registrarse</button>
                                 </div>
                             <div className= "questions">
                                 <a href="/IngresarSesion">Ya tienes una Cuenta?</a>

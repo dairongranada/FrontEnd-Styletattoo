@@ -1,11 +1,11 @@
 .Content_profleUser{
-    width: 100%;
+    width: 70rem;
     height: 100vh;
     display: flex;
     justify-content: space-between;
     padding: 5px;
     .contProfileU{
-        width: 22%;
+        width: 250px;
         height: 100%;
         display: flex;
         justify-content: start;
@@ -52,7 +52,7 @@
     }
 
     .contPublicP{
-        width: 70%;
+        width: 1500px;
         height: auto;
         hr{
             width: 96%;

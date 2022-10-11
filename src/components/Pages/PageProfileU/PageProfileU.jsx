@@ -6,7 +6,7 @@ import Cookies from 'universal-cookie';
 
 
 /* F I R E B A S E */
-import  imgProfiles  from '../../.././images/Icons/perfilUsuario.jpg'
+import  imgProfiles  from '../../.././images/Icons/perfilUsuarioAnonim.jpg'
 export const PageProfileU = () => {
 
   const [ imgProfileU, setImgProfileU ] = useState()

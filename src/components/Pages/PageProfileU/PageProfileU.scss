@@ -1,23 +1,27 @@
+.BodyProfileUser{background-color: var(--colorWhite); width: 100%; height: 100%;} 
+
 .Content_profleUser{
     width: 70rem;
     height: 100vh;
     display: flex;
     justify-content: space-between;
     padding: 5px;
+
     .contProfileU{
         width: 250px;
-        height: 100%;
         display: flex;
         justify-content: start;
         flex-direction: column;
         margin-top: 12px;
         border-right: solid 1px gray;
         padding: 12px;
+
         .ContFaceUser{
             width: 90%;
             height: auto;
             display: flex;
             justify-content: center;
+
             .FaceUser{
                 width: 200px;
                 height: 200px;

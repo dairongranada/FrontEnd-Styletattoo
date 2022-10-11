@@ -41,7 +41,6 @@ export const PageProfileU = () => {
 
   return (
       <div className='Content_profleUser'>
-
         <div className='contProfileU'>
           <input type="file" name='file' onChange={e=> console.log(e.target.files[0])} />
           <div className='ContFaceUser'>
@@ -60,7 +59,6 @@ export const PageProfileU = () => {
             </div>
             <div className='optionCustomer'>
               <Link to="/user/edit-password">Editar Contraseña</Link>
-              {/* <a href="/editC">Editar Contraseña</a> */}
             </div>
             <div className='optionCustomer'>
               <Link to="/user/edit-quotes">Ciats Agendadas</Link>

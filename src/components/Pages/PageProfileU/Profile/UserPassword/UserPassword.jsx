@@ -11,40 +11,39 @@ import  imgProfiles  from '../../../../../images/Icons/profile.jpeg'
 
 
 export const UserPassword = () => {
-  const [ imgProfileU, setImgProfileU ] = useState()
-  useEffect(()=>{setImgProfileU(imgProfiles)})
-  const cookies = new Cookies();
 
   return (
-    <div className='Content_profleUser'>
-      <PageProfileU/>
-      <div className='contPublicP'>
-          <div className='contTittle'>
-            <h3>Perfil Publico</h3>
-            <p>Agrege informacion sobre usted</p>
-            <hr/>
-          </div>
-
-          <div id='datesBasics' className='datesBasics'>
-            <div className='contN'>
-              <label htmlFor="text">Nombre</label>
-              <input name='name' className='boxInf' type="text"  defaultValue={cookies.get("name")}/>
+    <div className='BodyProfileUser'>
+      <div className='Content_profleUser'>
+        <PageProfileU/>
+        <div className='contPublicP'>
+            <div className='contTittle'>
+              <h3>Perfil Publico</h3>
+              <p>Agrege informacion sobre usted</p>
+              <hr/>
             </div>
-            <div className='contN'>
-              <label htmlFor="text">Apellido</label>
-              <input name='apellido'  className='boxInf' type="text" defaultValue={cookies.get("lastName")}/>
+
+            <div id='datesBasics' className='datesBasics'>
+              <div className='contN'>
+                <label htmlFor="text">Nombre</label>
+                <input name='name' className='boxInf' type="text"/>
+              </div>
+              <div className='contN'>
+                <label htmlFor="text">Apellido</label>
+                <input name='apellido'  className='boxInf' type="text"/>
+              </div>
+              <div className='contN'>
+                <label htmlFor="email">Correo</label>
+                <input name='email' className='boxInf' type="text" />
+              </div>
             </div>
-            <div className='contN'>
-              <label htmlFor="email">Correo</label>
-              <input name='email' className='boxInf' type="text"value={cookies.get("email")} />
+
+
+            <div className='contButtonSave'>
+              <button className='buttons_global_StyleTatto'>Guardar</button>
             </div>
-          </div>
 
-
-          <div className='contButtonSave'>
-            <button className='buttons_global_StyleTatto'>Guardar</button>
-          </div>
-
+        </div>
       </div>
     </div>
   )

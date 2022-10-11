@@ -192,7 +192,7 @@ export const RegisterUser = ( {change_step} ) => {
                                     </div>
                                 </div>
                                 <div className='Btn_Register'>
-                                    <a href='/' className="buttons_global_StyleTatto">Registrarse</a>
+                                    <button className="buttons_global_StyleTatto">Registrarse</button>
                                 </div>
                             <div className= "questions">
                                 <a href="/IngresarSesion">Ya tienes una Cuenta?</a>

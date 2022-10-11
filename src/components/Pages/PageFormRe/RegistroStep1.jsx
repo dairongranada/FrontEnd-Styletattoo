@@ -67,7 +67,7 @@ export const RegistroStep1 = ( {step_change, setUserType } ) => {
                         
                             className='type__user-button type__user-clinica'>
                             <FaCrop className='type__user-button-icon'/>
-                            <h1 className='type__user-button-h1' >Tatuador</h1>
+                            <h1 className='type__user-button-h1' >Artista</h1>
                         </button>
 
                     </div>

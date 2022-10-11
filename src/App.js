@@ -17,11 +17,11 @@ import { PageTattooists } from './components/Pages/PageTattooists/PageTattooists
 import { Page404 } from './components/Pages/Page404/Page404';
 
 import { PageFormSe } from './components/Pages/PageFormSe/PageFormSe';
-import { PageFormRe } from './components/Pages/PageFormRe/PageFormRe';
+// import { PageFormRe } from './components/Pages/PageFormRe/PageFormRe';
 import { PageTattos } from './components/Pages/___PageTattos/PageTattos';
 import { PagePiercings } from './components/Pages/___PagePiercings/PagePiercings';
 
-import { Registro } from './components/Pages/Registro/Registro';
+import { PageFormRe } from './components/Pages/PageFormRe/PageFormRe';
 
 
 
@@ -40,7 +40,7 @@ function App() {
                 {/* LOGIN Y REGISTRO */ }
                 <Route path='/IngresarSesion' exact element= {<PageFormSe />}/>
                 <Route path='/Registro' exact element= {<PageFormRe/>}/>
-                <Route path='/Registross' exact element= {<Registro/>}/>
+                {/* <Route path='/Registross' exact element= {<Registro/>}/> */}
 
 
                 {/* TATUADORES */ }                             {/*Ruta Protegida */}

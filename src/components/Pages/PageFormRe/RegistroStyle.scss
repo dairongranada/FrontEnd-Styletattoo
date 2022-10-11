@@ -3,7 +3,7 @@
     position: absolute;
     width: 100%;
     height: 100vh;
-    background-color: #000000cc;
+    background-color: rgb(5 5 5 / 90%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,7 +14,7 @@
 
 
 .registerData{
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.7294117647);
     width: 550px;
     height: 520px;
     padding: 30px 10px;
@@ -28,7 +28,7 @@
 }
 
 .registerDataAuto{
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.7294117647);
     width: 550px;
     height: auto;
     padding: 30px 10px;
@@ -43,16 +43,11 @@
 
 #MdOutlineCancel {
     font-size: 33px;
-    color: #ff7d7d;
+    color: var(--colorOrange2);
     cursor: pointer;
     position: absolute;
     top: 0;
     right: 0;
-}
-
-#MdOutlineCancel:hover {
-    transition: .4s;
-    color: #a50000;
 }
 
 #titulo_MdOutlineCancel {
@@ -88,8 +83,8 @@
 .step{
     width: 35px;
     height: 35px;
-    border: 2px solid #bababa;
-    color: #bababa;
+    border: 2px solid var(--colorWhite);
+    color: var(--colorWhite);
     width: 35px;
     height: 35px;
     border-radius: 100%;
@@ -105,13 +100,13 @@
     width: 25px;
     margin-top: -4px;
     font-size: 21px;
-    color: #bababa;
+    color: var(--colorWhite);
     height: 100%;
 }
 
 
 .color_step{
-    color: white;
+    color: var(--colorWhite);
     border:  2px solid var(--colorOrange2);
     background-color: var(--colorOrange2);
 }
@@ -210,7 +205,7 @@
 }
 
 .type__user-button{
-    background-color: white;
+    background-color: rgba(0, 0, 0, 0.897);
     border: 2px solid var(--colorOrange2);
     border-radius: 100%;
     height: 100px;
@@ -228,7 +223,7 @@
 }
 
 .warn_check{
-    color: #535353;
+    color: var(--colorWhite);
 }
 
 .terminos-condiciones{

@@ -16,7 +16,7 @@ export const Page404 = () => {
                 <div className='separator'></div>
                 <h3>PÁGINA PERDIDA</h3>
                 <p>Oops!</p>
-                <Link className='BackHome' to="/">IR AL INICIO</Link>
+                <Link className='buttons_global_StyleTatto' to="/">IR AL INICIO</Link>
             </div>
         </div>
     )

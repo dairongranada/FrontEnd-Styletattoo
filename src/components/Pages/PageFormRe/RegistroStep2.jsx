@@ -1,7 +1,7 @@
 import { MdOutlineCancel } from 'react-icons/md';
 
 import { Link } from 'react-router-dom';
-import { RegisterClinica } from './Register_data_fprm/RegisterClinica';
+import { RegisterTatto } from './Register_data_fprm/RegisterTatto';
 import { RegisterUser } from './Register_data_fprm/RegisterUser';
 
 export const RegistroStep2 = ( {step_change, userType} ) => {
@@ -27,7 +27,7 @@ export const RegistroStep2 = ( {step_change, userType} ) => {
                     {
 
                         ( userType === 3 )
-                        ? <RegisterClinica change_step={handleChangeStepBack}/>
+                        ? <RegisterTatto change_step={handleChangeStepBack}/>
                         : <RegisterUser change_step={handleChangeStepBack}/>
                     }
 

@@ -16,7 +16,6 @@
         top: 50%;
         left: 60%;
         z-index: 1000;
-
     }
 }
 
@@ -49,6 +48,8 @@
             justify-content: space-around;
             position: relative;
             margin-top: 16px;
+
+            span{font-size: 11px; color: #ff0000;}
 
             // Input
             .global_styleRegistroIn{

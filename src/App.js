@@ -21,6 +21,9 @@ import { PageFormRe } from './components/Pages/PageFormRe/PageFormRe';
 import { PageTattos } from './components/Pages/___PageTattos/PageTattos';
 import { PagePiercings } from './components/Pages/___PagePiercings/PagePiercings';
 
+import { Registro } from './components/Pages/Registro/Registro';
+
+
 
 
 function App() {
@@ -37,6 +40,8 @@ function App() {
                 {/* LOGIN Y REGISTRO */ }
                 <Route path='/IngresarSesion' exact element= {<PageFormSe />}/>
                 <Route path='/Registro' exact element= {<PageFormRe/>}/>
+                <Route path='/Registross' exact element= {<Registro/>}/>
+
 
                 {/* TATUADORES */ }                             {/*Ruta Protegida */}
                 <Route path='/perfilTatuadores' exact element= {<PageProfileT/>}/>

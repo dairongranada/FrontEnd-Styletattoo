@@ -61,19 +61,42 @@ export const PageFormRe = () => {
 
                     validate={(valores) => {
                         let ers = {}
+                        // VALIDACION NOMBRE
+                        if (!valores.name){ 
+                            ers.name = "Porfavor ingresa un nombre"
+                        }else if(!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(valores.name)) {
+                            ers.name = "Ingrese un nombre con letras"}
 
-                        if (!valores.name){
-                            ers.name = "Porfavor Ingresa Un Nombre"
-                        }
-                        console.log(valores);
+                        // VALIDACION APELLIDO
+                        if (!valores.lastName){ 
+                            ers.lastName = "Porfavor ingresa un apellido"
+                        }else if(!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(valores.name)) {
+                            ers.lastName = "Porfavor ingresa un apellido"}
 
-                        return
+                         // VALIDACION EMAIL
+                        if (!valores.email){ 
+                            ers.email = "Porfavor ingresa un apellido"
+                        }else if(!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(valores.name)) {
+                            ers.name = "Porfavor ingresa un apellido"}
+
+                        // VALIDACION CONTRASEÑA
+                        if (!valores.password){ 
+                            ers.password = "Porfavor ingresa una contraseña"
+                        }else if(!/^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$/.test(valores.name)) {
+                            ers.password = "ingresa una contraseña mayor a 6 caracteres "}
+                        
+                        // VALIDACION CONFIRMAR CONTRASEÑA
+                        if (!valores.passwordConfirm){ 
+                            ers.passwordConfirm = "Porfavor ingresa una Contraseña"
+                        }if (valores.password === valores.passwordConfirm) {
+                            ers.passwordConfirm = "Las Contraseñas no Coinciden"}
+                        return ers
 
                     }}
 
                     onSubmit={(valors) =>{ console.log(valors);}}
                 >
-                    {({ values, handleSubtmit, handleChange, handleBlur  })=> (
+                    {({ values,errors, handleSubtmit, handleChange, handleBlur  })=> (
                         <form onSubmit={handleSubtmit}>
                             <div><h2>Registro</h2></div>
                                 <div className="inputContent">
@@ -87,7 +110,8 @@ export const PageFormRe = () => {
                                             onChange={handleChange}
                                             onBlur={handleBlur}
                                         />
-                                        <label  htmlFor='name' className='label_global_styleRegistro' >Nombre</label>
+                                         <label  htmlFor='name' className='label_global_styleRegistro'>Nombre</label>
+                                        {errors.name && <span>{errors.name}</span>}
                                     </div>
                                     <div>
                                         <input
@@ -98,9 +122,9 @@ export const PageFormRe = () => {
                                             value={values.lastName}
                                             onChange={handleChange}
                                             onBlur={handleBlur}
-                                        />
-
-                                        <label htmlFor='lastName' className='label_global_styleRegistro' >Apellido</label>
+                                        />                                        
+                                        <label htmlFor='lastName' className='label_global_styleRegistro'>Apellido</label>
+                                        {errors.lastName && <span>{errors.lastName}</span>}   
                                     </div>
                                 </div>
                                     <div className="inputContent">
@@ -112,8 +136,9 @@ export const PageFormRe = () => {
                                             value={values.email}
                                             onChange={handleChange} 
                                             onBlur={handleBlur} 
-                                        />
-                                        <label htmlFor='email' className='label_global_styleRegistro ' >Correo electronico</label>
+                                        />                                        
+                                        <label htmlFor='email' className='label_global_styleRegistro'>Correo electronico</label>
+                                        {errors.email && <span>{errors.email}</span>}   
                                     </div>
                                     <div className="inputContent">
                                         <div>
@@ -125,8 +150,9 @@ export const PageFormRe = () => {
                                                 value={values.password}
                                                 onChange={handleChange} 
                                                 onBlur={handleBlur}
-                                            />
+                                            />                                            
                                             <label htmlFor='password' className='label_global_styleRegistro'>Contraseña</label>
+                                            {errors.password && <span>{errors.password}</span>}   
                                         </div>
                                         <div>
                                             <input 
@@ -137,8 +163,10 @@ export const PageFormRe = () => {
                                                 value={values.passwordConfirm}
                                                 onChange={handleChange} 
                                                 onBlur={handleBlur}
-                                            />
+                                            />                                            
                                             <label htmlFor='confirmPassword' className='label_global_styleRegistro'>Confirmar Contraseña</label>
+                                            {errors.confirmPassword && <span>{errors.confirmPassword}</span>}   
+
                                         </div>
                                     </div>
                                     <div>

@@ -1,9 +1,13 @@
 import React, { useState } from 'react'
+import { AiOutlineUserAdd } from 'react-icons/ai';
 import { GoArrowSmallLeft } from 'react-icons/go';
-import { FaPencilAlt } from 'react-icons/fa';
+
+
+
 import { ButtonUI } from '../../../UI/ButtonUI/ButtonUI';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import './PageFormRe.scss';
+
+import './sass/tattoRegister.scss'
 
 export const RegisterTatto = ( {change_step} ) => {
 
@@ -31,12 +35,8 @@ export const RegisterTatto = ( {change_step} ) => {
                     </div>
 
                     <div className="cont_icon">
-                        <div onClick={change_step} className='rows_register'>
-                            <GoArrowSmallLeft />
-                        </div>
-                        <div className="user_icon">
-                            <FaPencilAlt />
-                        </div>
+                        <div onClick={change_step} className='rows_register'><GoArrowSmallLeft/></div>
+                        <div className="user_icon"><AiOutlineUserAdd /></div>
                     </div>
                     <Formik>
                         {( {errors} ) => (

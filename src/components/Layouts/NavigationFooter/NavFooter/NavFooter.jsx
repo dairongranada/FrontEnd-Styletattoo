@@ -10,7 +10,7 @@ export const NavFooter = () => {
             <div className='Main_Container' >
                 <div className="left box">
                     <h2>Nosotros<span className="material-symbols-outlined"> group </span></h2>
-                    <div className="content">
+                    <div className="contentNavFooter">
                         <p>
                             Nuestro equipo de desarrollo está conformado por 6 personas, 
                             las cuales se encargaron de crear la mejor herramienta de gestión 
@@ -21,7 +21,7 @@ export const NavFooter = () => {
 
                 <div className="center box ">
                     <h2>Navegar<span className="material-symbols-outlined arrow">arrow_downward </span></h2>
-                    <div className="content">
+                    <div className="contentNavFooter">
                         <div className="place">
                             <Link to="/"><span className="material-symbols-outlined">house</span></Link>                           
                             <span><Link to="/">Home</Link></span> 

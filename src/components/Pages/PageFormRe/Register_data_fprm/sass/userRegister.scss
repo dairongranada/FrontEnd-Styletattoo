@@ -1,4 +1,4 @@
-form{
+.formRegisterUser{
     width: 450px;
     height: 100%;
 }
@@ -16,6 +16,8 @@ form{
             justify-content: space-around;
             position: relative;
             margin-top: 16px;
+
+            span{font-size: 11px; color: var(--colorOrange2); width: 88%;}
 
             // Input
             .global_styleRegistroIn{
@@ -61,7 +63,6 @@ form{
         justify-content: center;
         button{ width: 90%; margin: 1.52rem 0 1.52rem 0;}
     }
-    span{font-size: 11px; color: var(--colorOrange2); width: 88%;}
 
 
     .errosEmail{

@@ -16,7 +16,7 @@ const sendEmail = (event)=>{
     return (
         <div className='AboutUs box'>
             <h2>{NameAbout}<span className={classSpanLogo}>{NameSpanLogo}</span></h2>
-            <div className="content">
+            <div className="contentNavFooter">
                 <form onSubmit={sendEmail}>
                     <div className='email'>
                         <div className="text">Email</div>

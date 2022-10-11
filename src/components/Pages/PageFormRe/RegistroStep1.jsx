@@ -47,9 +47,8 @@ export const RegistroStep1 = ( {step_change, setUserType } ) => {
                         <button 
                             id={active === 2 && "type__user-active"}
                             onClick={()=> {
-                            setUserType(2)
-                            setActive(2)
-                        }}
+                            setUserType(2) 
+                            setActive(2)}}
                         
                             className='type__user-button type__user-user'>
                             <AiOutlineUser className='type__user-button-icon'/>

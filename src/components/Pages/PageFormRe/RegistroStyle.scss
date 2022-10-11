@@ -1,3 +1,15 @@
+
+.cont_icon{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.user_icon{
+    font-size: 20px;
+}
+
+
 .register_container{
     position: absolute;
     width: 100%;
@@ -113,7 +125,7 @@
 }
 
 .color_linea{
-    color: #0089b3;
+    color: var(--colorOrange2);
 }
 
 #p1Registro{
@@ -184,7 +196,6 @@
 .type__user-button:hover{
     color: white;
     background-color: var(--colorOrange2);
-    transition: .5s;
 }
 .type__user-button:hover .type__user-button-icon{
     color: white;
@@ -196,7 +207,6 @@
 #type__user-active{
     color: white;
     background-color: var(--colorOrange2);
-    transition: .5s;
 }
 #type__user-active h1,.type__user-button-icon{
     color: white;
@@ -248,10 +258,5 @@
     height: 25px;
 }
 
-.rows_register:hover{
-    transform: scale(1.1);
-    transition: .4s;
-    color: rgb(0, 110, 144);
-}
 
 

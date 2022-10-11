@@ -15,7 +15,7 @@ export const PageTattos = () => {
             Usa humectante. Aplica un humectante suave sobre la piel tatuada, varias veces al día.
             Evita la exposición al sol. No expongas el área tatuada al sol durante por lo menos algunas semanas.
             Evita nadar. Mantente fuera de piscinas, tinas de agua caliente, ríos, lagos y otras masas de agua mientras tu tatuaje se cura.
-            Elije la ropa con cuidado. No uses nada que podría adherirse al tatuaje.
+            No uses nada que podría adherirse al tatuaje.
             Espera hasta 2 semanas para que se cure. No quites las costras, esto aumenta el riesgo de infección y puede dañar el diseño y provocar cicatrices.
             Si piensas que tu tatuaje podría estar infectado o te preocupa que no se esté curando correctamente, comunícate con tu médico. Si tu tatuaje no es lo que esperabas y te interesa quitártelo, consulta a tu dermatólogo acerca de la cirugía láser u otras opciones para la remoción de tatuajes.
 

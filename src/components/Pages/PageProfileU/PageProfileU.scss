@@ -4,24 +4,27 @@
     display: flex;
     justify-content: space-between;
     padding: 5px;
+    background-color: var(--colorGray);
     .contProfileU{
-        width: 22%;
-        height: 100%;
-        display: flex;
-        justify-content: start;
         flex-direction: column;
-        margin-top: 12px;
-        border-right: solid 1px gray;
-        padding: 12px;
+        justify-content: center;
+        align-items: center;
+        padding: 30px;
+        background-color: var(--colorGray);
+        width: 35%;
+        box-shadow: 1px 2px 10px black;
+        height: 450px;
+        margin: 2rem;
         .ContFaceUser{
             width: 90%;
             height: auto;
             display: flex;
             justify-content: center;
             .FaceUser{
-                width: 200px;
-                height: 200px;
-                border-radius: 100%;
+                width: 170px;
+                height: 175px;
+                border-radius: 90%;
+                margin: 10px;
             }
         }
         .contNameU{
@@ -34,6 +37,7 @@
             .option{
                 width: 100%;
                 padding: 5px;
+                cursor: pointer;
                 border-bottom: solid 1px white;
             }
             .option:hover{
@@ -50,11 +54,21 @@
     }
 
     .contPublicP{
-        width: 70%;
-        height: auto;
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        height: 83%;
+        background-color: black;
+        padding: 25px;
+        margin: 1.5rem;
+        .contTittle{
+            text-align: center;
+        }
         hr{
             width: 96%;
+            margin: 0.5;
         }
+        
         .datesBasics{
             margin-top: 30px;
             padding: 10px;

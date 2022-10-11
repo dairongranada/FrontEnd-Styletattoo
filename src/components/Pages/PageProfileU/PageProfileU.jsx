@@ -5,7 +5,7 @@ import Cookies from 'universal-cookie';
 
 
 /* F I R E B A S E */
-import  imgProfiles  from '../../.././images/Icons/profile.jpeg'
+import imgProfiles from '../../.././images/Icons/profileU.jpeg'
 export const PageProfileU = () => {
 
   const [ imgProfileU, setImgProfileU ] = useState()
@@ -30,7 +30,7 @@ export const PageProfileU = () => {
           </div>
           <div className='optionsUser'>
             <div className='option'>
-              <p>Editar Foto De Perfil</p>
+              <p>Editar foto de Perfil</p>
             </div>
             <div className='option'>
               <p>Editar Contraseña</p>
@@ -46,8 +46,8 @@ export const PageProfileU = () => {
 
         <div className='contPublicP'>
           <div className='contTittle'>
-            <h3>Public Profile</h3>
-            <p>Agrege informacion sobre usted</p>
+            <h3>Perfil Publico</h3>
+            <p>Agregue informacion sobre usted</p>
             <hr/>
           </div>
 

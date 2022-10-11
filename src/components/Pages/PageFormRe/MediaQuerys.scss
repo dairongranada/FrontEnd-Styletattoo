@@ -1,0 +1,22 @@
+@media (max-width: 600px) {
+    .registerData {
+        width: 95%;
+    }
+    .registerDataAuto {
+        width: 95%;
+    }
+}
+
+
+@media (max-width: 400px) {
+    .registerData {
+        width: 95%;
+    }
+    .types_users {
+        width: 75%;
+    }
+    .registerDataAuto {
+        width: 95%;
+        gap: 5px;
+    }
+}

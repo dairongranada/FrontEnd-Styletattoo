@@ -23,11 +23,9 @@
         display: flex; flex-direction:column;
         justify-content: center;
         h1{font-size: 150px;}
-        h3{font-size: 30px;}
+        h3{font-size: 30px;  color: var(--colorOrange2);}
         p{text-align: center; font-size: 15px;}
-        .volver{
-            color: var(--colorOrange2);
-        }
+
         .BackHome{
             text-align: center;
             cursor: pointer;

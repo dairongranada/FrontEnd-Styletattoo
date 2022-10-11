@@ -1,9 +1,8 @@
-
 .register_container{
     position: absolute;
     width: 100%;
-    height: 100vh;
-    background-color: rgb(5 5 5 / 90%);
+    height: 90vh;
+    background-color: rgba(5, 5, 5, 0.945);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,7 +13,7 @@
 
 
 .registerData{
-    background-color: rgba(0, 0, 0, 0.7294117647);
+    background-color: rgb(26 26 26 / 73%);
     width: 550px;
     height: 520px;
     padding: 30px 10px;
@@ -28,7 +27,7 @@
 }
 
 .registerDataAuto{
-    background-color: rgba(0, 0, 0, 0.7294117647);
+    background-color: rgb(26 26 26 / 73%);
     width: 550px;
     height: auto;
     padding: 30px 10px;
@@ -58,6 +57,7 @@
 }
 #titulo_MdOutlineCancel h2 {
     color: var(--colorOrange2);
+    font-size:30px;
 }
 
 #titulo_MdOutlineCancel1 {
@@ -69,6 +69,7 @@
 }
 #titulo_MdOutlineCancel1 h2 {
     color: var(--colorOrange2);
+    font-size: 30px;
 }
 
 #register_steps{
@@ -205,7 +206,7 @@
 }
 
 .type__user-button{
-    background-color: rgba(0, 0, 0, 0.897);
+    background-color: rgba(26, 26, 26, 0.73);
     border: 2px solid var(--colorOrange2);
     border-radius: 100%;
     height: 100px;

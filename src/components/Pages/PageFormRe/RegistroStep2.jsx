@@ -18,14 +18,13 @@ export const RegistroStep2 = ( {step_change, userType} ) => {
             <div className="register_container">
                 <div className="registerDataAuto">
                     <div id='titulo_MdOutlineCancel'>
-                        <h2 >Ingresa los datos</h2>
+                        <h2>Ingresa los datos</h2>
                         <Link to='/'>
                             <div id='MdOutlineCancel'><MdOutlineCancel/></div>
                         </Link>
                     </div>
 
                     {
-
                         ( userType === 3 )
                         ? <RegisterTatto change_step={handleChangeStepBack}/>
                         : <RegisterUser change_step={handleChangeStepBack}/>

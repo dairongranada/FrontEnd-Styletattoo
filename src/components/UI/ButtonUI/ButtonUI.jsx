@@ -1,9 +1,7 @@
-import './ButtonUIStyle.css'
-
-export const ButtonUI = ( {text, style, event, id, type} ) => {
+export const ButtonUI = ( {text, styleName, event, id, type} ) => {
   return (
     <button
-        className={style}
+        className={styleName}
         onClick={event}
         id={id}
         type={type}

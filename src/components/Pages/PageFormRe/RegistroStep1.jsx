@@ -27,7 +27,6 @@ export const RegistroStep1 = ( {step_change, setUserType } ) => {
             <div className="register_container">
                 <div id='registerType' className="registerData animate__animated animate__fadeIn">
                     <div id='titulo_MdOutlineCancel1'>
-                        
                         <h2>Rol</h2>
                             <div id='MdOutlineCancel' onClick={handleExit}>
                                 <MdOutlineCancel />
@@ -40,7 +39,6 @@ export const RegistroStep1 = ( {step_change, setUserType } ) => {
                         <div className='linea_step linea_step1'>——</div>
                         <div className='step'>2</div>
                     </div>
-                    
                     <p className='warn_check'>
                         Por favor, selecciona un rol antes de continuar
                     </p>
@@ -72,12 +70,9 @@ export const RegistroStep1 = ( {step_change, setUserType } ) => {
 
                     </div>
 
-                    
-
                     <ButtonUI 
                         text={'Siguiente'}
-                        style="btn200"
-                        id={`${ active === 0 && "btnBlocked" }`}
+                        styleName= "buttons_global_StyleTatto"
                         event={handleButton}
                     />
 

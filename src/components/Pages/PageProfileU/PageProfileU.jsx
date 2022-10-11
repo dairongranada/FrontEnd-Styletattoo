@@ -1,11 +1,12 @@
 import './PageProfileU.scss' 
 import { React,useEffect,useState } from 'react'
 import { useNavigate } from 'react-router'
+import { Link } from 'react-router-dom'
 import Cookies from 'universal-cookie';
 
 
 /* F I R E B A S E */
-import  imgProfiles  from '../../.././images/Icons/profile.jpeg'
+import  imgProfiles  from '../../.././images/Icons/perfilUsuario.jpg'
 export const PageProfileU = () => {
 
   const [ imgProfileU, setImgProfileU ] = useState()
@@ -51,16 +52,18 @@ export const PageProfileU = () => {
           </div>
           <div className='optionsUser'>
             <div id='EditF' onClick={EditNames} className='optionCustomer'>
-              <p>Editar Nombre o Email</p>
+              
+              <Link to="/user/edit-profile">Editar Nombre o Email</Link>
             </div>
             <div id='EditF' onClick={EditF} className='optionCustomer'>
-              <p>Editar Foto De Perfil</p>
+              <Link to="/user/edit-image">Editar Foto De Perfil</Link>
             </div>
             <div className='optionCustomer'>
-              <p>Editar Contraseña</p>
+              <Link to="/user/edit-password">Editar Contraseña</Link>
+              {/* <a href="/editC">Editar Contraseña</a> */}
             </div>
             <div className='optionCustomer'>
-              <p>Citas Agendadas</p>
+              <Link to="/user/edit-quotes">Ciats Agendadas</Link>
             </div>
             <div className='optionCustomer Logout'>
               <p><button onClick={loguot}>Cerrar Sesion</ button></p>

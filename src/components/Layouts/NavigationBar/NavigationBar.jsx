@@ -21,7 +21,7 @@ export const NavigationBar = () => {
                 <ul className='menu-items'>
                     <li><a className='option2' href="/" >INICIO</a></li>
                     <li><a className='option2' href="/artistas">ARTISTAS</a></li>
-                    <li><a className='option2' href="/perfilUsuario">PERFIL</a></li>
+                    <li><a className='option2' href="/user/edit-profile">PERFIL</a></li>
                 </ul>
                 <span onClick={menu} id='burguer' className="material-symbols-outlined">
                     menu

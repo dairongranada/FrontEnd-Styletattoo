@@ -23,6 +23,7 @@ import { PagePiercings } from './components/Pages/___PagePiercings/PagePiercings
 
 import { UserPassword } from './components/Pages/PageProfileU/Profile/UserPassword/UserPassword'
 import { UserName } from './components/Pages/PageProfileU/Profile/UserName/UserName'
+import {UserImage} from './components/Pages/PageProfileU/Profile/UserImage/UserImage'
 
 function App() {
 
@@ -54,10 +55,10 @@ function App() {
                 <Route path='/infoPiercings' exact element= {<PagePiercings/>}/>
 
                 {/* Rutas para opciones del perfil de usuario */}
-                <Route path='/editN' exact element= {<UserName/>}/>
-                <Route path='/editF' exact element= {<UserName/>}/>
-                <Route path='/editC' exact element= {<UserPassword/>}/>
-                <Route path='/Cit' exact element= {<UserName/>}/>
+                <Route path='/user/edit-profile' exact element= {<UserName/>}/>
+                <Route path='/user/edit-image' exact element= {<UserImage/>}/>
+                <Route path='/user/edit-password' exact element= {<UserPassword/>}/>
+                <Route path='/user/edit-quotes' exact element= {<UserPassword/>}/>
 
               </Routes>
       <NavFooter/>

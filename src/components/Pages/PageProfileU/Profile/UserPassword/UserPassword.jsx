@@ -1,55 +1,42 @@
-import React from 'react'
-import {PageProfileU } from '../.././PageProfileU.jsx'
-// import Cookies from 'universal-cookie';
-// import  useState, {useEffect} from 'react';
+import '../UserImage/UserImage.scss'
+import {PageProfileU} from '../../PageProfileU.jsx'
+import { React,useEffect,useState } from 'react'
+import Cookies from 'universal-cookie';
 import  imgProfiles  from '../../../../../images/Icons/profile.jpeg'
 
+
+
+
+/* F I R E B A S E */
+
+
 export const UserPassword = () => {
-
-
-  
-
-  // const [ imgProfileU, setImgProfileU ] = useState()
-  // useEffect(()=>{setImgProfileU(imgProfiles)})
-  
-  // const cookies = new Cookies();
-  
-  
+  const [ imgProfileU, setImgProfileU ] = useState()
+  useEffect(()=>{setImgProfileU(imgProfiles)})
+  const cookies = new Cookies();
 
   return (
-    <div>
+    <div className='Content_profleUser'>
       <PageProfileU/>
       <div className='contPublicP'>
           <div className='contTittle'>
-            <h3>Public Profile</h3>
+            <h3>Perfil Publico</h3>
             <p>Agrege informacion sobre usted</p>
             <hr/>
           </div>
 
           <div id='datesBasics' className='datesBasics'>
             <div className='contN'>
-            <label htmlFor="text">Nombre</label>
-              <input name='name' className='boxInf' type="text"  />
+              <label htmlFor="text">Nombre</label>
+              <input name='name' className='boxInf' type="text"  defaultValue={cookies.get("name")}/>
             </div>
             <div className='contN'>
               <label htmlFor="text">Apellido</label>
-              <input name='apellido'  className='boxInf' type="text"/>
+              <input name='apellido'  className='boxInf' type="text" defaultValue={cookies.get("lastName")}/>
             </div>
             <div className='contN'>
               <label htmlFor="email">Correo</label>
-              <input name='email' className='boxInf' type="text" />
-            </div>
-          </div>
-
-          {/* editar img perfil */}
-          <div id='ContImageUserEdit' className='ContImageUserEdit'>
-            <h3>Edita Tu Foto</h3>
-            <img className='FaceUserEdit' src={imgProfiles} alt="" />
-            <div className='Edit'>
-              <span class="material-symbols-outlined">
-                photo_camera
-              </span>
-              <p>editar</p>
+              <input name='email' className='boxInf' type="text"value={cookies.get("email")} />
             </div>
           </div>
 
@@ -57,7 +44,8 @@ export const UserPassword = () => {
           <div className='contButtonSave'>
             <button className='buttons_global_StyleTatto'>Guardar</button>
           </div>
-    </div>
+
+      </div>
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import './UserName.scss'
+import '../UserImage/UserImage.scss'
 import {PageProfileU} from '../../PageProfileU.jsx'
 import { React,useEffect,useState } from 'react'
 import Cookies from 'universal-cookie';
@@ -49,14 +49,3 @@ export const UserName = () => {
     </div>
   )
 }
-// {/* editar img perfil */}
-// <div id='ContImageUserEdit' className='ContImageUserEdit'>
-// <h3>Edita Tu Foto</h3>
-// <img className='FaceUserEdit' src={imgProfileU} alt="" />
-// <div className='Edit'>
-//   <span class="material-symbols-outlined">
-//     photo_camera
-//   </span>
-//   <p>editar</p>
-// </div>
-// </div>

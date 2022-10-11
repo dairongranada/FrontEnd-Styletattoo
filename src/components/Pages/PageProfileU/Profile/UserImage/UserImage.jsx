@@ -1,6 +1,6 @@
 import React from 'react'
 import { PageProfileU } from '../../PageProfileU'
-import imgProfileU from '../../../../../images/Icons/profile.jpeg'
+import imgProfileU from '../../../../../images/Icons/perfilUsuarioAnonim.jpg'
 
 export const UserImage = () => {
   return (

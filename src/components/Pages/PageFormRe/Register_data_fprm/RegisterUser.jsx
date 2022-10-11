@@ -59,9 +59,50 @@ export const RegisterUser = ( {change_step} ) => {
                         passwordConfirm: '',
                         url:" ",
                     }}
-                    onSubmit={(valores, {resetForm}) =>{
-                        // resetForm();
-                        // console.log(valores);
+                    
+                    validate={(valores) => {
+                        let ers = {}
+                        // VALIDACION NOMBRE
+                        if (!valores.name){ 
+                            ers.name = "Porfavor ingresa un nombre"
+                        }else if(!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(valores.name)) {
+                            ers.name = "Porfavor ingresa solo letras"}
+
+                        // VALIDACION APELLIDO
+                        if (!valores.lastName){ 
+                            ers.lastName = "Porfavor ingresa un apellido"
+                        }else if(!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(valores.lastName)) {
+                            ers.lastName = "Porfavor ingresa solo letras"}
+
+                         // VALIDACION EMAIL
+                        if (!valores.email){ 
+                            ers.email = "Porfavor ingresa un Correo"
+                        }else if(!/^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/.test(valores.email)) {
+                            ers.email = "Porfavor ingresa un Correo valido"}
+                        
+                        // VALIDACION CONTRASEÑA
+                        if (!valores.password){ 
+                            ers.password = "Porfavor ingresa una contraseña"
+                        }else if((valores.password.length < 8)) {
+                            ers.password = "Contraseña mayor a 8 caracteres "}
+                            
+                        // VALIDACION CONFIRMAR CONTRASEÑA
+                        if (!valores.passwordConfirm){ 
+                            ers.passwordConfirm = "Porfavor confirma tu Contraseña"
+                        }else if(valores.password !== valores.passwordConfirm) {
+                            ers.passwordConfirm = "Las Contraseñas no Coinciden"
+                        }
+
+                        return ers  
+
+                        
+
+                    }}
+
+                    onSubmit={(valoresForm, {resetForm}) =>{
+                        resetForm();
+                        console.log(valoresForm);
+
 
                         const axiosfuntion = () =>{
                             axios.post('http://localhost:3001/usuarios', 
@@ -77,45 +118,7 @@ export const RegisterUser = ( {change_step} ) => {
                           })
                           .catch(function (error) {console.log(error);});
                     }
-
-                    }}
-
-                    validate={(valores) => {
-                        let ers = {}
-                        // VALIDACION NOMBRE
-                        if (!valores.name){ 
-                            ers.name = "Porfavor ingresa un nombre"
-                        }else if(!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(valores.name)) {
-                            ers.name = "Porfavor ingresa solo letras"}
-
-                        // VALIDACION APELLIDO
-                        if (!valores.lastName){ 
-                            ers.lastName = "Porfavor ingresa un apellido"
-                        }else if(!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(valores.lastName)) {
-                            ers.lastName = "Porfavor ingresa un solo letras"}
-
-                         // VALIDACION EMAIL
-                        if (!valores.email){ 
-                            ers.email = "Porfavor ingresa un Correo"
-                        }else if(!/^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/.test(valores.email)) {
-                            ers.email = "Porfavor ingresa un Correo valido"}
-                        
-                        // VALIDACION CONTRASEÑA
-                        if (!valores.password){ 
-                            ers.password = "Porfavor ingresa una contraseña"
-                        // }else if(!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/.test(valores.password)) {
-                        //     ers.password = "Contraseña mayor a 8 caracteres "}
-                        }
-                        // VALIDACION CONFIRMAR CONTRASEÑA
-                        if (!valores.confirmPassword){ 
-                            ers.confirmPassword = "Porfavor confirma tu Contraseña"
-                        }else if(valores.password !== valores.confirmPassword) {
-                            ers.confirmPassword = "Las Contraseñas no Coinciden"
-                        }
-
-                        return ers  
-
-
+                    window.location("/")
 
                     }}
 
@@ -184,12 +187,12 @@ export const RegisterUser = ( {change_step} ) => {
                                         <label htmlFor='confirmPassword' className='label_global_styleRegistro'>Confirmar Contraseña</label>
 
                                         
-                                        {errors.confirmPassword && <span className='emailSpam' >{errors.confirmPassword}</span>}   
+                                        {errors.passwordConfirm && <span className='emailSpam' >{errors.passwordConfirm}</span>}   
 
                                     </div>
                                 </div>
                                 <div className='Btn_Register'>
-                                    <button  type='submit' className="buttons_global_StyleTatto">Registrarse</button>
+                                    <a href='/' className="buttons_global_StyleTatto">Registrarse</a>
                                 </div>
                             <div className= "questions">
                                 <a href="/IngresarSesion">Ya tienes una Cuenta?</a>

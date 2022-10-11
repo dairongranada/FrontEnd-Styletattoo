@@ -31,12 +31,14 @@
         }
         .optionsUser{
             margin-top: 15px;
-            .option{
+            .optionCustomer{
                 width: 100%;
                 padding: 5px;
                 border-bottom: solid 1px white;
+
+                p{cursor: pointer;}
             }
-            .option:hover{
+            .optionCustomer:hover{
                 background-color: black;
                 color: white;
             }

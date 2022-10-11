@@ -116,7 +116,7 @@ svg{
     font-weight: 600;
     position: relative;
     margin: 1rem 0 0 0;
-    color: #202020;
+    color: #000000;
 }
 
 .member-name::after{
@@ -135,8 +135,8 @@ svg{
     font-size: 18px;
     line-height: 28px;
     text-align: center;
-    color: var(--colorBlack);
-    margin-top: 10px;
+    color: #202020ce;
+    margin-top: 20px;
 }
 
 .button{

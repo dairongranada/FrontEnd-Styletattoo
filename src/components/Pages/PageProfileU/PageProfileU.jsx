@@ -50,19 +50,19 @@ export const PageProfileU = () => {
             <h3 className='NameU'>{cookies.get("name")} {cookies.get("lastName")}</h3>
           </div>
           <div className='optionsUser'>
-            <div id='EditF' onClick={EditNames} className='option'>
+            <div id='EditF' onClick={EditNames} className='optionCustomer'>
               <p>Editar Nombre o Email</p>
             </div>
-            <div id='EditF' onClick={EditF} className='option'>
+            <div id='EditF' onClick={EditF} className='optionCustomer'>
               <p>Editar Foto De Perfil</p>
             </div>
-            <div className='option'>
+            <div className='optionCustomer'>
               <p>Editar Contraseña</p>
             </div>
-            <div className='option'>
+            <div className='optionCustomer'>
               <p>Citas Agendadas</p>
             </div>
-            <div className='option Logout'>
+            <div className='optionCustomer Logout'>
               <p><button onClick={loguot}>Cerrar Sesion</ button></p>
             </div>
           </div>

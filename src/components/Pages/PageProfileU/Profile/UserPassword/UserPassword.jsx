@@ -21,6 +21,25 @@ export const UserPassword = () => {
                 <h3>Perfil Publico</h3>
                 <p>Edite la configuración de su cuenta y cambie su contraseña aquí.</p>
             </div>
+            <div className="addPhotoMessenge">
+              <p>Cambia Tu contraseña aqui</p>
+            </div>
+
+            <div id='datesBasics' className='datesBasics'>
+              <div className='contN'>
+                <label htmlFor="text">Contraseña Anterior</label>
+                <input name='name' className='boxInf' type="text"/>
+              </div>
+              <div className='contN'>
+                <label htmlFor="text">Nueva Contraseña</label>
+                <input name='apellido'  className='boxInf' type="text"/>
+              </div>
+
+              <div className='contButtonSave'>
+                <button className='buttons_global_StyleTatto'>Guardar</button>
+              </div>
+
+            </div>
         </div>
       </div>
     </div>

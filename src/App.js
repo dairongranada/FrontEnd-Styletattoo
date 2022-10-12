@@ -23,6 +23,7 @@ import { PagePiercings } from './components/Pages/___PagePiercings/PagePiercings
 import { UserPassword } from './components/Pages/PageProfileU/Profile/UserPassword/UserPassword'
 import { UserName } from './components/Pages/PageProfileU/Profile/UserName/UserName'
 import {UserImage} from './components/Pages/PageProfileU/Profile/UserImage/UserImage'
+import { UserQuotes } from './components/Pages/PageProfileU/Profile/UserQuotes/UserQuotes'
 
 function App() {
 
@@ -55,7 +56,7 @@ function App() {
                 <Route path='/user/edit-profile' exact element= {<UserName/>}/>
                 <Route path='/user/edit-image' exact element= {<UserImage/>}/>
                 <Route path='/user/edit-password' exact element= {<UserPassword/>}/>
-                <Route path='/user/edit-quotes' exact element= {<UserPassword/>}/>
+                <Route path='/user/edit-quotes' exact element= {<UserQuotes/>}/>
 
               </Routes>
       <NavFooter/>

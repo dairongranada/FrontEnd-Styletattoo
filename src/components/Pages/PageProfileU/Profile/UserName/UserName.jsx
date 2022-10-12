@@ -19,23 +19,17 @@ export const UserName = () => {
   return (
     <div className='BodyProfileUser'>
       <div className='Content_profleUser'>
-        <LeftInfo/>
-        <div className='ContentUserInfo'>
+          <LeftInfo/>
+          <div className='ContentUserInfo'>
             <div class="contentHeaderTitle">
                 <h3>Perfil Publico</h3>
                 <p>Añade información sobre ti</p>
             </div>
-        </div>
-        
 
-
-
-          {/* <div className='contPublicP'>
-            <div className='contTittle'>
-              <h3>Perfil Publico</h3>
-              <p>Agrege informacion sobre usted</p>
-              <hr/>
-            </div>
+            <div className='contPublicP'>
+              <div className='contTittle'>
+                <p>Agrege informacion sobre usted</p>
+              </div>
             <div id='datesBasics' className='datesBasics'>
               <div className='contN'>
                 <label htmlFor="text">Nombre</label>
@@ -54,7 +48,14 @@ export const UserName = () => {
             <div className='contButtonSave'>
               <button className='buttons_global_StyleTatto'>Guardar</button>
             </div>
-          </div> */}
+          </div>
+          
+      </div>
+        
+
+
+
+          
 
       </div>
     </div>

@@ -122,7 +122,7 @@ export const PageProfileT = () => {
                         <div className='infArtist'>
                         <div className='editSeparator'>
                                 <div className='editProfile'><a  onClick={() => EditProfileImg()}  href="#"></a></div>
-                                <div><label className='labelNameArtist'>Nombre</label><p>Carlos Melo Toca</p></div>
+                                <div><label className='labelNameArtist'>Nombre</label><p>Samuel lopez Muñoz</p></div>
                                 <div><label className='labelNameArtist'>Correo</label><p>CorreoPrueba@StyleTatto.com</p></div>
                                 <div className='favoriteSymbols'
                                     ><span onClick={count} className="material-symbols-outlined">favorite</span>

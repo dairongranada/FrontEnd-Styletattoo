@@ -4,7 +4,7 @@ import { GoArrowSmallLeft } from 'react-icons/go';
 
 import './sass/userRegister.scss'
 
-import { postUsuario,getUsuario } from '../../../.././helpers/ApiConsumer/PostUser';
+import { postUsuario,getUsuario } from '../../../.././Helpers/ApiConsumer/PostUser';
 
 
 import { Formik, Form, Field } from 'formik';

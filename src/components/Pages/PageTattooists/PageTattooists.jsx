@@ -7,7 +7,6 @@ export const PageTattooists = () => {
         {name: 'lewis holguin', image:'https://res.cloudinary.com/dsoovcjav/image/upload/v1660826276/ImagesTattoo/tatuador1_rvghbe.png',descripcion:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nostrum eius laboriosam'},
         {name: 'chris nuñez', image:'https://res.cloudinary.com/dsoovcjav/image/upload/v1660826273/ImagesTattoo/tatuador2_efzh1a.png', descripcion:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nostrum eius laboriosam'},
         {name: 'oliver peck', image:'https://res.cloudinary.com/dsoovcjav/image/upload/v1660826274/ImagesTattoo/tatuador3_jd7kt9.png',descripcion:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nostrum eius laboriosam?'},
-        {name: 'lisa orth', image:'https://res.cloudinary.com/dsoovcjav/image/upload/v1660826299/ImagesTattoo/tatuador4_i7gdfl.jpg', descripcion:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum alias est delectus culpa'},
     ]
 
     const [searchTattoo, setsearchTattoo] = useState(tattoo)
@@ -42,14 +41,24 @@ export const PageTattooists = () => {
  
       <main className='main-contenido'>
         {searchTattoo.map((tattoo, index) => {
-            return<div className="our-team-section" key={index}>
-                  <div className="member-container">
-                      <img className='imgtattooists' src={tattoo.image} alt={tattoo.name} />
-                      <h3 className="member-name">{tattoo.name}</h3>
-                      <p className="member-description">{tattoo.descripcion}</p>
-                      <a href="/perfilTatuadores" className="button">VER MI PERFIL!</a>
-                  </div>
+            return<div className='pather'>
+            <div className="containerTattois">
+                <div className="cardsTattooists">
+                    <div className="face facel">
+                        <div className="content">
+                            <img src={tattoo.image} alt={index} />
+                        </div>
+                    </div>
+                    <div className="face face2">
+                        <div className="content">
+                            <p className='nameTattooists' >{tattoo.name}</p>
+                            <p className='descripTattooists'href="/">{tattoo.descripcion}</p>
+                            <a href="/perfilTatuadores" className='btnA_menu'>Ver Mi Perfil</a>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </div>
               })}
       </main>
     </div>

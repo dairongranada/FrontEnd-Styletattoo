@@ -25,37 +25,100 @@
     }
 }
 
-.our-team-section{
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
 
-.member-container{
-    width: 350px;
-    height: auto;
-    background-color: #f9f9f9;
+
+.containerTattois {
+    width: 100%;
     position: relative;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 2rem 2rem 2rem 2rem;
-    box-sizing: border-box;
-    transition: 0.5s;
-    cursor: pointer;
+    justify-content: space-between;
+  
+    .cardsTattooists {
+      position: relative;
+      cursor: pointer;
+  
+      .face {
+        width: 300px;
+        height: 200px;
+        transition: 0.5s;
+  
+        &.facel {
+          position: relative;
+          background: #333;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 1;
+        }
+      }
+  
 
-    img{
-        width:250px;
-        height:250px;
+
+  
+      .face.facel .content img {
+        width: 180px;
+        border-radius: 50%;
+      }
     }
-}
+  
+    &.cardsTattooists .face.face1 .content h3 {
+      margin: 10px © 0;
+      padding: 0;
+      color: #fff;
+      text-align: center;
+      font-size: 1.5em;
+    }
+  
+    .cardsTattooists {
+      .face.face2 {
+        position: relative;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        box-sizing: border-box;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+      }
+  
+  
+      .face.face2 .content {
+        p {
+          margin: 0;
+          padding: 0;
+          color: #333;
+        }
+  
+        .btnA_menu {
+          margin: 15px 0;
+          display: inline-block;
+          text-decoration: none;
+          font-weight: 900;
+          color: #333;
+          padding: 5px;
+          border: 1px solid #333;
+        }
+      }
+    }
+  }
+  
+  .nameTattooists {
+    font-weight: 900;
+  }
+  
+  .descripTattooists {
+    font-size: 15px;
+    text-indent: 1cm;
+    line-height: 22px;
+  }
 
-.member-container:hover{
-    transform: translateY(-20px);
-}
+
+
+
+
+
+
+
 
 
 /*       B U S C A D O R       */

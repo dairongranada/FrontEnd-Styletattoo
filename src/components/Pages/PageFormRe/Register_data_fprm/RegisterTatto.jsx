@@ -32,14 +32,11 @@ export const RegisterTatto = ( {change_step} ) => {
 
 
     /*Obtener El valor de los inputs*/
-    const handlechange = ({target:{name,value}}) =>{
-        setUser({ ...user, [name]:value})
-    }
+    const handlechange = ({target:{name,value}}) =>{setUser({ ...user, [name]:value})}
 
 
     return (
         <>
-
             {/* ----- REGISTRO COMO ARTISTA ----- */}
 
             {
@@ -105,30 +102,12 @@ export const RegisterTatto = ( {change_step} ) => {
 
                         return ers  
 
-                        
-
+                    
                     }}
 
                     onSubmit={(valoresForm, {resetForm}) =>{
                         resetForm();
                         console.log(valoresForm);
-
-
-                        const axiosfuntion = () =>{
-                            axios.post('http://localhost:3001/usuarios', 
-                            {
-                                "name": user.name,
-                                "lastName":user.lastName,
-                                "email": user.email,
-                                "password": md5(user.password),
-                                "url":" ",
-                            })
-                          .then(function (response) {
-                            console.log(response.data);
-                          })
-                          .catch(function (error) {console.log(error);});
-                    }
-
                     }}
 
 
@@ -138,7 +117,6 @@ export const RegisterTatto = ( {change_step} ) => {
                             <div className="inputContent">
                                 <div>
                                     <Field
-                                        
                                         className='global_styleRegistroIn'   
                                         name='name' 
                                         id='name' 
@@ -149,7 +127,6 @@ export const RegisterTatto = ( {change_step} ) => {
                                 </div>
                                 <div>
                                     <Field
-                                        
                                         className='global_styleRegistroIn'
                                         name='lastName'  
                                         id='lastName'   
@@ -161,8 +138,7 @@ export const RegisterTatto = ( {change_step} ) => {
                                 </div>
                             </div>
                                 <div className="inputContent">
-                                    <Field 
-                                        
+                                    <Field
                                         className='global_styleRegistroIn EmailInput'
                                         name='email' 
                                         id='email' 
@@ -173,8 +149,7 @@ export const RegisterTatto = ( {change_step} ) => {
                                     <div className='errosEmail'>{touched.email && errors.email && <span>{errors.email}</span>}</div>
                                 <div className="inputContent">
                                     <div>
-                                        <Field 
-                                            
+                                        <Field
                                             className='global_styleRegistroIn'
                                             name='password' 
                                             id='password' 
@@ -186,7 +161,6 @@ export const RegisterTatto = ( {change_step} ) => {
                                     </div>
                                     <div>
                                         <Field 
-                                            
                                             className='global_styleRegistroIn'
                                             name='passwordConfirm' 
                                             id='passwordConfirm' 

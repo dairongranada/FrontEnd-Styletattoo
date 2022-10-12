@@ -43,20 +43,28 @@ function App() {
 
 
                 {/* TATUADORES */ }                             {/*Ruta Protegida */}
-                <Route path='/perfilTatuadores' exact element= {<PageProfileT/>}/>
                 <Route path='/artistas' exact element= {<PageTattooists/>}/>
-                <Route path='/citas' exact element= {<PageQuotes/>}/>
 
 
                   {/* COSAS NO IMPORTANTES como(Elena <3) */ }
                 <Route path='/infoTatuajes' exact element= {<PageTattos/>}/>
                 <Route path='/infoPiercings' exact element= {<PagePiercings/>}/>
 
+
+                {/*  RUTAS PRIVADAS     */}
+
                 {/* Rutas para opciones del perfil de usuario */}
                 <Route path='/user/edit-profile' exact element= {<UserName/>}/>
                 <Route path='/user/edit-image' exact element= {<UserImage/>}/>
                 <Route path='/user/edit-password' exact element= {<UserPassword/>}/>
                 <Route path='/user/edit-quotes' exact element= {<UserQuotes/>}/>
+
+                {/* Rutas para opciones del perfil de Tatuadores */}
+                <Route path='/perfilTatuadores' exact element= {<PageProfileT/>}/>
+
+
+                <Route path='/citas' exact element= {<PageQuotes/>}/>
+
 
               </Routes>
       <NavFooter/>

@@ -25,7 +25,6 @@ export const PageFormSe = () => {
     const handlechange = ({target:{name,value}}) =>{
         setUserTatto({ ...userTatto, [name]:value})
     }
-    console.log(userTatto);
 
 
     const LoginUserAuth = async() =>{
@@ -43,9 +42,8 @@ export const PageFormSe = () => {
                 cookies.set("name", respuesta.name, {path:"/"} )
                 cookies.set("lastName", respuesta.lastName, {path:"/"} )
                 cookies.set("email", respuesta.email, {path:"/"} )
-                cookies.set("rol", respuesta.rol, {path:"/"} )
                 console.log(respuesta);
-                navigate('/perfilUsuario')   
+                navigate('/user/edit-profile')   
 
             }else{alert("usuario Incorrecto!");}
         })

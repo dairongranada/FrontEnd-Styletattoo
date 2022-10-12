@@ -11,7 +11,7 @@ import { Formik, Form, Field } from 'formik';
 import axios from 'axios'
 import md5 from 'md5'
 
-export const RegisterUser = ( {change_step} ) => {
+export const RegisterUser = ( { change_step } ) => {
 
     const [serverError, setServerError] = useState(false);
     const [loading, setLoading] = useState(false);
@@ -21,13 +21,12 @@ export const RegisterUser = ( {change_step} ) => {
 
 
     const [showPassword, setShowPassword] = useState("password")
-
     const handlePassword = () => {
         if ( showPassword === "password") {setShowPassword("text");}
         else {setShowPassword("password")}
     }
 
-    console.log(getUsuario([Object]));
+    console.log(getUsuario());
 
     return (
         <>
@@ -98,7 +97,13 @@ export const RegisterUser = ( {change_step} ) => {
 
                             let validacion = {};
 
-                            postUsuario(valores)
+                            postUsuario({
+                                name:valores.name,
+                                lastName:valores.lastName,
+                                email: valores.email,
+                                password: md5(valores.password),
+                                urlImage:"",
+                            })
                             .then( info => {
                                 validacion = info
                                 setLoading(true);
@@ -114,7 +119,7 @@ export const RegisterUser = ( {change_step} ) => {
                                     setLoading(false);
                                     setRegistered( true );
                                     alert( 'Usuario registrado')
-                                    // window.location = "/IngresarSesion";
+                                    window.location = "/IngresarSesion";
                                 }
                             });
 
@@ -126,6 +131,7 @@ export const RegisterUser = ( {change_step} ) => {
                     >
                         {({ errors, touched  })=> (
                             <Form className='formRegisterUser'>
+                                { duplicatedData && <p id='registerUser__error'>El ya se encuentran registrados.</p> }
                                 <div className="inputContent">
                                     <div>
                                         <Field

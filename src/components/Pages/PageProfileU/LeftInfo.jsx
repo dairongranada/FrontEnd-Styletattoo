@@ -29,11 +29,11 @@ export const LeftInfo = () => {
           </div>
           
           <ul className='optionsUser'>
-            <li className='optionCustomer'><span class="material-symbols-outlined Icons-Options">badge</span><Link  to="/user/edit-profile">Nombre y correo</Link></li>
-            <li className='optionCustomer'><span class="material-symbols-outlined Icons-Options">person</span><Link  to="/user/edit-image">Foto de perfil </Link></li>
-            <li className='optionCustomer'><span class="material-symbols-outlined Icons-Options">vpn_key</span><Link  to="/user/edit-password">Contraseña </Link></li>
-            <li className='optionCustomer'><span class="material-symbols-outlined Icons-Options">auto_stories</span><Link  to="/user/edit-quotes">Citas agendadas  </Link></li>
-            <li className='optionCustomer'><span class="material-symbols-outlined Icons-Options">logout</span><Link  to="">Cerrar sesion </Link></li>
+            <li className='optionCustomer'><Link  to="/user/edit-profile"><span class="material-symbols-outlined Icons-Options">badge</span>Nombre y correo</Link></li>
+            <li className='optionCustomer'><Link  to="/user/edit-image"><span class="material-symbols-outlined Icons-Options">person</span>Foto de perfil </Link></li>
+            <li className='optionCustomer'><Link  to="/user/edit-password"><span class="material-symbols-outlined Icons-Options">vpn_key</span>Contraseña </Link></li>
+            <li className='optionCustomer'><Link  to="/user/edit-quotes"><span class="material-symbols-outlined Icons-Options">auto_stories</span>Citas agendadas  </Link></li>
+            <li className='optionCustomer'><Link  to=""><span class="material-symbols-outlined Icons-Options">logout</span>Cerrar sesion </Link></li>
           </ul>
         </div>
 

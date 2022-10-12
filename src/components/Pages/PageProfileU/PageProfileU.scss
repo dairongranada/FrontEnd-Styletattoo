@@ -58,20 +58,24 @@
 
         .optionCustomer{
             width: 100%;
-            padding: 5px;
             cursor: pointer;
             display: flex; 
 
             &:hover{background: var(--colorGray3);color: #fff;}
 
             a{
-                color: #232527; 
-                font-weight: 400; width: 100%; 
-                padding: 3px;
+                color: #232527;
+                font-weight: 400;
+                width: 100%;
+                padding: 8px;
+                display: flex;
+                align-items: center;
+
                 &:hover{color: #fff;}
             }
             .Icons-Options{
                 font-size: 20px;
+                margin-right: 5px;
             }
         }
 

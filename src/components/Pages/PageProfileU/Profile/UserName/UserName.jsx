@@ -14,7 +14,9 @@ import './username.scss'
 export const UserName = () => {
   const [ imgProfileU, setImgProfileU ] = useState()
   useEffect(()=>{setImgProfileU(imgProfiles)})
+
   const cookies = new Cookies();
+  console.log(cookies);
 
   return (
     <div className='BodyProfileUser'>

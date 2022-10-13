@@ -26,6 +26,24 @@
       "urlImage": "",
       "estadoUs": 1,
       "id": 4
+    },
+    {
+      "name": "dairon",
+      "lastName": "Granada",
+      "email": "asdsadasdsad@gmail.com",
+      "password": "bbb8aae57c104cda40c93843ad5e6db8",
+      "urlImage": "",
+      "estadoUs": 1,
+      "id": 5
+    },
+    {
+      "name": "elena",
+      "lastName": "daniel",
+      "email": "elenas777@gmail.com",
+      "password": "5211e57967497225d131a5d33fc896f8",
+      "urlImage": "",
+      "estadoUs": 1,
+      "id": 6
     }
   ]
 }

@@ -3,7 +3,6 @@ import { AiOutlineUserAdd } from 'react-icons/ai';
 import { GoArrowSmallLeft } from 'react-icons/go';
 
 import './sass/userRegister.scss'
-
 import { postUsuario,getUsuario } from '../../../.././Helpers/ApiConsumer/PostUser';
 
 

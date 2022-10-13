@@ -9,6 +9,16 @@
       "role": "[ROLE_USUARIO]",
       "estadoUs": 1,
       "id": 2
+    },
+    {
+      "name": "juan",
+      "lastName": "david ",
+      "email": "juandavidcorreaorozco@gmail.com",
+      "password": "1c37b2c17a4e2799f73abe28c7c39f61",
+      "role": "[ROLE_USUARIO]",
+      "urlImage": "",
+      "estadoUs": 1,
+      "id": 3
     }
   ]
 }

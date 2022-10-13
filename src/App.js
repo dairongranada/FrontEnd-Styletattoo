@@ -24,6 +24,10 @@ import { UserPassword } from './components/Pages/PageProfileU/Profile/UserPasswo
 import { UserName } from './components/Pages/PageProfileU/Profile/UserName/UserName'
 import {UserImage} from './components/Pages/PageProfileU/Profile/UserImage/UserImage'
 import { UserQuotes } from './components/Pages/PageProfileU/Profile/UserQuotes/UserQuotes'
+import { PersonalProfile } from './components/Pages/PageProfileT/PersonalProfile/PersonalProfile'
+import { ProfileTfoto } from './components/Pages/PageProfileT/PersonalProfile/ProfileTfoto/ProfileTfoto'
+import { ProfileTpassword } from './components/Pages/PageProfileT/PersonalProfile/ProfileTpassword/ProfileTpassword'
+import { ProfileTquotes } from './components/Pages/PageProfileT/PersonalProfile/ProfileTquotes/ProfileTquotes'
 
 
 
@@ -68,6 +72,10 @@ function App() {
 
                 {/* Rutas para opciones del perfil de Tatuadores */}
                 <Route path='/perfilTatuadores' exact element= {<PageProfileT/>}/>
+                <Route path='/perfilTatuPersonal' exact element= {<PersonalProfile/>}/>
+                <Route path='/perfilTatuPersonalFoto' exact element= {<ProfileTfoto/>}/>
+                <Route path='/perfilT-PersonalPassword' exact element= {<ProfileTpassword/>}/>
+                <Route path='/perfilT-PersonalQuotes' exact element= {<ProfileTquotes/>}/>
 
         
                 <Route path='/citas' exact element= {<PageQuotes/>}/>

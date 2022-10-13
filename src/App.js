@@ -6,8 +6,6 @@ import './App.scss';
 import { NavigationBar } from './components/Layouts/NavigationBar/NavigationBar';
 import { NavFooter } from './components/Layouts/NavigationFooter/NavFooter/NavFooter';
 
-import { PasswordRecovery } from './components/Layouts/Password-recovery/PasswordRecovery';
-
 
 
 /*======================  V I E W S    C O M P O N E N T S  =========================*/ 
@@ -53,7 +51,6 @@ function App() {
                 <Route path='/infoTatuajes' exact element= {<PageTattos/>}/>
                 <Route path='/infoPiercings' exact element= {<PagePiercings/>}/>
 
-                <Route path='/PasswordRecovery' exact element= {<PasswordRecovery/>}/>
 
 
                 {/*  RUTAS PRIVADAS     */}

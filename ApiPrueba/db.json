@@ -1,49 +1,14 @@
 {
   "usuarios": [
     {
-      "name": "dairon",
-      "lastName": "Granada",
-      "email": "dairongranada21@gmail.com",
-      "password": "25f9e794323b453885f5181f1b624d0b",
+      "name": "samuelena",
+      "lastName": "dairon",
+      "email": "samuel@gmail.com",
+      "password": "07cfdb6f8d90df077bb776ea8da19d4e",
       "urlImage": "",
+      "role": "[ROLE_USUARIO]",
       "estadoUs": 1,
       "id": 2
-    },
-    {
-      "name": "dairona",
-      "lastName": "sdasdasd",
-      "email": "dairongranada21@gmail.com",
-      "password": "25f9e794323b453885f5181f1b624d0b",
-      "urlImage": "",
-      "estadoUs": 1,
-      "id": 3
-    },
-    {
-      "name": "dairon",
-      "lastName": "Granada",
-      "email": "dairongranada21@gmail.com",
-      "password": "25d55ad283aa400af464c76d713c07ad",
-      "urlImage": "",
-      "estadoUs": 1,
-      "id": 4
-    },
-    {
-      "name": "dairon",
-      "lastName": "Granada",
-      "email": "asdsadasdsad@gmail.com",
-      "password": "bbb8aae57c104cda40c93843ad5e6db8",
-      "urlImage": "",
-      "estadoUs": 1,
-      "id": 5
-    },
-    {
-      "name": "elena",
-      "lastName": "daniel",
-      "email": "elenas777@gmail.com",
-      "password": "5211e57967497225d131a5d33fc896f8",
-      "urlImage": "",
-      "estadoUs": 1,
-      "id": 6
     }
   ]
 }

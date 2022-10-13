@@ -22,8 +22,7 @@ export const LeftInfo = () => {
     cookies.remove("lastName")
     cookies.remove("id")
     cookies.remove("email")
-    cookies.remove("rol")
-    window.location = "/IngresarSesion";
+    // window.location = "/IngresarSesion";
   }
   
 
@@ -33,15 +32,15 @@ export const LeftInfo = () => {
         <div className='contProfileU'>
           <div>
             <div className='ContFaceUser'><img className='FaceUser' src={imgProfileU} alt={imgProfileU} /></div>
-            <div className='contNameU'><h3 className='NameU'>{cookies.get("name")} {cookies.get("lastName")}</h3></div>
+            <div className='contNameU'><h3 className='NameU'>s</h3></div>
           </div>
           
           <ul className='optionsUser'>
-            <li className='optionCustomer'><Link  to="/user/edit-profile"><span class="material-symbols-outlined Icons-Options">badge</span>Nombre y correo</Link></li>
-            <li className='optionCustomer'><Link  to="/user/edit-image"><span class="material-symbols-outlined Icons-Options">person</span>Foto de perfil </Link></li>
-            <li className='optionCustomer'><Link  to="/user/edit-password"><span class="material-symbols-outlined Icons-Options">vpn_key</span>Contraseña </Link></li>
-            <li className='optionCustomer'><Link  to="/user/edit-quotes"><span class="material-symbols-outlined Icons-Options">auto_stories</span>Citas agendadas  </Link></li>
-            <li className='optionCustomer'><Link  to=""><button onClick={ loguotUser } ><span class="material-symbols-outlined Icons-Options">logout</span>Cerrar sesion </button></Link></li>
+            <li className='optionCustomer'><Link  to="/user/edit-profile"><span className="material-symbols-outlined Icons-Options">badge</span>Nombre y correo</Link></li>
+            <li className='optionCustomer'><Link  to="/user/edit-image"><span className="material-symbols-outlined Icons-Options">person</span>Foto de perfil </Link></li>
+            <li className='optionCustomer'><Link  to="/user/edit-password"><span className="material-symbols-outlined Icons-Options">vpn_key</span>Contraseña </Link></li>
+            <li className='optionCustomer'><Link  to="/user/edit-quotes"><span className="material-symbols-outlined Icons-Options">auto_stories</span>Citas agendadas</Link></li>
+            <li className='optionCustomer'><Link  onClick={ loguotUser } to="/"><span className="material-symbols-outlined Icons-Options">logout</span>Cerrar sesion</Link></li>
           </ul>
         </div>
 

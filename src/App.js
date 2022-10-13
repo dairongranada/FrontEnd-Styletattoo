@@ -2,7 +2,6 @@ import { Routes, Route } from 'react-router-dom'
 import './App.scss';
 
 
-
 import { NavigationBar } from './components/Layouts/NavigationBar/NavigationBar';
 import { NavFooter } from './components/Layouts/NavigationFooter/NavFooter/NavFooter';
 
@@ -26,12 +25,18 @@ import { UserName } from './components/Pages/PageProfileU/Profile/UserName/UserN
 import {UserImage} from './components/Pages/PageProfileU/Profile/UserImage/UserImage'
 import { UserQuotes } from './components/Pages/PageProfileU/Profile/UserQuotes/UserQuotes'
 
+
+
 function App() {
 
-  // const user = useAuth() 
+
   return (
     <div>
       <NavigationBar/>
+
+
+
+
               <Routes>
                 {/* ECCSXTRAS */ }
                 <Route path="*" element= {<Page404 />} />

@@ -25,7 +25,7 @@ export const RegisterUser = ( { change_step } ) => {
         else {setShowPassword("password")}
     }
 
-    console.log(getUsuario());
+
 
     return (
         <>
@@ -50,7 +50,7 @@ export const RegisterUser = ( { change_step } ) => {
                             email: '',
                             password: '',
                             passwordConfirm: '',
-                            urlImage:" ",
+                            urlImage:" "
                         }}
                         
                         validate={(valores) => {
@@ -88,43 +88,39 @@ export const RegisterUser = ( { change_step } ) => {
 
                             return ers  
 
-                            
-
                         }}
-
-                        onSubmit={(valores, {resetForm}) =>{
-
+                        onSubmit = {( valores, { resetForm } ) => {
+                            valores.email = String(valores.email);
                             let validacion = {};
-
+                            
                             postUsuario({
                                 name:valores.name,
                                 lastName:valores.lastName,
                                 email: valores.email,
                                 password: md5(valores.password),
-                                urlImage:"",
-                            })
-                            .then( info => {
-                                validacion = info
+                                role: "[ROLE_USUARIO]",
+                                urlImage:""
+
+                                })
+                                .then( info => validacion = info);
                                 setLoading(true);
+
+                            setTimeout(()=>{
+
                                 if ( validacion.status === 400 ) {
                                     setDuplicatedData( true );
-                                    setServerError( false );
                                     setLoading(false);
-                                    alert( 'Error usuario ya registrado')
                                 }
                                 else {
+                                    setLoading(false);
                                     setDuplicatedData( false );
                                     resetForm();
-                                    setLoading(false);
                                     setRegistered( true );
-                                    alert( 'Usuario registrado')
-                                    window.location = "/IngresarSesion";
+                                    // window.location = "/login"
                                 }
-                            });
-
-                            
+                                
+                            },1000)
                         }}
-                        
                         
 
                     >
@@ -144,7 +140,6 @@ export const RegisterUser = ( { change_step } ) => {
                                     </div>
                                     <div>
                                         <Field
-                                            
                                             className='global_styleRegistroIn'
                                             name='lastName'  
                                             id='lastName'   
@@ -157,7 +152,6 @@ export const RegisterUser = ( { change_step } ) => {
                                 </div>
                                     <div className="inputContent">
                                         <Field 
-                                            
                                             className='global_styleRegistroIn EmailInput'
                                             name='email' 
                                             id='email' 

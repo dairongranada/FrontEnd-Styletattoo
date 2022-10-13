@@ -34,7 +34,8 @@ export const PageFormSe = () => {
         }})
 
         .then(response =>{
-            return(response.data); 
+            return(response.data);
+             
         }).then(response =>{
             if(response.length > 0){
                 let respuesta= response[0];
@@ -42,8 +43,8 @@ export const PageFormSe = () => {
                 cookies.set("name", respuesta.name, {path:"/"} )
                 cookies.set("lastName", respuesta.lastName, {path:"/"} )
                 cookies.set("email", respuesta.email, {path:"/"} )
-                console.log(respuesta);
-                navigate('/user/edit-profile')   
+                // navigate('/user/edit-profile')   
+                console.log(response);
 
             }else{alert("usuario Incorrecto!");}
         })

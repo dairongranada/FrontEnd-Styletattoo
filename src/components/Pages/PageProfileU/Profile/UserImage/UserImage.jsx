@@ -17,7 +17,7 @@ export const UserImage = () => {
       <div className='Content_profleUser'>
         <LeftInfo/>
         <div className='ContentUserInfo'>
-            <div class="contentHeaderTitle">
+            <div className="contentHeaderTitle">
                 <h3>Perfil Publico</h3>
                 <p>Añade una bonita foto tuya para tu perfil.</p>
             </div>
@@ -30,7 +30,7 @@ export const UserImage = () => {
               <label htmlFor="text">Añda Su Imagen</label>
               <div className="boxIconImg">
                 <div className="contCamera">
-                  <span class="material-symbols-outlined">
+                  <span className="material-symbols-outlined">
                     add_a_photo
                   </span>
                 </div>

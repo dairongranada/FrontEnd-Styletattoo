@@ -17,7 +17,7 @@ export const UserPassword = () => {
       <div className='Content_profleUser'>
         <LeftInfo/>
         <div className='ContentUserInfo'>
-            <div class="contentHeaderTitle">
+            <div className="contentHeaderTitle">
                 <h3>Perfil Publico</h3>
                 <p>Edite la configuración de su cuenta y cambie su contraseña aquí.</p>
             </div>

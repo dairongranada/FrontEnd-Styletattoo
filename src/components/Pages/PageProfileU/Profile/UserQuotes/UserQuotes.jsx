@@ -17,7 +17,7 @@ export const UserQuotes = () => {
       <div className='Content_profleUser'>
         <LeftInfo/>
         <div className='ContentUserInfo'>
-            <div class="contentHeaderTitle">
+            <div className="contentHeaderTitle">
                 <h3>Perfil Publico</h3>
                 <p>Añade información sobre ti</p>
             </div>

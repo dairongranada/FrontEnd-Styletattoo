@@ -2,9 +2,12 @@ import React from 'react'
 import './NavigationBar.scss'
 import { ImgTemplate } from '../../UI/ImgTemplate/ImgTemplate';
 import logo from '../../../images/Icons/logo2.png'
+import Cookies from 'universal-cookie';
+
+const cookies = new Cookies();
 
 
-export const NavigationBar = () => {
+export const NavigationBar = ({classN, href, text}) => {
 
     const menu = ()=>{
         const btn_menu = document.querySelector('.material-symbols-outlined')
@@ -21,11 +24,12 @@ export const NavigationBar = () => {
                 <ul className='menu-items'>
                     <li><a className='option2' href="/" >INICIO</a></li>
                     <li><a className='option2' href="/artistas">ARTISTAS</a></li>
-                    <li><a className='option2' href="/user/edit-profile">PERFIL</a></li>
+                    {
+                    1<3? (
+                            <li><a className= "option2" href="/user/edit-profile">Perfil</a></li>
+                        ):("")}
                 </ul>
-                <span onClick={menu} id='burguer' className="material-symbols-outlined">
-                    menu
-                </span>
+                <span onClick={menu} id='burguer' className="material-symbols-outlined">menu</span>
             </nav>
         </div>
     )

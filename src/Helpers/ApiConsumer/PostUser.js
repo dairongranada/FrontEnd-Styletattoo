@@ -19,7 +19,6 @@ export const postUsuario = async( userApi ) => {
                  console.log( error );
                  return { status : error.response.status }
              }
- 
          });
          
          return response;

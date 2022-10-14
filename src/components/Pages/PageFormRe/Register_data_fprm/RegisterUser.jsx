@@ -3,7 +3,7 @@ import { AiOutlineUserAdd } from 'react-icons/ai';
 import { GoArrowSmallLeft } from 'react-icons/go';
 
 import './sass/userRegister.scss'
-import { postUsuario,getUsuario } from '../../../.././Helpers/ApiConsumer/PostUser';
+import { postUsuario, AuthEmail } from '../../../.././Helpers/ApiConsumer/PostUser';
 
 
 import { Formik, Form, Field } from 'formik';
@@ -17,6 +17,8 @@ export const RegisterUser = ( { change_step } ) => {
     const [duplicatedData, setDuplicatedData] = useState(false);
     const [registered, setRegistered] = useState(false);
     const [terminos, setTerminos] = useState(false);
+    const [emailAuth, setEmailAuth] = useState({});
+
 
 
     const [showPassword, setShowPassword] = useState("password")
@@ -24,6 +26,8 @@ export const RegisterUser = ( { change_step } ) => {
         if ( showPassword === "password") {setShowPassword("text");}
         else {setShowPassword("password")}
     }
+
+
 
 
 
@@ -89,8 +93,8 @@ export const RegisterUser = ( { change_step } ) => {
                             return ers  
 
                         }}
+
                         onSubmit = {( valores, { resetForm } ) => {
-                            valores.email = String(valores.email);
                             let validacion = {};
                             
                             postUsuario({
@@ -101,25 +105,32 @@ export const RegisterUser = ( { change_step } ) => {
                                 role: "[ROLE_USUARIO]",
                                 urlImage:""
 
-                                })
-                                .then( info => validacion = info);
+                            }).then( info => {
+                                validacion = info
                                 setLoading(true);
 
-                            setTimeout(()=>{
-
-                                if ( validacion.status === 400 ) {
+                                AuthEmail(
+                                    valores.email
+                                ).then(response =>{
+                                    console.log(AuthEmail);
+                                    // setEmailAuth(response.data[0].email)
+                                    return(response.data);
+                                })
+                            
+                                if ( valores.email ===  emailAuth ) {
                                     setDuplicatedData( true );
+                                    setServerError( false );
                                     setLoading(false);
-                                }
-                                else {
-                                    setLoading(false);
+                                }else {
                                     setDuplicatedData( false );
                                     resetForm();
+                                    setLoading(false);
                                     setRegistered( true );
-                                    // window.location = "/login"
+                                    // window.location = "/login";
                                 }
-                                
-                            },1000)
+                            });
+
+
                         }}
                         
 

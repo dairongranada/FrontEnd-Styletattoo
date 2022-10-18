@@ -11,7 +11,8 @@ import { useState } from 'react';
 export const RegistroStep1 = ( {step_change, setUserType } ) => {
 
     const navigate = useNavigate();
-    const [active, setActive] = useState(0);
+    const [active, setActive] = useState("0");
+
 
     const handleExit = () => {
         navigate ("/IngresarSesion");
@@ -33,7 +34,6 @@ export const RegistroStep1 = ( {step_change, setUserType } ) => {
                             </div>
                     </div>
                     
-                    
                     <div id='register_steps'>
                         <div className='step color_step'>1</div >
                         <div className='linea_step linea_step1'>——</div>
@@ -45,10 +45,10 @@ export const RegistroStep1 = ( {step_change, setUserType } ) => {
 
                     <div className="types_users">
                         <button 
-                            id={active === 2 && "type__user-active"}
+                            id={active === "2" &&  "type__user-active"}
                             onClick={()=> {
-                            setUserType(2) 
-                            setActive(2)}}
+                            setUserType("2") 
+                            setActive("2")}}
                         
                             className='type__user-button type__user-user'>
                             <AiOutlineUser className='type__user-button-icon'/>
@@ -56,10 +56,10 @@ export const RegistroStep1 = ( {step_change, setUserType } ) => {
                         </button>
 
                         <button 
-                            id={active === 3 && "type__user-active"}
+                            id={active === "3" && "type__user-active"}
                             onClick={()=> {
-                                setUserType(3)
-                                setActive(3)
+                                setUserType("3")
+                                setActive("3")
                             }}
                         
                             className='type__user-button type__user-clinica'>

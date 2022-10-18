@@ -43,9 +43,10 @@ export const PageFormSe = () => {
                         onSubmit = {( valores, { resetForm } ) => {
                             LoginUserAuth({
                                 LoginEmail: valores.email, 
-                                LoginPassword: md5(valores.password),
-                            }).then( info => {
-                                console.log(info);
+                                LoginPassword: valores.password,
+                            }).then( response => {
+                                console.log(response);
+                                return response
                             })
                             // window.location = "/user/edit-profile"
                             

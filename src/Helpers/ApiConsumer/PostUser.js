@@ -1,10 +1,12 @@
 import md5 from 'md5'
 import axios from "axios";
 import Cookies from 'universal-cookie';
+import { CorsRequest } from 'cors';
 
+const cors = require('cors');
 
 // const URL = "http://localhost:8080";
-const URL = "http://localhost:3001/usuarios"
+const URL = "https://despliegue-back.onrender.com/api/RegistroUsuario/"
 const cookies = new Cookies();
 
 
@@ -18,9 +20,6 @@ export const postUsuario = async( userApi ) => {
          const response = await axios({
              url: URL,
              method: "POST",
-             headers: {
-                "Content-Type":"application/json"
-            },
              data: userApi
 
          }).catch( function( error ) {
@@ -31,6 +30,7 @@ export const postUsuario = async( userApi ) => {
              }
          });
          
+         console.log(response);
          return response;
      } catch (error) {
          console.log( error );
@@ -60,7 +60,7 @@ export const getUsuario = async() => {
 
 export const LoginUserAuth = async({LoginEmail,LoginPassword}) =>{
 
-        await axios.get(URL,{params:{ 
+    await axios.get(URL,{params:{ 
             email: LoginEmail,
             password: LoginPassword
         }})
@@ -71,16 +71,18 @@ export const LoginUserAuth = async({LoginEmail,LoginPassword}) =>{
          
     }).then(response =>{
         if(response.length > 0){
-            let respuesta= response[0];
-            cookies.set("id", respuesta.id, {path:"/"} )
-            cookies.set("name", respuesta.name, {path:"/"} )
-            cookies.set("lastName", respuesta.lastName, {path:"/"} )
-            cookies.set("email", respuesta.email, {path:"/"} )
-            // navigate('/user/edit-profile')   
+            alert("Usuario Correcto")
+            console.log(response);
+            // let respuesta= response[0];
+            // cookies.set("id", respuesta.id, {path:"/"} )
+            // cookies.set("name", respuesta.name, {path:"/"} )
+            // cookies.set("lastName", respuesta.lastName, {path:"/"} )
+            // cookies.set("email", respuesta.email, {path:"/"} )
+            // // navigate('/user/edit-profile')   
 
         }else{
             alert("usuario Incorrecto!");
-    }
+        }
     })
     .catch(error =>{
         console.log(error);

@@ -16,7 +16,7 @@ export const PageFormRe = () => {
       
         <div>
             {
-                (steps == 1)
+                (steps === 1)
                 ? <RegistroStep1 setUserType={setUserType} step_change={setSteps}/>
                 : <RegistroStep2 userType={userType} steps={steps} step_change={setSteps}/>
             }

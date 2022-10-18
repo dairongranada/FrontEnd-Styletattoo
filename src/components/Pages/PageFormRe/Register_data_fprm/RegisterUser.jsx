@@ -98,35 +98,33 @@ export const RegisterUser = ( { change_step } ) => {
                             let validacion = {};
                             
                             postUsuario({
-                                name:valores.name,
-                                lastName:valores.lastName,
+                                nombre:valores.name,
+                                apellido:valores.lastName,
                                 email: valores.email,
-                                password: md5(valores.password),
+                                contraseña: valores.password,
+                                telefono: "3218666262",
                                 role: "[ROLE_USUARIO]",
-                                urlImage:""
+                                urlImage:" "
 
                             }).then( info => {
                                 validacion = info
                                 setLoading(true);
-
-                                AuthEmail(
-                                    valores.email
-                                ).then(response =>{
-                                    console.log(AuthEmail);
-                                    // setEmailAuth(response.data[0].email)
-                                    return(response.data);
-                                })
-                            
-                                if ( valores.email ===  emailAuth ) {
+                                if ( validacion.status === 400 ) {
                                     setDuplicatedData( true );
                                     setServerError( false );
                                     setLoading(false);
-                                }else {
+                                }
+                                else if( validacion.status === 500 ){
+                                    setServerError( true );
+                                    setDuplicatedData( false );
+                                    setLoading( false );
+                                }
+                                else {
                                     setDuplicatedData( false );
                                     resetForm();
                                     setLoading(false);
                                     setRegistered( true );
-                                    // window.location = "/login";
+                                    // window.location = "/user/edit-profile";
                                 }
                             });
 

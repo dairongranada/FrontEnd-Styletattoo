@@ -1,6 +1,7 @@
 import './PageProfileT.scss'
 
 import React , {useState} from 'react'
+import { Link } from 'react-router-dom'
 import imgP from '../../../images/Tatuadores/tatuador1.png'
 import img1 from '../../../images/Tattos/portafolio1.jpg'
 import img2 from '../../../images/Tattos/portafolio2.jpg'
@@ -125,8 +126,8 @@ export const PageProfileT = () => {
                                 <div><label className='labelNameArtist'>Nombre</label><p>Samuel lopez Muñoz</p></div>
                                 <div><label className='labelNameArtist'>Correo</label><p>CorreoPrueba@StyleTatto.com</p></div>
                                 <div className='favoriteSymbols'
-                                    ><span onClick={count} className="material-symbols-outlined">favorite</span>
-                                    <p>{contador}</p>
+                                    ><span onClick={count} className="material-symbols-outlined">favorite <p>{contador}</p></span>
+                                    <Link to="/perfilTatuPersonal"><span class="material-symbols-outlined">settings</span></Link>
                                 </div>
                             </div>
                         </div>

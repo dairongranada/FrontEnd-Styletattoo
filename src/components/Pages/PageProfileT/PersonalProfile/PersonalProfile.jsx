@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom'
 import  imgProfiles  from '../../../.././images/Icons/perfilUsuarioAnonim.jpg'
 import Cookies from 'universal-cookie';
 
+/*  N O T I F I C A C I O N E S  */
+import { Toaster, toast } from 'react-hot-toast';
+
 export const PersonalProfile = () => {
 
 const [ imgProfileU, setImgProfileU ] = useState()
@@ -19,6 +22,7 @@ const [ imgProfileU, setImgProfileU ] = useState()
         cookies.remove("email")
         // window.location = "/IngresarSesion";
     }
+
 
 
 
@@ -65,11 +69,20 @@ const [ imgProfileU, setImgProfileU ] = useState()
               </div>
             </div>
             <div className='contButtonSave'>
-              <button className='buttons_global_StyleTatto'>Guardar</button>
+              <button className='buttons_global_StyleTatto' onClick={() => toast.success('Se guardaron cambios')}>Guardar</button>
+              {/* <button className='buttons_global_StyleTatto' onClick={() => toast.error('Nombre o apellidos incorrectos')}>Error</button> */}
             </div>
+            <Toaster/>
           </div>
           </div>    
         </div>
     </div>
   )
 }
+/*  B O T O N    L O A D I N G  */
+// {/* <button onClick={() => {
+//                 toast.loading('Cargando')
+                
+//               }}
+              
+//               >enviar a funcion</button> */}

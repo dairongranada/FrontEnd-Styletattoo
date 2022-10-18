@@ -1,3 +1,25 @@
+.user_icon{
+    align-items: center;
+    background-color: var(--colorOrange2);
+    border-radius: 6px;
+    color: white;
+    display: flex;
+    font-size: 22px;
+    height: 25px;
+    justify-content: center;
+    text-align: center;
+    width: 35px;
+}
+
+@media (max-width: 900px) {
+    .register_container {
+        width: 100%;
+        height: 100vh;
+
+    }
+}
+
+
 @media (max-width: 600px) {
     .registerData {
         width: 95%;
@@ -9,14 +31,7 @@
 
 
 @media (max-width: 400px) {
-    .registerData {
-        width: 95%;
-    }
-    .types_users {
-        width: 75%;
-    }
-    .registerDataAuto {
-        width: 95%;
-        gap: 5px;
-    }
+    .registerData {width: 95%; }
+    .types_users {width: 75%;}
+    .registerDataAuto {width: 95%; gap: 5px;}
 }

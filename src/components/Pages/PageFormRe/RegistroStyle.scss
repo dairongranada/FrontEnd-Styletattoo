@@ -13,19 +13,21 @@
 .register_container{
     position: absolute;
     width: 100%;
-    height: 90vh;
-    background-color: rgba(5, 5, 5, 0.945);
+    height: 140vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     z-index: 1;
+    backdrop-filter: blur(8px);
+    background-color: #000000c2;
+    color: var(--colorBlanco);
 }
 
 
 
 .registerData{
-    background-color: rgb(26 26 26 / 73%);
+    background-color: rgba(0, 0, 0, 0.847);
     width: 550px;
     height: 520px;
     padding: 30px 10px;
@@ -33,21 +35,17 @@
     flex-direction: column;
     align-items: center;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
     gap: 15px;
     position: relative;
 }
 
 .registerDataAuto{
-    background-color: rgb(26 26 26 / 73%);
-    width: 550px;
-    height: auto;
+    background-color: rgba(0, 0, 0, 0.847);
+    height: 520px;width: 470px;
     padding: 30px 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
     gap: 15px;
     position: relative;
 }
@@ -216,7 +214,7 @@
 }
 
 .type__user-button{
-    background-color: rgba(26, 26, 26, 0.73);
+    background-color: rgb(0, 0, 0);
     border: 2px solid var(--colorOrange2);
     border-radius: 100%;
     height: 100px;

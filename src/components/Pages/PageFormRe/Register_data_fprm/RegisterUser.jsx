@@ -7,8 +7,7 @@ import { postUsuario, AuthEmail } from '../../../.././Helpers/ApiConsumer/PostUs
 
 
 import { Formik, Form, Field } from 'formik';
-import axios from 'axios'
-import md5 from 'md5'
+
 
 export const RegisterUser = ( { change_step } ) => {
 
@@ -143,8 +142,8 @@ export const RegisterUser = ( { change_step } ) => {
                                             name='name' 
                                             id='name' 
                                             type="text"
+                                            placeholder='Nombre'
                                         />
-                                            <label  htmlFor='name' className='label_global_styleRegistro'>Nombre</label>
                                         {touched.name && errors.name && <span>{errors.name}</span>}
                                     </div>
                                     <div>
@@ -153,22 +152,37 @@ export const RegisterUser = ( { change_step } ) => {
                                             name='lastName'  
                                             id='lastName'   
                                             type="text"
-                                        />                                        
-                                        <label htmlFor='lastName' className='label_global_styleRegistro'>Apellido</label>
-                                        
+                                            placeholder='Apellido'
+
+                                        />                                                                                
                                         {touched.lastName && errors.lastName && <span>{errors.lastName}</span>}   
                                     </div>
                                 </div>
                                     <div className="inputContent">
-                                        <Field 
-                                            className='global_styleRegistroIn EmailInput'
-                                            name='email' 
-                                            id='email' 
-                                            type="email" 
-                                        />                                        
-                                        <label htmlFor='email' className='label_global_styleRegistro'>Correo electronico</label>
+                                        <div>
+                                            <Field 
+                                                className='global_styleRegistroIn EmailInput'
+                                                name='email' 
+                                                id='email' 
+                                                type="email" 
+                                                placeholder='Correo'
+
+                                            />              
+                                            {touched.email && errors.email && <span>{errors.email}</span>}   
+                          
+                                        </div>
+                                        <div>
+                                            <Field 
+                                                className='global_styleRegistroIn EmailInput'
+                                                name='telefono' 
+                                                id='telefono' 
+                                                type="text" 
+                                                placeholder='Telefono'
+
+                                            />                                        
+                            
+                                        </div>
                                     </div>
-                                        <div className='errosEmail'>{touched.email && errors.email && <span>{errors.email}</span>}</div>
                                     <div className="inputContent">
                                         <div>
                                             <Field 
@@ -177,9 +191,9 @@ export const RegisterUser = ( { change_step } ) => {
                                                 name='password' 
                                                 id='password' 
                                                 type="password"
+                                                placeholder='Contraseña'
 
                                             />                                            
-                                            <label htmlFor='password' className='label_global_styleRegistro'>Contraseña</label>
                                             {touched.password && errors.password && <span>{errors.password}</span>}   
                                         </div>
                                         <div>
@@ -189,11 +203,10 @@ export const RegisterUser = ( { change_step } ) => {
                                                 name='passwordConfirm' 
                                                 id='passwordConfirm' 
                                                 type="password"
+                                                placeholder='Contarseña Contraseña'
+
 
                                             />                                            
-                                            <label htmlFor='confirmPassword' className='label_global_styleRegistro'>Confirmar Contraseña</label>
-
-                                            
                                             {errors.passwordConfirm && <span className='emailSpam' >{errors.passwordConfirm}</span>}   
 
                                         </div>

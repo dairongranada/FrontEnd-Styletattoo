@@ -9,10 +9,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
         // Div
         .inputContent{
             display: flex;
-            width: 100%;
+            width: 100%;height: 55px;
             justify-content: space-around;
             position: relative;
             margin-top: 16px;
@@ -22,11 +23,9 @@
             // Input
             .global_styleRegistroIn{
                 display: block;
-                width: 150px;
+                width: 175px;
                 font-weight: 500;
             }
-
-            .EmailInput{width: 88%;}
             
             // Label
             .label_global_styleRegistro{
@@ -114,4 +113,19 @@
     }
 }
 
+
+@media (max-width: 400px) {
+    .Content_FormsPrincipal .inputContent 
+    .global_styleRegistroIn {
+        display: block;
+        width: 125px;
+        font-weight: 500;
+    }
+
+    .Content_FormsPrincipal .inputContent span {
+        font-size: 9px;
+        color: var(--colorOrange2);
+        width: 88%;
+    }
+}
 

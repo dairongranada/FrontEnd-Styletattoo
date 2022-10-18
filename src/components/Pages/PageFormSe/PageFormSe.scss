@@ -1,11 +1,13 @@
-
-.BackGround{
+.BackGround {
     background-image: url('../.././../images/Fondos/Login.jpg');
 
-    .ErrorMenssage{
+    .ErrorMenssage {
         text-align: center;
-        color: #ffff; margin-top: 2.56rem;
-        padding: 5px; width: 100%; height: auto;
+        color: #ffff;
+        margin-top: 2.56rem;
+        padding: 5px;
+        width: 100%;
+        height: auto;
         background-color: #ff0000;
 
     }
@@ -14,16 +16,17 @@
 
 
 // Div
-.Content_FormsPrincipalLogin{
-    background-position: center; background-size: cover;
+.Content_FormsPrincipalLogin {
+    background-position: center;
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 88vh;
+    height: 140vh;
 
     // Div
-    .Content_Forms{
+    .Content_Forms {
         background-color: #000000ba;
         width: 380px;
         height: 450px;
@@ -31,15 +34,19 @@
         font-size: 15px;
         box-sizing: border-box;
 
-        h2{text-align: center;font-size: 33px;margin: 20px 0 5px 0;}
+        h2 {
+            text-align: center;
+            font-size: 33px;
+            margin: 20px 0 5px 0;
+        }
 
         // Div
-        .inputContent{
+        .inputContent {
             position: relative;
             margin-top: 36px;
 
             // Input
-            .input_global_styleLogin{
+            .input_global_styleLogin {
                 display: block;
                 margin: bottom 20px;
                 width: 100%;
@@ -47,26 +54,26 @@
                 font-weight: 400;
 
             }
-            
+
             // Label
-            .label_global_style{
+            .label_global_style {
                 position: absolute;
                 top: 10px;
                 font-weight: 300;
                 left: 5px;
-                transition: .3s ;
+                transition: .3s;
                 pointer-events: none;
                 color: var(--colorGray3);
             }
-    
+
             .input_global_styleLogin:focus~.label_global_style,
-            .input_global_styleLogin:valid~.label_global_style{
+            .input_global_styleLogin:valid~.label_global_style {
                 top: -10px;
                 color: var(--colorWhite2);
             }
-    
+
             .input_global_styleLogin[type="password"],
-            .input_global_styleLogin[type="text"]{  
+            .input_global_styleLogin[type="text"] {
                 /* Aca lo que hice fue solo modificar los inputs de text y password */
                 border: none;
                 border-bottom: 1px solid #fff;
@@ -77,22 +84,26 @@
             }
         }
     }
-    button{ width: 100%; margin: 1.52rem 0 1.52rem 0; }
 
-    .questions{
+    button {
+        width: 100%;
+        margin: 1.52rem 0 1.52rem 0;
+    }
+
+    .questions {
         display: flex;
         justify-content: space-evenly;
         width: 100%;
         height: 30px;
 
-        a{
-            color: darkgrey; 
+        a {
+            color: darkgrey;
             font-size: 15px;
             padding: 10px;
-            text-align:center;
+            text-align: center;
         }
 
-        a:hover{
+        a:hover {
             color: var(--colorOrange2);
         }
     }
@@ -100,43 +111,33 @@
 
 
 
-@media(max-width:900px){
-    .Content_FormsPrincipal {
+@media(max-width:900px) {
+    .Content_FormsPrincipalLogin {
         .Content_Forms {
             width: 343px;
         }
     }
+
+    .Content_FormsPrincipalLogin {
+        height: 100vh;
+    }
 }
 
 
-@media(max-width:480px){
-    .buttons_global_StyleTatto{
+@media(max-width:480px) {
+    .buttons_global_StyleTatto {
         font-size: 18px;
         width: 250px;
     }
 
-    .Content_FormsPrincipal{
+    .Content_FormsPrincipal {
         .Content_Forms {
             height: 500px;
             width: 380px;
-        
-            h1{font-size: 40px;}
+
+            h1 {
+                font-size: 40px;
+            }
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

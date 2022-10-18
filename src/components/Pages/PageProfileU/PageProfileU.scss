@@ -115,3 +115,32 @@
     }
 }
 
+//   R E S P O N S I V E    P E R F I L    P E R S O N A L 
+@media (max-width:730px) {
+    .BodyProfileUser{
+        .Content_profleUser{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .contProfileU{
+                border: solid 1px #d1d7dc;
+                height: 70vh;
+            }
+            .ContentUserInfo{
+                width: 100%;
+                .contPublicP{
+                    .datesBasics{
+                        .contN{
+                            width: 100%;
+                            display: flex;
+                            align-items: center;
+                            input{
+                                width: 350px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

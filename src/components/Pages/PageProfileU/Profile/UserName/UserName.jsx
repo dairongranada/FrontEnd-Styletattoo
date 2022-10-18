@@ -26,35 +26,25 @@ export const UserName = () => {
             </div>
 
             <div className='contPublicP'>
-              <div className='contTittle'>
-                <p>Agrege informacion sobre usted</p>
+              <div id='datesBasics' className='datesBasics'>
+                <div className='contN'>
+                  <label  className='labelsTxtProfile'htmlFor="text">Nombre</label>
+                  <input name='name' className='boxInf' type="text"/>
+                </div>
+                <div className='contN'>
+                  <label className='labelsTxtProfile' htmlFor="text">Apellido</label>
+                  <input name='apellido'  className='boxInf' type="text"/>
+                </div>
+                <div className='contN'>
+                  <label className='labelsTxtProfile' htmlFor="email">Correo</label>
+                  <input name='email' className='boxInf' type="text" />
+                </div>
               </div>
-            <div id='datesBasics' className='datesBasics'>
-              <div className='contN'>
-                <label htmlFor="text">Nombre</label>
-                <input name='name' className='boxInf' type="text"/>
+              <div className='contButtonSave'>
+                <button className='buttons_global_StyleTatto'>Guardar</button>
               </div>
-              <div className='contN'>
-                <label htmlFor="text">Apellido</label>
-                <input name='apellido'  className='boxInf' type="text"/>
-              </div>
-              <div className='contN'>
-                <label htmlFor="email">Correo</label>
-                <input name='email' className='boxInf' type="text" />
-              </div>
-            </div>
-            <div className='contButtonSave'>
-              <button className='buttons_global_StyleTatto'>Guardar</button>
             </div>
           </div>
-          
-      </div>
-        
-
-
-
-          
-
       </div>
     </div>
     )

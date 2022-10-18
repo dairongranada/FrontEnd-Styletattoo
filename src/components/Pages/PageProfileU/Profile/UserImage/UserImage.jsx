@@ -21,13 +21,8 @@ export const UserImage = () => {
                 <h3>Perfil Publico</h3>
                 <p>Añade una bonita foto tuya para tu perfil.</p>
             </div>
-
-            <div className="addPhotoMessenge">
-              <p>coloca una foto tuya aqui</p>
-            </div>
-
             <div className='contIconImg'>
-              <label htmlFor="text">Añda Su Imagen</label>
+              <label className='labelsTxtProfile' htmlFor="text">Añda Su Imagen</label>
               <div className="boxIconImg">
                 <div className="contCamera">
                   <span className="material-symbols-outlined">

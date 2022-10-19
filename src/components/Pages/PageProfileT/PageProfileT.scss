@@ -310,59 +310,38 @@
 
 //  R E S P O N S I V E
 
-@media(max-width:1100px){
-    .contPather {
-        flex-direction: column;
+@media(max-width: 912px){
+    .BigContent{
+        display: flex;
         align-items: center;
-
-       .contPe {
-            width: 100%;
-            height: auto;
-
-            .ProfileArtistic {
-                justify-content: center;
-                align-items: center;
+        flex-wrap: wrap;
+        .contPather{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            .contPe{
+                width: 90%;
+                display: flex;
+                flex-direction: column;
+                height: 20%;
+                .ProfileArtistic{
+                    display: flex;
+                    flex-direction: column;
+                    height: 10%;
+                }
             }
         }
-
-        .ContTrabajos {
-            width: 100%;
-        }
-    }
-}
-
-
-@media(max-width:600px){
-    .contPe {
-        width: 100%;
-        height: auto;
-        
-        .ProfileArtistic {
-            width: 100%;
-            height: auto;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .contInfo{
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            justify-content: center;
-        }
-    }
-    .contPather {
-        .modalImg{
-            .contModal{
-                svg {
-                    position: absolute;
-                    transform: translate(28vh, -32vh);
+        .contPather{
+            .ContTrabajos{
+                width: 109%;
+                .contPortafolio{
+                    .contPortafolio2{
+                        width: 97%;
+                    }
                 }
-                .imge {height: 350px;}
-            } 
-        } 
+            }
+        }
     }
-
-
 }
 

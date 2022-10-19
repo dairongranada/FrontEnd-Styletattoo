@@ -68,3 +68,36 @@
         }
     } 
 }
+
+//   R E S P O N S I V E
+
+@media (max-width:844px){
+    .BigCont{
+        .ContInfoP{
+            .InfImgO{
+                display: flex;
+                flex-direction: column;
+                .ContInfor{
+                    width: 100%;
+                    margin-bottom: 2rem;
+                }
+                .contImg{
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+            .InfImgT{
+                display: flex;
+                flex-direction: column-reverse;
+                .ContInforT{
+                    width: 100%;
+                    margin-bottom: 2rem;
+                }
+                .contImgT{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

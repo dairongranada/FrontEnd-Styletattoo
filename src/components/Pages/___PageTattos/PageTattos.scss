@@ -5,17 +5,18 @@
 .contPrimary{
     width: 100%;
     background-image: url(../../../images/Tattos/page.jpg);
-    height: 90vh;
+    height: auto;
     background-size: cover;
     .contBack{
         width: 100%;
-        height: 90vh;
+        height: auto;
         background-color: rgba(0, 0, 0, 0.815);
         display: flex;
         .contInfo{
             margin-top: 20px;
             display: flex;
             flex-direction: column;
+            height: auto;
             h3{
                 font-size: 50px;
                 margin: 20px;
@@ -33,8 +34,62 @@
         .contImg{
             display: flex;
             margin: 40px;
-
+            width: 50rem;
+            height: 30rem;
         }
     }
     
 }
+
+// R E S P O N S I V E
+
+@media (max-width:1190px){
+    .contBack{
+        display: flex;
+        flex-direction: column-reverse;
+        .contImg{
+            display: flex;
+            justify-content: center;
+            img{
+                width: 51%;
+                height: 69%;
+                margin: 1rem;
+            }
+        }
+    }
+}
+
+
+
+// responsive de page piercings copia
+@media (max-width:844px){
+    .BigCont{
+        .ContInfoP{
+            .InfImgO{
+                display: flex;
+                flex-direction: column;
+                .ContInfor{
+                    width: 100%;
+                    margin-bottom: 2rem;
+                }
+                .contImg{
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+            .InfImgT{
+                display: flex;
+                flex-direction: column-reverse;
+                .ContInforT{
+                    width: 100%;
+                    margin-bottom: 2rem;
+                }
+                .contImgT{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+

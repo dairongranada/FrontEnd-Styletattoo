@@ -1,3 +1,4 @@
+
 #burguer {
     margin-right: 30px;
     font-size: 25px;
@@ -6,7 +7,7 @@
     display: none;
   }
 
-.option2{
+.optionNavBar{
     position: relative;
     text-decoration: none;
     font-family: 'Poppins',sans-serif;
@@ -15,7 +16,7 @@
     letter-spacing: 0.5px;
     padding: 0 10px;
 }
-.option2:after{
+.optionNavBar:after{
     content: "";
     position: absolute;
     background-color: orange;
@@ -25,12 +26,14 @@
     bottom: -10px;
     transition: 0.5 s;
 }
-.option2:hover{
+.optionNavBar:hover{
     color: white;
 }
-.option2:hover:after{
+.optionNavBar:hover:after{
     width: 100%;
 }
+
+
 .barNavigate{
   .menu {
     height: 70px;
@@ -47,8 +50,9 @@
       align-items: center;
     }
     
-    #logoP{
+    rfile{
       cursor: pointer;
+      width: 35px;
     }
   }
   .despleg{
@@ -62,14 +66,21 @@
         margin-bottom: 50px;
         border-bottom: solid 1px white;
     }
+
+}
+
+.ImgUserProfile{
+  cursor: pointer;
+  width: 35px;
+  margin-right: 20px;
 }
   .nav_black{
     background-color: var(--colorBlack);
     box-shadow: 5px 0 10px rgba(0, 0, 0, 0.6);
     transition: 0.3s all;
   }
-  
-  .logo {
+
+  .logoStyleTatto {
     width: 65px;
     border-radius: 50%;
   }
@@ -120,20 +131,18 @@
 }
   
   @media (max-width: 952px) {
-    .logo {
+    .logoStyleTatto {
       font-size: 50px;
       padding-left: 35px;
     }
   
-    .menu-items li a {
-      font-size: 16px;
-    }
+    .menu-items li a {font-size: 16px;}
   }
   
   @media (max-width: 858px) {
     .menu {
       height: 65px;
-      .logo{
+      .logoStyleTatto{
         width: 80px;
       }
     }
@@ -177,7 +186,7 @@
       }
     }
   
-    .logo {
+    .logoStyleTatto {
       font-size: 25px;
       padding-left: 35px;
     }

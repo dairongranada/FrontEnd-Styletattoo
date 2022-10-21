@@ -10,6 +10,7 @@ import { NavFooter } from './components/Layouts/NavigationFooter/NavFooter/NavFo
 /*======================  V I E W S    C O M P O N E N T S  =========================*/ 
 import { TerminosC } from './components/Layouts/TerminosC/TerminosC';
 
+
 import { PageHome } from './components/Pages/PageHome/PageHome'
 import { PageProfileT } from './components/Pages/PageProfileT/PageProfileT';
 import { PageQuotes } from './components/Pages/PageQuotes/PageQuotes';

@@ -6,18 +6,15 @@ import logo from '../../../images/Icons/logo2.png'
 import Cookies from 'universal-cookie';
 import { useEffect } from 'react';
 
+import { menuBurguer } from '../../.././Helpers/LogicNav/Despliegue'
+
 const cookies = new Cookies();
 
 
-export const NavigationBar = ({classN, href, text}) => {
+export const NavigationBar = () => {
 
-    const menu = ()=>{
-        const btn_menu = document.querySelector('.material-symbols-outlined')
-        if(btn_menu){
-            const menu_items = document.querySelector('.menu-items')
-            menu_items.classList.toggle('open')
-        } 
-    }
+    menuBurguer('material-symbols-outlined','menu-items')
+
 
     // E F E C T O    D E L    S C R O L L
 
@@ -53,19 +50,19 @@ export const NavigationBar = ({classN, href, text}) => {
             <div className='barNavigate'>            
                 <nav className={`menu ${show && "nav_black"}`}id='js-nav'>
                     <div className='contOptionsNav'>
-                        <a href="/"><ImgTemplate srcImg={logo} className='logo' alt=''  /></a>
+                        <a href="/"><ImgTemplate srcImg={ logo } className='logoStyleTatto' alt='' /></a>
                         
                         <ul className='menu-items'>
-                            <li><a className='option2' href="/" >INICIO</a></li>
-                            <li><a className='option2' href="/artistas">ARTISTAS</a></li>
+                            <li><a className='optionNavBar' href="/" >INICIO</a></li>
+                            <li><a className='optionNavBar' href="/artistas">ARTISTAS</a></li>
                             {
                             1<3? (
-                                    <li><a className= "option2" href="/user/edit-profile">Perfil</a></li>
+                                    <li><a className= "optionNavBar" href="/user/edit-profile">Perfil</a></li>
                                 ):("")}
                         </ul>
                     </div>
-                    <img id='logoP' className='logo' src={perfilUsuarioAnonim} onClick={despliege} alt="" />
-                    <span onClick={menu} id='burguer' className="material-symbols-outlined">menu</span>
+                    <img id='logoPrfile' className='ImgUserProfile' src={perfilUsuarioAnonim} onClick={despliege} alt="" />
+                    <span onClick={menuBurguer()} id='burguer' className="material-symbols-outlined">menu</span>
                 </nav>
                 <div id='despleg' className='despleg'>
                     <ul>

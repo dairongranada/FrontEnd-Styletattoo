@@ -15,27 +15,6 @@ export const NavigationBar = () => {
 
     menuBurguer('material-symbols-outlined','menu-items')
 
-
-    // E F E C T O    D E L    S C R O L L
-
-    const [show, handleShow] = useState()
-
-    useEffect(() => {
-        window.addEventListener("scroll", () => {
-
-            if(window.scrollY > 80){
-                handleShow(true)
-                // console.log(show)
-            }else handleShow(false)
-        })
-        // return () => {
-        //     window.removeEventListener("scroll")
-        // }
-        window.addEventListener('load', () => {
-            const modalDesp = document.getElementById('despleg')
-            modalDesp.style.visibility = "hidden"
-        })
-    },[])
     
 
     const despliege = () => {
@@ -48,7 +27,7 @@ export const NavigationBar = () => {
     return (
         <>
             <div className='barNavigate'>            
-                <nav className={`menu ${show && "nav_black"}`}id='js-nav'>
+                <nav className='menu' id='js-nav'>
                     <div className='contOptionsNav'>
                         <a href="/"><ImgTemplate srcImg={ logo } className='logoStyleTatto' alt='' /></a>
                         

@@ -34,7 +34,8 @@
         .contImg{
             display: flex;
             margin: 40px;
-
+            width: 50rem;
+            height: 30rem;
         }
     }
     
@@ -50,8 +51,45 @@
             display: flex;
             justify-content: center;
             img{
-                width: 60%;
+                width: 51%;
+                height: 69%;
+                margin: 1rem;
             }
         }
     }
 }
+
+
+
+// responsive de page piercings copia
+@media (max-width:844px){
+    .BigCont{
+        .ContInfoP{
+            .InfImgO{
+                display: flex;
+                flex-direction: column;
+                .ContInfor{
+                    width: 100%;
+                    margin-bottom: 2rem;
+                }
+                .contImg{
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+            .InfImgT{
+                display: flex;
+                flex-direction: column-reverse;
+                .ContInforT{
+                    width: 100%;
+                    margin-bottom: 2rem;
+                }
+                .contImgT{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+

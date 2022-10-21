@@ -1,7 +1,8 @@
-.formRegisterUser{
-    width: 450px;
-    height: 100%;
-}
+.formRegisterUser{width: 450px;height: 100%;}
+
+.TelefonoLogin{padding-left: 1.8rem;}
+.Mas57{top: 27.15rem}
+
 
 // Div
 .Content_FormsPrincipal{
@@ -60,7 +61,8 @@
         width: 100%;
         display: flex;
         justify-content: center;
-        button{ width: 90%; margin: 1.52rem 0 1.52rem 0;}
+
+        button{ width: 90%;}
     }
 
 
@@ -83,7 +85,7 @@
 
         a{
             color: var(--colorWhite); 
-            font-size: 15px;
+            font-size: 12px;
             padding: 10px;
             text-align:center;
         }
@@ -126,6 +128,10 @@
         font-size: 9px;
         color: var(--colorOrange2);
         width: 88%;
+    }
+
+    .Mas57{
+        top: 23.3rem;
     }
 }
 

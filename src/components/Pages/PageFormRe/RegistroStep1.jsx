@@ -1,6 +1,6 @@
 // REACT - ICONS
 import { MdOutlineCancel } from 'react-icons/md';
-import { AiOutlineUser } from 'react-icons/ai';
+import { AiOutlineUser, AiTwotoneCopy } from 'react-icons/ai';
 import { FaCrop } from 'react-icons/fa';
 
 import { Link, Navigate, useNavigate } from 'react-router-dom'
@@ -78,6 +78,7 @@ export const RegistroStep1 = ( {step_change, setUserType } ) => {
                         }}
                         
                             className='type__user-button type__user-clinica'>
+                             <AiTwotoneCopy className='type__user-button-icon'/>
                             <h1 className='type__user-button-h1' >Artista</h1>
                         </button>
 

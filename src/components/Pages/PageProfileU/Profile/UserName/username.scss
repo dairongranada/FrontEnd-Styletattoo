@@ -13,17 +13,19 @@
             .datesBasics{
                 display: flex;
                 justify-content: center;
-                align-items: center;
                 flex-direction: column;
                 gap: 20px;
                 margin-top: 20px;
                 .contN{
+                    width: 100%;
+                    display: flex;
+                    padding: 0 2rem;
                     display: flex;
                     flex-direction: column;
                     .boxInf{
                         border: solid 1px;
                         height: 30px;
-                        width: 28rem;
+                        width: 100%;
                     }
                 }
             }

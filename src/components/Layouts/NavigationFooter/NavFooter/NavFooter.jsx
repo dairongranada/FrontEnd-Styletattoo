@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { NavAboutUsFooter } from '../NavAboutUsFooter/NavAboutUsFooter'
 import '.././NavFooter.scss'
 
@@ -23,16 +22,16 @@ export const NavFooter = () => {
                     <h2>Navegar<span className="material-symbols-outlined arrow">arrow_downward </span></h2>
                     <div className="contentNavFooter">
                         <div className="place">
-                            <Link to="/"><span className="material-symbols-outlined">house</span></Link>                           
-                            <span><Link to="/">Home</Link></span> 
+                            <a href="/"><span className="material-symbols-outlined">house</span></a>                           
+                            <span><a href="/">Home</a></span> 
                         </div>
                         <div className="place">
-                            <Link to="/artistas"><span className="material-symbols-outlined"> recent_actors </span></Link>
-                            <span><Link to="/artistas">Artistas</Link></span> 
+                            <a href="/artistas"><span className="material-symbols-outlined"> recent_actors </span></a>
+                            <span><a href="/artistas">Artistas</a></span> 
                         </div>
                         <div className="place">
-                            <Link to="/Citas"><span className="material-symbols-outlined"> outgoing_mail </span></Link>
-                            <span><Link to="/Citas">Citas</Link></span> 
+                            <a href="/Citas"><span className="material-symbols-outlined"> outgoing_mail </span></a>
+                            <span><a href="/Citas">Citas</a></span> 
                         </div>
                     </div>
                 </div>

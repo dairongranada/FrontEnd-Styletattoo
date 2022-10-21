@@ -38,17 +38,15 @@ export const PageFormSe = () => {
                         else if (!/^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/.test(valores.email)) { errores.email = 'El correo no es un correo válido'; }
                         else if (!valores.password.trim()) { errores.password = 'Por favor ingrese una contaseña'; }
 
-
                         return errores;
                     }}
 
                     onSubmit={(valores, { resetForm }) => {
 
                         LoginUserAuth({
-                            LoginEmail: valores.email,
-                            LoginPassword: valores.password
+                            LoginEmail: valores.email, LoginPassword: valores.password
                         }).then(info => {
-                            console.log(info.status);
+                            // console.log(LoginUserAuth);
                             // console.log(valores);
 
                         });
@@ -56,7 +54,7 @@ export const PageFormSe = () => {
 
                     a
                 >
-                    <Form action="">
+                    <Form>
                         <div className="inputContent">
                             <Field
                                 name='email'

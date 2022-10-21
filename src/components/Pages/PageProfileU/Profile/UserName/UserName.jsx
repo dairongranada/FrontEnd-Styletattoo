@@ -1,7 +1,6 @@
 import '../UserImage/UserImage.scss'
 import { LeftInfo } from '../../LeftInfo.jsx'
 import { React,useEffect,useState } from 'react'
-import  imgProfiles  from '../../../../../images/Icons/profile.jpeg'
 
 
 import './username.scss'
@@ -11,8 +10,7 @@ import './username.scss'
 
 
 export const UserName = () => {
-  const [ imgProfileU, setImgProfileU ] = useState()
-  useEffect(()=>{setImgProfileU(imgProfiles)})
+
 
 
   return (

@@ -2,7 +2,6 @@ import '../UserImage/UserImage.scss'
 import { LeftInfo } from '../../LeftInfo.jsx'
 import { React,useEffect,useState } from 'react'
 import Cookies from 'universal-cookie';
-import  imgProfiles  from '../../../../../images/Icons/profile.jpeg'
 
 
 

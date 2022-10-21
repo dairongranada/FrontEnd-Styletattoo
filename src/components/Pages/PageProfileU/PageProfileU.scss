@@ -15,10 +15,6 @@
     margin-bottom: 4px;
 }
 
-
-
-
-
 //  C O N T E  NE  D O R    D E L    L A D O    I Z Q U I E R D O  
 
 
@@ -36,6 +32,7 @@
     .ContFaceUser{
         width: 100%;
         height: auto;
+        padding: 1rem;
         display: flex;
         justify-content: center;
 
@@ -137,13 +134,7 @@
 
 
                 .optionsUser .optionCustomer a {
-                    color: #232527;
-                    font-weight: 400;
-                    width: 100%;
                     padding: 8px;
-                    display: flex;
-                    align-items: center;
-                    margin-left: 1rem;
                 }
             }
             .ContentUserInfo{
@@ -154,13 +145,41 @@
                 .contPublicP{
                     .datesBasics{
                         .contN{
-                            width: 28rem;
+                            width: 100%;
                             display: flex;
+                            padding: 0 2rem;                        
                         }
                     }
                 }
 
             }
+        }
+    }
+}
+
+
+@media (max-width:500px) {
+    .BodyProfileUser{
+        .Content_profleUser{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+
+            .contProfileU{
+                border: solid 1px #d1d7dc;
+                height: auto;
+                width: 350px;
+
+            }
+            .ContentUserInfo{
+                width: 350px;    
+                height: auto;
+                padding-bottom: 1.46rem;
+            
+            }
+
+            
         }
     }
 }

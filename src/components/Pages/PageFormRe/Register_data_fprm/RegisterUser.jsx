@@ -1,12 +1,16 @@
-import React, { useState } from 'react'
-import { AiOutlineUserAdd } from 'react-icons/ai';
-import { GoArrowSmallLeft } from 'react-icons/go';
-
 import './sass/userRegister.scss'
-import { postUsuario, AuthEmail } from '../../../.././Helpers/ApiConsumer/PostUser';
+
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
+
+import { GoArrowSmallLeft } from 'react-icons/go';
+import { AiOutlineUserAdd, AiFillCheckCircle } from 'react-icons/ai';
 
 
 import { Formik, Form, Field } from 'formik';
+import { postUsuario } from '../../../.././Helpers/ApiConsumer/PostUser';
+import { ButtonUI } from '../../.././UI/ButtonUI/ButtonUI'
+
 
 
 export const RegisterUser = ( { change_step } ) => {
@@ -15,8 +19,9 @@ export const RegisterUser = ( { change_step } ) => {
     const [loading, setLoading] = useState(false);
     const [duplicatedData, setDuplicatedData] = useState(false);
     const [registered, setRegistered] = useState(false);
-    const [terminos, setTerminos] = useState(false);
-    const [emailAuth, setEmailAuth] = useState({});
+
+
+
 
 
 
@@ -52,8 +57,8 @@ export const RegisterUser = ( { change_step } ) => {
                             lastName:'',
                             email: '',
                             password: '',
+                            telefono: '',
                             passwordConfirm: '',
-                            urlImage:" "
                         }}
                         
                         validate={(valores) => {
@@ -75,7 +80,15 @@ export const RegisterUser = ( { change_step } ) => {
                                 ers.email = "Porfavor ingresa un Correo"
                             }else if(!/^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/.test(valores.email)) {
                                 ers.email = "Porfavor ingresa un Correo valido @"}
-                            
+
+                                 // VALIDACION TELEFONO 
+                            if (!valores.telefono){ 
+                                ers.telefono = "Porfavor ingresa un numero"
+                            }else if(!/^\d{10,10}$/.test(valores.telefono)) {
+                                ers.telefono = "Porfavor ingresa solo numeros"}
+
+
+
                             // VALIDACION CONTRASEÑA
                             if (!valores.password){ 
                                 ers.password = "Porfavor ingresa una contraseña"
@@ -101,9 +114,9 @@ export const RegisterUser = ( { change_step } ) => {
                                 apellido:valores.lastName,
                                 email: valores.email,
                                 contraseña: valores.password,
-                                telefono: "3218666262",
+                                telefono: valores.telefono,
                                 role: "[ROLE_USUARIO]",
-                                urlImage:" "
+                                urlImage:""
 
                             }).then( info => {
                                 validacion = info
@@ -173,13 +186,15 @@ export const RegisterUser = ( { change_step } ) => {
                                         </div>
                                         <div>
                                             <Field 
-                                                className='global_styleRegistroIn EmailInput'
+                                                className='global_styleRegistroIn TelefonoLogin'
                                                 name='telefono' 
                                                 id='telefono' 
                                                 type="text" 
                                                 placeholder='Telefono'
-
-                                            />                                        
+                                                maxLength='10'
+                                            /> 
+                                             {touched.telefono && errors.telefono && <span>{errors.telefono}</span>}
+                             
                             
                                         </div>
                                     </div>
@@ -211,9 +226,20 @@ export const RegisterUser = ( { change_step } ) => {
 
                                         </div>
                                     </div>
-                                    <div className='Btn_Register'>
-                                        <button type='submit' className="buttons_global_StyleTatto">Registrarse</button>
+                                    <div className="sameline terminos-condiciones">
+                                        <input required type="checkbox" />
+                                        <p>Acepto los <Link className='anchor' to="/terminos-condiciones">Terminos y condiciones</Link></p>
                                     </div>
+
+
+                                    <div className='Btn_Register'>
+                                        <ButtonUI 
+                                            styleName = "buttons_global_StyleTatto"
+                                            text="Registrar"
+                                            type={"submit"}
+                                        />
+                                    </div>
+
                                 <div className= "questions">
                                     <a href="/IngresarSesion">Ya tienes una Cuenta?</a>
                                 </div>

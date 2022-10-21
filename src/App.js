@@ -8,6 +8,7 @@ import { NavFooter } from './components/Layouts/NavigationFooter/NavFooter/NavFo
 
 
 /*======================  V I E W S    C O M P O N E N T S  =========================*/ 
+import { TerminosC } from './components/Layouts/TerminosC/TerminosC';
 
 import { PageHome } from './components/Pages/PageHome/PageHome'
 import { PageProfileT } from './components/Pages/PageProfileT/PageProfileT';
@@ -45,6 +46,8 @@ function App() {
                 {/* ECCSXTRAS */ }
                 <Route path="*" element= {<Page404 />} />
                 <Route path='/' exact element= {<PageHome />} />
+                <Route path='/terminos-condiciones' exact element= {<TerminosC />} />
+
 
                 {/* LOGIN Y REGISTRO */ }
                 <Route path='/IngresarSesion' exact element= {<PageFormSe />}/>

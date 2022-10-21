@@ -2,7 +2,6 @@ import '../UserImage/UserImage.scss'
 import {LeftInfo} from '../../LeftInfo.jsx'
 import { React,useEffect,useState } from 'react'
 import Cookies from 'universal-cookie';
-import  imgProfiles  from '../../../../../images/Icons/perfilUsuarioAnonim.jpg'
 
 
 
@@ -29,7 +28,7 @@ export const UserImage = () => {
                     add_a_photo
                   </span>
                 </div>
-                <img className='checkImg' src={imgProfiles} alt="" />
+                <img className='checkImg' alt="" />
               </div>
               <button className='buttons_global_StyleTatto'>Guardar</button>
             </div>

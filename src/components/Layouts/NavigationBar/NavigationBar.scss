@@ -73,8 +73,9 @@
 
 .ImgUserProfile{
   cursor: pointer;
-  width: 35px;
+  width: 40px;
   margin-right: 20px;
+  border-radius: 50%;
 }
   .nav_black{
     background-color: var(--colorBlack);
@@ -204,3 +205,67 @@
       height: calc(100% - 65px);
     }
   }
+
+
+  
+.menu-horizontal{
+	list-style: none;
+	display: flex;
+	justify-content: space-around;
+}
+.menu-horizontal > li > a{
+	display: block;
+	color: white;
+	text-decoration: none;
+}
+.menu-display{
+  display: flex;
+}
+
+
+.menu-vertical{
+  position: absolute;
+  display: none;
+  list-style: none;
+  width: 150px;
+  height: auto;
+  right: 44px;
+  top: 70px;
+  background-color: #000000ab;
+}
+.menu-horizontal li:hover .menu-vertical{
+	display: block;
+}
+
+
+.menu-vertical li a{
+	display: block;
+	color: white;
+	text-decoration: none;
+  font-size: 12px;
+	padding: 10px;
+}
+
+.menuOpcionsNav{
+  display: flex;
+  align-items: center;
+}
+
+.cerrarSesionUL{
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #fff;
+  margin-top: 1.3rem;
+  text-align: center;
+}
+
+.UpArrow{
+  display: flex;
+  position: absolute;
+  width: 100%;
+  align-content: space-between;
+  justify-content: flex-end;
+  top: -11px;
+  font-size: 13px;
+
+}

@@ -12,7 +12,6 @@ import { TerminosC } from './components/Layouts/TerminosC/TerminosC';
 
 
 import { PageHome } from './components/Pages/PageHome/PageHome'
-import { PageProfileT } from './components/Pages/PageProfileT/PageProfileT';
 import { PageQuotes } from './components/Pages/PageQuotes/PageQuotes';
 import { PageTattooists } from './components/Pages/PageTattooists/PageTattooists';
 import { Page404 } from './components/Pages/Page404/Page404';
@@ -22,14 +21,22 @@ import { PageFormRe } from './components/Pages/PageFormRe/PageFormRe';
 import { PageTattos } from './components/Pages/___PageTattos/PageTattos';
 import { PagePiercings } from './components/Pages/___PagePiercings/PagePiercings';
 
-import { UserPassword } from './components/Pages/PageProfileU/Profile/UserPassword/UserPassword'
+
+
+
+// PROFILE USER ROUTES 
 import { UserName } from './components/Pages/PageProfileU/Profile/UserName/UserName'
-import {UserImage} from './components/Pages/PageProfileU/Profile/UserImage/UserImage'
+import { UserPassword } from './components/Pages/PageProfileU/Profile/UserPassword/UserPassword'
+import { UserImage } from './components/Pages/PageProfileU/Profile/UserImage/UserImage'
 import { UserQuotes } from './components/Pages/PageProfileU/Profile/UserQuotes/UserQuotes'
-import { PersonalProfile } from './components/Pages/PageProfileT/PersonalProfile/PersonalProfile'
-import { ProfileTfoto } from './components/Pages/PageProfileT/PersonalProfile/ProfileTfoto/ProfileTfoto'
-import { ProfileTpassword } from './components/Pages/PageProfileT/PersonalProfile/ProfileTpassword/ProfileTpassword'
-import { ProfileTquotes } from './components/Pages/PageProfileT/PersonalProfile/ProfileTquotes/ProfileTquotes'
+
+// PROFILE USER ROUTES 
+import { TattoName } from './components/Pages/PageProfileT/Profile/TattoName/TattoName'
+import { TattoPassword } from './components/Pages/PageProfileT/Profile/TattoPassword/TattoPassword'
+import { TattoImage } from './components/Pages/PageProfileT/Profile/TattoImage/TattoImage'
+import { TattoQuotes } from './components/Pages/PageProfileT/Profile/TattoQuotes/TattoQuotes'
+
+import { AllViewTatto } from './components/Pages/PageProfileT/AllViewTatto/AllViewTatto'
 
 
 
@@ -39,8 +46,6 @@ function App() {
   return (
     <div>
       <NavigationBar/>
-
-
 
 
               <Routes>
@@ -75,12 +80,12 @@ function App() {
                 <Route path='/user/edit-quotes' exact element= {<UserQuotes/>}/>
 
                 {/* Rutas para opciones del perfil de Tatuadores */}
-                <Route path='/perfilTatuadores' exact element= {<PageProfileT/>}/>
-                <Route path='/perfilTatuPersonal' exact element= {<PersonalProfile/>}/>
-                <Route path='/perfilTatuPersonalFoto' exact element= {<ProfileTfoto/>}/>
-                <Route path='/perfilT-PersonalPassword' exact element= {<ProfileTpassword/>}/>
-                <Route path='/perfilT-PersonalQuotes' exact element= {<ProfileTquotes/>}/>
+                <Route path='/tatto/view/profile' exact element= {<AllViewTatto/>}/>
 
+                <Route path='/userTatto/edit-profile' exact element= {<TattoName/>}/>
+                <Route path='/userTatto/edit-image' exact element= {<TattoImage/>}/>
+                <Route path='/userTatto/edit-password' exact element= {<TattoPassword/>}/>
+                <Route path='/userTatto/edit-quotes' exact element= {<TattoQuotes/>}/>
         
                 <Route path='/citas' exact element= {<PageQuotes/>}/>
 

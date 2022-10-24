@@ -29,10 +29,6 @@ export const NavFooter = () => {
                             <a href="/artistas"><span className="material-symbols-outlined"> recent_actors </span></a>
                             <span><a href="/artistas">Artistas</a></span> 
                         </div>
-                        <div className="place">
-                            <a href="/Citas"><span className="material-symbols-outlined"> outgoing_mail </span></a>
-                            <span><a href="/Citas">Citas</a></span> 
-                        </div>
                     </div>
                 </div>
                 <NavAboutUsFooter NameAbout='Sugerencias' classSpanLogo='material-symbols-outlined' NameSpanLogo='mark_email_unread'/> 

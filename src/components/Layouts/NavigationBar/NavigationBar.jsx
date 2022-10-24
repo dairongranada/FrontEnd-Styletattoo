@@ -11,15 +11,19 @@ import logoStyleT from '../../../images/Icons/logo.jpg'
 
 export const NavigationBar = () => {
     const [sidebarNav, setSidebarnav] = useState("")
+    const [barMenuIcon, setBarMenuIcon] = useState("bx bx-menu")
     const [navClose, setNavClose] = useState(false)
 
     const handleChangeNavs = () => {
         if (navClose === false) {
             setSidebarnav("open")
+            setBarMenuIcon("bx bx-menu-alt-right")
             setNavClose(true)
         }else{
             setSidebarnav("")
+            setBarMenuIcon("bx bx-menu")
             setNavClose(false)
+
         }
     };
 
@@ -56,9 +60,8 @@ export const NavigationBar = () => {
         <>
             <div id="sidebar" className={ sidebarNav } >
                 <div className="logo-details">
-                    <img className='bx bxl-c-plus-plus icon' style={{ marginRight:"10px" }} src={logoStyleT} alt=""/>
-                    <div className="logo_name">Style Tattoo</div>
-                    <i className='bx bx-menu' id="CloseBtnNav" onClick={handleChangeNavs} ></i>
+                    <div className="logo_name">STYLE TATTOO</div>
+                    <i className={barMenuIcon} id="CloseBtnNav" onClick={handleChangeNavs} ></i>
                 </div>
                 <ul className="nav-list">
                     <li>
@@ -68,20 +71,38 @@ export const NavigationBar = () => {
                         </a>
                         <span className="tooltip">Inicio</span>
                     </li>
+
+                    {
                     <li>
-                        <a href="user/edit-profile">
+                        <a href="/user/edit-profile">
                             <i className='bx bx-user' ></i>
-                            <span className="links_name">Cuenta</span>
+                            <span className="links_name">Cuenta Usuario</span>
                         </a>
-                        <span className="tooltip">Cuenta</span>
-                    </li>
+                        <span className="tooltip">Cuenta Usuario</span>
+                    </li> 
+                    }
+                    
+                    { 
                     <li>
-                        <a href="#">
-                            <i className='bx bx-chat' ></i>
+                        <a href="/userTatto/edit-profile">
+                            <i className='bx bx-user' ></i>
+                            <span className="links_name">Cuenta Tatuador</span>
+                        </a>
+                        <span className="tooltip">Cuenta Tatuador</span>
+                    </li>
+                    }
+                    
+                    <li>
+                        <a href="/userTatto/edit-profile">
+                            <i class='bx bxs-user-account'></i>
                             <span className="links_name">Artistas</span>
                         </a>
                         <span className="tooltip">Artistas</span>
                     </li>
+
+                    <div className="logo-details ImgLogoStyleContent" style={{ height:"15rem", justifyContent: "center"}}>
+                        <img className='icon ImgLogoStyle' src={logoStyleT} alt="" style={{ width:"150px" }}/>
+                    </div>
 
 
                     <li className="profile">

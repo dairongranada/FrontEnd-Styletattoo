@@ -53,7 +53,7 @@ export const PageTattooists = () => {
                         <div className="content">
                             <p className='nameTattooists' >{tattoo.name}</p>
                             <p className='descripTattooists'href="/">{tattoo.descripcion}</p>
-                            <a href="/perfilTatuadores" className='btnA_menu'>Ver Mi Perfil</a>
+                            <a href="/tatto/view/profile" className='btnA_menu'>Ver Mi Perfil</a>
                         </div>
                     </div>
                 </div>

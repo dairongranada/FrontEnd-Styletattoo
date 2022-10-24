@@ -1,9 +1,12 @@
 .BigContent{
+    margin-left: 73px;
+    height: auto;
+
     .contPather{
-        padding: 0 1.524rem ;
+
+        padding: 0 5rem 5rem 5rem ;
         display: flex;
         background-color: var(--colorGray);
-    
     
         .contPe{
             display: flex;
@@ -27,7 +30,6 @@
                         display: flex;
                         justify-content: flex-end;
                         flex-wrap: wrap;
-        
                         a{color: var(--colorOrange2);}
                     }
     

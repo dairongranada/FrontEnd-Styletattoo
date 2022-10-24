@@ -93,7 +93,6 @@ export const NavigationBar = () => {
                     }
                     
                     <li>
-                        <a href="/artistas">
 
                         <a href="/all/artist/style">
 
@@ -121,7 +120,6 @@ export const NavigationBar = () => {
 
                 </ul>
             </div>
-
 
 
 

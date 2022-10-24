@@ -215,3 +215,24 @@ img.imgtattooists{
     filter: grayscale(100%);
 }
 
+
+// R E S P O N S I V E
+
+@media (max-width: 900px){
+  .Content_Tattooists{
+    .Content_TattooistsTitle{
+      h1{
+        margin-left: 10%;
+      }
+      p{
+        margin-left: 10%;
+      }
+    }
+    .contSearch{
+      margin-left: 10%;
+    }
+    .main-contenido{
+      margin-left: 10%;
+    }
+  }
+}

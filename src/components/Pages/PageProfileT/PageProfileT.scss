@@ -320,6 +320,7 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            margin-left: 12%;
             .contPe{
                 width: 90%;
                 display: flex;
@@ -337,7 +338,12 @@
                 width: 109%;
                 .contPortafolio{
                     .contPortafolio2{
-                        width: 97%;
+                        width: 100%;
+                        .Portafolio{
+                            .PortafoliosTittle{
+                                font-size: 25px;
+                            }
+                        }
                     }
                 }
             }

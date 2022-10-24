@@ -93,7 +93,7 @@ export const NavigationBar = () => {
                     }
                     
                     <li>
-                        <a href="/userTatto/edit-profile">
+                        <a href="/artistas">
                             <i class='bx bxs-user-account'></i>
                             <span className="links_name">Artistas</span>
                         </a>

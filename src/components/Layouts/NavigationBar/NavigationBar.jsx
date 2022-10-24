@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import './NavigationBar.scss'
 import perfilUsuarioAnonim from '../../../images/Icons/perfilUsuarioAnonim.jpg'
+import logoStyleT from '../../../images/Icons/logo.jpg'
+
 import logo from '../../../images/Icons/logo2.png'
 import Cookies from 'universal-cookie';
 
@@ -10,27 +12,27 @@ const cookies = new Cookies();
 
 
 export const NavigationBar = () => {
-    
+
     const sidebar = document.querySelector(".sidebar");
-    const closeBtn = document.querySelector("#btn");
+    const closeBtn = document.getElementById("CloseBtnNav");
 
     const [btnMenu, setBtnMenu] = useState("bx-menu")
 
-const hanleChange = () => {
+    const hanleChange = () => {
         sidebar.classList.toggle("open");
         menuBtnChange();//calling the function(optional)
     }
 
 
-// following are the code to change sidebar button(optional)
-function menuBtnChange() {
-    if (sidebar.classList.contains("open")) {
-        setBtnMenu("bx-menu", "bx-menu-alt-right")
-        closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
-    } else {
-        closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");//replacing the iocns class
+    // following are the code to change sidebar button(optional)
+    const menuBtnChange = () => {
+        if (sidebar.classList.contains("open")) {
+            setBtnMenu("bx-menu", "bx-menu-alt-right")
+            closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+        } else {
+            closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");//replacing the iocns class
+        }
     }
-}
 
 
 
@@ -39,67 +41,40 @@ function menuBtnChange() {
         <>
             <div className="sidebar">
                 <div className="logo-details">
-                    <i className='bx bxl-c-plus-plus icon'></i>
-                    <div className="logo_name">CodingLab</div>
-                    <i className='bx bx-menu' id="btn"  onClick={hanleChange} ></i>
+                    <img className='bx bxl-c-plus-plus icon' style={{ marginRight:"10px"  }} src={logoStyleT} alt=""/>
+                    <div className="logo_name">Style Tattoo</div>
+                    <i className='bx bx-menu' id="CloseBtnNav" onClick={hanleChange} ></i>
                 </div>
                 <ul className="nav-list">
                     <li>
-                        <a href="#">
+                        <a href="/">
+                            <i className='bx bx-home' ></i>
+                            <span className="links_name">Inicio</span>
+                        </a>
+                        <span className="tooltip">Inicio</span>
+                    </li>
+                    <li>
+                        <a href="user/edit-profile">
                             <i className='bx bx-user' ></i>
                             <span className="links_name">Cuenta</span>
                         </a>
-                        <span className="tooltip">User</span>
+                        <span className="tooltip">Cuenta</span>
                     </li>
                     <li>
                         <a href="#">
                             <i className='bx bx-chat' ></i>
-                            <span className="links_name">Messages</span>
+                            <span className="links_name">Artistas</span>
                         </a>
-                        <span className="tooltip">Messages</span>
+                        <span className="tooltip">Artistas</span>
                     </li>
-                    <li>
-                        <a href="#">
-                            <i className='bx bx-pie-chart-alt-2' ></i>
-                            <span className="links_name">Analytics</span>
-                        </a>
-                        <span className="tooltip">Analytics</span>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i className='bx bx-folder' ></i>
-                            <span className="links_name">File Manager</span>
-                        </a>
-                        <span className="tooltip">Files</span>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i className='bx bx-cart-alt' ></i>
-                            <span className="links_name">Order</span>
-                        </a>
-                        <span className="tooltip">Order</span>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i className='bx bx-heart' ></i>
-                            <span className="links_name">Saved</span>
-                        </a>
-                        <span className="tooltip">Saved</span>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i className='bx bx-cog' ></i>
-                            <span className="links_name">Setting</span>
-                        </a>
-                        <span className="tooltip">Setting</span>
-                    </li>
+
 
                     <li className="profile">
                         <div className="profile-details">
                             <img src={perfilUsuarioAnonim} alt="profileImg" />
                             <div className="name_job">
-                                <div className="name">Prem Shahi</div>
-                                <div className="job">Usuario</div>
+                                <div className="name">Nombre Apellido</div>
+                                <div className="job">| Usuario o Tatuador |</div>
                             </div>
                         </div>
                         <i className='bx bx-log-out' id="log_out" ></i>

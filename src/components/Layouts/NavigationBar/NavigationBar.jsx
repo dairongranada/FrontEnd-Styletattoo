@@ -41,7 +41,6 @@ export const NavigationBar = ({classN, href, text}) => {
                     <span onClick={menu} id='burguer' className="material-symbols-outlined">menu</span>
 
 
-
                 {/*  ICON PERFIL  USUARIO....  */ }
                     <ul class="menu-horizontal">
                         <li>
@@ -68,7 +67,6 @@ export const NavigationBar = ({classN, href, text}) => {
 
 
 
-                
                 </nav>
                 <div id='despleg' className='despleg'>
                     <ul>

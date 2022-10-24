@@ -1,49 +1,64 @@
-import React, { useState } from 'react'
 import './NavigationBar.scss'
+
+import React, { useState } from 'react'
 import perfilUsuarioAnonim from '../../../images/Icons/perfilUsuarioAnonim.jpg'
 import logoStyleT from '../../../images/Icons/logo.jpg'
 
-import logo from '../../../images/Icons/logo2.png'
-import Cookies from 'universal-cookie';
 
 
-const cookies = new Cookies();
 
 
 
 export const NavigationBar = () => {
+    const [sidebarNav, setSidebarnav] = useState("")
+    const [navClose, setNavClose] = useState(false)
 
-    const sidebar = document.querySelector(".sidebar");
-    const closeBtn = document.getElementById("CloseBtnNav");
-
-    const [btnMenu, setBtnMenu] = useState("bx-menu")
-
-    const hanleChange = () => {
-        sidebar.classList.toggle("open");
-        menuBtnChange();//calling the function(optional)
-    }
-
-
-    // following are the code to change sidebar button(optional)
-    const menuBtnChange = () => {
-        if (sidebar.classList.contains("open")) {
-            setBtnMenu("bx-menu", "bx-menu-alt-right")
-            closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
-        } else {
-            closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");//replacing the iocns class
+    const handleChangeNavs = () => {
+        if (navClose === false) {
+            setSidebarnav("open")
+            setNavClose(true)
+        }else{
+            setSidebarnav("")
+            setNavClose(false)
         }
-    }
+    };
+
+    // let sidebar = document.querySelector(".sidebar");
+    // let closeBtn = document.querySelector("#btn");
+    // let searchBtn = document.querySelector(".bx-search");
+
+    // closeBtn.addEventListener("click", ()=>{
+    //   sidebar.classList.toggle("open");
+    //   menuBtnChange();//calling the function(optional)
+    // });
+
+    // searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search iocn
+    //   sidebar.classList.toggle("open");
+    //   menuBtnChange(); //calling the function(optional)
+    // });
+
+    // // following are the code to change sidebar button(optional)
+    // function menuBtnChange() {
+    //  if(sidebar.classList.contains("open")){
+    //    closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+    //  }else {
+    //    closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
+    //  }
+    // }
+
+
+
 
 
 
 
     return (
         <>
-            <div className="sidebar">
+            <div id="sidebar" className={ sidebarNav } >
                 <div className="logo-details">
-                    <img className='bx bxl-c-plus-plus icon' style={{ marginRight:"10px"  }} src={logoStyleT} alt=""/>
+                    <img className='bx bxl-c-plus-plus icon' style={{ marginRight:"10px" }} src={logoStyleT} alt=""/>
                     <div className="logo_name">Style Tattoo</div>
-                    <i className='bx bx-menu' id="CloseBtnNav" onClick={hanleChange} ></i>
+                    <i className='bx bx-menu' id="CloseBtnNav" onClick={handleChangeNavs} ></i>
                 </div>
                 <ul className="nav-list">
                     <li>

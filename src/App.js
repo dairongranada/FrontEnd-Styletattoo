@@ -62,7 +62,7 @@ function App() {
 
 
                 {/* TATUADORES */ }                             {/*Ruta Protegida */}
-                <Route path='/artistas' exact element= {<PageTattooists/>}/>
+                <Route path='/all/artist/style' exact element= {<PageTattooists/>}/>
 
 
                   {/* COSAS NO IMPORTANTES como(Elena <3) */ }

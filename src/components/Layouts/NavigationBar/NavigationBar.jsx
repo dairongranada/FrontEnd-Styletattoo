@@ -94,6 +94,9 @@ export const NavigationBar = () => {
                     
                     <li>
                         <a href="/artistas">
+
+                        <a href="/all/artist/style">
+
                             <i class='bx bxs-user-account'></i>
                             <span className="links_name">Artistas</span>
                         </a>

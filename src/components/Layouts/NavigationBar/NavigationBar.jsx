@@ -1,34 +1,140 @@
 import React, { useState } from 'react'
 import './NavigationBar.scss'
 import perfilUsuarioAnonim from '../../../images/Icons/perfilUsuarioAnonim.jpg'
-import { ImgTemplate } from '../../UI/ImgTemplate/ImgTemplate';
 import logo from '../../../images/Icons/logo2.png'
 import Cookies from 'universal-cookie';
-import { useEffect } from 'react';
-import { AiOutlineUser } from 'react-icons/ai';
-import { BiUpArrow } from "react-icons/bi";
 
 
 const cookies = new Cookies();
 
 
-export const NavigationBar = ({classN, href, text}) => {
 
-    const menu = ()=>{
-        const btn_menu = document.querySelector('.material-symbols-outlined')
-        if(btn_menu){
-            const menu_items = document.querySelector('.menu-items')
-            menu_items.classList.toggle('open')
-        } 
+export const NavigationBar = () => {
+    
+    const sidebar = document.querySelector(".sidebar");
+    const closeBtn = document.querySelector("#btn");
+
+    const [btnMenu, setBtnMenu] = useState("bx-menu")
+
+const hanleChange = () => {
+        sidebar.classList.toggle("open");
+        menuBtnChange();//calling the function(optional)
     }
 
+
+// following are the code to change sidebar button(optional)
+function menuBtnChange() {
+    if (sidebar.classList.contains("open")) {
+        setBtnMenu("bx-menu", "bx-menu-alt-right")
+        closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+    } else {
+        closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");//replacing the iocns class
+    }
+}
 
 
 
 
     return (
         <>
-            <div className='barNavigate'>            
+            <div className="sidebar">
+                <div className="logo-details">
+                    <i className='bx bxl-c-plus-plus icon'></i>
+                    <div className="logo_name">CodingLab</div>
+                    <i className='bx bx-menu' id="btn"  onClick={hanleChange} ></i>
+                </div>
+                <ul className="nav-list">
+                    <li>
+                        <a href="#">
+                            <i className='bx bx-user' ></i>
+                            <span className="links_name">Cuenta</span>
+                        </a>
+                        <span className="tooltip">User</span>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i className='bx bx-chat' ></i>
+                            <span className="links_name">Messages</span>
+                        </a>
+                        <span className="tooltip">Messages</span>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i className='bx bx-pie-chart-alt-2' ></i>
+                            <span className="links_name">Analytics</span>
+                        </a>
+                        <span className="tooltip">Analytics</span>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i className='bx bx-folder' ></i>
+                            <span className="links_name">File Manager</span>
+                        </a>
+                        <span className="tooltip">Files</span>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i className='bx bx-cart-alt' ></i>
+                            <span className="links_name">Order</span>
+                        </a>
+                        <span className="tooltip">Order</span>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i className='bx bx-heart' ></i>
+                            <span className="links_name">Saved</span>
+                        </a>
+                        <span className="tooltip">Saved</span>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i className='bx bx-cog' ></i>
+                            <span className="links_name">Setting</span>
+                        </a>
+                        <span className="tooltip">Setting</span>
+                    </li>
+
+                    <li className="profile">
+                        <div className="profile-details">
+                            <img src={perfilUsuarioAnonim} alt="profileImg" />
+                            <div className="name_job">
+                                <div className="name">Prem Shahi</div>
+                                <div className="job">Usuario</div>
+                            </div>
+                        </div>
+                        <i className='bx bx-log-out' id="log_out" ></i>
+                    </li>
+
+                </ul>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            {/* <div className='barNavigate'>            
                 <nav className='menu' id='js-nav'>
                     <div className='contOptionsNav'>
                         <a href="/"><ImgTemplate srcImg={logo} className='logoStyleTatto' alt=''  /></a>
@@ -42,7 +148,7 @@ export const NavigationBar = ({classN, href, text}) => {
 
 
                 {/*  ICON PERFIL  USUARIO....  */ }
-                    <ul class="menu-horizontal">
+            {/* <ul class="menu-horizontal">
                         <li>
                             <a href="#"><img id='logoP' className='ImgUserProfile' src={perfilUsuarioAnonim} alt="" /></a>
                             <ul class="menu-vertical">
@@ -52,9 +158,9 @@ export const NavigationBar = ({classN, href, text}) => {
                                 <ul className='cerrarSesionUL'><li className='menuOpcionsNav'><a href="#">Cerrar sesion</a></li></ul>
                             </ul>
                         </li>
-                    </ul>
-                {/*  ICON PERFIL  TATUADR....  */ }
-                {/* <ul class="menu-horizontal">
+                    </ul> */}
+            {/*  ICON PERFIL  TATUADR....  */}
+            {/* <ul class="menu-horizontal">
                         <li>
                             <a href="#"><img id='logoP' className='ImgUserProfile' src={perfilUsuarioAnonim} alt="" /></a>
                             <ul class="menu-vertical">
@@ -67,14 +173,17 @@ export const NavigationBar = ({classN, href, text}) => {
 
 
 
-                </nav>
+            {/* </nav>
                 <div id='despleg' className='despleg'>
                     <ul>
                         <li>Perfil</li>
                         <li>Cerrar Sesion</li>
                     </ul>
-                </div>
-            </div>
+                </div> */}
+            {/* </div> */}
+
+
+
         </>
     )
 }

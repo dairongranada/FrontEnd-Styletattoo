@@ -1,23 +1,28 @@
-.NewTattooists{
-    height: auto;
-    margin: 3.56565rem 0;
-}
-
 
 .contCards{
     display: flex;
     justify-content: center;
-    width: 100%;
+    margin-left: 78px;
     gap: 75px;
     flex-wrap: wrap;
 }
 
 .contArtistas {
     text-align: center;
-    width: 100%;
+    margin-left: 78px;
     height: 23vh;
     display: flex;
     justify-content: center;
     align-items: center;
     align-content: center;
 }
+
+
+.SeeTattooists {
+    margin-left: 78px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

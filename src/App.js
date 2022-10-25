@@ -25,19 +25,23 @@ import { PagePiercings } from './components/Pages/___PagePiercings/PagePiercings
 
 
 // PROFILE USER ROUTES 
+import { LeftInfoT } from './components/Pages/PageProfileT/LeftInfoT';
+
 import { UserName } from './components/Pages/PageProfileU/Profile/UserName/UserName'
 import { UserPassword } from './components/Pages/PageProfileU/Profile/UserPassword/UserPassword'
 import { UserImage } from './components/Pages/PageProfileU/Profile/UserImage/UserImage'
 import { UserQuotes } from './components/Pages/PageProfileU/Profile/UserQuotes/UserQuotes'
 
 // PROFILE USER ROUTES 
+import { LeftInfoU } from './components/Pages/PageProfileU/LeftInfoU';
+
 import { TattoName } from './components/Pages/PageProfileT/Profile/TattoName/TattoName'
 import { TattoPassword } from './components/Pages/PageProfileT/Profile/TattoPassword/TattoPassword'
 import { TattoImage } from './components/Pages/PageProfileT/Profile/TattoImage/TattoImage'
 import { TattoQuotes } from './components/Pages/PageProfileT/Profile/TattoQuotes/TattoQuotes'
 
 import { AllViewTatto } from './components/Pages/PageProfileT/AllViewTatto/AllViewTatto'
-import { LeftInfoT } from './components/Pages/PageProfileT/LeftInfoT';
+
 
 
 
@@ -47,7 +51,6 @@ function App() {
   return (
     <div>
       <NavigationBar/>
-
 
               <Routes>
                 {/* ECCSXTRAS */ }
@@ -75,7 +78,10 @@ function App() {
                 {/*  RUTAS PRIVADAS     */}
 
                 {/* Rutas para opciones del perfil de usuario */}
-                <Route path='/user/edit-profile' exact element= {<UserName/>}/>
+                <Route path='/user/edit-profile' exact element= {<LeftInfoU/>}/>
+
+
+                <Route path='/user/edit-name' exact element= {<UserName/>}/>
                 <Route path='/user/edit-image' exact element= {<UserImage/>}/>
                 <Route path='/user/edit-password' exact element= {<UserPassword/>}/>
                 <Route path='/user/edit-quotes' exact element= {<UserQuotes/>}/>

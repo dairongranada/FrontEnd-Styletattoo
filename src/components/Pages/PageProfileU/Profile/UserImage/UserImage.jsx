@@ -1,8 +1,6 @@
-import '../UserImage/UserImage.scss'
-import {LeftInfo} from '../../LeftInfo.jsx'
-import { React,useEffect,useState } from 'react'
-import Cookies from 'universal-cookie';
 
+import { UptInfoU } from '../../UptInfoU'
+import { ChevronsLeft }  from '../../../../UI/ChevronsLeft/ChevronsLeft.jsx'
 
 
 
@@ -13,27 +11,24 @@ export const UserImage = () => {
 
   return (
     <div className='BodyProfileUser'>
-      <div className='Content_profleUser'>
-        <LeftInfo/>
-        <div className='ContentUserInfo'>
-            <div className="contentHeaderTitle">
-                <h3>Perfil Publico</h3>
-                <p>Añade una bonita foto tuya para tu perfil.</p>
-            </div>
-            <div className='contIconImg'>
-              <label className='labelsTxtProfile' htmlFor="text">Añda Su Imagen</label>
-              <div className="boxIconImg">
-                <div className="contCamera">
-                  <span className="material-symbols-outlined">
-                    add_a_photo
-                  </span>
+      <section className="seccion-perfil-usuario">
+        <UptInfoU />
+
+        <div className="perfil-usuario-body">
+          <div className="perfil-usuario-footer">
+
+            <div className="BackgroundIcon">
+              <div className="BackgroundIcon">
+                  <div><ChevronsLeft LinkExotico ="/user/edit-profile"  classExotico= "ChevronsLeft" /></div>
+                  <div><i class='bx bxs-user-detail' ></i></div>
                 </div>
-                <img className='checkImg' alt="" />
-              </div>
-              <button className='buttons_global_StyleTatto'>Guardar</button>
             </div>
+
+            CONTENIDO
+
+          </div>
         </div>
-      </div>
+      </section>
     </div>
   )
 }

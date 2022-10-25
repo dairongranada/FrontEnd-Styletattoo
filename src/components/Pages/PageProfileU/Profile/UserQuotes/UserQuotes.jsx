@@ -1,8 +1,6 @@
-import '../UserImage/UserImage.scss'
-import { LeftInfo } from '../../LeftInfo.jsx'
-import { React,useEffect,useState } from 'react'
-import Cookies from 'universal-cookie';
-
+import { React } from 'react'
+import { UptInfoU } from '../../UptInfoU'
+import { ChevronsLeft }  from '../../../../UI/ChevronsLeft/ChevronsLeft.jsx'
 
 
 
@@ -13,15 +11,25 @@ export const UserQuotes = () => {
 
   return (
     <div className='BodyProfileUser'>
-      <div className='Content_profleUser'>
-        <LeftInfo/>
-        <div className='ContentUserInfo'>
-            <div className="contentHeaderTitle">
-                <h3>Perfil Publico</h3>
-                <p>Añade información sobre ti</p>
+      <section className="seccion-perfil-usuario">
+        <UptInfoU />
+
+        <div className="perfil-usuario-body">
+          <div className="perfil-usuario-footer">
+
+            <div className="BackgroundIcon">
+              <div className="BackgroundIcon">
+                  <div><ChevronsLeft LinkExotico ="/user/edit-profile"  classExotico= "ChevronsLeft" /></div>
+                  <div><i class='bx bxs-user-detail' ></i></div>
+                </div>
             </div>
+
+            
+            CONTENIDO
+
+          </div>
         </div>
-      </div>
+      </section>
     </div>
   )
 }

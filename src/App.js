@@ -37,6 +37,7 @@ import { TattoImage } from './components/Pages/PageProfileT/Profile/TattoImage/T
 import { TattoQuotes } from './components/Pages/PageProfileT/Profile/TattoQuotes/TattoQuotes'
 
 import { AllViewTatto } from './components/Pages/PageProfileT/AllViewTatto/AllViewTatto'
+import { LeftInfoT } from './components/Pages/PageProfileT/LeftInfoT';
 
 
 
@@ -82,7 +83,8 @@ function App() {
                 {/* Rutas para opciones del perfil de Tatuadores */}
                 <Route path='/tatto/view/profile' exact element= {<AllViewTatto/>}/>
 
-                <Route path='/userTatto/edit-profile' exact element= {<TattoName/>}/>
+                <Route path='/userTatto/edit-profile' exact element= {<LeftInfoT/>}/>
+                <Route path='/userTatto/edit-name' exact element= {<TattoName/>}/>
                 <Route path='/userTatto/edit-image' exact element= {<TattoImage/>}/>
                 <Route path='/userTatto/edit-password' exact element= {<TattoPassword/>}/>
                 <Route path='/userTatto/edit-quotes' exact element= {<TattoQuotes/>}/>

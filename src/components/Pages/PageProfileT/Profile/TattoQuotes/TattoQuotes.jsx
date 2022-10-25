@@ -1,8 +1,6 @@
-import '../TattoImage/UserImage.scss'
-import { InfoProfileT } from '../.././InfoProfileT'
-import { React,useEffect,useState } from 'react'
-import Cookies from 'universal-cookie';
-
+import { React } from 'react'
+import { UptInfoT } from '../../UptInfoT'
+import { ChevronsLeft }  from '../../../../UI/ChevronsLeft/ChevronsLeft.jsx'
 
 
 
@@ -13,7 +11,25 @@ export const TattoQuotes = () => {
 
   return (
     <div className='BodyProfileUser'>
-      <InfoProfileT/>    
+      <section className="seccion-perfil-usuario">
+        <UptInfoT />
+
+        <div className="perfil-usuario-body">
+          <div className="perfil-usuario-footer">
+
+            <div className="BackgroundIcon">
+              <div className="BackgroundIcon">
+                  <div><ChevronsLeft LinkExotico ="/userTatto/edit-profile"  classExotico= "ChevronsLeft" /></div>
+                  <div><i class='bx bxs-user-detail' ></i></div>
+                </div>
+            </div>
+
+            
+            CONTENIDO
+
+          </div>
+        </div>
+      </section>
     </div>
   )
 }

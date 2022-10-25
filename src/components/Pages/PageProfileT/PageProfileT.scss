@@ -1,3 +1,11 @@
+.BackgroundIcon{ width: 100%; color: var(--colorBlack);display: flex;justify-content: center;align-items: center; background-color: none; font-size: 25px; justify-content: space-between}
+
+.perfil-usuario-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .seccion-perfil-usuario .perfil-usuario-body,
 .seccion-perfil-usuario {
     display: flex;
@@ -8,8 +16,10 @@
     text-decoration: none;
 }
 
+
 .seccion-perfil-usuario .perfil-usuario-header {
     width: 100%;
+    
     display: flex;
     justify-content: center;
     background: linear-gradient(#000, transparent);
@@ -21,7 +31,7 @@
     position: relative;
     width: 90%;
     height: 17rem;
-    background-image: linear-gradient(45deg, orange, black);
+    background-image: linear-gradient(45deg, #c5c5c4, black);
     border-radius: 0 0 20px 20px;
     /*
     background-image: url('http://localhost/multimedia/png/user-portada-3.png');
@@ -109,6 +119,7 @@
     padding: 1.5rem 2rem;
     box-shadow: 0 0 12px rgba(0, 0, 0, .2);
     background-color: #fff;
+    justify-content: flex-end;
     border-radius: 15px;
     width: 100%;
 }
@@ -117,7 +128,13 @@
     margin-bottom: 1.25rem;
     text-align: center;
 }
-
+.bxs-paint{
+    font-size: 20px;
+    transition: 1s;
+}
+.bxl-mailchimp{
+    font-size: 30px;
+}
 .seccion-perfil-usuario .lista-datos {
     width: 50%;
     list-style: none;
@@ -170,21 +187,26 @@
     font-size: 1.3rem;
 }
 
+.boton-redes img{
+    width: 40px;
+    border-radius: 50%;
+}
+
 .seccion-perfil-usuario .redes-sociales .boton-redes+.boton-redes {
     margin-top: .5rem;
 }
 
 .seccion-perfil-usuario .boton-redes.facebook {
-    background-color: var(--colorOrange2);
+    background-image: linear-gradient(324deg, #5a5a5a, black);
 }
 
 .seccion-perfil-usuario .boton-redes.twitter {
-    background-color: var(--colorBlack);
+    background-image: linear-gradient(324deg, rgb(66, 66, 66), #b4b4b4);
+    color: #000;
 }
 
 .seccion-perfil-usuario .boton-redes.instagram {
-    background-color: var(--colorOrange2);
-}
+    background-image: linear-gradient(324deg, #5a5a5a, black);}
 
 /* adactacion a dispositivos */
 @media (max-width: 750px) {

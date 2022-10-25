@@ -26,7 +26,7 @@ export const NavFooter = () => {
                             <span><a href="/">Home</a></span> 
                         </div>
                         <div className="place">
-                            <a href="/artistas"><span className="material-symbols-outlined"> recent_actors </span></a>
+                            <a href="/all/artist/style"><span className="material-symbols-outlined"> recent_actors </span></a>
                             <span><a href="/all/artist/style">Artistas</a></span> 
                         </div>
                     </div>

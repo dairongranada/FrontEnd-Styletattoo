@@ -15,7 +15,7 @@ export const Home_CardsTattooists = ({ImgTattooists,NameTattooists,SocialTattooi
                         <div className="content">
                             <p className='nameTattooists' >{NameTattooists}</p>
                             <p className='descripTattooists'href="/">{SocialTattooists}</p>
-                            <a href="/perfilTatuadores" className='btnA_menu'>Ver Mi Perfil</a>
+                            <a href="/userTatto/edit-profile" className='btnA_menu'>Ver Mi Perfil</a>
                         </div>
                     </div>
                 </div>

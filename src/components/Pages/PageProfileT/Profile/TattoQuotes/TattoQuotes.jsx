@@ -20,6 +20,9 @@ export const TattoQuotes = () => {
             <div className="BackgroundIcon">
               <div className="BackgroundIcon">
                   <div><ChevronsLeft LinkExotico ="/userTatto/edit-profile"  classExotico= "ChevronsLeft" /></div>
+                  <div className='BoxtTittleEditFiles'>
+                    <h3 className='TittleEditsFiles'>Citas Agendadas</h3>
+                  </div>
                   <div><i class='bx bxs-user-detail' ></i></div>
                 </div>
             </div>
@@ -29,9 +32,7 @@ export const TattoQuotes = () => {
 
 
           <div className='contentBoxFiles'>
-            <div className='BoxtTittleEditFiles'>
-              <h3 className='TittleEditsFiles'>Citas Agendadas</h3>
-            </div>
+            
             
           </div>
 

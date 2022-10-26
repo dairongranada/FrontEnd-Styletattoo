@@ -1,4 +1,15 @@
-.BackgroundIcon{ width: 100%; color: var(--colorBlack);display: flex;justify-content: center;align-items: center; background-color: none; font-size: 25px; justify-content: space-between}
+.BackgroundIcon{ 
+    width: 100%; color: var(--colorBlack);display: flex;justify-content: center;align-items: center; background-color: none; font-size: 25px; justify-content: space-between;
+    .BoxtTittleEditFiles{
+       width: 100%;
+       text-align: center;
+       margin-bottom: 15px;
+       .TittleEditsFiles{
+           color: #000;
+           font-size: 20px;
+       }
+    }
+}
 
 .perfil-usuario-content{
     display: flex;

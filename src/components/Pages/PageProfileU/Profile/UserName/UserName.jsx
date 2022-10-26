@@ -19,6 +19,9 @@ export const UserName = () => {
             <div className="BackgroundIcon">
                 <div className="BackgroundIcon">
                     <div><ChevronsLeft LinkExotico ="/user/edit-profile"  classExotico= "ChevronsLeft" /></div>
+                    <div className='BoxtTittleEditFiles'>
+                      <h3 className='TittleEditsFiles'>Edita Tus Datos</h3>
+                    </div>
                     <div><i class='bx bxs-user-detail' ></i></div>
                   </div>
             </div>
@@ -28,9 +31,7 @@ export const UserName = () => {
           </div>
 
           <div className='contentBoxFiles'>
-            <div className='BoxtTittleEditFiles'>
-              <h3 className='TittleEditsFiles'>Edita Tus Datos</h3>
-            </div>
+      
             <div className='ContentBoxtext'>
               <label className='label_global_style'>Nombre</label>
               <input className='TheTextBox' type="text" placeholder='Cambia tu nombre' /> 

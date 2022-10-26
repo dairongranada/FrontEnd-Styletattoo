@@ -20,6 +20,9 @@ export const TattoPassword = () => {
             <div className="BackgroundIcon">
               <div className="BackgroundIcon">
                   <div><ChevronsLeft LinkExotico ="/userTatto/edit-profile"  classExotico= "ChevronsLeft" /></div>
+                  <div className='BoxtTittleEditFiles'>
+                    <h3 className='TittleEditsFiles'>Edita Tu Contraseña</h3>
+                  </div>
                   <div><i class='bx bxs-user-detail' ></i></div>
                 </div>
             </div>
@@ -27,9 +30,7 @@ export const TattoPassword = () => {
           </div>
 
           <div className='contentBoxFiles'>
-            <div className='BoxtTittleEditFiles'>
-              <h3 className='TittleEditsFiles'>Edita Tu Contraseña</h3>
-            </div>
+  
             <div className='ContentBoxtext'>
               <label className='label_global_style'>Contraseña Antigua</label>
               <input className='TheTextBox' type="text" placeholder='Escribe tu contraseña' /> 

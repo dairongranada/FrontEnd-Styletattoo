@@ -20,7 +20,7 @@ export const AllViewTatto = () => {
                                 <div><label className='labelNameArtist'>Correo</label><p>CorreoPrueba@StyleTatto.com</p></div>
                                 <div className='favoriteSymbols'
                                     ><span className="material-symbols-outlined">favorite <p></p></span>
-                                    <Link to="/userTatto/edit-profile"><span class="material-symbols-outlined">settings</span></Link>
+                                    <Link to="/userTatto/edit-profile"><span className="material-symbols-outlined">settings</span></Link>
                                 </div>
                             </div>
                         </div>

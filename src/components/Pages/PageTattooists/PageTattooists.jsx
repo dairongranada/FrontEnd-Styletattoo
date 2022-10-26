@@ -42,11 +42,11 @@ export const PageTattooists = () => {
       <main className='main-contenido'>
         {searchTattoo.map((tattoo, index) => {
             return<div className='pather'>
-            <div className="containerTattois">
+              <div className="containerTattois">
                 <div className="cardsTattooists">
                     <div className="face facel">
                         <div className="content">
-                            <img src={tattoo.image} alt={index} />
+                            <img src={tattoo.image} key={index}  alt="#" />
                         </div>
                     </div>
                     <div className="face face2">

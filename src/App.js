@@ -29,7 +29,6 @@ import { LeftInfoT } from './components/Pages/PageProfileT/LeftInfoT';
 
 import { UserName } from './components/Pages/PageProfileU/Profile/UserName/UserName'
 import { UserPassword } from './components/Pages/PageProfileU/Profile/UserPassword/UserPassword'
-import { UserImage } from './components/Pages/PageProfileU/Profile/UserImage/UserImage'
 import { UserQuotes } from './components/Pages/PageProfileU/Profile/UserQuotes/UserQuotes'
 
 // PROFILE USER ROUTES 
@@ -37,7 +36,6 @@ import { LeftInfoU } from './components/Pages/PageProfileU/LeftInfoU';
 
 import { TattoName } from './components/Pages/PageProfileT/Profile/TattoName/TattoName'
 import { TattoPassword } from './components/Pages/PageProfileT/Profile/TattoPassword/TattoPassword'
-import { TattoImage } from './components/Pages/PageProfileT/Profile/TattoImage/TattoImage'
 import { TattoQuotes } from './components/Pages/PageProfileT/Profile/TattoQuotes/TattoQuotes'
 
 import { AllViewTatto } from './components/Pages/PageProfileT/AllViewTatto/AllViewTatto'
@@ -82,7 +80,6 @@ function App() {
 
 
                 <Route path='/user/edit-name' exact element= {<UserName/>}/>
-                <Route path='/user/edit-image' exact element= {<UserImage/>}/>
                 <Route path='/user/edit-password' exact element= {<UserPassword/>}/>
                 <Route path='/user/edit-quotes' exact element= {<UserQuotes/>}/>
 
@@ -91,7 +88,6 @@ function App() {
 
                 <Route path='/userTatto/edit-profile' exact element= {<LeftInfoT/>}/>
                 <Route path='/userTatto/edit-name' exact element= {<TattoName/>}/>
-                <Route path='/userTatto/edit-image' exact element= {<TattoImage/>}/>
                 <Route path='/userTatto/edit-password' exact element= {<TattoPassword/>}/>
                 <Route path='/userTatto/edit-quotes' exact element= {<TattoQuotes/>}/>
         

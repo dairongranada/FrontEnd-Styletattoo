@@ -24,10 +24,19 @@ export const TattoQuotes = () => {
                 </div>
             </div>
 
-            
-            CONTENIDO
-
           </div>
+          
+
+
+          <div className='contentBoxFiles'>
+            <div className='BoxtTittleEditFiles'>
+              <h3 className='TittleEditsFiles'>Citas Agendadas</h3>
+            </div>
+            
+          </div>
+
+
+
         </div>
       </section>
     </div>

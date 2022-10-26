@@ -45,8 +45,8 @@ export const PageTattooists = () => {
               <div className="containerTattois">
                 <div className="cardsTattooists">
                     <div className="face facel">
-                        <div className="content">
-                            <img src={tattoo.image} key={index}  alt="#" />
+                        <div className="content" key={index}>
+                            <img src={tattoo.image} alt="#" />
                         </div>
                     </div>
                     <div className="face face2">

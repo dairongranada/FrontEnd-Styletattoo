@@ -20,7 +20,6 @@
 
 .contProfileU{
     display: flex;
-<<<<<<< HEAD
     justify-content: space-between;
     padding: 5px;
     background-color: var(--colorGray);
@@ -169,18 +168,6 @@
     backdrop-filter: blur(12px); /* EFECTO BLUR*/
     background-color: rgba(0, 0, 0, 0.5);
     .contModal{
-=======
-    justify-content: start;
-    flex-direction: column;
-    box-shadow: 1px 1px #d1d7dc inset, 0 -1px #d1d7dc inset;
-    background: #fff;
-    width: 270px; height: 80vh;
-    overflow: hidden;
-    padding-bottom: 20px;
-    border-right: 0;
-
-    .ContFaceUser{
->>>>>>> main
         width: 100%;
         height: auto;
         padding: 1rem;

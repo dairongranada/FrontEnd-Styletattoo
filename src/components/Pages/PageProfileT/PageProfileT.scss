@@ -15,6 +15,29 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    #addfile{
+        margin-bottom: 20px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    #changeImg{
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        opacity: 0;
+    }
+
+
 }
 
 .seccion-perfil-usuario .perfil-usuario-body,
@@ -110,6 +133,10 @@
     text-decoration: none;
     box-shadow: 0 0 12px rgba(0, 0, 0, .2);
     margin-top: 25px;
+}
+
+.contentBoxFiles{
+    width: 80%;
 }
 
 .seccion-perfil-usuario .perfil-usuario-body .titulo {

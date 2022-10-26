@@ -3,7 +3,6 @@ import { UptInfoU } from '../../UptInfoU'
 
 
 
-/* F I R E B A S E */
 
 
 export const UserName = () => {

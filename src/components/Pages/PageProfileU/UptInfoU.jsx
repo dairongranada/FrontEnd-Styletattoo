@@ -14,11 +14,10 @@ export const UptInfoU = () => {
                 <div className="perfil-usuario-portada">
                     <div className="perfil-usuario-avatar">
                         <img src={imgProfileU} alt="img-avatar"/>
-                        <button type="button" className="boton-avatar">
-                            <span className="material-symbols-outlined">
-                                photo_camera
-                            </span>
-                        </button>
+                        <div className='boton-avatar' type="button" id="addfile">
+                            <span className="material-symbols-outlined">photo_camera</span>
+                            <input id="changeImg" type="file" required />
+                        </div>
                     </div>
                 </div>
             </div>

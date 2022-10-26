@@ -4,7 +4,7 @@ import { ChevronsLeft }  from '../../../../UI/ChevronsLeft/ChevronsLeft.jsx'
 
 
 
-/* F I R E B A S E */
+
 
 
 export const UserQuotes = () => {
@@ -19,15 +19,25 @@ export const UserQuotes = () => {
 
             <div className="BackgroundIcon">
               <div className="BackgroundIcon">
-                  <div><ChevronsLeft LinkExotico ="/user/edit-profile"  classExotico= "ChevronsLeft" /></div>
-                  <div><i class='bx bxs-user-detail' ></i></div>
+                  <div><ChevronsLeft LinkExotico ="/user/edit-profile"  className= "ChevronsLeft" /></div>
+                  <div className='BoxtTittleEditFiles'>
+                    <h3 className='TittleEditsFiles'>Citas Agendadas</h3>
+                  </div>
+                  <div><i className='bx bxs-user-detail' ></i></div>
                 </div>
             </div>
 
-            
-            CONTENIDO
-
           </div>
+          
+
+
+          <div className='contentBoxFiles'>
+            
+            
+          </div>
+
+
+
         </div>
       </section>
     </div>

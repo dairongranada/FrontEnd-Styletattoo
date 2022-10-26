@@ -1,9 +1,43 @@
-.BackgroundIcon{ width: 100%; color: var(--colorBlack);display: flex;justify-content: center;align-items: center; background-color: none; font-size: 25px; justify-content: space-between}
+.BackgroundIcon{ 
+    width: 100%; color: var(--colorBlack);display: flex;justify-content: center;align-items: center; background-color: none; font-size: 25px; justify-content: space-between;
+    .BoxtTittleEditFiles{
+       width: 100%;
+       text-align: center;
+       margin-bottom: 15px;
+       .TittleEditsFiles{
+           color: #000;
+           font-size: 20px;
+       }
+    }
+}
 
 .perfil-usuario-content{
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    #addfile{
+        margin-bottom: 20px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    #changeImg{
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        opacity: 0;
+    }
+
+
 }
 
 .seccion-perfil-usuario .perfil-usuario-body,
@@ -126,6 +160,12 @@
     position: relative;
     max-width: 750px;
     text-decoration: none;
+    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+    margin-top: 25px;
+}
+
+.contentBoxFiles{
+    width: 80%;
 }
 
 .seccion-perfil-usuario .perfil-usuario-body .titulo {
@@ -146,10 +186,8 @@
     display: flex;
     flex-wrap: wrap;
     padding: 1.5rem 2rem;
-    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
     background-color: #fff;
     justify-content: flex-end;
-    border-radius: 15px;
     width: 100%;
 }
 

@@ -41,4 +41,40 @@
             }
         }
     }
+    .seccion-perfil-usuario{
+        .perfil-usuario-body{
+            .contentBoxFiles{
+                .ContentBoxtext{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    .label_global_style{
+                        font-weight: 400;
+                    }
+                    .TheTextBox{
+                        width: 100%;
+                        height: 35px;
+                        background-color: none;
+                        border: 1px 1px 1px 1px solid black;
+                        margin-bottom: 20px;
+                        padding: 10px;
+                    }
+                }
+                .ContentBoxButtonConfirm{
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    .buttons_global_StyleTatto{
+                        color: #fff;
+                        background-color: #000;
+                        margin-bottom: 1rem;
+                    }
+                    .buttons_global_StyleTatto:hover{
+                        color: #000;
+                        border: solid 1px #000;
+                    }
+                }
+            }
+        }
+    }
 }

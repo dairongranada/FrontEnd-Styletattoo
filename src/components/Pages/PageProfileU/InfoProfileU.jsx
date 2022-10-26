@@ -14,7 +14,6 @@ export const InfoProfileU = () => {
       <div className="perfil-usuario-footer">
         <ul className="lista-datos">
           <li className='icono'><Link to="/user/edit-name"><span className="material-symbols-outlined Icons-Options">badge</span>Nombre y correo</Link></li>
-          <li className='icono'><Link to="/user/edit-image"><span className="material-symbols-outlined Icons-Options">person</span>Foto de perfil </Link></li>
           <li className='icono'><Link to="/user/edit-password"><span className="material-symbols-outlined Icons-Options">vpn_key</span>Contraseña </Link></li>
         </ul>
         <ul className="lista-datos">

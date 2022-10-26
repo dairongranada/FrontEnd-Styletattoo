@@ -19,11 +19,11 @@ export const TattoPassword = () => {
 
             <div className="BackgroundIcon">
               <div className="BackgroundIcon">
-                  <div><ChevronsLeft LinkExotico ="/userTatto/edit-profile"  classExotico= "ChevronsLeft" /></div>
+                  <div><ChevronsLeft LinkExotico ="/userTatto/edit-profile"  className= "ChevronsLeft" /></div>
                   <div className='BoxtTittleEditFiles'>
                     <h3 className='TittleEditsFiles'>Edita Tu Contraseña</h3>
                   </div>
-                  <div><i class='bx bxs-user-detail' ></i></div>
+                  <div><i className='bx bxs-user-detail' ></i></div>
                 </div>
             </div>
 

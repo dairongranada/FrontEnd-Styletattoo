@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { NavAboutUsFooter } from '../NavAboutUsFooter/NavAboutUsFooter'
 import '.././NavFooter.scss'
 
@@ -10,7 +9,7 @@ export const NavFooter = () => {
             <div className='Main_Container' >
                 <div className="left box">
                     <h2>Nosotros<span className="material-symbols-outlined"> group </span></h2>
-                    <div className="content">
+                    <div className="contentNavFooter">
                         <p>
                             Nuestro equipo de desarrollo está conformado por 6 personas, 
                             las cuales se encargaron de crear la mejor herramienta de gestión 
@@ -21,18 +20,19 @@ export const NavFooter = () => {
 
                 <div className="center box ">
                     <h2>Navegar<span className="material-symbols-outlined arrow">arrow_downward </span></h2>
-                    <div className="content">
+                    <div className="contentNavFooter">
                         <div className="place">
+<<<<<<< HEAD
                             <Link to="/"><span className="material-symbols-outlined">house</span></Link>                           
                             <span><Link to="/">Inicio</Link></span> 
+=======
+                            <a href="/"><span className="material-symbols-outlined">house</span></a>                           
+                            <span><a href="/">Home</a></span> 
+>>>>>>> main
                         </div>
                         <div className="place">
-                            <Link to="/artistas"><span className="material-symbols-outlined"> recent_actors </span></Link>
-                            <span><Link to="/artistas">Artistas</Link></span> 
-                        </div>
-                        <div className="place">
-                            <Link to="/Citas"><span className="material-symbols-outlined"> outgoing_mail </span></Link>
-                            <span><Link to="/Citas">Citas</Link></span> 
+                            <a href="/all/artist/style"><span className="material-symbols-outlined"> recent_actors </span></a>
+                            <span><a href="/all/artist/style">Artistas</a></span> 
                         </div>
                     </div>
                 </div>

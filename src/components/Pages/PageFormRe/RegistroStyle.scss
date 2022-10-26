@@ -1,0 +1,262 @@
+
+.cont_icon{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.user_icon{
+    font-size: 20px;
+}
+
+
+.register_container{
+    position: absolute;
+    width: 100%;
+    height: 120vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+    backdrop-filter: blur(8px);
+    background-color: #000000c2;
+    color: var(--colorBlanco);
+}
+
+
+
+.registerData{
+    background-color: rgba(0, 0, 0, 0.847);
+    width: 550px;
+    height: 520px;
+    padding: 30px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+    gap: 15px;
+    position: relative;
+}
+
+.registerDataAuto{
+    background-color: rgba(0, 0, 0, 0.847);
+    height: 520px;width: 470px;
+    padding: 30px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+}
+
+#MdOutlineCancel {
+    font-size: 33px;
+    color: var(--colorOrange2);
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#titulo_MdOutlineCancel {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#titulo_MdOutlineCancel h2 {
+    color: var(--colorOrange2);
+    font-size:30px;
+}
+
+#titulo_MdOutlineCancel1 {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 215px;
+    justify-content: center;
+}
+#titulo_MdOutlineCancel1 h2 {
+    color: var(--colorOrange2);
+    font-size: 30px;
+}
+
+#register_steps{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.step{
+    width: 35px;
+    height: 35px;
+    border: 2px solid var(--colorWhite);
+    color: var(--colorWhite);
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.linea_step{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    margin-top: -4px;
+    font-size: 21px;
+    color: var(--colorWhite);
+    height: 100%;
+}
+
+
+.color_step{
+    color: var(--colorWhite);
+    border:  2px solid var(--colorOrange2);
+    background-color: var(--colorOrange2);
+}
+
+.color_linea{
+    color: var(--colorOrange2);
+}
+
+#p1Registro{
+    padding: 0;
+    font-size: 15px;
+    color: #606770;
+}
+
+#registro_column1{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+}
+
+#registro_cuenta_existente{
+    cursor: pointer;
+    color: #1877f2;
+    text-decoration: none;
+}
+
+.registro_sexo{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#p2Registro{
+    padding: 0;
+    font-size: 13px;
+    color: #606770;
+}
+
+.registro_checkbox{
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    border: 1px solid #dddfe2;
+    border-radius: 6px;
+}
+
+.registro_checkbox p{
+    font-size: 15px;
+    padding: 0;
+}
+
+.cont_registro_checkbox{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+
+/* ------------- DISEÑO TARJETAS STEP 1 ------------- */
+#registerType{
+    height: auto;
+}
+
+.types_users{
+    justify-content: space-evenly;
+    display: flex;
+    margin: 15px 0px;
+    width: 60%;
+}
+
+.type__user-button:hover{
+    color: white;
+    background-color: var(--colorOrange2);
+}
+.type__user-button:hover .type__user-button-icon{
+    color: white;
+}
+.type__user-button:hover .type__user-button-h1{
+    color: white;
+}
+
+#type__user-active{
+    color: white;
+    background-color: var(--colorOrange2);
+}
+#type__user-active h1,.type__user-button-icon{
+    color: white;
+}
+#type__user-active .type__user-button-icon{
+    color: white;
+}
+
+.type__user-button{
+    background-color: rgb(0, 0, 0);
+    border: 2px solid var(--colorOrange2);
+    border-radius: 100%;
+    height: 100px;
+    transition: .4s;
+    width: 100px;
+}
+.type__user-button-icon{
+    color: var(--colorOrange2);
+    font-size: 40px;
+}
+
+.type__user-button-h1{
+    color: var(--colorOrange2);
+    font-size: 15px;
+}
+
+.warn_check{
+    color: var(--colorWhite);
+}
+
+.terminos-condiciones{
+    display: flex;
+    gap: 10px;
+    color: #606770;
+    justify-content: center;
+    font-size: 11px;
+    margin-top: 6px;
+}
+.terminos-condiciones .anchor{
+    margin: 0;
+    color: var(--colorOrange2);
+    text-decoration: none;
+}
+
+/* --------------------------------- */
+
+.rows_register{
+    font-size: 40px;
+    cursor: pointer;
+    color: var(--colorOrange2);
+    height: 25px;
+}
+
+
+

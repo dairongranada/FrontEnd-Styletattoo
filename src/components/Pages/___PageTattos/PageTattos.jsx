@@ -8,6 +8,7 @@ export const PageTattos = () => {
       <div className='contBack'>
         <div className='contInfo' >
           <h3>Todo sobre Tatuajes</h3>
+          
             <p>
             El cuidado de tu nuevo tatuaje depende del tipo y la magnitud del trabajo realizado. No obstante, normalmente, tendrás que tener los siguientes cuidados:
 

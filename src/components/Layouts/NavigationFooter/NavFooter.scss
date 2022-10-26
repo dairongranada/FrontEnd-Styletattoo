@@ -1,12 +1,13 @@
 
 // F   O   O   T   E   R 
 
-footer{
+footer {
     color: var(--colorWhite);
-    width: 100%;
+    margin-left: 73px;
     height: auto;
     padding: 2.5rem 0 0 0;
     background-color: var(--colorBlack);
+
 
     .Main_Container{
         display: flex;
@@ -24,7 +25,7 @@ footer{
                 gap:10px;
             }
 
-            .content{
+            .contentNavFooter{
                 position: relative;
                 margin: 20px 0 0 0;
 
@@ -34,7 +35,7 @@ footer{
                 }
             }
 
-            .content:before{
+            .contentNavFooter:before{
                 position: absolute;
                 top:-10px;
                 content: '';
@@ -43,7 +44,7 @@ footer{
                 background: var(--colorGray2);
             }
 
-            .content::after{
+            .contentNavFooter::after{
                 position: absolute;
                 content: '';
                 height: 2px;
@@ -56,8 +57,7 @@ footer{
     }
 
     .center{
-
-        .content{
+        .contentNavFooter{
             .material-symbols-outlined{
                 font-size: 1.8rem;
                 color: var(--colorWhite);
@@ -142,7 +142,10 @@ footer{
     }
 }
 
+
+
 @media (max-width: 900px){
+
     footer{
         .Main_Container{
             flex-wrap: wrap;
@@ -153,7 +156,32 @@ footer{
             }
         }
         .center {
-            .content .place span a {
+            .contentNavFooter .place span a {
+                margin: 10px;
+                font-size: 16px;
+            }
+        }
+        
+    }
+}
+
+@media (max-width: 600px){
+
+    footer{    
+        margin-left: 73px;
+
+
+
+        .Main_Container{
+            flex-wrap: wrap;
+            flex-direction: column;
+
+            .box{
+                margin:  5px 0;
+            }
+        }
+        .center {
+            .contentNavFooter .place span a {
                 margin: 10px;
                 font-size: 16px;
             }

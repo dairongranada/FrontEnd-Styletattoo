@@ -4,7 +4,6 @@ import { ChevronsLeft }  from '../../../../UI/ChevronsLeft/ChevronsLeft.jsx'
 
 
 
-/* F I R E B A S E */
 
 
 export const TattoPassword = () => {
@@ -42,13 +41,10 @@ export const TattoPassword = () => {
             </div>
 
             <div className='ContentBoxButtonConfirm'>
-              <button className='buttons_global_StyleTatto'>Guardar</button>
+              <button className='ButtonConfirmDates'>Guardar</button>
             </div>
             
           </div>
-
-
-
 
         </div>
       </section>

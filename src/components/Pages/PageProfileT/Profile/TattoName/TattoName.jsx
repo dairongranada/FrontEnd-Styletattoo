@@ -28,8 +28,6 @@ export const TattoName = () => {
                   </div>
             </div>
 
-            
-
           </div>
 
           <div className='contentBoxFiles'>
@@ -44,7 +42,7 @@ export const TattoName = () => {
             </div>
 
             <div className='ContentBoxButtonConfirm'>
-              <button className='buttons_global_StyleTatto'>Guardar</button>
+              <button className='ButtonConfirmDates'>Guardar</button>
             </div>
             
           </div>

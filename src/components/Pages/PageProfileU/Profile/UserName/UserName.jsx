@@ -24,9 +24,6 @@ export const UserName = () => {
                     <div><i className='bx bxs-user-detail' ></i></div>
                   </div>
             </div>
-
-            
-
           </div>
 
           <div className='contentBoxFiles'>
@@ -42,11 +39,10 @@ export const UserName = () => {
             </div>
 
             <div className='ContentBoxButtonConfirm'>
-              <button className='buttons_global_StyleTatto'>Guardar</button>
+              <button className='ButtonConfirmDates'>Guardar</button>
             </div>
             
           </div>
-
         </div>
       </section>
     </div>

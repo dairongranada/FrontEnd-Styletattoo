@@ -3,7 +3,7 @@ import { ChevronsLeft }  from '../../../../UI/ChevronsLeft/ChevronsLeft.jsx'
 import { UptInfoU } from '../../UptInfoU'
 
 
-/* F I R E B A S E */
+
 
 
 export const UserPassword = () => {
@@ -41,14 +41,10 @@ export const UserPassword = () => {
             </div>
 
             <div className='ContentBoxButtonConfirm'>
-              <button className='buttons_global_StyleTatto'>Guardar</button>
+              <button className='ButtonConfirmDates'>Guardar</button>
             </div>
             
           </div>
-
-
-
-
         </div>
       </section>
     </div>

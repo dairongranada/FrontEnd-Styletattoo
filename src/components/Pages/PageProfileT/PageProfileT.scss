@@ -96,6 +96,15 @@
     width: 180px;
     height: 180px;
     align-items: center;
+    justify-content: center;
+    border: 7px solid #FFFFFF;
+    background-color: #DFE5F2;
+    border-radius: 50%;
+    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+    position: absolute;
+    bottom: -40px;
+    left: calc(50% - 90px);
+    z-index: 1;
     .contButtonUp{ 
         h2{
             font-size:40px;

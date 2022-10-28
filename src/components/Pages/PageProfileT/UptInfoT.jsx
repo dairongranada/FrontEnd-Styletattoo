@@ -31,7 +31,7 @@ export const UptInfoT = () => {
                 <div className="redes-sociales">
                     <a href="/" className="boton-redes facebook fab fa-facebook-f"><i className='bx bx-home-alt'></i></a>
                     <li className="boton-redes twitter fab fa-twitter"><i className='bx bxl-mailchimp'></i> </li>
-                    <li className="boton-redes instagram fab fa-instagram"><i className='bx bxs-paint'></i></li>
+                    <a href='/tatto/view/profile' className="boton-redes instagram fab fa-instagram"><i className='bx bxs-paint'></i></a>
                 </div>
             </div>
         </div>

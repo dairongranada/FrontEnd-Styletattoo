@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 
 import { GoArrowSmallLeft } from 'react-icons/go';
-import { AiOutlineUserAdd, AiFillCheckCircle } from 'react-icons/ai';
+import { AiOutlineUserAdd } from 'react-icons/ai';
 
 
 import { Formik, Form, Field } from 'formik';

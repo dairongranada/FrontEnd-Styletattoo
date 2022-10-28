@@ -56,7 +56,7 @@ export const UserPassword = () => {
 
                 <div className='ContentBoxtext'>
                   <label className='label_global_style'>Nueva Contraseña</label>
-                  <Field name='Confirmpassword' className='TheTextBox' type="password" placeholder='Cambia tu contraseña' /> 
+                  <Field name='Confirmpassword' className='TheTextBox' required type="password" placeholder='Cambia tu contraseña' /> 
                 </div>
 
                 <div className='ContentBoxButtonConfirm'>

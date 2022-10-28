@@ -24,7 +24,7 @@ export const UptInfoT = () => {
             <div className="perfil-usuario-body">
                 <div className="perfil-usuario-bio">
                     <i className='bx bxl-mailchimp'></i>
-                    <h3 className="titulo">Samuel Lopez Muñoz</h3>
+                    <h3 className="titulo">Perfil tatuador</h3>
                     <p className="texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                         tempor incididunt ut labore et dolore magna aliqua.</p>
                 </div>

@@ -1,6 +1,8 @@
 import { React } from 'react'
 import { UptInfoT } from '../../UptInfoT'
+import { Formik, Form, Field } from 'formik';
 import { ChevronsLeft }  from '../../../../UI/ChevronsLeft/ChevronsLeft.jsx'
+import { postUsuario } from '../../../../../Helpers/ApiConsumer/PostUser.js';
 
 
 
@@ -29,21 +31,43 @@ export const TattoPassword = () => {
           </div>
 
           <div className='contentBoxFiles'>
-  
-            <div className='ContentBoxtext'>
-              <label className='label_global_style'>Contraseña Antigua</label>
-              <input className='TheTextBox' type="text" placeholder='Escribe tu contraseña' /> 
-            </div>
 
-            <div className='ContentBoxtext'>
-              <label className='label_global_style'>Nueva Contraseña</label>
-              <input className='TheTextBox' type="email" placeholder='Cambia tu contraseña' /> 
-            </div>
+            <Formik
+              initialValues={{
+                password:'',
+                passwordConfirm: ''
+            }}
+          
+            onSubmit = {(valores , {resetForm} ) =>{
 
-            <div className='ContentBoxButtonConfirm'>
-              <button className='ButtonConfirmDates'>Guardar</button>
-            </div>
-            
+              postUsuario({
+                password:valores.password,
+                passwordConfirm:valores.passwordConfirm
+              })
+              resetForm()
+            } }
+
+            >
+
+              <Form>
+
+                <div className='ContentBoxtext'>
+                  <label className='label_global_style'>Contraseña Antigua</label>
+                  <Field name='password' className='TheTextBox' type="password" placeholder='Escribe tu contraseña' /> 
+                </div>
+
+                <div className='ContentBoxtext'>
+                  <label className='label_global_style'>Nueva Contraseña</label>
+                  <Field name='passwordConfirm' className='TheTextBox' type="password" placeholder='Cambia tu contraseña' /> 
+                </div>
+
+                <div className='ContentBoxButtonConfirm'>
+                  <button type='sumbit' className='ButtonConfirmDates'>Guardar</button>
+                </div>
+
+              </Form>
+
+            </Formik>
           </div>
 
         </div>

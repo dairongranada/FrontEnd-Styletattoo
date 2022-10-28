@@ -1,14 +1,25 @@
+// import { useState } from 'react'
 import { ChevronsLeft }  from '../../../../UI/ChevronsLeft/ChevronsLeft.jsx'
 import { UptInfoT } from '../../UptInfoT'
 import '../TattoName/username.scss'
-
-
-
-
+import { Formik, Form, Field } from 'formik';
+import { postUsuario } from '../../../../../Helpers/ApiConsumer/PostUser.js';
 
 
 
 export const TattoName = () => {
+
+  // const [values, setValues] = useState()
+  // const [valuesEmail, setValuesemail] = useState()
+
+  // const optenervalues =() => {
+  //   const nombre = document.getElementById('nombre')
+  //   const correo = document.getElementById('correo')
+        
+  //   setValues(nombre.value)
+  //   setValuesemail(correo.value)
+  // }
+
 
   return (
     <div className='BodyProfileUser'>
@@ -31,20 +42,42 @@ export const TattoName = () => {
           </div>
 
           <div className='contentBoxFiles'>
-            <div className='ContentBoxtext'>
-              <label className='label_global_style'>Nombre</label>
-              <input className='TheTextBox' type="text" placeholder='Cambia tu nombre' /> 
-            </div>
 
-            <div className='ContentBoxtext'>
-              <label className='label_global_style'>Correo</label>
-              <input className='TheTextBox' type="email" placeholder='Cambia tu correo' /> 
-            </div>
-
-            <div className='ContentBoxButtonConfirm'>
-              <button className='ButtonConfirmDates'>Guardar</button>
-            </div>
+            <Formik
+              initialValues={{
+                name:'',
+                email: ''
+            }}
             
+              onSubmit = {(valores , {resetForm} ) =>{
+
+                postUsuario({
+                  nombre:valores.name,
+                  email:valores.email
+                })
+                resetForm()
+              } }     
+            >
+
+              <Form>
+
+                <div className='ContentBoxtext'>
+                  <label className='label_global_style'>Nombre</label>
+                  <Field name='name' id='name' className='TheTextBox' type="text" placeholder='Cambia tu nombre' /> 
+                </div>
+
+                <div className='ContentBoxtext'>
+                  <label className='label_global_style'>Correo</label>
+                  <Field name='email' id='email' className='TheTextBox' type="email" placeholder='Cambia tu correo' /> 
+                </div>
+
+                <div className='ContentBoxButtonConfirm'>
+                  <button type='sumbit' className='ButtonConfirmDates'>Guardar</button>
+                </div>
+
+              </Form>
+            </Formik>
+
           </div>
 
         </div>

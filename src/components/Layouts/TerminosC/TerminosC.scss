@@ -26,7 +26,25 @@
             }
             p{
                 right: 1rem;
+            }.BntAceptarterminos{
+
+                .ButtonConfirmDates{
+                    color: var(--colorBlack);
+                    border: none;
+                    background: var(--colorWhite);
+                    padding: 10px 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 230px;
+                    text-align: center;
+                    margin-bottom: 1rem;
+                    cursor: pointer;
+                    margin-left: 10px;
+                }
             }
+
+           
 
     }
 

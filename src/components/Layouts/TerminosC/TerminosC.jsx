@@ -38,6 +38,8 @@ export const TerminosC = () => {
           <h2>SECCION 4: INFORMACIÓN DE CONTACTO</h2>
             <p>Las preguntas sobre los Términos del servicio se deben enviar a OficialStyleTattoo@gmail.com.</p>
 
+            <a  className='BntAceptarterminos' href="/Registro"><button type='sumbit' className='ButtonConfirmDates'>Aceptar</button></a>
+                
           
 
 

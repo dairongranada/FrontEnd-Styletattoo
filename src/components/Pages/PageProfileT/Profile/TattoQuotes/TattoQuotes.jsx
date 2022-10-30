@@ -1,3 +1,4 @@
+import { NavigationBar } from '../../../../Layouts/NavigationBar/NavigationBar';
 import { React } from 'react'
 import { UptInfoT } from '../../UptInfoT'
 import { ChevronsLeft }  from '../../../../UI/ChevronsLeft/ChevronsLeft.jsx'
@@ -10,6 +11,8 @@ import { ChevronsLeft }  from '../../../../UI/ChevronsLeft/ChevronsLeft.jsx'
 export const TattoQuotes = () => {
 
   return (
+    <>
+    <NavigationBar/>
     <div className='BodyProfileUser'>
       <section className="seccion-perfil-usuario">
         <UptInfoT />
@@ -33,7 +36,6 @@ export const TattoQuotes = () => {
 
           <div className='contentBoxFiles'>
             
-            
           </div>
 
 
@@ -41,5 +43,6 @@ export const TattoQuotes = () => {
         </div>
       </section>
     </div>
+    </>
   )
 }

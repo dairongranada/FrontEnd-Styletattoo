@@ -1,9 +1,13 @@
 import React from 'react'
 import './PageTattos.scss'
 import tatu from '../../../images/Tattos/pircings_dark.jpg'
+import { NavigationBar } from '../../Layouts/NavigationBar/NavigationBar';
+
 
 export const PageTattos = () => {
   return (
+    <>
+    <NavigationBar/>
     <div className='contPrimary'> 
       <div className='contBack'>
         <div className='contInfo' >
@@ -30,5 +34,6 @@ export const PageTattos = () => {
     
       </div>
     </div>
+    </>
   )
 }

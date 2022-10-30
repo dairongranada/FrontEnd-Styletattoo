@@ -1,7 +1,7 @@
+import { NavigationBar } from '../../../../Layouts/NavigationBar/NavigationBar';
 import { React } from 'react'
 import { ChevronsLeft }  from '../../../../UI/ChevronsLeft/ChevronsLeft.jsx'
 import { Formik, Form, Field } from 'formik';
-import { postUsuario } from '../../../../../Helpers/ApiConsumer/PostUser.js';
 import { UptInfoU } from '../../UptInfoU'
 
 
@@ -11,6 +11,8 @@ import { UptInfoU } from '../../UptInfoU'
 export const UserPassword = () => {
 
   return (
+    <>
+    <NavigationBar/>
     <div className='BodyProfileUser'>
       <section className="seccion-perfil-usuario">
         <UptInfoU />
@@ -38,12 +40,6 @@ export const UserPassword = () => {
               }}
               
                 onSubmit = {(valores , {resetForm} ) =>{
-
-                  postUsuario({
-                    password:valores.password,
-                    Confirmpassword:valores.Confirmpassword
-                  })
-                  resetForm()
                 } }
             >
 
@@ -70,5 +66,6 @@ export const UserPassword = () => {
         </div>
       </section>
     </div>
+    </>
   )
 }

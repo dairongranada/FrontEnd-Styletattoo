@@ -1,4 +1,5 @@
 import './AllViewTatto.scss'
+import { NavigationBar } from '../../../Layouts/NavigationBar/NavigationBar';
 
 import React , {useState} from 'react'
 import { Link } from 'react-router-dom'
@@ -7,8 +8,9 @@ import { Link } from 'react-router-dom'
 export const AllViewTatto = () => {
     
   return (
+    <>
+    <NavigationBar/>
     <div className='BigContent'>
-
         <div className='contPather'>
 
             <div className='contPe'>   
@@ -58,5 +60,6 @@ export const AllViewTatto = () => {
         </div>
       
     </div>
+    </>
   )
 }

@@ -1,8 +1,11 @@
 import React from 'react'
+import { NavigationBar } from '../../Layouts/NavigationBar/NavigationBar';
 import './PageQuotes.scss'
 
 export const PageQuotes = () => {
   return (
+    <>
+    <NavigationBar/>
     <div className='backgruondCont'>
         <div className='ShadowCont'>
             <form className='FormQuot'>
@@ -26,5 +29,6 @@ export const PageQuotes = () => {
             </form>
         </div>
     </div>
+    </>
   )
 }

@@ -8,6 +8,9 @@ export const UptInfoU = () => {
 
     const [imgProfileU, setImgProfileU] = useState("https://i.postimg.cc/T2N5CnwK/perfil-Usuario-Anonim.png")
 
+    const [user, setUser] = useState(JSON.parse(localStorage.getItem("usuario")));
+    const [token, setToken] = useState(localStorage.getItem("token"));
+
     return (
         <div className='perfil-usuario-content'>
             <div className="perfil-usuario-header">

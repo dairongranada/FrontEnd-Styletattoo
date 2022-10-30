@@ -1,3 +1,4 @@
+import { NavigationBar } from '../../../../Layouts/NavigationBar/NavigationBar';
 import { React } from 'react'
 import { UptInfoU } from '../../UptInfoU'
 import { ChevronsLeft }  from '../../../../UI/ChevronsLeft/ChevronsLeft.jsx'
@@ -10,6 +11,8 @@ import { ChevronsLeft }  from '../../../../UI/ChevronsLeft/ChevronsLeft.jsx'
 export const UserQuotes = () => {
 
   return (
+    <>
+    <NavigationBar/>
     <div className='BodyProfileUser'>
       <section className="seccion-perfil-usuario">
         <UptInfoU />
@@ -41,5 +44,6 @@ export const UserQuotes = () => {
         </div>
       </section>
     </div>
+    </>
   )
 }

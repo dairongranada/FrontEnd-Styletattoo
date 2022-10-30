@@ -1,9 +1,11 @@
+
+import { NavigationBar } from '../../../../Layouts/NavigationBar/NavigationBar';
+
 // import { useState } from 'react'
 import { ChevronsLeft }  from '../../../../UI/ChevronsLeft/ChevronsLeft.jsx'
 import { UptInfoT } from '../../UptInfoT'
 import '../TattoName/username.scss'
 import { Formik, Form, Field } from 'formik';
-import { postUsuario } from '../../../../../Helpers/ApiConsumer/PostUser.js';
 
 
 
@@ -22,6 +24,8 @@ export const TattoName = () => {
 
 
   return (
+    <>
+    <NavigationBar/>
     <div className='BodyProfileUser'>
       <section className="seccion-perfil-usuario">
         <UptInfoT />
@@ -50,12 +54,6 @@ export const TattoName = () => {
             }}
             
               onSubmit = {(valores , {resetForm} ) =>{
-
-                postUsuario({
-                  nombre:valores.name,
-                  email:valores.email
-                })
-                resetForm()
               } }     
             >
 
@@ -83,5 +81,6 @@ export const TattoName = () => {
         </div>
       </section>
     </div>
+    </>
   )
 }

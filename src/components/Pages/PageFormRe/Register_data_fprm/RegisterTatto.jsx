@@ -4,7 +4,9 @@ import { GoArrowSmallLeft } from 'react-icons/go';
 import { Link } from 'react-router-dom';
 
 import './sass/userRegister.scss'
-import { postUsuario, AuthEmail } from '../../../.././Helpers/ApiConsumer/PostUser';
+
+import { signUpTatto } from '../../../.././Helpers/ApiConsumer/AuthRegistro';
+
 import { ButtonUI } from '../../.././UI/ButtonUI/ButtonUI'
 
 
@@ -103,7 +105,7 @@ export const RegisterTatto = ( { change_step } ) => {
                         onSubmit = {( valores, { resetForm } ) => {
                             let validacion = {};
                             
-                            postUsuario({
+                            signUpTatto({
                                 nombre:valores.name,
                                 apellido:valores.lastName,
                                 email: valores.email,

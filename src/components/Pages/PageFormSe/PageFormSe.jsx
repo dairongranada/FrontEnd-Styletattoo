@@ -1,28 +1,34 @@
 import './PageFormSe.scss'
-import React from 'react'
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
-import { useNavigate } from "react-router-dom";
 
+import { React, useState } from 'react'
+import { Link,useNavigate } from 'react-router-dom'
 
-import { LoginUserAuth } from '../../.././Helpers/ApiConsumer/PostUser';
+import { LoginUserAuth } from '../../.././Helpers/ApiConsumer/AuthLogin';
 import { parseJwt } from '../../.././Helpers/getPayLoad'
 
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import axios from 'axios'
-import md5 from 'md5'
-import Cookies from 'universal-cookie';
+import { Formik, Form, Field } from 'formik';
+
+import toast, { Toaster } from 'react-hot-toast';
 
 
+    // EL ESTADO
+    // 1 - BIEN
+    // 2 - Inactivo
+    // 3 - PENDIENTE
 
 export const PageFormSe = () => {
 
     const navigate = useNavigate()
-
+    
+    const [loading, setLoading] = useState(false)
+    const [status, setStatus] = useState(null);
+    const [mssStatus, setMssStatus] = useState(false);
+    const [messageStatus, setMessageStatus] = useState("");
 
 
 
     return (
+        <>
         <div className="Content_FormsPrincipalLogin BackGround">
             <div className="Content_Forms">
                 <h2>INICIO DE SESION</h2>
@@ -41,20 +47,71 @@ export const PageFormSe = () => {
                         return errores;
                     }}
 
-                    onSubmit={(valores, { resetForm }) => {
+                    onSubmit={( valores, {resetForm} ) => {
+                        setLoading(true);
+                        
+                        LoginUserAuth( 
+                            valores 
+                            )
+                            .then( info => {
+                                console.log(info);
+                            setStatus(info.status)
+                            if ( info.status === 200 ) {
 
-                        LoginUserAuth({
-                            LoginEmail: valores.email, LoginPassword: valores.password
-                        }).then(info => {
-                            // console.log(LoginUserAuth);
-                            // console.log(valores);
+                                let token = info.data.jwt.access;
+                                let rol = info.data.info.rol
+                                localStorage.setItem("token", token);
+                                localStorage.setItem("usuario", JSON.stringify(parseJwt( token,rol )) );
+                                const data = info.data.info;
 
+                                console.log(data.activate);
+
+
+                                if ( data.activate === "1") {
+                                    //resetForm();
+                                    if ( data.rol === "[ROLE_USUARIO]" ) {  
+                                        toast.success('Bienvenido a StyleTattoo')
+                                        setTimeout(function(){
+                                            window.location = '/user/edit-profile';
+                                        }, 1500);        
+                                    }
+                                    else if ( data.rol === "[ROLE_TATUADOR]" ){
+                                        window.location = '/userTatto/edit-profile';
+                                        setTimeout(function(){
+                                            window.location = '/user/edit-profile';
+                                        }, 1500);    
+                                    }
+                                }
+                                else if( data.activate === "2" ) {
+                                    console.log( "Inactivo" );
+                                    localStorage.removeItem("token");
+                                    localStorage.removeItem("usuario");
+                                    setMessageStatus( "Tu estado es inactivo. Comunicate con el administrador para solventar el problema" );
+                                    setMssStatus(true);
+                                }
+                                else {
+                                    console.log( "Pendiente" );
+                                    localStorage.removeItem("token");
+                                    localStorage.removeItem("usuario");
+                                    setMessageStatus( "Tu registro está siendo validado, por favor se paciente" );
+                                    setMssStatus(true);
+                                }
+                                setLoading(false);
+                            }
+
+                            if ( info.status===500){
+                                setLoading(false);}
+
+                            if ( info.status===0){
+                                setLoading( false );}
                         });
-                    }}
 
-                    a
+                        if (status === 401) {toast.error('Verifica tus datos');}
+                        if (status === 0) {toast.error('Estamos Presentando problemas,Intentalo más tarde');}
+
+                    }}
                 >
-                    <Form>
+                    <Form>                        
                         <div className="inputContent">
                             <Field
                                 name='email'
@@ -84,5 +141,6 @@ export const PageFormSe = () => {
                 </Formik>
             </div>
         </div>
+    </>
     )
 }

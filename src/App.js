@@ -2,7 +2,6 @@ import { Routes, Route } from 'react-router-dom'
 import './App.scss';
 
 
-import { NavigationBar } from './components/Layouts/NavigationBar/NavigationBar';
 import { NavFooter } from './components/Layouts/NavigationFooter/NavFooter/NavFooter';
 
 
@@ -48,7 +47,6 @@ function App() {
 
   return (
     <div>
-      <NavigationBar/>
 
               <Routes>
                 {/* ECCSXTRAS */ }

@@ -4,9 +4,9 @@ import '.././NavFooter.scss'
 import { Link } from 'react-router-dom'
 
 
-export const NavFooter = () => {
+export const NavFooter = (widthStyle) => {
     return (
-        <footer>
+        <footer style={widthStyle}>
             <div className='Main_Container' >
                 <div className="left box">
                     <h2>Nosotros<span className="material-symbols-outlined"> group </span></h2>

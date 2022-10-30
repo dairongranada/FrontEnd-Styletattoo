@@ -1,12 +1,15 @@
 import React from 'react'
-import error404 from '../../../images/Tattos/tatto5.jpg'
 import './Page404.scss'
+import { NavigationBar } from '../../Layouts/NavigationBar/NavigationBar';
+import error404 from '../../../images/Tattos/tatto5.jpg'
 import { Link } from 'react-router-dom'
 
 
 export const Page404 = () => {
 
     return (
+        <>
+        <NavigationBar/>
         <div className='Error404'>
             <div className='Content_img_Error404'>
                 <img src={error404} alt="" />
@@ -19,5 +22,6 @@ export const Page404 = () => {
                 <Link className='buttons_global_StyleTatto' to="/">IR AL INICIO</Link>
             </div>
         </div>
+        </>
     )
 }

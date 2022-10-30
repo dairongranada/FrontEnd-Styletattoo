@@ -1,6 +1,7 @@
+import { NavigationBar } from '../../../../Layouts/NavigationBar/NavigationBar';
+
 import { ChevronsLeft }  from '../../../../UI/ChevronsLeft/ChevronsLeft.jsx'
 import { Formik, Form, Field } from 'formik';
-import { postUsuario } from '../../../../../Helpers/ApiConsumer/PostUser.js';
 import { UptInfoU } from '../../UptInfoU'
 
 
@@ -10,6 +11,8 @@ import { UptInfoU } from '../../UptInfoU'
 export const UserName = () => {
 
   return (
+    <>
+    <NavigationBar/>
     <div className='BodyProfileUser'>
       <section className="seccion-perfil-usuario">
         <UptInfoU />
@@ -38,11 +41,6 @@ export const UserName = () => {
               
                 onSubmit = {(valores , {resetForm} ) =>{
 
-                  postUsuario({
-                    nombre:valores.name,
-                    email:valores.email
-                  })
-                  resetForm()
                 } }
             >
 
@@ -69,5 +67,6 @@ export const UserName = () => {
         </div>
       </section>
     </div>
+    </>
   )
 }

@@ -1,5 +1,7 @@
 import React,{useState} from 'react'
 import './SearchTattoo.scss'
+import { NavigationBar } from '../../Layouts/NavigationBar/NavigationBar';
+
 
 
 export const PageTattooists = () => {
@@ -17,6 +19,8 @@ export const PageTattooists = () => {
     }
 
   return(
+    <>
+    <NavigationBar/>
     <div className='Content_Tattooists'>
       <div className='Content_TattooistsTitle'>
         <h1>ARTISTAS</h1>
@@ -62,5 +66,7 @@ export const PageTattooists = () => {
               })}
       </main>
     </div>
+    </>
+
   )
 }

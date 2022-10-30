@@ -2,7 +2,9 @@ import { React } from 'react'
 import { UptInfoT } from '../../UptInfoT'
 import { Formik, Form, Field } from 'formik';
 import { ChevronsLeft }  from '../../../../UI/ChevronsLeft/ChevronsLeft.jsx'
-import { postUsuario } from '../../../../../Helpers/ApiConsumer/PostUser.js';
+import { NavigationBar } from '../../../../Layouts/NavigationBar/NavigationBar';
+
+
 
 
 
@@ -11,6 +13,8 @@ import { postUsuario } from '../../../../../Helpers/ApiConsumer/PostUser.js';
 export const TattoPassword = () => {
 
   return (
+    <>
+    <NavigationBar/>
     <div className='BodyProfileUser'>
       <section className="seccion-perfil-usuario">
         <UptInfoT />
@@ -39,11 +43,6 @@ export const TattoPassword = () => {
             }}
           
             onSubmit = {(valores , {resetForm} ) =>{
-
-              postUsuario({
-                password:valores.password,
-                passwordConfirm:valores.passwordConfirm
-              })
               resetForm()
             } }
 
@@ -73,5 +72,6 @@ export const TattoPassword = () => {
         </div>
       </section>
     </div>
+    </>
   )
 }

@@ -141,18 +141,6 @@ export const NavigationBar = () => {
 
         }
         
-
-
-
-
-
-
-
-
-
-
-
-
         </>
     )
 }

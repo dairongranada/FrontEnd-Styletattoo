@@ -58,25 +58,24 @@ export const PageFormSe = () => {
                             setStatus(info.status)
                             if ( info.status === 200 ) {
 
-                                let token = info.data.jwt.access;
+                                let tokenInfo = info.data.jwt.access;
+                                let token = info.data.info.token;
+
                                 let rol = info.data.info.rol
                                 localStorage.setItem("token", token);
-                                localStorage.setItem("usuario", JSON.stringify(parseJwt( token,rol )) );
+                                localStorage.setItem("usuario", JSON.stringify(parseJwt( tokenInfo,rol )) );
                                 const data = info.data.info;
-
-                                console.log(data.activate);
-
 
                                 if ( data.activate === "1") {
                                     //resetForm();
                                     if ( data.rol === "[ROLE_USUARIO]" ) {  
                                         toast.success('Bienvenido a StyleTattoo')
                                         setTimeout(function(){
-                                            window.location = '/user/edit-profile';
+                                            // window.location = '/user/edit-profile';
                                         }, 1500);        
                                     }
                                     else if ( data.rol === "[ROLE_TATUADOR]" ){
-                                        window.location = '/userTatto/edit-profile';
+                                        toast.success('Bienvenido a StyleTattoo')
                                         setTimeout(function(){
                                             window.location = '/user/edit-profile';
                                         }, 1500);    

@@ -70,7 +70,6 @@ function App() {
                 <Route path='/infoPiercings' exact element= {<PagePiercings/>}/>
 
 
-
                 {/*  RUTAS PRIVADAS     */}
 
                 {/* Rutas para opciones del perfil de usuario */}

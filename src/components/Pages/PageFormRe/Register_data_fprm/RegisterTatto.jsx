@@ -111,7 +111,7 @@ export const RegisterTatto = ( { change_step } ) => {
                                 email: valores.email,
                                 contraseña: valores.password,
                                 telefono: valores.telefono,
-                                role: "[ROLE_USUARIO]",
+                                role: "[ROLE_ARTISTA]",
                                 urlImage:""
 
                             }).then( info => {

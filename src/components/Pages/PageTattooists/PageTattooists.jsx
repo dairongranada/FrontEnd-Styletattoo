@@ -34,7 +34,7 @@ export const PageTattooists = () => {
       
       <div className='contSearch'>
         <div className="search-box">
-          <input className="Buscador12" onChange={filterTattoo} type="text" placeholder='Buscar Artistas' />
+          <input className="Buscador12" id='Buscador12' onChange={filterTattoo} type="text" placeholder='Buscar Artistas' />
           <a href="##" className="material-symbols-outlined">
               <i className="fas fa-search">
                 <svg xmlns="http://www.w3.org/2000/svg" className="input-icon" viewBox="0 0 20 20" fill="currentColor">

@@ -6,15 +6,17 @@ import { NavigationBar } from '../../Layouts/NavigationBar/NavigationBar';
 
 export const PageTattooists = () => {
     const tattoo = [
-        {name: 'lewis holguin', image:'https://res.cloudinary.com/dsoovcjav/image/upload/v1660826276/ImagesTattoo/tatuador1_rvghbe.png',descripcion:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nostrum eius laboriosam'},
-        {name: 'chris nuñez', image:'https://res.cloudinary.com/dsoovcjav/image/upload/v1660826273/ImagesTattoo/tatuador2_efzh1a.png', descripcion:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nostrum eius laboriosam'},
-        {name: 'oliver peck', image:'https://res.cloudinary.com/dsoovcjav/image/upload/v1660826274/ImagesTattoo/tatuador3_jd7kt9.png',descripcion:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nostrum eius laboriosam?'},
+        {name: 'lewis holguin', image:'https://res.cloudinary.com/dsoovcjav/image/upload/v1660826276/ImagesTattoo/tatuador1_rvghbe.png',descripcion:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nostrum eius laboriosam', ciudad:'montenegro'},
+        {name: 'chris nuñez', image:'https://res.cloudinary.com/dsoovcjav/image/upload/v1660826273/ImagesTattoo/tatuador2_efzh1a.png', descripcion:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nostrum eius laboriosam', ciudad:'calarca'},
+        {name: 'oliver peck', image:'https://res.cloudinary.com/dsoovcjav/image/upload/v1660826274/ImagesTattoo/tatuador3_jd7kt9.png',descripcion:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nostrum eius laboriosam?', ciudad:'armenia'},
     ]
 
     const [searchTattoo, setsearchTattoo] = useState(tattoo)
+
+
     const filterTattoo = (event) =>{
         const data = event.target.value;
-        const filter = tattoo.filter  (tattoo => tattoo.name.includes(data))
+        const filter = tattoo.filter  (tattoo => tattoo.ciudad.toUpperCase().includes(data.toUpperCase()))
         setsearchTattoo(filter);
     }
 
@@ -57,6 +59,8 @@ export const PageTattooists = () => {
                         <div className="content">
                             <p className='nameTattooists' >{tattoo.name}</p>
                             <p className='descripTattooists'href="/">{tattoo.descripcion}</p>
+                            <p className='descripTattooists'><span class="material-symbols-outlined">location_on</span>{tattoo.ciudad}</p>
+                            
                             <a href="/tatto/view/profile" className='btnA_menu'>Ver Mi Perfil</a>
                         </div>
                     </div>

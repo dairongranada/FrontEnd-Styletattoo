@@ -47,39 +47,32 @@ export const UserPassword = () => {
 
           <div className='contentBoxFiles'>
             <Formik
-                initialValues={{
-                  old_password:'',
-                  new_password: ''
-              }}
-              
-                onSubmit = {(valores , {resetForm} ) =>{
-                  let validacion = {};
+                  initialValues={{
+                    old_password:'',
+                    new_password: ''
+                  }}
+                
+                  onSubmit = {(valores , {resetForm} ) =>{
+                    let validacion = {};
 
-                      CambiarContraseña({
-                        old_password: valores.old_password,
-	                      new_password: valores.new_password
-                      }
-                      ).then( info => {
-                        validacion = info
-                        if( validacion.status === 200 ){
-                          toast.success('Contraseña Cambiada')
-                        }else if( validacion.status === 500 ){
-                          toast.error("Verifica Tu contraseña")
-                        }else if ( validacion.status === 400 ) {
-                          toast.error("Verifica Tu contraseña")
+                        CambiarContraseña({
+                          old_password: valores.old_password,
+                          new_password: valores.new_password
                         }
-
-                  
-                      })
-
-                      console.log(valores);
-
-                } }
-            >
+                        ).then( info => {
+                          validacion = info
+                          if( validacion.status === 200 ){
+                            toast.success('Contraseña Cambiada')
+                          }else if( validacion.status === 500 ){
+                            toast.error("Verifica Tu contraseña")
+                          }else if ( validacion.status === 400 ) {
+                            toast.error("Verifica Tu contraseña")
+                          }
+                        })
+                  } }
+                >
 
               <Form>
-                
-
                 <div className='ContentBoxtext'>
                   <label className='label_global_style'>Contraseña Antigua</label>
                   <Field name='old_password' className='TheTextBox' type="password" placeholder='Escribe tu contraseña' /> 

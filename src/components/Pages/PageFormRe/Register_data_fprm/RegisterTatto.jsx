@@ -1,16 +1,16 @@
-import React ,{useState} from 'react'
-import { AiOutlineUserAdd } from 'react-icons/ai';
-import { GoArrowSmallLeft } from 'react-icons/go';
-import { Link } from 'react-router-dom';
-
 import './sass/userRegister.scss'
 
-import { signUpTatto } from '../../../.././Helpers/ApiConsumer/AuthRegistro';
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 
-import { ButtonUI } from '../../.././UI/ButtonUI/ButtonUI'
+import { GoArrowSmallLeft } from 'react-icons/go';
+import { AiOutlineUserAdd } from 'react-icons/ai';
 
 
 import { Formik, Form, Field } from 'formik';
+import { signUpUser } from '../../../../Helpers/ApiConsumer/AuthRegistro';
+import { ButtonUI } from '../../.././UI/ButtonUI/ButtonUI'
+
 
 
 export const RegisterTatto = ( { change_step } ) => {
@@ -31,6 +31,10 @@ export const RegisterTatto = ( { change_step } ) => {
         else {setShowPassword("password")}
     }
 
+
+
+
+
     return (
         <>
 
@@ -47,29 +51,31 @@ export const RegisterTatto = ( { change_step } ) => {
 
             
                 <div className='Content_FormsPrincipal'>
-                    <Formik
-                    initialValues={{
-                            name:'',
-                            lastName:'',
-                            email: '',
-                            password: '',
-                            telefono: '',
+                    <Formik 
+                        initialValues={{
+                            username:"",
+                            first_name:"",
+                            last_name:"",
+                            cellPhone:"",
+                            email:"",
+                            password:"",
                             passwordConfirm: '',
+                            rol:"[ROLE_ARTISTA]",
                         }}
                         
                         validate={(valores) => {
                             let ers = {}
                             // VALIDACION NOMBRE
-                            if (!valores.name){ 
-                                ers.name = "Porfavor ingresa un nombre"
-                            }else if(!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(valores.name)) {
-                                ers.name = "Porfavor ingresa solo letras"}
+                            if (!valores.first_name){ 
+                                ers.first_name = "Porfavor ingresa un nombre"
+                            }else if(!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(valores.first_name)) {
+                                ers.first_name = "Porfavor ingresa solo letras"}
 
                             // VALIDACION APELLIDO
-                            if (!valores.lastName){ 
-                                ers.lastName = "Porfavor ingresa un apellido"
-                            }else if(!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(valores.lastName)) {
-                                ers.lastName = "Porfavor ingresa solo letras"}
+                            if (!valores.last_name){ 
+                                ers.last_name = "Porfavor ingresa un apellido"
+                            }else if(!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(valores.last_name)) {
+                                ers.last_name = "Porfavor ingresa solo letras"}
 
                             // VALIDACION EMAIL
                             if (!valores.email){ 
@@ -77,11 +83,11 @@ export const RegisterTatto = ( { change_step } ) => {
                             }else if(!/^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/.test(valores.email)) {
                                 ers.email = "Porfavor ingresa un Correo valido @"}
 
-                                 // VALIDACION TELEFONO 
-                            if (!valores.telefono){ 
-                                ers.telefono = "Porfavor ingresa un numero"
-                            }else if(!/^\d{10,10}$/.test(valores.telefono)) {
-                                ers.telefono = "Porfavor ingresa solo numeros"}
+                                 // VALIDACION cellPhone 
+                            if (!valores.cellPhone){ 
+                                ers.cellPhone = "Porfavor ingresa un numero"
+                            }else if(!/^\d{10,10}$/.test(valores.cellPhone)) {
+                                ers.cellPhone = "Porfavor ingresa solo numeros"}
 
 
 
@@ -105,14 +111,15 @@ export const RegisterTatto = ( { change_step } ) => {
                         onSubmit = {( valores, { resetForm } ) => {
                             let validacion = {};
                             
-                            signUpTatto({
-                                nombre:valores.name,
-                                apellido:valores.lastName,
-                                email: valores.email,
-                                contraseña: valores.password,
-                                telefono: valores.telefono,
-                                role: "[ROLE_ARTISTA]",
-                                urlImage:""
+                            signUpUser({
+                                username:"UserStyle",
+                                first_name:valores.last_name,
+                                last_name:valores.last_name,
+                                cellPhone:valores.cellPhone,
+                                email:valores.email,
+                                password:valores.password,
+                                rol:"[ROLE_ARTISTA]",
+                                image:"https://i.postimg.cc/T2N5CnwK/perfil-Usuario-Anonim.png"
 
                             }).then( info => {
                                 validacion = info
@@ -132,7 +139,7 @@ export const RegisterTatto = ( { change_step } ) => {
                                     resetForm();
                                     setLoading(false);
                                     setRegistered( true );
-                                    // window.location = "/user/edit-profile";
+                                    window.location = "/IngresarSesion";
                                 }
                             });
 
@@ -148,8 +155,8 @@ export const RegisterTatto = ( { change_step } ) => {
                                     <div>
                                         <Field
                                             className='global_styleRegistroIn'   
-                                            name='name' 
-                                            id='name' 
+                                            name='first_name' 
+                                            id='first_name' 
                                             type="text"
                                             placeholder='Nombre'
                                         />
@@ -158,13 +165,13 @@ export const RegisterTatto = ( { change_step } ) => {
                                     <div>
                                         <Field
                                             className='global_styleRegistroIn'
-                                            name='lastName'  
-                                            id='lastName'   
+                                            name='last_name'  
+                                            id='last_name'   
                                             type="text"
                                             placeholder='Apellido'
 
                                         />                                                                                
-                                        {touched.lastName && errors.lastName && <span>{errors.lastName}</span>}   
+                                        {touched.last_name && errors.last_name && <span>{errors.last_name}</span>}   
                                     </div>
                                 </div>
                                     <div className="inputContent">
@@ -182,14 +189,14 @@ export const RegisterTatto = ( { change_step } ) => {
                                         </div>
                                         <div>
                                             <Field 
-                                                className='global_styleRegistroIn TelefonoLogin'
-                                                name='telefono' 
-                                                id='telefono' 
+                                                className='global_styleRegistroIn cellPhoneLogin'
+                                                name='cellPhone' 
+                                                id='cellPhone' 
                                                 type="text" 
-                                                placeholder='Telefono'
+                                                placeholder='Celular'
                                                 maxLength='10'
                                             /> 
-                                             {touched.telefono && errors.telefono && <span>{errors.telefono}</span>}
+                                             {touched.cellPhone && errors.cellPhone && <span>{errors.cellPhone}</span>}
                              
                             
                                         </div>
@@ -221,6 +228,10 @@ export const RegisterTatto = ( { change_step } ) => {
                                             {errors.passwordConfirm && <span className='emailSpam' >{errors.passwordConfirm}</span>}   
 
                                         </div>
+                                    </div>
+                                    <div className="sameline terminos-condiciones">
+                                        <input required type="checkbox" />
+                                        <p>Acepto los <Link className='anchor' to="/terminos-condiciones">Terminos y condiciones</Link></p>
                                     </div>
 
 

@@ -65,9 +65,9 @@ export const NavigationBar = () => {
                             <li>
                                 <a href="/user/edit-profile">
                                     <i className='bx bx-user' ></i>
-                                    <span className="links_name">Cuenta Usuario</span>
+                                    <span className="links_name">Cuenta</span>
                                 </a>
-                                <span className="tooltip">Cuenta Usuario</span>
+                                <span className="tooltip">Cuenta</span>
                             </li> 
                         }
                         
@@ -75,9 +75,9 @@ export const NavigationBar = () => {
                             <li>
                                 <a href="/userTatto/edit-profile">
                                     <i className='bx bx-user' ></i>
-                                    <span className="links_name">Cuenta Tatuador</span>
+                                    <span className="links_name">Cuenta</span>
                                 </a>
-                                <span className="tooltip">Cuenta Tatuador</span>
+                                <span className="tooltip">Cuenta</span>
                             </li>
                         }{ (user.rol === null) && <li></li>}
                         

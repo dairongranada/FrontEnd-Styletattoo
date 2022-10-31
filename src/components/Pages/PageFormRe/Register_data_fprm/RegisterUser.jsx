@@ -139,7 +139,7 @@ export const RegisterUser = ( { change_step } ) => {
                                     resetForm();
                                     setLoading(false);
                                     setRegistered( true );
-                                    // window.location = "/user/edit-profile";
+                                    window.location = "/IngresarSesion";
                                 }
                             });
 
@@ -193,7 +193,7 @@ export const RegisterUser = ( { change_step } ) => {
                                                 name='cellPhone' 
                                                 id='cellPhone' 
                                                 type="text" 
-                                                placeholder='cellPhone'
+                                                placeholder='Celular'
                                                 maxLength='10'
                                             /> 
                                              {touched.cellPhone && errors.cellPhone && <span>{errors.cellPhone}</span>}

@@ -13,7 +13,7 @@ export const InfoProfileT = () => {
     <div className="perfil-usuario-body">
       <div className="perfil-usuario-footer">
         <ul className="lista-datos">
-          <li className='icono'><Link to="/userTatto/edit-name"><span className="material-symbols-outlined Icons-Options">badge</span>Nombre y correo</Link></li>z
+          <li className='icono'><Link to="/userTatto/edit-name"><span className="material-symbols-outlined Icons-Options">badge</span>Nombre y correo</Link></li>
           <li className='icono'><Link to="/userTatto/edit-password"><span className="material-symbols-outlined Icons-Options">vpn_key</span>Contraseña </Link></li>
         </ul>
         <ul className="lista-datos">

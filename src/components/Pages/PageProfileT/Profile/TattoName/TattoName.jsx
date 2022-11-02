@@ -1,8 +1,9 @@
-
+import { React, useState,useEffect } from 'react'
 import { NavigationBar } from '../../../../Layouts/NavigationBar/NavigationBar';
+import { getusers }  from '../../../../../Helpers/ApiConsumer/PostUsers';
+import { ChevronsLeft }  from '../../../../UI/ChevronsLeft/ChevronsLeft.jsx'
 
 // import { useState } from 'react'
-import { ChevronsLeft }  from '../../../../UI/ChevronsLeft/ChevronsLeft.jsx'
 import { UptInfoT } from '../../UptInfoT'
 import '../TattoName/username.scss'
 import { Formik, Form, Field } from 'formik';
@@ -11,16 +12,23 @@ import { Formik, Form, Field } from 'formik';
 
 export const TattoName = () => {
 
-  // const [values, setValues] = useState()
-  // const [valuesEmail, setValuesemail] = useState()
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("usuario")));
+  const [tokenID, setToken] = useState(localStorage.getItem("token"));
 
-  // const optenervalues =() => {
-  //   const nombre = document.getElementById('nombre')
-  //   const correo = document.getElementById('correo')
-        
-  //   setValues(nombre.value)
-  //   setValuesemail(correo.value)
-  // }
+  const [userData, setUserData] = useState({});
+
+
+
+  useEffect(()=>{
+    if ( !!user ) {
+        getusers( tokenID )
+        .then( data => setUserData( data.data ));
+    }else {
+      console.log("No se ha autenticado");
+    }
+}, [])
+console.log(userData);
+
 
 
   return (
@@ -47,32 +55,43 @@ export const TattoName = () => {
 
           <div className='contentBoxFiles'>
 
-            <Formik
-              initialValues={{
-                name:'',
-                email: ''
-            }}
-            
-              onSubmit = {(valores , {resetForm} ) =>{
-              } }     
-            >
-
+          <Formik>
               <Form>
-
                 <div className='ContentBoxtext'>
                   <label className='label_global_style'>Nombre</label>
-                  <Field name='name' id='name' className='TheTextBox' type="text" placeholder='Cambia tu nombre' /> 
-                </div>
+                  <Field 
+                    style={{color:"#363a3a"}}
+                    name='first_name' 
+                    className='TheTextBox' 
+                    type="text" 
+                    placeholder='Cambia tu nombre'
+                    value={ userData.first_name }
+                  /> 
 
+                </div>
+                <div className='ContentBoxtext'>
+                  <label className='label_global_style'>Apellido</label>
+                  <Field 
+                    style={{color:"#363a3a"}}
+                    name='last_name' 
+                    className='TheTextBox' 
+                    type="text" 
+                    placeholder='Cambia tu apellido'
+                    value={ userData.last_name }
+                  /> 
+
+                </div>
                 <div className='ContentBoxtext'>
                   <label className='label_global_style'>Correo</label>
-                  <Field name='email' id='email' className='TheTextBox' type="email" placeholder='Cambia tu correo' /> 
+                  <Field 
+                    style={{color:"#363a3a"}}
+                    name='email' 
+                    className='TheTextBox' 
+                    type="email" 
+                    placeholder='Cambia tu correo' 
+                    value={ userData.email }
+                  /> 
                 </div>
-
-                <div className='ContentBoxButtonConfirm'>
-                  <button type='sumbit' className='ButtonConfirmDates'>Guardar</button>
-                </div>
-
               </Form>
             </Formik>
 

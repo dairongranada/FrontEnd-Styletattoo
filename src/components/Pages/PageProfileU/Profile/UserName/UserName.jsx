@@ -1,6 +1,9 @@
-import { NavigationBar } from '../../../../Layouts/NavigationBar/NavigationBar';
+import { React, useState,useEffect } from 'react'
 
+import { NavigationBar } from '../../../../Layouts/NavigationBar/NavigationBar';
+import { getusers }  from '../../../../../Helpers/ApiConsumer/PostUsers';
 import { ChevronsLeft }  from '../../../../UI/ChevronsLeft/ChevronsLeft.jsx'
+
 import { Formik, Form, Field } from 'formik';
 import { UptInfoU } from '../../UptInfoU'
 
@@ -9,6 +12,33 @@ import { UptInfoU } from '../../UptInfoU'
 
 
 export const UserName = () => {
+
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("usuario")));
+  const [tokenID, setToken] = useState(localStorage.getItem("token"));
+
+  const [userData, setUserData] = useState({});
+
+
+
+  useEffect(()=>{
+    if ( !!user ) {
+        getusers( tokenID )
+        .then( data => setUserData( data.data ));
+        console.log(userData);
+    }else {
+      console.log("No se ha autenticado");
+    }
+
+    
+}, [])
+
+
+console.log(userData);
+
+
+
+
+
 
   return (
     <>
@@ -24,7 +54,7 @@ export const UserName = () => {
                 <div className="BackgroundIcon">
                     <div><ChevronsLeft LinkExotico ="/user/edit-profile"  className= "ChevronsLeft" /></div>
                     <div className='BoxtTittleEditFiles'>
-                      <h3 className='TittleEditsFiles'>Edita Tus Datos</h3>
+                      <h3 className='TittleEditsFiles'>Datos Personales</h3>
                     </div>
                     <div><i className='bx bxs-user-detail' ></i></div>
                   </div>
@@ -32,37 +62,48 @@ export const UserName = () => {
           </div>
 
           <div className='contentBoxFiles'>
-
-            <Formik
-                initialValues={{
-                  name:'',
-                  email: ''
-              }}
-              
-                onSubmit = {(valores , {resetForm} ) =>{
-
-                } }
-            >
-
+            
+            <Formik>
               <Form>
-
                 <div className='ContentBoxtext'>
                   <label className='label_global_style'>Nombre</label>
-                  <Field name='name' className='TheTextBox' type="text" placeholder='Cambia tu nombre' /> 
-                </div>
+                  <Field 
+                    style={{color:"#363a3a"}}
+                    name='first_name' 
+                    className='TheTextBox' 
+                    type="text" 
+                    placeholder='Cambia tu nombre'
+                    value={ userData.first_name }
+                  /> 
 
+                </div>
+                <div className='ContentBoxtext'>
+                  <label className='label_global_style'>Apellido</label>
+                  <Field 
+                    style={{color:"#363a3a"}}
+                    name='last_name' 
+                    className='TheTextBox' 
+                    type="text" 
+                    placeholder='Cambia tu apellido'
+                    value={ userData.last_name }
+                  /> 
+
+                </div>
                 <div className='ContentBoxtext'>
                   <label className='label_global_style'>Correo</label>
-                  <Field name='email' className='TheTextBox' type="email" placeholder='Cambia tu correo' /> 
+                  <Field 
+                    style={{color:"#363a3a"}}
+                    name='email' 
+                    className='TheTextBox' 
+                    type="email" 
+                    placeholder='Cambia tu correo' 
+                    value={ userData.email }
+                  /> 
                 </div>
-
-                <div className='ContentBoxButtonConfirm'>
-                  <button type='sumbit' className='ButtonConfirmDates'>Guardar</button>
-                </div>
-
               </Form>
-
             </Formik>
+
+
           </div>
         </div>
       </section>

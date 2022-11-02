@@ -5,6 +5,12 @@ import { Link } from "react-router-dom";
 export const InfoProfileU = () => {
 
 
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("usuario");
+    localStorage.removeItem("InfoUser");
+    window.location = "/IngresarSesion";
+}
 
 
 
@@ -18,7 +24,7 @@ export const InfoProfileU = () => {
         </ul>
         <ul className="lista-datos">
           <li className='icono'><Link to="/user/edit-quotes"><span className="material-symbols-outlined Icons-Options">auto_stories</span>Citas agendadas</Link></li>
-          <li className='icono'><Link to="/"><span className="material-symbols-outlined Icons-Options">logout</span>Cerrar sesion</Link></li>
+          <li className='icono'><Link to="/"><span  onClick={handleLogout} className="material-symbols-outlined Icons-Options">logout</span>Cerrar sesion</Link></li>
         </ul>
       </div>
     </div>

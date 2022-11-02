@@ -1,5 +1,6 @@
 import './PageProfileT.scss'
-import { React, useState } from 'react'
+import { React, useState,useEffect } from 'react'
+import { getusers }  from '../../../Helpers/ApiConsumer/PostUsers';
 
 
 
@@ -7,6 +8,28 @@ import { React, useState } from 'react'
 export const UptInfoT = () => {
 
     const [imgProfileU, setImgProfileU] = useState("https://i.postimg.cc/T2N5CnwK/perfil-Usuario-Anonim.png")
+
+
+    const [user, setUser] = useState(JSON.parse(localStorage.getItem("usuario")));
+    const [tokenID, setTokenID] = useState(localStorage.getItem("token"));
+    const [userData, setUserData] = useState({});
+  
+
+  
+  
+    useEffect(()=>{
+      if ( !!user ) {
+          getusers( tokenID )
+          .then( data => setUserData( data.data ));
+      }else {
+        console.log("No se ha autenticado");
+      }
+    
+  }, [])
+   console.log(userData.first_name)  
+
+//   console.log(userData);
+
 
     return (
         <div className='perfil-usuario-content'>
@@ -24,7 +47,7 @@ export const UptInfoT = () => {
             <div className="perfil-usuario-body">
                 <div className="perfil-usuario-bio">
                     <i className='bx bxl-mailchimp'></i>
-                    <h3 className="titulo">Perfil tatuador</h3>
+                    <h3 className="titulo">{ userData.first_name +" "+ userData.last_name }</h3>
                     <p className="texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                         tempor incididunt ut labore et dolore magna aliqua.</p>
                 </div>

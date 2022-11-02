@@ -31,7 +31,6 @@ export const TattoPassword = () => {
                   <div><i className='bx bxs-user-detail' ></i></div>
                 </div>
             </div>
-
           </div>
 
           <div className='contentBoxFiles'>
@@ -77,9 +76,6 @@ export const TattoPassword = () => {
                 </div>
               </Form>
             </Formik>
-
-
-
           </div>
 
         </div>

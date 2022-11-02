@@ -33,9 +33,7 @@ export const PageFormSe = () => {
             <div className="Content_Forms">
                 <h2>INICIO DE SESION</h2>
                 <Formik
-                    initialValues={{
-                        email: '', password: ''
-                    }}
+                    initialValues={{email: '', password: ''}}
 
                     validate={(valores) => {
                         let errores = {};
@@ -58,20 +56,26 @@ export const PageFormSe = () => {
                             setStatus(info.status)
                             if ( info.status === 200 ) {
 
-                                let tokenInfo = info.data.jwt.access;
-                                let token = info.data.info.token;
+                                let tokenInfo = info.data.authentication.jwt.access;
+                                let token = info.data.authentication.token;
+                                let InfoUser = info.data.info;
 
-                                let rol = info.data.info.rol
+
+                                let rol = info.data.info.rol;
                                 localStorage.setItem("token", token);
-                                localStorage.setItem("usuario", JSON.stringify(parseJwt( tokenInfo,rol )) );
+                                localStorage.setItem("InfoUser", JSON.stringify( InfoUser));
+
+                                localStorage.setItem("usuario", JSON.stringify(parseJwt( tokenInfo, rol )) );
                                 const data = info.data.info;
 
-                                if ( data.activate === "1") {
+                                console.log(info);
+
+                                if ( data.activate === true) {
                                     //resetForm();
                                     if ( data.rol === "[ROLE_USUARIO]" ) {  
                                         toast.success('Bienvenido a StyleTattoo')
                                         setTimeout(function(){
-                                            window.location = '/user/edit-profile';
+                                            //window.location = '/user/edit-profile';
                                         }, 1500);        
                                     }
                                     else if ( data.rol === "[ROLE_ARTISTA]" ){
@@ -81,7 +85,7 @@ export const PageFormSe = () => {
                                         }, 1500);    
                                     }
                                 }
-                                else if( data.activate === "2" ) {
+                                else if( data.activate === false ) {
                                     console.log( "Inactivo" );
                                     localStorage.removeItem("token");
                                     localStorage.removeItem("usuario");

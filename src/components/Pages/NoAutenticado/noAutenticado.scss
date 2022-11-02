@@ -1,0 +1,26 @@
+.modal_perfil_no_autorizado{
+    align-items: center;
+    background: linear-gradient(210.41deg,#363a3a 1.14%,#101010 100.75%);
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    width: 100vw;
+    overflow: scroll;
+}
+.modal_perfil_no_autorizado_info {
+    background-color: rgb(0, 0, 0);
+    box-shadow: -13px 11px 9px 0px #303030;
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    min-height: 300px;
+    justify-content: space-between;
+    padding: 50px 40px;
+    width: 50%;
+    position: relative;
+}
+.modal_perfil_no_autorizado img {position: absolute;top: -90px;width: 200px;}
+
+.modal_perfil_no_autorizado-registro{color: #565656;margin-top: 15px;}
+.autorizado_infoTitle {font-size: 15px;}
+.modal_perfil_no_autorizado-registro a {color: #ff9e02;font-weight: 800;text-decoration: none;}

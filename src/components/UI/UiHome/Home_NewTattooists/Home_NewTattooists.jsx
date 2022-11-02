@@ -33,10 +33,10 @@ export const Home_NewTattooists = () => {
         <section className='NewTattooists'>
             <div className='contArtistas'>
             </div>
-                <div class="artistasFromHome">
-                    <div class="left-t">
+                <div className="artistasFromHome">
+                    <div className="left-t">
                         <span>ARTISTAS</span>
-                        <span class="stroke-text">Mas Destacados </span>
+                        <span className="stroke-text">Mas Destacados </span>
                         <span>{tattoo[selected].descripcion}</span>
 
                         <span style={{ color: "var(--colorOrange2)", margin: "2rem" }}>
@@ -44,7 +44,7 @@ export const Home_NewTattooists = () => {
                             {" "}-{" "} Artista
                         </span>
                     </div>
-                    <div class="right-t">
+                    <div className="right-t">
                         <div></div>
                         <div></div>
                         <img src={tattoo[selected].image} alt="" />

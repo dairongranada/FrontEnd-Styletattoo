@@ -11,7 +11,7 @@ export const Home_MainView = () => {
         <>
             { ( !!token ) &&
             <section className='MainView'>
-                <p>Bienvenido a StyleTatto</p>
+                <p className='titlepagehome'>Bienvenido a StyleTatto</p>
                 <h1 className='titleMP4'>CONTAMOS HISTORIAS</h1>
                 <h2 className='titleMP4'>EN TU PIEL</h2>
 

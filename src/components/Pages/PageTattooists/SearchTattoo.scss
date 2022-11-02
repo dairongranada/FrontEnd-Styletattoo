@@ -132,13 +132,14 @@
   justify-content: center;
   align-items: center;
 }
-.search-box:hover > #Buscador12 {
+.search-CajaAnimation > #Buscador12 {
     width: 300px;
     padding: 0 10px;
 }
 
-svg :hover{
-    transform: rotate(360deg) scale(0.8);
+.svgAnimationS{
+    transform: scale(0.8);
+    // rotate(360deg)
 }
 #Buscador12{
   width: 0;

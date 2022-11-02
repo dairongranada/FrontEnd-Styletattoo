@@ -113,7 +113,7 @@ export const RegisterUser = ( { change_step } ) => {
                             
                             signUpUser({
                                 username:"UserStyle",
-                                first_name:valores.last_name,
+                                first_name:valores.first_name,
                                 last_name:valores.last_name,
                                 cellPhone:valores.cellPhone,
                                 email:valores.email,

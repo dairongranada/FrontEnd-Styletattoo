@@ -1,8 +1,9 @@
 import './NavigationBar.scss'
 
-import { useState } from 'react'
+import { useState , useEffect } from 'react'
 import perfilUsuarioAnonim from '../../../images/Icons/perfilUsuarioAnonim.jpg'
 import logoStyleT from '../../../images/Icons/logo.jpg'
+import { getusers }  from '../../../Helpers/ApiConsumer/PostUsers';
 
 
 
@@ -13,6 +14,19 @@ export const NavigationBar = () => {
 
     const [user, setUser] = useState(JSON.parse(localStorage.getItem("usuario")));
     const [token, setToken] = useState(localStorage.getItem("token"));
+    const [userData, setUserData] = useState({});
+
+    useEffect(()=>{
+        if ( !!user ) {
+            getusers( token )
+            .then( data => setUserData( data.data ));
+            console.log(userData);
+        }else {
+          console.log("No se ha autenticado");
+        }
+        
+  
+    }, [])
 
     const handleLogout = () => {
         localStorage.removeItem("token");
@@ -102,7 +116,7 @@ export const NavigationBar = () => {
                         <div className="profile-details">
                             <img src={perfilUsuarioAnonim} alt="profileImg" />
                             <div className="name_job">
-                                <div className="name">Nombre Apellido</div>
+                                <div className="name">{ userData.first_name +" "+ userData.last_name }</div>
                                 { (user.rol === '[ROLE_USUARIO]') && <div className="job">| ROL: USUARIO  |</div>}
                                 { (user.rol === '[ROLE_ARTISTA]') && <div className="job">| ROL: ARTISTA  |</div>}
 

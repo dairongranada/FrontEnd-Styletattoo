@@ -119,20 +119,20 @@
 /*       B U S C A D O R       */
 
 .contSearch{
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
 }
 .search-box{
-    height: 50px;
-    border-radius: 40px;
-    padding: 10px;
-    width: auto;
-    display: flex;
-    align-items: center;
+  height: 40px;
+  border-radius: 40px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.search-box:hover > input {
+.search-box:hover > #Buscador12 {
     width: 300px;
     padding: 0 10px;
 }
@@ -140,17 +140,18 @@
 svg :hover{
     transform: rotate(360deg) scale(0.8);
 }
-.Buscador12{
-    width: 0;
-    border: none;
-    outline: none;
-    padding: 0;
-    border-bottom: 1px solid #fff;
-    background: none;
-    font-size: 1.1rem;
-    color: white;
-    line-height: 40px;
-    text-align: center;
+#Buscador12{
+  width: 0;
+  border: none;
+  outline: none;
+  padding: 0;
+  background: none;
+  font-size: 1.1rem;
+  transition: 0.5s ease;
+  color: white;
+  border-bottom: 1px solid white;
+  line-height: 40px;
+  text-align: center;
 }
 .input-icon{
     color: var(--colorWhite2);

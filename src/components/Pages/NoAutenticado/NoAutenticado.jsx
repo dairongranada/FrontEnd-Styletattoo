@@ -1,11 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-
 import './noAutenticado.scss';
+import { NavigationBar } from '../../Layouts/NavigationBar/NavigationBar';
+
+
+import Maquuina from '../../../images/Icons/Maquuina.png'
 
 export const NoAutenticado = () => {
     return (
+        <>
+        <NavigationBar/>
         <div className="modal_perfil_no_autorizado">
             <div className="modal_perfil_no_autorizado_info">
                 <h5 className="autorizado_infoTitle">Al parecer no tienes permiso para entrar a esta Ruta.</h5>
@@ -16,8 +20,9 @@ export const NoAutenticado = () => {
                         <Link to="/Registro"> Aquí</Link>
                     </div>
                 </div>
+                <img src={Maquuina} alt="" />
             </div>
-
         </div>
+        </>
     )
 }

@@ -45,6 +45,7 @@ import { AllViewTatto } from './components/Pages/PageProfileT/AllViewTatto/AllVi
 
 
 
+
 function App() {
 
   const token = localStorage.getItem("token");
@@ -79,20 +80,20 @@ function App() {
                 {/*  RUTAS PRIVADAS     */}
 
                 {/* Rutas para opciones del perfil de usuario */}
-                <Route path='/user/edit-profile' exact element= {!token ? <Navigate to="/" /> :<LeftInfoU/>}/>
-                <Route path='/user/edit-name' exact element= {!token ? <Navigate to="/" /> :<UserName/>}/>
-                <Route path='/user/edit-password' exact element= {!token ? <Navigate to="/" /> :<UserPassword/>}/>
-                <Route path='/user/edit-quotes' exact element= {!token ? <Navigate to="/" /> :<UserQuotes/>}/>
+                <Route path='/user/edit-profile' exact element= {!token ? <Navigate to="/unauthenticated/401" /> :<LeftInfoU/>}/>
+                <Route path='/user/edit-name' exact element= {!token ? <Navigate to="/unauthenticated/401" /> :<UserName/>}/>
+                <Route path='/user/edit-password' exact element= {!token ? <Navigate to="/unauthenticated/401" /> :<UserPassword/>}/>
+                <Route path='/user/edit-quotes' exact element= {!token ? <Navigate to="/unauthenticated/401" /> :<UserQuotes/>}/>
 
                 {/* Rutas para opciones del perfil de Tatuadores */}
-                <Route path='/tatto/view/profile' exact element= {<AllViewTatto/>}/>
+                <Route path='/tatto/view/profile' exact element= {!token ? <Navigate to="/Registro" /> :<AllViewTatto/>}/>
 
-                <Route path='/userTatto/edit-profile' exact element= {!token ? <Navigate to="/" /> : <LeftInfoT/>}/>
-                <Route path='/userTatto/edit-name' exact element= {!token ? <Navigate to="/" /> :<TattoName/>}/>
-                <Route path='/userTatto/edit-password' exact element= {!token ? <Navigate to="/" /> :<TattoPassword/>}/>
-                <Route path='/userTatto/edit-quotes' exact element= {!token ? <Navigate to="/" /> :<TattoQuotes/>}/>
+                <Route path='/userTatto/edit-profile' exact element= {!token ? <Navigate to="/unauthenticated/401" /> :<LeftInfoT/>}/>
+                <Route path='/userTatto/edit-name' exact element= {!token ? <Navigate to="/unauthenticated/401" /> :<TattoName/>}/>
+                <Route path='/userTatto/edit-password' exact element= {!token ? <Navigate to="/unauthenticated/401" /> :<TattoPassword/>}/>
+                <Route path='/userTatto/edit-quotes' exact element= {!token ? <Navigate to="/unauthenticated/401" /> :<TattoQuotes/>}/>
         
-                <Route path='/citas' exact element= {!token ? <Navigate to="/" /> :<PageQuotes/>}/>
+                <Route path='/citas' exact element= {!token ? <Navigate to="/unauthenticated/401" /> :<PageQuotes/>}/>
 
               </Routes>
       <NavFooter/>

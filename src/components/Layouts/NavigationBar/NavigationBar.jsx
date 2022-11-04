@@ -12,12 +12,12 @@ import { getusers }  from '../../../Helpers/ApiConsumer/PostUsers';
 
 export const NavigationBar = () => {
 
-    const [user, setUser] = useState(JSON.parse(localStorage.getItem("usuario")));
+    const [userToken, setUserToken] = useState(JSON.parse(localStorage.getItem("usuario")));
     const [token, setToken] = useState(localStorage.getItem("token"));
     const [userData, setUserData] = useState({});
 
     useEffect(()=>{
-        if ( !!user ) {
+        if ( !!userToken ) {
             getusers( token )
             .then( data => setUserData( data.data ));
             console.log(userData);
@@ -27,6 +27,8 @@ export const NavigationBar = () => {
         
   
     }, [])
+
+    console.log(userData);
 
     const handleLogout = () => {
         localStorage.removeItem("token");
@@ -76,7 +78,7 @@ export const NavigationBar = () => {
                     </li>
                     
 
-                        { (user.rol === '[ROLE_USUARIO]') &&
+                        { (userData.rol === '[ROLE_USUARIO]') &&
                             <li>
                                 <a href="/user/edit-profile">
                                     <i className='bx bx-user' ></i>
@@ -86,7 +88,7 @@ export const NavigationBar = () => {
                             </li> 
                         }
                         
-                        { (user.rol === '[ROLE_ARTISTA]') &&
+                        { (userData.rol === '[ROLE_ARTISTA]') &&
                             <li>
                                 <a href="/userTatto/edit-profile">
                                     <i className='bx bx-user' ></i>
@@ -94,7 +96,7 @@ export const NavigationBar = () => {
                                 </a>
                                 <span className="tooltip">Cuenta</span>
                             </li>
-                        }{ (user.rol === null) && <li></li>}
+                        }{ (userToken.rol === null) && <li></li>}
                         
                     
                     <li>
@@ -117,8 +119,8 @@ export const NavigationBar = () => {
                             <img src={perfilUsuarioAnonim} alt="profileImg" />
                             <div className="name_job">
                                 <div className="name">{ userData.first_name +" "+ userData.last_name }</div>
-                                { (user.rol === '[ROLE_USUARIO]') && <div className="job">| ROL: USUARIO  |</div>}
-                                { (user.rol === '[ROLE_ARTISTA]') && <div className="job">| ROL: ARTISTA  |</div>}
+                                { (userData.rol === '[ROLE_USUARIO]') && <div className="job">| ROL: USUARIO  |</div>}
+                                { (userData.rol === '[ROLE_ARTISTA]') && <div className="job">| ROL: ARTISTA  |</div>}
 
                             </div>
                         </div>

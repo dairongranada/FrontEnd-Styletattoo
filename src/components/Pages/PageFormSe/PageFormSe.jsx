@@ -52,7 +52,6 @@ export const PageFormSe = () => {
                             valores 
                             )
                             .then( info => {
-                                console.log(info);
                             setStatus(info.status)
                             if ( info.status === 200 ) {
 
@@ -66,9 +65,12 @@ export const PageFormSe = () => {
                                 localStorage.setItem("InfoUser", JSON.stringify( InfoUser));
 
                                 localStorage.setItem("usuario", JSON.stringify(parseJwt( tokenInfo, rol )) );
-                                const data = info.data.info;
+                                const data = info.data.info.info_user;
 
                                 console.log(info);
+        
+
+
 
                                 if ( data.activate === true) {
                                     //resetForm();

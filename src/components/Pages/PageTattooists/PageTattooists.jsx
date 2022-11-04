@@ -33,7 +33,7 @@ export const PageTattooists = () => {
     <div className='Content_Tattooists'>
       <div className='Content_TattooistsTitle'>
         <h1>ARTISTAS</h1>
-        <p>Contamos con un equipo de artistas profesionales e integrales que se 
+        <p style={{marginLeft:"5rem"}}>Contamos con un equipo de artistas profesionales e integrales que se 
           desempeñan en las diferentes técnicas o estilos del tatuaje, entre ellos, 
           sombras, realismo, sombras, color, realismo color, oriental, tradicional, 
           neotradicional, libre, liners, black work, black and grey y cover up</p>
@@ -68,7 +68,7 @@ export const PageTattooists = () => {
                             <p className='descripTattooists'href="/">{tattoo.descripcion}</p>
                             <p className='descripTattooists'><span class="material-symbols-outlined">location_on</span>{tattoo.ciudad}</p>
                             
-                            <a href="/tatto/view/profile" className='btnA_menu'>Ver Mi Perfil</a>
+                            <a href="/citas" className='btnA_menu'>Agendar Cita</a>
                         </div>
                     </div>
                 </div>

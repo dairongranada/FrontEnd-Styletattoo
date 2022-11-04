@@ -28,8 +28,8 @@
     // Div
     .Content_Forms {
         background-color: #000000ba;
-        width: 380px;
-        height: 450px;
+        width: 400px;
+        height: 430px;
         padding: 22px;
         font-size: 15px;
         box-sizing: border-box;
@@ -63,7 +63,7 @@
                 left: 5px;
                 transition: .3s;
                 pointer-events: none;
-                color: var(--colorGray3);
+                color: #bcbcbc;
             }
 
             .input_global_styleLogin:focus~.label_global_style,

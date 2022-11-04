@@ -2,7 +2,7 @@ import './sass/userRegister.scss'
 
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
-// import emailjs from 'emailjs-com'
+import emailjs from 'emailjs-com'
 
 import { GoArrowSmallLeft } from 'react-icons/go';
 import { AiOutlineUserAdd } from 'react-icons/ai';
@@ -22,7 +22,7 @@ export const RegisterUser = ( { change_step } ) => {
     const [registered, setRegistered] = useState(false);
 
 
-    //MENSAJE AL CORREO AL REGISTRARSE
+    // //MENSAJE AL CORREO AL REGISTRARSE
     // const sendEmail = (event)=>{
     //     event.preventDefault();
     //     // ALERTA CHIMBA
@@ -163,11 +163,12 @@ export const RegisterUser = ( { change_step } ) => {
 
                     >
                         {({ errors, touched  })=> (
-                            <Form className='formRegisterUser'>
+                            <Form className='formRegisterUser' >
                                 { duplicatedData && <p id='registerUser__error'>El ya se encuentran registrados.</p> }
                                 <div className="inputContent">
                                     <div>
                                         <Field
+                                            required
                                             className='global_styleRegistroIn'   
                                             name='first_name' 
                                             id='first_name' 
@@ -178,6 +179,7 @@ export const RegisterUser = ( { change_step } ) => {
                                     </div>
                                     <div>
                                         <Field
+                                            required
                                             className='global_styleRegistroIn'
                                             name='last_name'  
                                             id='last_name'   
@@ -196,6 +198,7 @@ export const RegisterUser = ( { change_step } ) => {
                                                 id='email' 
                                                 type="email" 
                                                 placeholder='Correo'
+                                                required
 
                                             />              
                                             {touched.email && errors.email && <span>{errors.email}</span>}   
@@ -209,6 +212,7 @@ export const RegisterUser = ( { change_step } ) => {
                                                 type="text" 
                                                 placeholder='Celular'
                                                 maxLength='10'
+                                                required
                                             /> 
                                              {touched.cellPhone && errors.cellPhone && <span>{errors.cellPhone}</span>}
                              
@@ -224,6 +228,7 @@ export const RegisterUser = ( { change_step } ) => {
                                                 id='password' 
                                                 type="password"
                                                 placeholder='Contraseña'
+                                                required
 
                                             />                                            
                                             {touched.password && errors.password && <span>{errors.password}</span>}   
@@ -236,8 +241,7 @@ export const RegisterUser = ( { change_step } ) => {
                                                 id='passwordConfirm' 
                                                 type="password"
                                                 placeholder='Contarseña Contraseña'
-
-
+                                                required
                                             />                                            
                                             {errors.passwordConfirm && <span className='emailSpam' >{errors.passwordConfirm}</span>}   
 
@@ -245,7 +249,7 @@ export const RegisterUser = ( { change_step } ) => {
                                     </div>
                                     <div className="sameline terminos-condiciones">
                                         <label>
-                                            <input required type="checkbox" />
+                                            <Field required name='checkbox' type="checkbox" />
                                             <span className='checkBox'></span>
                                         </label>
                                         <p className='AceptTerm'>Acepto los <Link className='anchor' to="/terminos-condiciones">Terminos y condiciones</Link></p>

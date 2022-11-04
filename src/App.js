@@ -86,7 +86,7 @@ function App() {
                 <Route path='/user/edit-quotes' exact element= {!token ? <Navigate to="/unauthenticated/401" /> :<UserQuotes/>}/>
 
                 {/* Rutas para opciones del perfil de Tatuadores */}
-                <Route path='/tatto/view/profile' exact element= {!token ? <Navigate to="/Registro" /> :<AllViewTatto/>}/>
+                <Route path='/tatto/view/profile' exact element= {<AllViewTatto/>}/>
 
                 <Route path='/userTatto/edit-profile' exact element= {!token ? <Navigate to="/unauthenticated/401" /> :<LeftInfoT/>}/>
                 <Route path='/userTatto/edit-name' exact element= {!token ? <Navigate to="/unauthenticated/401" /> :<TattoName/>}/>

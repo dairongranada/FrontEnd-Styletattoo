@@ -2,7 +2,7 @@
 .MainView{
     background-image: url('../../.././images/Fondos/Fondo_MainView.jpg');
     height: 100vh; margin-left: 78px;
-    background-size: cover;
+    background-size: cover;background-position-y: -11rem;
     display: flex; flex-direction: column;
     justify-content: center;align-items: center; gap: 10px;
     
@@ -16,9 +16,14 @@
 @media (max-width: 600px) {
     .MainView{
         text-align: center;
+        background-position-y: 0rem;
         h1,h2 {font-size: 40px;}
         div{flex-direction: column}
     }
+}
+
+@media (max-width: 1000px) {
+    .MainView{background-position-y: 0rem;}
 }
 
 

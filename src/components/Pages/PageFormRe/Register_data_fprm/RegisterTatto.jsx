@@ -1,7 +1,8 @@
 import './sass/userRegister.scss'
 
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+// import emailjs from 'emailjs-com'
 
 import { GoArrowSmallLeft } from 'react-icons/go';
 import { AiOutlineUserAdd } from 'react-icons/ai';
@@ -22,6 +23,21 @@ export const RegisterTatto = ( { change_step } ) => {
 
 
 
+    //MENSAJE AL CORREO AL REGISTRARSE
+    // const sendEmail = (event)=>{
+    //     event.preventDefault();
+    //     // ALERTA CHIMBA
+    //     emailjs.sendForm('service_abfu3cf','template_u6bd07e',event.target,'Hc--z4JAH7zQRaJwb')
+    //     .then(response => {
+    //         alert('Gracias por registarse')
+    //     })
+    //     .catch(err => console.error(err))
+    
+    //     setTimeout(() => {
+    //         window.location = "/IngresarSesion";
+    //     }, 2000);
+        
+    // }
 
 
 
@@ -113,7 +129,7 @@ export const RegisterTatto = ( { change_step } ) => {
                             
                             signUpUser({
                                 username:"UserStyle",
-                                first_name:valores.last_name,
+                                first_name:valores.first_name,
                                 last_name:valores.last_name,
                                 cellPhone:valores.cellPhone,
                                 email:valores.email,

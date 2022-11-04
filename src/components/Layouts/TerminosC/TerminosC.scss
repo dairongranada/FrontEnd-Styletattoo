@@ -1,17 +1,19 @@
 .cont1{
-    width: 72%;
-    margin-left:15%;
-    border: solid;
-    border-radius: 1px;
-    border-color: rgb(210, 213, 217);
-    border-radius: 1rem;
+    width: 70%;
+    margin-left:16%;
+    border-color: rgb(255, 255, 255);
     margin-top: 2rem;
+    color: rgb(255, 255, 255);
+    background-color: black;
+    padding: 40px;
+    box-shadow: 6px 3px 6px black;
         h3{
             text-align: center;
             font-size: 25px;
             margin-top: 0.4rem;
             font-style:italic;
             text-decoration:underline;
+            color: rgba(238, 135, 0, 0.904);
         }
         p{
             margin-top: 0.1rem;
@@ -23,27 +25,30 @@
                 font-size: 14px;
                 padding: 1rem;
                 font-style: italic;
+                color: rgba(238, 135, 0, 0.904);
             }
             p{
                 right: 1rem;
             }.BntAceptarterminos{
 
-                .ButtonConfirmDates{
-                    color: var(--colorBlack);
+                .buttons_global_StyleTatto{
                     border: none;
-                    background: var(--colorWhite);
                     padding: 10px 20px;
                     display: flex;
+                    position: relative;
                     align-items: center;
                     justify-content: center;
-                    width: 230px;
+                    width: 240px;
                     text-align: center;
                     margin-bottom: 1rem;
+                    margin-left: 20rem;
                     cursor: pointer;
-                    margin-left: 10px;
-                }
-            }
+                    border: 2px solid var(--colorWhite);
+                    background: transparent;
 
+                }
+                
+            }
            
 
     }

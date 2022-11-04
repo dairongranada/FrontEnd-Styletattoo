@@ -248,7 +248,7 @@ export const RegisterUser = ( { change_step } ) => {
                                             <input required type="checkbox" />
                                             <span className='checkBox'></span>
                                         </label>
-                                        <p>Acepto los <Link className='anchor' to="/terminos-condiciones">Terminos y condiciones</Link></p>
+                                        <p className='AceptTerm'>Acepto los <Link className='anchor' to="/terminos-condiciones">Terminos y condiciones</Link></p>
                                     </div>
 
 

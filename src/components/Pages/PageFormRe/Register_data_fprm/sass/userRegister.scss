@@ -61,13 +61,17 @@
                 visibility: hidden;
             }
             label{
-                display: block;
-                width: 15px;
+                display: block; 
+                width: 29px;
                 height: 5px;
                 cursor: pointer;
                 display: flex;
-                flex-direction: column-reverse;
+                align-items: center;
+                // flex-direction: column-reverse;
                 height: 30px;
+            }
+            .AceptTerm{
+                margin-top: 3px;
             }
             input:checked ~ .checkBox{
                 transform: rotate(45deg);
@@ -80,10 +84,10 @@
             }
             .checkBox{
                 display: block;
-                width: inherit;
-                height: inherit;
+                width: 14px;
+                height: 14px;
                 border: 3px solid #434343;
-                border-radius: 6px;
+                border-radius: 3px;
                 transition: all 0.375s;
             }
         }

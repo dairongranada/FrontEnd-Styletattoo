@@ -10,7 +10,7 @@ import { AiOutlineUserAdd } from 'react-icons/ai';
 
 import { Formik, Form, Field } from 'formik';
 import { signUpUser } from '../../../../Helpers/ApiConsumer/AuthRegistro';
-import { ButtonUI } from '../../.././UI/ButtonUI/ButtonUI'
+import { ButtonUI } from '../../.././UI/ButtonUI/ButtonUI';
 
 
 

@@ -71,11 +71,11 @@ export const PageFormSe = () => {
                                 console.log(info);
 
                                 if ( data.activate === true) {
-                                    //resetForm();
+                                    resetForm();
                                     if ( data.rol === "[ROLE_USUARIO]" ) {  
                                         toast.success('Bienvenido a StyleTattoo')
                                         setTimeout(function(){
-                                            //window.location = '/user/edit-profile';
+                                            window.location = '/user/edit-profile';
                                         }, 1500);        
                                     }
                                     else if ( data.rol === "[ROLE_ARTISTA]" ){

@@ -56,6 +56,37 @@
                 color: var(--colorWhite);
             }
         }
+        .sameline{
+            input{
+                visibility: hidden;
+            }
+            label{
+                display: block;
+                width: 15px;
+                height: 5px;
+                cursor: pointer;
+                display: flex;
+                flex-direction: column-reverse;
+                height: 30px;
+            }
+            input:checked ~ .checkBox{
+                transform: rotate(45deg);
+                width: 8px;
+                height: 17px;
+                border-color: orange;
+                border-top-color: transparent;
+                border-left-color: transparent;
+                border-radius: 0;
+            }
+            .checkBox{
+                display: block;
+                width: inherit;
+                height: inherit;
+                border: 3px solid #434343;
+                border-radius: 6px;
+                transition: all 0.375s;
+            }
+        }
     }
     .Btn_Register{
         width: 100%;

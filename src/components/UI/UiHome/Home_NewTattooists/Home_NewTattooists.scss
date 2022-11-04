@@ -1,4 +1,6 @@
-
+.NewTattooists{
+    background-color: var(--colorBlack);
+}
 .contCards{
     display: flex;
     justify-content: center;
@@ -19,11 +21,14 @@
 
 
 .SeeTattooists {
-    margin-left: 78px;
     height: 120px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: start;
+    align-items: flex-start;    
+
+    a{
+        width: 300px;
+    }
 }
 
 
@@ -34,7 +39,7 @@
     gap: 1rem;
     padding: 0 2rem;
     margin-left: 10%;
-    height: 50vh;
+    height: 60vh;
 
 }
 
@@ -57,6 +62,7 @@
     flex: 1 1;
     flex-direction: column;
     text-transform: uppercase;
+    font-size: 20px;
 }
 
 .left-t >:nth-child(1){

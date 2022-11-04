@@ -38,15 +38,18 @@ export const Home_NewTattooists = () => {
                         <span>ARTISTAS</span>
                         <span className="stroke-text">Mas Destacados </span>
                         <span>{tattoo[selected].descripcion}</span>
+                        
 
                         <span style={{ color: "var(--colorOrange2)", margin: "2rem" }}>
                             <span>{tattoo[selected].name}</span>
                             {" "}-{" "} Artista
                         </span>
+                        <div className='SeeTattooists'><a className='buttons_global_StyleTatto' href="/all/artist/style">VER MAS</a></div>
                     </div>
                     <div className="right-t">
                         <div></div>
                         <div></div>
+                        
                         <img src={tattoo[selected].image} alt="" />
 
                         <div className='arrows' >
@@ -66,7 +69,6 @@ export const Home_NewTattooists = () => {
                                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAbCAYAAABr/T8RAAAACXBIWXMAACE4AAAhOAFFljFgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADxSURBVHgB5ZfhDYIwEIWfTsAGOoIj6AY4gWwAG8AIbAAb6AhsoBswAiOcd1KiiaUEci0/+JKXNJD0I7m2R4EFEFHK6UxyhIBFCf1TYSZ7zCeyPJOPeXKO8IVMzmnJTrtp+Qm+4MkjU1sbsuJv8AkLahrH73ZjQbFZeeaQV5zPObAzg5Rzhh6yoqORdy/OVcR3HsQISyNiwgrIWd0gPI+hxiXnAD2manyBNtT36jHqYVVrS3OHtIQPJqQFtKG+UVQOaQZtaLo7JdCG3P1YpPr9mNb4AzHSLqjUiMdan9Raf4/+iGOL1M/BYJEX9L1JFFjAG4XRmJQfpPVeAAAAAElFTkSuQmCC" alt="" /></div>
                     </div>
             </div>
-            <div className='SeeTattooists'><a className='buttons_global_StyleTatto' href="/all/artist/style">VER MAS</a></div>
         </section>
 
     )

@@ -40,7 +40,7 @@ export const PagePiercings = () => {
         </div>
 
         <div className='ContViewButton'>
-          <li><a className='buttons_global_StyleTatto' href="/artistas">VER MAS</a></li>
+          <li><a className='buttons_global_StyleTatto' href="/all/artist/style">VER MAS</a></li>
         </div>
       </div>
     </div>

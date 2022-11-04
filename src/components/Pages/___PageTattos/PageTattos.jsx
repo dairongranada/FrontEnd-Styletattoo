@@ -26,7 +26,7 @@ export const PageTattos = () => {
 
 
             </p>
-            <li><a className='buttons_global_StyleTatto' href="/artistas">MAS</a></li>
+            <li><a className='buttons_global_StyleTatto' href="/all/artist/style">VER MAS</a></li>
         </div>
         <div className='contImg'>
           <img src={tatu} alt="" />

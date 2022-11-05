@@ -11,24 +11,28 @@
         height: auto;
         background-color: rgba(0, 0, 0, 0.171);
         display: flex;
+        padding-left: 50px;
         .contInfo{
             margin-top: 20px;
             margin-left: 5%;
             display: flex;
             flex-direction: column;
             height: auto;
+            width: 50%;
             h3{
                 font-size: 50px;
                 margin: 20px;
                 text-align: center;
+                color: var(--colorOrange2);
             }
             li{
                 margin: 20px;
             }
             p{
-                font-size: 17px;
-                margin: 20px;
+                font-size: 15px;
                 text-align: center;
+                text-align: justify;
+
             }
         }
         .contImg{
@@ -36,6 +40,7 @@
             margin: 40px;
             width: 50rem;
             height: 30rem;
+            justify-content: flex-end;
         }
     }
     
@@ -62,6 +67,7 @@
                 h3{
                     margin-bottom: 30px;
                     font-size: 45px;
+                    color: var(--colorOrange2);
                 }
             }
             .contImg2{
@@ -96,21 +102,21 @@
                 margin-left: 5%;
 
                 h2{
+                    font-size: 40px;
                     text-align: center;
                     margin-bottom: 6rem;
+                    color: var(--colorOrange2);
+                }
+                p{
+                    text-align: center;
+                    text-align: justify;
+                }
+                li{
+                    margin-top: 70px;
                 }
             }
         }
-        .ContViewButton2{
-            width: 100%;
-            height: auto;
-            display: flex;
-            justify-content: end;
-
-            li{
-                margin-right: 60px;
-            }
-        }
+      
     } 
 }
 

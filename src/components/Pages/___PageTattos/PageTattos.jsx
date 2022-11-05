@@ -14,7 +14,7 @@ export const PageTattos = () => {
     <div className='contPrimary'> 
       <div className='contBack'>
         <div className='contInfo' >
-          <h3>Todo sobre Tatuajes</h3>
+          <h3>Todo sobre los Tatuajes</h3>
           
             <p>
             El cuidado de tu nuevo tatuaje depende del tipo y la magnitud del trabajo realizado. No obstante, normalmente, tendrás que tener los siguientes cuidados:
@@ -65,12 +65,13 @@ export const PageTattos = () => {
             <p>
  Por supuesto. Esta duda es fruto de un antiguo prejuicio que relacionaba los tatuajes con “personas no sanas”. La única precaución que hay que tomar es esperar unos seis meses (en algunos países un año entero) una vez realizado el tatuaje, porque las defensas del tatuado se encuentran en niveles bajos tras la realización del dibujo con tinta en la piel, al igual que como cuando estás resfriado. Se trata de un impedimento temporal.
             </p>
+          <li><a className='buttons_global_StyleTatto' href="/all/artist/style">VER MAS</a></li>
           </div>
         </div>
 
-        <div className='ContViewButton2'>
-          <li><a className='buttons_global_StyleTatto' href="/all/artist/style">VER MAS</a></li>
-        </div>
+        
+          
+  
       </div>
     </div>
     </>

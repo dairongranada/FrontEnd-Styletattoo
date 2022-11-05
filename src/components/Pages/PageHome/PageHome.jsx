@@ -24,8 +24,8 @@ export const PageHome = () => {
         {name: 'Samuel Lopez',image:'https://i.postimg.cc/g0M2PN3g/samuel.jpg' , gitHub:'https://github.com/SAMUEL0126', insta:'https://www.instagram.com/samuel.lopez0114/', rol:'Front-End Developer' },
         {name: 'Juan David Correa',image:'https://i.postimg.cc/pLHTQ92J/juanda.jpg',gitHub:'https://github.com/juandacorrea112',insta:'https://www.instagram.com/juandavidc02_bmx/ ',rol:'Front-End Developer'},
         {name: 'Steven',image:'',gitHub:'https://github.com/juandacorrea112',insta:'https://www.instagram.com/juandavidc02_bmx/ ',rol:'Back-End Developer'},
-        {name: 'Luisa',image:'',gitHub:'https://github.com/juandacorrea112',insta:'https://www.instagram.com/juandavidc02_bmx/ ',rol:' Developer'},
-        {name: 'Santiago',image:'',gitHub:'https://github.com/juandacorrea112',insta:'https://www.instagram.com/juandavidc02_bmx/ ',rol:' Developer'}
+        {name: 'Luisa',image:'',gitHub:'https://github.com/juandacorrea112',insta:'https://www.instagram.com/juandavidc02_bmx/ ',rol:' Documentacion'},
+        {name: 'Santiago',image:'',gitHub:'https://github.com/juandacorrea112',insta:'https://www.instagram.com/juandavidc02_bmx/ ',rol:' Apoyar al equipo'}
 
     ]
 

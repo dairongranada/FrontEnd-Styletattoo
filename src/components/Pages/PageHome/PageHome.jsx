@@ -41,13 +41,13 @@ export const PageHome = () => {
             <div className='ContentNosotros'>
             {searchTattoo.map((Nosotros, index) => {
                 return <div className="card-Nosotros">
-                    <div className="card-img">
+                    <div className="card-img" key={index}>
                         <img src={Nosotros.image} alt={Nosotros.image} />
                     </div>
                     <ul className="social-media">
                         {/* <li><a href={Nosotros.gitHub}><i class='bx bxl-facebook-circle'></i></a></li> */}
-                        <li><a href={Nosotros.insta}><i class='bx bxl-instagram' ></i></a></li>
-                        <li><a href={Nosotros.gitHub}><i class='bx bxl-github' ></i></a></li>
+                        <li><a href={Nosotros.insta}><i className='bx bxl-instagram' ></i></a></li>
+                        <li><a href={Nosotros.gitHub}><i className='bx bxl-github' ></i></a></li>
                     </ul>
                     <div className="card-info">
                         <p className="title">{Nosotros.name}</p>

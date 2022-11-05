@@ -12,20 +12,26 @@ export const PageTattooists = () => {
         {name: 'oliver peck', image:'https://res.cloudinary.com/dsoovcjav/image/upload/v1660826274/ImagesTattoo/tatuador3_jd7kt9.png',descripcion:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nostrum eius laboriosam?', ciudad:'armenia'},
     ]
 
-    const [searchTattoo, setsearchTattoo] = useState(tattoo)
+ // const [searchTattoo, setsearchTattoo] = useState(tattoo)
+    const [filterCityartist, setFilterCityartist] = useState(tattoo)
 
 
-    const filterTattoo = (event) =>{
+
+    const filterCity = (event) => {
         const data = event.target.value;
-        const filter = tattoo.filter  (tattoo => tattoo.ciudad.toUpperCase().includes(data.toUpperCase()))
-        setsearchTattoo(filter);
+        const filtro = tattoo.filter (tatoo => tatoo.ciudad.toUpperCase().includes(data.toUpperCase()))
+        setFilterCityartist(filtro)
     }
 
-    const [change, setChange] = useState(false)
 
-    const CambioClass = () => {
-      setChange(true)
-    }
+    /* C A M B I A R    C L A S E    D E L    I N P U T  C O N   U N  C L I C K */
+
+    // const [change, setChange] = useState(false)
+
+    // const CambioClass = () => {
+    //   setChange(true)
+    // }
+
 
   return(
     <>
@@ -40,8 +46,10 @@ export const PageTattooists = () => {
       </div>
       
       <div className='contSearch'>
-        <div onClick={CambioClass} className={`search-box ${change && "search-CajaAnimation"}`}>
-          <input className="Buscador12" id='Buscador12' onChange={filterTattoo} type="text" placeholder='Buscar Artistas' />
+
+
+        {/* <div onClick={CambioClass} className={`search-box ${change && "search-CajaAnimation"}`}>
+          <input className="Buscador12" id='Buscador12'  type="text" placeholder='Buscar Artistas' />
           <a href="##" className="material-symbols-outlined">
               <i className="fas fa-search">
                 <svg xmlns="http://www.w3.org/2000/svg" className={`input-icon ${change && "svgAnimationS"}`} viewBox="0 0 20 20" fill="currentColor">
@@ -49,11 +57,24 @@ export const PageTattooists = () => {
                 </svg>
               </i>
           </a>
-        </div>
+        </div> */}
+
+        
+
+
+        <select className='MenuOptions' onChange={filterCity}>
+          <option selected disabled >BUSCA ARTISTAS DE TU CIUDAD</option>
+          {
+            tattoo.map((parametro => <option id='OptionFilter' className='OptionFilter'>{parametro.ciudad}</option>))
+          }
+        </select>
+        <svg xmlns="http://www.w3.org/2000/svg" className='input-icon' viewBox="0 0 20 20" fill="currentColor">
+          <path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd" />
+        </svg>
       </div>
  
       <main className='main-contenido'>
-        {searchTattoo.map((tattoo, index) => {
+        {filterCityartist.map((tattoo, index) => {
             return<div className='pather'>
               <div className="containerTattois">
                 <div className="cardsTattooists">

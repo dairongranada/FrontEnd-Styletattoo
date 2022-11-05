@@ -169,13 +169,43 @@
     text-decoration: none;
 }
 
+/*   B U S C A D O R    D E S P L I E G U E   */
+
+.MenuOptions{
+  height: 40px;
+  width: 300px;
+  text-align: center;
+  background-color: rgb(46, 43, 43);
+  color: white;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  border: 0!important;
+  cursor: pointer;
+  select::-ms-expand {
+    display: none;
+  }
+  select{
+    width: 20em;
+    height: 3em;
+    line-height: 3;
+    background-color: rgb(33, 33, 33);
+    overflow: hidden;
+    border-radius: .25em;
+    flex: 1;
+    padding: 0 .5em;
+    cursor: pointer;
+  }
+}
 
 .member-name{
     font-size: 24px;
     font-weight: 600;
     position: relative;
     margin: 1rem 0 0 0;
-    color: #000000;
+    color: #000;
 }
 
 .member-name::after{

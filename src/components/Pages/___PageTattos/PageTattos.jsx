@@ -36,6 +36,8 @@ export const PageTattos = () => {
     
       </div>
     </div>
+    <br />
+    <br />
     <hr />
     <div className='BigCont2'>
       <div className='ContInfoP2'>
@@ -54,6 +56,8 @@ export const PageTattos = () => {
             <img src={img4} alt="" />
           </div>
         </div>
+        <br />
+        <br />
         <hr />
         <div className='InfImgT2'>
           <div className='contImgT2'>

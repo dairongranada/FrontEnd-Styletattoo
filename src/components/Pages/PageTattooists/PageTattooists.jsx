@@ -63,7 +63,7 @@ export const PageTattooists = () => {
 
 
         <select className='MenuOptions' onChange={filterCity}>
-          <option selected disabled >BUSCA ARTISTAS DE TU CIUDAD</option>
+          <option selected disabled >BUSCAR ARTISTAS DE TU CIUDAD</option>
           {
             tattoo.map((parametro => <option id='OptionFilter' className='OptionFilter'>{parametro.ciudad}</option>))
           }
@@ -87,7 +87,7 @@ export const PageTattooists = () => {
                         <div className="content">
                             <p className='nameTattooists' >{tattoo.name}</p>
                             <p className='descripTattooists'href="/">{tattoo.descripcion}</p>
-                            <p className='descripTattooists'><span class="material-symbols-outlined">location_on</span>{tattoo.ciudad}</p>
+                            <p className='descripTattooists'><span className="material-symbols-outlined">location_on</span>{tattoo.ciudad}</p>
                             
                             <a href="/citas" className='btnA_menu'>Agendar Cita</a>
                         </div>

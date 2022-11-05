@@ -20,7 +20,7 @@ export const Home_MainView = () => {
                 <section className='MainView'>
                         <h1 className='titleMP4'>CONTAMOS HISTORIAS</h1>
                             <h2 className='titleMP4'>EN TU PIEL</h2>
-                        <p   style={{fontWeight:"700"}}>¿ No tienes una cuenta ?</p>
+                        <p   style={{fontWeight:"700",color: "var(--colorOrange2)"}}>¿ No tienes una cuenta ?</p>
                         <div>
                             <ul className="menuhorizontal">
                                 <li><a className='buttons_global_StyleTatto' href="/IngresarSesion">INICIAR SESION</a></li>

@@ -20,12 +20,12 @@ import { Home_Services } from '../.././UI/UiHome/Home_Services/Home_Services'
 export const PageHome = () => {
 
     const Nosotros = [
-        {name: 'Dairon Granada', image:'https://i.postimg.cc/cLWp6F6c/Dairon.jpg' ,gitHub: 'https://github.com/dairongranada',insta:'https://www.instagram.com/dairongranadaa23/',},
-        {name: 'Samuel Lopez',image:'https://i.postimg.cc/g0M2PN3g/samuel.jpg' , gitHub:'https://github.com/SAMUEL0126', insta:'https://www.instagram.com/samuel.lopez0114/',  },
-        {name: 'Juan David Correa',image:'https://i.postimg.cc/pLHTQ92J/juanda.jpg',gitHub:'https://github.com/juandacorrea112',insta:'https://www.instagram.com/juandavidc02_bmx/ '},
-        {name: 'Steven',image:'',gitHub:'https://github.com/juandacorrea112',insta:'https://www.instagram.com/juandavidc02_bmx/ '},
-        {name: 'Luisa',image:'',gitHub:'https://github.com/juandacorrea112',insta:'https://www.instagram.com/juandavidc02_bmx/ '},
-        {name: 'Santiago',image:'',gitHub:'https://github.com/juandacorrea112',insta:'https://www.instagram.com/juandavidc02_bmx/ '}
+        {name: 'Dairon Granada', image:'https://i.postimg.cc/cLWp6F6c/Dairon.jpg' ,gitHub: 'https://github.com/dairongranada',insta:'https://www.instagram.com/dairongranadaa23/',rol:'Front-End Developer'},
+        {name: 'Samuel Lopez',image:'https://i.postimg.cc/g0M2PN3g/samuel.jpg' , gitHub:'https://github.com/SAMUEL0126', insta:'https://www.instagram.com/samuel.lopez0114/', rol:'Front-End Developer' },
+        {name: 'Juan David Correa',image:'https://i.postimg.cc/pLHTQ92J/juanda.jpg',gitHub:'https://github.com/juandacorrea112',insta:'https://www.instagram.com/juandavidc02_bmx/ ',rol:'Front-End Developer'},
+        {name: 'Steven',image:'',gitHub:'https://github.com/juandacorrea112',insta:'https://www.instagram.com/juandavidc02_bmx/ ',rol:'Back-End Developer'},
+        {name: 'Luisa',image:'',gitHub:'https://github.com/juandacorrea112',insta:'https://www.instagram.com/juandavidc02_bmx/ ',rol:' Developer'},
+        {name: 'Santiago',image:'',gitHub:'https://github.com/juandacorrea112',insta:'https://www.instagram.com/juandavidc02_bmx/ ',rol:' Developer'}
 
     ]
 
@@ -51,7 +51,7 @@ export const PageHome = () => {
                     </ul>
                     <div className="card-info">
                         <p className="title">{Nosotros.name}</p>
-                        <p className="subtitle">Web Developer</p>
+                        <p style={{color: "var(--colorOrange2)"}} className="subtitle">{Nosotros.rol}</p>
                     </div>
                 </div>
         

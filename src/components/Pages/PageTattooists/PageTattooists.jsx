@@ -33,6 +33,16 @@ export const PageTattooists = () => {
     // }
 
 
+
+/*  A N I M A C I O N   D E   I C O N O   D E L   M E N U   D E   C I U D A D E S */
+    const [changeM, setChangeM] = useState(false)
+
+    const ChangeClassIconM = () => {
+      setChangeM(true)
+    }
+
+
+
   return(
     <>
     <NavigationBar/>
@@ -45,7 +55,7 @@ export const PageTattooists = () => {
           neotradicional, libre, liners, black work, black and grey y cover up</p>
       </div>
       
-      <div className='contSearch'>
+      <div onClick={ChangeClassIconM} className='contSearch'>
 
 
         {/* <div onClick={CambioClass} className={`search-box ${change && "search-CajaAnimation"}`}>
@@ -62,15 +72,17 @@ export const PageTattooists = () => {
         
 
 
-        <select className='MenuOptions' onChange={filterCity}>
+        <select onClick={ChangeClassIconM} className='MenuOptions' onChange={filterCity}>
           <option selected disabled >BUSCAR ARTISTAS DE TU CIUDAD</option>
           {
             tattoo.map((parametro => <option id='OptionFilter' className='OptionFilter'>{parametro.ciudad}</option>))
           }
         </select>
-        <svg xmlns="http://www.w3.org/2000/svg" className='input-icon' viewBox="0 0 20 20" fill="currentColor">
-          <path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd" />
-        </svg>
+        <div className={`IconDespliegMen ${changeM &&  "IconRotation"}`}>
+          <span id='IconDespliegMen' className="material-symbols-outlined">
+            expand_less
+          </span>
+        </div>
       </div>
  
       <main className='main-contenido'>

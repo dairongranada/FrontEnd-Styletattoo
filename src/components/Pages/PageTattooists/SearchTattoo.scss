@@ -199,6 +199,16 @@
     cursor: pointer;
   }
 }
+.IconDespliegMen{
+  display: flex;
+  align-items: center;
+}
+.IconRotation{
+  display: flex;
+  align-items: center;
+  transform: rotate(180deg);
+  transition: .5s all;
+}
 
 .member-name{
     font-size: 24px;

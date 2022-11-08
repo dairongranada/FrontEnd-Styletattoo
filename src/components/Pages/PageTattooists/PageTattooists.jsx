@@ -58,7 +58,7 @@ export const PageTattooists = () => {
  
       <main className='main-contenido'>
         {filterCityartist.map((tattoo, index) => {
-            return<div  style={{boxShadow: "0px 0px 20px #000"}} className='pather'>
+            return<div className='pather'>
               <div className="containerTattois">
                 <div className="cardsTattooists">
                     <div className="face facel">

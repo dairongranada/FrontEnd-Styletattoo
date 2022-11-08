@@ -38,20 +38,46 @@
                     position: relative;
                     align-items: center;
                     justify-content: center;
-                    width: 240px;
+                    width: 500px;
                     text-align: center;
                     margin-bottom: 1rem;
-                    margin-left: 20rem;
+                    margin-left: 19%;
                     cursor: pointer;
                     border: 2px solid var(--colorWhite);
                     background: transparent;
 
                 }
+
+                @media (max-width: 1300px) {
+                    .buttons_global_StyleTatto {
+                        width: 70%;
+                        height: 6vh;
+                        margin-left: 15%;
+                    }
+                }
+                @media (max-width: 900px) {
+                    .buttons_global_StyleTatto {
+                        width: 82%;
+                        height: 6vh;
+                        margin-left: 9%;
+                    }
+                }
+                @media (max-width: 600px) {
+                    .buttons_global_StyleTatto {
+                        width: 70%;
+                        height: 7vh;
+                        margin-left: 13%;
+                    }
+                }
+                    
+                
+                }
+                
                 
             }
            
 
     }
 
-}
+
 

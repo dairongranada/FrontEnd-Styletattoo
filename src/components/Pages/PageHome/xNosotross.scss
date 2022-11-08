@@ -39,6 +39,7 @@
    
    /*Image*/
    .card-img img{
+    background: linear-gradient(rgba(80, 80, 80, 0.5),rgba(199, 204, 199, 0.5));
     background-position: center;
     background-size: cover;
     height: 100%;
@@ -98,6 +99,8 @@ i {
    
    .card-Nosotros:hover .card-img img{
     transform: translateY(-30%);
+    z-index:1;
+
    }
    
    .card-Nosotros:hover .social-media li {

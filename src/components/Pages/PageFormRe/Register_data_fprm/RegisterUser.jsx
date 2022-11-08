@@ -2,7 +2,7 @@ import './sass/userRegister.scss'
 
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
-// import emailjs from 'emailjs-com'
+import emailjs from 'emailjs-com'
 
 import { GoArrowSmallLeft } from 'react-icons/go';
 import { AiOutlineUserAdd } from 'react-icons/ai';
@@ -23,28 +23,18 @@ export const RegisterUser = ( { change_step } ) => {
     
 
     // //MENSAJE AL CORREO AL REGISTRARSE
-    // const sendEmail = (event)=>{
-    //     event.preventDefault();
-    //     // ALERTA CHIMBA
-    //     emailjs.sendForm('service_abfu3cf','template_u6bd07e',event.target,'Hc--z4JAH7zQRaJwb')
-    //     .then(response => {
-    //         alert('Gracias por registarse')
-    //     })
-    //     .catch(err => console.error(err))
+    const sendEmail = (event)=>{
+        // event.preventDefault();
+        // emailjs.sendForm('service_abfu3cf','template_u6bd07e',event.target,'Hc--z4JAH7zQRaJwb')
+        // .catch(err => console.error(err))
     
-    //     setTimeout(() => {
-    //         window.location = "/IngresarSesion";
-    //     }, 2000);
+        // setTimeout(() => {
+        //     window.location = "/IngresarSesion";
+        // }, 2000);
+
+        console.log("Descomentar El emailJS");
         
-    // }
-
-
-    const [showPassword, setShowPassword] = useState("password")
-    const handlePassword = () => {
-        if ( showPassword === "password") {setShowPassword("text");}
-        else {setShowPassword("password")}
     }
-
 
 
 
@@ -151,7 +141,7 @@ export const RegisterUser = ( { change_step } ) => {
                                 }
                                 else{
                                     resetForm();
-                                    //window.location = "/IngresarSesion";
+                                    window.location = "/IngresarSesion";
                                     console.log(info);
                                 }
                             });
@@ -162,7 +152,7 @@ export const RegisterUser = ( { change_step } ) => {
 
                     >
                         {({ errors, touched  })=> (
-                            <Form className='formRegisterUser' >
+                            <Form className='formRegisterUser' onSubmit={sendEmail} >
                                 { duplicatedData && <div className={registered} ><p id='registerUser__error'>El email ya se encuentra registrado.</p></div>}
                                 { serverError && <div className={registered} ><p id='registerUser__error'>Tenemos problemas al iniciar sesion</p></div>}
 

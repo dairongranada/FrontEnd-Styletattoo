@@ -65,7 +65,7 @@ export const PageFormSe = () => {
                                 localStorage.setItem("InfoUser", JSON.stringify( InfoUser));
 
                                 localStorage.setItem("usuario", JSON.stringify(parseJwt( tokenInfo, rol )) );
-                                const data = info.data.info.info_user;
+                                const data = info.data.info;
 
                                 console.log(info);
         

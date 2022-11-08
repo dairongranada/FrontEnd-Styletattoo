@@ -4,61 +4,174 @@
 
 .contPrimary{
     width: 100%;
-    background-image: url(../../../images/Tattos/page.jpg);
     height: auto;
     background-size: cover;
     .contBack{
         width: 100%;
         height: auto;
-        background-color: rgba(0, 0, 0, 0.815);
         display: flex;
+        padding-left: 50px;
         .contInfo{
             margin-top: 20px;
             margin-left: 5%;
             display: flex;
             flex-direction: column;
             height: auto;
+            width: 50%;
             h3{
-                font-size: 30px;
+                font-size: 50px;
                 margin: 20px;
-
+                text-align: center;
+                color: var(--colorOrange2);
             }
             li{
                 margin: 20px;
             }
             p{
-                font-size: 17px;
-                margin: 20px;
-                text-align: left;
+                font-size: 15px;
+                text-align: center;
+                text-align: justify;
+
             }
         }
         .contImg{
             display: flex;
             margin: 40px;
+            margin-top: 50px;
             width: 50rem;
             height: 30rem;
+            justify-content: flex-end;
         }
     }
     
 }
+.BigCont2{
+    width: 100%;
+    height: auto;
+    background-image: url('');
+    background-size: cover; 
+    .ContInfoP2{
+        width: 100%;
+        height: 100%;
+        
+        padding: 7%;
+        .InfImgO2{
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: space-around;
+            .ContInfor2{
+                width: 40%;
+                margin-left: 5%;
+                height: auto;
+                h3{
+                    margin-bottom: 30px;
+                    font-size: 45px;
+                    color: var(--colorOrange2);
+                }
+            }
+            .contImg2{
+                width: 40%;
+                height: 40%;
+                box-shadow: 1px 8px 10px black;
+                margin-bottom: 70px;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+        .InfImgT2{
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: space-around;
+            margin-top: 55px;
+            .contImgT2{
+                width: 40%;
+                height: 25%;
+                box-shadow: 1px 8px 10px black;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }   
+            }
+            .ContInforT2{
+                width: 45%;
+                height: auto;
+                margin-left: 5%;
+
+                h2{
+                    font-size: 40px;
+                    text-align: center;
+                    margin-bottom: 6rem;
+                    color: var(--colorOrange2);
+                }
+                p{
+                    text-align: center;
+                    text-align: justify;
+                }
+                li{
+                    margin-top: 70px;
+                }
+            }
+        }
+      
+    } 
+}
+
+//   R E S P O N S I V E
+
+@media (max-width:844px){
+    .BigCont2{
+        .ContInfoP2{
+            .InfImgO2{
+                display: flex;
+                flex-direction: column;
+                .ContInfor2{
+                    width: 100%;
+                    margin-bottom: 2rem;
+                    margin-left: 11%;
+                }
+                .contImg2{
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+            .InfImgT2{
+                display: flex;
+                flex-direction: column-reverse;
+                .ContInforT2{
+                    width: 100%;
+                    margin-bottom: 2rem;
+                    margin-left: 11%;
+                }
+                .contImgT2{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
 
 // R E S P O N S I V E
 
-// @media (max-width:1190px){
-//     .contBack{
-//         display: flex;
-//         flex-direction: column-reverse;
-//         .contImg{
-//             display: flex;
-//             justify-content: center;
-//             img{
-//                 width: 51%;
-//                 height: 69%;
-//                 margin: 1rem;
-//             }
-//         }
-//     }
-// }
+@media (max-width:1190px){
+    .contBack{
+        display: flex;
+        flex-direction: column-reverse;
+        .contImg{
+            display: flex;
+            justify-content: center;
+            img{
+                width: 51%;
+                height: 69%;
+                margin: 1rem;
+            }
+        }
+    }
+}
 
 
 

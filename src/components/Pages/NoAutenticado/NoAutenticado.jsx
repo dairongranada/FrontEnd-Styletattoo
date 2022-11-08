@@ -12,7 +12,7 @@ export const NoAutenticado = () => {
         <NavigationBar/>
         <div className="modal_perfil_no_autorizado">
             <div className="modal_perfil_no_autorizado_info">
-                <h5 className="autorizado_infoTitle">Al parecer no tienes permiso para entrar a esta Ruta.</h5>
+                <h5 className="autorizado_infoTitle">Al parecer no tienes permiso para entrar en esta Ruta.</h5>
                 <div style={{width:"50%"}}>
                     <button onClick={()=> {window.location = "/IngresarSesion"}} className='buttons_global_StyleTatto'>Login</button>
                     <div className='modal_perfil_no_autorizado-registro'>

@@ -23,20 +23,20 @@ export const RegisterUser = ( { change_step } ) => {
 
 
     // //MENSAJE AL CORREO AL REGISTRARSE
-    // const sendEmail = (event)=>{
-    //     event.preventDefault();
-    //     // ALERTA CHIMBA
-    //     emailjs.sendForm('service_abfu3cf','template_u6bd07e',event.target,'Hc--z4JAH7zQRaJwb')
-    //     .then(response => {
-    //         alert('Gracias por registarse')
-    //     })
-    //     .catch(err => console.error(err))
+    const sendEmail = (event)=>{
+        event.preventDefault();
+        // ALERTA CHIMBA
+        emailjs.sendForm('service_abfu3cf','template_u6bd07e',event.target,'Hc--z4JAH7zQRaJwb')
+        .then(response => {
+            alert('Gracias por registarse')
+        })
+        .catch(err => console.error(err))
     
-    //     setTimeout(() => {
-    //         window.location = "/IngresarSesion";
-    //     }, 2000);
+        setTimeout(() => {
+            window.location = "/IngresarSesion";
+        }, 2000);
         
-    // }
+    }
 
 
     const [showPassword, setShowPassword] = useState("password")
@@ -156,6 +156,7 @@ export const RegisterUser = ( { change_step } ) => {
                                     window.location = "/IngresarSesion";
                                 }
                             });
+                            sendEmail()
 
 
                         }}

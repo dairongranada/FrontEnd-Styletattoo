@@ -66,8 +66,6 @@ export const PageFormSe = () => {
 
                                 localStorage.setItem("usuario", JSON.stringify(parseJwt( tokenInfo, rol )) );
                                 const data = info.data.info;
-
-                                console.log(info);
         
 
 
@@ -77,7 +75,7 @@ export const PageFormSe = () => {
                                     if ( data.rol === "[ROLE_USUARIO]" ) {  
                                         toast.success('Bienvenido a StyleTattoo')
                                         setTimeout(function(){
-                                            window.location = '/user/edit-profile';
+                                            //window.location = '/user/edit-profile';
                                         }, 1500);        
                                     }
                                     else if ( data.rol === "[ROLE_ARTISTA]" ){

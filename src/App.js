@@ -4,8 +4,6 @@ import { Navigate } from "react-router";
 import './App.scss';
 
 
-import { NavFooter } from './components/Layouts/NavigationFooter/NavFooter/NavFooter';
-
 
 
 /*======================  V I E W S    C O M P O N E N T S  =========================*/ 

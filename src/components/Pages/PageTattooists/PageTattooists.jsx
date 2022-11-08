@@ -101,7 +101,7 @@ export const PageTattooists = () => {
                             <p className='descripTattooists'href="/">{tattoo.descripcion}</p>
                             <p className='descripTattooists'><span className="material-symbols-outlined">location_on</span>{tattoo.ciudad}</p>
                             
-                            <a href="/citas" className='btnA_menu'>Agendar Cita</a>
+                            <a href="/citas" className='btnA_menu'>Ver perfil</a>
                         </div>
                     </div>
                 </div>

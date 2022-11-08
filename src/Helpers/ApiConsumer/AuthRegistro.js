@@ -9,8 +9,6 @@ const URL = "http://localhost:8000/";
 
 
 export const signUpUser = async (userApi) => {
-    // userApi.estadoUs = "a";
-    // userApi.role = "[ROLE_USUARIO]"
 
     try {
         const response = await axios({

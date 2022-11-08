@@ -93,7 +93,7 @@ function App() {
                 <Route path='/userTatto/edit-password' exact element= {!token ? <Navigate to="/unauthenticated/401" /> :<TattoPassword/>}/>
                 <Route path='/userTatto/edit-quotes' exact element= {!token ? <Navigate to="/unauthenticated/401" /> :<TattoQuotes/>}/>
         
-                <Route path='/citas' exact element= {!token ? <Navigate to="/unauthenticated/401" /> :<PageQuotes/>}/>
+                <Route path='/citas' exact element= {!token ? <Navigate to="/IngresarSesion" /> :<PageQuotes/>}/>
 
               </Routes>
       <NavFooter/>

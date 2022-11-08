@@ -54,46 +54,37 @@ function App() {
     <div>
 
               <Routes>
-                {/* ECCSXTRAS */ }
-                <Route path="*" element= {<Page404 />} />
-                <Route path='/' exact element= {<PageHome />} />
-                <Route path='/unauthenticated/401' exact element= {<NoAutenticado />} />
-                <Route path='/terminos-condiciones' exact element= {<TerminosC />} />
+
+              
+                {/* 𝑳𝑶𝑮𝑰𝑵 𝒀 𝑹𝑬𝑮𝑰𝑺𝑻𝑹𝑶 */ }
+                    <Route path='/IngresarSesion' exact element= {!!token ? <Navigate to="/" /> :<PageFormSe />}/>
+                    <Route path='/Registro' exact element= {!!token ? <Navigate to="/" /> : <PageFormRe/>}/>
+
+                {/*𝑷𝑬𝑹𝑭𝑰𝑳 𝑼𝑺𝑼𝑨𝑹𝑰𝑶*/}
+                    <Route path='/user/edit-profile' exact element= {!token ? <Navigate to="/unauthenticated/401" /> :<LeftInfoU/>}/>
+                    <Route path='/user/edit-name' exact element= {!token ? <Navigate to="/unauthenticated/401" /> :<UserName/>}/>
+                    <Route path='/user/edit-password' exact element= {!token ? <Navigate to="/unauthenticated/401" /> :<UserPassword/>}/>
+                    <Route path='/user/edit-quotes' exact element= {!token ? <Navigate to="/unauthenticated/401" /> :<UserQuotes/>}/>
+
+                {/*𝑷𝑬𝑹𝑭𝑰𝑳 𝐓𝐀𝐓𝐔𝐀𝐃𝐎𝐑*/}
+                    <Route path='/userTatto/edit-profile' exact element= {!token ? <Navigate to="/unauthenticated/401" /> :<LeftInfoT/>}/>
+                    <Route path='/userTatto/edit-name' exact element= {!token ? <Navigate to="/unauthenticated/401" /> :<TattoName/>}/>
+                    <Route path='/userTatto/edit-password' exact element= {!token ? <Navigate to="/unauthenticated/401" /> :<TattoPassword/>}/>
+                    <Route path='/userTatto/edit-quotes' exact element= {!token ? <Navigate to="/unauthenticated/401" /> :<TattoQuotes/>}/>
+
+                {/* 𝙇𝘼𝙎 𝙊𝙋𝘾𝙄𝙊𝙉𝙀𝙎 𝘿𝙀𝙇 𝙏𝘼𝙏𝙐𝘼𝘿𝙊𝙍 */}
+                    <Route path='/all/artist/style' exact element= {<PageTattooists/>}/>
+                    <Route path='/tatto/view/profile' exact element= {<AllViewTatto/>}/>
+                    <Route path='/citas' exact element= {!token ? <Navigate to="/IngresarSesion" /> :<PageQuotes/>}/>
 
 
-                {/* LOGIN Y REGISTRO */ }
-                <Route path='/IngresarSesion' exact element= {!!token ? <Navigate to="/" /> :<PageFormSe />}/>
-                <Route path='/Registro' exact element= {!!token ? <Navigate to="/" /> : <PageFormRe/>}/>
-                {/* <Route path='/Registross' exact element= {<Registro/>}/> */}
-
-
-                {/* TATUADORES */ }                             {/*Ruta Protegida */}
-                <Route path='/all/artist/style' exact element= {<PageTattooists/>}/>
-
-
-                  {/* COSAS NO IMPORTANTES como(Elena <3) */ }
-                <Route path='/all/artist/style' exact element= {<PageTattooists/>}/>
-                <Route path='/infoTatuajes' exact element= {<PageTattos/>}/>
-                <Route path='/infoPiercings' exact element= {<PagePiercings/>}/>
-
-
-                {/*  RUTAS PRIVADAS     */}
-
-                {/* Rutas para opciones del perfil de usuario */}
-                <Route path='/user/edit-profile' exact element= {<LeftInfoU/>}/>
-                <Route path='/user/edit-name' exact element= {<UserName/>}/>
-                <Route path='/user/edit-password' exact element= {<UserPassword/>}/>
-                <Route path='/user/edit-quotes' exact element= {<UserQuotes/>}/>
-
-                {/* Rutas para opciones del perfil de Tatuadores */}
-                <Route path='/tatto/view/profile' exact element= {<AllViewTatto/>}/>
-
-                <Route path='/userTatto/edit-profile' exact element= {<LeftInfoT/>}/>
-                <Route path='/userTatto/edit-name' exact element= {<TattoName/>}/>
-                <Route path='/userTatto/edit-password' exact element= {<TattoPassword/>}/>
-                <Route path='/userTatto/edit-quotes' exact element= {<TattoQuotes/>}/>
-        
-                <Route path='/citas' exact element= {!token ? <Navigate to="/IngresarSesion" /> :<PageQuotes/>}/>
+                {/* 𝙑𝙄𝙎𝙏𝘼𝙎 𝙀𝙓𝙏𝙍𝘼𝙎𝙎𝙎𝙎𝙎 */ }
+                    <Route path="*" element= {<Page404 />} />
+                    <Route path='/' exact element= {<PageHome />} />
+                    <Route path='/infoTatuajes' exact element= {<PageTattos/>}/>
+                    <Route path='/infoPiercings' exact element= {<PagePiercings/>}/>
+                    <Route path='/terminos-condiciones' exact element= {<TerminosC />} />
+                    <Route path='/unauthenticated/401' exact element= {<NoAutenticado />} />
 
               </Routes>
     </div>

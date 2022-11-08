@@ -1,7 +1,8 @@
 import React,{useState} from 'react'
 import './SearchTattoo.scss'
-import { NavigationBar } from '../../Layouts/NavigationBar/NavigationBar';
 
+import { NavFooter } from '../../Layouts/NavigationFooter/NavFooter/NavFooter';
+import { NavigationBar } from '../../Layouts/NavigationBar/NavigationBar';
 
 
 
@@ -81,6 +82,8 @@ export const PageTattooists = () => {
               })}
       </main>
     </div>
+    <NavFooter/>
+
     </>
 
   )

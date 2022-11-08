@@ -1,5 +1,7 @@
 import './AllViewTatto.scss'
 import { NavigationBar } from '../../../Layouts/NavigationBar/NavigationBar';
+import { NavFooter } from '../../../Layouts/NavigationFooter/NavFooter/NavFooter';
+
 
 import React , {useState} from 'react'
 import { Link } from 'react-router-dom'
@@ -58,8 +60,8 @@ export const AllViewTatto = () => {
            
 
         </div>
-      
     </div>
+    <NavFooter/>
     </>
   )
 }

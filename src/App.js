@@ -80,23 +80,22 @@ function App() {
                 {/*  RUTAS PRIVADAS     */}
 
                 {/* Rutas para opciones del perfil de usuario */}
-                <Route path='/user/edit-profile' exact element= {!token ? <Navigate to="/unauthenticated/401" /> :<LeftInfoU/>}/>
-                <Route path='/user/edit-name' exact element= {!token ? <Navigate to="/unauthenticated/401" /> :<UserName/>}/>
-                <Route path='/user/edit-password' exact element= {!token ? <Navigate to="/unauthenticated/401" /> :<UserPassword/>}/>
-                <Route path='/user/edit-quotes' exact element= {!token ? <Navigate to="/unauthenticated/401" /> :<UserQuotes/>}/>
+                <Route path='/user/edit-profile' exact element= {<LeftInfoU/>}/>
+                <Route path='/user/edit-name' exact element= {<UserName/>}/>
+                <Route path='/user/edit-password' exact element= {<UserPassword/>}/>
+                <Route path='/user/edit-quotes' exact element= {<UserQuotes/>}/>
 
                 {/* Rutas para opciones del perfil de Tatuadores */}
                 <Route path='/tatto/view/profile' exact element= {<AllViewTatto/>}/>
 
-                <Route path='/userTatto/edit-profile' exact element= {!token ? <Navigate to="/unauthenticated/401" /> :<LeftInfoT/>}/>
-                <Route path='/userTatto/edit-name' exact element= {!token ? <Navigate to="/unauthenticated/401" /> :<TattoName/>}/>
-                <Route path='/userTatto/edit-password' exact element= {!token ? <Navigate to="/unauthenticated/401" /> :<TattoPassword/>}/>
-                <Route path='/userTatto/edit-quotes' exact element= {!token ? <Navigate to="/unauthenticated/401" /> :<TattoQuotes/>}/>
+                <Route path='/userTatto/edit-profile' exact element= {<LeftInfoT/>}/>
+                <Route path='/userTatto/edit-name' exact element= {<TattoName/>}/>
+                <Route path='/userTatto/edit-password' exact element= {<TattoPassword/>}/>
+                <Route path='/userTatto/edit-quotes' exact element= {<TattoQuotes/>}/>
         
                 <Route path='/citas' exact element= {!token ? <Navigate to="/IngresarSesion" /> :<PageQuotes/>}/>
 
               </Routes>
-      <NavFooter/>
     </div>
   );
 }

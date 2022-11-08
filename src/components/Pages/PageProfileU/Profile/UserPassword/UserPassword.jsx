@@ -4,6 +4,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 
 import { UptInfoU } from '../../UptInfoU'
 import { NavigationBar } from '../../../../Layouts/NavigationBar/NavigationBar';
+import { NavFooter } from '../../../../Layouts/NavigationFooter/NavFooter/NavFooter';
 import { ChevronsLeft }  from '../../../../UI/ChevronsLeft/ChevronsLeft.jsx'
 
 
@@ -94,6 +95,8 @@ export const UserPassword = () => {
         </div>
       </section>
     </div>
+    <NavFooter/>
+
     </>
   )
 }

@@ -1,7 +1,12 @@
-import { NavigationBar } from '../../../../Layouts/NavigationBar/NavigationBar';
 import { React } from 'react'
 import { UptInfoT } from '../../UptInfoT'
 import { ChevronsLeft }  from '../../../../UI/ChevronsLeft/ChevronsLeft.jsx'
+
+
+import { NavigationBar } from '../../../../Layouts/NavigationBar/NavigationBar';
+import { NavFooter } from '../../../../Layouts/NavigationFooter/NavFooter/NavFooter';
+
+
 
 
 
@@ -29,20 +34,18 @@ export const TattoQuotes = () => {
                   <div><i className='bx bxs-user-detail' ></i></div>
                 </div>
             </div>
-
           </div>
           
-
 
           <div className='contentBoxFiles'>
             
           </div>
 
 
-
         </div>
       </section>
     </div>
+    <NavFooter/>
     </>
   )
 }

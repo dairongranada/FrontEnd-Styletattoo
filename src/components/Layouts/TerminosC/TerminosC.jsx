@@ -1,8 +1,14 @@
 import React from 'react'
 import'../../Layouts/TerminosC/TerminosC.scss'
 
+
+import { NavigationBar } from '../../Layouts/NavigationBar/NavigationBar';
+
 export const TerminosC = () => {
   return (
+    <>
+     <NavigationBar/>
+
     <div className='cont1'>
       <div className='contInfo'>
         <h3 className='titleTC'>TERMINOS Y CONDICIONES</h3>
@@ -45,6 +51,6 @@ export const TerminosC = () => {
 
         </div>
       </div>
-    </div>
+    </div></>
   )
 }

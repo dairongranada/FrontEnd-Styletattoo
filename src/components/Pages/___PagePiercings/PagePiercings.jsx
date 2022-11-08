@@ -1,6 +1,8 @@
 import React from 'react'
 import '../___PagePiercings/PagePiercings.scss'
 import { NavigationBar } from '../../Layouts/NavigationBar/NavigationBar';
+import { NavFooter } from '../../Layouts/NavigationFooter/NavFooter/NavFooter';
+
 
 import img4 from '../../../images/Tattos/pircingOreja.jpg'
 import img5 from '../../../images/Tattos/pircingblue.jpg'
@@ -74,6 +76,7 @@ export const PagePiercings = () => {
         </div>
       </div>
     </div>
+    <NavFooter/>
     </>
   )
 }

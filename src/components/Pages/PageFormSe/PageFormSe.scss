@@ -1,3 +1,21 @@
+.CloseBackLogin{
+    text-align: center;
+    width: 100%;
+    color: #7b7b7b;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    svg{
+        color: #7b7b7b;
+        cursor: pointer;
+        font-size: 30px;
+    }
+}
+
+
+
+
 .BackGround {
      background-image: linear-gradient(rgba(27, 27, 27, 0.726),rgba(0, 0, 0, 0.555)), url('../.././../images/Fondos/Login.jpg');
 
@@ -29,7 +47,7 @@
     .Content_Forms {
         background-color: #000000ba;
         width: 400px;
-        height: 430px;
+        height: 450px;
         padding: 22px;
         font-size: 15px;
         box-sizing: border-box;
@@ -37,7 +55,7 @@
         h2 {
             text-align: center;
             font-size: 25px;
-            margin: 20px 0 5px 0;
+            margin: -3px 0 -3px 0;
         }
 
         // Div
@@ -87,7 +105,7 @@
 
     button {
         width: 100%;
-        margin: 1.52rem 0 1.52rem 0;
+        margin: 2.52rem 0 1.52rem 0;
     }
 
     .questions {

@@ -1,5 +1,5 @@
 import './PageFormSe.scss'
-
+import { MdOutlineCancel } from 'react-icons/md';
 import { React, useState } from 'react'
 import { Link,useNavigate } from 'react-router-dom'
 
@@ -31,6 +31,7 @@ export const PageFormSe = () => {
         <>
         <div className="Content_FormsPrincipalLogin BackGround">
             <div className="Content_Forms">
+            <div className='CloseBackLogin'> <a href="/"><MdOutlineCancel /></a></div>
                 <h2>INICIO DE SESION</h2>
                 <Formik
                     initialValues={{email: '', password: ''}}
@@ -114,7 +115,7 @@ export const PageFormSe = () => {
 
                     }}
                 >
-                    <Form>                        
+                    <Form>      
                         <div className="inputContent">
                             <Field
                                 name='email'
@@ -142,6 +143,7 @@ export const PageFormSe = () => {
                         </div>
                     </Form>
                 </Formik>
+
             </div>
         </div>
     </>

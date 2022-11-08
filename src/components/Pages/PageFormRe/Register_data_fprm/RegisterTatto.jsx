@@ -24,6 +24,7 @@ export const RegisterTatto = ( { change_step } ) => {
 
 
     //MENSAJE AL CORREO AL REGISTRARSE
+    
     // const sendEmail = (event)=>{
     //     event.preventDefault();
     //     // ALERTA CHIMBA

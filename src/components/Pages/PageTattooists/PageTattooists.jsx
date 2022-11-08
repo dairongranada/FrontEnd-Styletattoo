@@ -14,24 +14,11 @@ export const PageTattooists = () => {
 
  // const [searchTattoo, setsearchTattoo] = useState(tattoo)
     const [filterCityartist, setFilterCityartist] = useState(tattoo)
-
-
-
     const filterCity = (event) => {
         const data = event.target.value;
         const filtro = tattoo.filter (tatoo => tatoo.ciudad.toUpperCase().includes(data.toUpperCase()))
         setFilterCityartist(filtro)
     }
-
-
-    /* C A M B I A R    C L A S E    D E L    I N P U T  C O N   U N  C L I C K */
-
-    // const [change, setChange] = useState(false)
-
-    // const CambioClass = () => {
-    //   setChange(true)
-    // }
-
 
 
 /*  A N I M A C I O N   D E   I C O N O   D E L   M E N U   D E   C I U D A D E S */
@@ -56,22 +43,6 @@ export const PageTattooists = () => {
       </div>
       
       <div onClick={ChangeClassIconM} className='contSearch'>
-
-
-        {/* <div onClick={CambioClass} className={`search-box ${change && "search-CajaAnimation"}`}>
-          <input className="Buscador12" id='Buscador12'  type="text" placeholder='Buscar Artistas' />
-          <a href="##" className="material-symbols-outlined">
-              <i className="fas fa-search">
-                <svg xmlns="http://www.w3.org/2000/svg" className={`input-icon ${change && "svgAnimationS"}`} viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd" />
-                </svg>
-              </i>
-          </a>
-        </div> */}
-
-        
-
-
         <select onClick={ChangeClassIconM} className='MenuOptions' onChange={filterCity}>
           <option selected disabled >BUSCAR ARTISTAS DE TU CIUDAD</option>
           {
@@ -87,7 +58,7 @@ export const PageTattooists = () => {
  
       <main className='main-contenido'>
         {filterCityartist.map((tattoo, index) => {
-            return<div className='pather'>
+            return<div  style={{boxShadow: "0px 0px 20px #000"}} className='pather'>
               <div className="containerTattois">
                 <div className="cardsTattooists">
                     <div className="face facel">
@@ -101,7 +72,7 @@ export const PageTattooists = () => {
                             <p className='descripTattooists'href="/">{tattoo.descripcion}</p>
                             <p className='descripTattooists'><span className="material-symbols-outlined">location_on</span>{tattoo.ciudad}</p>
                             
-                            <a href="/citas" className='btnA_menu'>Ver perfil</a>
+                            <a href="/tatto/view/profile" className='btnA_menu'>Ver perfil</a>
                         </div>
                     </div>
                 </div>

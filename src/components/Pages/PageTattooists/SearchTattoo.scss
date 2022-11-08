@@ -4,12 +4,16 @@
     width: 100%;
     height: auto;
     text-align: center;
+    padding: 1rem;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.788),rgba(0, 0, 0, 0.651)), url("../../../images//Fondos//fondoPaisajeBlack2.jpg");
+    backdrop-filter: blur(80px); /* EFECTO BLUR*/
+    background-color: rgba(0, 0, 0, 0.3);
 
     .Content_TattooistsTitle{
         padding: 20px;
 
         p{
-            padding: 10px;
+            padding: 3rem 7rem;
             font-size: 18px;
             color: var(--colorWhite2);
         }

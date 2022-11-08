@@ -15,7 +15,7 @@ export const PagePiercings = () => {
     const [porPagina , setPorpagina] = useState(3)
 
     const maximo = Piercing.length / porPagina
-console.log(maximo);
+  console.log(maximo);
 
   return (
     <>

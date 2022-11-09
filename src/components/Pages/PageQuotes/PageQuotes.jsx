@@ -1,6 +1,7 @@
-import React from 'react'
-import { NavigationBar } from '../../Layouts/NavigationBar/NavigationBar';
 import './PageQuotes.scss'
+import React from 'react'
+import { NavFooter } from '../../Layouts/NavigationFooter/NavFooter/NavFooter';
+import { NavigationBar } from '../../Layouts/NavigationBar/NavigationBar';
 
 export const PageQuotes = () => {
   return (
@@ -29,6 +30,7 @@ export const PageQuotes = () => {
             </form>
         </div>
     </div>
+    <NavFooter/>
     </>
   )
 }

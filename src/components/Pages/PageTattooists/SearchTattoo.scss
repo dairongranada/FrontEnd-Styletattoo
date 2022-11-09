@@ -4,12 +4,15 @@
     width: 100%;
     height: auto;
     text-align: center;
+    padding: 1rem;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.788),rgba(0, 0, 0, 0.651)), url("../../../images//Fondos//fondoPaisajeBlack2.jpg");
+    backdrop-filter: blur(80px); /* EFECTO BLUR*/
+    background-color: rgba(0, 0, 0, 0.3);
 
     .Content_TattooistsTitle{
         padding: 20px;
 
-        p{
-            padding: 10px;
+        p{  padding: 3rem 7rem;
             font-size: 18px;
             color: var(--colorWhite2);
         }
@@ -34,6 +37,7 @@
     justify-content: space-between;
   
     .cardsTattooists {
+      box-shadow: 0px 0px 20px #000;
       position: relative;
 
       .face {
@@ -257,26 +261,6 @@ img.imgtattooists{
 }
 
 
-// R E S P O N S I V E
-
-@media (max-width: 900px){
-  .Content_Tattooists{
-    .Content_TattooistsTitle{
-      h1{
-        margin-left: 10%;
-      }
-      p{
-        margin-left: 10%;
-      }
-    }
-    .contSearch{
-      margin-left: 10%;
-    }
-    .main-contenido{
-      margin-left: 10%;
-    }
-  }
-}
 
 
 
@@ -332,3 +316,40 @@ img.imgtattooists{
   transform: translateY(100%);
  }
  
+
+
+
+ /*
+███╗░░░███╗███████╗██████╗░██╗░█████╗░  ░██████╗░██╗░░░██╗███████╗██████╗░██╗░░░██╗░██████╗
+████╗░████║██╔════╝██╔══██╗██║██╔══██╗  ██╔═══██╗██║░░░██║██╔════╝██╔══██╗╚██╗░██╔╝██╔════╝
+██╔████╔██║█████╗░░██║░░██║██║███████║  ██║██╗██║██║░░░██║█████╗░░██████╔╝░╚████╔╝░╚█████╗░
+██║╚██╔╝██║██╔══╝░░██║░░██║██║██╔══██║  ╚██████╔╝██║░░░██║██╔══╝░░██╔══██╗░░╚██╔╝░░░╚═══██╗
+██║░╚═╝░██║███████╗██████╔╝██║██║░░██║  ░╚═██╔═╝░╚██████╔╝███████╗██║░░██║░░░██║░░░██████╔╝
+╚═╝░░░░░╚═╝╚══════╝╚═════╝░╚═╝╚═╝░░╚═╝  ░░░╚═╝░░░░╚═════╝░╚══════╝╚═╝░░╚═╝░░░╚═╝░░░╚═════╝░
+ */
+
+@media (max-width: 900px){
+  .containerTattois .cardsTattooists{
+    margin-left: 39px;
+      .face {width: 300px;} 
+  }
+
+
+  .Content_Tattooists{
+    .Content_TattooistsTitle{
+      h1{ margin-left: 80px;font-size: 42px;}
+      p{margin-left: 10%;padding: 3rem 0rem; font-size: 15px;}
+    }
+    .contSearch{margin-left: 10%;}
+    .main-contenido{margin-left: 10%;}
+  }
+}
+
+
+@media (max-width: 500px){
+  .containerTattois .cardsTattooists{
+    margin-left: 39px;
+      .face {width: 244px;} 
+  }
+}
+

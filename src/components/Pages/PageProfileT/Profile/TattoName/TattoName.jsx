@@ -1,5 +1,7 @@
 import { React, useState,useEffect } from 'react'
 import { NavigationBar } from '../../../../Layouts/NavigationBar/NavigationBar';
+import { NavFooter } from '../../../../Layouts/NavigationFooter/NavFooter/NavFooter';
+
 import { getusers }  from '../../../../../Helpers/ApiConsumer/PostUsers';
 import { ChevronsLeft }  from '../../../../UI/ChevronsLeft/ChevronsLeft.jsx'
 
@@ -100,6 +102,8 @@ console.log(userData);
         </div>
       </section>
     </div>
+    <NavFooter/>
+
     </>
   )
 }

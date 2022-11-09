@@ -1,6 +1,8 @@
 import React from 'react'
 import '../___PagePiercings/PagePiercings.scss'
 import { NavigationBar } from '../../Layouts/NavigationBar/NavigationBar';
+import { NavFooter } from '../../Layouts/NavigationFooter/NavFooter/NavFooter';
+
 
 import img4 from '../../../images/Tattos/pircingOreja.jpg'
 import img5 from '../../../images/Tattos/pircingblue.jpg'
@@ -14,8 +16,8 @@ export const PagePiercings = () => {
   const [pagina, setPagina] = useState(1)
   const [porPagina, setPorpagina] = useState(3)
 
-  const maximo = Piercing.length / porPagina
-  console.log(maximo);
+    const maximo = Piercing.length / porPagina
+console.log(maximo);
 
   return (
     <>
@@ -75,6 +77,7 @@ export const PagePiercings = () => {
         </div>
         <hr />
       </div>
+    </div>
     </>
   )
 }

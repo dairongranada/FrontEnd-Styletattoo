@@ -1,10 +1,11 @@
 import React from 'react'
 import './PageTattos.scss'
 import tatu from '../../../images/Tattos/pircings_dark.jpg'
-import { NavigationBar } from '../../Layouts/NavigationBar/NavigationBar';
 import img4 from '../../../images/Tattos/portafolio7.jpg'
 import img5 from '../../../images/Tattos/portafolio9.jpg'
 
+import { NavigationBar } from '../../Layouts/NavigationBar/NavigationBar';
+import { NavFooter } from '../../Layouts/NavigationFooter/NavFooter/NavFooter';
 
 
 export const PageTattos = () => (
@@ -72,10 +73,8 @@ export const PageTattos = () => (
           </div>
         </div>
 
-
-
-
       </div>
     </div>
+    <NavFooter/>
   </>
 )

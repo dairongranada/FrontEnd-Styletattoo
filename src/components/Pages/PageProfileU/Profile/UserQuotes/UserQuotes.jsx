@@ -1,8 +1,9 @@
-import { NavigationBar } from '../../../../Layouts/NavigationBar/NavigationBar';
 import { React } from 'react'
 import { UptInfoU } from '../../UptInfoU'
 import { ChevronsLeft }  from '../../../../UI/ChevronsLeft/ChevronsLeft.jsx'
 
+import { NavigationBar } from '../../../../Layouts/NavigationBar/NavigationBar';
+import { NavFooter } from '../../../../Layouts/NavigationFooter/NavFooter/NavFooter';
 
 
 
@@ -44,6 +45,8 @@ export const UserQuotes = () => {
         </div>
       </section>
     </div>
+    <NavFooter/>
+
     </>
   )
 }

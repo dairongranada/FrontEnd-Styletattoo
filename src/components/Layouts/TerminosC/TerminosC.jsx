@@ -1,8 +1,14 @@
 import React from 'react'
 import'../../Layouts/TerminosC/TerminosC.scss'
 
+
+import { NavigationBar } from '../../Layouts/NavigationBar/NavigationBar';
+
 export const TerminosC = () => {
   return (
+    <>
+     <NavigationBar/>
+
     <div className='cont1'>
       <div className='contInfo'>
         <h3 className='titleTC'>TERMINOS Y CONDICIONES</h3>
@@ -38,13 +44,13 @@ export const TerminosC = () => {
           <h2>SECCION 4: INFORMACIÓN DE CONTACTO</h2>
             <p>Las preguntas sobre los Términos del servicio se deben enviar a OficialStyleTattoo@gmail.com.</p>
 
-            <a  className='BntAceptarterminos' href="/Registro"><button type='sumbit' className='ButtonConfirmDates'>Aceptar terminos</button></a>
+            <a  className='BntAceptarterminos' href="/Registro"><button type='sumbit' className='buttons_global_StyleTatto'>Aceptar Terminos</button></a>
                 
           
 
 
         </div>
       </div>
-    </div>
+    </div></>
   )
 }

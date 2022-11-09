@@ -1,6 +1,7 @@
 import { InfoProfileU } from './InfoProfileU'
 import { UptInfoU } from './UptInfoU'
 import { NavigationBar } from '../../Layouts/NavigationBar/NavigationBar';
+import { NavFooter } from '../../Layouts/NavigationFooter/NavFooter/NavFooter';
 
 
 export const LeftInfoU = () => {
@@ -16,6 +17,8 @@ export const LeftInfoU = () => {
             <InfoProfileU/>
         </section>
     </div>
+    <NavFooter/>
+
   </>
 
   )

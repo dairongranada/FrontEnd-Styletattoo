@@ -3,6 +3,8 @@ import './xNosotross.scss'
 
 import React from 'react'
 import { NavigationBar } from '../../Layouts/NavigationBar/NavigationBar';
+import { NavFooter } from '../../Layouts/NavigationFooter/NavFooter/NavFooter';
+
 import {useState} from 'react'
 
 import { Home_MainView } from '../.././UI/UiHome/Home_MainView/Home_MainView'
@@ -32,8 +34,8 @@ export const PageHome = () => {
     const [searchTattoo, setsearchTattoo] = useState(Nosotros)
 
     return (
+        <><NavigationBar/>
         <div>
-            <NavigationBar/>
             <Home_MainView/>
             <Home_NewTattooists/>
             <Home_Services/>
@@ -60,6 +62,8 @@ export const PageHome = () => {
 
             </div>    
         </div>
+
+        <NavFooter/></>
 
     )
 }

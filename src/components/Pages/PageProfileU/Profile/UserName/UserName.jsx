@@ -1,5 +1,7 @@
 import { React, useState,useEffect } from 'react'
 
+
+import { NavFooter } from '../../../../Layouts/NavigationFooter/NavFooter/NavFooter';
 import { NavigationBar } from '../../../../Layouts/NavigationBar/NavigationBar';
 import { getusers }  from '../../../../../Helpers/ApiConsumer/PostUsers';
 import { ChevronsLeft }  from '../../../../UI/ChevronsLeft/ChevronsLeft.jsx'
@@ -108,6 +110,7 @@ console.log(userData);
         </div>
       </section>
     </div>
+    <NavFooter/>
     </>
   )
 }

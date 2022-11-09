@@ -1,7 +1,7 @@
-import {React, useState} from 'react'
+import { React, useState } from 'react'
 import './Paginacion.scss'
 
-export const Paginacion = ({pagina, setPagina, maximo}) => {
+export const Paginacion = ({ pagina, setPagina, maximo }) => {
     const [input, setInput] = useState(1);
 
     const nextPage = () => {
@@ -43,7 +43,7 @@ export const Paginacion = ({pagina, setPagina, maximo}) => {
                     fill="white" />
             </svg></button>
             <input
-                 onChange={e => onChange(e)}
+                onChange={e => onChange(e)}
                 onKeyDown={e => onKeyDown(e)}
                 name="page"
                 autoComplete="off"

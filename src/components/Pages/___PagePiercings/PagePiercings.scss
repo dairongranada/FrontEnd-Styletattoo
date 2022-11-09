@@ -1,99 +1,131 @@
-
-.BigCont{
+.BigCont {
     width: 100%;
     height: auto;
-    background-size: cover; 
-    .ContInfoP{
+    background-size: cover;
+
+    .ContInfoP {
         width: 100%;
         height: 100%;
         padding: 7%;
-        .InfImgO{
+
+        .InfImgO {
             width: 100%;
             height: auto;
             display: flex;
             justify-content: space-around;
-            .ContInfor{
+
+            .ContInfor {
                 width: 40%;
                 margin-left: 5%;
                 height: auto;
-                h3{
+
+                h3 {
                     margin-bottom: 30px;
                     font-size: 45px;
                     color: var(--colorOrange2);
                 }
             }
-            .contImg{
+
+            .contImg {
                 width: 40%;
                 height: 40%;
                 box-shadow: 1px 8px 10px black;
-                img{
+                overflow: hidden;
+                cursor: pointer;
+
+                img {
                     width: 100%;
                     height: 100%;
+                    transition: 2s;
+                   
+
+
+                }
+                img:hover{
+                    transform: translate(-30%);
+                    filter: brightness(80%);
                 }
             }
         }
-        .InfImgT{
+
+        .InfImgT {
             width: 100%;
             height: auto;
             display: flex;
             justify-content: space-around;
             margin-top: 55px;
-            .contImgT{
+
+            .contImgT {
                 width: 40%;
-                height: 25%;
+                height: 40%;
                 box-shadow: 1px 8px 10px black;
-                img{
+                overflow: hidden;
+                cursor: pointer;
+
+                img {
                     width: 100%;
                     height: 100%;
-                }   
+                    transition: 2s;
+                }
+                img:hover{
+                    transform: translateX(-30%);
+                    filter: brightness(80%);
+                }
             }
-            .ContInforT{
+
+            .ContInforT {
                 width: 45%;
                 height: auto;
                 margin-left: 5%;
             }
         }
-        .ContViewButton{
+
+        .ContViewButton {
             width: 100%;
             height: auto;
             display: flex;
             justify-content: end;
 
-            li{
+            li {
                 margin-right: 60px;
             }
         }
-    } 
+    }
 }
 
 //   R E S P O N S I V E
 
-@media (max-width:844px){
-    .BigCont{
-        .ContInfoP{
-            .InfImgO{
+@media (max-width:844px) {
+    .BigCont {
+        .ContInfoP {
+            .InfImgO {
                 display: flex;
                 flex-direction: column;
-                .ContInfor{
+
+                .ContInfor {
                     width: 100%;
                     margin-bottom: 2rem;
                     margin-left: 11%;
                 }
-                .contImg{
+
+                .contImg {
                     width: 100%;
                     display: flex;
                     justify-content: center;
                 }
             }
-            .InfImgT{
+
+            .InfImgT {
                 display: flex;
                 flex-direction: column-reverse;
-                .ContInforT{
+
+                .ContInforT {
                     width: 100%;
                     margin-bottom: 2rem;
                     margin-left: 11%;
                 }
-                .contImgT{
+
+                .contImgT {
                     width: 100%;
                 }
             }
@@ -102,77 +134,89 @@
 }
 
 
-.BigCont3{
+.BigCont3 {
     width: 100%;
     height: auto;
     text-align: center;
-        h3{
-            margin-top: 50px;
-            font-size: 50px;
-            color: var(--colorOrange2);
-        } 
-    .ContInfoP3{
+
+    h3 {
+        margin-top: 50px;
+        font-size: 50px;
+        color: var(--colorOrange2);
+    }
+
+    .ContInfoP3 {
         width: 100%;
         height: 100%;
-        
+
         padding: 7%;
-        .InfImgO3{
+
+        .InfImgO3 {
             width: 100%;
             height: auto;
             display: flex;
             justify-content: space-around;
-            .ContInfor3{
+
+            .ContInfor3 {
                 width: 40%;
                 margin-left: 5%;
                 height: auto;
-                h3{
+
+                h3 {
                     margin-bottom: 30px;
                     font-size: 45px;
                 }
             }
-            .contImg3{
+
+            .contImg3 {
                 width: 40%;
                 height: 40%;
                 box-shadow: 1px 8px 10px black;
-                img{
+
+                img {
                     width: 100%;
                     height: 100%;
                 }
             }
         }
-        .InfImgT3{
+
+        .InfImgT3 {
             width: 100%;
             height: auto;
             display: flex;
             justify-content: space-around;
             margin-top: 55px;
-            .contImgT3{
+
+            .contImgT3 {
                 width: 40%;
                 height: 25%;
                 box-shadow: 1px 8px 10px black;
-                img{
+
+                img {
                     width: 100%;
                     height: 100%;
-                    
-                }   
+
+                }
             }
-            .ContInforT3{
+
+            .ContInforT3 {
                 width: 45%;
                 height: auto;
                 margin-left: 5%;
             }
         }
-        .ContViewButton3{
+
+        .ContViewButton3 {
             width: 100%;
             height: auto;
             display: flex;
             justify-content: end;
 
-            li{
+            li {
                 margin-right: 60px;
             }
         }
-    } 
+    }
 }
 
 .containerPoke {
@@ -180,12 +224,13 @@
     align-items: center;
     display: flex;
     gap: 50px;
+
     .pokeContainer {
         display: flex;
         align-items: center;
         gap: 20px;
         width: 90%;
-        
+
         .imgContainer {
             display: flex;
             align-items: center;
@@ -203,35 +248,294 @@
 
 //   R E S P O N S I V E
 
-@media (max-width:844px){
-    .BigCont3{
-        .ContInfoP3{
-            .InfImgO3{
+@media (max-width:844px) {
+    .BigCont3 {
+        .ContInfoP3 {
+            .InfImgO3 {
                 display: flex;
                 flex-direction: column;
-                .ContInfor3{
+
+                .ContInfor3 {
                     width: 100%;
                     margin-bottom: 2rem;
                     margin-left: 11%;
                 }
-                .contImg3{
+
+                .contImg3 {
                     width: 100%;
                     display: flex;
                     justify-content: center;
                 }
             }
-            .InfImgT3{
+
+            .InfImgT3 {
                 display: flex;
                 flex-direction: column-reverse;
-                .ContInforT3{
+
+                .ContInforT3 {
                     width: 100%;
                     margin-bottom: 2rem;
                     margin-left: 11%;
                 }
-                .contImgT3{
+
+                .contImgT3 {
                     width: 100%;
                 }
             }
         }
     }
+}
+
+
+.contCards{
+    display: flex;
+    justify-content: center;
+    margin-left: 78px;
+    gap: 75px;
+    flex-wrap: wrap;
+}
+
+.contArtistas {
+    text-align: center;
+    margin-left: 78px;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+
+.SeeTattooists {
+    height: 120px;
+    display: flex;
+    justify-content: start;
+    align-items: flex-start;    
+
+    a{
+        width: 300px;
+    }
+}
+
+
+.artistasFromHome{
+    -webkit-font-smoothing: antialiased;
+    font-family: Inter,sans-serif;
+    display: flex;
+    gap: 1rem;
+    padding: 0 2rem;
+    margin-left: 10%;
+    height: 60vh;
+
+}
+
+
+.stroke-text{
+    -webkit-font-smoothing: antialiased;
+    text-transform: uppercase;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #fff;
+    color: transparent;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+.left-t{
+    font-family: Inter,sans-serif;
+    color: #fff;
+    display: flex;
+    flex: 1 1;
+    flex-direction: column;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.left-t >:nth-child(1){
+    color: var(--colorOrange2);
+    font-size:2rem;
+} 
+
+
+
+.left-t >:nth-child(2){
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+
+.left-t >:nth-child(3){
+    text-transform: none;
+    margin-top: 2rem;
+    text-align: justify;
+    letter-spacing: 1.4px;
+    line-height: 20px;
+    font-weight: 400;
+}
+
+
+.right-t{
+    flex: 1;
+    position: relative;
+
+}
+.right-t >img{
+    position: absolute;
+    width: 17rem;
+    height: 20rem;
+    object-fit: cover;
+    right: 8rem;
+    top: 2rem;
+}
+
+
+.right-t >:nth-child(1){
+    height: 20rem;
+    position: absolute;
+    width: 17rem;
+    background-color: initial;
+    border: 2px solid var(--colorOrange2);
+    right: 9rem;
+    top: 0.9rem;
+
+}
+
+.right-t>:nth-child(2) {
+    background: var(--planCard);
+    height: 19rem;
+    position: absolute;
+    right: 7rem;
+    top: 4rem;
+    width: 17rem;
+}
+
+
+.arrows{
+    -webkit-font-smoothing: antialiased;
+    font-family: Inter,sans-serif;
+    bottom: 2rem;
+    display: flex;
+    gap: 1rem;
+    left: 0rem;
+    position: absolute;
+}
+
+
+.arrows>img {
+    cursor: pointer;
+    width: 1.3rem;
+}
+
+
+@media (max-width: 768px){
+    .artistasFromHome{
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    .right-t {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .right-t > div {position: relative; bottom: 0rem;}
+    .right-t > img {
+        top: 0; right: 0; 
+        position: relative;
+        align-self: center;
+    }
+    .right-t > :nth-child(1) {
+        top: -1.1rem;
+        right: 4rem;
+        width: 17rem;
+    }
+    .right-t > :nth-child(2) {
+        top: 2rem;
+        right: 2rem;
+        width: 17rem;
+    }
+}
+
+
+@media (max-width: 600px){
+    .artistasFromHome{
+        flex-direction: column;
+        height: 120vh;
+    }
+
+    .left-t > :nth-child(1) {
+        margin-left: 30px;
+        font-size: 1rem;
+    }
+    .left-t > :nth-child(2) {
+        margin-left: 35px;
+        font-size: 2rem;
+    }
+    .right-t {
+        margin-left: 2rem;
+    }
+
+    .right-t > div {position: relative; bottom: 0rem;}
+    .right-t > img {
+        width: 15rem;
+        height: 15rem;
+    }
+    .right-t > :nth-child(1) {
+        top: 1.9rem;
+        right: 1.8rem;  
+        width: 15rem;
+        height: 15rem;
+    }
+    .right-t > :nth-child(2) {
+        width: 15rem;
+        height: 15rem;
+        top: 4rem;
+        right: 0rem;
+    }
+
+    .left-t > :nth-child(3) {
+        text-transform: none;
+        margin-top: 2rem;
+        margin-left: 2rem;}
+}
+
+
+
+@media (max-width: 400px){
+
+    .artistasFromHome {
+        height: 95vh;
+    }
+
+    .right-t > img {
+        width: 13rem;
+        height: 13rem;
+        top: 1rem;
+    }
+    .right-t > div {
+        bottom: 20rem;
+    }
+    .right-t > :nth-child(1) {
+        top: 2rem;
+        right: 2.8rem; 
+        width: 13rem;
+        height: 13rem;
+    }
+    .right-t > :nth-child(2) {
+        width: 13rem;
+        height: 13rem;
+        top: 4rem;
+        right: 0rem;
+    
+    }
+
+    .left-t > :nth-child(3) {
+        text-transform: none;
+        margin-top: 2rem;
+        margin-left: 2rem;}
+
+
 }

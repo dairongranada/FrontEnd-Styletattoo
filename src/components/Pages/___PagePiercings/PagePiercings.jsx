@@ -77,7 +77,6 @@ console.log(maximo);
         </div>
         <hr />
       </div>
-    </div>
     </>
   )
 }

@@ -40,7 +40,14 @@ const sendEmail = (event)=>{
                         <textarea name='message'  maxLength={100}  cols="25" rows="3" style={{resize: "none", paddingTop:"5px"}} ></textarea>
                     </div>
                     <div>
-                        <button id="liveToastBtn" type='submit' className='buttons_global_StyleTatto'>Enviar</button>
+                        <button id="liveToastBtn" type='submit' className='PostEmailFooter'>
+                            <div className='svg-wrapper-1'>
+                                <div className='svg-wrapper'>
+                                    <span class="material-symbols-outlined">send</span>
+                                </div>
+                            </div>
+                            <span>Enviar</span>
+                        </button>
                         <Toaster/> 
                     </div>
                 </form> 

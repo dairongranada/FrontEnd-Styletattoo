@@ -1,209 +1,87 @@
 *{
-    font-family: Rajdhani,sans-serif;
+    margin: 0;
+    padding: 0;
 }
-
 .contPrimary{
     width: 100%;
     height: auto;
-    background-size: cover;
-    .contBack{
+    background-color: var(--colorBlack);
+    .HeadPresentationPt{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: space-around;
+        background-color: var(--colorBlack);
+        .contTextHead{
+           width: 50%;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           flex-direction: column;
+           .contTittleStyleT{
+            display: flex;
+            justify-content: space-around;
+            margin-left: 5%;
+            gap: 25px;
+            .TittleTattoNThow{
+                color: var(--colorOrange);
+            }
+           }
+        }
+        .TattoHeadPres{
+            width: 570px;
+            height: 100%;
+        }
+    }
+    .BodPresentInformation{
         width: 100%;
         height: auto;
-        display: flex;
-        padding-left: 50px;
-        .contInfo{
-            margin-top: 20px;
-            margin-left: 5%;
-            display: flex;
-            flex-direction: column;
-            height: auto;
-            width: 50%;
-            h3{
-                font-size: 50px;
-                margin: 20px;
-                text-align: center;
-                color: var(--colorOrange2);
-            }
-            li{
-                margin: 20px;
-            }
-            p{
-                font-size: 15px;
-                text-align: center;
-                text-align: justify;
-
-            }
-        }
-        .contImg{
-            display: flex;
-            margin: 40px;
-            margin-top: 50px;
-            width: 50rem;
-            height: 30rem;
-            justify-content: flex-end;
-        }
-    }
-    
-}
-.BigCont2{
-    width: 100%;
-    height: auto;
-    background-image: url('');
-    background-size: cover; 
-    .ContInfoP2{
-        width: 100%;
-        height: 100%;
-        
-        padding: 7%;
-        .InfImgO2{
+        background-image: url('../../../images/Fondos/fondoTattoopacity.jpg');
+        background-size: cover;
+        background-position: center;
+        .lentDarckInf{
             width: 100%;
             height: auto;
+            background-color: rgba(0, 0, 0, 0.914);
             display: flex;
-            justify-content: space-around;
-            .ContInfor2{
+            // justify-content: center;
+            align-items: center;
+            .BoxImgStudyT{
                 width: 40%;
-                margin-left: 5%;
                 height: auto;
-                h3{
-                    margin-bottom: 30px;
-                    font-size: 45px;
-                    color: var(--colorOrange2);
-                }
-            }
-            .contImg2{
-                width: 40%;
-                height: 40%;
-                box-shadow: 1px 8px 10px black;
-                margin-bottom: 70px;
-                img{
-                    width: 100%;
-                    height: 100%;
-                }
-            }
-        }
-        .InfImgT2{
-            width: 100%;
-            height: auto;
-            display: flex;
-            justify-content: space-around;
-            margin-top: 55px;
-            .contImgT2{
-                width: 40%;
-                height: 25%;
-                box-shadow: 1px 8px 10px black;
-                img{
-                    width: 100%;
-                    height: 100%;
-                }   
-            }
-            .ContInforT2{
-                width: 45%;
-                height: auto;
+                margin-top: 8px;
                 margin-left: 5%;
-
-                h2{
-                    font-size: 40px;
-                    text-align: center;
-                    margin-bottom: 6rem;
-                    color: var(--colorOrange2);
-                }
-                p{
-                    text-align: center;
-                    text-align: justify;
-                }
-                li{
-                    margin-top: 70px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 5%;
+                .studioTattoProcess{
+                    width: 330px;
+                    box-shadow: 10px 15px 10px black;
+                    
                 }
             }
-        }
-      
-    } 
-}
-
-//   R E S P O N S I V E
-
-@media (max-width:844px){
-    .BigCont2{
-        .ContInfoP2{
-            .InfImgO2{
-                display: flex;
-                flex-direction: column;
-                .ContInfor2{
+            .contSecontTittleIn{
+                width: 60%;
+                height: auto;
+                .contTittleTheInf{
                     width: 100%;
-                    margin-bottom: 2rem;
-                    margin-left: 11%;
-                }
-                .contImg2{
-                    width: 100%;
+                    height: auto;
                     display: flex;
-                    justify-content: center;
+                    .MitTattoTnT{
+                        color: var(--colorOrange);
+                    }
                 }
-            }
-            .InfImgT2{
-                display: flex;
-                flex-direction: column-reverse;
-                .ContInforT2{
-                    width: 100%;
-                    margin-bottom: 2rem;
-                    margin-left: 11%;
-                }
-                .contImgT2{
-                    width: 100%;
-                }
-            }
-        }
-    }
-}
-
-// R E S P O N S I V E
-
-@media (max-width:1190px){
-    .contBack{
-        display: flex;
-        flex-direction: column-reverse;
-        .contImg{
-            display: flex;
-            justify-content: center;
-            img{
-                width: 51%;
-                height: 69%;
-                margin: 1rem;
-            }
-        }
-    }
-}
-
-
-
-// responsive de page piercings copia
-@media (max-width:844px){
-    .BigCont{
-        .ContInfoP{
-            .InfImgO{
-                display: flex;
-                flex-direction: column;
-                .ContInfor{
-                    width: 100%;
-                    margin-bottom: 2rem;
-                }
-                .contImg{
-                    width: 100%;
-                    display: flex;
-                    justify-content: center;
-                }
-            }
-            .InfImgT{
-                display: flex;
-                flex-direction: column-reverse;
-                .ContInforT{
-                    width: 100%;
-                    margin-bottom: 2rem;
-                }
-                .contImgT{
-                    width: 100%;
+                .contMitTattoL{
+                    width: 700px;
+                    height: auto;
+                    margin-top: 25px;
+                    mark{
+                        background-color: var(--colorOrange2);
+                        padding: 4px;
+                    }
                 }
             }
         }
     }
 }
-

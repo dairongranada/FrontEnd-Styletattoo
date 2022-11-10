@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios"
+import { useNavigate, useParams } from 'react-router';
 
 import { motion } from "framer-motion"
 import './ProfileProfessionall.scss'
@@ -13,6 +14,17 @@ const baseURL = "https://rickandmortyapi.com/api/character";
 
 
 export const ProfileProfessionall = () => {
+
+  const tattoo = [
+    {id:1,name: 'lewis holguin', image:'https://res.cloudinary.com/dsoovcjav/image/upload/v1660826276/ImagesTattoo/tatuador1_rvghbe.png',descripcion:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nostrum eius laboriosam', ciudad:'montenegro'},
+    {id:2,name: 'chris nuñez', image:'https://res.cloudinary.com/dsoovcjav/image/upload/v1660826273/ImagesTattoo/tatuador2_efzh1a.png', descripcion:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nostrum eius laboriosam', ciudad:'calarca'},
+    {id:3,name: 'oliver peck', image:'https://res.cloudinary.com/dsoovcjav/image/upload/v1660826274/ImagesTattoo/tatuador3_jd7kt9.png',descripcion:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nostrum eius laboriosam?', ciudad:'armenia'},
+]
+
+
+
+
+
   const [img, setImg] = useState([])
   const [Estatus, setEstatus] = useState('switch-toggle Ocupado-btn')
 
@@ -24,6 +36,12 @@ export const ProfileProfessionall = () => {
 
     });
   }, []);
+
+
+  const { id } = useParams();
+
+  console.log(id);
+
   return (
     <>
       <NavigationBar />

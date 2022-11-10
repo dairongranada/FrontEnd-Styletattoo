@@ -38,7 +38,7 @@ import { TattoName } from './components/Pages/PageProfileT/Profile/TattoName/Tat
 import { TattoPassword } from './components/Pages/PageProfileT/Profile/TattoPassword/TattoPassword'
 import { TattoQuotes } from './components/Pages/PageProfileT/Profile/TattoQuotes/TattoQuotes'
 
-import { AllViewTatto } from './components/Pages/PageProfileT/AllViewTatto/AllViewTatto'
+import { ProfileProfessionall } from './components/Pages/ProfileProfessionall/ProfileProfessionall'
 
 
 
@@ -72,7 +72,7 @@ function App() {
 
                 {/* 𝙇𝘼𝙎 𝙊𝙋𝘾𝙄𝙊𝙉𝙀𝙎 𝘿𝙀𝙇 𝙏𝘼𝙏𝙐𝘼𝘿𝙊𝙍 */}
                     <Route path='/all/artist/style' exact element= {<PageTattooists/>}/>
-                    <Route path='/tatto/view/profile' exact element= {<AllViewTatto/>}/>
+                    <Route path='/tatto/view/profile' exact element= {<ProfileProfessionall/>}/>
                     <Route path='/citas' exact element= {!token ? <Navigate to="/IngresarSesion" /> :<PageQuotes/>}/>
 
 

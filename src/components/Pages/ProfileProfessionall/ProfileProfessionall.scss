@@ -1,0 +1,136 @@
+.ContentBodyInfoTattois {
+    width: 100%;
+    height: 200vh;
+
+    .RightInftoTT {
+        position: fixed;
+        z-index: 98;
+        margin: 5rem 0 5rem 5rem;
+        width: 320px;
+        padding: 1rem;
+        height: 500px;
+        left: 3rem;
+        background-color: #5959594d;
+        box-shadow: 5px 5px 10px #000;
+
+        .ImgRightInftoTT {
+            overflow: hidden;
+            width: 100%;
+            height: 300px;
+
+            img {
+                width: 100%;
+                height: 300px;
+            }
+        }
+
+        .ButtonsRightInftoTT {
+            padding-top: 0.8rem;
+            display: flex;
+            gap: 1rem;
+
+            .Btn-Citas {
+                width: 200px;
+            }
+
+            .HeartLike {
+                font-size: 20px;
+            }
+
+        }
+
+
+    }
+
+    .InfoTattois {
+        width: 100%;
+        height: 400px;
+        padding: 1rem;
+        margin-left: 70px;
+        display: flex;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.885), rgba(0, 0, 0, 0.862)), url("../../../images/Fondos/Fondo_ProfileTjpg.jpg");
+        background-position: center;
+        background-repeat: none repeat;
+        background-size: cover;
+        backdrop-filter: blur(20px);
+
+        /* EFECTO BLUR*/
+        p {
+            width: 80%;
+        }
+
+        .LeftInftoTT {
+            padding: 12rem 7rem 2rem 29rem;
+            width: 100%;
+            height: 400px;
+
+
+            .NameLeftInftoTT {
+                font-size: 50px;
+                margin-bottom: 0.5rem;
+            }
+
+            .EmailLeftInftoTT {
+                font-size: 20px;
+                font-weight: 100;
+                padding-bottom: 0.5rem;
+                color: rgba(255, 255, 255, 0.867);
+
+            }
+
+            .DescriLeftInftoTT {
+                color: rgba(255, 255, 255, 0.722);
+                font-size: 17px;
+            }
+        }
+    }
+
+
+    .PortaFInftoTT {
+        width: 100%;
+        padding-left: 30rem;
+        margin-top: 2rem;
+
+        .PortaFTitle {
+            font-size: 80px;
+            padding: 0rem 0rem 5rem 0rem;
+            width: 100%;
+            text-align: center;
+        }
+
+        .PortaFTitleImages {
+            width: 62rem;
+            overflow-x: hidden;
+
+            .slider-container {
+                margin: 0 auto;
+                overflow: hidden;
+            }
+
+            .slider {
+                display: flex;
+                cursor: grab;
+
+                .PortafolioImg {
+                    display: flex;
+                    width: 600px;
+                    height: 600px;
+                    position: relative;
+                    border-radius: 1em;
+
+                    .card-img {
+                        img {
+                            pointer-events: none;
+                            padding: 1rem;
+                        }
+                    }
+                }
+            }
+
+        }
+
+
+    }
+
+
+}

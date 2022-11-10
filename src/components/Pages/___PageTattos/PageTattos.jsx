@@ -11,12 +11,13 @@ import { NavFooter } from '../../Layouts/NavigationFooter/NavFooter/NavFooter';
 
 export const PageTattos = () => {
 
-  const FunctionScroll = () => {
-    window.scroll(0, 600)
-  }
+ /*Animacion de Scroll*/
 
-  const FunctionScrollUp = () => {
-    window.scroll(600, 0)
+  const FunctionScroll = () => {
+    window.scroll({
+      top: 650,
+      bottom: 0,
+      behavior: 'smooth'})
   }
 
   return (
@@ -58,7 +59,9 @@ export const PageTattos = () => {
                 queloides, lunares o lesiones pigmentadas, o trastornos en la coagulación.
               </p>
             </div>
-            <button onClick={FunctionScrollUp} className='buttons_global_StyleTatto'>¿Ver mas?</button>
+            <a href="/all/artist/style">
+              <button className='buttons_global_StyleTatto'>¿Ver mas?</button>
+            </a>
           </div>
         </div>
       </div>

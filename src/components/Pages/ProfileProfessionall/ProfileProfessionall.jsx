@@ -9,11 +9,13 @@ import { NavigationBar } from '../../Layouts/NavigationBar/NavigationBar';
 
 import imgStyle from '../../../images/Tatuadores/tatuador1.png'
 import { GoHeart } from 'react-icons/go';
+const baseURL = "https://rickandmortyapi.com/api/character";
 
 
 export const ProfileProfessionall = () => {
-  const baseURL = "https://rickandmortyapi.com/api/character";
   const [img, setImg] = useState([])
+  const [Estatus, setEstatus] = useState('switch-toggle Ocupado-btn')
+
 
   React.useEffect(() => {
     axios.get(baseURL).then((response) => {
@@ -36,11 +38,11 @@ export const ProfileProfessionall = () => {
             </button>
           </div>
           <div>
-            <div class="switch-holder">
-              <div class="switch-label">
-                <i class="fa fa-bluetooth-b"></i><span>Disponibilidad</span>
+            <div className="switch-holder">
+              <div className="switch-label">
+                <i className="fa fa-bluetooth-b"></i><span>Servicio</span>
               </div>
-              <div class="switch-toggle">
+              <div className={Estatus}>
                 <input type="checkbox" id="bluetooth" />
                 <label for="bluetooth"></label>
               </div>
@@ -53,7 +55,7 @@ export const ProfileProfessionall = () => {
             <div className='NameLeftInftoTT'><h5>NAME LASTNAME</h5></div>
             <div className='EmailLeftInftoTT'><p>emailEmail@gmail.com</p></div>
             <div className='DescriLeftInftoTT'><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ab ea officiis iure beatae! Assumenda debitis quas inventore nostrum esse, quo sapiente? Assumenda molestiae suscipit fuga veritatis, maiores quas nam!</p></div>
-          </div>
+            </div>
         </div>
 
         <div className='PortaFInftoTT'>
@@ -65,8 +67,8 @@ export const ProfileProfessionall = () => {
 
                 {img.map((data) => (
                   <motion.div key={data.id} className='item'>
-                    <div class="PortafolioImg">
-                      <div class="card-img">
+                    <div className="PortafolioImg">
+                      <div className="card-img">
                         <img className='item-image' src={data.image} alt="Imagen producto" />
                       </div>
                     </div>
@@ -75,12 +77,13 @@ export const ProfileProfessionall = () => {
                 }
               </motion.div>
             </motion.div>
-
-
           </div>
         </div>
 
-
+        <div className="ContentHorarioBack">    
+          <div><h2>HORARIO</h2></div>      
+          <div className="loader"><span className="hour"></span><span className="min"></span><span className="circel"></span></div>
+        </div>
       </div>
     </>
   )

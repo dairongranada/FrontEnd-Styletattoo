@@ -185,7 +185,7 @@ p{
     z-index: -2;
   }
   
-  .switch-toggle input[type="checkbox"]+label {
+  .switch-toggle {
     position: relative;
     display: inline-block;
     width: 100px;
@@ -197,27 +197,77 @@ p{
           inset 10px 10px 10px rgba(0, 0, 0, .25);
   }
   
-  .switch-toggle input[type="checkbox"]+label::before {
+  .switch-toggle::before {
     position: absolute;
-    content: 'O';
     font-size: 13px;
     text-align: center;
     line-height: 25px;
     top: 8px;
     left: 8px;
-    width: 45px;
-    height: 25px;
+    width: 80px;
     border-radius: 20px;
-    background-color: #050505;
-    box-shadow: -3px -3px 5px rgba(255, 255, 255, .5),3px 3px 5px rgba(0, 0, 0, .25);
     transition: .3s ease-in-out;
   }
-  
-  .switch-toggle input[type="checkbox"]:checked+label::before {
-    left: 50%;
-    content: 'A';
-    color: #fff;
-    background-color: #00b33c;
-    box-shadow: -3px -3px 5px rgba(255, 255, 255, .5),
-          3px 3px 5px #00b33c;
+
+
+  .Disponible-btn::before{
+    content: 'Disponible';
+    background: linear-gradient(210.41deg,#1b931b 1.14%,#2e8516 100.75%);;
   }
+
+  .Ocupado-btn::before{
+    content: 'Ocupado';
+    background: linear-gradient(210.41deg,#e12110 1.14%,#b92424 100.75%);;
+  }
+
+
+  
+
+  .loader {
+    width: 65px;
+    height: 65px;
+    border: 8px solid #ee9b00a6;
+    border-radius: 50px;
+    position: relative;
+   }
+   
+   .loader span {
+    display: block;
+    background: #ee9b00;
+   }
+   
+   .loader .hour ,
+   .loader .min {
+    width: 6px;
+    height: 22px;
+    border-radius: 50px;
+    position: absolute;
+    top: 24.5px;
+    left: 21px;
+    animation: load9243 1.2s linear infinite;
+    transform-origin: top center;
+   }
+   
+   .loader .min {
+    height: 17px;
+    animation: load9243 4s linear infinite;
+   }
+   
+   .loader .circel {
+    width: 10px;
+    height: 10px;
+    border-radius: 50px;
+    position: absolute;
+    top: 19px;
+    left: 19px;
+   }
+   
+   @keyframes load9243 {
+    0% {
+     transform: rotate(0deg);
+    }
+   
+    100% {
+     transform: rotate(360deg);
+    }
+   }

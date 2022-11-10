@@ -45,8 +45,6 @@
     .InfoTattois {
         width: 100%;
         height: 400px;
-        padding: 1rem;
-        margin-left: 70px;
         display: flex;
         background-image: linear-gradient(rgba(0, 0, 0, 0.885), rgba(0, 0, 0, 0.862)), url("../../../images/Fondos/Fondo_ProfileTjpg.jpg");
         background-position: center;
@@ -60,9 +58,10 @@
         }
 
         .LeftInftoTT {
-            padding: 12rem 7rem 2rem 29rem;
-            width: 100%;
-            height: 400px;
+            position: absolute;
+            transform: translate(31rem, 14rem);
+            width: 64rem;
+            
 
 
             .NameLeftInftoTT {
@@ -99,7 +98,7 @@
         }
 
         .PortaFTitleImages {
-            width: 62rem;
+            width: 100%;
             overflow-x: hidden;
 
             .slider-container {
@@ -113,8 +112,8 @@
 
                 .PortafolioImg {
                     display: flex;
-                    width: 600px;
-                    height: 600px;
+                    width: 400px;
+                    height: 400px;
                     position: relative;
                     border-radius: 1em;
 
@@ -122,15 +121,23 @@
                         img {
                             pointer-events: none;
                             padding: 1rem;
+                            width: 400px;
+                            height: 400px;
                         }
                     }
                 }
             }
-
         }
 
-
     }
+
+    .ContentHorarioBack{
+        position: absolute;
+        transform: translate(31rem, 5rem);
+        width: 64rem;
+    }
+
+    
 
 
 }

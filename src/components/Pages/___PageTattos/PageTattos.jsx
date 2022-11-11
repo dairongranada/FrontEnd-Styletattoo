@@ -26,7 +26,7 @@ export const PageTattos = () => {
           <p>Style Tatto sabe todo sobre el tatuaje</p>
           <div className="StileTCont">
             <h2>Style</h2>
-            <h2 className='ThowTittlePg'>Tatto</h2>
+            <h2 className='ThowTittlePg'>Tattoo</h2>
           </div>
           <p>Creamos arte y contamos historias en tu piel</p>
           <br />
@@ -43,7 +43,7 @@ export const PageTattos = () => {
 
           <div className="contSecontTittleInfor">
             <div className="contTittleTheInf">
-              <h2>Mitos Flasos Del</h2>
+              <h2>Mitos Falsos Del</h2>
               <h2 className='MitTatt'>Tatuaje</h2>
             </div>
             <div className="contMitTatt">

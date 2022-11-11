@@ -11,10 +11,10 @@
         height: 100vh;
         display: flex;
         justify-content: space-around;
-        background-image: url('../../../images/Fondos/MachineTattoFond.jpg');
+        // background-image: url('../../../images/Fondos/MachineTattoFond.jpg');
         background-size: cover;
         background-position: center;
-        // background-color: var(--colorBlack);
+        background-color: var(--colorBlack);
         .TextCPages{
            width: 50%;
            display: flex;

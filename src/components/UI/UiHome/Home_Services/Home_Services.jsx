@@ -18,11 +18,11 @@ export const Home_Services = ({srcImg}) => {
                         el dibujo, retrato, o simbolo significativo que desees. Son trabajos de muchisima calidad. No te quedes sin el tuyo  
                     </p>
                     <a href="/infoTatuajes">
-                        <button id='JupButtonN' className="learn-more">
-                            <span className="circle" aria-hidden="true">
-                            <span className="icon arrow"></span>
+                        <button id='ButtAdR' className="learn-more">
+                            <span className="BallAnim" aria-hidden="true">
+                                <span className="SymbolSign arrow"></span>
                             </span>
-                            <span className="button-text">¿Ver mas?</span>
+                            <span className="InstrBut">Ver mas</span>
                         </button>
                     </a>
                 </div>
@@ -30,16 +30,16 @@ export const Home_Services = ({srcImg}) => {
                 <div className='Services_content'>
                     <a href="/infoPiercings"><ImgTemplate srcImg={imgServicesTwo}/></a>
                     <h1>piercings</h1>
-                    <p>Algunos de nuestros artitas tienen la capacidad de hacer perforaciones, 
+                    <p>Algunos de nuestros artitas tienen la capacidad de hacer        perforaciones, 
                        cuentan con todos los instrumentos necesarios para la realizacion de esta
-                       bellicima obra de arte en tu cuerpo, no te quedes sin tu piercing 
+                       bellísima obra de arte en tu cuerpo, no te quedes sin tu piercing 
                     </p>
                     <a href="/infoPiercings">
-                        <button id='JupButtonN' className="learn-more">
-                            <span className="circle" aria-hidden="true">
-                            <span className="icon arrow"></span>
+                        <button id='ButtAdR' className="learn-more">
+                            <span className="BallAnim" aria-hidden="true">
+                                <span className="SymbolSign arrow"></span>
                             </span>
-                            <span className="button-text">¿Ver mas?</span>
+                            <span className="InstrBut">Ver mas</span>
                         </button>
                     </a>
 

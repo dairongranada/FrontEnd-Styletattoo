@@ -12,3 +12,95 @@
     z-index: 1;
     transform: translate(-236px, -7px);
 }
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.contPrimary{
+    width: 100%;
+    height: auto;
+    background-color: var(--colorBlack);
+    .HeadPresentationPt{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: start;
+        background-image: url('../../../../images/Fondos//MachineTattoFond.jpg');
+        background-size: cover;
+        background-position: center;
+        // background-color: var(--colorBlack);
+        .contTextHead{
+           width: 50%;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           flex-direction: column;
+           margin-left: 5rem;
+           .contTittleStyleT{
+            display: flex;
+            justify-content: space-around;
+            margin-left: 5%;
+            gap: 25px;
+            .TittleTattoNThow{
+                color: var(--colorOrange2);
+            }
+           }
+        }
+        .TattoHeadPres{
+            width: 570px;
+            height: 100%;
+        }
+    }
+    .BodPresentInformation{
+        width: 100%;
+        height: auto;
+        background-image: url('../../../../images/Fondos/fondoTattoopacity.jpg');
+        background-size: cover;
+        background-position: center;
+        .lentDarckInf{
+            width: 100%;
+            height: auto;
+            background-color: rgba(0, 0, 0, 0.914);
+            display: flex;
+            // justify-content: center;
+            align-items: center;
+            .BoxImgStudyT{
+                width: 40%;
+                height: auto;
+                margin-top: 8px;
+                margin-left: 5%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 5%;
+                .studioTattoProcess{
+                    width: 330px;
+                    box-shadow: 10px 15px 10px black;
+                    
+                }
+            }
+            .contSecontTittleIn{
+                width: 60%;
+                height: auto;
+                .contTittleTheInf{
+                    width: 100%;
+                    height: auto;
+                    display: flex;
+                    .MitTattoTnT{
+                        color: var(--colorOrange);
+                    }
+                }
+                .contMitTattoL{
+                    width: 700px;
+                    height: auto;
+                    margin-top: 25px;
+                    mark{
+                        background-color: var(--colorOrange2);
+                        padding: 4px;
+                    }
+                }
+            }
+        }
+    }
+}

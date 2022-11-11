@@ -10,6 +10,35 @@ export const Home_MainView = () => {
     const [user, setUser] = useState(JSON.parse(localStorage.getItem("usuario")));
     const [token, setToken] = useState(localStorage.getItem("token"));
 
+
+
+    const body = document.querySelector('body')
+
+const crearNeive = () => {
+    let copo = document.createElement('i')
+        copo.className += "copoHome";
+        let x = window.innerWidth * Math.random()
+        let size = (Math.random() * 8) + 2
+        let z = Math.round(Math.random()) * 100
+        let delay = Math.random() * 5
+        let anima = (Math.random() * 10) + 5
+
+        copo.style.left = x + 'px'
+        copo.style.width = size + 'px'
+        copo.style.height = size + 'px'
+        copo.style.zIndex = z
+        copo.style.animationDelay = delay + 's'
+        copo.style.animationDuration = anima + 's'
+
+        body.appendChild(copo)
+
+        setTimeout(() => {
+            copo.remove()
+        }, anima * 1000)
+    }
+
+    setInterval(crearNeive, 50)
+
     return (
         <>
             { (!! token ) && 

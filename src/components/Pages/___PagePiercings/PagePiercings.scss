@@ -1,227 +1,349 @@
-.BigCont {
+.BigContPagePiercing {
     width: 100%;
-    height: auto;
+    height: 100vh;
+    display: flex;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.788), rgba(0, 0, 0, 0.895)), url('../../../images/Fondos/fondoTattoopacity.jpg');
+    backdrop-filter: blur(80px);
+    /* EFECTO BLUR*/
     background-size: cover;
 
-    .ContInfoP {
-        width: 100%;
+    .ContConterPierncing {
+        width: 50%;
         height: 100%;
-        padding: 7%;
+        display: flex;
+        align-items: center;
 
-        .InfImgO {
+        .ContImgPierncing {
             width: 100%;
-            height: auto;
-            display: flex;
-            justify-content: space-between;
-
-            .ContInfor {
-                width: 40%;
-                margin-left: 5%;
-                height: auto;
-                text-align: justify;
-
-                h3 {
-                    margin-bottom: 30px;
-                    font-size: 45px;
-                    color: var(--colorOrange2);
-                }
-            }
-
-            .contImg {
-                width: 40%;
-                height: 40%;
-                overflow: hidden;
-                cursor: pointer;
-
-                img {
-                    width: 70%;
-                    height: 100%;
-                    transition: 2s;
-                   
-
-
-                }
-                img:hover{
-                    transform: translate(-30%);
-                    filter: brightness(80%);
-                }
-            }
-        }
-
-        .InfImgT {
-            width: 100%;
-            height: auto;
             display: flex;
             justify-content: center;
-            margin-top: 55px;
 
-            .contImgT {
-                width: 40%;
-                height: 40%;
-                cursor: pointer;
-                overflow: hidden;
-
-                img {
-                    width: 70%;
-                    height: 100%;
-                    transition: 2s;
-                    
-                  
-                }
-                img:hover{
-                    transform: translateX(-30%);
-                    filter: brightness(80%);
-                }
-            }
-
-            .ContInforT {
-                width: 45%;
-                height: auto;
-                margin-left: 5%;
-                text-align: justify;
+            img {
+                width: 350px;
+                height: 350px;
+                box-shadow: 11px 12px 10px black;
+                border-radius: 50%;
             }
         }
 
-        .ContViewButton {
-            width: 100%;
-            height: auto;
-            display: flex;
-            justify-content: end;
-
-            li {
-                margin-right: 60px;
-            }
-        }
     }
-}
-
-//   R E S P O N S I V E
-
-@media (max-width:844px) {
-    .BigCont {
-        .ContInfoP {
-            .InfImgO {
-                display: flex;
-                flex-direction: column;
-
-                .ContInfor {
-                    width: 100%;
-                    margin-bottom: 2rem;
-                    margin-left: 11%;
-                }
-
-                .contImg {
-                    width: 100%;
-                    display: flex;
-                    justify-content: center;
-                }
-            }
-
-            .InfImgT {
-                display: flex;
-                flex-direction: column-reverse;
-
-                .ContInforT {
-                    width: 100%;
-                    margin-bottom: 2rem;
-                    margin-left: 11%;
-                }
-
-                .contImgT {
-                    width: 100%;
-                }
-            }
-        }
-    }
-}
-
-
-.BigCont3 {
-    width: 100%;
-    height: auto;
-    text-align: center;
-
 
     .ContInfoP3 {
-        width: 100%;
+        width: 50%;
         height: 100%;
+        display: flex;
+        align-items: center;
 
-        padding: 7%;
+        .ContInfopiercing {
+            width: 90%;
 
-        
-    h3 {
-        margin-bottom: 50px;
-        font-size: 50px;
-        color: var(--colorOrange2);
-    }
+            h3 {
+                margin-bottom: 20px;
+                font-size: 40px;
+                color: var(--colorOrange2);
+            }
 
+            p {
+                font-size: 15px;
+                margin-bottom: 30px;
+            }
+        }
     }
 }
 
-.containerPoke {
-    justify-content: center;
-    align-items: center;
+.ContainertatletypeP {
+    padding: 20px 0px 0px 0px;
     display: flex;
-    gap: 50px;
+    justify-content: center;
+    gap: 30px;
+
+    .tipopiercing {
+        h3 {
+            color: var(--colorWhite);
+            text-shadow: 11px 12px 10px black;
+        }
+
+    }
+
+    h3 {
+        margin-top: 40px;
+        font-size: 40px;
+        color: var(--colorOrange2);
+        margin-bottom: 30px;
+        text-shadow: 11px 12px 10px black;
+    }
+
+}
+
+.Conttextpiercing {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .Textinformapierc {
+        width: 50%;
+
+        p {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: rgb(255, 255, 255);
+            font-size: 20px;
+            text-align: center;
+        }
+    }
+
+}
+
+
+
+.containerPoke {
+    display: flex;
 
     .pokeContainer {
         display: flex;
         align-items: center;
-        gap: 20px;
-        width: 90%;
+        width: 100%;
+        margin-left: 60px;
 
         .imgContainer {
             display: flex;
             align-items: center;
             justify-content: center;
             width: 100%;
-            padding: 10px 0;
+            overflow: hidden;
+            position: relative;
+
 
             img {
-                border-radius: 15px 15px 0 0;
-                width: 100%;
+                width: 80%;
+                height: 80%;
+                margin-bottom: 50px;
+                margin-top: 50px;
+                box-shadow: 11px 12px 10px black;
+
             }
+
+            .infoimg {
+                width: 0%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                transition: 0s;
+                background-color: rgba(0, 0, 0, 0.599);
+
+
+
+                h1 {
+                    color: var(--colorOrange2);
+                    text-shadow: 1px 1px 1px rgb(255, 255, 255);
+                    font-size: 23.5px;
+                    transition: uppercase;
+                }
+            }
+
         }
-    
+
+        .imgContainer:hover .infoimg {
+            width: 80%;
+            height: 73%;
+            margin-top: 50px;
+
+        }
+
     }
 }
 
-//   R E S P O N S I V E
+.PresentationMitos {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--colorGray2);
 
-@media (max-width:844px) {
-    .BigCont3 {
-        .ContInfoP3 {
-            .InfImgO3 {
-                display: flex;
-                flex-direction: column;
+    .contTextPresentation {
+        width: 60%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
 
-                .ContInfor3 {
-                    width: 100%;
-                    margin-bottom: 2rem;
-                    margin-left: 11%;
-                }
+        .contTittleStyleP {
+            display: flex;
+            justify-content: space-around;
+            margin-left: 5%;
+            gap: 25px;
+            text-shadow: 11px 12px 10px black;
+            margin-bottom: 30px;
 
-                .contImg3 {
-                    width: 100%;
-                    display: flex;
-                    justify-content: center;
+            .TittlePiercingNThown {
+                color: var(--colorOrange2);
+            }
+        }
+
+        p {
+            font-size: 13px;
+            text-shadow: 1px 0px 1px rgb(255, 255, 255);
+        }
+
+        .mito {
+            font-size: 10px;
+            text-align: justify;
+            text-align: center;
+            transform: translate(100px, 0px);
+            margin-bottom: 20px;
+        }
+
+        .contbutonmitoPie {
+            display: flex;
+            gap: 45px;
+        }
+    }
+
+    .TattoHeadPres {
+        width: 270px;
+        height: 50%;
+        transform: translate(0px, 170px);
+        box-shadow: 11px 12px 10px black;
+    }
+}
+
+@media (max-width: 1000px) {
+    .PresentationMitos {
+        display: flex;
+        margin-left: 50px;
+
+        h2 {
+            text-align: center;
+        }
+
+        p {
+            margin-top: 80px;
+        }
+
+        .contbutonmitoPie {
+            margin-left: 14rem;
+        }
+
+        .TattoHeadPres {
+            width: 150px;
+            height: 200px;
+            transform: translate(-20rem, 11rem);
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .BigContPagePiercing {
+        .ContConterPierncing {
+            .ContImgPierncing {
+                margin-left: 9rem;
+
+                img {
+                    transform: translate(0px, -12rem);
+                    max-width: 200px;
+                    max-height: 200px;
                 }
             }
+        }
 
-            .InfImgT3 {
-                display: flex;
-                flex-direction: column-reverse;
+        .ContInfoP3 {
+            display: flex;
+            flex-direction: initial;
+            transform: translate(-2rem, 10rem);
 
-                .ContInforT3 {
-                    width: 100%;
-                    margin-bottom: 2rem;
-                    margin-left: 11%;
+            .ContInfopiercing {
+                h3 {
+                    font-size: 15px;
                 }
 
-                .contImgT3 {
-                    width: 100%;
+                p {
+                    font-size: 10px;
+                    text-align: justify;
+                }
+
+                button {
+                    width: 184px;
+
                 }
             }
         }
     }
+
+    .ContainertatletypeP {
+        .tipopiercing {
+            h3 {
+                font-size: 0px;
+            }
+        }
+
+        .titlestylepier {
+            h3 {
+                margin-left: 50px;
+            }
+        }
+    }
+
+    .Conttextpiercing {
+        .Textinformapierc {
+            p {
+                transform: translate(40px, 0px);
+            }
+        }
+    }
+
+    .containerPoke {
+        .pokeContainer {
+            .imgContainer {
+                margin-left: 20px;
+
+                .infoimg {
+                    h1 {
+                        font-size: 12px;
+
+                    }
+                }
+            }
+
+            .imgContainer:hover .infoimg {
+                width: 80%;
+                height: 33%
+            }
+        }
+    }
+
+    .PresentationMitos {
+        .contTextPresentation {
+            .mito {
+                p {
+                    font-size: 12px;
+                    text-align: justify;
+                    transform: translate(-4rem, -2rem)
+                }
+            }
+
+            .contbutonmitoPie {
+                button {
+                    width: 100px;
+                    transform: translate(-4.5rem, -2rem);
+                }
+            }
+
+            .contTittleStyleP {
+                h2 {
+                    font-size: 30px;
+                    transform: translate(1.5rem, 2rem);
+                }
+            }
+        }
+
+        .TattoHeadPres {
+            transform: translate(-8rem, 10rem);
+            width: 0px;
+            height: 0px;
+        }
+    }
+
 }

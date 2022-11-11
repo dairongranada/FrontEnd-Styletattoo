@@ -11,13 +11,13 @@ import img9 from '../.././images/Piercing/piercing9.jpg'
 
 
 export const Piercing = [
-    {Image: img1},
-    {Image: img2},
-    {Image: img3},
-    {Image: img4},
-    {Image: img5},
-    {Image: img6},
-    {Image: img7},
-    {Image: img8},
-    {Image: img9},
+    {Image: img1,type: 'Helix'},
+    {Image: img2,type: 'Industrial'},
+    {Image: img3,type: 'antitragus'},
+    {Image: img4,type: 'Lóbulo central'},
+    {Image: img5,type: 'Lóbulo transversal'},
+    {Image: img6,type: 'Tragus'},
+    {Image: img7,type: 'Daith Rock '},
+    {Image: img8,type: 'Helix'},
+    {Image: img9,type: 'Orbital Snug'},
 ]

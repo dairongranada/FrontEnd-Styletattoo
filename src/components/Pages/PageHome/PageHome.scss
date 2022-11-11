@@ -1,10 +1,10 @@
 
 // P A G E  H O M E
 .ContBigVeryH{
-    background-color: var(--colorBlack);
+    background-color: var(--colorGray2);
 }
 .MainView{
-    background-image: url('../../.././images/Fondos/Fondo_MainView.jpg');
+    // background-image: url('../../.././images/Fondos/Fondo_MainView.jpg');
     height: 100vh; margin-left: 78px;
     background-size: cover;background-position-y: -11rem;
     display: flex; flex-direction: column;
@@ -42,7 +42,7 @@
     .Title_Services{
         width: 100%;
         height: auto;
-        margin-top: 50px;
+        padding-top: 50px;
         text-align: center;
         background-color: rgba(0, 0, 0, 0.911);
     }

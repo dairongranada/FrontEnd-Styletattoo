@@ -18,8 +18,8 @@ export const Home_MainView = () => {
                         <p>Style Tatto sabe todo sobre el tatuaje</p>
                         <div className="contTittleStyleT">  
                             <img className = "gorroNavidad" src={gorroNavidad} alt={gorroNavidad} />
-                            <h2>Style</h2>
-                            <h2 className='TittleTattoNThow'>Tatto</h2>
+                            <h2  style={{fontSize:"80px"}}>Style</h2>
+                            <h2 style={{fontSize:"80px"}} className='TittleTattoNThow'>Tatto</h2>
                         </div>
                         <p>Creamos arte y contamos historias en tu piel</p>
                         <br />

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import axios from "axios"
 import { useNavigate, useParams } from 'react-router';
 
@@ -8,6 +8,9 @@ import './ProfileProfessionall.scss'
 import { NavFooter } from '../../Layouts/NavigationFooter/NavFooter/NavFooter';
 import { NavigationBar } from '../../Layouts/NavigationBar/NavigationBar';
 
+import {  getAllTatuadoresID } from '../../../Helpers/ApiConsumer/Tattuadores'
+
+
 import imgStyle from '../../../images/Tatuadores/tatuador1.png'
 import { GoHeart } from 'react-icons/go';
 const baseURL = "https://rickandmortyapi.com/api/character";
@@ -15,38 +18,54 @@ const baseURL = "https://rickandmortyapi.com/api/character";
 
 export const ProfileProfessionall = () => {
 
-  const tattoo = [
-    {id:1,name: 'lewis holguin', image:'https://res.cloudinary.com/dsoovcjav/image/upload/v1660826276/ImagesTattoo/tatuador1_rvghbe.png',descripcion:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nostrum eius laboriosam', ciudad:'montenegro'},
-    {id:2,name: 'chris nuñez', image:'https://res.cloudinary.com/dsoovcjav/image/upload/v1660826273/ImagesTattoo/tatuador2_efzh1a.png', descripcion:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nostrum eius laboriosam', ciudad:'calarca'},
-    {id:3,name: 'oliver peck', image:'https://res.cloudinary.com/dsoovcjav/image/upload/v1660826274/ImagesTattoo/tatuador3_jd7kt9.png',descripcion:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nostrum eius laboriosam?', ciudad:'armenia'},
-]
-
-
-
 
 
   const [img, setImg] = useState([])
   const [Estatus, setEstatus] = useState('switch-toggle Ocupado-btn')
+  const [tatuadores, setTatuadores] = useState([]);
+  const [perfilProfesional, setperfilProfesional] = useState({});
+
+
+
+  const {first_name, last_name,email,image} = tatuadores
+  const {departamento, description,direction,experence,municipio} = perfilProfesional
+
 
 
   React.useEffect(() => {
     axios.get(baseURL).then((response) => {
       setImg(response.data.results);
-
     });
   }, []);
 
 
   const { id } = useParams();
 
-  console.log(id);
+  const idTT = id
+  console.log(idTT);
+
+
+  useEffect( () => {
+    getAllTatuadoresID(idTT)
+    .then( info => {
+        setTatuadores( info.data );
+        setperfilProfesional(info.data.perfilProfessional)
+    })
+
+  }, [])
+
+  console.log(tatuadores);
+
+
+
+
 
   return (
     <>
       <NavigationBar />
       <div className='ContentBodyInfoTattois'>
         <div className='RightInftoTT'>
-          <div className='ImgRightInftoTT'><img src={imgStyle} alt="" /></div>
+          <div className='ImgRightInftoTT'><img src={image} alt="" /></div>
           <div className='ButtonsRightInftoTT'>
             <button className='Btn-Citas buttons_global_StyleTatto'>AGENDAR CITA</button>
             <button className='tooltip buttonLike'>
@@ -69,9 +88,9 @@ export const ProfileProfessionall = () => {
 
         <div className='InfoTattois'>
           <div className='LeftInftoTT'>
-            <div className='NameLeftInftoTT'><h5>NAME LASTNAME</h5></div>
-            <div className='EmailLeftInftoTT'><p>emailEmail@gmail.com</p></div>
-            <div className='DescriLeftInftoTT'><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ab ea officiis iure beatae! Assumenda debitis quas inventore nostrum esse, quo sapiente? Assumenda molestiae suscipit fuga veritatis, maiores quas nam!</p></div>
+            <div className='NameLeftInftoTT'><h5>{first_name} {last_name}</h5></div>
+            <div className='EmailLeftInftoTT'><p>{email}</p></div>
+            <div className='DescriLeftInftoTT'><p>{description}</p></div>
             </div>
         </div>
 

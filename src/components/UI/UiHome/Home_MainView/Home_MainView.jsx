@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import './Home_MainView.scss'
 import img5 from '../../../../images/Tattos/portafolio9.jpg'
+import gorroNavidad from '../../../../images/Icons/gorroNavidad.png'
 
 
 export const Home_MainView = () => {
@@ -16,6 +17,7 @@ export const Home_MainView = () => {
                     <div className="contTextHead">
                         <p>Style Tatto sabe todo sobre el tatuaje</p>
                         <div className="contTittleStyleT">  
+                            <img className = "gorroNavidad" src={gorroNavidad} alt={gorroNavidad} />
                             <h2>Style</h2>
                             <h2 className='TittleTattoNThow'>Tatto</h2>
                         </div>

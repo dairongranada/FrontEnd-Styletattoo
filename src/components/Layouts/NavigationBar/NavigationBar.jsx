@@ -22,13 +22,11 @@ export const NavigationBar = () => {
             .then( data => setUserData( data.data ));
             console.log(userData);
         }else {
-          console.log("No se ha autenticado");
+          //console.log("No se ha autenticado");
         }
         
   
     }, [])
-
-    console.log(userData);
 
     const handleLogout = () => {
         localStorage.removeItem("token");

@@ -32,7 +32,6 @@ export const ProfileProfessionall = () => {
   React.useEffect(() => {
     axios.get(baseURL).then((response) => {
       setImg(response.data.results);
-      console.log(img);
 
     });
   }, []);

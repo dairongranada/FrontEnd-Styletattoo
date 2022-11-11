@@ -29,7 +29,7 @@ export const PageTattooists = () => {
           neotradicional, libre, liners, black work, black and grey y cover up</p>
       </div>
       
- 
+
       <main className='main-contenido'>
         {               
                 tattoo.map( tat => (

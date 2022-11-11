@@ -7,7 +7,6 @@ const URL = "http://localhost:8000/";
 
 
 let token = localStorage.getItem("token")
-console.log(token);
 
 /*
 ███╗░░░███╗███████╗████████╗░█████╗░██████╗░░█████╗░    ██████╗░██╗░░░██╗████████╗
@@ -42,7 +41,6 @@ export const CambiarContraseña = async ( valores ) => {
         return resp;
 
     } catch (error) {
-        console.log( error );
     }
 }
 
@@ -72,7 +70,6 @@ export const getusers = async ( tokenID ) => {
         return resp;
 
     } catch (error) {
-        console.log( error );
     }
 }
 

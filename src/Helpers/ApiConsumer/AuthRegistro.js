@@ -23,11 +23,8 @@ export const signUpUser = async (userApi) => {
                 return { status: error.response.status }
             }
         });
-
-        console.log(response);
         return response;
     } catch (error) {
-        console.log(error);
     }
 
 }
@@ -52,10 +49,8 @@ export const signUpTatto = async (userApi) => {
             }
         });
 
-        console.log(response);
         return response;
     } catch (error) {
-        console.log(error);
     }
 
 }

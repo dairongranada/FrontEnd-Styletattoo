@@ -27,56 +27,39 @@
     .MainView{background-position-y: 0rem;}
 }
 
-
+/*SERVICIOS*/
 
 .Tattooists_Services{
-    background-image: url('../../.././images/Fondos/fondServices.jpg');
-    margin-left: 78px;
-    height: auto; background-position: center;
-    background-size: cover; padding: 50px 0;
-
-    .Title_Services{ 
+    width: 100%;
+    height: auto;
+    margin-bottom: 7rem;
+    .Title_Services{
+        width: 100%;
         height: auto;
-        padding: 5rem 0;
-        text-align: center; 
-
-        h1{
-            font-size: 45px;
-        }
+        margin-top: 50px;
+        text-align: center;
     }
-
     .Services{
-        width: 90%; margin-left: 78px;
-        display: flex;justify-content: center;
-        align-items: center; gap: 15rem; flex-wrap: wrap;
-    }
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 250px;
+        flex-wrap: wrap;
 
-    .Services_content{
-        display: flex; justify-content: center;
-        flex-direction: column; align-items: center;
-        gap: 15px; flex-wrap: wrap;
-
-        img{ width: 100px; transition: all 0.7s;}
-        img:hover{
-            transform: scale(1.2);
-            transition: all 0.7s;
-        }
-
-        h1{ font-size: 30px;}
-    }
-
-}
-
-@media (max-width: 600px) {
-    .Tattooists_Services {
-        .Services {
-            display: flex;
-            width: 50%; margin-left: 80px;
-            justify-content: center;
-            align-items: center;
-            gap: 7rem;
-            flex-wrap: wrap;
-            flex-direction: column;
+        .Services_content{
+            width: 405px;
+            height: 430px;
+            padding: 40px;
+            background-color: var(--colorBlack);
+            text-align: center;
+            margin-top: 40px;
+            // border-radius: 15px;
+            color: rgb(255, 255, 255);
+            h1{
+                color: rgb(255, 255, 255);
+            }
         }
     }
 }

@@ -1,5 +1,10 @@
 .NewTattooists{
-    background-color: var(--colorBlack);
+    background-image: url('../../../../images/Fondos/FondoHomeMview.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.lentDarckNewT{
+    background-color: rgba(0, 0, 0, 0.835);
 }
 .contCards{
     display: flex;

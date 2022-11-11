@@ -1,8 +1,5 @@
 import React from 'react'
 import './PageTattos.scss'
-// import tatu from '../../../images/Tattos/pircings_dark.jpg'
-// import img4 from '../../../images/Tattos/portafolio7.jpg'
-import img5 from '../../../images/Fondos/MachineTattoFond.jpg'
 import studioTattoProcess from '../../../images/Tattos/tattoInProcessingDarck.jpg'
 
 import { NavigationBar } from '../../Layouts/NavigationBar/NavigationBar';
@@ -23,34 +20,33 @@ export const PageTattos = () => {
   return (
     <>
     <NavigationBar />
-    <div className='contPrimary'>
-      <div className='HeadPresentationPt'>
-        <div className="contTextHead">
+    <div className='contPrimaryPagesT'>
+      <div className='HeadPresentationPgT'>
+        <div className="TextCPages">
           <p>Style Tatto sabe todo sobre el tatuaje</p>
-          <div className="contTittleStyleT">
+          <div className="StileTCont">
             <h2>Style</h2>
-            <h2 className='TittleTattoNThow'>Tatto</h2>
+            <h2 className='ThowTittlePg'>Tatto</h2>
           </div>
           <p>Creamos arte y contamos historias en tu piel</p>
           <br />
           <button onClick={FunctionScroll} className='buttons_global_StyleTatto'>¿Ver mas?</button>
         </div>
-        {/* <img className='TattoHeadPres' src={img5} alt="" /> */}
       </div>
 
-      <div className="BodPresentInformation">
-        <div className="lentDarckInf">
+      <div className="BodPresentationInfor">
+        <div className="lentDarckInformation">
 
-          <div className='BoxImgStudyT'>
-            <img className='studioTattoProcess' src={studioTattoProcess} alt="studioTattoProcess" />
+          <div className='BoxImgStudyTatto'>
+            <img className='studioTattoInProcess' src={studioTattoProcess} alt="studioTattoProcess" />
           </div>
 
-          <div className="contSecontTittleIn">
+          <div className="contSecontTittleInfor">
             <div className="contTittleTheInf">
               <h2>Mitos Flasos Del</h2>
-              <h2 className='MitTattoTnT'>Tatuaje</h2>
+              <h2 className='MitTatt'>Tatuaje</h2>
             </div>
-            <div className="contMitTattoL">
+            <div className="contMitTatt">
               <mark>“CUALQUIERA SE PUEDE TATUAR”.</mark>
               <p>
                 Falso. Esta técnica no es indicada para personas menores de edad, embarazadas, que sufran

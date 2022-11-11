@@ -35,7 +35,7 @@ export const PageHome = () => {
 
     return (
         <><NavigationBar/>
-        <div>
+        <div className='ContBigVeryH'>
             <Home_MainView/>
             <Home_NewTattooists/>
             <Home_Services/>

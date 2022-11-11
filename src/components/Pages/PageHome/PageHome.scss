@@ -1,5 +1,8 @@
 
 // P A G E  H O M E
+.ContBigVeryH{
+    background-color: var(--colorBlack);
+}
 .MainView{
     background-image: url('../../.././images/Fondos/Fondo_MainView.jpg');
     height: 100vh; margin-left: 78px;
@@ -33,11 +36,15 @@
     width: 100%;
     height: auto;
     margin-bottom: 7rem;
+    background-image: url('../../../images/Fondos/FondoHomeMview.jpg');
+    background-size: cover;
+    background-position: center;
     .Title_Services{
         width: 100%;
         height: auto;
         margin-top: 50px;
         text-align: center;
+        background-color: rgba(0, 0, 0, 0.911);
     }
     .Services{
         width: 100%;
@@ -47,6 +54,7 @@
         align-items: center;
         gap: 250px;
         flex-wrap: wrap;
+        background-color: rgba(0, 0, 0, 0.911);
 
         .Services_content{
             width: 405px;
@@ -55,7 +63,7 @@
             background-color: var(--colorBlack);
             text-align: center;
             margin-top: 40px;
-            // border-radius: 15px;
+            margin-bottom: 3rem;
             color: rgb(255, 255, 255);
             h1{
                 color: rgb(255, 255, 255);

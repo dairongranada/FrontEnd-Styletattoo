@@ -2,7 +2,7 @@ import React from 'react'
 import './PageTattos.scss'
 // import tatu from '../../../images/Tattos/pircings_dark.jpg'
 // import img4 from '../../../images/Tattos/portafolio7.jpg'
-import img5 from '../../../images/Tattos/portafolio9.jpg'
+import img5 from '../../../images/Fondos/MachineTattoFond.jpg'
 import studioTattoProcess from '../../../images/Tattos/tattoInProcessingDarck.jpg'
 
 import { NavigationBar } from '../../Layouts/NavigationBar/NavigationBar';
@@ -35,7 +35,7 @@ export const PageTattos = () => {
           <br />
           <button onClick={FunctionScroll} className='buttons_global_StyleTatto'>¿Ver mas?</button>
         </div>
-        <img className='TattoHeadPres' src={img5} alt="" />
+        {/* <img className='TattoHeadPres' src={img5} alt="" /> */}
       </div>
 
       <div className="BodPresentInformation">

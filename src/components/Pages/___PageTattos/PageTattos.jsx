@@ -4,11 +4,12 @@ import studioTattoProcess from '../../../images/Tattos/tattoInProcessingDarck.jp
 
 import { NavigationBar } from '../../Layouts/NavigationBar/NavigationBar';
 import { NavFooter } from '../../Layouts/NavigationFooter/NavFooter/NavFooter';
+import machineTattoosAndo from '../../../images/Tattos/machineTattoosAndo.jpg'
 
 
 export const PageTattos = () => {
 
- /*Animacion de Scroll*/
+ /*Funcion de Scroll*/
 
   const FunctionScroll = () => {
     window.scroll({
@@ -22,15 +23,26 @@ export const PageTattos = () => {
     <NavigationBar />
     <div className='contPrimaryPagesT'>
       <div className='HeadPresentationPgT'>
-        <div className="TextCPages">
-          <p>Style Tatto sabe todo sobre el tatuaje</p>
-          <div className="StileTCont">
-            <h2>Style</h2>
-            <h2 className='ThowTittlePg'>Tattoo</h2>
+        <div className="lentDrackHandsInT">
+          <div className="TextCPages">
+            <img className='ImgTMachineOp' src={machineTattoosAndo} alt="" />
           </div>
-          <p>Creamos arte y contamos historias en tu piel</p>
-          <br />
-          <button onClick={FunctionScroll} className='buttons_global_StyleTatto'>¿Ver mas?</button>
+
+          <div className='StSsbTattoo'>
+            <div className="StileTCont">
+              <h2>Todo sobre el</h2>
+              <h2 className='ThowTittlePg'>Tatuaje</h2>
+            </div>
+            <p>En Style Tattoo te recomendamos siempre que a la hora de hacerte tu tatauaje
+              asegurate de que tu tatuador tenga todos los elementos necesarios para la realizacion de tu
+              obra de arte y sobre todo aseguratede que las agujas de la maquina sean nuevas para evitar
+              problemas como infecciones, enfermedades de transmisión sanguínea, hepatitis B, hepatitis C etcetra.  
+            </p>
+            <div className='ContButtonVM'>
+              <button onClick={FunctionScroll} className='buttons_global_StyleTatto VermS'>¿Ver mas?</button>
+            </div>
+          </div>
+
         </div>
       </div>
 

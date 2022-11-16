@@ -1,20 +1,16 @@
 import './PageProfileU.scss'
 import { React, useState,useEffect } from 'react'
 import { getusers }  from '../../../Helpers/ApiConsumer/PostUsers';
-
-
-
-
+ 
 
 export const UptInfoU = () => {
 
-    const [imgProfileU, setImgProfileU] = useState("https://i.postimg.cc/T2N5CnwK/perfil-Usuario-Anonim.png")
 
     const [user, setUser] = useState(JSON.parse(localStorage.getItem("usuario")));
     const [tokenID, setTokenID] = useState(localStorage.getItem("token"));
     const [userData, setUserData] = useState({});
-  
-  
+    const [image , setImage] = useState("https://i.postimg.cc/T2N5CnwK/perfil-Usuario-Anonim.png")
+
   
     useEffect(()=>{
       if ( !!user ) {
@@ -28,30 +24,23 @@ export const UptInfoU = () => {
 
   }, [])
   
-//   console.log(userData.first_name[0])  
-//   console.log(userData);
-
-
-
-
-
-  
-
-
-
-
-
     return (
         <div className='perfil-usuario-content'>
+                    
             <div className="perfil-usuario-header">
+            
                 <div className="perfil-usuario-portada">
+              
                     <div className="perfil-usuario-avatar">
-                        <img src={imgProfileU} alt="img-avatar"/>
-                        <div className='boton-avatar' type="button" id="addfile">
+                        <img src={image} alt="img-avatar"/>
+                       
+                        <div  className='boton-avatar' type="button" id="addfile">
                             <span className="material-symbols-outlined">photo_camera</span>
                             <input id="changeImg" type="file" required />
                         </div>
+                       
                     </div>
+                   
                 </div>
             </div>
             <div className="perfil-usuario-body">

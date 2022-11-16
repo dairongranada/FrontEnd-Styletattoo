@@ -7,6 +7,28 @@ const URL = "http://localhost:8000/";
 
 
 
+export const CreateProfesionalprofile =  async (userApi) => {
+
+    try {
+        const response = await axios({
+            url: URL+"/tattos/",
+            method: "POST",
+            data: userApi
+
+        }).catch(function (error) {
+
+            if (error.response) {
+                console.log(error);
+                return { status: error.response.status }
+            }
+        });
+        return response;
+    } catch (error) {
+    }
+
+}
+
+
 
 export const signUpUser = async (userApi) => {
 

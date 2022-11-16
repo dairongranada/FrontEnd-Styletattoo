@@ -40,7 +40,7 @@ export const PageTattooists = () => {
         </div>
 
 
-        {(tatuadores.length === 0 && tatuadores.length === 1 && perfilProfesional.length === 0   ) &&
+        {(tatuadores.length === 0 ) &&
           <main className='LoaderArtist'>
             <div className="loaderArtist">
             <div className="spinner">

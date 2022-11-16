@@ -43,7 +43,7 @@ const sendEmail = (event)=>{
                         <button id="liveToastBtn" type='submit' className='PostEmailFooter'>
                             <div className='svg-wrapper-1'>
                                 <div className='svg-wrapper'>
-                                    <span class="material-symbols-outlined">send</span>
+                                    <span className="material-symbols-outlined">send</span>
                                 </div>
                             </div>
                             <span>Enviar</span>

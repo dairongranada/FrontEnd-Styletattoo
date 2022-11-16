@@ -1,26 +1,26 @@
 import axios from "axios";
 
+const URL = "http://localhost:8000/";
+
 export const getAllTatuadores = async () => {
 
-    const URL = "http://localhost:3000/";
 
     try {
-        const response = await axios(URL+"AllArtistas");
+        const response = await axios(URL+"auth/listTattoo/TattoList/");
 
         return response;
     } catch (error) {
         console.log( error );
     }
-
 }
 
 
 
 
-export const getAllTatuadoresID = async ( id ) => {
 
+export const getAllTatuadoresID = async ( id ) => {
     try {
-        const response = await axios("http://localhost:3000/AllArtistas/"+id)
+        const response = await axios(URL+"auth/listTattoo/TattoList/"+id)
         .catch( function( error ) {
 
             if ( error.response ) {

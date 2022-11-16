@@ -20,8 +20,6 @@ export const UserName = () => {
 
   const [userData, setUserData] = useState({});
 
-
-
   useEffect(()=>{
     if ( !!user ) {
         getusers( tokenID )

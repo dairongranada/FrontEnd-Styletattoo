@@ -11,6 +11,8 @@ import { CardTatuadores } from './CardTatuadores';
 
 export const PageTattooists = () => {
   const [tatuadores, setTatuadores] = useState([]);
+  const [perfilProfesional, setperfilProfesional] = useState({});
+
 
 
   useEffect(() => {
@@ -18,11 +20,11 @@ export const PageTattooists = () => {
     getAllTatuadores()
       .then(info => {
         setTatuadores(info.data);
-        // console.log(info.data[1].PerfilProfesional)
-
+        setperfilProfesional(info.data[0].PerfilProfesional)
       })
   }, [])
 
+        console.log(perfilProfesional)
 
 
   return (
@@ -38,7 +40,7 @@ export const PageTattooists = () => {
         </div>
 
 
-        {(tatuadores.length === 0) &&
+        {(tatuadores.length === 0 && tatuadores.length === 1 && perfilProfesional.length === 0   ) &&
           <main className='LoaderArtist'>
             <div className="loaderArtist">
             <div className="spinner">

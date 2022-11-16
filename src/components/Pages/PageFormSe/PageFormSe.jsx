@@ -57,16 +57,17 @@ export const PageFormSe = () => {
                             if ( info.status === 200 ) {
 
                                 let tokenInfo = info.data.authentication.jwt.access;
+                                let TokenAcet = tokenInfo
                                 let token = info.data.authentication.token;
                                 let InfoUser = info.data.info;
 
 
                                 let rol = info.data.info.rol;
                                 localStorage.setItem("token", token);
+                                localStorage.setItem("token", token);
                                 localStorage.setItem("InfoUser", JSON.stringify( InfoUser));
-
-                                localStorage.setItem("usuario", JSON.stringify(parseJwt( tokenInfo, rol )) );
-                                const data = info.data.info.info_user;
+                                localStorage.setItem("usuario", JSON.stringify(parseJwt( tokenInfo, rol, TokenAcet )));
+                                const data = info.data.info;
         
 
                                 console.log(data);
@@ -82,7 +83,7 @@ export const PageFormSe = () => {
                                     else if ( data.rol === "[ROLE_ARTISTA]" ){
                                         toast.success('Bienvenido a StyleTattoo')
                                         setTimeout(function(){
-                                            window.location = '/userTatto/edit-profile';
+                                            //window.location = '/userTatto/edit-profile';
                                         }, 1500);    
                                     }
                                 }

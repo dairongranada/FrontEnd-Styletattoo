@@ -20,21 +20,21 @@ export const ProfileProfessionall = () => {
 
 
 
-  const [img, setImg] = useState([])
+  const [imgDefecto, setImgDefecto] = useState([])
   const [Estatus, setEstatus] = useState('switch-toggle Ocupado-btn')
   const [tatuadores, setTatuadores] = useState([]);
   const [perfilProfesional, setperfilProfesional] = useState({});
 
 
 
-  const {first_name, last_name,email,image} = tatuadores
-  const {departamento, description,direction,experence,municipio} = perfilProfesional
+  const {first_name, last_name,email} = tatuadores
+  const {nameArtistic,departament,description,direction ,experience,img,municipio}= perfilProfesional
 
 
 
   React.useEffect(() => {
     axios.get(baseURL).then((response) => {
-      setImg(response.data.results);
+      setImgDefecto(response.data.results);
     });
   }, []);
 
@@ -42,22 +42,21 @@ export const ProfileProfessionall = () => {
   const { id } = useParams();
 
   const idTT = id
-  console.log(idTT);
+  // console.log(idTT)
 
 
   useEffect( () => {
     getAllTatuadoresID(idTT)
     .then( info => {
         setTatuadores( info.data );
-        setperfilProfesional(info.data.perfilProfessional)
+        setperfilProfesional(info.data.PerfilProfesional[0])
     })
 
   }, [])
 
-  console.log(tatuadores);
 
 
-
+console.log(perfilProfesional);
 
 
   return (
@@ -65,7 +64,9 @@ export const ProfileProfessionall = () => {
       <NavigationBar />
       <div className='ContentBodyInfoTattois'>
         <div className='RightInftoTT'>
-          <div className='ImgRightInftoTT'><img src={image} alt="" /></div>
+          <div className='ImgRightInftoTT'><img src={img} alt="" /></div>
+          <p style={{display:"flex",fontSize:"15px",marginTop:"0.6rem",alignItems: "center"}} ><span  style={{fontSize: "19px"}} className="material-symbols-outlined">location_on</span>{municipio} -- {departament}</p>
+          <p style={{display:"flex",fontSize:"15px",alignItems: "center"}}>Direccion:  { direction}</p>
           <div className='ButtonsRightInftoTT'>
             <button className='Btn-Citas buttons_global_StyleTatto'>AGENDAR CITA</button>
             <button className='tooltip buttonLike'>
@@ -79,7 +80,7 @@ export const ProfileProfessionall = () => {
                 <i className="fa fa-bluetooth-b"></i><span>Servicio</span>
               </div>
               <div className={Estatus}>
-                <input type="checkbox" id="bluetooth" />
+                <input style={{visibility: "hidden"}}  type="checkbox" id="bluetooth" />
                 <label for="bluetooth"></label>
               </div>
             </div>
@@ -88,9 +89,10 @@ export const ProfileProfessionall = () => {
 
         <div className='InfoTattois'>
           <div className='LeftInftoTT'>
-            <div className='NameLeftInftoTT'><h5>{first_name} {last_name}</h5></div>
-            <div className='EmailLeftInftoTT'><p>{email}</p></div>
+            <div className='NameLeftInftoTT'><h5> {first_name} {last_name} </h5></div>
+            <div className='EmailLeftInftoTT'><p> {email} </p></div>
             <div className='DescriLeftInftoTT'><p>{description}</p></div>
+            <div className='DescriLeftInftoTT'style={{display: "flex", gap:"5px" }}> <p style={{color:"var(--colorOrange2)"}} >Experiencia :</p><p>{experience} </p> <p>Años</p> </div>
             </div>
         </div>
 
@@ -101,7 +103,7 @@ export const ProfileProfessionall = () => {
               <motion.div className='slider' drag='x'
                 dragConstraints={{ right: 0, left: -4000 }} >
 
-                {img.map((data) => (
+                {imgDefecto.map((data) => (
                   <motion.div key={data.id} className='item'>
                     <div className="PortafolioImg">
                       <div className="card-img">

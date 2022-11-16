@@ -12,17 +12,17 @@ import { CardTatuadores } from './CardTatuadores';
 export const PageTattooists = () => {
   const [tatuadores, setTatuadores] = useState([]);
 
+
   useEffect(() => {
 
     getAllTatuadores()
       .then(info => {
         setTatuadores(info.data);
-      })
+        // console.log(info.data[1].PerfilProfesional)
 
+      })
   }, [])
 
-
-  console.log(tatuadores);
 
 
   return (
@@ -40,8 +40,8 @@ export const PageTattooists = () => {
 
         {(tatuadores.length === 0) &&
           <main className='LoaderArtist'>
-            <div class="loaderArtist">
-            <div class="spinner">
+            <div className="loaderArtist">
+            <div className="spinner">
               <span></span>
               <span></span>
               <span></span>
@@ -60,15 +60,18 @@ export const PageTattooists = () => {
         {(!!tatuadores) &&
           <main className='main-contenido'>
             {tatuadores.map(tat => (
-              <CardTatuadores
-                key={tat.id}
-                id={tat.id}
-                image={tat.image}
-                first_name={tat.first_name}
-                last_name={tat.last_name}
-                descripcion={tat.perfilProfessional.description}
-                ciudad={tat.perfilProfessional.municipio}
-              />
+                <CardTatuadores
+                  key={tat.id}
+                  id={tat.id}
+                  image={tat.PerfilProfesional[0].img}
+                  first_name={tat.first_name}
+                  last_name={tat.last_name}
+                  descripcion={tat.PerfilProfesional[0].description}
+                  departament={tat.PerfilProfesional[0].departament}
+                  municipio={tat.PerfilProfesional[0].municipio}
+                  ids={tat.PerfilProfesional[0].id}
+                />
+              
             ))}
         </main>
         }

@@ -68,7 +68,6 @@ export const getusers = async ( tokenID ) => {
             }
         })
         return resp;
-
     } catch (error) {
     }
 }

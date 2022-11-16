@@ -6,6 +6,7 @@ import { useState } from 'react'
 
 
 export const Home_NewTattooists = () => {
+    
     const tattoo = [
         { 
             name: 'lewis holguin', 
@@ -44,7 +45,6 @@ export const Home_NewTattooists = () => {
 
                             <span style={{ color: "var(--colorOrange2)", margin: "2rem" }}>
                                 <span>{tattoo[selected].name}</span>
-                                {" "}-{" "} Artista
                             </span>
                             <div className='SeeTattooists'><a className='buttons_global_StyleTatto' href="/all/artist/style">VER MAS</a></div>
                         </div>

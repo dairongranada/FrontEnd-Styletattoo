@@ -3,6 +3,7 @@ import { UptInfoT } from '../../UptInfoT'
 import { Formik, Form, Field } from 'formik';
 import { ChevronsLeft }  from '../../../../UI/ChevronsLeft/ChevronsLeft.jsx'
 import { NavigationBar } from '../../../../Layouts/NavigationBar/NavigationBar';
+import { NavFooter } from '../../../../Layouts/NavigationFooter/NavFooter/NavFooter';
 
 
 import { CambiarContraseña } from '../../../../../Helpers/ApiConsumer/PostUsers'
@@ -37,15 +38,36 @@ export const TattoPassword = () => {
           <Formik
                   initialValues={{
                     old_password:'',
-                    new_password: ''
+                    new_password: '',
+                    confirm_password:''
                   }}
-                
+
+                  //validaciones de cambio de contraseñas
+
+                  validate={(val)=> {
+                    let rgb = {}
+                    if (!val.confirm_password) {
+                      rgb.confirm_password = "Porfavor confirma tu Contraseña"
+                      // console.log(rgb);
+                    }
+                    else if (val.confirm_password !== val.new_password) {
+                      rgb.confirm_password = "las contraseñas no coinciden"
+                      // console.log(rgb);
+                    }
+                    else{
+                      toast.success("buena ahora si")
+                      rgb.confirm_password = "buena ahora si"
+                    }
+                  }}
+                //----------------------------------------------------------------
+
                   onSubmit = {(valores , {resetForm} ) =>{
                     let validacion = {};
 
                         CambiarContraseña({
                           old_password: valores.old_password,
-                          new_password: valores.new_password
+                          new_password: valores.new_password,
+                          confirm_password: valores.confirm_password
                         }
                         ).then( info => {
                           validacion = info
@@ -70,6 +92,11 @@ export const TattoPassword = () => {
                   <label className='label_global_style'>Nueva Contraseña</label>
                   <Field name='new_password' className='TheTextBox' required type="password" placeholder='Cambia tu contraseña' /> 
                 </div>
+                
+                <div className='ContentBoxtext'>
+                  <label className='label_global_style'>Confirmar Contraseña</label>
+                  <Field name='confirm_password' className='TheTextBox' required type="password" placeholder='Cambia tu contraseña' /> 
+                </div>
 
                 <div className='ContentBoxButtonConfirm'>
                   <button type='sumbit' className='ButtonConfirmDates'>Guardar</button>
@@ -81,6 +108,7 @@ export const TattoPassword = () => {
         </div>
       </section>
     </div>
+    <NavFooter/>
     </>
   )
 }

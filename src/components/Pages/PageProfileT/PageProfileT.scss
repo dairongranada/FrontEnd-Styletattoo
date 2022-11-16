@@ -235,9 +235,14 @@
     vertical-align: middle;
     text-decoration: none;
     color: #000; }
+
 .icono a{
     text-decoration: none;
     color: #000;
+}
+
+.BuldProfileP{
+    cursor: pointer;
 }
 
 .seccion-perfil-usuario .redes-sociales {
@@ -283,6 +288,97 @@
 
 .seccion-perfil-usuario .boton-redes.instagram {
     background-image: linear-gradient(324deg, #5a5a5a, black);}
+
+
+
+    
+
+/*  M O D A L    D E    C R E A C I O N    D E    P E R F I L    P R O F E C I O N A L */
+
+
+.FondBackGPp{
+    position: absolute;
+    width: 100%;
+    height: 140vh;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+    backdrop-filter: blur(8px);
+    background-color: #000000c2;
+    color: var(--colorBlanco);
+    .ModalBuildProfilep{
+        margin-top: 3rem;
+        width: 470px;
+        height: 510px;
+        background-color: var(--colorBlack);
+        .contImgAndTittlear{
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 25px;
+            .ContIcontInMBPP{
+                width: 10%;
+                height: auto;
+                display: flex;
+                justify-content: center;
+                .IconMaquuina{
+                    width: 40px;
+                }
+            }
+            .SecondContIconCMBPP{
+                width: 80%;
+                height: auto;
+                text-align: center;
+            }
+        }
+        .contInfoUserBoxes{
+            width: 100%;
+            height: auto;
+            margin-top: 1rem;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            .columBoxesMBPP{
+                width: 40%;
+                height: auto;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                gap: 60px;
+                margin-right: 25px;
+            }
+            .ContTextTareaDescriptionT{
+                width: 100%;
+                height: auto;
+                display: flex;
+                justify-content: center;
+                margin-top: 5px;
+                .DescriptionExotic{
+                    background-color: #2f2f2f;
+                    border: none;
+                    font-size: 18px;
+                    padding: 15px;
+                    color: white;
+                    margin-top: 10px;
+                }
+            }
+            .contOtionsButtonsMBPP{
+                width: 100%;
+                height: auto;
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                margin-top: 20px;
+            }
+        }
+    }
+}
+
+/*---------------------------------------------------------------------------------------*/
+
 
 /* adactacion a dispositivos */
 @media (max-width: 750px) {

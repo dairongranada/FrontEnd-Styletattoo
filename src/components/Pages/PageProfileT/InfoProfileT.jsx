@@ -62,6 +62,7 @@ export const InfoProfileT = () => {
                 departament:"",
                 direction:"",
                 municipio:"",
+                experience:"",
                 rol:"[ROLE_ARTISTA]"
               }}
             >
@@ -77,26 +78,18 @@ export const InfoProfileT = () => {
                       name='nameArtistic'
                       className='BoxinpMBPP' 
                       required 
-                      type="text" 
+                      type="text"
+                      placeholder = "Nombre Artistico" 
                       />
-
-                      <span className="highlightMBPP"></span>
-                      <span className="barMBPP"></span>
-                      <label className='InstrucBOxMBPP'>Nombre Artistico</label>
                     </div>
 
                     <div className="groupLandInpMBPP">
 
-                      <Field
-                      name='departament'
-                      className='BoxinpMBPP' 
-                      required 
-                      type="text" 
-                      />
+                      <select className='SelectorOptionD' name="departament">
+                        <option selected disabled>Escoje tu departamento</option>
+                        <option value="Quindio">Quindio</option>
+                      </select>
 
-                      <span className="highlightMBPP"></span>
-                      <span className="barMBPP"></span>
-                      <label className='InstrucBOxMBPP'>departamento</label>
                     </div>
 
                   </div>
@@ -110,26 +103,32 @@ export const InfoProfileT = () => {
                        name='direction'
                        className='BoxinpMBPP' 
                        required
+                       placeholder="Direccion"
                        type="text"
                        />
 
-                      <span className="highlightMBPP"></span>
-                      <span className="barMBPP"></span>
-                      <label className='InstrucBOxMBPP'>Direccion</label>
                     </div>
 
                     <div className="groupLandInpMBPP">
 
-                      <Field
-                      name='municipio'
-                      className='BoxinpMBPP' 
-                      required
-                      type="text" 
-                      />
+                      <select className='SelectorOptionD' name="departament">
 
-                      <span className="highlightMBPP"></span>
-                      <span className="barMBPP"></span>
-                      <label className='InstrucBOxMBPP'>Municipio</label>
+                        <option selected disabled >Escoje tu municipio</option>
+                        <option value="armenia">armenia</option>
+                        <option value="calarca">calarca</option>
+                        <option value="quimbaya">quimbaya</option>
+                        <option value="montenegro">montenegro</option>
+                        <option value="pijao">pijao</option>
+                        <option value="genova">genova</option>
+                        <option value="tebaida">tebaida</option>
+                        <option value="filandia">filandia</option>
+                        <option value="circacia">circacia</option>
+                        <option value="cordoba">cordoba</option>
+                        <option value="salento">salento</option>
+                        <option value="buena vista">buena vista</option>
+
+                      </select>
+                      
                     </div>
 
                   </div>
@@ -145,6 +144,16 @@ export const InfoProfileT = () => {
                       rows="5">
                     </textarea>
 
+                  </div>
+
+                  <div className='groupLandInpMBPP'>
+                    <p placeholder=''>Introduce tu imagen</p>
+                    <input type="file" />
+                  </div>
+
+                  <div className='groupLandInpMBPP'>
+                    <p>Años de experiencia</p>
+                    <input className='YearsOldExpe' type="number" name="experience" />
                   </div>
 
                   <div className="contOtionsButtonsMBPP">

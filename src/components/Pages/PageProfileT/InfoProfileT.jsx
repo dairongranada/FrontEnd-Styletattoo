@@ -67,7 +67,6 @@ export const InfoProfileT = () => {
 
     setImage(file.secure_url)
     setFileU(file.secure_url)
-    // console.log(file.secure_url);
   }
   let imgUrl = image;
   console.log(imgUrl);
@@ -113,6 +112,7 @@ export const InfoProfileT = () => {
               }}
               validate={(valores) => {
                 let ers = {}
+                
                 // VALIDACION DIRECCION 
                 if (!valores.direction) {
                   ers.direction = "Porfavor ingresa una direcccion"
@@ -220,7 +220,6 @@ export const InfoProfileT = () => {
                         id="textarea" >
                       </Field>
 
-                      {touched.description && errors.description && <span>{errors.description}</span>}
 
                     </div>
 
@@ -234,11 +233,9 @@ export const InfoProfileT = () => {
                     <div className='groupLandInpMBPP'>
                       <p>Años de experiencia</p>
                       <Field className='YearsOldExpe' type="text" name="experience" />
-                      {touched.experience && errors.experience && <span>{errors.experience}</span>}
                     </div>
 
                     <div className="contOtionsButtonsMBPP">
-                      {/* <button onClick={CloseModalMBPP} className='buttons_global_StyleTatto'>Cancelar</button> */}
                       <button type='submit' className='buttons_global_StyleTatto'>Crear Perfil</button>
                     </div>
                   </div>

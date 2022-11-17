@@ -184,7 +184,7 @@ export const InfoProfileT = () => {
 
                       <div className="groupLandInpMBPP">
 
-                        <Field className='SelectorOptionD' as="select" name="departament">
+                        <Field  required className='SelectorOptionD' as="select" name="departament">
                           <option defaultValue disabled>Escoje tu departamento</option>
                           <option value="Quindio">Quindio</option>
                           <option value="Risaralda">Risaralda</option>
@@ -210,7 +210,7 @@ export const InfoProfileT = () => {
 
                       <div className="groupLandInpMBPP">
 
-                        <Field className='SelectorOptionD' as="select" name="municipio">
+                        <Field required className='SelectorOptionD' as="select" name="municipio">
                           <option defaultValue disabled >Escoje tu municipio</option>
                           <option value="armenia">armenia</option>
                           <option value="calarca">calarca</option>
@@ -231,7 +231,7 @@ export const InfoProfileT = () => {
 
                     <div className="ContTextTareaDescriptionT">
 
-                      <Field as="textarea"
+                      <Field required as="textarea"
                         className='DescriptionExotic'
                         placeholder='Descripcion'
                         name="description"

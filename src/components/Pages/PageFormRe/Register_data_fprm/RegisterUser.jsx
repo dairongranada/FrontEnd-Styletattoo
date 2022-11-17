@@ -137,7 +137,6 @@ export const RegisterUser = ( { change_step } ) => {
                                 else if( validacion.status === "500"|| info.data.status === "500" ){
                                     setTimeout(function(){setRegistered("mjsErrorRe OcultarMjsErrorRe")}, 4000);   
                                     setServerError( true );
-
                                 }
                                 else{
                                     resetForm();

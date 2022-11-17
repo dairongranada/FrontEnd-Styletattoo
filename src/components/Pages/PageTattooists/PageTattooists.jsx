@@ -13,19 +13,20 @@ export const PageTattooists = () => {
   const [tatuadores, setTatuadores] = useState([]);
   const [perfilProfesional, setperfilProfesional] = useState({});
 
+  const [textoRol, setTextoRol] = useState ('[ROLE_ARTISTA]')
+
 
 
   useEffect(() => {
-
     getAllTatuadores()
       .then(info => {
         setTatuadores(info.data);
         setperfilProfesional(info.data[0].PerfilProfesional)
       })
   }, [])
-
-        console.log(perfilProfesional)
-
+  
+  //FILTRO PARA QUE NO SE DAÑE EL  PROYECTO
+  const allTaoits = tatuadores.filter(data => data.rol.includes('[ROLE_ARTISTA]'))
 
   return (
     <>
@@ -59,9 +60,9 @@ export const PageTattooists = () => {
           </main>
         }
 
-        {(perfilProfesional.length > 1) &&
+        {(perfilProfesional.length === 1) &&
           <main className='main-contenido'>
-            {tatuadores.map(tat => (
+            {allTaoits.map(tat => (
                 <CardTatuadores
                   key={tat.id}
                   id={tat.id}
@@ -73,7 +74,7 @@ export const PageTattooists = () => {
                   municipio={tat.PerfilProfesional[0].municipio}
                   ids={tat.PerfilProfesional[0].id}
                 />
-              
+    
             ))}
         </main>
         }

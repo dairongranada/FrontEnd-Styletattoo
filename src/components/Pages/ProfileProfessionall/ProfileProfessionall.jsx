@@ -26,7 +26,6 @@ export const ProfileProfessionall = () => {
   const [perfilProfesional, setperfilProfesional] = useState({});
 
 
-
   const {first_name, last_name,email} = tatuadores
   const {nameArtistic,departament,description,direction ,experience,img,municipio}= perfilProfesional
 

@@ -84,7 +84,7 @@ export const PageFormSe = () => {
                                     else if ( data.rol === "[ROLE_ARTISTA]" ){
                                         toast.success('Bienvenido a StyleTattoo')
                                         setTimeout(function(){
-                                            //window.location = '/userTatto/edit-profile';
+                                            window.location = '/userTatto/edit-profile';
                                         }, 1500);    
                                     }
                                 }

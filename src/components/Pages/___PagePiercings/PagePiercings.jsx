@@ -19,7 +19,7 @@ export const PagePiercings = () => {
 
   const FunctionScroll = () => {
     window.scroll({
-      top: 1420,
+      top: 1530,
       behavior: 'smooth'
     })
   }

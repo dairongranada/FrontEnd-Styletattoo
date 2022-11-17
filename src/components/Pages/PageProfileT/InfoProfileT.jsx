@@ -50,25 +50,25 @@ export const InfoProfileT = () => {
     setAbrir(1)
   }
 
-  // const uploadImage = async (e) => {
-  //   const files = e.target.files;
-  //   const data = new FormData();
-  //   data.append("file", files[0]);
-  //   data.append("upload_preset", "images")
-  //   const res = await fetch(
-  //     "https://api.cloudinary.com/v1_1/dryg8dmrb/image/upload",
-  //     {
-  //       method: "POST",
-  //       body: data,
+  const uploadImage = async (e) => {
+    const files = e.target.files;
+    const data = new FormData();
+    data.append("file", files[0]);
+    data.append("upload_preset", "images")
+    const res = await fetch(
+      "https://api.cloudinary.com/v1_1/dryg8dmrb/image/upload",
+      {
+        method: "POST",
+        body: data,
 
-  //     }
-  //   )
-  //   const file = await res.json()
+      }
+    )
+    const file = await res.json()
 
-  //   setImage(file.secure_url)
-  //   setFileU(file.secure_url)
-  //   // console.log(file.secure_url);
-  // }
+    setImage(file.secure_url)
+    setFileU(file.secure_url)
+    // console.log(file.secure_url);
+  }
   let imgUrl = image;
   console.log(imgUrl);
   return (
@@ -113,28 +113,10 @@ export const InfoProfileT = () => {
               }}
               validate={(valores) => {
                 let ers = {}
-                // VALIDACION IMAGEN
-                if (!valores.img) {
-                  ers.img = "Porfavor ingresa una imagen"
-                }
-             
                 // VALIDACION DIRECCION 
                 if (!valores.direction) {
                   ers.direction = "Porfavor ingresa una direcccion"
                 }
-
-                // VALIDACION EXPERIENCIA 
-                if (!valores.experience) {
-                  ers.experience = "Porfavor ingresa tu experiencia"
-                } else if (!/^\d{10,10}$/.test(valores.experience)) {
-                  ers.experience = "Porfavor ingresa solo numeros"
-                }
-
-                // VALIDACION DESCRIPTION 
-                if (!valores.description) {
-                  ers.description = "Porfavor ingresa tu experience"
-                }
-
                 return ers
 
               }}
@@ -170,7 +152,7 @@ export const InfoProfileT = () => {
                     resetForm();
                     setLoading(false);
                     setRegistered(true);
-                    // window.location = "/IngresarSesion";
+                    window.location = `/tatto/view/profile/${idTatu}`;
                   }
                 })
 
@@ -184,7 +166,7 @@ export const InfoProfileT = () => {
 
                       <div className="groupLandInpMBPP">
 
-                        <Field  required className='SelectorOptionD' as="select" name="departament">
+                        <Field required className='SelectorOptionD' as="select" name="departament">
                           <option defaultValue disabled>Escoje tu departamento</option>
                           <option value="Quindio">Quindio</option>
                           <option value="Risaralda">Risaralda</option>
@@ -246,7 +228,7 @@ export const InfoProfileT = () => {
                       <p placeholder=''>Introduce tu imagen</p>
 
                       {/* un onChange para subir imagen a cludinary */}
-                      <Field name='img' type="file" />
+                      <Field onChange={uploadImage} name='img' type="file" />
                     </div>
 
                     <div className='groupLandInpMBPP'>

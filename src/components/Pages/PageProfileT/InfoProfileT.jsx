@@ -1,32 +1,76 @@
 import './PageProfileT.scss'
 import { React } from "react";
 import { Link } from "react-router-dom";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Maquuina from '../../../images/Icons/Maquuina.png'
 import { Formik, Form, Field } from 'formik';
+import { CreateProfesionalprofile } from '../../.././Helpers/ApiConsumer/AuthRegistro'
+import { getusers } from '../../.././Helpers/ApiConsumer/PostUsers'
 
 export const InfoProfileT = () => {
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("usuario")));
+  const [tokenID, setToken] = useState(localStorage.getItem("token"));
+
+  const [userData, setUserData] = useState({});
+  let idTatu = userData.id
+
+  useEffect(() => {
+    if (!!user) {
+      getusers(tokenID)
+        .then(data => setUserData(data.data));
+    } else {
+      console.log("No se ha autenticado");
+    }
+
+
+  }, [])
+
+  console.log(userData.id);
+
+
+  const [serverError, setServerError] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [duplicatedData, setDuplicatedData] = useState(false);
+  const [registered, setRegistered] = useState("mjsErrorRe");
+
 
   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("usuario");
     localStorage.removeItem("InfoUser");
+    localStorage.removeItem("TokenAcces")
     window.location = "/IngresarSesion";
-}
+  }
 
-
+  const [fileU, setFileU] = useState("")
+  const [image, setImage] = useState("")
   const [abrir, setAbrir] = useState(0)
 
   const OpenModalProfP = () => {
     setAbrir(1)
   }
 
-  const CloseModalMBPP = () => {
-    setAbrir(0)
-  }
+  // const uploadImage = async (e) => {
+  //   const files = e.target.files;
+  //   const data = new FormData();
+  //   data.append("file", files[0]);
+  //   data.append("upload_preset", "images")
+  //   const res = await fetch(
+  //     "https://api.cloudinary.com/v1_1/dryg8dmrb/image/upload",
+  //     {
+  //       method: "POST",
+  //       body: data,
 
+  //     }
+  //   )
+  //   const file = await res.json()
 
-
+  //   setImage(file.secure_url)
+  //   setFileU(file.secure_url)
+  //   // console.log(file.secure_url);
+  // }
+  let imgUrl = image;
+  console.log(imgUrl);
   return (
     <>
       {(abrir === 0) &&
@@ -34,7 +78,7 @@ export const InfoProfileT = () => {
           <div className="perfil-usuario-footer">
             <ul className="lista-datos">
               <li className='icono'><Link to="/userTatto/edit-name"><span className="material-symbols-outlined Icons-Options">badge</span>Nombre y correo</Link></li>
-              <li onClick={OpenModalProfP} className='icono BuldProfileP'><span class="material-symbols-outlined">person</span>Crear Perfil Profesional</li>
+              <li onClick={OpenModalProfP} className='icono BuldProfileP'><span className="material-symbols-outlined">person</span>Crear Perfil Profesional</li>
               <li className='icono'><Link to="/userTatto/edit-password"><span className="material-symbols-outlined Icons-Options">vpn_key</span>Contraseña </Link></li>
             </ul>
             <ul className="lista-datos">
@@ -58,112 +102,167 @@ export const InfoProfileT = () => {
             </div>
             <Formik
               initialValues={{
-                nameArtistic:"",
-                departament:"",
-                direction:"",
-                municipio:"",
-                experience:"",
-                rol:"[ROLE_ARTISTA]"
+                img: "",
+                like: "0",
+                departament: "",
+                municipio: "",
+                direction: "",
+                experience: "",
+                description: "",
+                artist: "",
               }}
+              validate={(valores) => {
+                let ers = {}
+                // VALIDACION IMAGEN
+                if (!valores.img) {
+                  ers.img = "Porfavor ingresa una imagen"
+                }
+             
+                // VALIDACION DIRECCION 
+                if (!valores.direction) {
+                  ers.direction = "Porfavor ingresa una direcccion"
+                }
+
+                // VALIDACION EXPERIENCIA 
+                if (!valores.experience) {
+                  ers.experience = "Porfavor ingresa tu experiencia"
+                } else if (!/^\d{10,10}$/.test(valores.experience)) {
+                  ers.experience = "Porfavor ingresa solo numeros"
+                }
+
+                // VALIDACION DESCRIPTION 
+                if (!valores.description) {
+                  ers.description = "Porfavor ingresa tu experience"
+                }
+
+                return ers
+
+              }}
+
+              onSubmit={(valores, { resetForm }) => {
+                let validacion = {};
+                CreateProfesionalprofile({
+                  img: imgUrl,
+                  like: "0",
+                  departament: valores.departament,
+                  municipio: valores.municipio,
+                  direction: valores.direction,
+                  experience: valores.experience,
+                  description: valores.description,
+                  artist: idTatu,
+
+                }).then(info => {
+                  validacion = info
+
+                  setLoading(true);
+                  if (validacion.status === 400) {
+                    setDuplicatedData(true);
+                    setServerError(false);
+                    setLoading(false);
+                  }
+                  else if (validacion.status === 500) {
+                    setServerError(true);
+                    setDuplicatedData(false);
+                    setLoading(false);
+                  }
+                  else {
+                    setDuplicatedData(false);
+                    resetForm();
+                    setLoading(false);
+                    setRegistered(true);
+                    // window.location = "/IngresarSesion";
+                  }
+                })
+
+              }}
+
             >
+              {({ errors, touched }) => (
+                <Form>
+                  <div className="contInfoUserBoxes">
+                    <div className="columBoxesMBPP">
 
-              <Form>
+                      <div className="groupLandInpMBPP">
 
-                <div className="contInfoUserBoxes">
-                  <div className="columBoxesMBPP">
-
-                    <div className="groupLandInpMBPP">
-
-                      <Field
-                      name='nameArtistic'
-                      className='BoxinpMBPP' 
-                      required 
-                      type="text"
-                      placeholder = "Nombre Artistico" 
-                      />
-                    </div>
-
-                    <div className="groupLandInpMBPP">
-
-                      <select className='SelectorOptionD' name="departament">
-                        <option selected disabled>Escoje tu departamento</option>
-                        <option value="Quindio">Quindio</option>
-                      </select>
+                        <Field className='SelectorOptionD' as="select" name="departament">
+                          <option defaultValue disabled>Escoje tu departamento</option>
+                          <option value="Quindio">Quindio</option>
+                          <option value="Risaralda">Risaralda</option>
+                        </Field>
+                      </div>
 
                     </div>
 
-                  </div>
 
+                    <div className="columBoxesMBPP">
 
-                  <div className="columBoxesMBPP">
+                      <div className="groupLandInpMBPP">
 
-                    <div className="groupLandInpMBPP">
+                        <Field
+                          name='direction'
+                          className='BoxinpMBPP'
+                          required
+                          placeholder="Direccion"
+                          type="text"
+                        />
+                        {touched.direction && errors.direction && <span>{errors.direction}</span>}
+                      </div>
 
-                      <Field
-                       name='direction'
-                       className='BoxinpMBPP' 
-                       required
-                       placeholder="Direccion"
-                       type="text"
-                       />
+                      <div className="groupLandInpMBPP">
+
+                        <Field className='SelectorOptionD' as="select" name="municipio">
+                          <option defaultValue disabled >Escoje tu municipio</option>
+                          <option value="armenia">armenia</option>
+                          <option value="calarca">calarca</option>
+                          <option value="quimbaya">quimbaya</option>
+                          <option value="montenegro">montenegro</option>
+                          <option value="pijao">pijao</option>
+                          <option value="genova">genova</option>
+                          <option value="tebaida">tebaida</option>
+                          <option value="filandia">filandia</option>
+                          <option value="circacia">circacia</option>
+                          <option value="cordoba">cordoba</option>
+                          <option value="salento">salento</option>
+                          <option value="buena vista">buena vista</option>
+                        </Field>
+                      </div>
 
                     </div>
 
-                    <div className="groupLandInpMBPP">
+                    <div className="ContTextTareaDescriptionT">
 
-                      <select className='SelectorOptionD' name="departament">
+                      <Field as="textarea"
+                        className='DescriptionExotic'
+                        placeholder='Descripcion'
+                        name="description"
+                        id="textarea" >
+                      </Field>
 
-                        <option selected disabled >Escoje tu municipio</option>
-                        <option value="armenia">armenia</option>
-                        <option value="calarca">calarca</option>
-                        <option value="quimbaya">quimbaya</option>
-                        <option value="montenegro">montenegro</option>
-                        <option value="pijao">pijao</option>
-                        <option value="genova">genova</option>
-                        <option value="tebaida">tebaida</option>
-                        <option value="filandia">filandia</option>
-                        <option value="circacia">circacia</option>
-                        <option value="cordoba">cordoba</option>
-                        <option value="salento">salento</option>
-                        <option value="buena vista">buena vista</option>
+                      {touched.description && errors.description && <span>{errors.description}</span>}
 
-                      </select>
-                      
                     </div>
 
-                  </div>
-                  
-                  <div className="ContTextTareaDescriptionT">
-                    
-                    <textarea
-                      className='DescriptionExotic' 
-                      placeholder='Descripcion' 
-                      name="description" 
-                      id="" 
-                      cols="70" 
-                      rows="5">
-                    </textarea>
+                    <div className='groupLandInpMBPP'>
+                      <p placeholder=''>Introduce tu imagen</p>
 
-                  </div>
+                      {/* un onChange para subir imagen a cludinary */}
+                      <Field name='img' type="file" />
+                    </div>
 
-                  <div className='groupLandInpMBPP'>
-                    <p placeholder=''>Introduce tu imagen</p>
-                    <input type="file" />
-                  </div>
+                    <div className='groupLandInpMBPP'>
+                      <p>Años de experiencia</p>
+                      <Field className='YearsOldExpe' type="text" name="experience" />
+                      {touched.experience && errors.experience && <span>{errors.experience}</span>}
+                    </div>
 
-                  <div className='groupLandInpMBPP'>
-                    <p>Años de experiencia</p>
-                    <input className='YearsOldExpe' type="number" name="experience" />
+                    <div className="contOtionsButtonsMBPP">
+                      {/* <button onClick={CloseModalMBPP} className='buttons_global_StyleTatto'>Cancelar</button> */}
+                      <button type='submit' className='buttons_global_StyleTatto'>Crear Perfil</button>
+                    </div>
                   </div>
 
-                  <div className="contOtionsButtonsMBPP">
-                    <button onClick={CloseModalMBPP} className='buttons_global_StyleTatto'>Cancelar</button>
-                    <button type='submit' className='buttons_global_StyleTatto'>Crear Perfil</button>
-                  </div>
-                </div>
-
-              </Form>
-
+                </Form>
+              )}
             </Formik>
           </div>
         </div>

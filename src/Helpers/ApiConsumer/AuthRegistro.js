@@ -4,16 +4,22 @@ import axios from "axios";
 const URL = "http://localhost:8000/";
 // const URL = "https://despliegue-back.onrender.com/api"
 
-
+let tokenAcces = localStorage.getItem("TokenAcces")
+console.log(tokenAcces);
 
 
 export const CreateProfesionalprofile =  async (userApi) => {
 
     try {
         const response = await axios({
-            url: URL+"/tattos/",
+            url: URL+"tattos/",
             method: "POST",
-            data: userApi
+            data: userApi,
+            headers:{
+                "Authorization" :"Bearer "+tokenAcces,
+                "Content-Type":"application/json"
+            
+            },
 
         }).catch(function (error) {
 

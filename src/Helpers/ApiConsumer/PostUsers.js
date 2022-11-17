@@ -6,8 +6,8 @@ const URL = "http://localhost:8000/";
 // const URL = "https://despliegue-back.onrender.com/api"
 
 
-let token = localStorage.getItem("token")
 
+let token = localStorage.getItem("token")
 /*
 ███╗░░░███╗███████╗████████╗░█████╗░██████╗░░█████╗░    ██████╗░██╗░░░██╗████████╗
 ████╗░████║██╔════╝╚══██╔══╝██╔══██╗██╔══██╗██╔══██╗    ██╔══██╗██║░░░██║╚══██╔══╝

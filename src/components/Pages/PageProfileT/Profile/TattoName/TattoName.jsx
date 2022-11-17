@@ -16,6 +16,7 @@ export const TattoName = () => {
 
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("usuario")));
   const [tokenID, setToken] = useState(localStorage.getItem("token"));
+ 
 
   const [userData, setUserData] = useState({});
 

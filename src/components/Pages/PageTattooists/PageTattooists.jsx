@@ -59,7 +59,7 @@ export const PageTattooists = () => {
           </main>
         }
 
-        {(perfilProfesional.length === 1) &&
+        {(perfilProfesional.length > 1) &&
           <main className='main-contenido'>
             {tatuadores.map(tat => (
                 <CardTatuadores

@@ -32,6 +32,7 @@ export const NavigationBar = () => {
         localStorage.removeItem("token");
         localStorage.removeItem("usuario");
         localStorage.removeItem("InfoUser");
+        localStorage.removeItem("TokenAcces");
         window.location = "/IngresarSesion";
    }
    

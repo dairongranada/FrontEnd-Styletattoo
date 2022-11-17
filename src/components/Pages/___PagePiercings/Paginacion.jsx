@@ -1,7 +1,7 @@
 import { React, useState } from 'react'
 import './Paginacion.scss'
 
-export const Paginacion = ({ pagina, setPagina, maximo}) => {
+export const Paginacion = ({ pagina, setPagina, maximo }) => {
     const [input, setInput] = useState(1);
 
     const nextPage = () => {

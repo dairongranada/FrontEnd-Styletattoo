@@ -37,7 +37,7 @@ export const UptInfoT = () => {
         imagePROFILE  =  tattoInfoIMG.img 
     }
 
-    console.log(tattoInfoIMG);
+    // console.log(tattoInfoIMG);
 
     // console.log(userData.first_name)
 

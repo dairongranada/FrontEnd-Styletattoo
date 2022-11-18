@@ -72,6 +72,22 @@ export const getusers = async ( tokenID ) => {
     }
 }
 
+export const getTatois = async ( tokenID ) => {
+
+    try {
+        const resp = await axios({
+            url: URL+"tattos/perfilProfesional/",
+            method: "GET",
+            headers: {
+                "Authorization" :"Token "+ tokenID,
+                "Content-Type":"application/json"
+            }
+        })
+        return resp;
+    } catch (error) {
+    }
+}
+
 
 
 // export const getusersf = async ( id ) => {

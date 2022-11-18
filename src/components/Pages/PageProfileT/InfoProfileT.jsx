@@ -173,7 +173,7 @@ export const InfoProfileT = () => {
                       <div className="SelectContent">
                           <div>
                           <Field required className='select' as="select" name="departament">
-                            <option defaultValue disabled>Escoje tu departamento</option>
+                            <option>Escoje tu departamento</option>
                             <option value="Manizales">Manizales</option>
                             <option value="Quindio">Quindio</option>
                             <option value="Risaralda">Risaralda</option>
@@ -181,7 +181,7 @@ export const InfoProfileT = () => {
                           </div>
                           <div>
                           <Field required className='select'as="select" name="municipio">
-                            <option defaultValue disabled >Escoje tu municipio</option>
+                            <option>Escoje tu municipio</option>
                             <option value="armenia">armenia</option>
                             <option value="calarca">calarca</option>
                             <option value="quimbaya">quimbaya</option>

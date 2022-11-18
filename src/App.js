@@ -65,10 +65,10 @@ function App() {
                     <Route path='/user/edit-quotes' exact element= {!token ? <Navigate to="/unauthenticated/401" /> :<UserQuotes/>}/>
 
                 {/*𝑷𝑬𝑹𝑭𝑰𝑳 𝐓𝐀𝐓𝐔𝐀𝐃𝐎𝐑*/}
-                    <Route path='/userTatto/edit-profile' exact element= {<LeftInfoT/>}/>
-                    <Route path='/userTatto/edit-name' exact element= {<TattoName/>}/>
-                    <Route path='/userTatto/edit-password' exact element= {<TattoPassword/>}/>
-                    <Route path='/userTatto/edit-quotes' exact element= {<TattoQuotes/>}/>
+                    <Route path='/userTatto/edit-profile' exact element= {!token ? <Navigate to="/unauthenticated/401" /> :<LeftInfoT/>}/>
+                    <Route path='/userTatto/edit-name' exact element= {!token ? <Navigate to="/unauthenticated/401" /> :<TattoName/>}/>
+                    <Route path='/userTatto/edit-password' exact element= {!token ? <Navigate to="/unauthenticated/401" /> :<TattoPassword/>}/>
+                    <Route path='/userTatto/edit-quotes' exact element= {!token ? <Navigate to="/unauthenticated/401" /> :<TattoQuotes/>}/>
 
                 {/* 𝙇𝘼𝙎 𝙊𝙋𝘾𝙄𝙊𝙉𝙀𝙎 𝘿𝙀𝙇 𝙏𝘼𝙏𝙐𝘼𝘿𝙊𝙍 */}
                     <Route path='/all/artist/style' exact element= {<PageTattooists/>}/>
@@ -77,6 +77,7 @@ function App() {
 
 
                 {/* 𝙑𝙄𝙎𝙏𝘼𝙎 𝙀𝙓𝙏𝙍𝘼𝙎𝙎𝙎𝙎𝙎 */ }
+
                     <Route path="*" element= {<Page404 />} />
                     <Route path='/' exact element= {<PageHome />} />
                     <Route path='/infoTatuajes' exact element= {<PageTattos/>}/>

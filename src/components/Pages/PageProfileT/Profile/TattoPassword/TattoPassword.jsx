@@ -1,4 +1,4 @@
-import { React } from 'react'
+import { React,useState } from 'react'
 import { UptInfoT } from '../../UptInfoT'
 import { Formik, Form, Field } from 'formik';
 import { ChevronsLeft }  from '../../../../UI/ChevronsLeft/ChevronsLeft.jsx'
@@ -12,6 +12,9 @@ import toast, { Toaster } from 'react-hot-toast';
 
 
 export const TattoPassword = () => {
+
+  const [active, setActive] = useState(0);
+
 
   return (
     <>
@@ -48,16 +51,18 @@ export const TattoPassword = () => {
                     let rgb = {}
                     if (!val.confirm_password) {
                       rgb.confirm_password = "Porfavor confirma tu Contraseña"
-                      // console.log(rgb);
                     }
-                    else if (val.confirm_password !== val.new_password) {
-                      rgb.confirm_password = "las contraseñas no coinciden"
-                      // console.log(rgb);
+                    if (val.confirm_password.length >= 6) {
+                      if (val.confirm_password !== val.new_password) {
+                        setActive(0)
+                      } 
+                      else{ 
+                        setActive(1)
+                      }
                     }
-                    else{
-                      toast.success("buena ahora si")
-                      rgb.confirm_password = "buena ahora si"
-                    }
+
+
+
                   }}
                 //----------------------------------------------------------------
 
@@ -98,7 +103,7 @@ export const TattoPassword = () => {
                 </div>
 
                 <div className='ContentBoxButtonConfirm'>
-                  <button type='sumbit' className='ButtonConfirmDates'>Guardar</button>
+                  <button id={`${ active === 0 && "btnBlocked" }`}type='sumbit' className='ButtonConfirmDates'>Guardar</button>
                 </div>
               </Form>
             </Formik>

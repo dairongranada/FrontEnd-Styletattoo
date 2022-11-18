@@ -121,17 +121,7 @@ export const InfoProfileT = () => {
                 description: "",
                 artist: "",
               }}
-              validate={(valores) => {
-                let ers = {}
-                
-                // VALIDACION DIRECCION 
-                if (!valores.direction) {
-                  ers.direction = "Porfavor ingresa una direcccion"
-                }
-                return ers
-
-              }}
-
+             
               onSubmit={(valores, { resetForm }) => {
                 let validacion = {};
                 CreateProfesionalprofile({
@@ -170,7 +160,7 @@ export const InfoProfileT = () => {
               }}
 
             >
-              {({ errors, touched }) => (
+            
                 <Form>
                   <div className="contInfoUserBoxes">
 
@@ -228,11 +218,8 @@ export const InfoProfileT = () => {
                       <div>
                         <button style={{width: "100%", textAlign:"center" }} type='submit' className='buttons_global_StyleTatto'>Crear Perfil</button>
                       </div>
-
-
                   </div>
                 </Form>
-              )}
             </Formik>
           </div>
         </div>

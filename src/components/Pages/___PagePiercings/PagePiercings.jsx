@@ -82,7 +82,6 @@ export const PagePiercings = () => {
           <br />
           <div className='contbutonmitoPie'>
             <a href="/all/artist/style"><button className='buttons_global_StyleTatto'>¿Ver mas?</button></a>
-            <a href="/citas"><button className='buttons_global_StyleTatto'>¿Agendar cita?</button></a>
           </div>
         </div>
         <img className='TattoHeadPres' src={img5} alt="" />

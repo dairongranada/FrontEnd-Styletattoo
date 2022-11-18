@@ -215,11 +215,8 @@ export const InfoProfileT = () => {
                             
                             <label  style={{fontSize:"12px",color:"#fffff9"}} htmlFor="">Añade una foto de perfil</label>
                             <div style={{height: "40px",marginTop:"5px",marginBottom:"10px"  }} >
-                              <button class="icon-btn add-btn">
-                                <div class="add-icon"></div>
                                 <span class="btn-txt material-symbols-outlined"> photo_library </span>
                                 <Field required onChange={uploadImage} id='btnEnviar' name='img' type="file" />
-                              </button>
                             </div>
                           </div>
                         </div>

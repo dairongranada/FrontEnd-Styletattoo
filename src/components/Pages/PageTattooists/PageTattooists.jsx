@@ -6,6 +6,8 @@ import { getAllTatuadores } from '../../.././Helpers/ApiConsumer/Tattuadores';
 import { NavFooter } from '../../Layouts/NavigationFooter/NavFooter/NavFooter';
 import { NavigationBar } from '../../Layouts/NavigationBar/NavigationBar';
 import { CardTatuadores } from './CardTatuadores';
+import { Cero } from './Cero';
+
 
 
 
@@ -76,9 +78,9 @@ export const PageTattooists = () => {
 
 
 
- <main className='main-contenido'>
-      {allTaoits.map(data =>(
-        (data.PerfilProfesional.length ) &&
+      <main className='main-contenido'>
+        {allTaoits.map(data =>(
+          (data.PerfilProfesional.length >=1) &&
             <CardTatuadores
               key={data.id}
               id={data.id}
@@ -90,9 +92,20 @@ export const PageTattooists = () => {
               municipio={data.PerfilProfesional[0].municipio}
               ids={data.PerfilProfesional[0].id}
             />
-            )          
-            )}
+            ))}
         </main>
+
+{/*         
+      <main>
+        {allTaoits.map(data =>(
+
+          (data.PerfilProfesional.length === 0) &&
+          <Cero key={data.id}username = {data.username}first_name = {data.first_name}
+        />
+        ))}
+      </main> */}
+
+
 
 
       </div>

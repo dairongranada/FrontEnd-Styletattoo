@@ -1,3 +1,35 @@
+.gorroNavidadPerfil{
+    transform: translate(149px, 166px);
+    width: 150px;
+    z-index: 2;
+}
+.GorroRotate{
+    position: absolute;
+    z-index: 2;
+    transform: rotate(340deg);
+}
+
+.CloseBackProfileP{
+    margin-left: -10px;
+    text-align: center;
+    width: 100%;
+    color: #7b7b7b;
+    display: flex;
+    height: 3rem;
+    align-items: center;
+    justify-content: flex-end;
+    
+    svg{
+        color: #7b7b7b;
+        cursor: pointer;
+        font-size: 30px;
+    }
+}
+
+
+
+
+
 .BackgroundIcon{ 
     width: 100%; color: var(--colorBlack);display: flex;justify-content: center;align-items: center; background-color: none; font-size: 25px; justify-content: space-between;
     .BoxtTittleEditFiles{
@@ -226,6 +258,7 @@
     display: flex;
     align-items: center;
     gap: 5px;
+    color: #0000009c;
 }
 
 
@@ -293,152 +326,3 @@
 
 
     
-
-/*  M O D A L    D E    C R E A C I O N    D E    P E R F I L    P R O F E C I O N A L */
-
-
-.FondBackGPp{
-    position: absolute;
-    width: 100%;
-    height: 140vh;
-    display: flex;
-    justify-content: center;
-    z-index: 1;
-    backdrop-filter: blur(8px);
-    background-color: #000000c2;
-    color: var(--colorBlanco);
-    .ModalBuildProfilep{
-        margin-top: 3rem;
-        width: 470px;
-        height: 540px;
-        background-color: var(--colorBlack);
-        .contImgAndTittlear{
-            width: 100%;
-            height: auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 25px;
-            .ContIcontInMBPP{
-                width: 10%;
-                height: auto;
-                display: flex;
-                justify-content: center;
-                .IconMaquuina{
-                    width: 40px;
-                }
-            }
-            .SecondContIconCMBPP{
-                width: 80%;
-                height: auto;
-                text-align: center;
-            }
-        }
-        .contInfoUserBoxes{
-            width: 100%;
-            height: auto;
-            // margin-top: 1rem;
-            padding: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            .columBoxesMBPP{
-                width: 40%;
-                height: auto;
-                display: flex;
-                justify-content: center;
-                flex-direction: column;
-                gap: 20px;
-                margin-right: 25px;
-                .groupLandInpMBPP{
-                    .BoxinpMBPP{
-                        width: 170px;
-                    }
-                    .SelectorOptionD{
-                        background-color: #000;
-                        color: var(--colorWhite);
-                        border: solid 1px #fff;
-                        height: 45px;
-                        width: 190px;
-                        padding: 5px;
-                    }
-                }
-            }
-            .ContTextTareaDescriptionT{
-                width: 100%;
-                height: auto;
-                display: flex;
-                justify-content: center;
-                margin-top: 5px;
-                .DescriptionExotic{
-                    background-color: #2f2f2f;
-                    border: none;
-                    font-size: 18px;
-                    padding: 15px;
-                    color: white;
-                    margin-top: 10px;
-                }
-            }
-            .contOtionsButtonsMBPP{
-                width: 100%;
-                height: auto;
-                display: flex;
-                justify-content: center;
-                gap: 20px;
-                margin-top: 20px;
-            }
-            .groupLandInpMBPP{
-                margin-top:10px;
-                width: 45%;
-                display: flex;
-                justify-content: center;
-                flex-direction: column;
-                color: white;
-                .YearsOldExpe{
-                    background-color: var(--colorBlack);
-                    color: var(--colorWhite);
-                    height: 30px;
-                    border: solid 1px white;
-                    text-align: center;
-
-                }
-            }
-        }
-    }
-}
-
-/*---------------------------------------------------------------------------------------*/
-
-
-/* adactacion a dispositivos */
-@media (max-width: 750px) {
-    .seccion-perfil-usuario .lista-datos {
-        width: 100%;
-    }
-
-    .seccion-perfil-usuario .perfil-usuario-portada,
-    .seccion-perfil-usuario .perfil-usuario-body {
-        width: 95%;
-    }
-
-    .seccion-perfil-usuario .redes-sociales {
-        position: relative;
-        flex-direction: row;
-        width: 100%;
-        left: 0;
-        text-align: center;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-        align-items: center;
-        justify-content: center
-    }
-
-    .seccion-perfil-usuario .redes-sociales .boton-redes+.boton-redes {
-        margin-left: 1rem;
-        margin-top: 0;
-    }
-}
-.fileUpDate{
-    display: flex;
-    align-items: center;
-}

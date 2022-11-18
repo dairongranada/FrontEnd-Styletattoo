@@ -3,6 +3,7 @@ import { React, useState, useEffect } from 'react'
 import { getusers } from '../../../Helpers/ApiConsumer/PostUsers';
 import { getAllTatuadoresID } from '../../.././Helpers/ApiConsumer/Tattuadores'
 
+import gorroNavidad from '../../../images/Icons/gorroNavidad.png'
 
 
 export const UptInfoT = () => {
@@ -44,6 +45,7 @@ export const UptInfoT = () => {
         <div className='perfil-usuario-content'>
             <div className="perfil-usuario-header">
                 <div className="perfil-usuario-portada">
+                    <div className = " GorroRotate"><img className = "gorroNavidadPerfil" src={gorroNavidad} alt={gorroNavidad} /></div>
                     <div className="perfil-usuario-avatar">
                         <img src={imagePROFILE} alt="img-avatar" />
                     </div>

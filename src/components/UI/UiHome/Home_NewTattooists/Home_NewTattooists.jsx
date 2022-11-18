@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './Home_NewTattooists.scss'
 import { getAllTatuadores } from '../../../../Helpers/ApiConsumer/Tattuadores';
 
-import tatuador3 from '../../../../images/Tatuadores/tatuador3.png'
+// import tatuador3 from '../../../../images/Tatuadores/tatuador3.png'
 
 
 export const Home_NewTattooists = () => {
@@ -42,7 +42,7 @@ export const Home_NewTattooists = () => {
             </div>
             <div className="containerCardsArts">
                 {allTaoits.map(dat => (
-
+                    (dat.PerfilProfesional.length >=1) &&
 
                     <div className="CardArtist">
                         <div className="ImgArtistCard">

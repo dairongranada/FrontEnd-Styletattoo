@@ -34,8 +34,7 @@ export const UptInfoT = () => {
     if (imagePROFILE == null) {
         setIMGAGEN("https://i.postimg.cc/T2N5CnwK/perfil-Usuario-Anonim.png")
     } else {
-        setIMGAGEN(imagePROFILE)
-    }
+        setIMGAGEN(imagePROFILE)}
 
     // console.log(userData.first_name)
 
@@ -44,7 +43,7 @@ export const UptInfoT = () => {
             <div className="perfil-usuario-header">
                 <div className="perfil-usuario-portada">
                     <div className="perfil-usuario-avatar">
-                        <img src={imagePROFILE} alt="img-avatar" />
+                        <img src={IMGAGEN} alt="img-avatar" />
                     </div>
                 </div>
             </div>

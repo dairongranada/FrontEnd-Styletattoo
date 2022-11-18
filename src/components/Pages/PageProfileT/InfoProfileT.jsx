@@ -60,7 +60,7 @@ export const InfoProfileT = () => {
         setperfilProfesional(info.data.PerfilProfesional.length)
       })
   }, [])
-  
+
   
   const uploadImage = async (e) => {
     const files = e.target.files;
@@ -220,9 +220,8 @@ export const InfoProfileT = () => {
                           <div  style={{width: "100%", textAlign:"center",marginTop:"5px",marginBottom:"5px" }}>
                             
                             <label  style={{fontSize:"12px",color:"#fffff9"}} htmlFor="">Añade una foto de perfil</label>
-                            <div style={{height: "40px",marginTop:"5px",marginBottom:"10px"  }} >
-                                <span class="btn-txt material-symbols-outlined"> photo_library </span>
-                                <Field required onChange={uploadImage} id='btnEnviar' name='img' type="file" />
+                            <div style={{height: "40px",marginTop:"5px",marginBottom:"10px" ,marginLeft:"60px",color:"white" }} >
+                              <input onChange={uploadImage} className='sapos' type="file" name="img" />
                             </div>
                           </div>
                         </div>

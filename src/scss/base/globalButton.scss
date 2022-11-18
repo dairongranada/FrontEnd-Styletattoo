@@ -1,3 +1,68 @@
+
+// =================================
+// Clase Global Para Un boton :)
+// =================================
+
+.buttons_global_StyleTatto {
+  color: var(--colorWhite);
+  border: 2px solid var(--colorWhite);
+  background: transparent;
+  padding: 10px 20px;
+  border-radius: 3px; 
+  position: relative;
+  z-index: 0; margin-top: 5px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 230px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.buttons_global_StyleTatto:hover {
+  color: var(--colorBlack);
+}
+  .buttons_global_StyleTatto::after {
+      content: "";
+      background: var(--colorWhite);
+      position: absolute;
+      z-index: -1;
+      display: block;
+      left: -20%;
+      right: -20%;
+      top: 0;
+      bottom: 0;
+      transform: skewX(-45deg) scale(0, 1);
+      transition: all 0.2s ease;
+  }
+  
+  .buttons_global_StyleTatto:hover::after {
+      transition: all 0.3s ease-out;
+      transform: skewX(-45deg) scale(1, 1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*Clase para boton enviar :)*/
 
 .PostEmailFooter {

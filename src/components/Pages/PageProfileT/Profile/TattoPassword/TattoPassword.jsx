@@ -67,7 +67,6 @@ export const TattoPassword = () => {
                         CambiarContraseña({
                           old_password: valores.old_password,
                           new_password: valores.new_password,
-                          confirm_password: valores.confirm_password
                         }
                         ).then( info => {
                           validacion = info

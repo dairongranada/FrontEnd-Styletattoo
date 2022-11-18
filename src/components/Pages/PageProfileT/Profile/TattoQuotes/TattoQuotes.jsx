@@ -6,7 +6,7 @@ import { ChevronsLeft }  from '../../../../UI/ChevronsLeft/ChevronsLeft.jsx'
 import { NavigationBar } from '../../../../Layouts/NavigationBar/NavigationBar';
 import { NavFooter } from '../../../../Layouts/NavigationFooter/NavFooter/NavFooter';
 
-
+import './TattoQuotes.scss'
 
 
 
@@ -38,7 +38,20 @@ export const TattoQuotes = () => {
           
 
           <div className='contentBoxFiles'>
-            
+          <table id="customers">
+              <tr>
+                <th>Fecha</th>
+                <th>Hora</th>
+                <th>Usuario</th>
+                <th>Eliminar</th>
+              </tr>
+              <tr>
+                <td>18/11/22</td>
+                <td>3:30pm</td>
+                <td>Maria Anders</td>
+                <td><span class="material-symbols-outlined"> delete </span></td>
+              </tr>
+            </table>
           </div>
 
 

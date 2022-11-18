@@ -15,7 +15,6 @@ export const CardTatuadores = ({id,ids,image,first_name,last_name ,descripcion,d
                             <p className='nameTattooists' >{first_name} {last_name}</p>
                             <p className='descripTattooists'href="/">{descripcion}</p>
                             <p className='descripTattooists'><span className="material-symbols-outlined">location_on</span>{municipio} -- {departament}</p>
-                            
                             <a href={`/tatto/view/profile/${id}`} className='btnA_menu'>Ver perfil</a>
                         </div>
                     </div>

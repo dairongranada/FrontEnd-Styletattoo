@@ -16,25 +16,39 @@ import { ButtonUI } from '../../.././UI/ButtonUI/ButtonUI';
 
 export const RegisterUser = ( { change_step } ) => {
 
+
     const [serverError, setServerError] = useState(false);
     const [loading, setLoading] = useState(false);
     const [duplicatedData, setDuplicatedData] = useState(false);
-    const [registered, setRegistered] = useState("mjsErrorRe");
-    
+    const [registered, setRegistered] = useState(false);
 
-    // //MENSAJE AL CORREO AL REGISTRARSE
-    const sendEmail = (event)=>{
-        // event.preventDefault();
-        // emailjs.sendForm('service_abfu3cf','template_u6bd07e',event.target,'Hc--z4JAH7zQRaJwb')
-        // .catch(err => console.error(err))
-    
-        // setTimeout(() => {
-        //     window.location = "/IngresarSesion";
-        // }, 2000);
 
-        console.log("Descomentar El emailJS");
+
+    //MENSAJE AL CORREO AL REGISTRARSE
+    
+    // const sendEmail = (event)=>{
+    //     event.preventDefault();
+    //     // ALERTA CHIMBA
+    //     emailjs.sendForm('service_abfu3cf','template_u6bd07e',event.target,'Hc--z4JAH7zQRaJwb')
+    //     .then(response => {
+    //         alert('Gracias por registarse')
+    //     })
+    //     .catch(err => console.error(err))
+    
+    //     setTimeout(() => {
+    //         window.location = "/IngresarSesion";
+    //     }, 2000);
         
+    // }
+
+
+
+    const [showPassword, setShowPassword] = useState("password")
+    const handlePassword = () => {
+        if ( showPassword === "password") {setShowPassword("text");}
+        else {setShowPassword("password")}
     }
+
 
 
 
@@ -107,6 +121,7 @@ export const RegisterUser = ( { change_step } ) => {
                             }else if(valores.password !== valores.passwordConfirm) {
                                 ers.passwordConfirm = "Las Contraseñas no Coinciden"
                             }
+
                             return ers  
 
                         }}
@@ -126,22 +141,23 @@ export const RegisterUser = ( { change_step } ) => {
 
                             }).then( info => {
                                 validacion = info
-                                let dataInfo  = info.data.status
-                                console.log(info.data.status);
                                 setLoading(true);
-                                if ( dataInfo[0] === "400"  ) {
+                                if ( validacion.status === 400 ) {
                                     setDuplicatedData( true );
-                                    setTimeout(function(){setRegistered("mjsErrorRe OcultarMjsErrorRe")}, 4000);   
-
+                                    setServerError( false );
+                                    setLoading(false);
                                 }
-                                else if( validacion.status === "500"|| info.data.status === "500" ){
-                                    setTimeout(function(){setRegistered("mjsErrorRe OcultarMjsErrorRe")}, 4000);   
+                                else if( validacion.status === 500 ){
                                     setServerError( true );
+                                    setDuplicatedData( false );
+                                    setLoading( false );
                                 }
-                                else{
+                                else {
+                                    setDuplicatedData( false );
                                     resetForm();
+                                    setLoading(false);
+                                    setRegistered( true );
                                     window.location = "/IngresarSesion";
-                                    console.log(info);
                                 }
                             });
 
@@ -151,14 +167,11 @@ export const RegisterUser = ( { change_step } ) => {
 
                     >
                         {({ errors, touched  })=> (
-                            <Form className='formRegisterUser' onSubmit={sendEmail} >
-                                { duplicatedData && <div className={registered} ><p id='registerUser__error'>El email ya se encuentra registrado.</p></div>}
-                                { serverError && <div className={registered} ><p id='registerUser__error'>Tenemos problemas al iniciar sesion</p></div>}
-
+                            <Form className='formRegisterUser'>
+                                { duplicatedData && <p id='registerUser__error'>El ya se encuentran registrados.</p> }
                                 <div className="inputContent">
                                     <div>
                                         <Field
-                                            required
                                             className='global_styleRegistroIn'   
                                             name='first_name' 
                                             id='first_name' 
@@ -169,7 +182,6 @@ export const RegisterUser = ( { change_step } ) => {
                                     </div>
                                     <div>
                                         <Field
-                                            required
                                             className='global_styleRegistroIn'
                                             name='last_name'  
                                             id='last_name'   
@@ -188,7 +200,6 @@ export const RegisterUser = ( { change_step } ) => {
                                                 id='email' 
                                                 type="email" 
                                                 placeholder='Correo'
-                                                required
 
                                             />              
                                             {touched.email && errors.email && <span>{errors.email}</span>}   
@@ -202,7 +213,6 @@ export const RegisterUser = ( { change_step } ) => {
                                                 type="text" 
                                                 placeholder='Celular'
                                                 maxLength='10'
-                                                required
                                             /> 
                                              {touched.cellPhone && errors.cellPhone && <span>{errors.cellPhone}</span>}
                              
@@ -218,7 +228,6 @@ export const RegisterUser = ( { change_step } ) => {
                                                 id='password' 
                                                 type="password"
                                                 placeholder='Contraseña'
-                                                required
 
                                             />                                            
                                             {touched.password && errors.password && <span>{errors.password}</span>}   
@@ -231,7 +240,8 @@ export const RegisterUser = ( { change_step } ) => {
                                                 id='passwordConfirm' 
                                                 type="password"
                                                 placeholder='Contarseña Contraseña'
-                                                required
+
+
                                             />                                            
                                             {errors.passwordConfirm && <span className='emailSpam' >{errors.passwordConfirm}</span>}   
 
@@ -239,10 +249,10 @@ export const RegisterUser = ( { change_step } ) => {
                                     </div>
                                     <div className="sameline terminos-condiciones">
                                         <label>
-                                            <Field required name='checkbox' type="checkbox" />
+                                            <input required type="checkbox" />
                                             <span className='checkBox'></span>
                                         </label>
-                                        <p className='AceptTerm'>Acepto los <Link className='anchor' to="/terminos-condiciones">Terminos y condiciones</Link></p>
+                                        <p>Acepto los <Link className='anchor' to="/terminos-condiciones">Terminos y condiciones</Link></p>
                                     </div>
 
 
@@ -258,12 +268,9 @@ export const RegisterUser = ( { change_step } ) => {
                                     <a href="/IngresarSesion">Ya tienes una Cuenta?</a>
                                 </div>
                             </Form>
-                            
                         )}
-                      
                     </Formik>
                 </div>
-             
-            </>
+        </>
     )
 }

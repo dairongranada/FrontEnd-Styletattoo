@@ -13,9 +13,9 @@ export const PageTattooists = () => {
   const [tatuadores, setTatuadores] = useState([]);
   const [perfilProfesional, setperfilProfesional] = useState({});
 
-  const [textoRol, setTextoRol] = useState ('[ROLE_ARTISTA]')
+  const [textoRol, setTextoRol] = useState ({})
 
-
+  const guardar =[]
 
   useEffect(() => {
     getAllTatuadores()
@@ -24,9 +24,23 @@ export const PageTattooists = () => {
         setperfilProfesional(info.data[0].PerfilProfesional)
       })
   }, [])
+  // console.log(perfilProfesional);
   
   //FILTRO PARA QUE NO SE DAÑE EL  PROYECTO
   const allTaoits = tatuadores.filter(data => data.rol.includes('[ROLE_ARTISTA]'))
+  
+  // console.log(allTaoits)
+
+
+  const allTaoitsTwo = allTaoits.filter(data =>{
+      if (data.PerfilProfesional.length >= 1) {
+        console.log(data);
+      }else{
+      }
+    
+    console.log(data.PerfilProfesional.length >= 1) 
+  })
+
 
   return (
     <>
@@ -55,29 +69,30 @@ export const PageTattooists = () => {
               <span></span>
             </div>
             <p style={{marginTop:"10px"}} >No hay artistas en este momento...</p>
-            
             </div>
           </main>
         }
 
-        {(perfilProfesional.length === 1) &&
-          <main className='main-contenido'>
-            {allTaoits.map(tat => (
-                <CardTatuadores
-                  key={tat.id}
-                  id={tat.id}
-                  image={tat.PerfilProfesional[0].img}
-                  first_name={tat.first_name}
-                  last_name={tat.last_name}
-                  descripcion={tat.PerfilProfesional[0].description}
-                  departament={tat.PerfilProfesional[0].departament}
-                  municipio={tat.PerfilProfesional[0].municipio}
-                  ids={tat.PerfilProfesional[0].id}
-                />
-    
-            ))}
+
+
+
+ <main className='main-contenido'>
+      {allTaoits.map(data =>(
+        (data.PerfilProfesional.length ) &&
+            <CardTatuadores
+              key={data.id}
+              id={data.id}
+              image={data.PerfilProfesional[0].img}
+              first_name={data.first_name}
+              last_name={data.last_name}
+              descripcion={data.PerfilProfesional[0].description}
+              departament={data.PerfilProfesional[0].departament}
+              municipio={data.PerfilProfesional[0].municipio}
+              ids={data.PerfilProfesional[0].id}
+            />
+            )          
+            )}
         </main>
-        }
 
 
       </div>

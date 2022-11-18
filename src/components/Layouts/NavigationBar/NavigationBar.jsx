@@ -20,7 +20,6 @@ export const NavigationBar = () => {
         if ( !!userToken ) {
             getusers( token )
             .then( data => setUserData( data.data ));
-            console.log(userData);
         }else {
           //console.log("No se ha autenticado");
         }

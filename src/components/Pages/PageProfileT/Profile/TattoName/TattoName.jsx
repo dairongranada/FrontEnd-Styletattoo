@@ -26,11 +26,8 @@ export const TattoName = () => {
     if ( !!user ) {
         getusers( tokenID )
         .then( data => setUserData( data.data ));
-    }else {
-      console.log("No se ha autenticado");
-    }
+    }else {}
 }, [])
-console.log(userData);
 
 
 

@@ -6,26 +6,32 @@ import Maquuina from '../../../images/Icons/Maquuina.png'
 import { Formik, Form, Field } from 'formik';
 import { CreateProfesionalprofile } from '../../.././Helpers/ApiConsumer/AuthRegistro'
 import { getusers } from '../../.././Helpers/ApiConsumer/PostUsers'
+import { getAllTatuadoresID } from '../../.././Helpers/ApiConsumer/Tattuadores'
+
 
 export const InfoProfileT = () => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("usuario")));
   const [tokenID, setToken] = useState(localStorage.getItem("token"));
 
   const [userData, setUserData] = useState({});
+
   let idTatu = userData.id
+
+
+
+
+
 
   useEffect(() => {
     if (!!user) {
       getusers(tokenID)
         .then(data => setUserData(data.data));
-    } else {
-      console.log("No se ha autenticado");
     }
 
 
   }, [])
 
-  console.log(userData.id);
+  // console.log(userData.id);
 
 
   const [serverError, setServerError] = useState(false);
@@ -69,7 +75,6 @@ export const InfoProfileT = () => {
     setFileU(file.secure_url)
   }
   let imgUrl = image;
-  console.log(imgUrl);
   return (
     <>
       {(abrir === 0) &&

@@ -6,7 +6,6 @@ import { getAllTatuadores } from '../../.././Helpers/ApiConsumer/Tattuadores';
 import { NavFooter } from '../../Layouts/NavigationFooter/NavFooter/NavFooter';
 import { NavigationBar } from '../../Layouts/NavigationBar/NavigationBar';
 import { CardTatuadores } from './CardTatuadores';
-import { Cero } from './Cero';
 
 
 
@@ -15,9 +14,6 @@ export const PageTattooists = () => {
   const [tatuadores, setTatuadores] = useState([]);
   const [perfilProfesional, setperfilProfesional] = useState({});
 
-  const [textoRol, setTextoRol] = useState ({})
-
-  const guardar =[]
 
   useEffect(() => {
     getAllTatuadores()
@@ -26,22 +22,22 @@ export const PageTattooists = () => {
         setperfilProfesional(info.data[0].PerfilProfesional)
       })
   }, [])
-  // console.log(perfilProfesional);
   
   //FILTRO PARA QUE NO SE DAÑE EL  PROYECTO
   const allTaoits = tatuadores.filter(data => data.rol.includes('[ROLE_ARTISTA]'))
-  
-  // console.log(allTaoits)
 
 
-  const allTaoitsTwo = allTaoits.filter(data =>{
-      if (data.PerfilProfesional.length >= 1) {
-        console.log(data);
-      }else{
-      }
+
+  ////////////////////////////////////////////////////////////////
+  // const allTaoitsTwo = allTaoits.filter(data =>{
+  //     if (data.PerfilProfesional.length >= 1) {
+  //       console.log(data);
+  //     }else{
+  //     }
     
-    console.log(data.PerfilProfesional.length >= 1) 
-  })
+  //   console.log(data.PerfilProfesional.length >= 1) 
+  // })
+  ////////////////////////////////////////////////////////////////
 
 
   return (
@@ -94,20 +90,6 @@ export const PageTattooists = () => {
             />
             ))}
         </main>
-
-{/*         
-      <main>
-        {allTaoits.map(data =>(
-
-          (data.PerfilProfesional.length === 0) &&
-          <Cero key={data.id}username = {data.username}first_name = {data.first_name}
-        />
-        ))}
-      </main> */}
-
-
-
-
       </div>
       <NavFooter />
     </>

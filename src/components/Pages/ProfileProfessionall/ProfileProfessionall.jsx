@@ -21,13 +21,13 @@ export const ProfileProfessionall = () => {
 
 
   const [imgDefecto, setImgDefecto] = useState([])
-  const [Estatus, setEstatus] = useState('switch-toggle Ocupado-btn')
+  const [Estatus, setEstatus] = useState('')
   const [tatuadores, setTatuadores] = useState([]);
   const [perfilProfesional, setperfilProfesional] = useState({});
 
 
   const {first_name, last_name,email} = tatuadores
-  const {nameArtistic,departament,description,direction ,experience,img,municipio}= perfilProfesional
+  const {departament,description,direction ,experience,img,municipio}= perfilProfesional
 
 
 
@@ -45,6 +45,7 @@ export const ProfileProfessionall = () => {
 
 
   useEffect( () => {
+    setEstatus('switch-toggle Ocupado-btn')
     getAllTatuadoresID(idTT)
     .then( info => {
         setTatuadores( info.data );
@@ -54,8 +55,7 @@ export const ProfileProfessionall = () => {
   }, [])
 
 
-
-console.log(perfilProfesional);
+// console.log(perfilProfesional);
 
 
   return (
@@ -80,7 +80,7 @@ console.log(perfilProfesional);
               </div>
               <div className={Estatus}>
                 <input style={{visibility: "hidden"}}  type="checkbox" id="bluetooth" />
-                <label for="bluetooth"></label>
+                <label htmlFor="bluetooth"></label>
               </div>
             </div>
           </div>

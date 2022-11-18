@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const CardTatuadores = ({id,ids,image,first_name,last_name ,descripcion,departament,municipio}) => {
+export const CardTatuadores = ({id,image,first_name,last_name ,descripcion,departament,municipio}) => {
   return (
         <div className='pather'>
               <div className="containerTattois">

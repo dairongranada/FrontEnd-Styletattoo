@@ -9,7 +9,8 @@
     padding: 45px;
 }
 .contTittleCards h1{
-    
+    display: flex;
+    justify-content: center;
     color: var(--colorOrange2);
         
     }
@@ -27,7 +28,7 @@
     align-items: center;
     width: 300px;
     height: 300px;
-    background-color: var(--colorWhite);
+    background-color: var(--colorGray5);
     box-shadow: 0px 15px 45px rgb(0, 0, 0.25);
     overflow: hidden;
     transition: 0.5s;
@@ -52,7 +53,7 @@
 .CardArtist .detailsCard{
     position: relative;
     min-width: 300px;
-    background-color: white;
+    background-color: var(--colorGray5);
     width: 100%;
     height: 100%;
     padding: 20px;
@@ -77,5 +78,5 @@
     height: 0;
     border-bottom: 10px solid transparent;
     border-top: 10px solid transparent;
-    border-left: 10px solid #fff;
+    border-left: 10px solid var(--colorGray5);
 }

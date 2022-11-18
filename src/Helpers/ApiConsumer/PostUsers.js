@@ -29,8 +29,6 @@ let token = localStorage.getItem("token")
 
 
 
-
-
 // CAMBIAR CONTRASEÑA USUARIO
 export const CambiarContraseña = async ( valores ) => {
 
@@ -56,9 +54,6 @@ export const CambiarContraseña = async ( valores ) => {
     } catch (error) {
     }
 }
-
-
-
 
 /* 
 ███╗░░░███╗███████╗████████╗░█████╗░██████╗░░█████╗░        ░██████╗░███████╗████████╗

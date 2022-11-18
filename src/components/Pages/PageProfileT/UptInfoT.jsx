@@ -10,6 +10,8 @@ export const UptInfoT = () => {
     const [user, setUser] = useState(JSON.parse(localStorage.getItem("usuario")));
     const [tokenID, setTokenID] = useState(localStorage.getItem("token"));
     const [userData, setUserData] = useState({});
+    const [IMGAGEN, setIMGAGEN] = useState({});
+
 
 
 
@@ -26,8 +28,14 @@ export const UptInfoT = () => {
         if (!!user) { getAllTatuadoresID(InfoUser.id)
             .then(data => setTattoInfoIMG(data.data.PerfilProfesional[0])) }
     }, [])
-let imagePROFILE  = tattoInfoIMG.img
-let id= tattoInfoIMG.id
+
+    let imagePROFILE  = tattoInfoIMG.img
+
+    if (imagePROFILE == null) {
+        setIMGAGEN("https://i.postimg.cc/T2N5CnwK/perfil-Usuario-Anonim.png")
+    } else {
+        setIMGAGEN(imagePROFILE)
+    }
 
     // console.log(userData.first_name)
 

@@ -21,7 +21,7 @@ export const Home_NewTattooists = () => {
 
       console.log(tatuadores);
 
-    
+      const allTaoits = tatuadores.filter(data => data.rol.includes('[ROLE_ARTISTA]'))
 
 
     
@@ -41,7 +41,7 @@ export const Home_NewTattooists = () => {
                 <h1>Artistas del momento</h1>
             </div>
             <div className="containerCardsArts">
-                {tatuadores.map(dat => (
+                {allTaoits.map(dat => (
 
 
                     <div className="CardArtist">

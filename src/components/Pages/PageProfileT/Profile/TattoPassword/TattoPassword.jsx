@@ -77,8 +77,8 @@ export const TattoPassword = () => {
           <Formik
                   initialValues={{
                     email:'',
-                    // last_name:'',
-                    // first_name:'',
+                    last_name:'',
+                    first_name:'',
                     old_password:'',
                     new_password: '',
                     confirm_password:''
@@ -144,10 +144,9 @@ export const TattoPassword = () => {
                   <Field name='confirm_password' className='TheTextBox' required type="password" placeholder='Cambia tu contraseña' /> 
                 </div>
                 <div className='ContentBoxtext'>
-                  <label className='label_global_style'>Confirmar Contraseña</label>
-                  <Field name='email' value={emailTatu} />
-                  <Field name='first_name' value={firstmane} />
-                  <Field name='last_name' value={lastname} />
+                  <Field id='block'  name='email' value={emailTatu} />
+                  <Field id='block' name='first_name' value={firstmane} />
+                  <Field id='block'  name='last_name' value={lastname} />
                 </div>
 
 

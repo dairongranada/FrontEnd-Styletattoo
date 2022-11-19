@@ -16,6 +16,11 @@ import { ButtonUI } from '../../.././UI/ButtonUI/ButtonUI'
 
 export const RegisterTatto = ( { change_step } ) => {
 
+    const getRandomInt= (max) => {
+        return Math.floor(Math.random() * max);
+      }
+      let userNumber = getRandomInt(1000)
+
     const [serverError, setServerError] = useState(false);
     const [loading, setLoading] = useState(false);
     const [duplicatedData, setDuplicatedData] = useState(false);
@@ -127,9 +132,10 @@ export const RegisterTatto = ( { change_step } ) => {
 
                         onSubmit = {( valores, { resetForm } ) => {
                             let validacion = {};
+                            let username = valores.first_name +valores.last_name+userNumber
                             
                             signUpUser({
-                                username:"UserStyle",
+                                username:username,
                                 first_name:valores.first_name,
                                 last_name:valores.last_name,
                                 cellPhone:valores.cellPhone,

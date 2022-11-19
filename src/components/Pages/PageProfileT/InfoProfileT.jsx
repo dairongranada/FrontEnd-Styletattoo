@@ -72,7 +72,6 @@ export const InfoProfileT = () => {
       {
         method: "POST",
         body: data,
-
       }
     )
     const file = await res.json()
@@ -114,7 +113,7 @@ export const InfoProfileT = () => {
             <Formik
               initialValues={{
                 img: "",
-                like: "0",
+                like: 0,
                 departament: "",
                 municipio: "",
                 direction: "",
@@ -127,7 +126,7 @@ export const InfoProfileT = () => {
                 let validacion = {};
                 CreateProfesionalprofile({
                   img: imgUrl,
-                  like: "0",
+                  like: 0,
                   departament: valores.departament,
                   municipio: valores.municipio,
                   direction: valores.direction,

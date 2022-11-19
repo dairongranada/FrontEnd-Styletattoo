@@ -45,7 +45,7 @@ export const TattoName = () => {
                 <div className="BackgroundIcon">
                     <div><ChevronsLeft LinkExotico ="/userTatto/edit-profile"  className= "ChevronsLeft" /></div>
                     <div className='BoxtTittleEditFiles'>
-                      <h3 className='TittleEditsFiles'>Edita Tus Datos</h3>
+                      <h3 className='TittleEditsFiles'>Tus datos personales</h3>
                     </div>
                     <div><i className='bx bxs-user-detail' ></i></div>
                   </div>
@@ -64,8 +64,8 @@ export const TattoName = () => {
                     name='first_name' 
                     className='TheTextBox' 
                     type="text" 
-                    placeholder='Cambia tu nombre'
-                    value={ userData.first_name }
+                    disabled 
+                    placeholder={ userData.first_name }
                   /> 
 
                 </div>
@@ -75,9 +75,9 @@ export const TattoName = () => {
                     style={{color:"#363a3a"}}
                     name='last_name' 
                     className='TheTextBox' 
-                    type="text" 
-                    placeholder='Cambia tu apellido'
-                    value={ userData.last_name }
+                    type="text"
+                    disabled  
+                    placeholder={ userData.last_name }
                   /> 
 
                 </div>
@@ -88,8 +88,8 @@ export const TattoName = () => {
                     name='email' 
                     className='TheTextBox' 
                     type="email" 
-                    placeholder='Cambia tu correo' 
-                    value={ userData.email }
+                    disabled 
+                    placeholder={ userData.email }
                   /> 
                 </div>
               </Form>

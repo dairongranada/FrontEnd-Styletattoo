@@ -324,17 +324,19 @@ display: none;
 }
 
 .seccion-perfil-usuario .boton-redes.facebook {
-    background-image: linear-gradient(324deg, #5a5a5a, black);
+    box-shadow: 1px 1px 5px #000009;
 }
 
 .seccion-perfil-usuario .boton-redes.twitter {
-    background-image: linear-gradient(324deg, rgb(66, 66, 66), #b4b4b4);
     color: #000;
+    box-shadow: 1px 1px 5px #000009;
+
 }
 
 .seccion-perfil-usuario .boton-redes.instagram {
-    background-image: linear-gradient(324deg, #5a5a5a, black);}
+    box-shadow: 1px 1px 5px #000009;
 
+}
 
 
     

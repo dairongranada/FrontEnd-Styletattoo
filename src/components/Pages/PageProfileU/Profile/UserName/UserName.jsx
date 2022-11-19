@@ -46,7 +46,6 @@ console.log(userData);
     <div className='BodyProfileUser'>
       <section className="seccion-perfil-usuario">
         <UptInfoU />
-
         <div className="perfil-usuario-body">
           <div className="perfil-usuario-footer">
 
@@ -54,16 +53,17 @@ console.log(userData);
                 <div className="BackgroundIcon">
                     <div><ChevronsLeft LinkExotico ="/user/edit-profile"  className= "ChevronsLeft" /></div>
                     <div className='BoxtTittleEditFiles'>
-                      <h3 className='TittleEditsFiles'>Datos Personales</h3>
+                      <h3 className='TittleEditsFiles'>Tus datos personales</h3>
                     </div>
                     <div><i className='bx bxs-user-detail' ></i></div>
                   </div>
             </div>
+
           </div>
 
           <div className='contentBoxFiles'>
-            
-            <Formik>
+
+          <Formik>
               <Form>
                 <div className='ContentBoxtext'>
                   <label className='label_global_style'>Nombre</label>
@@ -72,8 +72,8 @@ console.log(userData);
                     name='first_name' 
                     className='TheTextBox' 
                     type="text" 
-                    placeholder='Cambia tu nombre'
-                    value={ userData.first_name }
+                    disabled 
+                    placeholder={ userData.first_name }
                   /> 
 
                 </div>
@@ -83,9 +83,9 @@ console.log(userData);
                     style={{color:"#363a3a"}}
                     name='last_name' 
                     className='TheTextBox' 
-                    type="text" 
-                    placeholder='Cambia tu apellido'
-                    value={ userData.last_name }
+                    type="text"
+                    disabled  
+                    placeholder={ userData.last_name }
                   /> 
 
                 </div>
@@ -96,15 +96,15 @@ console.log(userData);
                     name='email' 
                     className='TheTextBox' 
                     type="email" 
-                    placeholder='Cambia tu correo' 
-                    value={ userData.email }
+                    disabled 
+                    placeholder={ userData.email }
                   /> 
                 </div>
               </Form>
             </Formik>
 
-
           </div>
+
         </div>
       </section>
     </div>

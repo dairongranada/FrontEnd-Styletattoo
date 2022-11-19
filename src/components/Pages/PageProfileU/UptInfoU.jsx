@@ -33,12 +33,6 @@ export const UptInfoU = () => {
 
                     <div className="perfil-usuario-avatar">
                         <img src={image} alt="img-avatar" />
-
-                        <div className='boton-avatar' type="button" id="addfile">
-                            <span className="material-symbols-outlined">photo_camera</span>
-                            <input id="changeImg" type="file" required />
-                        </div>
-
                     </div>
 
                 </div>

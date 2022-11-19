@@ -50,6 +50,7 @@
                     flex-direction: column;
                     .label_global_style{
                         font-weight: 400;
+                        color: rgb(82, 82, 82);
                     }
                     .TheTextBox{
                         width: 100%;
@@ -59,6 +60,8 @@
                         margin-bottom: 20px;
                         padding: 10px;
                     }
+                    .TheTextBox::placeholder { color: #3b3b3b}
+
                 }
                 .ContentBoxButtonConfirm{
                     width: 100%;

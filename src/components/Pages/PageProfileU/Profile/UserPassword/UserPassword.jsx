@@ -37,7 +37,7 @@ export const UserPassword = () => {
 
             <div className="BackgroundIcon">
               <div className="BackgroundIcon">
-                  <div><ChevronsLeft LinkExotico ="/userTatto/edit-profile"  className= "ChevronsLeft" /></div>
+                  <div><ChevronsLeft LinkExotico ="/user/edit-profile"  className= "ChevronsLeft" /></div>
                   <div className='BoxtTittleEditFiles'>
                     <h3 className='TittleEditsFiles'>Edita Tu Contraseña</h3>
                   </div>

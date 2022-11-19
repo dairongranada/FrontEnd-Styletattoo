@@ -89,7 +89,7 @@ export const InfoProfileT = () => {
             <ul className="lista-datos">
               <li className='icono'><Link to="/userTatto/edit-name"><span className="material-symbols-outlined Icons-Options">badge</span>Nombre y correo</Link></li>
               <li className='icono'id={`${ perfilProfesional === 1 && "ocultarliCreate" }`} ><a onClick={OpenModalProfP} href="#"><span className="material-symbols-outlined Icons-Options">person</span>Crear Perfil Profesional</a></li>
-              <li className='icono2'id={`${ perfilProfesional === 1 && "mostrarliCreate" }`} ><a onClick={OpenModalProfP} href="#"><span className="material-symbols-outlined Icons-Options">person</span>Subir portafolio</a></li>
+              <li className='icono2'id={`${ perfilProfesional === 1 && "mostrarliCreate" }`} ><a onClick={OpenModalProfP} href="#"><span className="material-symbols-outlined Icons-Options">person</span>Subir Trabajos</a></li>
               <li className='icono'><Link to="/userTatto/edit-password"><span className="material-symbols-outlined Icons-Options">vpn_key</span>Contraseña </Link></li>
             </ul>
             <ul className="lista-datos">

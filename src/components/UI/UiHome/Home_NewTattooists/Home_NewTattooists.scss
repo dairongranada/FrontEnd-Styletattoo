@@ -24,7 +24,6 @@
 }
 .containerCardsArts .CardArtist{
     display: flex;
-    // justify-content: center;
     align-items: center;
     width: 300px;
     height: 300px;
@@ -48,7 +47,8 @@
     background-color: transparent;
 }
 .CardArtist .ImgArtistCard img{
-    width: 85%;
+    width: 255px;
+    height: 255px;
 }
 .CardArtist .detailsCard{
     position: relative;
@@ -62,13 +62,17 @@
     justify-content: space-around;
 }
 .CardArtist .detailsCard .nameTatuadorCard h3{
-    color: black;
+    color: white;
+}
+.CardArtist .detailsCard .ContNumberLike .contSimbolAndNumL{
+    display: flex;
+    gap: 15px;
 }
 .CardArtist .detailsCard .descriptionCardTatt h4{
-    color: black;
+    color: white;
 }
 .CardArtist .detailsCard .descriptionCardTatt{
-    color: black;
+    color: white;
 }
 .CardArtist .detailsCard::before{
     content: '';

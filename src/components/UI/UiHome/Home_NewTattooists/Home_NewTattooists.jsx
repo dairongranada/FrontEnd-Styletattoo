@@ -42,7 +42,7 @@ export const Home_NewTattooists = () => {
             </div>
             <div className="containerCardsArts">
                 {allTaoits.map(dat => (
-                    (dat.PerfilProfesional.length >=1) &&
+                    (dat.PerfilProfesional.length >=1 && dat.PerfilProfesional[0].like >= 10) &&
 
                     <div className="CardArtist">
                         <div className="ImgArtistCard">
@@ -52,6 +52,15 @@ export const Home_NewTattooists = () => {
                             <div className="nameTatuadorCard">
                                 <h3>{dat.first_name}</h3>
                             </div>
+
+                            <div className='ContNumberLike'>
+                                <h4>Me gusta</h4>
+                                <div className="contSimbolAndNumL">
+                                    <span class="material-symbols-outlined">thumb_up</span>
+                                    <p>{dat.PerfilProfesional[0].like}</p>
+                                </div>
+                            </div>
+
                             <div className="descriptionCardTatt">
                                 <h4>Descripcion:</h4>
                                 <p>{dat.PerfilProfesional[0].description}</p>

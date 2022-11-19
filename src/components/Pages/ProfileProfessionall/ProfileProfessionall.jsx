@@ -7,6 +7,7 @@ import './ProfileProfessionall.scss'
 
 import { NavFooter } from '../../Layouts/NavigationFooter/NavFooter/NavFooter';
 import { NavigationBar } from '../../Layouts/NavigationBar/NavigationBar';
+import {Portafolio  } from './Portafolio';
 
 import {  getAllTatuadoresID } from '../../../Helpers/ApiConsumer/Tattuadores'
 
@@ -18,31 +19,40 @@ const baseURL = "https://rickandmortyapi.com/api/character";
 
 export const ProfileProfessionall = () => {
 
+  const { id } = useParams();
+  const idTT = id
+
+
 
 
   const [imgDefecto, setImgDefecto] = useState([])
   const [Estatus, setEstatus] = useState('')
+
+
+
   const [tatuadores, setTatuadores] = useState([]);
   const [perfilProfesional, setperfilProfesional] = useState({});
-
 
   const {first_name, last_name,email} = tatuadores
   const {departament,description,direction ,experience,img,municipio}= perfilProfesional
 
 
-
-  React.useEffect(() => {
-    axios.get(baseURL).then((response) => {
-      setImgDefecto(response.data.results);
-    });
-  }, []);
+  const [perilPortafolio, setPerilPortafolio] = useState([]);
 
 
-  const { id } = useParams();
 
-  const idTT = id
-  // console.log(idTT)
+    // console.log(perilPortafolio);
+    // console.log(perilPortafolio.map(data=>(console.log(data))))
 
+    ////////////////////////////////////////////////////////////////
+  // const allTaoitsTwo = perilPortafolio.filter(data =>{
+  //     if (data.PerfilProfesional.length >= 1) {
+  //       console.log(data);
+  //     }else{
+  //     }
+  //   console.log(data.PerfilProfesional.length >= 1) 
+  // })
+  ////////////////////////////////////////////////////////////////
 
   useEffect( () => {
     setEstatus('switch-toggle Ocupado-btn')
@@ -50,13 +60,12 @@ export const ProfileProfessionall = () => {
     .then( info => {
         setTatuadores( info.data );
         setperfilProfesional(info.data.PerfilProfesional[0])
+        setPerilPortafolio(info.data.Portafolio)
     })
-
   }, [])
 
 
-// console.log(perfilProfesional);
-
+console.log(tatuadores[0]);
 
   return (
     <>
@@ -98,20 +107,43 @@ export const ProfileProfessionall = () => {
         <div className='PortaFInftoTT'>
           <div className='PortaFTitle'><h5>MI TRABAJO</h5></div>
           <div className='PortaFTitleImages'>
+
+          {(perilPortafolio.length === 0) &&
+                    <>
+                      <div className="NoPortafolio">
+                      <div className="loadPortafolio  loaderArtist">
+                          <div style={{marginRight: "8rem"}} className="spinner">
+                            <span style={{width: "67px"}}  ></span>
+                            <span style={{width: "67px"}}  ></span>
+                            <span style={{width: "67px"}}  ></span>
+                            <span style={{width: "67px"}}  ></span>
+                            <span style={{width: "67px"}}  ></span>
+                            <span style={{width: "67px"}}  ></span>
+                            <span style={{width: "67px"}}  ></span>
+                            <span style={{width: "67px"}}  ></span>
+                          </div>
+                          <p style={{marginTop:"10px"}} >Este artista aun no tiene trabajos...</p>
+                          </div>
+                      </div>
+                    </>
+                }
+
+
+
             <motion.div className='slider-container'>
               <motion.div className='slider' drag='x'
                 dragConstraints={{ right: 0, left: -4000 }} >
-
-                {imgDefecto.map((data) => (
-                  <motion.div key={data.id} className='item'>
-                    <div className="PortafolioImg">
-                      <div className="card-img">
-                        <img className='item-image' src={data.image} alt="Imagen producto" />
-                      </div>
-                    </div>
-                  </motion.div>
-                ))
-                }
+               {perilPortafolio.map(data =>(
+                  (perilPortafolio.length >=1) &&
+                    <Portafolio
+                      key={data.id}
+                      image1={data.img1}
+                      image2={data.img2}
+                      image3={data.img3}
+                      image4={data.img4}
+                      image5={data.img5}
+                    />
+                ))} 
               </motion.div>
             </motion.div>
           </div>

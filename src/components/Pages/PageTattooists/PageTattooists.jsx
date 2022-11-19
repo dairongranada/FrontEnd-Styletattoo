@@ -22,6 +22,8 @@ export const PageTattooists = () => {
         setperfilProfesional(info.data[0].PerfilProfesional)
       })
   }, [])
+
+  console.log(tatuadores[1]);
   
   //FILTRO PARA QUE NO SE DAÑE EL  PROYECTO
   const allTaoits = tatuadores.filter(data => data.rol.includes('[ROLE_ARTISTA]'))

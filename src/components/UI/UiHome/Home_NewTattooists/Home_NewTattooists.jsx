@@ -22,6 +22,7 @@ export const Home_NewTattooists = () => {
       console.log(tatuadores);
 
       const allTaoits = tatuadores.filter(data => data.rol.includes('[ROLE_ARTISTA]'))
+      const allTaoitsNullarts = tatuadores.filter(data => data.rol.includes('[ROLE_ARTISTA]'))
 
 
     
@@ -70,7 +71,25 @@ export const Home_NewTattooists = () => {
 
 
                 ))}
-                
+
+                {(allTaoits.length == 0) &&
+                    <main className='LoaderArtist'>
+                    <div className="loaderArtist">
+                    <div className="spinner">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                    <p style={{marginTop:"10px"}} >No hay artistas destacados en este momento...</p>
+                    </div>
+                  </main>
+                }
+
             </div>
         </section>
 

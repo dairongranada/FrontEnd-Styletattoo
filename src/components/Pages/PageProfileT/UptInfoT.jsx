@@ -12,7 +12,19 @@ export const UptInfoT = () => {
     const [tokenID, setTokenID] = useState(localStorage.getItem("token"));
     const [userData, setUserData] = useState({});
 
-
+  
+    let idTatu = userData.id
+  
+  
+    useEffect(() => {
+      if (!!user) {
+        getusers(tokenID)
+          .then(data => setUserData(data.data));
+      }
+  
+  
+    }, [])
+  
 
 
 
@@ -60,7 +72,7 @@ export const UptInfoT = () => {
                 <div className="redes-sociales">
                     <a href="/" className="boton-redes facebook fab fa-facebook-f"><i className='bx bx-home-alt'></i></a>
                     <li className="boton-redes twitter fab fa-twitter"><i className='bx bxl-mailchimp'></i> </li>
-                    <a href={`/all/artist/style`}className="boton-redes instagram fab fa-instagram"><i className='bx bxs-paint'></i></a>
+                    <a href={`/tatto/view/profile/${idTatu}`}className="boton-redes instagram fab fa-instagram"><i className='bx bxs-paint'></i></a>
                 </div>
             </div>
         </div>

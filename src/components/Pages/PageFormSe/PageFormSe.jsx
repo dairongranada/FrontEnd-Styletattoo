@@ -86,6 +86,11 @@ export const PageFormSe = () => {
                                         setTimeout(function(){
                                             window.location = '/userTatto/edit-profile';
                                         }, 1500);    
+                                    }else if ( data.rol === "[ROLE_ADMIN]" ){  
+                                        console.log(11); 
+                                        setTimeout(function(){
+                                            window.location = 'http://localhost:8000/admin/';
+                                        }, 1500); 
                                     }
                                 }
                                 else if( data.activate === false ) {

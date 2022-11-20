@@ -24,7 +24,7 @@ export const PageTattooists = () => {
   }, [])
 
   console.log(tatuadores[1]);
-  
+
   //FILTRO PARA QUE NO SE DAÑE EL  PROYECTO
   const allTaoits = tatuadores.filter(data => data.rol.includes('[ROLE_ARTISTA]'))
 
@@ -36,7 +36,7 @@ export const PageTattooists = () => {
   //       console.log(data);
   //     }else{
   //     }
-    
+
   //   console.log(data.PerfilProfesional.length >= 1) 
   // })
   ////////////////////////////////////////////////////////////////
@@ -58,17 +58,17 @@ export const PageTattooists = () => {
         {(perfilProfesional.length === 0) &&
           <main className='LoaderArtist'>
             <div className="loaderArtist">
-            <div className="spinner">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-            <p style={{marginTop:"10px"}} >No hay artistas en este momento...</p>
+              <div className="spinner">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <p style={{ marginTop: "10px" }} >No hay artistas en este momento...</p>
             </div>
           </main>
         }
@@ -76,9 +76,9 @@ export const PageTattooists = () => {
 
 
 
-      <main className='main-contenido'>
-        {allTaoits.map(data =>(
-          (data.PerfilProfesional.length >=1) &&
+        <main className='main-contenido'>
+          {allTaoits.map(data => (
+            (data.PerfilProfesional.length >= 1) &&
             <CardTatuadores
               key={data.id}
               id={data.id}
@@ -90,9 +90,22 @@ export const PageTattooists = () => {
               municipio={data.PerfilProfesional[0].municipio}
               ids={data.PerfilProfesional[0].id}
             />
-            ))}
+          ))}
         </main>
+
+        <div>
+          <svg class="waves" xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+              <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            </defs>
+            <g class="parallax">
+              <use href="#gentle-wave" x="48" y="7" fill="rgba(18, 18, 18,)" />
+            </g>
+          </svg>
+        </div>
       </div>
+
       <NavFooter />
     </>
 

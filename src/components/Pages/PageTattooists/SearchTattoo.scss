@@ -18,7 +18,7 @@
     height: auto;
     text-align: center;
     padding-top: 1rem;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.788),rgba(0, 0, 0, 0.651)), url("../../../images//Fondos//fondoPaisajeBlack2.jpg");
+    background-image: linear-gradient(rgba(28, 28, 28, 0.993),rgba(41, 41, 41, 0.542)), url("../../../images//Fondos//fondoPaisajeBlack2.jpg");
     backdrop-filter: blur(80px); /* EFECTO BLUR*/
 
     .Content_TattooistsTitle{
@@ -62,7 +62,6 @@
     justify-content: space-between;
   
     .cardsTattooists {
-      box-shadow: 0px 0px 20px #000;
       position: relative;
 
       .face {
@@ -72,7 +71,7 @@
   
         &.facel {
           position: relative;
-          background: #333;
+          background: #000;
           display: flex;
           justify-content: center;
           align-items: center;

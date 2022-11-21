@@ -247,7 +247,15 @@ display: none;
 
 .seccion-perfil-usuario .perfil-usuario-bio {
     margin-bottom: 1.25rem;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+.seccion-perfil-usuario .perfil-usuario-bio .bxl-mailchimp{
+    font-size: 45px;
+}
+.seccion-perfil-usuario .perfil-usuario-bio a{
+    margin-left: 1rem;
 }
 .bxs-paint{
     font-size: 20px;

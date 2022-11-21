@@ -89,10 +89,11 @@ export const InfoProfileT = () => {
               <li className='icono'><Link to="/userTatto/edit-name"><span className="material-symbols-outlined Icons-Options">badge</span>Nombre y correo</Link></li>
               <li className='icono'id={`${ perfilProfesional === 1 && "ocultarliCreate" }`} ><a onClick={OpenModalProfP} href="#"><span className="material-symbols-outlined Icons-Options">person</span>Crear Perfil Profesional</a></li>
               <li className='icono2'id={`${ perfilProfesional === 1 && "mostrarliCreate" }`} ><a onClick={OpenModalProfP} href="#"><span className="material-symbols-outlined Icons-Options">person</span>Subir Trabajos</a></li>
-              <li className='icono'><Link to="/userTatto/edit-password"><span className="material-symbols-outlined Icons-Options">vpn_key</span>Contraseña </Link></li>
+              <li className='icono'><a href="#"><span class="material-symbols-outlined"> work_history </span>Disponiblidad </a></li>
             </ul>
             <ul className="lista-datos">
               <li className='icono'><Link to="/userTatto/edit-quotes"><span className="material-symbols-outlined Icons-Options">auto_stories</span>Citas agendadas</Link></li>
+              <li className='icono'><Link to="/userTatto/edit-password"><span className="material-symbols-outlined Icons-Options">vpn_key</span>Contraseña </Link></li>
               <li onClick={handleLogout} className='icono'><Link to="/"><span className="material-symbols-outlined Icons-Options">logout</span>Cerrar sesion</Link></li>
             </ul>
           </div>

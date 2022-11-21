@@ -66,13 +66,17 @@ export const UptInfoT = () => {
             <div className="perfil-usuario-body">
                 <div className="perfil-usuario-bio">
                     <i className='bx bxl-mailchimp'></i>
-                    <h3 className="titulo">{userData.first_name + " " + userData.last_name}</h3>
+                    <div className="conNameAndEnla">
+                        <h3 className="titulo">{userData.first_name + " " + userData.last_name}</h3>
+                        <a href={`/tatto/view/profile/${idTatu}`}>Ver Perfil profesional</a>
+                    </div>
+
+                    
                     <p className="texto">ㅤㅤ   ㅤ  ㅤ  ㅤ  ㅤ  ㅤ  ㅤ  ㅤ  ㅤ  ㅤ  ㅤ  ㅤ  ㅤ  ㅤ  ㅤ  ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</p>
                 </div>
                 <div className="redes-sociales">
                     <a href="/" className="boton-redes facebook fab fa-facebook-f"><i className='bx bx-home-alt'></i></a>
                     <li className="boton-redes twitter fab fa-twitter"><i className='bx bxl-mailchimp'></i> </li>
-                    <a href={`/tatto/view/profile/${idTatu}`}className="boton-redes instagram fab fa-instagram"><i className='bx bxs-paint'></i></a>
                 </div>
             </div>
         </div>

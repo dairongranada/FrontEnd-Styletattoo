@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import './ProfileProfessionall.scss'
 import './citas.scss'
 
-import { getAllTatuadoresID } from '../../../Helpers/ApiConsumer/Tattuadores'
+import { getAllTatuadoresID,MetodoPUTLikes,MetodoGETLikes } from '../../../Helpers/ApiConsumer/Tattuadores'
 
 
 import { useNavigate, useParams } from 'react-router';
@@ -23,6 +23,8 @@ import { GoHeart } from 'react-icons/go';
 
 
 export const ProfileProfessionall = () => {
+  const { id } = useParams();
+  const idTT = id
 
 
 
@@ -31,14 +33,11 @@ export const ProfileProfessionall = () => {
   const [duplicatedData, setDuplicatedData] = useState(false);
   const [registered, setRegistered] = useState(false);
 
-  const { id } = useParams();
-  const idTT = id
 
 
 
 
-  const [imgDefecto, setImgDefecto] = useState([])
-  const [Estatus, setEstatus] = useState('')
+
 
 
 
@@ -50,7 +49,13 @@ export const ProfileProfessionall = () => {
 
 
   const [perilPortafolio, setPerilPortafolio] = useState([]);
+
+
+
   const [disponiblidad, setdisponiblidad] = useState([]);
+  const [Likes, setLikes] = useState([]);
+
+  let IDisponiblidad = disponiblidad.id
 
 
 
@@ -62,16 +67,43 @@ export const ProfileProfessionall = () => {
         setTatuadores(info.data);
         setperfilProfesional(info.data.PerfilProfesional[0])
         setPerilPortafolio(info.data.Portafolio)
-        setdisponiblidad(info.data.iDispo[0].dispo)
-
-        if (disponiblidad == true) {
-          setEstatus('switch-toggle Disponible-btn')
-        } if (disponiblidad == false) {
-          setEstatus('switch-toggle Ocupado-btn')
-        }
-
+        setdisponiblidad(info.data.iDispo[0])
+        setLikes(info.data.iDispo[0].like)
       })
   }, [])
+
+
+
+  let likeIcon = document.querySelector("#icon"),
+  count = document.querySelector("#count");
+  let clicked = false;
+  let Numberslike = Likes
+
+  const likeBtn = () => {
+    if (!clicked) {
+      clicked = true;
+      count.textContent++;
+      Numberslike++
+
+    } else {
+      clicked = false;
+      count.textContent--;
+      Numberslike--
+    }
+
+
+
+    // M E T O D O    P  U  T 
+
+    let valores = {
+        dispo: disponiblidad.dispo,
+        like: Numberslike,
+        iDispo: disponiblidad.iDispo
+    }
+
+    MetodoPUTLikes(valores,IDisponiblidad)
+  };
+
 
 
 
@@ -83,11 +115,10 @@ export const ProfileProfessionall = () => {
           <div className='ImgRightInftoTT'><img src={img} alt="" /></div>
           <p style={{ display: "flex", fontSize: "15px", marginTop: "0.6rem", alignItems: "center" }} ><span style={{ fontSize: "19px" }} className="material-symbols-outlined">location_on</span>{municipio} -- {departament}</p>
           <p style={{ display: "flex", fontSize: "15px", alignItems: "center" }}>Direccion:  {direction}</p>
-          <div className='ButtonsRightInftoTT'>
-            <button className='Btn-Citas buttons_global_StyleTatto'>AGENDAR CITA</button>
-            <button className='tooltip buttonLike'>
-              <GoHeart className='HeartLike' />
-              <span className='tooltiptext'>Me Gusta</span>
+          <div style={{display: "flex", gap: "1rem", alignItems: "flex-end"}}className='ButtonsRightInftoTT'>
+            <button style={{width: "190px"}} className='Btn-Citas buttons_global_StyleTatto'>AGENDAR CITA</button>
+            <button onClick={likeBtn} className="like__btn">
+              <span id="count">{Numberslike}</span> Like
             </button>
           </div>
           <div>
@@ -95,7 +126,7 @@ export const ProfileProfessionall = () => {
               <div className="switch-label">
                 <i className="fa fa-bluetooth-b"></i><span>Servicio</span>
               </div>
-              <div className={`${disponiblidad == true && "switch-toggle Disponible-btn"}  ${disponiblidad == false && "switch-toggle Ocupado-btn"}`}>
+              <div className={`${disponiblidad.dispo == true && "switch-toggle Disponible-btn"}  ${disponiblidad.dispo == false && "switch-toggle Ocupado-btn"}`}>
                 <input style={{ visibility: "hidden" }} type="checkbox" id="bluetooth" />
                 <label htmlFor="bluetooth"></label>
               </div>
@@ -136,8 +167,6 @@ export const ProfileProfessionall = () => {
               </>
             }
 
-
-
             <motion.div className='slider-container'>
               <motion.div className='slider' drag='x'
                 dragConstraints={{ right: 0, left: -4000 }} >
@@ -160,12 +189,6 @@ export const ProfileProfessionall = () => {
         <div className="ContentTimeBackgournd">
           <div className="ContentHorarioBack">
             {/* <div className="loader"><span className="hour"></span><span className="min"></span><span className="circel"></span></div> */}
-
-
-
-
-
-
             <div style={{ marginLeft: "-4rem" }} className='Content_FormsPrincipal'>
               <Formik
                 initialValues={{
@@ -228,7 +251,7 @@ export const ProfileProfessionall = () => {
                     <h2>Agenda tu cITA</h2>
                     <div className="inputContentCitas">
                       <div>
-                        <label style={{fontWeight: "100"}} htmlFor="Time">Ingresa el dia</label>
+                        <label style={{ fontWeight: "100" }}>Ingresa el dia</label>
                         <Field
                           className='inputsCitas'
                           name='Date'
@@ -239,7 +262,7 @@ export const ProfileProfessionall = () => {
                         {touched.name && errors.name && <span>{errors.name}</span>}
                       </div>
                       <div>
-                        <label style={{fontWeight: "100"}} htmlFor="Time">Ingresa la hora</label>
+                        <label style={{ fontWeight: "100" }}>Ingresa la hora</label>
                         <Field
                           className='inputsCitas'
                           name='Time'
@@ -251,13 +274,13 @@ export const ProfileProfessionall = () => {
                     </div>
 
                     <div className="inputContentCitas">
-                  
-                      <div style={{display: "flex", gap: ".5rem", flexDirection: "column", alignItems: "center"}}> 
-                      <label style={{fontWeight: "100"}} htmlFor="Time">Muestrame tu idea</label>
-                        <button class="contenedor-btn-file">
-                            <span class="material-symbols-outlined"> photo_camera </span>
-                            <label for="btn-file"></label>
-                            <input type="file" id="btn-file"/>
+
+                      <div style={{ display: "flex", gap: ".5rem", flexDirection: "column", alignItems: "center" }}>
+                        <label style={{ fontWeight: "100" }}>Muestrame tu idea</label>
+                        <button className="contenedor-btn-file">
+                          <span className="material-symbols-outlined"> photo_camera </span>
+                          <label></label>
+                          <input type="file" id="btn-file" />
                         </button>
                         {touched.email && errors.email && <span>{errors.email}</span>}
 
@@ -265,7 +288,7 @@ export const ProfileProfessionall = () => {
                     </div>
                     <div className="inputContentCitas">
                       <div>
-                        <label style={{fontWeight: "100"}} htmlFor="Time">Describe</label>
+                        <label style={{ fontWeight: "100" }}>Describe</label>
                         <Field
                           className='inputsCitas'
                           name='Description'
@@ -281,7 +304,7 @@ export const ProfileProfessionall = () => {
 
                     <div className='Btn_Citas' >
                       <button
-                        style ={{width: "22rem"}}
+                        style={{ width: "22rem" }}
                         className="buttons_global_StyleTatto"
                         type={"submit"}>
                         Agendar Cita

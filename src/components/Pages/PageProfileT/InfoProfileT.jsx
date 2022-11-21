@@ -126,7 +126,6 @@ export const InfoProfileT = () => {
                 let validacion = {};
 
                 CreateProfesionalprofile({
-                  like: 0,
                   img: imgUrl,
                   departament: valores.departament,
                   municipio: valores.municipio,
@@ -152,6 +151,7 @@ export const InfoProfileT = () => {
                   }
                   else {
                     CreateDisponibilidad({
+                      like: 0,
                       dispo: true,
                       iDispo:idTatu
                     })

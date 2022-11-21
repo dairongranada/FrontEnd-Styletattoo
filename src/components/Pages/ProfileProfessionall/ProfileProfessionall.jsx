@@ -170,14 +170,9 @@ export const ProfileProfessionall = () => {
             <div style={{ marginLeft: "-4rem" }} className='Content_FormsPrincipal'>
               <Formik
                 initialValues={{
-                  username: "",
-                  first_name: "",
-                  last_name: "",
-                  cellPhone: "",
-                  email: "",
-                  password: "",
-                  passwordConfirm: '',
-                  rol: "[ROLE_USUARIO]",
+                  Date: "",
+                  Time: "",
+                  Img: "",
                 }}
 
                 validate={(valores) => {
@@ -195,17 +190,12 @@ export const ProfileProfessionall = () => {
 
                 onSubmit={(valores, { resetForm }) => {
                   let validacion = {};
-                  let username = valores.first_name + valores.last_name
 
                   signUpUser({
-                    username: username,
-                    first_name: valores.first_name,
-                    last_name: valores.last_name,
-                    cellPhone: valores.cellPhone,
-                    email: valores.email,
-                    password: valores.password,
-                    rol: "[ROLE_USUARIO]",
-                    image: "https://i.postimg.cc/T2N5CnwK/perfil-Usuario-Anonim.png"
+                    Date: valores.Date,
+                    Time: valores.Time,
+                    Img: valores.Img,
+
 
                   }).then(info => {
                     validacion = info
@@ -225,7 +215,7 @@ export const ProfileProfessionall = () => {
                       resetForm();
                       setLoading(false);
                       setRegistered(true);
-                      window.location = "/IngresarSesion";
+                      window.location = "/user/edit-quotes";
                     }
                   });
 
@@ -241,10 +231,10 @@ export const ProfileProfessionall = () => {
                       <div>
                         <Field
                           className='inputsCitas'
-                          name='first_name'
-                          id='first_name'
-                          type="date"
-                          placeholder='date'
+                          name='Date'
+                          id='Date'
+                          type="Date"
+                          placeholder='Date'
                         />
                         {touched.name && errors.name && <span>{errors.name}</span>}
                       </div>
@@ -263,10 +253,10 @@ export const ProfileProfessionall = () => {
                       <div>
                         <Field
                           className='inputsCitas'
-                          name='file'
-                          id='file'
+                          name='Img'
+                          id='Img'
                           type="file"
-                          placeholder='Correo'
+                          placeholder='file'
                         />
                         {touched.email && errors.email && <span>{errors.email}</span>}
 

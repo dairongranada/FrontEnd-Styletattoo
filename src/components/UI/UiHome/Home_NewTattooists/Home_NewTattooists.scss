@@ -22,65 +22,85 @@
     flex-wrap: wrap;
     padding: 20px;
 }
-.containerCardsArts .CardArtist{
-    display: flex;
-    align-items: center;
-    width: 300px;
-    height: 300px;
-    background-color: var(--colorGray5);
-    box-shadow: 0px 15px 45px rgb(0, 0, 0.25);
+
+
+
+/* ------------- C A R D ------------- */
+.CardArtist{
+    height: 500px;
+    margin-top: 50px;
+    box-shadow: 5px 5px 20px var(--colorBlack);
     overflow: hidden;
-    transition: 0.5s;
 }
-.containerCardsArts .CardArtist:hover{
-    width: 600px;
+.CardArtist img{
+    height: 500px;
+    width: 350px;
+    border-radius: 3px;
 }
-.CardArtist .ImgArtistCard{
-    position: relative;
-    min-width: 300px;
-    width: 300px;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.5s;
-    background-color: transparent;
-}
-.CardArtist .ImgArtistCard img{
-    width: 255px;
-    height: 255px;
-}
-.CardArtist .detailsCard{
-    position: relative;
-    min-width: 300px;
-    background-color: var(--colorGray5);
-    width: 100%;
-    height: 100%;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-.CardArtist .detailsCard .nameTatuadorCard h3{
-    color: white;
-}
-.CardArtist .detailsCard .ContNumberLike .contSimbolAndNumL{
-    display: flex;
-    gap: 15px;
-}
-.CardArtist .detailsCard .descriptionCardTatt h4{
-    color: white;
-}
-.CardArtist .detailsCard .descriptionCardTatt{
-    color: white;
-}
-.CardArtist .detailsCard::before{
-    content: '';
+.detailsCard{
+    height: 70px;
+    width: 350px;
+    padding: 6px;
+    box-sizing: border-box;
     position: absolute;
-    left: 0;
-    width: 0;
-    height: 0;
-    border-bottom: 10px solid transparent;
-    border-top: 10px solid transparent;
-    border-left: 10px solid var(--colorGray5);
+    transform: translate(0px, -73px);
+    background: rgb(0 0 0 / 69%);
+    color: white;
+    transition: 0.5s;
 }
+.detailsCard h3{
+    margin: 10px;
+    font-size: 40px;
+}
+.detailsCard .descriptionCardTatt{
+    visibility: hidden;
+    opacity: 0;
+    transition: .5s;
+}
+.detailsCard .ContNumberLike h4{
+    visibility: hidden;
+    opacity: 0;
+    transition: .5s;
+}
+.detailsCard .ContNumberLike .contSimbolAndNumL{
+    display: flex;
+    gap: 25px;
+}
+.detailsCard .ContNumberLike .contSimbolAndNumL p{
+    font-weight: bold;
+    visibility: hidden;
+    opacity: 0;
+    transition: .5s;
+}
+.detailsCard .ContNumberLike .contSimbolAndNumL span{
+    visibility: hidden;
+    opacity: 0;
+    transition: .5s;
+}
+
+//-------- hoversito de la  C A R D  :)   ---------------
+.CardArtist:hover .detailsCard{
+    height: 200px;
+    transform: translate(0px, -203px);
+}
+.CardArtist:hover .detailsCard .descriptionCardTatt{
+    opacity: 1;
+    visibility: visible;
+    transition: .5s;
+}
+.CardArtist:hover .detailsCard .ContNumberLike h4{
+    opacity: 1;
+    visibility: visible;
+    transition: .5s;
+}
+.CardArtist:hover .detailsCard .ContNumberLike .contSimbolAndNumL p{
+    opacity: 1;
+    visibility: visible;
+    transition: .5s;
+}
+.CardArtist:hover .detailsCard .ContNumberLike .contSimbolAndNumL span{
+    opacity: 1;
+    visibility: visible;
+    transition: .5s;
+}
+/*-------------------------------------*/

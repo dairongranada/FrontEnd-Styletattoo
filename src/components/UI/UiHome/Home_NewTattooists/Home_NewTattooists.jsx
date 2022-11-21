@@ -22,18 +22,10 @@ export const Home_NewTattooists = () => {
       console.log(tatuadores);
 
       const allTaoits = tatuadores.filter(data => data.rol.includes('[ROLE_ARTISTA]'))
-      const allTaoitsNullarts = tatuadores.filter(data => data.rol.includes('[ROLE_ARTISTA]'))
 
 
     
-    // const allTaoits = tatuadores.filter(data => data.rol.includes('[ROLE_ARTISTA]'))
-    // const allTaoitsTwo = allTaoits.filter(data =>{
-    //     if (data.PerfilProfesional.length >= 0) {
-    //     //   console.log(data);
-    //     }else{
-    //     }
-      
-    // })
+
 
 
     return (

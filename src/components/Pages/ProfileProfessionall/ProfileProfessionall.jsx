@@ -74,6 +74,8 @@ export const ProfileProfessionall = () => {
 
 
 
+////////////////////////////////////////////
+    // L I K E S
   let likeIcon = document.querySelector("#icon"),
   count = document.querySelector("#count");
   let clicked = false;
@@ -90,10 +92,10 @@ export const ProfileProfessionall = () => {
       count.textContent--;
       Numberslike--
     }
+////////////////////////////////////////////
 
 
-
-    // M E T O D O    P  U  T 
+    // M E T O D O    P  U  T    L I K E S
 
     let valores = {
         dispo: disponiblidad.dispo,

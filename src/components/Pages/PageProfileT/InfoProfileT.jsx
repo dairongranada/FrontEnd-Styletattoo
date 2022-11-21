@@ -3,7 +3,7 @@ import { React } from "react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import { Formik, Form, Field } from 'formik';
-import { CreateProfesionalprofile } from '../../.././Helpers/ApiConsumer/AuthRegistro'
+import { CreateProfesionalprofile,CreateDisponibilidad } from '../../.././Helpers/ApiConsumer/AuthRegistro'
 import { getusers , getTatois} from '../../.././Helpers/ApiConsumer/PostUsers'
 import { MdOutlineCancel } from 'react-icons/md';
 
@@ -124,9 +124,10 @@ export const InfoProfileT = () => {
              
               onSubmit={(valores, { resetForm }) => {
                 let validacion = {};
+
                 CreateProfesionalprofile({
-                  img: imgUrl,
                   like: 0,
+                  img: imgUrl,
                   departament: valores.departament,
                   municipio: valores.municipio,
                   direction: valores.direction,
@@ -136,6 +137,7 @@ export const InfoProfileT = () => {
 
                 }).then(info => {
                   validacion = info
+
 
                   setLoading(true);
                   if (validacion.status === 400) {
@@ -149,6 +151,10 @@ export const InfoProfileT = () => {
                     setLoading(false);
                   }
                   else {
+                    CreateDisponibilidad({
+                      dispo: true,
+                      iDispo:idTatu
+                    })
                     setDuplicatedData(false);
                     resetForm();
                     setLoading(false);

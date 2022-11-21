@@ -38,34 +38,31 @@ export const ProfileProfessionall = () => {
 
 
   const [perilPortafolio, setPerilPortafolio] = useState([]);
+  const [disponiblidad, setdisponiblidad] = useState([]);
 
 
 
-    // console.log(perilPortafolio);
-    // console.log(perilPortafolio.map(data=>(console.log(data))))
-
-    ////////////////////////////////////////////////////////////////
-  // const allTaoitsTwo = perilPortafolio.filter(data =>{
-  //     if (data.PerfilProfesional.length >= 1) {
-  //       console.log(data);
-  //     }else{
-  //     }
-  //   console.log(data.PerfilProfesional.length >= 1) 
-  // })
-  ////////////////////////////////////////////////////////////////
 
   useEffect( () => {
-    setEstatus('switch-toggle Ocupado-btn')
+    
     getAllTatuadoresID(idTT)
     .then( info => {
         setTatuadores( info.data );
         setperfilProfesional(info.data.PerfilProfesional[0])
         setPerilPortafolio(info.data.Portafolio)
+        setdisponiblidad(info.data.iDispo[0].dispo)
+        
+        if (disponiblidad == true) {
+          setEstatus('switch-toggle Disponible-btn')
+        }if (disponiblidad == false) {
+          setEstatus('switch-toggle Ocupado-btn')
+        }
+        
     })
   }, [])
 
 
-console.log(tatuadores[0]);
+console.log(disponiblidad);
 
   return (
     <>
@@ -87,7 +84,7 @@ console.log(tatuadores[0]);
               <div className="switch-label">
                 <i className="fa fa-bluetooth-b"></i><span>Servicio</span>
               </div>
-              <div className={Estatus}>
+              <div className={`${ disponiblidad == true && "switch-toggle Disponible-btn" }  ${ disponiblidad == false && "switch-toggle Ocupado-btn"}` }>
                 <input style={{visibility: "hidden"}}  type="checkbox" id="bluetooth" />
                 <label htmlFor="bluetooth"></label>
               </div>

@@ -251,15 +251,14 @@ export const ProfileProfessionall = () => {
                     </div>
 
                     <div className="inputContentCitas">
-                      <div>
-                        <label style={{fontWeight: "100"}} htmlFor="Time">Muestrame tu idea</label>
-                        <Field
-                          className='inputsCitas'
-                          name='Img'
-                          id='Img'
-                          type="file"
-                          placeholder='file'
-                        />
+                  
+                      <div style={{display: "flex", gap: ".5rem", flexDirection: "column", alignItems: "center"}}> 
+                      <label style={{fontWeight: "100"}} htmlFor="Time">Muestrame tu idea</label>
+                        <button class="contenedor-btn-file">
+                            <span class="material-symbols-outlined"> photo_camera </span>
+                            <label for="btn-file"></label>
+                            <input type="file" id="btn-file"/>
+                        </button>
                         {touched.email && errors.email && <span>{errors.email}</span>}
 
                       </div>
@@ -280,8 +279,9 @@ export const ProfileProfessionall = () => {
                     </div>
 
 
-                    <div className='Btn_Citas'>
+                    <div className='Btn_Citas' >
                       <button
+                        style ={{width: "22rem"}}
                         className="buttons_global_StyleTatto"
                         type={"submit"}>
                         Agendar Cita

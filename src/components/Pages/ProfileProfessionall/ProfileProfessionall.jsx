@@ -74,7 +74,6 @@ export const ProfileProfessionall = () => {
   }, [])
 
 
-  console.log(disponiblidad);
 
   return (
     <>
@@ -229,6 +228,7 @@ export const ProfileProfessionall = () => {
                     <h2>Agenda tu cITA</h2>
                     <div className="inputContentCitas">
                       <div>
+                        <label style={{fontWeight: "100"}} htmlFor="Time">Ingresa el dia</label>
                         <Field
                           className='inputsCitas'
                           name='Date'
@@ -239,6 +239,7 @@ export const ProfileProfessionall = () => {
                         {touched.name && errors.name && <span>{errors.name}</span>}
                       </div>
                       <div>
+                        <label style={{fontWeight: "100"}} htmlFor="Time">Ingresa la hora</label>
                         <Field
                           className='inputsCitas'
                           name='Time'
@@ -251,6 +252,7 @@ export const ProfileProfessionall = () => {
 
                     <div className="inputContentCitas">
                       <div>
+                        <label style={{fontWeight: "100"}} htmlFor="Time">Muestrame tu idea</label>
                         <Field
                           className='inputsCitas'
                           name='Img'
@@ -263,14 +265,14 @@ export const ProfileProfessionall = () => {
                       </div>
                     </div>
                     <div className="inputContentCitas">
-
                       <div>
+                        <label style={{fontWeight: "100"}} htmlFor="Time">Describe</label>
                         <Field
                           className='inputsCitas'
                           name='Description'
                           id='Description'
                           as="textarea"
-                          placeholder='Muestrame tu idea'
+                          placeholder='...'
                           maxLength='150'
                         />
                         {touched.cellPhone && errors.cellPhone && <span>{errors.cellPhone}</span>}

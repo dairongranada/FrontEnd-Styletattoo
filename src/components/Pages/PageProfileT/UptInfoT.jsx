@@ -1,59 +1,65 @@
 import './PageProfileT.scss'
 import { React, useState, useEffect } from 'react'
 import { getusers } from '../../../Helpers/ApiConsumer/PostUsers';
+import { getAllTatuadoresID } from '../../.././Helpers/ApiConsumer/Tattuadores'
 
+import gorroNavidad from '../../../images/Icons/gorroNavidad.png'
 
 
 export const UptInfoT = () => {
 
-    const [fileU, setFileU] = useState("")
-    const [image, setImage] = useState("https://i.postimg.cc/T2N5CnwK/perfil-Usuario-Anonim.png")
     const [user, setUser] = useState(JSON.parse(localStorage.getItem("usuario")));
     const [tokenID, setTokenID] = useState(localStorage.getItem("token"));
     const [userData, setUserData] = useState({});
 
+  
+    let idTatu = userData.id
+  
+  
+    useEffect(() => {
+      if (!!user) {
+        getusers(tokenID)
+          .then(data => setUserData(data.data));
+      }
+  
+  
+    }, [])
+  
 
-    const uploadImage = async (e) => {
-        const files = e.target.files;
-        const data = new FormData();
-        data.append("file", files[0]);
-        data.append("upload_preset", "images")
-        const res = await fetch(
-            "https://api.cloudinary.com/v1_1/dryg8dmrb/image/upload",
-            {
-                method: "POST",
-                body: data,
 
-            }
-        )
-        const file = await res.json()
-
-        setImage(file.secure_url)
-        setFileU(file.secure_url)
-        console.log(file.secure_url);
-    }
 
     useEffect(() => {
-        if (!!user) {
-            getusers(tokenID)
-                .then(data => setUserData(data.data));
-        } else {
-            console.log("No se ha autenticado");
-        }
-
+        if (!!user) { getusers(tokenID).then(data => setUserData(data.data)); }
     }, [])
-    console.log(userData.first_name)
+
+
+    const [tattoInfoIMG, setTattoInfoIMG] = useState({});
+    const [InfoUser, setInfoUser] = useState(JSON.parse(localStorage.getItem("InfoUser")));
+
+    useEffect(() => {
+        if (!!user) { getAllTatuadoresID(InfoUser.id)
+            .then(data => setTattoInfoIMG(data.data.PerfilProfesional[0])) }
+    }, [])
+
+    let imagePROFILE = ""
+
+    if (tattoInfoIMG == null) {
+        imagePROFILE  = "https://i.postimg.cc/T2N5CnwK/perfil-Usuario-Anonim.png"
+    }else { 
+        imagePROFILE  =  tattoInfoIMG.img 
+    }
+
+    // console.log(tattoInfoIMG);
+
+    // console.log(userData.first_name)
 
     return (
         <div className='perfil-usuario-content'>
             <div className="perfil-usuario-header">
                 <div className="perfil-usuario-portada">
+                    <div className = " GorroRotate"><img className = "gorroNavidadPerfil" src={gorroNavidad} alt={gorroNavidad} /></div>
                     <div className="perfil-usuario-avatar">
-                        <img src={image} alt="img-avatar" />
-                        <div className='boton-avatar' type="button" id="addfile">
-                            <span className="material-symbols-outlined">photo_camera</span>
-                            <input onChange={uploadImage} id="changeImg" type="file" required />
-                        </div>
+                        <img src={imagePROFILE} alt="img-avatar" />
                     </div>
                 </div>
             </div>
@@ -66,7 +72,7 @@ export const UptInfoT = () => {
                 <div className="redes-sociales">
                     <a href="/" className="boton-redes facebook fab fa-facebook-f"><i className='bx bx-home-alt'></i></a>
                     <li className="boton-redes twitter fab fa-twitter"><i className='bx bxl-mailchimp'></i> </li>
-                    <a href='/tatto/view/profile' className="boton-redes instagram fab fa-instagram"><i className='bx bxs-paint'></i></a>
+                    <a href={`/tatto/view/profile/${idTatu}`}className="boton-redes instagram fab fa-instagram"><i className='bx bxs-paint'></i></a>
                 </div>
             </div>
         </div>

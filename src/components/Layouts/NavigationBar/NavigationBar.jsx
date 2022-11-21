@@ -2,9 +2,10 @@ import './NavigationBar.scss'
 
 import { useState , useEffect } from 'react'
 import perfilUsuarioAnonim from '../../../images/Icons/perfilUsuarioAnonim.jpg'
-import logoStyleT from '../../../images/Icons/logo.jpg'
 import { getusers }  from '../../../Helpers/ApiConsumer/PostUsers';
 
+import logoStyleT from '../../../images/Icons/logo.jpg'
+import LogoTextStyle from '../../../images/Icons/LogoTextStyle.jpg'
 
 
 
@@ -63,7 +64,7 @@ export const NavigationBar = () => {
         { ( !!token ) &&
             <div id="sidebar" className={ sidebarNav } >
                 <div className="logo-details">
-                    <div className="logo_name">STYLE TATTOO</div>
+                    <div className="logo_name"><img style={{ width:"110px",marginTop:".5rem" }} src={LogoTextStyle} alt="" /></div>
                     <i className={barMenuIcon} id="CloseBtnNav" onClick={handleChangeNavs} ></i>
                 </div>
                 <ul className="nav-list">
@@ -75,7 +76,6 @@ export const NavigationBar = () => {
                         <span className="tooltip">Inicio</span>
                     </li>
                     
-
                         { (userData.rol === '[ROLE_USUARIO]') &&
                             <li>
                                 <a href="/user/edit-profile">
@@ -96,7 +96,6 @@ export const NavigationBar = () => {
                             </li>
                         }{ (userToken.rol === null) && <li></li>}
                         
-                    
                     <li>
 
                         <a href="/all/artist/style">

@@ -5,6 +5,15 @@ import {useState } from 'react'
 const URL = "http://localhost:8000/";
 // const URL = "https://despliegue-back.onrender.com/api"
 
+/*
+░██████╗░█████╗░███╗░░██╗████████╗██╗  ███████╗░██████╗  ░██████╗░░█████╗░██╗░░░██╗
+██╔════╝██╔══██╗████╗░██║╚══██╔══╝██║  ██╔════╝██╔════╝  ██╔════╝░██╔══██╗╚██╗░██╔╝
+╚█████╗░███████║██╔██╗██║░░░██║░░░██║  █████╗░░╚█████╗░  ██║░░██╗░███████║░╚████╔╝░
+░╚═══██╗██╔══██║██║╚████║░░░██║░░░██║  ██╔══╝░░░╚═══██╗  ██║░░╚██╗██╔══██║░░╚██╔╝░░
+██████╔╝██║░░██║██║░╚███║░░░██║░░░██║  ███████╗██████╔╝  ╚██████╔╝██║░░██║░░░██║░░░
+╚═════╝░╚═╝░░╚═╝╚═╝░░╚══╝░░░╚═╝░░░╚═╝  ╚══════╝╚═════╝░  ░╚═════╝░╚═╝░░╚═╝░░░╚═╝░░░
+*/
+
 
 
 let token = localStorage.getItem("token")
@@ -15,6 +24,8 @@ let token = localStorage.getItem("token")
 ██║╚██╔╝██║██╔══╝░░░░░██║░░░██║░░██║██║░░██║██║░░██║    ██╔═══╝░██║░░░██║░░░██║░░░
 ██║░╚═╝░██║███████╗░░░██║░░░╚█████╔╝██████╔╝╚█████╔╝    ██║░░░░░╚██████╔╝░░░██║░░░
 ╚═╝░░░░░╚═╝╚══════╝░░░╚═╝░░░░╚════╝░╚═════╝░░╚════╝░    ╚═╝░░░░░░╚═════╝░░░░╚═╝░░░*/
+
+
 
 
 
@@ -44,9 +55,6 @@ export const CambiarContraseña = async ( valores ) => {
     }
 }
 
-
-
-
 /* 
 ███╗░░░███╗███████╗████████╗░█████╗░██████╗░░█████╗░        ░██████╗░███████╗████████╗
 ████╗░████║██╔════╝╚══██╔══╝██╔══██╗██╔══██╗██╔══██╗        ██╔════╝░██╔════╝╚══██╔══╝
@@ -61,6 +69,22 @@ export const getusers = async ( tokenID ) => {
     try {
         const resp = await axios({
             url: URL+"auth/api/getUsers/",
+            method: "GET",
+            headers: {
+                "Authorization" :"Token "+ tokenID,
+                "Content-Type":"application/json"
+            }
+        })
+        return resp;
+    } catch (error) {
+    }
+}
+
+export const getTatois = async ( tokenID ) => {
+
+    try {
+        const resp = await axios({
+            url: URL+"tattos/perfilProfesional/",
             method: "GET",
             headers: {
                 "Authorization" :"Token "+ tokenID,

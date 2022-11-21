@@ -26,11 +26,8 @@ export const TattoName = () => {
     if ( !!user ) {
         getusers( tokenID )
         .then( data => setUserData( data.data ));
-    }else {
-      console.log("No se ha autenticado");
-    }
+    }else {}
 }, [])
-console.log(userData);
 
 
 
@@ -48,7 +45,7 @@ console.log(userData);
                 <div className="BackgroundIcon">
                     <div><ChevronsLeft LinkExotico ="/userTatto/edit-profile"  className= "ChevronsLeft" /></div>
                     <div className='BoxtTittleEditFiles'>
-                      <h3 className='TittleEditsFiles'>Edita Tus Datos</h3>
+                      <h3 className='TittleEditsFiles'>Tus datos personales</h3>
                     </div>
                     <div><i className='bx bxs-user-detail' ></i></div>
                   </div>
@@ -67,8 +64,8 @@ console.log(userData);
                     name='first_name' 
                     className='TheTextBox' 
                     type="text" 
-                    placeholder='Cambia tu nombre'
-                    value={ userData.first_name }
+                    disabled 
+                    placeholder={ userData.first_name }
                   /> 
 
                 </div>
@@ -78,9 +75,9 @@ console.log(userData);
                     style={{color:"#363a3a"}}
                     name='last_name' 
                     className='TheTextBox' 
-                    type="text" 
-                    placeholder='Cambia tu apellido'
-                    value={ userData.last_name }
+                    type="text"
+                    disabled  
+                    placeholder={ userData.last_name }
                   /> 
 
                 </div>
@@ -91,8 +88,8 @@ console.log(userData);
                     name='email' 
                     className='TheTextBox' 
                     type="email" 
-                    placeholder='Cambia tu correo' 
-                    value={ userData.email }
+                    disabled 
+                    placeholder={ userData.email }
                   /> 
                 </div>
               </Form>

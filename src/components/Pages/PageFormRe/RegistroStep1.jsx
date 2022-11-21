@@ -78,8 +78,8 @@ export const RegistroStep1 = ( {step_change, setUserType } ) => {
                         }}
                         
                             className='type__user-button type__user-clinica'>
-                             <AiTwotoneCopy className='type__user-button-icon'/>
-                            <h1 className='type__user-button-h1' >Artista</h1>
+                            <AiTwotoneCopy className='type__user-button-icon'/>
+                            <h1 className='type__user-button-h1' >ARTISTA</h1>
                         </button>
 
                     </div>
@@ -89,6 +89,7 @@ export const RegistroStep1 = ( {step_change, setUserType } ) => {
                     <ButtonUI 
                         text={'Siguiente'}
                         styleName= "buttons_global_StyleTatto"
+                        id={`${ active === 0 && "btnBlocked" }`}
                         event={handleButton}
                     />
 

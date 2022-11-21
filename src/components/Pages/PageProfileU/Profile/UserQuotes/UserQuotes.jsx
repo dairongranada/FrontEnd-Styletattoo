@@ -36,8 +36,20 @@ export const UserQuotes = () => {
 
 
           <div className='contentBoxFiles'>
-            
-            
+          <table id="customers">
+              <tr>
+                <th>Fecha</th>
+                <th>Hora</th>
+                <th>Tatuador</th>
+                <th>Eliminar</th>
+              </tr>
+              <tr>
+                <td>18/11/22</td>
+                <td>3:30pm</td>
+                <td>Maria Anders</td>
+                <td><span class="material-symbols-outlined"> delete </span></td>
+              </tr>
+            </table>
           </div>
 
 

@@ -57,13 +57,12 @@ export const PageHome = () => {
                     </div>
                 </div>
         
-        
             })}
 
             </div>    
         </div>
-
-        <NavFooter/></>
+        <NavFooter/>
+        </>
 
     )
 }

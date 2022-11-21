@@ -45,10 +45,11 @@ const crearNeive = () => {
                 <div className='contPrimary'>
                     <div className='HeadPresentationPt'>
                         <div className="contTextHead">
+                            <p>Style Tatto sabe todo sobre el tatuaje</p>
                             <div className="contTittleStyleT">  
                                 <img className = "gorroNavidad" src={gorroNavidad} alt={gorroNavidad} />
                                 <h2  style={{fontSize:"80px"}}>Style</h2>
-                                <h2 style={{fontSize:"80px"}} className='TittleTattoNThow'>Tatto</h2>
+                                <h2 style={{fontSize:"80px"}} className='TittleTattoNThow'>Tattoo</h2>
                             </div>
                             <p>Creamos arte y contamos historias en tu piel</p>
                             <br />
@@ -66,7 +67,7 @@ const crearNeive = () => {
                             <div className="contTittleStyleT">  
                                 <img className = "gorroNavidad" src={gorroNavidad} alt={gorroNavidad} />
                                 <h2  style={{fontSize:"80px"}}>Style</h2>
-                                <h2 style={{fontSize:"80px"}} className='TittleTattoNThow'>Tatto</h2>
+                                <h2 style={{fontSize:"80px"}} className='TittleTattoNThow'>Tattoo</h2>
                             </div>
                             <p>Creamos arte y contamos historias en tu piel</p>
                             <br />
@@ -85,6 +86,7 @@ const crearNeive = () => {
                     </div>
                 </div>
             }
+            
         </>
     )
 }

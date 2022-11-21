@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const CardTatuadores = ({id,ids,image,first_name,last_name ,descripcion,departament,municipio}) => {
+export const CardTatuadores = ({id,image,first_name,last_name ,descripcion,departament,municipio}) => {
   return (
         <div className='pather'>
               <div className="containerTattois">
@@ -12,9 +12,9 @@ export const CardTatuadores = ({id,ids,image,first_name,last_name ,descripcion,d
                     </div>
                     <div className="face face2">
                         <div className="content">
+                            <p className='location_on'>{municipio} -- {departament}</p>
                             <p className='nameTattooists' >{first_name} {last_name}</p>
                             <p className='descripTattooists'href="/">{descripcion}</p>
-                            <p className='descripTattooists'><span className="material-symbols-outlined">location_on</span>{municipio} -- {departament}</p>
                             <a href={`/tatto/view/profile/${id}`} className='btnA_menu'>Ver perfil</a>
                         </div>
                     </div>

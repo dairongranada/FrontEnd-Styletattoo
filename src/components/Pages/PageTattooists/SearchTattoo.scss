@@ -1,6 +1,3 @@
-#text{
-  visibility: hidden;
-}
 
 .LoaderArtist{
   gap: 3rem;
@@ -20,12 +17,17 @@
     width: 100%;
     height: auto;
     text-align: center;
-    padding: 1rem;
+    padding-top: 1rem;
     background-image: linear-gradient(rgba(0, 0, 0, 0.788),rgba(0, 0, 0, 0.651)), url("../../../images//Fondos//fondoPaisajeBlack2.jpg");
     backdrop-filter: blur(80px); /* EFECTO BLUR*/
 
     .Content_TattooistsTitle{
+      text-align: center;
         padding: 20px;
+
+        h1{
+          margin-left: 5rem;
+        }
 
         p{  padding: 3rem 7rem;
             font-size: 18px;
@@ -82,7 +84,8 @@
 
   
       .face.facel .content img {
-        width: 180px;
+        width: 11rem;
+        height: 11rem;
         border-radius: 50%;
       }
     }
@@ -129,6 +132,7 @@
   }
   
   .descripTattooists {
+    height: 5rem;
     font-size: 15px;
     line-height: 22px;
     color: #333;
@@ -137,6 +141,15 @@
     align-items: center;
   }
 
+  .location_on {
+    width: 100%;
+    font-size: 15px;
+    line-height: 22px;
+    color: #555555;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
 
 
 

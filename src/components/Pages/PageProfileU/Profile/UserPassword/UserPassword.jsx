@@ -18,6 +18,7 @@ import toast, { Toaster } from 'react-hot-toast';
 
 
 export const UserPassword = () => {
+  const [active, setActive] = useState(0);
 
 
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("usuario")));
@@ -43,22 +44,43 @@ export const UserPassword = () => {
                   <div><i className='bx bxs-user-detail' ></i></div>
                 </div>
             </div>
-
           </div>
 
           <div className='contentBoxFiles'>
-            <Formik
+          <Formik
                   initialValues={{
                     old_password:'',
-                    new_password: ''
+                    new_password: '',
+                    confirm_password:''
                   }}
-                
+
+                  //validaciones de cambio de contraseñas
+
+                  validate={(val)=> {
+                    let rgb = {}
+                    if (!val.confirm_password) {
+                      rgb.confirm_password = "Porfavor confirma tu Contraseña"
+                    }
+                    if (val.confirm_password.length >= 6) {
+                      if (val.confirm_password !== val.new_password) {
+                        setActive(0)
+                      } 
+                      else{ 
+                        setActive(1)
+                      }
+                    }
+
+
+
+                  }}
+                //----------------------------------------------------------------
+
                   onSubmit = {(valores , {resetForm} ) =>{
                     let validacion = {};
 
                         CambiarContraseña({
                           old_password: valores.old_password,
-                          new_password: valores.new_password
+                          new_password: valores.new_password,
                         }
                         ).then( info => {
                           validacion = info
@@ -83,20 +105,23 @@ export const UserPassword = () => {
                   <label className='label_global_style'>Nueva Contraseña</label>
                   <Field name='new_password' className='TheTextBox' required type="password" placeholder='Cambia tu contraseña' /> 
                 </div>
+                
+                <div className='ContentBoxtext'>
+                  <label className='label_global_style'>Confirmar Contraseña</label>
+                  <Field name='confirm_password' className='TheTextBox' required type="password" placeholder='Cambia tu contraseña' /> 
+                </div>
 
                 <div className='ContentBoxButtonConfirm'>
-                  <button type='sumbit' className='ButtonConfirmDates'>Guardar</button>
+                  <button id={`${ active === 0 && "btnBlocked" }`}type='sumbit' className='ButtonConfirmDates'>Guardar</button>
                 </div>
               </Form>
             </Formik>
-
-
           </div>
+
         </div>
       </section>
     </div>
     <NavFooter/>
-
     </>
   )
 }

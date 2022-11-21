@@ -3,6 +3,7 @@ html, body{
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
     width: 100vw;
+    font-weight: 800;
 }
 
 body{
@@ -20,3 +21,5 @@ body{
 ol, ul {
     padding-left: 0rem;
 }
+
+img {pointer-events: none;}

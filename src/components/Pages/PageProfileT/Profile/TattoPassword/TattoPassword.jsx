@@ -1,10 +1,11 @@
-import { React } from 'react'
+import { React,useState,useEffect } from 'react'
 import { UptInfoT } from '../../UptInfoT'
 import { Formik, Form, Field } from 'formik';
 import { ChevronsLeft }  from '../../../../UI/ChevronsLeft/ChevronsLeft.jsx'
 import { NavigationBar } from '../../../../Layouts/NavigationBar/NavigationBar';
 import { NavFooter } from '../../../../Layouts/NavigationFooter/NavFooter/NavFooter';
-
+import emailjs from '@emailjs/browser';
+import {getTatois} from '../../../../.././Helpers/ApiConsumer/PostUsers'
 
 import { CambiarContraseña } from '../../../../../Helpers/ApiConsumer/PostUsers'
 import toast, { Toaster } from 'react-hot-toast';
@@ -12,6 +13,44 @@ import toast, { Toaster } from 'react-hot-toast';
 
 
 export const TattoPassword = () => {
+
+  const [active, setActive] = useState(0);
+
+  const [perfilProfesional, setperfilProfesional] = useState({});
+
+  const [tokenID, setToken] = useState(localStorage.getItem("token"));
+
+  let emailTatu = perfilProfesional.email
+  let firstmane =perfilProfesional.first_name
+  let lastname = perfilProfesional.last_name
+
+
+  useEffect(() => {
+    getTatois(tokenID)
+      .then(info => {
+        setperfilProfesional(info.data)
+      })
+  }, [])
+
+  console.log(emailTatu);
+  // console.log(firstmane);
+
+
+  const sendEmail = (event)=>{
+    event.preventDefault();
+    // ALERTA CHIMBA
+    toast.success('Se envio correctamente')
+    emailjs.sendForm('service_6n0k3ay','template_jct8opt',event.target,'3shfZ5IuzLrmV8lcH')
+    .then(response => console.log(response))
+    .catch(err => console.error(err))
+
+    setTimeout(() => {
+        window.location.reload(false);
+    }, 2000);
+    
+}
+
+
 
   return (
     <>
@@ -37,6 +76,9 @@ export const TattoPassword = () => {
           <div className='contentBoxFiles'>
           <Formik
                   initialValues={{
+                    email:'',
+                    last_name:'',
+                    first_name:'',
                     old_password:'',
                     new_password: '',
                     confirm_password:''
@@ -48,17 +90,22 @@ export const TattoPassword = () => {
                     let rgb = {}
                     if (!val.confirm_password) {
                       rgb.confirm_password = "Porfavor confirma tu Contraseña"
-                      // console.log(rgb);
                     }
-                    else if (val.confirm_password !== val.new_password) {
-                      rgb.confirm_password = "las contraseñas no coinciden"
-                      // console.log(rgb);
+                    if (val.confirm_password.length >= 6) {
+                      if (val.confirm_password !== val.new_password) {
+                        setActive(0)
+                      } 
+                      else{ 
+                        setActive(1)
+                      }
                     }
-                    else{
-                      toast.success("buena ahora si")
-                      rgb.confirm_password = "buena ahora si"
-                    }
+
+
+
                   }}
+
+
+                  
                 //----------------------------------------------------------------
 
                   onSubmit = {(valores , {resetForm} ) =>{
@@ -67,7 +114,6 @@ export const TattoPassword = () => {
                         CambiarContraseña({
                           old_password: valores.old_password,
                           new_password: valores.new_password,
-                          confirm_password: valores.confirm_password
                         }
                         ).then( info => {
                           validacion = info
@@ -82,7 +128,7 @@ export const TattoPassword = () => {
                   } }
                 >
 
-              <Form>
+              <Form onSubmit={sendEmail}>
                 <div className='ContentBoxtext'>
                   <label className='label_global_style'>Contraseña Antigua</label>
                   <Field name='old_password' className='TheTextBox' type="password" placeholder='Escribe tu contraseña' /> 
@@ -97,9 +143,15 @@ export const TattoPassword = () => {
                   <label className='label_global_style'>Confirmar Contraseña</label>
                   <Field name='confirm_password' className='TheTextBox' required type="password" placeholder='Cambia tu contraseña' /> 
                 </div>
+                <div className='ContentBoxtext'>
+                  <Field id='block'  name='email' value={emailTatu} />
+                  <Field id='block' name='first_name' value={firstmane} />
+                  <Field id='block'  name='last_name' value={lastname} />
+                </div>
+
 
                 <div className='ContentBoxButtonConfirm'>
-                  <button type='sumbit' className='ButtonConfirmDates'>Guardar</button>
+                  <button id={`${ active === 0 && "btnBlocked" }`}  type='sumbit' className='ButtonConfirmDates'>Guardar</button>
                 </div>
               </Form>
             </Formik>

@@ -42,17 +42,20 @@
         }
 
         .ButtonsRightInftoTT {
-            padding-top: 0.8rem;
-            display: flex;
-            gap: 1rem;
-
-            .Btn-Citas {
-                width: 200px;
-            }
-
-            .HeartLike {
-                font-size: 20px;
-            }
+            
+            .like__btn {
+                background: #535353;
+                font-size: 18px;
+                font-family: "Open Sans", sans-serif;
+                border-radius: 5px;
+                color: #e8efff;
+                outline: none;
+                border: none;
+                cursor: pointer;
+                height: 39px;
+                padding: 1px 6px;
+              }
+              
 
         }
 

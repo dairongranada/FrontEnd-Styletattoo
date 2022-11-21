@@ -20,6 +20,7 @@
 
 
     .formCitas{
+
         background-image: linear-gradient(rgba(27, 27, 27, 0.932),rgba(0, 0, 0, 0.932)), url('https://images.pexels.com/photos/1366919/pexels-photo-1366919.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
         background-position-y: -4rem;
         background-position: center;
@@ -29,7 +30,7 @@
 
         h2{
             text-align: center;
-            font-size: 32px;
+            font-size: 40px;
         }
 
 
@@ -75,8 +76,8 @@
 
                 
             textarea{
-                height: 7rem;
-                width: 22rem;
+                height: 6rem;
+                width: 21rem;
                 background-color: #fff;
                 padding: 7.5px;
                 color: #000000;
@@ -95,6 +96,7 @@
             display: flex;
             justify-content: center;
             margin-top: 80px;
+            align-items: center;
 
         }
 
@@ -114,4 +116,41 @@
 
 }
 
+
+.contenedor-btn-file input[type="file"] {
+    appearance: none;
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    z-index: -1;
+    
+}
+.contenedor-btn-file {
+    width: 165px;
+    display: inline-block;
+    position: relative;
+    background-color: #fff;
+    padding: 7.5px;
+    color: #000;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+.contenedor-btn-file:active {
+    background-color: #929292;
+}
+
+
+.contenedor-btn-file label {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
 

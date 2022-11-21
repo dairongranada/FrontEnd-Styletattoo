@@ -46,13 +46,13 @@ export const Home_NewTattooists = () => {
                     (dat.PerfilProfesional.length >=1 && dat.PerfilProfesional[0].like >= 1) &&
 
                     <div className="CardArtist">
-                        <div className="ImgArtistCard">
-                            <img src={dat.PerfilProfesional[0].img} alt="" />
-                        </div>
+
+                        <img src={dat.PerfilProfesional[0].img} alt="" />
+
                         <div className="detailsCard">
-                            <div className="nameTatuadorCard">
-                                <h3>{dat.first_name}</h3>
-                            </div>
+ 
+                             <h3>{dat.first_name} {dat.last_name}</h3>
+
 
                             <div className='ContNumberLike'>
                                 <h4>Me gusta</h4>

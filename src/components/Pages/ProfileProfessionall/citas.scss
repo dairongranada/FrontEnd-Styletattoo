@@ -1,0 +1,117 @@
+.ContentTimeBackgournd{
+    width: 100%;
+    height: auto;
+    height: 80vh;
+
+
+    .ContentHorarioBack{
+        transform: translate(31rem, 5rem);
+        width: 64rem;        
+        height: 80vh;
+    
+        .inputsCitas{
+            display: block;
+            width: 175px;
+            font-weight: 500;
+        }
+
+
+    }
+
+
+    .formCitas{
+        background-image: linear-gradient(rgba(27, 27, 27, 0.932),rgba(0, 0, 0, 0.932)), url('https://images.pexels.com/photos/1366919/pexels-photo-1366919.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+        background-position-y: -4rem;
+        background-position: center;
+        padding: 2rem;
+        width: 450px;
+        height: auto;
+
+        h2{
+            text-align: center;
+            font-size: 32px;
+        }
+
+
+
+        .inputContentCitas{
+            display: flex;
+            width: 100%;
+            height: 55px;
+            justify-content: space-around;
+            position: relative;
+            margin-top: 26px;
+
+
+            input[type="date"]{
+                background-color: #fff;
+                padding: 8px;
+                color: rgb(0, 0, 0);
+                font-size: 15px;
+                border: none;
+                outline: none;
+                border-radius: 5px;
+    
+            }
+    
+            input[type="time"]{
+                background-color: #fff;
+                padding: 7.5px;
+                color: #000;
+                font-size: 15px;
+                border: none;
+                outline: none;
+                border-radius: 5px;
+                
+    
+            }
+            ::-webkit-calendar-picker-indicator {
+                background-color: #a5a5a5;
+                padding: 5px;
+                cursor: pointer;
+                border-radius: 3px;
+                
+            }
+
+                
+            textarea{
+                height: 7rem;
+                width: 22rem;
+                background-color: #fff;
+                padding: 7.5px;
+                color: #000000;
+                font-size: 15px;
+                border: none;
+                outline: none;
+                border-radius: 5px;
+                
+
+            }
+
+        }
+
+        .Btn_Citas {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 80px;
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+
+
+}
+
+

@@ -3,11 +3,11 @@ import { React } from "react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import { Formik, Form, Field } from 'formik';
-import { CreateProfesionalprofile, CreateDisponibilidad , SubirTrabajos } from '../../.././Helpers/ApiConsumer/AuthRegistro'
+import { CreateProfesionalprofile, CreateDisponibilidad, SubirTrabajos } from '../../.././Helpers/ApiConsumer/AuthRegistro'
 import { getusers, getTatois } from '../../.././Helpers/ApiConsumer/PostUsers'
 import { MdOutlineCancel } from 'react-icons/md';
 import { useParams } from 'react-router';
-import { getAllTatuadoresID , getAllTatuadores } from '../../../Helpers/ApiConsumer/Tattuadores'
+import { getAllTatuadoresID, getAllTatuadores } from '../../../Helpers/ApiConsumer/Tattuadores'
 import { MetodoPUTdispo } from '../../../Helpers/put'
 import toast, { Toaster } from 'react-hot-toast';
 import { Input } from "reactstrap";
@@ -50,33 +50,33 @@ export const InfoProfileT = () => {
 
   const [infoD, setinfoD] = useState()
 
-  
 
-  console.log(disponiblidad.id);
+
+  // console.log(disponiblidad.id);
 
   const ChangeDisponibiblity = () => {
     if (disponiblidad.dispo == true) {
       toast.success('Disponibilidad Actualizada')
-        let valores = {
-          dispo: false,
-          like: disponiblidad.like,
-          iDispo:disponiblidad.iDispo
-        }
-        MetodoPUTdispo(valores,InfoUser.id)
-      }else{
-        toast.success('Disponibilidad Actualizada')
-        let valores = {
-          dispo: true,
-          like: disponiblidad.like,
-          iDispo:disponiblidad.iDispo
-        }
-        MetodoPUTdispo(valores,InfoUser.id)
+      let valores = {
+        dispo: false,
+        like: disponiblidad.like,
+        iDispo: disponiblidad.iDispo
       }
+      MetodoPUTdispo(valores, InfoUser.id)
+    } else {
+      toast.success('Disponibilidad Actualizada')
+      let valores = {
+        dispo: true,
+        like: disponiblidad.like,
+        iDispo: disponiblidad.iDispo
+      }
+      MetodoPUTdispo(valores, InfoUser.id)
     }
+  }
 
 
 
-  
+
   const [serverError, setServerError] = useState(false);
   const [loading, setLoading] = useState(false);
   const [duplicatedData, setDuplicatedData] = useState(false);
@@ -122,7 +122,7 @@ export const InfoProfileT = () => {
       })
   }, [])
 
-  const [portafoliocreate, setportafoliocreate ] = useState([]);
+  const [portafoliocreate, setportafoliocreate] = useState([]);
 
   useEffect(() => {
     getTatois(tokenID)
@@ -131,7 +131,7 @@ export const InfoProfileT = () => {
       })
   }, [])
 
-  console.log(portafoliocreate);
+  // console.log(portafoliocreate);
 
 
   const uploadImage = async (e) => {
@@ -149,26 +149,91 @@ export const InfoProfileT = () => {
     const file = await res.json()
 
     setImage(file.secure_url)
-    setImage2(file.secure_url)
-    setImage3(file.secure_url)
-    setImage4(file.secure_url)
-    setImage5(file.secure_url)
     setFileU(file.secure_url)
-
-
-
   }
 
-  
-  
+  const uploadImage2 = async (e) => {
+    const files = e.target.files;
+    const data = new FormData();
+    data.append("file", files[0]);
+    data.append("upload_preset", "images")
+    const res = await fetch(
+      "https://api.cloudinary.com/v1_1/dryg8dmrb/image/upload",
+      {
+        method: "POST",
+        body: data,
+      }
+    )
+    const file = await res.json()
+
+    setImage2(file.secure_url)
+    setFileU(file.secure_url)
+  }
+
+  const uploadImage3 = async (e) => {
+    const files = e.target.files;
+    const data = new FormData();
+    data.append("file", files[0]);
+    data.append("upload_preset", "images")
+    const res = await fetch(
+      "https://api.cloudinary.com/v1_1/dryg8dmrb/image/upload",
+      {
+        method: "POST",
+        body: data,
+      }
+    )
+    const file = await res.json()
+
+    setImage3(file.secure_url)
+    setFileU(file.secure_url)
+  }
+
+  const uploadImage4 = async (e) => {
+    const files = e.target.files;
+    const data = new FormData();
+    data.append("file", files[0]);
+    data.append("upload_preset", "images")
+    const res = await fetch(
+      "https://api.cloudinary.com/v1_1/dryg8dmrb/image/upload",
+      {
+        method: "POST",
+        body: data,
+      }
+    )
+    const file = await res.json()
+
+    setImage4(file.secure_url)
+    setFileU(file.secure_url)
+  }
+
+  const uploadImage5 = async (e) => {
+    const files = e.target.files;
+    const data = new FormData();
+    data.append("file", files[0]);
+    data.append("upload_preset", "images")
+    const res = await fetch(
+      "https://api.cloudinary.com/v1_1/dryg8dmrb/image/upload",
+      {
+        method: "POST",
+        body: data,
+      }
+    )
+    const file = await res.json()
+
+    setImage5(file.secure_url)
+    setFileU(file.secure_url)
+  }
+
+
+
   let imgUrl1 = image;
-  
+
   let imgUrl2 = image2;
-  
+
   let imgUrl3 = image3;
-  
+
   let imgUrl4 = image4;
-  
+
   let imgUrl5 = image5;
 
   let imgUrl = image;
@@ -258,50 +323,50 @@ export const InfoProfileT = () => {
               }}
 
             >
-            
-                <Form>
-                  <div className="contInfoUserBoxes">
+
+              <Form>
+                <div className="contInfoUserBoxes">
 
 
 
-                      <div className="SelectContent">
-                          <div>
-                          <Field required className='select' as="select" name="departament">
-                            <option>Escoje tu departamento</option>
-                            <option value="Manizales">Manizales</option>
-                            <option value="Quindio">Quindio</option>
-                            <option value="Risaralda">Risaralda</option>
-                          </Field>
-                          </div>
-                          <div>
-                          <Field required className='select'as="select" name="municipio">
-                            <option>Escoje tu municipio</option>
-                            <option value="armenia">armenia</option>
-                            <option value="calarca">calarca</option>
-                            <option value="quimbaya">quimbaya</option>
-                            <option value="montenegro">montenegro</option>
-                            <option value="pijao">pijao</option>
-                            <option value="genova">genova</option>
-                            <option value="tebaida">tebaida</option>
-                            <option value="filandia">filandia</option>
-                            <option value="circacia">circacia</option>
-                            <option value="cordoba">cordoba</option>
-                            <option value="salento">salento</option>
-                            <option value="buena vista">buena vista</option>
-                          </Field>
-                          </div>
-                        </div>
-                        <div className="SelectContent">
-                          <div>
-                            <Field className='inputProfile' placeholder='Ingresa Tu Expreciencia'type="number" name="experience" />
-                          </div>
-                          <div>
-                            <Field className='inputProfile' name='direction' required placeholder="Direccion" type="text"/>
-                          </div>
-                        </div>
-                        <div className="SelectContent">
-                          <Field className="TextareaProfile" readonly  maxLength="100" required as="textarea" placeholder='Descripcion' name="description" id="textarea" />
-                        </div>
+                  <div className="SelectContent">
+                    <div>
+                      <Field required className='select' as="select" name="departament">
+                        <option>Escoje tu departamento</option>
+                        <option value="Manizales">Manizales</option>
+                        <option value="Quindio">Quindio</option>
+                        <option value="Risaralda">Risaralda</option>
+                      </Field>
+                    </div>
+                    <div>
+                      <Field required className='select' as="select" name="municipio">
+                        <option>Escoje tu municipio</option>
+                        <option value="armenia">armenia</option>
+                        <option value="calarca">calarca</option>
+                        <option value="quimbaya">quimbaya</option>
+                        <option value="montenegro">montenegro</option>
+                        <option value="pijao">pijao</option>
+                        <option value="genova">genova</option>
+                        <option value="tebaida">tebaida</option>
+                        <option value="filandia">filandia</option>
+                        <option value="circacia">circacia</option>
+                        <option value="cordoba">cordoba</option>
+                        <option value="salento">salento</option>
+                        <option value="buena vista">buena vista</option>
+                      </Field>
+                    </div>
+                  </div>
+                  <div className="SelectContent">
+                    <div>
+                      <Field className='inputProfile' placeholder='Ingresa Tu Expreciencia' type="number" name="experience" />
+                    </div>
+                    <div>
+                      <Field className='inputProfile' name='direction' required placeholder="Direccion" type="text" />
+                    </div>
+                  </div>
+                  <div className="SelectContent">
+                    <Field className="TextareaProfile" readonly maxLength="100" required as="textarea" placeholder='Descripcion' name="description" id="textarea" />
+                  </div>
 
 
                   <div className="SelectContent">
@@ -396,16 +461,16 @@ export const InfoProfileT = () => {
 
                     </div>
                     <div>
-                      <Input onChange={uploadImage} required className='select' type='file' name="img2" />
+                      <Input onChange={uploadImage2} required className='select' type='file' name="img2" />
 
                     </div>
                   </div>
                   <div className="SelectContent">
                     <div>
-                      <Input onChange={uploadImage} className='inputProfile' placeholder='Ingresa Tu Expreciencia' type="file" name="img3" />
+                      <Input onChange={uploadImage3} className='inputProfile' placeholder='Ingresa Tu Expreciencia' type="file" name="img3" />
                     </div>
                     <div>
-                      <Input onChange={uploadImage} className='inputProfile' name='img4' required placeholder="Direccion" type="file" />
+                      <Input onChange={uploadImage4} className='inputProfile' name='img4' required placeholder="Direccion" type="file" />
                     </div>
                   </div>
 
@@ -414,7 +479,7 @@ export const InfoProfileT = () => {
 
 
                       <div style={{ height: "40px", marginTop: "5px", marginBottom: "10px", marginLeft: "60px", color: "white" }} >
-                        <Input onChange={uploadImage} className='sapos' type="file" name="img5" />
+                        <Input onChange={uploadImage5} className='sapos' type="file" name="img5" />
                       </div>
                     </div>
                   </div>

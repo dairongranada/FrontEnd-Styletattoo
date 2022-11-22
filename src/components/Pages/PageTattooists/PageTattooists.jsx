@@ -30,18 +30,6 @@ export const PageTattooists = () => {
 
 
 
-  ////////////////////////////////////////////////////////////////
-  // const allTaoitsTwo = allTaoits.filter(data =>{
-  //     if (data.PerfilProfesional.length >= 1) {
-  //       console.log(data);
-  //     }else{
-  //     }
-
-  //   console.log(data.PerfilProfesional.length >= 1) 
-  // })
-  ////////////////////////////////////////////////////////////////
-
-
   return (
     <>
       <NavigationBar />

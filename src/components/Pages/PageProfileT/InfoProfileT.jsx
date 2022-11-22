@@ -479,7 +479,7 @@ export const InfoProfileT = () => {
 
 
                       <div style={{ height: "40px", marginTop: "5px", marginBottom: "10px", marginLeft: "60px", color: "white" }} >
-                        <Input onChange={uploadImage4} className='sapos' type="file" name="img5" />
+                        <Input onChange={uploadImage5} className='sapos' type="file" name="img5" />
                       </div>
                     </div>
                   </div>

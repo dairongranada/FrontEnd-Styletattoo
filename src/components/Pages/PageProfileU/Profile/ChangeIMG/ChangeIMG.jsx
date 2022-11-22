@@ -56,7 +56,7 @@ export const ChangeIMG = () => {
       <Toaster />
       <div className='BodyProfileUser'>
         <section className="seccion-perfil-usuario">
-          <UptInfoU />
+          <UptInfoU  />
           <div className="perfil-usuario-body">
             <div className="perfil-usuario-footer">
               <div className="BackgroundIcon">
@@ -68,7 +68,6 @@ export const ChangeIMG = () => {
                   <div><i className='bx bxs-user-detail'></i></div>
                 </div>
               </div>
-
             </div>
 
             <div className='contentBoxFiles'>
@@ -88,7 +87,7 @@ export const ChangeIMG = () => {
 
                 }}
 
-                onSubmit={(valores) => {
+                onSubmit={() => {
                   let validacion = {};
                   userUpdate({
                     first_name: InfoUsuario.first_name,
@@ -99,6 +98,9 @@ export const ChangeIMG = () => {
                     validacion = info
                     if (validacion.status === 200) {
                       toast.success('Foto De Perfil Cambiada')
+                      setTimeout(function () {
+                        window.location = '/user/edit-profile';
+                    }, 1000);
                     }
                   })
                 }}
@@ -114,15 +116,12 @@ export const ChangeIMG = () => {
 
                     </div>
                     <div style={{marginTop:"20px"}} className='ContentBoxButtonConfirm'>
-                      <button id={`${active === 1 && "btnBlocked"}`} type='sumbit' className='ButtonConfirmDates'>Guardar</button>
+                      <button type='sumbit' className='ButtonConfirmDates'>Guardar</button>
                     </div>
                   </div>
                 </Form>
               </Formik>
-
-
             </div>
-
           </div>
         </section>
       </div>

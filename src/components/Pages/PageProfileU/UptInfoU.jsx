@@ -3,7 +3,7 @@ import { React, useState, useEffect } from 'react'
 import { getusers } from '../../../Helpers/ApiConsumer/PostUsers';
 
 
-export const UptInfoU = () => {
+export const UptInfoU = ({imagenURL}) => {
 
 
     const [user, setUser] = useState(JSON.parse(localStorage.getItem("usuario")));
@@ -12,16 +12,12 @@ export const UptInfoU = () => {
     const [image, setImage] = useState("https://i.postimg.cc/T2N5CnwK/perfil-Usuario-Anonim.png")
 
 
+
     useEffect(() => {
         if (!!user) {
             getusers(tokenID)
-                .then(data => setUserData(data.data));
-            console.log(userData);
-        } else {
-            console.log("No se ha autenticado");
-        }
-
-
+                .then(data => setUserData(data.data))
+        } else {console.log("No se ha autenticado")}
     }, [])
 
     return (
@@ -29,7 +25,7 @@ export const UptInfoU = () => {
             <div className="perfil-usuario-header">
                 <div className="perfil-usuario-portada">
                     <div className="perfil-usuario-avatar">
-                        <img src={image} alt="img-avatar" />
+                        <img src={ userData.image } alt="img-avatar" />
                         <a href="/user/edit-image" type="button" class="boton-avatar">
                             <span class="material-symbols-outlined"> photo_camera </span>
                         </a>

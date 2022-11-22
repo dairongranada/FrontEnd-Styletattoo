@@ -25,6 +25,7 @@ export const TattoPassword = () => {
   let lastname = perfilProfesional.last_name
 
 
+
   useEffect(() => {
     getTatois(tokenID)
       .then(info => {
@@ -57,8 +58,8 @@ export const TattoPassword = () => {
     <NavigationBar/>
     <div className='BodyProfileUser'>
       <section className="seccion-perfil-usuario">
+        <Toaster/>
         <UptInfoT />
-
         <div className="perfil-usuario-body">
           <div className="perfil-usuario-footer">
 
@@ -151,7 +152,7 @@ export const TattoPassword = () => {
 
 
                 <div className='ContentBoxButtonConfirm'>
-                  <button id={`${ active === 0 && "btnBlocked" }`}  type='sumbit' className='ButtonConfirmDates'>Guardar</button>
+                  <button id={`${ active === 0 && "btnBlocked" }`} type='sumbit' className='ButtonConfirmDates'>Guardar</button>
                 </div>
               </Form>
             </Formik>

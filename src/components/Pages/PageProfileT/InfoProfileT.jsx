@@ -6,6 +6,10 @@ import { Formik, Form, Field } from 'formik';
 import { CreateProfesionalprofile, CreateDisponibilidad } from '../../.././Helpers/ApiConsumer/AuthRegistro'
 import { getusers, getTatois } from '../../.././Helpers/ApiConsumer/PostUsers'
 import { MdOutlineCancel } from 'react-icons/md';
+import { useParams } from 'react-router';
+import { getAllTatuadoresID } from '../../../Helpers/ApiConsumer/Tattuadores'
+import { MetodoPUTdispo } from '../../../Helpers/put'
+import toast, { Toaster } from 'react-hot-toast';
 
 
 
@@ -14,14 +18,25 @@ import './createProfile.scss'
 
 export const InfoProfileT = () => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("usuario")));
+
+  const [InfoUser, setInfoUserUser] = useState(JSON.parse(localStorage.getItem("InfoUser")));
   const [tokenID, setToken] = useState(localStorage.getItem("token"));
 
   const [userData, setUserData] = useState({});
+  const [disponiblidad, setDisponibilidad] = useState({})
+  // const [likes, setLikes] = useState()
+  // const [iDispo, setiDispo] = useState()
 
   let idTatu = userData.id
 
 
   useEffect(() => {
+
+    getAllTatuadoresID(InfoUser.id)
+      .then(dat => {
+        setDisponibilidad(dat.data.iDispo[0])
+      })
+
     if (!!user) {
       getusers(tokenID)
         .then(data => setUserData(data.data));
@@ -30,7 +45,7 @@ export const InfoProfileT = () => {
 
   }, [])
 
-
+  
   const [serverError, setServerError] = useState(false);
   const [loading, setLoading] = useState(false);
   const [duplicatedData, setDuplicatedData] = useState(false);
@@ -91,7 +106,8 @@ export const InfoProfileT = () => {
           <div className="perfil-usuario-footer">
             <ul className="lista-datos">
               <li className='icono'><Link to="/userTatto/edit-name"><span className="material-symbols-outlined Icons-Options">badge</span>Nombre y correo</Link></li>
-              <li className='icono' id={`${perfilProfesional === 1 && "ocultarliCreate"}`} ><a onClick={OpenModalProfP} href="#"><span className="material-symbols-outlined Icons-Options">person</span>Crear Perfil Profesional</a></li>
+              <li className='icono'id={`${ perfilProfesional === 1 && "ocultarliCreate" }`} ><a onClick={OpenModalProfP} href="#"><span className="material-symbols-outlined Icons-Options">person</span>Crear Perfil Profesional</a></li>
+              <li className='icono2'id={`${ perfilProfesional === 1 && "mostrarliCreate" }`} ><a onClick={OpenModalProfP} href="#"><span className="material-symbols-outlined Icons-Options">person</span>Subir Trabajos</a></li>
               <li className='icono'><a href="#"><span class="material-symbols-outlined"> work_history </span>Disponiblidad </a></li>
             </ul>
             <ul className="lista-datos">
@@ -100,6 +116,7 @@ export const InfoProfileT = () => {
               <li onClick={handleLogout} className='icono'><Link to="/"><span className="material-symbols-outlined Icons-Options">logout</span>Cerrar sesion</Link></li>
             </ul>
           </div>
+          <Toaster/>
         </div>
       }      {(abrir === 1) &&
         <div className='FondBackGPp'>

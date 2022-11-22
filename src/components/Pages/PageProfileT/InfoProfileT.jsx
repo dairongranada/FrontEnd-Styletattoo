@@ -3,16 +3,20 @@ import { React } from "react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import { Formik, Form, Field } from 'formik';
-import { CreateProfesionalprofile,CreateDisponibilidad } from '../../.././Helpers/ApiConsumer/AuthRegistro'
-import { getusers , getTatois} from '../../.././Helpers/ApiConsumer/PostUsers'
+import { CreateProfesionalprofile, CreateDisponibilidad , SubirTrabajos } from '../../.././Helpers/ApiConsumer/AuthRegistro'
+import { getusers, getTatois } from '../../.././Helpers/ApiConsumer/PostUsers'
 import { MdOutlineCancel } from 'react-icons/md';
 import { useParams } from 'react-router';
-import { getAllTatuadoresID } from '../../../Helpers/ApiConsumer/Tattuadores'
+import { getAllTatuadoresID , getAllTatuadores } from '../../../Helpers/ApiConsumer/Tattuadores'
 import { MetodoPUTdispo } from '../../../Helpers/put'
 import toast, { Toaster } from 'react-hot-toast';
+import { Input } from "reactstrap";
+
+
 
 
 import './createProfile.scss'
+import { Portafolio } from '../ProfileProfessionall/Portafolio';
 
 export const InfoProfileT = () => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("usuario")));
@@ -47,6 +51,8 @@ export const InfoProfileT = () => {
   const [infoD, setinfoD] = useState()
 
   
+
+  console.log(disponiblidad.id);
 
   const ChangeDisponibiblity = () => {
     if (disponiblidad.dispo == true) {
@@ -88,11 +94,24 @@ export const InfoProfileT = () => {
   const [fileU, setFileU] = useState("")
   const [image, setImage] = useState("")
   const [abrir, setAbrir] = useState(0)
+  const [image2, setImage2] = useState("")
+  const [image3, setImage3] = useState("")
+  const [image4, setImage4] = useState("")
+  const [image5, setImage5] = useState("")
 
   const OpenModalProfP = () => {
 
     setAbrir(1)
+
   }
+
+
+  const OpenModalsubir = () => {
+
+
+    setAbrir(2)
+  }
+
 
   const [perfilProfesional, setperfilProfesional] = useState({});
 
@@ -103,7 +122,18 @@ export const InfoProfileT = () => {
       })
   }, [])
 
-  
+  const [portafoliocreate, setportafoliocreate ] = useState([]);
+
+  useEffect(() => {
+    getTatois(tokenID)
+      .then(info => {
+        setportafoliocreate(info.data.Portafolio.length)
+      })
+  }, [])
+
+  console.log(portafoliocreate);
+
+
   const uploadImage = async (e) => {
     const files = e.target.files;
     const data = new FormData();
@@ -119,8 +149,28 @@ export const InfoProfileT = () => {
     const file = await res.json()
 
     setImage(file.secure_url)
+    setImage2(file.secure_url)
+    setImage3(file.secure_url)
+    setImage4(file.secure_url)
+    setImage5(file.secure_url)
     setFileU(file.secure_url)
+
+
+
   }
+
+  
+  
+  let imgUrl1 = image;
+  
+  let imgUrl2 = image2;
+  
+  let imgUrl3 = image3;
+  
+  let imgUrl4 = image4;
+  
+  let imgUrl5 = image5;
+
   let imgUrl = image;
   return (
     <>
@@ -129,9 +179,9 @@ export const InfoProfileT = () => {
           <div className="perfil-usuario-footer">
             <ul className="lista-datos">
               <li className='icono'><Link to="/userTatto/edit-name"><span className="material-symbols-outlined Icons-Options">badge</span>Nombre y correo</Link></li>
-              <li className='icono'id={`${ perfilProfesional === 1 && "ocultarliCreate" }`} ><a onClick={OpenModalProfP} href="#"><span className="material-symbols-outlined Icons-Options">person</span>Crear Perfil Profesional</a></li>
-              <li className='icono2'id={`${ perfilProfesional === 1 && "mostrarliCreate" }`} ><a onClick={OpenModalProfP} href="#"><span className="material-symbols-outlined Icons-Options">person</span>Subir Trabajos</a></li>
-              <li onClick={ChangeDisponibiblity} className='icono'><a href="#"><span class="material-symbols-outlined"> work_history </span>Disponiblidad </a></li>
+              <li className='icono' id={`${perfilProfesional == 1 && "ocultarliCreate"}`} ><a onClick={OpenModalProfP} href="#"><span className="material-symbols-outlined Icons-Options">person</span>Crear Perfil Profesional</a></li>
+              <li className={`${perfilProfesional == 0 && "ocultarliCreate"}`} id={`${portafoliocreate == 1 && "ocultarliCreate"}`}  ><a onClick={OpenModalsubir} href="#"><span className="material-symbols-outlined Icons-Options">person</span>Subir Trabajos</a></li>
+              <li className='icono'><a href="#"><span class="material-symbols-outlined"> work_history </span>Disponiblidad </a></li>
             </ul>
             <ul className="lista-datos">
               <li className='icono'><Link to="/userTatto/edit-quotes"><span className="material-symbols-outlined Icons-Options">auto_stories</span>Citas agendadas</Link></li>
@@ -139,11 +189,9 @@ export const InfoProfileT = () => {
               <li onClick={handleLogout} className='icono'><Link to="/"><span className="material-symbols-outlined Icons-Options">logout</span>Cerrar sesion</Link></li>
             </ul>
           </div>
-          <Toaster/>
+          <Toaster />
         </div>
-      }
-
-      {(abrir === 1) &&
+      }      {(abrir === 1) &&
         <div className='FondBackGPp'>
           <div className='ModalBuildProfilep'>
             <div className='CloseBackProfileP'> <a href="/userTatto/edit-profile"><MdOutlineCancel /></a></div>
@@ -165,7 +213,7 @@ export const InfoProfileT = () => {
                 description: "",
                 artist: "",
               }}
-             
+
               onSubmit={(valores, { resetForm }) => {
                 let validacion = {};
 
@@ -197,7 +245,7 @@ export const InfoProfileT = () => {
                     CreateDisponibilidad({
                       like: 0,
                       dispo: true,
-                      iDispo:idTatu
+                      iDispo: idTatu
                     })
                     setDuplicatedData(false);
                     resetForm();
@@ -213,6 +261,9 @@ export const InfoProfileT = () => {
             
                 <Form>
                   <div className="contInfoUserBoxes">
+
+
+
                       <div className="SelectContent">
                           <div>
                           <Field required className='select' as="select" name="departament">
@@ -253,23 +304,132 @@ export const InfoProfileT = () => {
                         </div>
 
 
-                        <div className="SelectContent">
-                          <div  style={{width: "100%", textAlign:"center",marginTop:"5px",marginBottom:"5px" }}>
-                            
-                            <label  style={{fontSize:"12px",color:"#fffff9"}} htmlFor="">Añade una foto de perfil</label>
-                            <div style={{height: "40px",marginTop:"5px",marginBottom:"10px" ,marginLeft:"60px",color:"white" }} >
-                              <input onChange={uploadImage} className='sapos' type="file" name="img" />
-                            </div>
-                          </div>
-                        </div>
-                      <div>
-                        <button style={{width: "100%", textAlign:"center" }} type='submit' className='buttons_global_StyleTatto'>Crear Perfil</button>
+                  <div className="SelectContent">
+                    <div style={{ width: "100%", textAlign: "center", marginTop: "5px", marginBottom: "5px" }}>
+
+                      <label style={{ fontSize: "12px", color: "#fffff9" }} htmlFor="">Añade una foto de perfil</label>
+                      <div style={{ height: "40px", marginTop: "5px", marginBottom: "10px", marginLeft: "60px", color: "white" }} >
+                        <input onChange={uploadImage} className='sapos' type="file" name="img" />
                       </div>
+                    </div>
                   </div>
-                </Form>
+                  <div>
+                    <button style={{ width: "100%", textAlign: "center" }} type='submit' className='buttons_global_StyleTatto'>Crear Perfil</button>
+                  </div>
+                </div>
+              </Form>
             </Formik>
           </div>
         </div>
+      }
+      {(abrir === 2) &&
+
+        <div className='FondBackGPp'>
+          <div className='ModalBuildProfilep'>
+            <div className='CloseBackProfileP'> <a href="/userTatto/edit-profile"><MdOutlineCancel /></a></div>
+            <div className="contImgAndTittlear">
+              <div className='ContIcontInMBPP'>
+              </div>
+              <div className="SecondContIconCMBPP">
+                <h3>Crea tu perfil profesional</h3>
+              </div>
+            </div>
+            <Formik
+              initialValues={{
+                img1: "",
+                img2: "",
+                img3: "",
+                img4: "",
+                img5: "",
+                idTatuador: "",
+              }}
+
+              onSubmit={(valores, { resetForm }) => {
+                let validacion = {};
+
+                SubirTrabajos({
+                  img1: imgUrl1,
+                  img2: imgUrl2,
+                  img3: imgUrl3,
+                  img4: imgUrl4,
+                  img5: imgUrl5,
+                  idTatuador: idTatu,
+
+                }).then(info => {
+                  validacion = info
+
+
+                  setLoading(true);
+                  if (validacion.status === 400) {
+                    setDuplicatedData(true);
+                    setServerError(false);
+                    setLoading(false);
+                  }
+                  else if (validacion.status === 500) {
+                    setServerError(true);
+                    setDuplicatedData(false);
+                    setLoading(false);
+                  }
+                  else {
+                    CreateDisponibilidad({
+                      like: 0,
+                      dispo: true,
+                      iDispo: idTatu
+                    })
+                    setDuplicatedData(false);
+                    resetForm();
+                    setLoading(false);
+                    setRegistered(true);
+                    window.location = `/tatto/view/profile/${idTatu}`;
+                  }
+                })
+
+              }}
+
+            >
+
+              <Form>
+                <div className="contInfoUserBoxes">
+                  <div className="SelectContent">
+                    <div>
+                      <Input onChange={uploadImage} required className='select' type='file' name="img1" />
+
+                    </div>
+                    <div>
+                      <Input onChange={uploadImage} required className='select' type='file' name="img2" />
+
+                    </div>
+                  </div>
+                  <div className="SelectContent">
+                    <div>
+                      <Input onChange={uploadImage} className='inputProfile' placeholder='Ingresa Tu Expreciencia' type="file" name="img3" />
+                    </div>
+                    <div>
+                      <Input onChange={uploadImage} className='inputProfile' name='img4' required placeholder="Direccion" type="file" />
+                    </div>
+                  </div>
+
+                  <div className="SelectContent">
+                    <div style={{ width: "100%", textAlign: "center", marginTop: "5px", marginBottom: "5px" }}>
+
+
+                      <div style={{ height: "40px", marginTop: "5px", marginBottom: "10px", marginLeft: "60px", color: "white" }} >
+                        <Input onChange={uploadImage} className='sapos' type="file" name="img5" />
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <button style={{ width: "100%", textAlign: "center" }} type='submit' className='buttons_global_StyleTatto'>Crear Perfil</button>
+                  </div>
+                </div>
+              </Form>
+            </Formik>
+
+          </div>
+
+
+        </div>
+
       }
     </>
 

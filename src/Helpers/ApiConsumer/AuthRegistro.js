@@ -32,6 +32,27 @@ export const CreateDisponibilidad =  async (userApi) => {
 
 }
 
+export const SubirTrabajos =  async (userApi) => {
+    try {
+        const response = await axios({
+            url: URL+"porta/",
+            method: "POST",
+            data: userApi,
+            headers:{
+                "Authorization" :"Token "+tokenn,
+                "Content-Type":"application/json"
+            },
+        }).catch(function (error) {
+            if (error.response) {
+                console.log(error);
+                return { status: error.response.status}}
+        });
+        return response;
+    } catch (error) {
+    }
+
+}
+
 
 
 

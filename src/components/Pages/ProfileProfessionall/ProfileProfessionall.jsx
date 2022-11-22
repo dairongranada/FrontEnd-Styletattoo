@@ -2,12 +2,17 @@ import React, { useState, useEffect } from "react";
 import './ProfileProfessionall.scss'
 import './citas.scss'
 
-import { getAllTatuadoresID,MetodoPUTLikes,MetodoGETLikes } from '../../../Helpers/ApiConsumer/Tattuadores'
+import { getAllTatuadoresID, MetodoPUTLikes, MetodoGETLikes } from '../../../Helpers/ApiConsumer/Tattuadores'
+
+import { Formik, Form, Field } from 'formik';
+import { SubirTrabajos, CreateDisponibilidad } from '../../.././Helpers/ApiConsumer/AuthRegistro'
+import { getusers, getTatois } from '../../.././Helpers/ApiConsumer/PostUsers'
+import { MdOutlineCancel } from 'react-icons/md';
 
 
 import { useNavigate, useParams } from 'react-router';
 import { Link } from 'react-router-dom';
-import { Formik, Form, Field } from 'formik';
+
 
 import { motion } from "framer-motion"
 
@@ -18,6 +23,7 @@ import { signUpUser } from '../../../Helpers/ApiConsumer/AuthRegistro';
 
 
 import { GoHeart } from 'react-icons/go';
+import { Input } from "reactstrap";
 
 
 
@@ -26,21 +32,82 @@ export const ProfileProfessionall = () => {
   const { id } = useParams();
   const idTT = id
 
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("usuario")));
+  const [tokenID, setToken] = useState(localStorage.getItem("token"));
+
+  const [userData, setUserData] = useState({});
+
+  let idTatu = userData.id
+
+
+  useEffect(() => {
+    if (!!user) {
+      getusers(tokenID)
+        .then(data => setUserData(data.data));
+    }
+
+
+  }, [])
+
+
+
+
+  useEffect(() => {
+    getTatois(tokenID)
+      .then(info => {
+        setperfilProfesional(info.data.PerfilProfesional.length)
+      })
+  }, [])
+
+  const [fileU, setFileU] = useState("")
+  const [image, setImage] = useState("")
+  const [image2, setImage2] = useState("")
+  const [image3, setImage3] = useState("")
+  const [image4, setImage4] = useState("")
+  const [image5, setImage5] = useState("")
+
+  const uploadImage = async (e) => {
+    const files = e.target.files;
+    const data = new FormData();
+    data.append("file", files[0]);
+    data.append("upload_preset", "images")
+    const res = await fetch(
+      "https://api.cloudinary.com/v1_1/dryg8dmrb/image/upload",
+      {
+        method: "POST",
+        body: data,
+      }
+    )
+    const file = await res.json()
+
+    setImage(file.secure_url)
+    setImage2(file.secure_url)
+    setImage3(file.secure_url)
+    setImage4(file.secure_url)
+    setImage5(file.secure_url)
+    setFileU(file.secure_url)
+
+  }
+ 
+
+  let imgUrl1 = image;
+  
+  let imgUrl2 = image2;
+  
+  let imgUrl3 = image3;
+  
+  let imgUrl4 = image4;
+  
+  let imgUrl5 = image5;
 
 
   const [serverError, setServerError] = useState(false);
   const [loading, setLoading] = useState(false);
   const [duplicatedData, setDuplicatedData] = useState(false);
   const [registered, setRegistered] = useState(false);
+  const [abrir, setAbrir] = useState(0)
 
-
-
-
-
-
-
-
-
+ 
   const [tatuadores, setTatuadores] = useState([]);
   const [perfilProfesional, setperfilProfesional] = useState({});
 
@@ -74,10 +141,10 @@ export const ProfileProfessionall = () => {
 
 
 
-////////////////////////////////////////////
-    // L I K E S
+  ////////////////////////////////////////////
+  // L I K E S
   let likeIcon = document.querySelector("#icon"),
-  count = document.querySelector("#count");
+    count = document.querySelector("#count");
   let clicked = false;
   let Numberslike = Likes
 
@@ -92,18 +159,18 @@ export const ProfileProfessionall = () => {
       count.textContent--;
       Numberslike--
     }
-////////////////////////////////////////////
+    ////////////////////////////////////////////
 
 
     // M E T O D O    P  U  T    L I K E S
 
     let valores = {
-        dispo: disponiblidad.dispo,
-        like: Numberslike,
-        iDispo: disponiblidad.iDispo
+      dispo: disponiblidad.dispo,
+      like: Numberslike,
+      iDispo: disponiblidad.iDispo
     }
 
-    MetodoPUTLikes(valores,IDisponiblidad)
+    MetodoPUTLikes(valores, IDisponiblidad)
   };
 
 
@@ -117,8 +184,8 @@ export const ProfileProfessionall = () => {
           <div className='ImgRightInftoTT'><img src={img} alt="" /></div>
           <p style={{ display: "flex", fontSize: "15px", marginTop: "0.6rem", alignItems: "center" }} ><span style={{ fontSize: "19px" }} className="material-symbols-outlined">location_on</span>{municipio} -- {departament}</p>
           <p style={{ display: "flex", fontSize: "15px", alignItems: "center" }}>Direccion:  {direction}</p>
-          <div style={{display: "flex", gap: "1rem", alignItems: "flex-end"}}className='ButtonsRightInftoTT'>
-            <button style={{width: "190px"}} className='Btn-Citas buttons_global_StyleTatto'>AGENDAR CITA</button>
+          <div style={{ display: "flex", gap: "1rem", alignItems: "flex-end" }} className='ButtonsRightInftoTT'>
+            <button style={{ width: "190px" }} className='Btn-Citas buttons_global_StyleTatto'>AGENDAR CITA</button>
             <button onClick={likeBtn} className="like__btn">
               <span id="count">{Numberslike}</span> Like
             </button>
@@ -142,11 +209,15 @@ export const ProfileProfessionall = () => {
             <div className='EmailLeftInftoTT'><p> {email} </p></div>
             <div className='DescriLeftInftoTT'><p>{description}</p></div>
             <div className='DescriLeftInftoTT' style={{ display: "flex", gap: "5px" }}> <p style={{ color: "var(--colorOrange2)" }} >Experiencia :</p><p>{experience} </p> <p>Años</p> </div>
+
           </div>
         </div>
 
         <div className='PortaFInftoTT'>
           <div className='PortaFTitle'><h5>MI TRABAJO</h5></div>
+
+
+
           <div className='PortaFTitleImages'>
 
             {(perilPortafolio.length === 0) &&
@@ -319,7 +390,115 @@ export const ProfileProfessionall = () => {
           </div>
         </div>
       </div>
+      {(abrir === 2) &&
 
+        <div className='FondBackGPp'>
+          <div className='ModalBuildProfilep'>
+            <div className='CloseBackProfileP'> <a href="/userTatto/edit-profile"><MdOutlineCancel /></a></div>
+            <div className="contImgAndTittlear">
+              <div className='ContIcontInMBPP'>
+              </div>
+              <div className="SecondContIconCMBPP">
+                <h3>Crea tu perfil profesional</h3>
+              </div>
+            </div>
+            <Formik
+              initialValues={{
+                img1: "",
+                img2: "",
+                img3: "",
+                img4: "",
+                img5: "",
+                idTatuador: "",
+              }}
+
+              onSubmit={(valores, { resetForm }) => {
+                let validacion = {};
+
+                SubirTrabajos({
+                  img1: imgUrl1,
+                  img2: imgUrl2,
+                  img3: imgUrl3,
+                  img4: imgUrl4,
+                  img5: imgUrl5,
+                  idTatuador: idTatu,
+
+                }).then(info => {
+                  validacion = info
+
+
+                  setLoading(true);
+                  if (validacion.status === 400) {
+                    setDuplicatedData(true);
+                    setServerError(false);
+                    setLoading(false);
+                  }
+                  else if (validacion.status === 500) {
+                    setServerError(true);
+                    setDuplicatedData(false);
+                    setLoading(false);
+                  }
+                  else {
+                    CreateDisponibilidad({
+                      like: 0,
+                      dispo: true,
+                      iDispo: idTatu
+                    })
+                    setDuplicatedData(false);
+                    resetForm();
+                    setLoading(false);
+                    setRegistered(true);
+                    window.location = `/tatto/view/profile/${idTatu}`;
+                  }
+                })
+
+              }}
+
+            >
+
+              <Form>
+                <div className="contInfoUserBoxes">
+                  <div className="SelectContent">
+                    <div>
+                      <Input  onChange={uploadImage} required className='select' type='file' name="img1" />
+
+                    </div>
+                    <div>
+                      <Input  onChange={uploadImage} required className='select' type='file' name="img2" />
+
+                    </div>
+                  </div>
+                  <div className="SelectContent">
+                    <div>
+                      <Input  onChange={uploadImage} className='inputProfile' placeholder='Ingresa Tu Expreciencia' type="file" name="img3" />
+                    </div>
+                    <div>
+                      <Input  onChange={uploadImage} className='inputProfile' name='img4' required placeholder="Direccion" type="file" />
+                    </div>
+                  </div>
+
+                  <div className="SelectContent">
+                    <div style={{ width: "100%", textAlign: "center", marginTop: "5px", marginBottom: "5px" }}>
+
+      
+                      <div style={{ height: "40px", marginTop: "5px", marginBottom: "10px", marginLeft: "60px", color: "white" }} >
+                        <Input onChange={uploadImage} className='sapos' type="file" name="img5" />
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <button style={{ width: "100%", textAlign: "center" }} type='submit' className='buttons_global_StyleTatto'>Crear Perfil</button>
+                  </div>
+                </div>
+              </Form>
+            </Formik>
+
+          </div>
+
+
+        </div>
+
+      }
     </>
   )
 }

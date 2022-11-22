@@ -26,15 +26,14 @@ export const UptInfoU = () => {
 
     return (
         <div className='perfil-usuario-content'>
-
             <div className="perfil-usuario-header">
-
                 <div className="perfil-usuario-portada">
-
                     <div className="perfil-usuario-avatar">
                         <img src={image} alt="img-avatar" />
+                        <a href="/user/edit-image" type="button" class="boton-avatar">
+                            <span class="material-symbols-outlined"> photo_camera </span>
+                        </a>
                     </div>
-
                 </div>
             </div>
             <div className="perfil-usuario-body">

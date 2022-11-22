@@ -215,11 +215,15 @@ display: none;
     top: -2px;
     border: 0;
     background-color: #fff;
-    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+    box-shadow: 0 0 12px rgb(0 0 0 / 20%);
     width: 45px;
     height: 45px;
     border-radius: 50%;
+    display: flex;
     cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    
 }
 
 .seccion-perfil-usuario .perfil-usuario-body {

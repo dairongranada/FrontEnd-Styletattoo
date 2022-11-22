@@ -36,6 +36,7 @@ import { LeftInfoU } from './components/Pages/PageProfileU/LeftInfoU';
 
 import { TattoName } from './components/Pages/PageProfileT/Profile/TattoName/TattoName'
 import { TattoPassword } from './components/Pages/PageProfileT/Profile/TattoPassword/TattoPassword'
+import { ChangeIMG } from './components/Pages/PageProfileT/Profile/ChangeIMG/ChangeIMG'
 import { TattoQuotes } from './components/Pages/PageProfileT/Profile/TattoQuotes/TattoQuotes'
 
 import { ProfileProfessionall } from './components/Pages/ProfileProfessionall/ProfileProfessionall'
@@ -68,6 +69,7 @@ function App() {
                     <Route path='/userTatto/edit-profile' exact element= {!token ? <Navigate to="/unauthenticated/401" /> :<LeftInfoT/>}/>
                     <Route path='/userTatto/edit-name' exact element= {!token ? <Navigate to="/unauthenticated/401" /> :<TattoName/>}/>
                     <Route path='/userTatto/edit-password' exact element= {!token ? <Navigate to="/unauthenticated/401" /> :<TattoPassword/>}/>
+                    <Route path='/userTatto/edit-image' exact element= {!token ? <Navigate to="/unauthenticated/401" /> :<ChangeIMG/>}/>
                     <Route path='/userTatto/edit-quotes' exact element= {!token ? <Navigate to="/unauthenticated/401" /> :<TattoQuotes/>}/>
 
                 {/* 𝙇𝘼𝙎 𝙊𝙋𝘾𝙄𝙊𝙉𝙀𝙎 𝘿𝙀𝙇 𝙏𝘼𝙏𝙐𝘼𝘿𝙊𝙍 */}

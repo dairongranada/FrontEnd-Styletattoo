@@ -255,7 +255,7 @@ export const RegisterTatto = ( { change_step } ) => {
                                     <div className="sameline terminos-condiciones">
                                         <label>
                                             <input required type="checkbox" />
-                                            <span className='checkBox'></span>
+                                            <span required className='checkBox'></span>
                                         </label>
                                         <p>Acepto los <Link className='anchor' to="/terminos-condiciones">Terminos y condiciones</Link></p>
                                     </div>

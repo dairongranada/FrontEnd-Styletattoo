@@ -281,7 +281,6 @@ export const ProfileProfessionall = () => {
                         <label style={{ fontWeight: "100" }}>Muestrame tu idea</label>
                         <button className="contenedor-btn-file">
                           <span className="material-symbols-outlined"> photo_camera </span>
-                          <label></label>
                           <input type="file" id="btn-file" />
                         </button>
                         {touched.email && errors.email && <span>{errors.email}</span>}
@@ -308,7 +307,7 @@ export const ProfileProfessionall = () => {
                       <button
                         style={{ width: "22rem" }}
                         className="buttons_global_StyleTatto"
-                        type={"submit"}>
+                        type="submit">
                         Agendar Cita
                       </button>
                     </div>

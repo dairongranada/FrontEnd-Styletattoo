@@ -23,3 +23,20 @@ ol, ul {
 }
 
 img {pointer-events: none;}
+
+
+input {
+    &:focus {
+        border: none;
+        background: none;
+    }
+
+    &:active {
+        border: none;
+        background: none;
+    }
+    &:select{
+        border: none;
+        background: none;
+    }
+}

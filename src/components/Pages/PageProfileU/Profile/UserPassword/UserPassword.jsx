@@ -144,7 +144,6 @@ export const UserPassword = () => {
                   <Field id='block'  name='last_name' value={lastname} />
                 </div>
 
-
                 <div className='ContentBoxButtonConfirm'>
                   <button id={`${ active === 0 && "btnBlocked" }`}  type='sumbit' className='ButtonConfirmDates'>Guardar</button>
                 </div>

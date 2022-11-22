@@ -16,6 +16,8 @@ const URL = "http://localhost:8000/";
 
 
 
+
+
 let token = localStorage.getItem("token")
 /*
 ███╗░░░███╗███████╗████████╗░█████╗░██████╗░░█████╗░    ██████╗░██╗░░░██╗████████╗
@@ -24,6 +26,29 @@ let token = localStorage.getItem("token")
 ██║╚██╔╝██║██╔══╝░░░░░██║░░░██║░░██║██║░░██║██║░░██║    ██╔═══╝░██║░░░██║░░░██║░░░
 ██║░╚═╝░██║███████╗░░░██║░░░╚█████╔╝██████╔╝╚█████╔╝    ██║░░░░░╚██████╔╝░░░██║░░░
 ╚═╝░░░░░╚═╝╚══════╝░░░╚═╝░░░░╚════╝░╚═════╝░░╚════╝░    ╚═╝░░░░░░╚═════╝░░░░╚═╝░░░*/
+
+
+export const userUpdate = async ( valores,id ) => {
+
+    try {
+        const resp = await axios({
+            url: URL+"auth/allUsers/"+id+"/",
+            method: "PUT",
+            headers: {
+                "Authorization" :"Token "+token,
+                "Content-Type":"application/json"
+            },
+            data: valores
+        }).catch( function( error ) {
+            if (error.response) {return { status : error.response.status};} 
+        });
+        return resp;
+
+    } catch (error) {
+    }
+}
+
+
 
 
 

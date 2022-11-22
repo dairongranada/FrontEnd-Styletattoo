@@ -45,7 +45,7 @@ export const TattoPassword = () => {
     .catch(err => console.error(err))
 
     setTimeout(() => {
-        window.location.reload(false);
+        // window.location.reload(false);
     }, 2000);
     
 }
@@ -108,7 +108,7 @@ export const TattoPassword = () => {
                   
                 //----------------------------------------------------------------
 
-                  onSubmit = {(valores , {resetForm} ) =>{
+                  onSubmit = {(valores  ) =>{
                     let validacion = {};
 
                         CambiarContraseña({
@@ -145,10 +145,9 @@ export const TattoPassword = () => {
                 </div>
                 <div className='ContentBoxtext'>
                   <Field id='block'  name='email' value={emailTatu} />
-                  <Field id='block' name='first_name' value={firstmane} />
+                  <Field id='block'  name='first_name' value={firstmane} />
                   <Field id='block'  name='last_name' value={lastname} />
                 </div>
-
 
                 <div className='ContentBoxButtonConfirm'>
                   <button id={`${ active === 0 && "btnBlocked" }`}  type='sumbit' className='ButtonConfirmDates'>Guardar</button>

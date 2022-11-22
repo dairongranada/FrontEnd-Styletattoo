@@ -48,7 +48,6 @@ export const InfoProfileT = () => {
 
   
 
-  console.log(disponiblidad.id);
 
   const ChangeDisponibiblity = () => {
     if (disponiblidad.dispo == true) {

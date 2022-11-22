@@ -73,8 +73,8 @@ export const PagePiercings = () => {
       <div className='PresentationMitos'>
         <div className="contTextPresentation">
           <div className="contTittleStyleP">
-            <h2>Mitos Falsos Del</h2>
-            <h2 className='TittlePiercingNThown'>Piercing</h2>
+            <h2>Mitos Falsos De los</h2>
+            <h2 className='TittlePiercingNThown'>Piercings</h2>
           </div>
           <div className='mito' >
             <p>Desde que las perforaciones comenzaron a tomar popularidad y aceptación en la sociedad, hasta nuestros días, donde perforarse alguna parte del cuerpo es sumamente rápido, fácil y tan común que hasta se considera una moda, han existido toda clase de mitos en torno al asunto Riesgos de toda índole, cosas que no deben hacerse y otras cuestiones similares entran en este grupo de mitos, algunos ciertos, otros falsos y otros que simplemente son graciosos e incomprensibles. Para conocer un poco más sobre los mitos y falsedades sobre hacerse un piercing, hoy analizaremos brevemente algunos de los más comunes.</p>

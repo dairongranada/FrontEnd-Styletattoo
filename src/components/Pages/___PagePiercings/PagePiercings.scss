@@ -82,6 +82,7 @@
 
     .Textinformapierc {
         width: 50%;
+        margin-left: 20rem;
 
         p {
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -171,12 +172,13 @@
         flex-direction: column;
 
         .contTittleStyleP {
-            display: flex;
+
             justify-content: space-around;
             margin-left: 5%;
             gap: 25px;
             text-shadow: 11px 12px 10px black;
             margin-bottom: 30px;
+            text-align: center;
 
             .TittlePiercingNThown {
                 color: var(--colorOrange2);
@@ -290,6 +292,7 @@
         .Textinformapierc {
             p {
                 transform: translate(40px, 0px);
+                
             }
         }
     }

@@ -48,6 +48,35 @@ export const InfoProfileT = () => {
   }, [])
 
 
+  const [infoD, setinfoD] = useState()
+
+  
+
+  console.log(disponiblidad.id);
+
+  const ChangeDisponibiblity = () => {
+    if (disponiblidad.dispo == true) {
+      toast.success('Disponibilidad Actualizada')
+        let valores = {
+          dispo: false,
+          like: disponiblidad.like,
+          iDispo:disponiblidad.iDispo
+        }
+        MetodoPUTdispo(valores,InfoUser.id)
+      }else{
+        toast.success('Disponibilidad Actualizada')
+        let valores = {
+          dispo: true,
+          like: disponiblidad.like,
+          iDispo:disponiblidad.iDispo
+        }
+        MetodoPUTdispo(valores,InfoUser.id)
+      }
+    }
+
+
+
+  
   const [serverError, setServerError] = useState(false);
   const [loading, setLoading] = useState(false);
   const [duplicatedData, setDuplicatedData] = useState(false);
@@ -229,50 +258,50 @@ export const InfoProfileT = () => {
               }}
 
             >
+            
+                <Form>
+                  <div className="contInfoUserBoxes">
 
-              <Form>
-                <div className="contInfoUserBoxes">
 
 
-
-                  <div className="SelectContent">
-                    <div>
-                      <Field required className='select' as="select" name="departament">
-                        <option>Escoje tu departamento</option>
-                        <option value="Manizales">Manizales</option>
-                        <option value="Quindio">Quindio</option>
-                        <option value="Risaralda">Risaralda</option>
-                      </Field>
-                    </div>
-                    <div>
-                      <Field required className='select' as="select" name="municipio">
-                        <option>Escoje tu municipio</option>
-                        <option value="armenia">armenia</option>
-                        <option value="calarca">calarca</option>
-                        <option value="quimbaya">quimbaya</option>
-                        <option value="montenegro">montenegro</option>
-                        <option value="pijao">pijao</option>
-                        <option value="genova">genova</option>
-                        <option value="tebaida">tebaida</option>
-                        <option value="filandia">filandia</option>
-                        <option value="circacia">circacia</option>
-                        <option value="cordoba">cordoba</option>
-                        <option value="salento">salento</option>
-                        <option value="buena vista">buena vista</option>
-                      </Field>
-                    </div>
-                  </div>
-                  <div className="SelectContent">
-                    <div>
-                      <Field className='inputProfile' placeholder='Ingresa Tu Expreciencia' type="number" name="experience" />
-                    </div>
-                    <div>
-                      <Field className='inputProfile' name='direction' required placeholder="Direccion" type="text" />
-                    </div>
-                  </div>
-                  <div className="SelectContent">
-                    <Field className="TextareaProfile" readonly maxLength="100" required as="textarea" placeholder='Descripcion' name="description" id="textarea" />
-                  </div>
+                      <div className="SelectContent">
+                          <div>
+                          <Field required className='select' as="select" name="departament">
+                            <option>Escoje tu departamento</option>
+                            <option value="Manizales">Manizales</option>
+                            <option value="Quindio">Quindio</option>
+                            <option value="Risaralda">Risaralda</option>
+                          </Field>
+                          </div>
+                          <div>
+                          <Field required className='select'as="select" name="municipio">
+                            <option>Escoje tu municipio</option>
+                            <option value="armenia">armenia</option>
+                            <option value="calarca">calarca</option>
+                            <option value="quimbaya">quimbaya</option>
+                            <option value="montenegro">montenegro</option>
+                            <option value="pijao">pijao</option>
+                            <option value="genova">genova</option>
+                            <option value="tebaida">tebaida</option>
+                            <option value="filandia">filandia</option>
+                            <option value="circacia">circacia</option>
+                            <option value="cordoba">cordoba</option>
+                            <option value="salento">salento</option>
+                            <option value="buena vista">buena vista</option>
+                          </Field>
+                          </div>
+                        </div>
+                        <div className="SelectContent">
+                          <div>
+                            <Field className='inputProfile' placeholder='Ingresa Tu Expreciencia'type="number" name="experience" />
+                          </div>
+                          <div>
+                            <Field className='inputProfile' name='direction' required placeholder="Direccion" type="text"/>
+                          </div>
+                        </div>
+                        <div className="SelectContent">
+                          <Field className="TextareaProfile" readonly  maxLength="100" required as="textarea" placeholder='Descripcion' name="description" id="textarea" />
+                        </div>
 
 
                   <div className="SelectContent">

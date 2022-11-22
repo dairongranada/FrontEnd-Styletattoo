@@ -1,6 +1,6 @@
 import './PageProfileT.scss'
 import { React, useState, useEffect } from 'react'
-import { getusers } from '../../../Helpers/ApiConsumer/PostUsers';
+import { getusers , getTatois} from '../../.././Helpers/ApiConsumer/PostUsers'
 import { getAllTatuadoresID } from '../../.././Helpers/ApiConsumer/Tattuadores'
 
 import gorroNavidad from '../../../images/Icons/gorroNavidad.png'
@@ -47,9 +47,17 @@ export const UptInfoT = () => {
         imagePROFILE  =  tattoInfoIMG.img 
     }
 
-    // console.log(tattoInfoIMG);
 
-    // console.log(userData.first_name)
+
+    const [perfilProfesional, setperfilProfesional] = useState({});
+
+    useEffect(() => {
+      getTatois(tokenID)
+        .then(info => {
+          setperfilProfesional(info.data.PerfilProfesional.length)
+        })
+    }, [])
+  
 
     return (
         <div className='perfil-usuario-content'>
@@ -66,7 +74,7 @@ export const UptInfoT = () => {
                     <i className='bx bxl-mailchimp'></i>
                     <div className="conNameAndEnla">
                         <h3 className="titulo">{userData.first_name + " " + userData.last_name}</h3>
-                        <a href={`/tatto/view/profile/${idTatu}`}>Ver Perfil profesional</a>
+                        <a id={`${ perfilProfesional === 0 && "ocultarliCreate" }`} href={`/tatto/view/profile/${idTatu}`}>Ver Perfil profesional</a>
                     </div>
 
                     

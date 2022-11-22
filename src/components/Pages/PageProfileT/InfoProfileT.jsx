@@ -52,7 +52,7 @@ export const InfoProfileT = () => {
 
 
 
-  console.log(disponiblidad.id);
+  // console.log(disponiblidad.id);
 
   const ChangeDisponibiblity = () => {
     if (disponiblidad.dispo == true) {
@@ -131,7 +131,7 @@ export const InfoProfileT = () => {
       })
   }, [])
 
-  console.log(portafoliocreate);
+  // console.log(portafoliocreate);
 
 
   const uploadImage = async (e) => {

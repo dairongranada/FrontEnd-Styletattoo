@@ -24,7 +24,7 @@ export const TerminosC = () => {
            cualquier parte del sitio, usted acepta estos Términos del servicio. Si no acepta la totalidad de los términos y 
            condiciones de este acuerdo, no podrá acceder al sitio web ni utilizar ningún servicio.</p>
         <div className='contSecciones'>
-          <h2>SECCIÓN 1: TERMINOS DEL SITIO :</h2>
+          <h2>SECCIÓN 1: TERMINOS DEL SITIO</h2>
             <p>Al aceptar los presentes Términos del servicio, usted declara que tiene la mayoría de edad en su estado
                o provincia de residencia y que nos ha dado su consentimiento para permitir que cualquiera de las personas
                menores que dependen de usted utilice este sitio.No puede utilizar nuestros productos para ningún fin ilegal 
@@ -37,11 +37,23 @@ export const TerminosC = () => {
               más precisas, más completas o más recientes. Al confiar en cualquier material de este sitio lo hace por su
               cuenta y riesgo.Este sitio puede contener cierta información histórica.Nos reservamos el derecho 
               de modificar el contenido de este sitio en cualquier momento, pero no tenemos la obligación de actualizar
-              ninguna información en nuestro sitio.
-            </p>
-          <h2>SECCIÓN 3: INFORMACIÓN PERSONAL</h2>
+              ninguna información en nuestro sitio.</p>
+          <h2>SECCIÓN 3: HERRAMIENTAS OPCIONALES</h2>
+            <p>Podemos proporcionarle acceso a herramientas de terceros que no supervisamos, ni tenemos ningún control sobre 
+              ellas, ni tampoco contribuimos.
+              Usted reconoce y acepta que brindamos acceso a dichas herramientas "tal como se encuentran" y "según
+              disponibilidad" sin garantías, representaciones ni condiciones de ningún tipo y sin ningún tipo de respaldo.
+              No tendremos ninguna responsabilidad como consecuencia del uso que haga de herramientas opcionales de terceros
+              o en relación a ellas.</p>
+          <h2>SECCIÓN 4: ERRORES, INEXACTITUDES Y OMISIONES</h2>
+            <p>Puede haber información en nuestro sitio o en el Servicio que, ocasionalmente, contenga errores tipográficos,
+              inexactitudes u omisiones que puedan relacionarse con descripciones, tiempos y disponibilidad. Nos reservamos 
+              el derecho de corregir cualquier error, inexactitud u omisión, de cambiar o actualizar información, o cancelar
+              pedidos si alguna información en el Servicio o en cualquier página web relacionada es inexacta en cualquier 
+              momento sin previo aviso.</p>
+          <h2>SECCIÓN 5: INFORMACIÓN PERSONAL</h2>
             <p>El envío de la información personal que haga a través de la tienda se rige por nuestra Política de privacidad.</p>
-          <h2>SECCION 4: INFORMACIÓN DE CONTACTO</h2>
+          <h2>SECCION 6: INFORMACIÓN DE CONTACTO</h2>
             <p>Las preguntas sobre los Términos del servicio se deben enviar a OficialStyleTattoo@gmail.com.</p>
 
             <a  className='BntAceptarterminos ' href="/Registro"><button type='sumbit'>Aceptar Terminos</button></a>

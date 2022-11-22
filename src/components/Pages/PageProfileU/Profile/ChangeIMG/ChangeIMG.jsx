@@ -5,7 +5,7 @@ import { NavFooter } from '../../../../Layouts/NavigationFooter/NavFooter/NavFoo
 import { NavigationBar } from '../../../../Layouts/NavigationBar/NavigationBar';
 import { userUpdate } from '../../../../../Helpers/ApiConsumer/PostUsers';
 import { ChevronsLeft } from '../../../../UI/ChevronsLeft/ChevronsLeft.jsx'
-
+import { Input } from "reactstrap";
 import { Formik, Form, Field } from 'formik';
 import { UptInfoU } from '../../UptInfoU'
 import { getTatois } from '../../../../../Helpers/ApiConsumer/PostUsers'
@@ -109,7 +109,7 @@ export const ChangeIMG = () => {
                       <div id='addUploadFileIMG'>
                         <span class="material-symbols-outlined"> cloud_upload </span>
                         <p>Subir Un Archivo</p>
-                        <input id='inputuploadFileIMG' type="file" required />
+                        <Input onChange={uploadImage} id='inputuploadFileIMG' type="file" required />
                       </div>
 
                     </div>

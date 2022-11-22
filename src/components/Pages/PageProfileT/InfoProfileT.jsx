@@ -6,12 +6,17 @@ import { Formik, Form, Field } from 'formik';
 import { CreateProfesionalprofile,CreateDisponibilidad } from '../../.././Helpers/ApiConsumer/AuthRegistro'
 import { getusers , getTatois} from '../../.././Helpers/ApiConsumer/PostUsers'
 import { MdOutlineCancel } from 'react-icons/md';
+import { useParams } from 'react-router';
+import { getAllTatuadoresID } from '../../../Helpers/ApiConsumer/Tattuadores'
+import { MetodoPUTdispo } from '../../../Helpers/put'
 
 
 import './createProfile.scss'
 
 export const InfoProfileT = () => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("usuario")));
+
+  const [InfoUser, setInfoUserUser] = useState(JSON.parse(localStorage.getItem("InfoUser")));
   const [tokenID, setToken] = useState(localStorage.getItem("token"));
 
   const [userData, setUserData] = useState({});
@@ -20,6 +25,12 @@ export const InfoProfileT = () => {
 
 
   useEffect(() => {
+
+    getAllTatuadoresID(InfoUser.id)
+      .then(dat => {
+        setDisponibilidad(dat.data.iDispo)
+      })
+
     if (!!user) {
       getusers(tokenID)
         .then(data => setUserData(data.data));
@@ -27,6 +38,34 @@ export const InfoProfileT = () => {
 
 
   }, [])
+
+
+  const [disponiblidad, setDisponibilidad] = useState()
+  const [infoD, setinfoD] = useState()
+
+  
+
+  console.log(disponiblidad.id);
+
+  const ChangeDisponibiblity = () => {
+    if (disponiblidad.dispo == true) {
+        let valores = {
+          dispo: disponiblidad.dispo,
+          like: disponiblidad.like,
+          iDispo:false
+        }
+        MetodoPUTdispo(valores,InfoUser.id)
+      }else{
+        let valores = {
+          dispo: disponiblidad.dispo,
+          like: disponiblidad.like,
+          iDispo:true
+        }
+        MetodoPUTdispo(valores,InfoUser.id)
+      }
+    }
+
+
 
   
   const [serverError, setServerError] = useState(false);
@@ -89,7 +128,7 @@ export const InfoProfileT = () => {
               <li className='icono'><Link to="/userTatto/edit-name"><span className="material-symbols-outlined Icons-Options">badge</span>Nombre y correo</Link></li>
               <li className='icono'id={`${ perfilProfesional === 1 && "ocultarliCreate" }`} ><a onClick={OpenModalProfP} href="#"><span className="material-symbols-outlined Icons-Options">person</span>Crear Perfil Profesional</a></li>
               <li className='icono2'id={`${ perfilProfesional === 1 && "mostrarliCreate" }`} ><a onClick={OpenModalProfP} href="#"><span className="material-symbols-outlined Icons-Options">person</span>Subir Trabajos</a></li>
-              <li className='icono'><a href="#"><span class="material-symbols-outlined"> work_history </span>Disponiblidad </a></li>
+              <li onClick={ChangeDisponibiblity} className='icono'><a href="#"><span class="material-symbols-outlined"> work_history </span>Disponiblidad </a></li>
             </ul>
             <ul className="lista-datos">
               <li className='icono'><Link to="/userTatto/edit-quotes"><span className="material-symbols-outlined Icons-Options">auto_stories</span>Citas agendadas</Link></li>

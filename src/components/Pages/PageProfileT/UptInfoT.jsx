@@ -65,10 +65,10 @@ export const UptInfoT = () => {
         <div className='perfil-usuario-content'>
             <div className="perfil-usuario-header">
                 <div className="perfil-usuario-portada">
-                    <div className=" GorroRotate"><img className="gorroNavidadPerfil" src={gorroNavidad} alt={gorroNavidad} /></div>
+                    {/* <div className=" GorroRotate"><img className="gorroNavidadPerfil" src={gorroNavidad} alt={gorroNavidad} /></div> */}
                     <div className="perfil-usuario-avatar">
                         <img src={imagePROFILE} alt="img-avatar" />
-                    </div>
+                    </div>                    
                 </div>
             </div>
             <div className="perfil-usuario-body">
@@ -76,6 +76,7 @@ export const UptInfoT = () => {
                     <i className='bx bxl-mailchimp'></i>
                     <h3 style={{ textAlign: "center" }} className="titulo">{userData.first_name + " " + userData.last_name}</h3>
                     <p className="textoTrasnparent">ㅤㅤ   ㅤ  ㅤ   ㅤ  ㅤ  ㅤ  ㅤ  ㅤ  ㅤ  ㅤ  ㅤ  ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</p>
+                    <a style={{ position: "absolute", bottom: "3rem",color: "#161616b5"}} id={`${perfilProfesional === 0 && "ocultarliCreate"}`} href={`/tatto/view/profile/${idTatu}`}>Ver Perfil profesional</a>
                 </div>
                 <div className="redes-sociales">
                     <a href="/" className="boton-redes facebook fab fa-facebook-f"><i className='bx bx-home-alt'></i></a>

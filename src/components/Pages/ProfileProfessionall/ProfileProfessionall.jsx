@@ -107,11 +107,7 @@ export const ProfileProfessionall = () => {
   const [registered, setRegistered] = useState(false);
   const [abrir, setAbrir] = useState(0)
 
-  const OpenModalProfP = () => {
-
-    setAbrir(2)
-  }
-
+ 
   const [tatuadores, setTatuadores] = useState([]);
   const [perfilProfesional, setperfilProfesional] = useState({});
 
@@ -212,7 +208,6 @@ export const ProfileProfessionall = () => {
             <div className='NameLeftInftoTT'><h5> {first_name} {last_name} </h5></div>
             <div className='EmailLeftInftoTT'><p> {email} </p></div>
             <div className='DescriLeftInftoTT'><p>{description}</p></div>
-            <div className='iconosa'><li ><a onClick={OpenModalProfP} href="#"><span className="material-symbols-outlined Icons-Options">person</span>Subir trabajos</a></li></div>
             <div className='DescriLeftInftoTT' style={{ display: "flex", gap: "5px" }}> <p style={{ color: "var(--colorOrange2)" }} >Experiencia :</p><p>{experience} </p> <p>Años</p> </div>
 
           </div>

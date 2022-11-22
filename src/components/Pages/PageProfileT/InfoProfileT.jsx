@@ -3,7 +3,7 @@ import { React } from "react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import { Formik, Form, Field } from 'formik';
-import { CreateProfesionalprofile } from '../../.././Helpers/ApiConsumer/AuthRegistro'
+import { CreateProfesionalprofile,CreateDisponibilidad } from '../../.././Helpers/ApiConsumer/AuthRegistro'
 import { getusers , getTatois} from '../../.././Helpers/ApiConsumer/PostUsers'
 import { MdOutlineCancel } from 'react-icons/md';
 
@@ -89,10 +89,11 @@ export const InfoProfileT = () => {
               <li className='icono'><Link to="/userTatto/edit-name"><span className="material-symbols-outlined Icons-Options">badge</span>Nombre y correo</Link></li>
               <li className='icono'id={`${ perfilProfesional === 1 && "ocultarliCreate" }`} ><a onClick={OpenModalProfP} href="#"><span className="material-symbols-outlined Icons-Options">person</span>Crear Perfil Profesional</a></li>
               <li className='icono2'id={`${ perfilProfesional === 1 && "mostrarliCreate" }`} ><a onClick={OpenModalProfP} href="#"><span className="material-symbols-outlined Icons-Options">person</span>Subir Trabajos</a></li>
-              <li className='icono'><Link to="/userTatto/edit-password"><span className="material-symbols-outlined Icons-Options">vpn_key</span>Contraseña </Link></li>
+              <li className='icono'><a href="#"><span class="material-symbols-outlined"> work_history </span>Disponiblidad </a></li>
             </ul>
             <ul className="lista-datos">
               <li className='icono'><Link to="/userTatto/edit-quotes"><span className="material-symbols-outlined Icons-Options">auto_stories</span>Citas agendadas</Link></li>
+              <li className='icono'><Link to="/userTatto/edit-password"><span className="material-symbols-outlined Icons-Options">vpn_key</span>Contraseña </Link></li>
               <li onClick={handleLogout} className='icono'><Link to="/"><span className="material-symbols-outlined Icons-Options">logout</span>Cerrar sesion</Link></li>
             </ul>
           </div>
@@ -124,9 +125,9 @@ export const InfoProfileT = () => {
              
               onSubmit={(valores, { resetForm }) => {
                 let validacion = {};
+
                 CreateProfesionalprofile({
                   img: imgUrl,
-                  like: 0,
                   departament: valores.departament,
                   municipio: valores.municipio,
                   direction: valores.direction,
@@ -136,6 +137,7 @@ export const InfoProfileT = () => {
 
                 }).then(info => {
                   validacion = info
+
 
                   setLoading(true);
                   if (validacion.status === 400) {
@@ -149,6 +151,11 @@ export const InfoProfileT = () => {
                     setLoading(false);
                   }
                   else {
+                    CreateDisponibilidad({
+                      like: 0,
+                      dispo: true,
+                      iDispo:idTatu
+                    })
                     setDuplicatedData(false);
                     resetForm();
                     setLoading(false);

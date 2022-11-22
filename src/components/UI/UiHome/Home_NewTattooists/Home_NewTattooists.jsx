@@ -22,18 +22,10 @@ export const Home_NewTattooists = () => {
       console.log(tatuadores);
 
       const allTaoits = tatuadores.filter(data => data.rol.includes('[ROLE_ARTISTA]'))
-      const allTaoitsNullarts = tatuadores.filter(data => data.rol.includes('[ROLE_ARTISTA]'))
 
 
     
-    // const allTaoits = tatuadores.filter(data => data.rol.includes('[ROLE_ARTISTA]'))
-    // const allTaoitsTwo = allTaoits.filter(data =>{
-    //     if (data.PerfilProfesional.length >= 0) {
-    //     //   console.log(data);
-    //     }else{
-    //     }
-      
-    // })
+
 
 
     return (
@@ -43,7 +35,7 @@ export const Home_NewTattooists = () => {
             </div>
             <div className="containerCardsArts">
                 {allTaoits.map(dat => (
-                    (dat.PerfilProfesional.length >=1 && dat.PerfilProfesional[0].like >= 1) &&
+                    (dat.PerfilProfesional.length >=1 && dat.iDispo[0].like >= 1) &&
 
                     <div className="CardArtist">
 

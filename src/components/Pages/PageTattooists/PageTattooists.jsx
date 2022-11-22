@@ -42,8 +42,8 @@ export const PageTattooists = () => {
             neotradicional, libre, liners, black work, black and grey y cover up</p>
         </div>
 
-
-        {(perfilProfesional.length === 0) &&
+        {allTaoits.map(data => (
+        (data.perfilProfesional == 0) &&
           <main className='LoaderArtist'>
             <div className="loaderArtist">
               <div className="spinner">
@@ -59,7 +59,7 @@ export const PageTattooists = () => {
               <p style={{ marginTop: "10px" }} >No hay artistas en este momento...</p>
             </div>
           </main>
-        }
+          ))}
 
 
 

@@ -1,6 +1,6 @@
 import './PageProfileT.scss'
 import { React, useState, useEffect } from 'react'
-import { getusers , getTatois} from '../../.././Helpers/ApiConsumer/PostUsers'
+import { getusers, getTatois } from '../../.././Helpers/ApiConsumer/PostUsers'
 import { getAllTatuadoresID } from '../../.././Helpers/ApiConsumer/Tattuadores'
 
 import gorroNavidad from '../../../images/Icons/gorroNavidad.png'
@@ -12,17 +12,17 @@ export const UptInfoT = () => {
     const [tokenID, setTokenID] = useState(localStorage.getItem("token"));
     const [userData, setUserData] = useState({});
 
-  
+
     let idTatu = userData.id
-  
-  
+
+
     useEffect(() => {
-      if (!!user) {
-        getusers(tokenID)
-          .then(data => setUserData(data.data));
-      }
+        if (!!user) {
+            getusers(tokenID)
+                .then(data => setUserData(data.data));
+        }
     }, [])
-  
+
 
 
 
@@ -35,16 +35,18 @@ export const UptInfoT = () => {
     const [InfoUser, setInfoUser] = useState(JSON.parse(localStorage.getItem("InfoUser")));
 
     useEffect(() => {
-        if (!!user) { getAllTatuadoresID(InfoUser.id)
-            .then(data => setTattoInfoIMG(data.data.PerfilProfesional[0])) }
+        if (!!user) {
+            getAllTatuadoresID(InfoUser.id)
+                .then(data => setTattoInfoIMG(data.data.PerfilProfesional[0]))
+        }
     }, [])
 
     let imagePROFILE = ""
 
     if (tattoInfoIMG == null) {
-        imagePROFILE  = "https://i.postimg.cc/T2N5CnwK/perfil-Usuario-Anonim.png"
-    }else { 
-        imagePROFILE  =  tattoInfoIMG.img 
+        imagePROFILE = "https://i.postimg.cc/T2N5CnwK/perfil-Usuario-Anonim.png"
+    } else {
+        imagePROFILE = tattoInfoIMG.img
     }
 
 
@@ -52,18 +54,18 @@ export const UptInfoT = () => {
     const [perfilProfesional, setperfilProfesional] = useState({});
 
     useEffect(() => {
-      getTatois(tokenID)
-        .then(info => {
-          setperfilProfesional(info.data.PerfilProfesional.length)
-        })
+        getTatois(tokenID)
+            .then(info => {
+                setperfilProfesional(info.data.PerfilProfesional.length)
+            })
     }, [])
-  
+
 
     return (
         <div className='perfil-usuario-content'>
             <div className="perfil-usuario-header">
                 <div className="perfil-usuario-portada">
-                    <div className = " GorroRotate"><img className = "gorroNavidadPerfil" src={gorroNavidad} alt={gorroNavidad} /></div>
+                    <div className=" GorroRotate"><img className="gorroNavidadPerfil" src={gorroNavidad} alt={gorroNavidad} /></div>
                     <div className="perfil-usuario-avatar">
                         <img src={imagePROFILE} alt="img-avatar" />
                     </div>
@@ -72,13 +74,8 @@ export const UptInfoT = () => {
             <div className="perfil-usuario-body">
                 <div className="perfil-usuario-bio">
                     <i className='bx bxl-mailchimp'></i>
-                    <div className="conNameAndEnla">
-                        <h3 className="titulo">{userData.first_name + " " + userData.last_name}</h3>
-                        <a id={`${ perfilProfesional === 0 && "ocultarliCreate" }`} href={`/tatto/view/profile/${idTatu}`}>Ver Perfil profesional</a>
-                    </div>
-
-                    
-                    <p className="texto">ㅤㅤ   ㅤ  ㅤ  ㅤ  ㅤ  ㅤ  ㅤ  ㅤ  ㅤ  ㅤ  ㅤ  ㅤ  ㅤ  ㅤ  ㅤ  ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</p>
+                    <h3 style={{ textAlign: "center" }} className="titulo">{userData.first_name + " " + userData.last_name}</h3>
+                    <p className="textoTrasnparent">ㅤㅤ   ㅤ  ㅤ   ㅤ  ㅤ  ㅤ  ㅤ  ㅤ  ㅤ  ㅤ  ㅤ  ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</p>
                 </div>
                 <div className="redes-sociales">
                     <a href="/" className="boton-redes facebook fab fa-facebook-f"><i className='bx bx-home-alt'></i></a>

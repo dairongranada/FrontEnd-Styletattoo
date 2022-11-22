@@ -40,8 +40,8 @@ export const UptInfoU = () => {
             <div className="perfil-usuario-body">
                 <div className="perfil-usuario-bio">
                     <i className='bx bxl-mailchimp'></i>
-                    <h3 className="titulo">{userData.first_name + " " + userData.last_name}</h3>
-                    <p className="texto">ㅤㅤ   ㅤ  ㅤ  ㅤ  ㅤ  ㅤ  ㅤ  ㅤ  ㅤ  ㅤ  ㅤ  ㅤ  ㅤ  ㅤ  ㅤ  ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</p>
+                    <h3  style={{textAlign: "center"}} className="titulo">{userData.first_name + " " + userData.last_name}</h3>
+                    <p className="textoTrasnparent">ㅤㅤ   ㅤ  ㅤ   ㅤ  ㅤ  ㅤ  ㅤ  ㅤ  ㅤ  ㅤ  ㅤ  ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</p>
                 </div>
                 <div className="redes-sociales">
                     <a href="/" className="boton-redes facebook fab fa-facebook-f"><i className='bx bx-home-alt'></i></a>

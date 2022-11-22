@@ -42,21 +42,16 @@ export const Home_NewTattooists = () => {
                         <img src={dat.PerfilProfesional[0].img} alt="" />
 
                         <div className="detailsCard">
- 
-                             <h3>{dat.first_name} {dat.last_name}</h3>
-
-
+                            <h3>{dat.first_name} {dat.last_name}</h3>
                             <div className='ContNumberLike'>
-                                <h4>Me gusta</h4>
                                 <div className="contSimbolAndNumL">
                                     <span class="material-symbols-outlined">thumb_up</span>
-                                    <p>{dat.PerfilProfesional[0].like}</p>
+                                    <p>{dat.iDispo[0].like}</p>
                                 </div>
                             </div>
 
                             <div className="descriptionCardTatt">
-                                <h4>Descripcion:</h4>
-                                <p>{dat.PerfilProfesional[0].description}</p>
+                                <p style={{marginTop:"1rem"}} >{dat.PerfilProfesional[0].description}</p>
                             </div>
                         </div>
                     </div>

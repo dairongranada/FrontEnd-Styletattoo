@@ -28,19 +28,20 @@
 
 /* ------------- C A R D ------------- */
 .CardArtist{
-    height: 500px;
+    height: 450px;
+    width: 400px;
     margin-top: 50px;
     box-shadow: 5px 5px 20px var(--colorBlack);
     overflow: hidden;
 }
 .CardArtist img{
-    height: 500px;
-    width: 350px;
+    height: 450px;
+    width: 400px;
     border-radius: 3px;
 }
 .detailsCard{
     height: 70px;
-    width: 350px;
+    width: 400px;
     padding: 6px;
     box-sizing: border-box;
     position: absolute;
@@ -65,7 +66,10 @@
 }
 .detailsCard .ContNumberLike .contSimbolAndNumL{
     display: flex;
-    gap: 25px;
+    font-weight: 300;
+    gap: 14px;
+    font-size: 21px;
+    align-items: center;
 }
 .detailsCard .ContNumberLike .contSimbolAndNumL p{
     font-weight: bold;

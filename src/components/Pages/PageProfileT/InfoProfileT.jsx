@@ -9,6 +9,7 @@ import { MdOutlineCancel } from 'react-icons/md';
 import { useParams } from 'react-router';
 import { getAllTatuadoresID } from '../../../Helpers/ApiConsumer/Tattuadores'
 import { MetodoPUTdispo } from '../../../Helpers/put'
+import toast, { Toaster } from 'react-hot-toast';
 
 
 import './createProfile.scss'
@@ -20,6 +21,9 @@ export const InfoProfileT = () => {
   const [tokenID, setToken] = useState(localStorage.getItem("token"));
 
   const [userData, setUserData] = useState({});
+  const [disponiblidad, setDisponibilidad] = useState({})
+  // const [likes, setLikes] = useState()
+  // const [iDispo, setiDispo] = useState()
 
   let idTatu = userData.id
 
@@ -28,7 +32,7 @@ export const InfoProfileT = () => {
 
     getAllTatuadoresID(InfoUser.id)
       .then(dat => {
-        setDisponibilidad(dat.data.iDispo)
+        setDisponibilidad(dat.data.iDispo[0])
       })
 
     if (!!user) {
@@ -40,7 +44,6 @@ export const InfoProfileT = () => {
   }, [])
 
 
-  const [disponiblidad, setDisponibilidad] = useState()
   const [infoD, setinfoD] = useState()
 
   
@@ -49,17 +52,19 @@ export const InfoProfileT = () => {
 
   const ChangeDisponibiblity = () => {
     if (disponiblidad.dispo == true) {
+      toast.success('Disponibilidad Actualizada')
         let valores = {
-          dispo: disponiblidad.dispo,
+          dispo: false,
           like: disponiblidad.like,
-          iDispo:false
+          iDispo:disponiblidad.iDispo
         }
         MetodoPUTdispo(valores,InfoUser.id)
       }else{
+        toast.success('Disponibilidad Actualizada')
         let valores = {
-          dispo: disponiblidad.dispo,
+          dispo: true,
           like: disponiblidad.like,
-          iDispo:true
+          iDispo:disponiblidad.iDispo
         }
         MetodoPUTdispo(valores,InfoUser.id)
       }
@@ -136,6 +141,7 @@ export const InfoProfileT = () => {
               <li onClick={handleLogout} className='icono'><Link to="/"><span className="material-symbols-outlined Icons-Options">logout</span>Cerrar sesion</Link></li>
             </ul>
           </div>
+          <Toaster/>
         </div>
       }
 

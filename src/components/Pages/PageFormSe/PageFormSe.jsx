@@ -33,6 +33,7 @@ export const PageFormSe = () => {
         <div className='BackGround'>
             <div className="Content_FormsPrincipalLogin">
                 <div className="Content_Forms">
+                    <Toaster/>
                     <div className='CloseBackLogin'> <a href="/"><MdOutlineCancel /></a></div>
                     <h2>INICIO DE SESION</h2>
                     <Formik

@@ -48,7 +48,6 @@ export const InfoProfileT = () => {
 
   
 
-
   const ChangeDisponibiblity = () => {
     if (disponiblidad.dispo == true) {
       toast.success('Disponibilidad Actualizada')
@@ -214,9 +213,6 @@ export const InfoProfileT = () => {
             
                 <Form>
                   <div className="contInfoUserBoxes">
-
-
-
                       <div className="SelectContent">
                           <div>
                           <Field required className='select' as="select" name="departament">

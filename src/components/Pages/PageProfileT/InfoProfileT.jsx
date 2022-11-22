@@ -3,9 +3,11 @@ import { React } from "react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import { Formik, Form, Field } from 'formik';
-import { CreateProfesionalprofile,CreateDisponibilidad } from '../../.././Helpers/ApiConsumer/AuthRegistro'
-import { getusers , getTatois} from '../../.././Helpers/ApiConsumer/PostUsers'
+import { CreateProfesionalprofile, CreateDisponibilidad } from '../../.././Helpers/ApiConsumer/AuthRegistro'
+import { getusers, getTatois } from '../../.././Helpers/ApiConsumer/PostUsers'
 import { MdOutlineCancel } from 'react-icons/md';
+
+
 
 
 import './createProfile.scss'
@@ -28,7 +30,7 @@ export const InfoProfileT = () => {
 
   }, [])
 
-  
+
   const [serverError, setServerError] = useState(false);
   const [loading, setLoading] = useState(false);
   const [duplicatedData, setDuplicatedData] = useState(false);
@@ -50,7 +52,9 @@ export const InfoProfileT = () => {
   const OpenModalProfP = () => {
 
     setAbrir(1)
+    
   }
+
 
   const [perfilProfesional, setperfilProfesional] = useState({});
 
@@ -61,7 +65,7 @@ export const InfoProfileT = () => {
       })
   }, [])
 
-  
+
   const uploadImage = async (e) => {
     const files = e.target.files;
     const data = new FormData();
@@ -87,8 +91,7 @@ export const InfoProfileT = () => {
           <div className="perfil-usuario-footer">
             <ul className="lista-datos">
               <li className='icono'><Link to="/userTatto/edit-name"><span className="material-symbols-outlined Icons-Options">badge</span>Nombre y correo</Link></li>
-              <li className='icono'id={`${ perfilProfesional === 1 && "ocultarliCreate" }`} ><a onClick={OpenModalProfP} href="#"><span className="material-symbols-outlined Icons-Options">person</span>Crear Perfil Profesional</a></li>
-              <li className='icono2'id={`${ perfilProfesional === 1 && "mostrarliCreate" }`} ><a onClick={OpenModalProfP} href="#"><span className="material-symbols-outlined Icons-Options">person</span>Subir Trabajos</a></li>
+              <li className='icono' id={`${perfilProfesional === 1 && "ocultarliCreate"}`} ><a onClick={OpenModalProfP} href="#"><span className="material-symbols-outlined Icons-Options">person</span>Crear Perfil Profesional</a></li>
               <li className='icono'><a href="#"><span class="material-symbols-outlined"> work_history </span>Disponiblidad </a></li>
             </ul>
             <ul className="lista-datos">
@@ -98,9 +101,7 @@ export const InfoProfileT = () => {
             </ul>
           </div>
         </div>
-      }
-
-      {(abrir === 1) &&
+      }      {(abrir === 1) &&
         <div className='FondBackGPp'>
           <div className='ModalBuildProfilep'>
             <div className='CloseBackProfileP'> <a href="/userTatto/edit-profile"><MdOutlineCancel /></a></div>

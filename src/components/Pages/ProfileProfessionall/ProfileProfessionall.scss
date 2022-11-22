@@ -1,4 +1,4 @@
-.loadPortafolio{
+.loadPortafolio {
     text-align: center;
     display: flex;
     justify-content: center;
@@ -42,7 +42,7 @@
         }
 
         .ButtonsRightInftoTT {
-            
+
             .like__btn {
                 background: #535353;
                 font-size: 18px;
@@ -54,8 +54,8 @@
                 cursor: pointer;
                 height: 39px;
                 padding: 1px 6px;
-              }
-              
+            }
+
 
         }
 
@@ -76,7 +76,13 @@
             position: absolute;
             transform: translate(31rem, 14rem);
             width: 64rem;
-            
+
+            .iconosa{
+                a{
+                    color: white;
+                }
+            }
+
 
 
             .NameLeftInftoTT {
@@ -99,7 +105,6 @@
         }
     }
 
-
     .PortaFInftoTT {
         width: 100%;
         padding-left: 30rem;
@@ -112,8 +117,10 @@
             padding: 0rem 0rem 2rem 0rem;
             width: 100%;
             text-align: center;
+
         }
 
+      
         .PortaFTitleImages {
             width: 100%;
             overflow-x: hidden;
@@ -148,7 +155,7 @@
 
     }
 
-    
+
 
 
 }

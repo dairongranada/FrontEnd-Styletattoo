@@ -21,8 +21,6 @@ export const UptInfoT = () => {
         getusers(tokenID)
           .then(data => setUserData(data.data));
       }
-  
-  
     }, [])
   
 

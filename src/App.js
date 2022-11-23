@@ -42,6 +42,7 @@ import { TattoPassword } from './components/Pages/PageProfileT/Profile/TattoPass
 import { TattoQuotes } from './components/Pages/PageProfileT/Profile/TattoQuotes/TattoQuotes'
 
 import { ProfileProfessionall } from './components/Pages/ProfileProfessionall/ProfileProfessionall'
+import { Up } from './components/UI/Up/Up'
 
 
 
@@ -90,6 +91,7 @@ function App() {
                     <Route path='/unauthenticated/401' exact element= {<NoAutenticado />} />
 
               </Routes>
+              <Up/>
     </div>
   );
 }

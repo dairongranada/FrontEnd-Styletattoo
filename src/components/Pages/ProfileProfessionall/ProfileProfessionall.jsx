@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import './ProfileProfessionall.scss'
 import './citas.scss'
-import {toast} from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import { getAllTatuadoresID, MetodoPUTLikes, MetodoGETLikes } from '../../../Helpers/ApiConsumer/Tattuadores'
@@ -31,8 +31,18 @@ import { Input } from "reactstrap";
 
 
 export const ProfileProfessionall = () => {
+  const FunctionScroll = () => {
+    window.scroll({
+      top: 1530,
+      behavior: 'smooth'
+    })
+  }
+
+
+
+
   const notify = () => toast.info('Primero te tienes que registrar', {
- position: "top-right",
+    position: "top-right",
     autoClose: 5000,
     hideProgressBar: false,
     closeOnClick: true,
@@ -201,7 +211,7 @@ export const ProfileProfessionall = () => {
           <p style={{ display: "flex", fontSize: "15px", marginTop: "0.6rem", alignItems: "center" }} ><span style={{ fontSize: "19px" }} className="material-symbols-outlined">location_on</span>{municipio} -- {departament}</p>
           <p style={{ display: "flex", fontSize: "15px", alignItems: "center" }}>Direccion:  {direction}</p>
           <div style={{ display: "flex", gap: "1rem", alignItems: "flex-end" }} className='ButtonsRightInftoTT'>
-            <button style={{ width: "190px" }} className='Btn-Citas buttons_global_StyleTatto'>AGENDAR CITA</button>
+            <button onClick={FunctionScroll} style={{ width: "190px" }} className='Btn-Citas buttons_global_StyleTatto'>AGENDAR CITA</button>
 
             {(tokenID) &&
               <button onClick={likeBtn} className="like__btn">
@@ -209,8 +219,8 @@ export const ProfileProfessionall = () => {
               </button>
             }
             {(tokenID == null) &&
-              <button onClick={notify} className="like__btn">
-                <span className="btnBlocked">{Numberslike}</span> Like
+              <button style={{ cursor: "not-allowed"}}  onClick={notify} className="like__btn btnBlocked">
+                <span>{Numberslike}</span> Like
               </button>
             }
           </div>
@@ -399,12 +409,21 @@ export const ProfileProfessionall = () => {
 
 
                     <div className='Btn_Citas' >
-                      <button
-                        style={{ width: "22rem" }}
+                      {(tokenID) &&
+                        <button
                         className="buttons_global_StyleTatto"
-                        type="submit">
-                        Agendar Cita
+                        type="submit"
+                        >
+                        Agenda Tu Cita
                       </button>
+                      }
+                      {(tokenID == null) &&
+                        <p onClick={notify} className="buttons_global_StyleTatto"
+                          style={{ width: "22rem", cursor: "not-allowed"}}
+                          >
+                          Agenda Tu Cita
+                        </p>
+                      }
                     </div>
 
                   </Form>

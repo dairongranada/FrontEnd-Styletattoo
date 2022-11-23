@@ -1,0 +1,51 @@
+
+#edgtf-back-to-top{
+    cursor: pointer;
+    position: relative;
+    display: block;
+    margin-bottom: 0;
+    line-height: 40px;
+    font-size: 24px;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);}
+
+
+#edgtf-back-to-top {
+    cursor: pointer;
+    border: 1px solid var(--colorOrange2);
+    background-color: rgba(0,0,0,.9);
+    position: fixed;
+    width: 41px;
+    right: 25px;
+    bottom: 25px;
+    margin: 0;
+    z-index: 10000;
+    overflow: hidden;
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);}
+
+#edgtf-back-to-top:hover {
+    height: 150px;
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+}
+
+
+.edgtf-btt-text{
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 14px;
+    position: absolute;
+    display: block;
+    height: 25px;
+    width: 100px;
+    bottom: -10px;
+    left: 1px;
+    top: 155px;
+    transform: rotate(-90deg);
+    transform-origin: 0 0;
+    transition: 0.2s;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #fff;
+}

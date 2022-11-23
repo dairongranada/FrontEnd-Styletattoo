@@ -32,7 +32,7 @@ import { Input } from "reactstrap";
 
 export const ProfileProfessionall = () => {
   const notify = () => toast.info('Primero te tienes que registrar', {
-    position: "top-right",
+ position: "top-right",
     autoClose: 5000,
     hideProgressBar: false,
     closeOnClick: true,

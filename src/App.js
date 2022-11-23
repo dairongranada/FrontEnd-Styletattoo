@@ -53,22 +53,10 @@ function App() {
 
   return (
     <div>
-      <ToastContainer
-        position="bottom-center"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
+      {/* A L E R T A     G L O B A L E S   */}
+      <ToastContainer position="bottom-center"autoClose={5000} hideProgressBar={false} newestOnTop={false}closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover theme="light" />
 
               <Routes>
-
-              
                 {/* 𝑳𝑶𝑮𝑰𝑵 𝒀 𝑹𝑬𝑮𝑰𝑺𝑻𝑹𝑶 */ }
                     <Route path='/IngresarSesion' exact element= {!!token ? <Navigate to="/" /> :<PageFormSe />}/>
                     <Route path='/Registro' exact element= {!!token ? <Navigate to="/" /> : <PageFormRe/>}/>

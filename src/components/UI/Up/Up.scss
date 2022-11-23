@@ -1,3 +1,8 @@
+.on{transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);  
+    display: flex; justify-content: center; align-items: center;
+}
+
+
 
 #edgtf-back-to-top{
     cursor: pointer;
@@ -9,21 +14,20 @@
     text-align: center;
     color: #fff;
     overflow: hidden;
-    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);}
-
+}
 
 #edgtf-back-to-top {
     cursor: pointer;
-    border: 1px solid var(--colorOrange2);
+    border: 2px solid var(--colorOrange2);
     background-color: rgba(0,0,0,.9);
     position: fixed;
     width: 41px;
+    height: 41px;
     right: 25px;
     bottom: 25px;
     margin: 0;
     z-index: 10000;
-    overflow: hidden;
-    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);}
+    overflow: hidden;}
 
 #edgtf-back-to-top:hover {
     height: 150px;

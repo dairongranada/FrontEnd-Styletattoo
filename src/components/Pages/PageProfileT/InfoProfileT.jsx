@@ -388,8 +388,7 @@ export const InfoProfileT = () => {
         </div>
       }
       {(abrir === 2) &&
-
-        <div className='FondBackGPp'>
+        <div style={{height: "81vh"}} className='FondBackGPp'>
           <div className='ModalBuildProfilep'>
             <div className='CloseBackProfileP'> <a href="/userTatto/edit-profile"><MdOutlineCancel /></a></div>
             <div className="contImgAndTittlear">

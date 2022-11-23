@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import './ProfileProfessionall.scss'
 import './citas.scss'
-import { ToastContainer, toast } from 'react-toastify';
+import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import { getAllTatuadoresID, MetodoPUTLikes, MetodoGETLikes } from '../../../Helpers/ApiConsumer/Tattuadores'
@@ -31,8 +31,16 @@ import { Input } from "reactstrap";
 
 
 export const ProfileProfessionall = () => {
-  const notify = () => toast("Tienes Que registar!");
-
+  const notify = () => toast.info('Primero te tienes que registrar', {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+  });
 
 
   const { id } = useParams();
@@ -96,16 +104,16 @@ export const ProfileProfessionall = () => {
     setFileU(file.secure_url)
 
   }
- 
+
 
   let imgUrl1 = image;
-  
+
   let imgUrl2 = image2;
-  
+
   let imgUrl3 = image3;
-  
+
   let imgUrl4 = image4;
-  
+
   let imgUrl5 = image5;
 
 
@@ -115,7 +123,7 @@ export const ProfileProfessionall = () => {
   const [registered, setRegistered] = useState(false);
   const [abrir, setAbrir] = useState(0)
 
- 
+
   const [tatuadores, setTatuadores] = useState([]);
   const [perfilProfesional, setperfilProfesional] = useState({});
 
@@ -194,19 +202,17 @@ export const ProfileProfessionall = () => {
           <p style={{ display: "flex", fontSize: "15px", alignItems: "center" }}>Direccion:  {direction}</p>
           <div style={{ display: "flex", gap: "1rem", alignItems: "flex-end" }} className='ButtonsRightInftoTT'>
             <button style={{ width: "190px" }} className='Btn-Citas buttons_global_StyleTatto'>AGENDAR CITA</button>
-              
-              {(tokenID) &&
-                <button onClick={likeBtn} className="like__btn">
-                    <span id="count">{Numberslike}</span> Like
-                </button>
-              }
-              {(tokenID == null) &&
-                <button onClick={notify} className="like__btn">
-                    <span  className="btnBlocked">{Numberslike}</span> Like
-                    <ToastContainer />
 
-                </button>
-              }
+            {(tokenID) &&
+              <button onClick={likeBtn} className="like__btn">
+                <span id="count">{Numberslike}</span> Like
+              </button>
+            }
+            {(tokenID == null) &&
+              <button onClick={notify} className="like__btn">
+                <span className="btnBlocked">{Numberslike}</span> Like
+              </button>
+            }
           </div>
           <div>
             <div className="switch-holder">
@@ -478,27 +484,27 @@ export const ProfileProfessionall = () => {
                 <div className="contInfoUserBoxes">
                   <div className="SelectContent">
                     <div>
-                      <Input  onChange={uploadImage} required className='select' type='file' name="img1" />
+                      <Input onChange={uploadImage} required className='select' type='file' name="img1" />
 
                     </div>
                     <div>
-                      <Input  onChange={uploadImage} required className='select' type='file' name="img2" />
+                      <Input onChange={uploadImage} required className='select' type='file' name="img2" />
 
                     </div>
                   </div>
                   <div className="SelectContent">
                     <div>
-                      <Input  onChange={uploadImage} className='inputProfile' placeholder='Ingresa Tu Expreciencia' type="file" name="img3" />
+                      <Input onChange={uploadImage} className='inputProfile' placeholder='Ingresa Tu Expreciencia' type="file" name="img3" />
                     </div>
                     <div>
-                      <Input  onChange={uploadImage} className='inputProfile' name='img4' required placeholder="Direccion" type="file" />
+                      <Input onChange={uploadImage} className='inputProfile' name='img4' required placeholder="Direccion" type="file" />
                     </div>
                   </div>
 
                   <div className="SelectContent">
                     <div style={{ width: "100%", textAlign: "center", marginTop: "5px", marginBottom: "5px" }}>
 
-      
+
                       <div style={{ height: "40px", marginTop: "5px", marginBottom: "10px", marginLeft: "60px", color: "white" }} >
                         <Input onChange={uploadImage} className='sapos' type="file" name="img5" />
                       </div>

@@ -1,3 +1,5 @@
+import { ToastContainer, toast } from 'react-toastify';
+
 import { Routes, Route } from 'react-router-dom'
 import { Navigate } from "react-router";
 
@@ -51,6 +53,18 @@ function App() {
 
   return (
     <div>
+      <ToastContainer
+        position="bottom-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
 
               <Routes>
 

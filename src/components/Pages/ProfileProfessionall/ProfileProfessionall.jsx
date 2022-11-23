@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import './ProfileProfessionall.scss'
 import './citas.scss'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { getAllTatuadoresID, MetodoPUTLikes, MetodoGETLikes } from '../../../Helpers/ApiConsumer/Tattuadores'
 
@@ -29,6 +31,10 @@ import { Input } from "reactstrap";
 
 
 export const ProfileProfessionall = () => {
+  const notify = () => toast("Tienes Que registar!");
+
+
+
   const { id } = useParams();
   const idTT = id
 
@@ -50,6 +56,8 @@ export const ProfileProfessionall = () => {
   }, [])
 
 
+
+  console.log(tokenID);
 
 
   useEffect(() => {
@@ -186,9 +194,19 @@ export const ProfileProfessionall = () => {
           <p style={{ display: "flex", fontSize: "15px", alignItems: "center" }}>Direccion:  {direction}</p>
           <div style={{ display: "flex", gap: "1rem", alignItems: "flex-end" }} className='ButtonsRightInftoTT'>
             <button style={{ width: "190px" }} className='Btn-Citas buttons_global_StyleTatto'>AGENDAR CITA</button>
-            <button onClick={likeBtn} className="like__btn">
-              <span id="count">{Numberslike}</span> Like
-            </button>
+              
+              {(tokenID) &&
+                <button onClick={likeBtn} className="like__btn">
+                    <span id="count">{Numberslike}</span> Like
+                </button>
+              }
+              {(tokenID == null) &&
+                <button onClick={notify} className="like__btn">
+                    <span  className="btnBlocked">{Numberslike}</span> Like
+                    <ToastContainer />
+
+                </button>
+              }
           </div>
           <div>
             <div className="switch-holder">

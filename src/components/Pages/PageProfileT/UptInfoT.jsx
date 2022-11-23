@@ -23,7 +23,13 @@ export const UptInfoT = () => {
         }
     }, [])
 
-
+    const handleLogout = () => {
+        localStorage.removeItem("token");
+        localStorage.removeItem("usuario");
+        localStorage.removeItem("InfoUser");
+        localStorage.removeItem("TokenAcces")
+        window.location = "/IngresarSesion";
+      }
 
 
     useEffect(() => {
@@ -83,7 +89,8 @@ export const UptInfoT = () => {
                 </div>
                 <div className="redes-sociales">
                     <a href="/" className="boton-redes facebook fab fa-facebook-f"><i className='bx bx-home-alt'></i></a>
-                    <li className="boton-redes twitter fab fa-twitter"><i className='bx bxl-mailchimp'></i> </li>
+                    <li className="boton-redes twitter2 fab fa-twitter"><i className='bx bxl-mailchimp'></i> </li>
+                    <a onClick={handleLogout} className="boton-redes twitter fab fa-twitter"><span className="material-symbols-outlined Icons-Options">logout</span></a>
                 </div>
             </div>
         </div>

@@ -34,6 +34,22 @@
             color: var(--colorWhite2);
         }
     }
+    .contSelectorTattuadors{
+      width: 100%;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      .MenuSelectorTattuadors{
+        width: 30%;
+        height: 45px;
+        // border: none;
+        padding: 13px;
+        text-align: center;
+        color: white;
+        background-color: var(--colorBlack);
+        border: solid 1px white;
+      }
+    }
 
     .selectYarTist{
       width: 300px;

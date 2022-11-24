@@ -21,8 +21,7 @@ export const TattoQuotes = () => {
     <div className='BodyProfileUser'>
       <section className="seccion-perfil-usuario">
         <UptInfoT />
-
-        <div className="perfil-usuario-body">
+        <div  style={{width: "87%"}} className="perfil-usuario-body">
           <div className="perfil-usuario-footer">
 
             <div className="BackgroundIcon">
@@ -36,19 +35,23 @@ export const TattoQuotes = () => {
             </div>
           </div>
           
-
           <div className='contentBoxFiles'>
           <table id="customers">
               <tr>
                 <th>Fecha</th>
                 <th>Hora</th>
                 <th>Usuario</th>
-                <th>Eliminar</th>
+                <th>Imagen de referencia</th>
+                <th>Aceptar</th>
+                <th>Rechazar</th>
+
               </tr>
               <tr>
                 <td>18/11/22</td>
                 <td>3:30pm</td>
                 <td>Maria Anders</td>
+                <td>Maria Anders</td>
+                <td><span class="material-symbols-outlined"> file_download_done </span></td>
                 <td><span class="material-symbols-outlined"> delete </span></td>
               </tr>
             </table>

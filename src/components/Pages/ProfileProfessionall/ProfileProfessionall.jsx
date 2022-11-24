@@ -185,9 +185,8 @@ export const ProfileProfessionall = () => {
       count.textContent--;
       Numberslike--
     }
-    ////////////////////////////////////////////
 
-
+    ///////////////////////////////////////////
     // M E T O D O    P  U  T    L I K E S
 
     let valores = {
@@ -213,6 +212,14 @@ export const ProfileProfessionall = () => {
           <div style={{ display: "flex", gap: "1rem", alignItems: "flex-end" }} className='ButtonsRightInftoTT'>
             <button onClick={FunctionScroll} style={{ width: "190px" }} className='Btn-Citas buttons_global_StyleTatto'>AGENDAR CITA</button>
 
+        
+        {/* 
+          ██████╗░████████╗███╗░░██╗    ██╗░░░░░██╗██╗░░██╗███████╗
+          ██╔══██╗╚══██╔══╝████╗░██║    ██║░░░░░██║██║░██╔╝██╔════╝
+          ██████╦╝░░░██║░░░██╔██╗██║    ██║░░░░░██║█████═╝░█████╗░░
+          ██╔══██╗░░░██║░░░██║╚████║    ██║░░░░░██║██╔═██╗░██╔══╝░░
+          ██████╦╝░░░██║░░░██║░╚███║    ███████╗██║██║░╚██╗███████╗
+          ╚═════╝░░░░╚═╝░░░╚═╝░░╚══╝    ╚══════╝╚═╝╚═╝░░╚═╝╚══════╝*/}
             {(tokenID) &&
               <button onClick={likeBtn} className="like__btn">
                 <span id="count">{Numberslike}</span> Like
@@ -408,6 +415,15 @@ export const ProfileProfessionall = () => {
                     </div>
 
 
+
+                  {/*
+                    ██████╗░████████╗███╗░░██╗    ░█████╗░██╗████████╗░█████╗░░██████╗
+                    ██╔══██╗╚══██╔══╝████╗░██║    ██╔══██╗██║╚══██╔══╝██╔══██╗██╔════╝
+                    ██████╦╝░░░██║░░░██╔██╗██║    ██║░░╚═╝██║░░░██║░░░███████║╚█████╗░
+                    ██╔══██╗░░░██║░░░██║╚████║    ██║░░██╗██║░░░██║░░░██╔══██║░╚═══██╗
+                    ██████╦╝░░░██║░░░██║░╚███║    ╚█████╔╝██║░░░██║░░░██║░░██║██████╔╝
+                    ╚═════╝░░░░╚═╝░░░╚═╝░░╚══╝    ░╚════╝░╚═╝░░░╚═╝░░░╚═╝░░╚═╝╚═════╝░ */}
+
                     <div className='Btn_Citas' >
                       {(tokenID) &&
                         <button
@@ -522,8 +538,6 @@ export const ProfileProfessionall = () => {
 
                   <div className="SelectContent">
                     <div style={{ width: "100%", textAlign: "center", marginTop: "5px", marginBottom: "5px" }}>
-
-
                       <div style={{ height: "40px", marginTop: "5px", marginBottom: "10px", marginLeft: "60px", color: "white" }} >
                         <Input onChange={uploadImage} className='sapos' type="file" name="img5" />
                       </div>
@@ -535,7 +549,6 @@ export const ProfileProfessionall = () => {
                 </div>
               </Form>
             </Formik>
-
           </div>
 
 

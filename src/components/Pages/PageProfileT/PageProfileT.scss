@@ -227,7 +227,7 @@ display: none;
 }
 
 .seccion-perfil-usuario .perfil-usuario-body {
-    width: 70%;
+    width: 85%;
     position: relative;
     max-width: 750px;
     text-decoration: none;
@@ -282,12 +282,13 @@ display: none;
     font-size: 30px;
 }
 .seccion-perfil-usuario .lista-datos {
-    width: 50%;
+    width: 44%;
     list-style: none;
 }
 
 .seccion-perfil-usuario .lista-datos li {
     padding: 5px 0;
+    width: 220px;
 }
 
 .seccion-perfil-usuario .lista-datos li a{

@@ -11,23 +11,29 @@ import { CardTatuadores } from './CardTatuadores';
 
 
 export const PageTattooists = () => {
+
   const [tatuadores, setTatuadores] = useState([]);
-  const [perfilProfesional, setperfilProfesional] = useState({});
 
 
   useEffect(() => {
+
     getAllTatuadores()
       .then(info => {
         setTatuadores(info.data);
-        setperfilProfesional(info.data[0].PerfilProfesional)
       })
   }, [])
+  console.log(tatuadores);
 
-  console.log(tatuadores[1]);
 
-  //FILTRO PARA QUE NO SE DAÑE EL  PROYECTO
-  const allTaoits = tatuadores.filter(data => data.rol.includes('[ROLE_ARTISTA]'))
 
+  /* Capturar el valor */
+  const CapValues =(e)=>{
+    const data = e.target.value;
+
+    /*FILTRO*/
+    const filter = tatuadores.filter(tattoo => tattoo.PerfilProfesional[0].municipio.includes(data))
+    setTatuadores(filter)
+  }
 
 
   return (
@@ -42,7 +48,15 @@ export const PageTattooists = () => {
             neotradicional, libre, liners, black work, black and grey y cover up</p>
         </div>
 
-        {allTaoits.map(data => (
+        <div className="contSelectorTattuadors">
+          <select onChange={CapValues} >
+            <option>selecciona el artista mas cerca de ti</option>
+            <option value="quimbaya">quimbaya</option>
+            <option value="calarca">calarca</option>
+          </select>
+        </div>
+
+        {tatuadores.map(data => (
         (data.perfilProfesional == 0) &&
           <main className='LoaderArtist'>
             <div className="loaderArtist">
@@ -65,7 +79,7 @@ export const PageTattooists = () => {
 
 
         <main className='main-contenido'>
-          {allTaoits.map(data => (
+          {tatuadores.map(data => (
             (data.PerfilProfesional.length >= 1) &&
             <CardTatuadores
               key={data.id}

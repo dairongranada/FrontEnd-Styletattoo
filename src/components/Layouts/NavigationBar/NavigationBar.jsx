@@ -118,7 +118,6 @@ export const NavigationBar = () => {
                                 <div className="name">{ userData.first_name +" "+ userData.last_name }</div>
                                 { (userData.rol === '[ROLE_USUARIO]') && <div className="job">| ROL: USUARIO  |</div>}
                                 { (userData.rol === '[ROLE_ARTISTA]') && <div className="job">| ROL: ARTISTA  |</div>}
-
                             </div>
                         </div>
                         <i className='bx bx-log-out' id="log_out" onClick={handleLogout}  ></i>

@@ -52,11 +52,38 @@ export const ProfileProfessionall = () => {
     theme: "light",
   });
 
+  const notifyTatto = () => toast.warn('Ups, No puedes darte Like tu mismo', {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+  });
+
+  const notifyTattoCitas = () => toast.warn('Ups, No puedes Agendar una Cita tu mismo', {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+  });
+
+
+
+
+
 
   const { id } = useParams();
   const idTT = id
 
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("usuario")));
+  const [InfoUser, setInfoUser] = useState(JSON.parse(localStorage.getItem("InfoUser")));
   const [tokenID, setToken] = useState(localStorage.getItem("token"));
 
   const [userData, setUserData] = useState({});
@@ -212,21 +239,26 @@ export const ProfileProfessionall = () => {
           <div style={{ display: "flex", gap: "1rem", alignItems: "flex-end" }} className='ButtonsRightInftoTT'>
             <button onClick={FunctionScroll} style={{ width: "190px" }} className='Btn-Citas buttons_global_StyleTatto'>AGENDAR CITA</button>
 
-        
-        {/* 
+
+            {/* 
           ██████╗░████████╗███╗░░██╗    ██╗░░░░░██╗██╗░░██╗███████╗
           ██╔══██╗╚══██╔══╝████╗░██║    ██║░░░░░██║██║░██╔╝██╔════╝
           ██████╦╝░░░██║░░░██╔██╗██║    ██║░░░░░██║█████═╝░█████╗░░
           ██╔══██╗░░░██║░░░██║╚████║    ██║░░░░░██║██╔═██╗░██╔══╝░░
           ██████╦╝░░░██║░░░██║░╚███║    ███████╗██║██║░╚██╗███████╗
           ╚═════╝░░░░╚═╝░░░╚═╝░░╚══╝    ╚══════╝╚═╝╚═╝░░╚═╝╚══════╝*/}
-            {(tokenID) &&
+            {(!!idTatu && tokenID) &&
               <button onClick={likeBtn} className="like__btn">
                 <span id="count">{Numberslike}</span> Like
               </button>
             }
             {(tokenID == null) &&
-              <button style={{ cursor: "not-allowed"}}  onClick={notify} className="like__btn btnBlocked">
+              <button style={{ cursor: "not-allowed" }} onClick={notify} className="like__btn btnBlocked">
+                <span>{Numberslike}</span> Likes
+              </button>
+            }
+            {(InfoUser == idTatu && tokenID) &&
+              <button style={{ cursor: "not-allowed" }} onClick={notifyTatto} className="like__btn btnBlocked">
                 <span>{Numberslike}</span> Like
               </button>
             }
@@ -416,7 +448,7 @@ export const ProfileProfessionall = () => {
 
 
 
-                  {/*
+                    {/*
                     ██████╗░████████╗███╗░░██╗    ░█████╗░██╗████████╗░█████╗░░██████╗
                     ██╔══██╗╚══██╔══╝████╗░██║    ██╔══██╗██║╚══██╔══╝██╔══██╗██╔════╝
                     ██████╦╝░░░██║░░░██╔██╗██║    ██║░░╚═╝██║░░░██║░░░███████║╚█████╗░
@@ -425,23 +457,27 @@ export const ProfileProfessionall = () => {
                     ╚═════╝░░░░╚═╝░░░╚═╝░░╚══╝    ░╚════╝░╚═╝░░░╚═╝░░░╚═╝░░╚═╝╚═════╝░ */}
 
                     <div className='Btn_Citas' >
-                      {(tokenID) &&
-                        <button
-                        className="buttons_global_StyleTatto"
-                        type="submit"
-                        >
-                        Agenda Tu Cita
-                      </button>
+                      {(tokenID ) &&
+                        (idTatu !== InfoUser ) &&
+                          <button
+                          className="buttons_global_StyleTatto"
+                          type="submit">
+                          Agenda Tu Cita
+                        </button>
+
                       }
                       {(tokenID == null) &&
                         <p onClick={notify} className="buttons_global_StyleTatto"
-                          style={{ width: "22rem", cursor: "not-allowed"}}
-                          >
+                          style={{ width: "22rem", cursor: "not-allowed" }}>
+                          Agenda Tu Cita
+                        </p>
+                      }{(InfoUser == idTatu && tokenID) &&
+                        <p onClick={notifyTattoCitas} className="buttons_global_StyleTatto"
+                          style={{ width: "22rem", cursor: "not-allowed" }}>
                           Agenda Tu Cita
                         </p>
                       }
                     </div>
-
                   </Form>
                 )}
               </Formik>

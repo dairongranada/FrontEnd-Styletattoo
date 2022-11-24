@@ -24,7 +24,7 @@ export const PageTattooists = () => {
   }, [])
   console.log(tatuadores);
 
-
+  const allTaoits = tatuadores.filter(data => data.rol.includes('[ROLE_ARTISTA]'))
 
   /* Capturar el valor */
   const CapValues =(e)=>{
@@ -56,7 +56,7 @@ export const PageTattooists = () => {
           </select>
         </div>
 
-        {tatuadores.map(data => (
+        {allTaoits.map(data => (
         (data.perfilProfesional == 0) &&
           <main className='LoaderArtist'>
             <div className="loaderArtist">
@@ -79,7 +79,7 @@ export const PageTattooists = () => {
 
 
         <main className='main-contenido'>
-          {tatuadores.map(data => (
+          {allTaoits.map(data => (
             (data.PerfilProfesional.length >= 1) &&
             <CardTatuadores
               key={data.id}

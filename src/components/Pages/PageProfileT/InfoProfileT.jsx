@@ -11,6 +11,7 @@ import { getAllTatuadoresID, getAllTatuadores } from '../../../Helpers/ApiConsum
 import { MetodoPUTdispo } from '../../../Helpers/put'
 import toast, { Toaster } from 'react-hot-toast';
 import { Input } from "reactstrap";
+import studioTattoModals from '../../../images/Tattos/studioTattoModals.jpg'
 
 
 
@@ -258,6 +259,12 @@ export const InfoProfileT = () => {
         </div>
       }      {(abrir === 1) &&
         <div className='FondBackGPp'>
+          <div className="conTinerImgExibitPrf">
+            <img className='studioTattoModals' src={studioTattoModals} alt="studioTattoModals" />
+            <div className="lentForImgExibit">
+
+            </div>
+          </div>
           <div className='ModalBuildProfilep'>
             <div className='CloseBackProfileP'> <a href="/userTatto/edit-profile"><MdOutlineCancel /></a></div>
             <div className="contImgAndTittlear">
@@ -373,9 +380,15 @@ export const InfoProfileT = () => {
                     <div style={{ width: "100%", textAlign: "center", marginTop: "5px", marginBottom: "5px" }}>
 
                       <label style={{ fontSize: "12px", color: "#fffff9" }} htmlFor="">Añade una foto de perfil</label>
-                      <div style={{ height: "40px", marginTop: "5px", marginBottom: "10px", marginLeft: "60px", color: "white" }} >
-                        <input onChange={uploadImage} className='sapos' type="file" name="img" />
+                      <div style={{ height: "40px", marginTop: "5px", marginBottom: "10px", color: "white" }} >
+  
+                        <div className='ButtonBoxIntImgFp'>
+                          <span className='MenssegeOrLetter'>Introduce una imagen</span><i className='ItheListOr'></i>
+                          <input onChange={uploadImage} className='sapos' type="file" name="img" />
+                        </div>
                       </div>
+
+
                     </div>
                   </div>
                   <div>

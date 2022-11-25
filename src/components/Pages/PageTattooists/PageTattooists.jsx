@@ -31,7 +31,7 @@ export const PageTattooists = () => {
     const data = e.target.value;
 
     /*FILTRO*/
-    const filter = tatuadores.filter(tattoo => tattoo.PerfilProfesional[0].municipio.includes(data))
+    const filter = tatuadores.filter(dat => dat.PerfilProfesional[0].municipio.includes(data))
     setTatuadores(filter)
   }
 

@@ -53,6 +53,16 @@ export const PageTattooists = () => {
             <option>selecciona el artista mas cerca de ti</option>
             <option value="quimbaya">quimbaya</option>
             <option value="calarca">calarca</option>
+            <option value="montenegro">montenegro</option>
+            <option value="pijao">pijao</option>
+            <option value="genova">genova</option>
+            <option value="tebaida">tebaida</option>
+            <option value="filandia">filandia</option>
+            <option value="circacia">circacia</option>
+            <option value="cordoba">cordoba</option>
+            <option value="salento">salento</option>
+            <option value="buena vista">buena vista</option>
+            <option value="armenia">armenia</option>
           </select>
         </div>
 

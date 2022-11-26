@@ -21,7 +21,7 @@
     justify-content: center;
     z-index: 3; top: 0;
     backdrop-filter: blur(8px);
-    background-color: #2b2b2ba3;    
+    background-color: #000000c0;    
     color: var(--colorBlanco);
     .conTinerImgExibitPrf{
       width: 370px;
@@ -38,7 +38,7 @@
         width: 370px;
         height: 520px;
         position: absolute;
-        background-color: rgba(0, 0, 0, 0.847);
+        background-color: rgba(0, 0, 0, 0.776);
         margin-top: 6rem;
       }
     }

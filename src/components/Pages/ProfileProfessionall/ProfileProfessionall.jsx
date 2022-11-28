@@ -22,7 +22,7 @@ import { motion } from "framer-motion"
 import { Portafolio } from './Portafolio';
 import { NavFooter } from '../../Layouts/NavigationFooter/NavFooter/NavFooter';
 import { NavigationBar } from '../../Layouts/NavigationBar/NavigationBar';
-import { signUpUser } from '../../../Helpers/ApiConsumer/AuthRegistro';
+import { AgendarCita } from '../../../Helpers/ApiConsumer/AuthRegistro';
 
 
 import { GoHeart } from 'react-icons/go';
@@ -104,6 +104,7 @@ export const ProfileProfessionall = () => {
 
 
   console.log(tokenID);
+  console.log(userData);
 
 
   useEffect(() => {
@@ -113,12 +114,8 @@ export const ProfileProfessionall = () => {
       })
   }, [])
 
-  const [fileU, setFileU] = useState("")
+  
   const [image, setImage] = useState("")
-  const [image2, setImage2] = useState("")
-  const [image3, setImage3] = useState("")
-  const [image4, setImage4] = useState("")
-  const [image5, setImage5] = useState("")
 
   const uploadImage = async (e) => {
     const files = e.target.files;
@@ -135,24 +132,7 @@ export const ProfileProfessionall = () => {
     const file = await res.json()
 
     setImage(file.secure_url)
-    setImage2(file.secure_url)
-    setImage3(file.secure_url)
-    setImage4(file.secure_url)
-    setImage5(file.secure_url)
-    setFileU(file.secure_url)
-
   }
-
-
-  let imgUrl1 = image;
-
-  let imgUrl2 = image2;
-
-  let imgUrl3 = image3;
-
-  let imgUrl4 = image4;
-
-  let imgUrl5 = image5;
 
 
   const [serverError, setServerError] = useState(false);
@@ -177,7 +157,6 @@ export const ProfileProfessionall = () => {
   const [Likes, setLikes] = useState([]);
 
   let IDisponiblidad = disponiblidad.id
-
 
 
 
@@ -225,34 +204,6 @@ export const ProfileProfessionall = () => {
 
     MetodoPUTLikes(valores, IDisponiblidad)
   };
-
-
-/*
-      ░█████╗░    ██╗    ████████╗    ░█████╗░    ░██████╗
-      ██╔══██╗    ██║    ╚══██╔══╝    ██╔══██╗    ██╔════╝
-      ██║░░╚═╝    ██║    ░░░██║░░░    ███████║    ╚█████╗░
-      ██║░░██╗    ██║    ░░░██║░░░    ██╔══██║    ░╚═══██╗
-      ╚█████╔╝    ██║    ░░░██║░░░    ██║░░██║    ██████╔╝
-      ░╚════╝░    ╚═╝    ░░░╚═╝░░░    ╚═╝░░╚═╝    ╚═════╝░
-      */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   return (
     <>
@@ -385,31 +336,23 @@ export const ProfileProfessionall = () => {
             <div style={{ marginLeft: "-4rem" }} className='Content_FormsPrincipal'>
               <Formik
                 initialValues={{
-                  Date: "",
-                  Time: "",
-                  Img: "",
+                  date: "",
+                  time: "",
+                  img: "",
+                  description: "",
                 }}
 
-                validate={(valores) => {
-                  let ers = {}
-                  // VALIDACION NOMBRE
-                  if (!valores.first_name) {
-                    ers.first_name = "Porfavor ingresa un nombre"
-                  } else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(valores.first_name)) {
-                    ers.first_name = "Porfavor ingresa solo letras"
-                  }
-
-                  return ers
-
-                }}
-
+                
                 onSubmit={(valores, { resetForm }) => {
                   let validacion = {};
 
-                  signUpUser({
-                    Date: valores.Date,
-                    Time: valores.Time,
-                    Img: valores.Img,
+                  AgendarCita({
+                    date: valores.date,
+                    time: valores.time,
+                    img: image,
+                    description: valores.description,
+                    userID: idTatu,
+                    artist_tattoo: idTT,
 
 
                   }).then(info => {
@@ -430,7 +373,7 @@ export const ProfileProfessionall = () => {
                       resetForm();
                       setLoading(false);
                       setRegistered(true);
-                      window.location = "/user/edit-quotes";
+                      window.location = "/";
                     }
                   });
 
@@ -447,7 +390,7 @@ export const ProfileProfessionall = () => {
                         <label style={{ fontWeight: "100" }}>Ingresa el dia</label>
                         <Field
                           className='inputsCitas'
-                          name='Date'
+                          name='date'
                           id='Date'
                           type="Date"
                           placeholder='Date'
@@ -458,7 +401,7 @@ export const ProfileProfessionall = () => {
                         <label style={{ fontWeight: "100" }}>Ingresa la hora</label>
                         <Field
                           className='inputsCitas'
-                          name='Time'
+                          name='time'
                           id='Time'
                           type="Time"
                         />
@@ -470,10 +413,7 @@ export const ProfileProfessionall = () => {
 
                       <div style={{ display: "flex", gap: ".5rem", flexDirection: "column", alignItems: "center" }}>
                         <label style={{ fontWeight: "100" }}>Muestrame tu idea</label>
-                        <button className="contenedor-btn-file">
-                          <span className="material-symbols-outlined"> photo_camera </span>
-                          <input type="file" id="btn-file" />
-                        </button>
+                          <Input onChange={uploadImage} name="img" type="file" id="btn-file" />
                         {touched.email && errors.email && <span>{errors.email}</span>}
 
                       </div>
@@ -483,7 +423,7 @@ export const ProfileProfessionall = () => {
                         <label style={{ fontWeight: "100" }}>Describe</label>
                         <Field
                           className='inputsCitas'
-                          name='Description'
+                          name='description'
                           id='Description'
                           as="textarea"
                           placeholder='...'
@@ -532,110 +472,6 @@ export const ProfileProfessionall = () => {
           </div>
         </div>
       </div>
-      {(abrir === 2) &&
-
-        <div className='FondBackGPp'>
-          <div className='ModalBuildProfilep'>
-            <div className='CloseBackProfileP'> <a href="/userTatto/edit-profile"><MdOutlineCancel /></a></div>
-            <div className="contImgAndTittlear">
-              <div className='ContIcontInMBPP'>
-              </div>
-              <div className="SecondContIconCMBPP">
-                <h3>Crea tu perfil profesional</h3>
-              </div>
-            </div>
-            <Formik
-              initialValues={{
-                img1: "",
-                img2: "",
-                img3: "",
-                img4: "",
-                img5: "",
-                idTatuador: "",
-              }}
-
-              onSubmit={(valores, { resetForm }) => {
-                let validacion = {};
-
-                SubirTrabajos({
-                  img1: imgUrl1,
-                  img2: imgUrl2,
-                  img3: imgUrl3,
-                  img4: imgUrl4,
-                  img5: imgUrl5,
-                  idTatuador: idTatu,
-
-                }).then(info => {
-                  validacion = info
-
-
-                  setLoading(true);
-                  if (validacion.status === 400) {
-                    setDuplicatedData(true);
-                    setServerError(false);
-                    setLoading(false);
-                  }
-                  else if (validacion.status === 500) {
-                    setServerError(true);
-                    setDuplicatedData(false);
-                    setLoading(false);
-                  }
-                  else {
-                    CreateDisponibilidad({
-                      like: 0,
-                      dispo: true,
-                      iDispo: idTatu
-                    })
-                    setDuplicatedData(false);
-                    resetForm();
-                    setLoading(false);
-                    setRegistered(true);
-                    window.location = `/tatto/view/profile/${idTatu}`;
-                  }
-                })
-
-              }}
-
-            >
-
-              <Form>
-                <div className="contInfoUserBoxes">
-                  <div className="SelectContent">
-                    <div>
-                      <Input onChange={uploadImage} required className='select' type='file' name="img1" />
-
-                    </div>
-                    <div>
-                      <Input onChange={uploadImage} required className='select' type='file' name="img2" />
-
-                    </div>
-                  </div>
-                  <div className="SelectContent">
-                    <div>
-                      <Input onChange={uploadImage} className='inputProfile' placeholder='Ingresa Tu Expreciencia' type="file" name="img3" />
-                    </div>
-                    <div>
-                      <Input onChange={uploadImage} className='inputProfile' name='img4' required placeholder="Direccion" type="file" />
-                    </div>
-                  </div>
-
-                  <div className="SelectContent">
-                    <div style={{ width: "100%", textAlign: "center", marginTop: "5px", marginBottom: "5px" }}>
-                      <div style={{ height: "40px", marginTop: "5px", marginBottom: "10px", marginLeft: "60px", color: "white" }} >
-                        <Input onChange={uploadImage} className='sapos' type="file" name="img5" />
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <button style={{ width: "100%", textAlign: "center" }} type='submit' className='buttons_global_StyleTatto'>Crear Perfil</button>
-                  </div>
-                </div>
-              </Form>
-            </Formik>
-          </div>
-        </div>
-
-      }
     </>
   )
 }

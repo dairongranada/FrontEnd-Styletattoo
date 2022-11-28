@@ -34,6 +34,7 @@ export const PageTattooists = () => {
   /* Capturar el valor */
   const CapValues =(e)=>{
     const data = e.target.value;
+    
     /*FILTRO*/
     const filter = allTaoits.filter(tattoo => tattoo.PerfilProfesional[0].municipio.includes(data))
     setBuscarTat(filter)
@@ -57,7 +58,7 @@ export const PageTattooists = () => {
         <div className="contSelectorTattuadors">
           <select className='MenuSelectorTattuadors' onChange={CapValues} >
             <option>selecciona el artista mas cerca de ti</option>
-            <option value="armenia">Armenia</option>
+            <option value="armenia">armenia</option>
             <option value="buena vista">Buena Vista</option>
             <option value="calarca">calarca</option>
             <option value="quimbaya">quimbaya</option>

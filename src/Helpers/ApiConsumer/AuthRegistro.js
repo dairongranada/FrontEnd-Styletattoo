@@ -11,6 +11,31 @@ console.log(tokenAcces);
 
 
 
+export const AgendarCita =  async (userApi) => {
+    try {
+        const response = await axios({
+            url: URL+"quotes/",
+            method: "POST",
+            data: userApi,
+            headers:{
+                "Content-Type":"application/json"
+            },
+        }).catch(function (error) {
+            if (error.response) {
+                console.log(error);
+                return { status: error.response.status}}
+        });
+        return response;
+    } catch (error) {
+    }
+
+}
+
+
+
+
+
+
 export const CreateDisponibilidad =  async (userApi) => {
     try {
         const response = await axios({

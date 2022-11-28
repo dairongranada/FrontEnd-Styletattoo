@@ -61,7 +61,7 @@ export const PageTattooists = () => {
 
         <div className="contSelectorTattuadors">
           <select className='MenuSelectorTattuadors' onChange={CapValues} >
-            <option value="primero">selecciona el artista mas cerca de ti</option>
+            <option value="primero">selecciona tu municipio</option>
             <option value="armenia">armenia</option>
             <option value="buena vista">Buena Vista</option>
             <option value="calarca">calarca</option>

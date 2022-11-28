@@ -70,7 +70,7 @@
 
 .CardArtist .detailsCard{
     position: absolute;
-    bottom: -90px;
+    bottom: -85px;
     left: 0;
     padding: 20px;
     width: 100%;
@@ -89,16 +89,18 @@
 }
 .CardArtist .detailsCard .rating{
     display: flex;
+    align-items: center;
     gap: 20px;
 }
 .CardArtist .detailsCard .ViewProfileCard{
-    width: 100px;
+    width: 140px;
     height: 30px;
     border: solid 2px white;
-    color: #fff;
-    background-color: var(--colorBlack);
+    background: transparent;
     margin-top: 12px;
     cursor: pointer;
 }
-
+.CardArtist .detailsCard .ViewProfileCard a{
+    color: #fff;
+}
 /*-------------------------------------*/

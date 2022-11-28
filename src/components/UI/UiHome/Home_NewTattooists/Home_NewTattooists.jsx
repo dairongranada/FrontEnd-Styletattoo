@@ -64,13 +64,15 @@ export const Home_NewTattooists = () => {
                             <h3 className='NmeLtatoo'>{dat.first_name} {dat.last_name}</h3>
                             <p>{dat.PerfilProfesional[0].description}</p>
                             <div className="rating">
-                                <p>Me gusta:</p>
                                 <span class="material-symbols-outlined">thumb_up</span>
                                 <p>{dat.iDispo[0].like}</p>
+                                <button className='ViewProfileCard'>
+                                    <a href={`/tatto/view/profile/${dat.id}`}>
+                                        Ver Perfil
+                                    </a>
+                                </button>
                             </div>
-                            <a href={`/tatto/view/profile/${dat.id}`} className='ViewProfileCard'>
-                                Ver Perfil
-                            </a>
+                            
                         </div>
                     </div>
 

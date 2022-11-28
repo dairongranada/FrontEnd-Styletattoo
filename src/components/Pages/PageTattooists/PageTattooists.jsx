@@ -35,8 +35,9 @@ export const PageTattooists = () => {
   const CapValues =(e)=>{
     const data = e.target.value;
     /*FILTRO*/
-    const filter = allTaoits.filter(dat => dat.PerfilProfesional[0].municipio.includes(data))
-    setTatuadores(filter)
+    const filter = allTaoits.filter(tattoo => tattoo.PerfilProfesional[0].municipio.includes(data))
+    setBuscarTat(filter)
+    setValidacion(false)
   }
 
 

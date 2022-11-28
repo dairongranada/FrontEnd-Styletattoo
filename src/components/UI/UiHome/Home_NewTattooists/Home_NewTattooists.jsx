@@ -61,7 +61,7 @@ export const Home_NewTattooists = () => {
                             <img src={dat.PerfilProfesional[0].img} alt="..." />
                         </div>
                         <div className="detailsCard">
-                            <h3 className='NmeLtatoo'>{dat.first_name} {dat.last_name}</h3>
+                            <p className='NmeLtatoo'>{dat.first_name} {dat.last_name}</p>
                             <p>{dat.PerfilProfesional[0].description}</p>
                             <div className="rating">
                                 <span class="material-symbols-outlined">thumb_up</span>

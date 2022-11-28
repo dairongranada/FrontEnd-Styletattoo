@@ -67,6 +67,7 @@ export const NavigationBar = () => {
                 <div className="logo_name">STYLE TATTOO</div>
                     <i className={barMenuIcon} id="CloseBtnNav" onClick={handleChangeNavs} ></i>
                 </div>
+                <hr/>
                 <ul className="nav-list">
                     <li>
                         <a href="/">
@@ -97,7 +98,6 @@ export const NavigationBar = () => {
                         }{ (userToken.rol === null) && <li></li>}
                         
                     <li>
-
                         <a href="/all/artist/style">
 
                             <i className='bx bxs-user-account'></i>
@@ -105,7 +105,7 @@ export const NavigationBar = () => {
                         </a>
                         <span className="tooltip">Artistas</span>
                     </li>
-
+                    <hr/>
                     <div className="logo-details ImgLogoStyleContent" style={{ height:"15rem", justifyContent: "center"}}>
                         <img className='icon ImgLogoStyle' src={logoStyleT} alt="" style={{ width:"150px" }}/>
                     </div>
@@ -131,6 +131,7 @@ export const NavigationBar = () => {
                     <div className="logo_name">STYLE TATTOO</div>
                     <i className={barMenuIcon} id="CloseBtnNav" onClick={handleChangeNavs} ></i>
                 </div>
+                <hr/>
                 <ul className="nav-list">
                     <li>
                         <a href="/">
@@ -146,7 +147,7 @@ export const NavigationBar = () => {
                         </a>
                         <span className="tooltip">Artistas</span>
                     </li>
-                    <hr></hr>
+                    <hr/>
                     <div className="logo-details ImgLogoStyleContent" style={{ height:"15rem", justifyContent: "center"}}>
                         <img className='icon ImgLogoStyle' src={logoStyleT} alt="" style={{ width:"150px" }}/>
                     </div>

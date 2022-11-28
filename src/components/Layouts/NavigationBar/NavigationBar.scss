@@ -10,14 +10,20 @@
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   background: rgba(10, 10, 10, 0.826);
-  box-shadow: 0 8px 32px rgb(2, 4, 24);
   transition: .4s ease-in-out;
 
+}
+
+ hr {
+    width: 100%;
+    height: 1.5px;
+    border-radius: 3px;
+    background: #ffffff34;
 }
 #sidebar.open{
   width: 250px;
 }
-#sidebar .logo-details{
+#sidebar .logo-details{ 
   height: 60px;
   display: flex;
   align-items: center;
@@ -148,7 +154,7 @@
   transition: all 0.4s ease;
 }
 #sidebar li a:hover{
-  background: #FFF;
+  background: #171717d6;
 }
 #sidebar li a .links_name{
   color: #fff;
@@ -166,7 +172,6 @@
 #sidebar li a:hover .links_name,
 #sidebar li a:hover i{
   transition: all 0.5s ease;
-  color: var(--colorGray2);
 }
 #sidebar li i{
   height: 50px;

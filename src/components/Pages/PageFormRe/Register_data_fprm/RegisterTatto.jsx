@@ -187,6 +187,7 @@ export const RegisterTatto = ( { change_step } ) => {
                                     </div>
                                     <div>
                                         <Field
+                                        autoComplete = 'off'
                                             className='global_styleRegistroIn'
                                             name='last_name'  
                                             id='last_name'   
@@ -200,6 +201,7 @@ export const RegisterTatto = ( { change_step } ) => {
                                     <div className="inputContent">
                                         <div>
                                             <Field 
+                                            autoComplete = 'off'
                                                 className='global_styleRegistroIn EmailInput'
                                                 name='email' 
                                                 id='email' 
@@ -217,7 +219,7 @@ export const RegisterTatto = ( { change_step } ) => {
                                                 id='cellPhone' 
                                                 type="text" 
                                                 placeholder='Celular'
-                                                maxLength='10'
+                                                maxLength='10'autoComplete = 'off'
                                             /> 
                                              {touched.cellPhone && errors.cellPhone && <span>{errors.cellPhone}</span>}
                              
@@ -227,7 +229,7 @@ export const RegisterTatto = ( { change_step } ) => {
                                     <div className="inputContent">
                                         <div>
                                             <Field 
-                                                
+                                                autoComplete = 'off'
                                                 className='global_styleRegistroIn'
                                                 name='password' 
                                                 id='password' 
@@ -239,7 +241,7 @@ export const RegisterTatto = ( { change_step } ) => {
                                         </div>
                                         <div>
                                             <Field 
-                                                
+                                                autoComplete = 'off'
                                                 className='global_styleRegistroIn'
                                                 name='passwordConfirm' 
                                                 id='passwordConfirm' 

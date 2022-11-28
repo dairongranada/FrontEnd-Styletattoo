@@ -130,6 +130,7 @@ export const PageFormSe = () => {
                         <Form>
                             <div className="inputContent">
                                 <Field
+                                    autoComplete = 'off'
                                     name='email'
                                     className='input_global_styleLogin'
                                     required type="text"
@@ -139,6 +140,7 @@ export const PageFormSe = () => {
                             </div>
                             <div className="inputContent">
                                 <Field
+                                    autoComplete = 'off'
                                     name='password'
                                     className='input_global_styleLogin'
                                     required type="password"

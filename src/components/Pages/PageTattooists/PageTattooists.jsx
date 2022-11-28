@@ -35,13 +35,16 @@ export const PageTattooists = () => {
   /* Capturar el valor */
   const CapValues =(e)=>{
     const data = e.target.value;
-    
+ 
     /*FILTRO*/
     const filter = allTaoits.filter(tattoo => tattoo.PerfilProfesional[0].municipio.includes(data))
     setBuscarTat(filter)
     setValidacion(false)
+    if (data == "primero") {
+      setValidacion("mapeo")
+    }
   }
-  // console.log(BuscarTat);
+  
 
 
   return (
@@ -58,7 +61,7 @@ export const PageTattooists = () => {
 
         <div className="contSelectorTattuadors">
           <select className='MenuSelectorTattuadors' onChange={CapValues} >
-            <option>selecciona el artista mas cerca de ti</option>
+            <option value="primero">selecciona el artista mas cerca de ti</option>
             <option value="armenia">armenia</option>
             <option value="buena vista">Buena Vista</option>
             <option value="calarca">calarca</option>
@@ -74,7 +77,7 @@ export const PageTattooists = () => {
           </select>
         </div>
 
-        {/* {BuscarTat.map(data => (
+        {BuscarTat.map(data => (
         (data.perfilProfesional == 0) &&
           <main className='LoaderArtist'>
             <div className="loaderArtist">
@@ -91,12 +94,12 @@ export const PageTattooists = () => {
               <p style={{ marginTop: "10px" }} >No hay artistas en este momento...</p>
             </div>
           </main>
-          ))} */}
+          ))}
 
 
 
 
-          {(validacion == true) &&
+          {(validacion == true || validacion == "mapeo") &&
             <main className='main-contenido'>
               {tatuadores.map(data => (
                 (data.PerfilProfesional.length >= 1) &&

@@ -365,10 +365,10 @@ export const InfoProfileT = () => {
                   </div>
                   <div className="SelectContent">
                     <div>
-                      <Field className='inputProfile' placeholder='Ingresa Tu Expreciencia' type="number" name="experience" />
+                      <Field autoComplete = 'off' className='inputProfile' placeholder='Ingresa Tu Expreciencia' type="number" name="experience" />
                     </div>
                     <div>
-                      <Field className='inputProfile' name='direction' required placeholder="Direccion" type="text" />
+                      <Field autoComplete = 'off'  className='inputProfile' name='direction' required placeholder="Direccion" type="text" />
                     </div>
                   </div>
                   <div className="SelectContent">

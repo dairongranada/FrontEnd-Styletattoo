@@ -13,6 +13,10 @@ import { CardTatuadores } from './CardTatuadores';
 export const PageTattooists = () => {
 
   const [tatuadores, setTatuadores] = useState([]);
+  const [BuscarTat, setBuscarTat] = useState([]);
+  const [validacion, setValidacion] = useState(true);
+
+
 
 
   useEffect(() => {
@@ -22,18 +26,19 @@ export const PageTattooists = () => {
         setTatuadores(info.data);
       })
   }, [])
-  console.log(tatuadores);
 
   const allTaoits = tatuadores.filter(data => data.rol.includes('[ROLE_ARTISTA]'))
+
+
 
   /* Capturar el valor */
   const CapValues =(e)=>{
     const data = e.target.value;
-
     /*FILTRO*/
     const filter = allTaoits.filter(dat => dat.PerfilProfesional[0].municipio.includes(data))
     setTatuadores(filter)
   }
+
 
 
   return (
@@ -51,8 +56,10 @@ export const PageTattooists = () => {
         <div className="contSelectorTattuadors">
           <select className='MenuSelectorTattuadors' onChange={CapValues} >
             <option>selecciona el artista mas cerca de ti</option>
-            <option value="quimbaya">quimbaya</option>
+            <option value="armenia">Armenia</option>
+            <option value="buena vista">Buena Vista</option>
             <option value="calarca">calarca</option>
+            <option value="quimbaya">quimbaya</option>
             <option value="montenegro">montenegro</option>
             <option value="pijao">pijao</option>
             <option value="genova">genova</option>
@@ -61,8 +68,6 @@ export const PageTattooists = () => {
             <option value="circacia">circacia</option>
             <option value="cordoba">cordoba</option>
             <option value="salento">salento</option>
-            <option value="buena vista">buena vista</option>
-            <option value="armenia">armenia</option>
           </select>
         </div>
 
@@ -88,8 +93,28 @@ export const PageTattooists = () => {
 
 
 
+      {validacion == true &&
+          <main className='main-contenido'>
+            {BuscarTat.map(data => (
+              (data.PerfilProfesional.length >= 1) &&
+              <CardTatuadores
+                key={data.id}
+                id={data.id}
+                image={data.PerfilProfesional[0].img}
+                first_name={data.first_name}
+                last_name={data.last_name}
+                descripcion={data.PerfilProfesional[0].description}
+                departament={data.PerfilProfesional[0].departament}
+                municipio={data.PerfilProfesional[0].municipio}
+                ids={data.PerfilProfesional[0].id}
+              />
+            ))}
+          </main>
+      }
+
+      {validacion == false &&
         <main className='main-contenido'>
-          {allTaoits.map(data => (
+          {BuscarTat.map(data => (
             (data.PerfilProfesional.length >= 1) &&
             <CardTatuadores
               key={data.id}
@@ -104,14 +129,15 @@ export const PageTattooists = () => {
             />
           ))}
         </main>
+    }
 
         <div>
-          <svg class="waves" xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+          <svg className="waves" xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 24 150 28" preserveAspectRatio="none" shapeRendering="auto">
             <defs>
               <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
             </defs>
-            <g class="parallax">
+            <g className="parallax">
               <use href="#gentle-wave" x="48" y="7" fill="rgba(18, 18, 18,)" />
             </g>
           </svg>

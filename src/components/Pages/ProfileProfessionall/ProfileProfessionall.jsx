@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import './ProfileProfessionall.scss'
 import './citas.scss'
+import './Estrellas.scss'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -226,6 +227,31 @@ export const ProfileProfessionall = () => {
   };
 
 
+/*
+      ░█████╗░    ██╗    ████████╗    ░█████╗░    ░██████╗
+      ██╔══██╗    ██║    ╚══██╔══╝    ██╔══██╗    ██╔════╝
+      ██║░░╚═╝    ██║    ░░░██║░░░    ███████║    ╚█████╗░
+      ██║░░██╗    ██║    ░░░██║░░░    ██╔══██║    ░╚═══██╗
+      ╚█████╔╝    ██║    ░░░██║░░░    ██║░░██║    ██████╔╝
+      ░╚════╝░    ╚═╝    ░░░╚═╝░░░    ╚═╝░░╚═╝    ╚═════╝░
+      */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   return (
@@ -264,6 +290,20 @@ export const ProfileProfessionall = () => {
             }
           </div>
           <div>
+          <p class="clasificacion">
+              <input id="radio1" type="radio" name="estrellas" value="5"/>
+              <label for="radio1">★</label>
+              <input id="radio2" type="radio" name="estrellas" value="4"/>
+              <label for="radio2">★</label>
+              <input id="radio3" type="radio" name="estrellas" value="3"/>
+              <label for="radio3">★</label>
+              <input id="radio4" type="radio" name="estrellas" value="2"/>
+              <label for="radio4">★</label>
+              <input id="radio5" type="radio" name="estrellas" value="1"/>
+              <label for="radio5">★</label>
+            </p>
+          </div>
+          <div>
             <div className="switch-holder">
               <div className="switch-label">
                 <i className="fa fa-bluetooth-b"></i><span>Servicio</span>
@@ -288,9 +328,6 @@ export const ProfileProfessionall = () => {
 
         <div className='PortaFInftoTT'>
           <div className='PortaFTitle'><h5>MI TRABAJO</h5></div>
-
-
-
           <div className='PortaFTitleImages'>
 
             {(perilPortafolio.length === 0) &&
@@ -331,6 +368,16 @@ export const ProfileProfessionall = () => {
             </motion.div>
           </div>
         </div>
+
+
+      {/*
+      ░█████╗░    ██╗    ████████╗    ░█████╗░    ░██████╗
+      ██╔══██╗    ██║    ╚══██╔══╝    ██╔══██╗    ██╔════╝
+      ██║░░╚═╝    ██║    ░░░██║░░░    ███████║    ╚█████╗░
+      ██║░░██╗    ██║    ░░░██║░░░    ██╔══██║    ░╚═══██╗
+      ╚█████╔╝    ██║    ░░░██║░░░    ██║░░██║    ██████╔╝
+      ░╚════╝░    ╚═╝    ░░░╚═╝░░░    ╚═╝░░╚═╝    ╚═════╝░
+      */}
 
         <div className="ContentTimeBackgournd">
           <div className="ContentHorarioBack">
@@ -586,8 +633,6 @@ export const ProfileProfessionall = () => {
               </Form>
             </Formik>
           </div>
-
-
         </div>
 
       }

@@ -5,10 +5,14 @@
   top: 0;
   height: 100%;
   width: 78px;
-  background: var(--colorBlack);
   padding: 6px 14px;
   z-index: 99;
-  transition: all 0.5s ease;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  background: rgba(10, 10, 10, 0.826);
+  box-shadow: 0 8px 32px rgb(2, 4, 24);
+  transition: .4s ease-in-out;
+
 }
 #sidebar.open{
   width: 250px;
@@ -29,7 +33,6 @@
   width: 50px;
 }
 #sidebar .logo-details .logo_name{
-  color: var(--colorOrange2);
   font-size: 15px;
   font-weight: 600;
   opacity: 0;
@@ -143,7 +146,6 @@
   align-items: center;
   text-decoration: none;
   transition: all 0.4s ease;
-  background: var(--colorGray2);
 }
 #sidebar li a:hover{
   background: #FFF;

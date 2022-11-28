@@ -4,7 +4,7 @@ import { useState , useEffect } from 'react'
 import perfilUsuarioAnonim from '../../../images/Icons/perfilUsuarioAnonim.jpg'
 import { getusers }  from '../../../Helpers/ApiConsumer/PostUsers';
 
-import logoStyleT from '../../../images/Icons/logo.jpg'
+import logoStyleT from '../../../images/Icons/logopreview.png'
 import LogoTextStyle from '../../../images/Icons/LogoTextStyle.jpg'
 
 
@@ -64,7 +64,7 @@ export const NavigationBar = () => {
         { ( !!token ) &&
             <div id="sidebar" className={ sidebarNav } >
                 <div className="logo-details">
-                    <div className="logo_name"><img style={{ width:"110px",marginTop:".5rem" }} src={LogoTextStyle} alt="" /></div>
+                <div className="logo_name">STYLE TATTOO</div>
                     <i className={barMenuIcon} id="CloseBtnNav" onClick={handleChangeNavs} ></i>
                 </div>
                 <ul className="nav-list">
@@ -146,6 +146,7 @@ export const NavigationBar = () => {
                         </a>
                         <span className="tooltip">Artistas</span>
                     </li>
+                    <hr></hr>
                     <div className="logo-details ImgLogoStyleContent" style={{ height:"15rem", justifyContent: "center"}}>
                         <img className='icon ImgLogoStyle' src={logoStyleT} alt="" style={{ width:"150px" }}/>
                     </div>

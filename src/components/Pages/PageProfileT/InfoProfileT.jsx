@@ -340,9 +340,7 @@ export const InfoProfileT = () => {
                     <div>
                       <Field required className='select' as="select" name="departament">
                         <option>Escoje tu departamento</option>
-                        <option value="Manizales">Manizales</option>
                         <option value="Quindio">Quindio</option>
-                        <option value="Risaralda">Risaralda</option>
                       </Field>
                     </div>
                     <div>

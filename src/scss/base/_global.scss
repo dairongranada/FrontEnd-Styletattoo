@@ -229,3 +229,77 @@ p{
    }
 
 
+/* CLASES GLOBAL PARA UN INPUT TYPE FILE */
+
+.ButtonBoxIntImgFp {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 10px 30px;
+  transition: 0.5s;
+  position: relative;
+  font-size: 17px;
+  background: #333;
+  border: none;
+  color: #fff;
+}
+
+.ButtonBoxIntImgFp:hover {
+  letter-spacing: 0.25em;
+  background: var(--colorOrange2);
+  color: var(--colorOrange2);
+  box-shadow: 0 0 45px var(--colorOrange2);
+}
+
+.ButtonBoxIntImgFp::before {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  background: #222222;
+}
+
+.ButtonBoxIntImgFp .MenssegeOrLetter {
+  position: relative;
+  z-index: 1;
+}
+
+.ButtonBoxIntImgFp .ItheListOr {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+.ButtonBoxIntImgFp .ItheListOr::before {
+  content: '';
+  position: absolute;
+  border: 2px solid var(--colorOrange2);
+  width: 7px;
+  height: 4px;
+  top: -3.5px;
+  left: 80%;
+  background: #222222;
+  transform: translateX(-50%);
+  transition: 0.5s;
+}
+
+.ButtonBoxIntImgFp:hover .ItheListOr::before {
+  width: 20px;
+  left: 20%;
+}
+
+.ButtonBoxIntImgFp .ItheListOr::after {
+  content: '';
+  position: absolute;
+  border: 2px solid var(--colorOrange2);
+  width: 7px;
+  height: 4px;
+  bottom: -3.5px;
+  left: 20%;
+  background: #222222;
+  transform: translateX(-50%);
+  transition: 0.5s;
+}
+
+.ButtonBoxIntImgFp:hover .ItheListOr::after {
+  width: 20px;
+  left: 80%;
+}

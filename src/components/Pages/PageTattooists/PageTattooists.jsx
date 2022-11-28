@@ -14,7 +14,7 @@ export const PageTattooists = () => {
 
   const [tatuadores, setTatuadores] = useState([]);
   const [BuscarTat, setBuscarTat] = useState([]);
-  // const [validacion, setValidacion] = useState(true);
+  const [validacion, setValidacion] = useState();
 
 
 
@@ -24,6 +24,7 @@ export const PageTattooists = () => {
     getAllTatuadores()
       .then(info => {
         setTatuadores(info.data);
+        setValidacion(true)
       })
   }, [])
 
@@ -37,8 +38,8 @@ export const PageTattooists = () => {
     
     /*FILTRO*/
     const filter = allTaoits.filter(tattoo => tattoo.PerfilProfesional[0].municipio.includes(data))
-    setTatuadores(filter)
-    // setValidacion(false)
+    setBuscarTat(filter)
+    setValidacion(false)
   }
   // console.log(BuscarTat);
 
@@ -95,9 +96,28 @@ export const PageTattooists = () => {
 
 
 
-
-          <main className='main-contenido'>
-            {tatuadores.map(data => (
+          {(validacion == true) &&
+            <main className='main-contenido'>
+              {tatuadores.map(data => (
+                (data.PerfilProfesional.length >= 1) &&
+                <CardTatuadores
+                  key={data.id}
+                  id={data.id}
+                  image={data.PerfilProfesional[0].img}
+                  first_name={data.first_name}
+                  last_name={data.last_name}
+                  descripcion={data.PerfilProfesional[0].description}
+                  departament={data.PerfilProfesional[0].departament}
+                  municipio={data.PerfilProfesional[0].municipio}
+                  ids={data.PerfilProfesional[0].id}
+                />
+              ))}
+            </main>
+          }
+          
+          {(validacion == false) &&
+            <main className='main-contenido'>
+            {BuscarTat.map(data => (
               (data.PerfilProfesional.length >= 1) &&
               <CardTatuadores
                 key={data.id}
@@ -112,7 +132,7 @@ export const PageTattooists = () => {
               />
             ))}
           </main>
-      
+          }
 
       
     

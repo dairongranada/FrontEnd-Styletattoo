@@ -14,7 +14,7 @@ export const PageTattooists = () => {
 
   const [tatuadores, setTatuadores] = useState([]);
   const [BuscarTat, setBuscarTat] = useState([]);
-  const [validacion, setValidacion] = useState(true);
+  // const [validacion, setValidacion] = useState(true);
 
 
 
@@ -37,10 +37,10 @@ export const PageTattooists = () => {
     
     /*FILTRO*/
     const filter = allTaoits.filter(tattoo => tattoo.PerfilProfesional[0].municipio.includes(data))
-    setBuscarTat(filter)
-    setValidacion(false)
+    setTatuadores(filter)
+    // setValidacion(false)
   }
-
+  // console.log(BuscarTat);
 
 
   return (
@@ -73,7 +73,7 @@ export const PageTattooists = () => {
           </select>
         </div>
 
-        {allTaoits.map(data => (
+        {/* {BuscarTat.map(data => (
         (data.perfilProfesional == 0) &&
           <main className='LoaderArtist'>
             <div className="loaderArtist">
@@ -90,14 +90,14 @@ export const PageTattooists = () => {
               <p style={{ marginTop: "10px" }} >No hay artistas en este momento...</p>
             </div>
           </main>
-          ))}
+          ))} */}
 
 
 
 
-      {validacion == true &&
+
           <main className='main-contenido'>
-            {BuscarTat.map(data => (
+            {tatuadores.map(data => (
               (data.PerfilProfesional.length >= 1) &&
               <CardTatuadores
                 key={data.id}
@@ -112,26 +112,10 @@ export const PageTattooists = () => {
               />
             ))}
           </main>
-      }
+      
 
-      {validacion == false &&
-        <main className='main-contenido'>
-          {BuscarTat.map(data => (
-            (data.PerfilProfesional.length >= 1) &&
-            <CardTatuadores
-              key={data.id}
-              id={data.id}
-              image={data.PerfilProfesional[0].img}
-              first_name={data.first_name}
-              last_name={data.last_name}
-              descripcion={data.PerfilProfesional[0].description}
-              departament={data.PerfilProfesional[0].departament}
-              municipio={data.PerfilProfesional[0].municipio}
-              ids={data.PerfilProfesional[0].id}
-            />
-          ))}
-        </main>
-    }
+      
+    
 
         <div>
           <svg className="waves" xmlns="http://www.w3.org/2000/svg"

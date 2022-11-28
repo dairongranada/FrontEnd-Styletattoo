@@ -37,22 +37,40 @@ export const Home_NewTattooists = () => {
                 {allTaoits.map(dat => (
                     (dat.PerfilProfesional.length >=1 && dat.iDispo[0].like >= 1) &&
 
+                    // <div className="CardArtist">
+
+                    //     <img src={dat.PerfilProfesional[0].img} alt="" />
+
+                    //     <div className="detailsCard">
+                    //         <h3>{dat.first_name} {dat.last_name}</h3>
+                    //         <div className='ContNumberLike'>
+                    //             <div className="contSimbolAndNumL">
+                    //                 <span class="material-symbols-outlined">thumb_up</span>
+                    //                 <p>{dat.iDispo[0].like}</p>
+                    //             </div>
+                    //         </div>
+
+                    //         <div className="descriptionCardTatt">
+                    //             <p style={{marginTop:"1rem"}} >{dat.PerfilProfesional[0].description}</p>
+                    //         </div>
+                    //     </div>
+                    // </div>
+
                     <div className="CardArtist">
-
-                        <img src={dat.PerfilProfesional[0].img} alt="" />
-
+                        <div className="PosterTatuador">
+                            <img src={dat.PerfilProfesional[0].img} alt="..." />
+                        </div>
                         <div className="detailsCard">
-                            <h3>{dat.first_name} {dat.last_name}</h3>
-                            <div className='ContNumberLike'>
-                                <div className="contSimbolAndNumL">
-                                    <span class="material-symbols-outlined">thumb_up</span>
-                                    <p>{dat.iDispo[0].like}</p>
-                                </div>
+                            <h3 className='NmeLtatoo'>{dat.first_name} {dat.last_name}</h3>
+                            <p>{dat.PerfilProfesional[0].description}</p>
+                            <div className="rating">
+                                <p>Me gusta:</p>
+                                <span class="material-symbols-outlined">thumb_up</span>
+                                <p>{dat.iDispo[0].like}</p>
                             </div>
-
-                            <div className="descriptionCardTatt">
-                                <p style={{marginTop:"1rem"}} >{dat.PerfilProfesional[0].description}</p>
-                            </div>
+                            <a href={`/tatto/view/profile/${dat.id}`} className='ViewProfileCard'>
+                                Ver Perfil
+                            </a>
                         </div>
                     </div>
 
@@ -62,7 +80,7 @@ export const Home_NewTattooists = () => {
                 {(allTaoits.length == 0) &&
                     <main className='LoaderArtist'>
                         
-                  </main>
+                    </main>
                 }
 
             </div>

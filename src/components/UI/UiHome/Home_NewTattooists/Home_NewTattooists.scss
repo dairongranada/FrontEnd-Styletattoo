@@ -21,8 +21,9 @@
     width: 100%;
     height: auto;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
+    gap: 30px;
     padding: 20px;
 }
 
@@ -30,84 +31,74 @@
 
 /* ------------- C A R D ------------- */
 .CardArtist{
-    height: 450px;
-    width: 400px;
-    margin-top: 50px;
-    box-shadow: 5px 5px 20px var(--colorBlack);
+    position: relative;
     overflow: hidden;
-}
-.CardArtist img{
+    width: 350px;
     height: 450px;
-    width: 400px;
-    border-radius: 3px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
 }
-.detailsCard{
-    height: 70px;
-    width: 400px;
-    padding: 6px;
-    box-sizing: border-box;
+.CardArtist .PosterTatuador{
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+}
+.CardArtist .PosterTatuador::before{
+    content: '';
     position: absolute;
-    transform: translate(0px, -73px);
-    background: rgb(0 0 0 / 69%);
-    color: white;
+    bottom: -180px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgb(8, 8, 8) 50%, transparent);
+    transition: 0.5s;
+    z-index: 1;
+}
+.CardArtist:hover .PosterTatuador::before{
+    bottom: 0px;
+}
+.CardArtist .PosterTatuador img{
+    width: 100%;
+    height: 100%;
     transition: 0.5s;
 }
-.detailsCard h3{
-    margin: 10px;
-    font-size: 40px;
-}
-.detailsCard .descriptionCardTatt{
-    visibility: hidden;
-    opacity: 0;
-    transition: .5s;
-}
-.detailsCard .ContNumberLike h4{
-    visibility: hidden;
-    opacity: 0;
-    transition: .5s;
-}
-.detailsCard .ContNumberLike .contSimbolAndNumL{
-    display: flex;
-    font-weight: 300;
-    gap: 14px;
-    font-size: 21px;
-    align-items: center;
-}
-.detailsCard .ContNumberLike .contSimbolAndNumL p{
-    font-weight: bold;
-    visibility: hidden;
-    opacity: 0;
-    transition: .5s;
-}
-.detailsCard .ContNumberLike .contSimbolAndNumL span{
-    visibility: hidden;
-    opacity: 0;
-    transition: .5s;
+.CardArtist:hover .PosterTatuador img{
+    transform: translateY(-50px);
+    filter: blur(5px)
 }
 
-//-------- hoversito de la  C A R D  :)   ---------------
+.CardArtist .detailsCard{
+    position: absolute;
+    bottom: -115px;
+    left: 0;
+    padding: 20px;
+    width: 100%;
+    z-index: 2;
+    transition: 0.5s;
+}
 .CardArtist:hover .detailsCard{
-    height: 200px;
-    transform: translate(0px, -203px);
+    bottom: 40px;
 }
-.CardArtist:hover .detailsCard .descriptionCardTatt{
-    opacity: 1;
-    visibility: visible;
-    transition: .5s;
+.CardArtist .detailsCard .NmeLtatoo{
+    max-width: 180px;
 }
-.CardArtist:hover .detailsCard .ContNumberLike h4{
-    opacity: 1;
-    visibility: visible;
-    transition: .5s;
+.CardArtist .detailsCard p{
+    font-size: 0.8rem;
+    color: white;
 }
-.CardArtist:hover .detailsCard .ContNumberLike .contSimbolAndNumL p{
-    opacity: 1;
-    visibility: visible;
-    transition: .5s;
+.CardArtist .detailsCard .rating{
+    display: flex;
+    gap: 20px;
 }
-.CardArtist:hover .detailsCard .ContNumberLike .contSimbolAndNumL span{
-    opacity: 1;
-    visibility: visible;
-    transition: .5s;
+.CardArtist .detailsCard .ViewProfileCard{
+    width: 100px;
+    height: 30px;
+    border: solid 2px white;
+    color: #fff;
+    background-color: var(--colorBlack);
+    margin-top: 12px;
+    cursor: pointer;
 }
+
 /*-------------------------------------*/

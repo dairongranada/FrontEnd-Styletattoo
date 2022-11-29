@@ -106,7 +106,7 @@ export const PageTattooists = () => {
                 <CardTatuadores
                   key={data.id}
                   id={data.id}
-                  image={data.PerfilProfesional[0].img}
+                  image={data[0].img}
                   first_name={data.first_name}
                   last_name={data.last_name}
                   descripcion={data.PerfilProfesional[0].description}

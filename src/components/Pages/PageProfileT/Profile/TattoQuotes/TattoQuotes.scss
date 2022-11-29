@@ -29,3 +29,41 @@
     background-color: var(--colorOrange2);
     color: #000;
   }
+
+
+  td span{
+    font-weight: 800;
+  }
+
+.delete{ color: rgb(249, 0, 0);}
+
+.proved{
+  color: green;
+  z-index: 0;
+  
+
+}
+
+.Inputproved{
+  position: absolute;
+  left: 30rem;
+  background-color: #e60f0f;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 5;
+  width: 58px;
+  height: 29px;
+}
+
+.Inputdelete{
+  opacity: 0;
+  position: absolute;
+  left: 35rem;
+  background-color: #00ffbf;
+  cursor: pointer;
+  z-index: 5;
+  width: 58px;
+  height: 29px;
+}
+
+

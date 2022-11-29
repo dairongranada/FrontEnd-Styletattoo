@@ -74,8 +74,8 @@ export const UptInfoT = () => {
                     {/* <div className=" GorroRotate"><img className="gorroNavidadPerfil" src={gorroNavidad} alt={gorroNavidad} /></div> */}
                     <div className="perfil-usuario-avatar">
                         <img src={imagePROFILE} alt="img-avatar" />
-                        <a href="/userTatto/edit-image" type="button" class="boton-avatar">
-                            <span class="material-symbols-outlined"> photo_camera </span>
+                        <a href="/userTatto/edit-image" type="button" className="boton-avatar">
+                            <span className="material-symbols-outlined"> photo_camera </span>
                         </a>
                     </div>                    
                 </div>

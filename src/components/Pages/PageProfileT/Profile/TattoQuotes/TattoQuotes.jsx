@@ -9,6 +9,10 @@ import { AiFillFile } from "react-icons/ai";
 import './TattoQuotes.scss'
 
 
+import { AceptarCita,DeleteCita } from '../../../../.././Helpers/ApiConsumer/Citas'
+
+
+
 
 /* F I R E B A S E */
 
@@ -42,9 +46,22 @@ export const TattoQuotes = () => {
 
 
 
-  console.log(perfil);
+  const OnAceptarCita = (e) => {
+    let idUserCita = e.target.value
+  
+    AceptarCita({isActive: true},idUserCita)
+   window.location.reload()
+  }
 
-  let sumadre = nameA
+  const OnDeleteCita = (e) => {
+    let idUserCita = e.target.value
+  
+    DeleteCita(idUserCita)
+   window.location.reload()
+  }
+
+
+
 
   return (
     <>
@@ -87,13 +104,23 @@ export const TattoQuotes = () => {
                 </tr>
                 {perfil.map(data => (
                   (idLocal == data.artist_tattoo) && (data.isActive == false) &&
-                  <tr>
+                  <tr key={data.id_quotes}>
+                    {/* <input value={data.id_quotes} /> */}
                     <td>{data.date}</td>
                     <td>{data.time}</td>
                     <td>{data.userName}</td>
                     <td><a href={data.img}><AiFillFile /></a></td>
-                    <td><span className="material-symbols-outlined"> file_download_done </span></td>
-                    <td><span className="material-symbols-outlined"> delete </span></td>
+                    {/* ACEPTAR CITA */}
+                    <td>
+                      <input onClick={OnAceptarCita} className="Inputproved" defaultValue={`${data.id_quotes}`} />
+                      <span className="proved material-symbols-outlined"> file_download_done </span>
+                    </td>
+
+                    {/* ELIMINAR CITA */}
+                    <td>
+                      <input onClick={OnDeleteCita} className="Inputdelete" defaultValue={`${data.id_quotes}`} />
+                      <span className="delete material-symbols-outlined">delete</span>
+                    </td>
                   </tr>
                 ))}
               </table>
@@ -112,7 +139,6 @@ export const TattoQuotes = () => {
               </div>
             </div>
             <div className='contentBoxFiles'>
-
               <table id="customers" >
                 <tr>
                   <th>Fecha</th>
@@ -122,7 +148,7 @@ export const TattoQuotes = () => {
                 </tr>
                 {perfil.map(data => (
                   (idLocal == data.artist_tattoo) && (data.isActive == true) &&
-                  <tr>
+                  <tr key={data.id_quotes}>
                     <td>{data.date}</td>
                     <td>{data.time}</td>
                     <td>{data.userName}</td>

@@ -127,6 +127,7 @@ export const PageFormSe = () => {
 
                         }}
                     >
+                        {({ errors, touched  })=> (
                         <Form>
                             <div className="inputContent">
                                 <Field
@@ -135,6 +136,7 @@ export const PageFormSe = () => {
                                     className='input_global_styleLogin'
                                     required type="text"
                                 />
+                                {touched.email && errors.email && <span style={{ color: "var(--colorOrange2)" }} >{errors.email}</span>}
 
                                 <label className='label_global_style'>Correo</label>
                             </div>
@@ -145,7 +147,8 @@ export const PageFormSe = () => {
                                     className='input_global_styleLogin'
                                     required type="password"
                                 />
-
+                                {touched.password && errors.password && <span style={{ color: "var(--colorOrange2)" }} >{errors.password}</span>}   
+                                
                                 <label className='label_global_style'>Contraseña</label>
                             </div>
                             <div>
@@ -156,6 +159,7 @@ export const PageFormSe = () => {
                                 <Link to="/Registro">¿No tienes una Cuenta?</Link>
                             </div>
                         </Form>
+                         )}
                     </Formik>
                 </div>
             </div>

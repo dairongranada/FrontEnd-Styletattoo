@@ -108,7 +108,7 @@ export const TattoQuotes = () => {
                   <div className='BoxtTittleEditFiles'>
                     <h3 className='TittleEditsFiles'>Citas ACEPTADAS</h3>
                   </div>
-                  <div><i className='bx bxs-user-detail' ></i></div>
+                  <div></div>
                 </div>
               </div>
             </div>

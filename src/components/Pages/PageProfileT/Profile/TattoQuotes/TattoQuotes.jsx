@@ -86,7 +86,7 @@ export const TattoQuotes = () => {
                   <th>Rechazar</th>
                 </tr>
                 {perfil.map(data =>  (
-                  (idLocal == data.artist_tattoo) &&
+                  (idLocal == data.artist_tattoo) && (data.isActive == false) &&
                   <tr>
                   <td>{data.date}</td>
                   <td>{data.time}</td>
@@ -100,6 +100,39 @@ export const TattoQuotes = () => {
             </div>
           </div>
 
+          <div style={{ width: "87%" }} className="perfil-usuario-body">
+            <div className="perfil-usuario-footer">
+              <div className="BackgroundIcon">
+                <div className="BackgroundIcon">
+                <div><ChevronsLeft LinkExotico="/userTatto/edit-profile" className="ChevronsLeft" /></div>
+                  <div className='BoxtTittleEditFiles'>
+                    <h3 className='TittleEditsFiles'>Citas ACEPTADAS</h3>
+                  </div>
+                  <div><i className='bx bxs-user-detail' ></i></div>
+                </div>
+              </div>
+            </div>
+            <div className='contentBoxFiles'>
+            
+              <table id="customers" >
+                <tr>
+                  <th>Fecha</th>
+                  <th>Hora</th>
+                  <th>Usuario</th>
+                  <th>Imagen de referencia</th>
+                </tr>
+                {perfil.map(data =>  (
+                  (idLocal == data.artist_tattoo) && (data.isActive == true) &&
+                  <tr>
+                  <td>{data.date}</td>
+                  <td>{data.time}</td>
+                  <td>{data.userName}</td>
+                  <td><a href={data.img}><AiFillFile/></a></td>
+                </tr>
+              ))}
+              </table>
+            </div>
+          </div>
 
 
         </section>

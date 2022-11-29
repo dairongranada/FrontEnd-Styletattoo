@@ -1,65 +1,11 @@
-// .on{transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);  
-//     display: flex; justify-content: center; align-items: center;
-// }
-
-
-
-// #edgtf-back-to-top{
-//     cursor: pointer;
-//     position: relative;
-//     display: block;
-//     margin-bottom: 0;
-//     line-height: 40px;
-//     font-size: 24px;
-//     text-align: center;
-//     color: #fff;
-//     overflow: hidden;
-// }
-
-// #edgtf-back-to-top {
-//     cursor: pointer;
-//     border: 2px solid var(--colorOrange2);
-//     background-color: rgba(0,0,0,.9);
-//     position: fixed;
-//     width: 41px;
-//     height: 41px;
-//     right: 25px;
-//     bottom: 25px;
-//     margin: 0;
-//     z-index: 10000;
-//     overflow: hidden;}
-
-// #edgtf-back-to-top:hover {
-//     height: 150px;
-//     transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-// }
-
-
-// .edgtf-btt-text{
-//     cursor: pointer;
-//     font-weight: 400;
-//     font-size: 14px;
-//     position: absolute;
-//     display: block;
-//     height: 25px;
-//     width: 100px;
-//     bottom: -10px;
-//     left: 1px;
-//     top: 155px;
-//     transform: rotate(-90deg);
-//     transform-origin: 0 0;
-//     transition: 0.2s;
-//     letter-spacing: 1px;
-//     text-transform: uppercase;
-//     color: #fff;
-// }
-.navigation{
+.navigationBTNResp{
     position: relative;
-    right: 75px;
+    right: 87px;
     bottom: 25px;
     margin: 0;
+    z-index: 1000;
 }
-.navigation{
+.navigationBTNResp{
     position: fixed;
     display: flex;
     justify-content: center;
@@ -88,7 +34,7 @@
 .menuToggle.active::before{
     transform: rotate(315deg);
 }
-.menu{
+.menuOpcionesCellW{
     position: absolute;
     width: 30px;
     height: 30px;
@@ -99,15 +45,15 @@
     transition-delay: 1s, 0.5s, 0.5s;
     transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
-.menuToggle.active ~ .menu{
+.menuToggle.active ~ .menuOpcionesCellW{
     width: 240px;
     height: 70px;
-    z-index: 1;
+    z-index: 1000;
     transform: translateY(-100px);
     transition-delay: 0s, 0.5s, 0.5s;
     box-shadow: 0 15px 25px rgb(0,0,0,0.1);
 }
-.menu::before{
+.menuOpcionesCellW::before{
     content: '';
     position: absolute;
     width: 16px;
@@ -119,11 +65,11 @@
     border-radius: 2px;
     transition: 0.5s;
 }
-.menuToggle.active ~ .menu::before{
+.menuToggle.active ~ .menuOpcionesCellW::before{
     transition-delay: 0.5s;
     bottom: -6px;
 }
-.menu ul{
+.menuOpcionesCellW ul{
     position: relative;
     display: flex;
     justify-content: center;
@@ -131,19 +77,19 @@
     height: 80px;
     gap: 40px;
 }
-.menu ul li{
+.menuOpcionesCellW ul li{
     list-style: none;
     cursor: pointer;
     opacity: 0;
     visibility: hidden; 
     transition: 0.25s;
 }
-.menuToggle.active ~ .menu ul li{
+.menuToggle.active ~ .menuOpcionesCellW ul li{
     opacity: 1;
     visibility: visible; 
     transition: 3.9s all;
 }
-.menu ul li a{
+.menuOpcionesCellW ul li a{
     display: block;
     font-size: 2rem;
     text-decoration: none;
@@ -152,6 +98,6 @@
 #iconsMenuCELL{
     font-size: 2rem;
 }
-.menu ul li:hover a{
+.menuOpcionesCellW ul li:hover a{
     color: var(--colorOrange2);
 }

@@ -61,19 +61,19 @@ export const PageTattooists = () => {
 
         <div className="contSelectorTattuadors">
           <select className='MenuSelectorTattuadors' onChange={CapValues} >
-            <option value="primero">selecciona tu municipio</option>
-            <option value="armenia">armenia</option>
-            <option value="buena vista">Buena Vista</option>
-            <option value="calarca">calarca</option>
-            <option value="quimbaya">quimbaya</option>
-            <option value="montenegro">montenegro</option>
-            <option value="pijao">pijao</option>
-            <option value="genova">genova</option>
-            <option value="tebaida">tebaida</option>
-            <option value="filandia">filandia</option>
-            <option value="circacia">circacia</option>
-            <option value="cordoba">cordoba</option>
-            <option value="salento">salento</option>
+            <option value="primero">Selecciona Tu Municipio</option>
+            <option value="armenia">Armenia</option>
+            <option value="Buenavista">Buenavista</option>
+            <option value="Calarca">Calarca</option>
+            <option value="Quimbaya">Quimbaya</option>
+            <option value="Montenegro">Montenegro</option>
+            <option value="Pijao">Pijao</option>
+            <option value="Genova">Genova</option>
+            <option value="Tebaida">Tebaida</option>
+            <option value="Filandia">Filandia</option>
+            <option value="Circasia">Circasia</option>
+            <option value="Cordoba">Cordoba</option>
+            <option value="Salento">Salento</option>
           </select>
         </div>
 

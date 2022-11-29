@@ -4,6 +4,7 @@
     bottom: 25px;
     margin: 0;
     z-index: 1000;
+    visibility: hidden;
 }
 .navigationBTNResp{
     position: fixed;
@@ -103,4 +104,11 @@
 }
 .menuOpcionesCellW ul li:hover a{
     color: var(--colorOrange2);
+}
+
+/*  R E S P O N S I V E  */
+@media (max-width: 700px){
+    .navigationBTNResp{
+        visibility: visible;
+    }
 }

@@ -91,8 +91,7 @@ export const ProfileProfessionall = () => {
 
   let idTatu = userData.id
 
-  let lastnameUser = InfoUser.last_name
-  let userName = InfoUser.first_name
+
 
 
   useEffect(() => {
@@ -347,7 +346,7 @@ export const ProfileProfessionall = () => {
                     artist_tattoo: idTT,
                     isActive: false,
                     userTatto: nameArtst  +" "+ lastArtst,
-                    userName: userName  +" "+ lastnameUser,
+                    userName: InfoUser.first_name  +" "+ InfoUser.last_name,
 
 
                   }).then(info => {

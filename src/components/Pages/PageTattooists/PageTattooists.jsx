@@ -63,17 +63,17 @@ export const PageTattooists = () => {
           <select className='MenuSelectorTattuadors' onChange={CapValues} >
             <option value="primero">Selecciona Tu Municipio</option>
             <option value="armenia">Armenia</option>
-            <option value="Buenavista">Buenavista</option>
-            <option value="Calarca">Calarca</option>
-            <option value="Quimbaya">Quimbaya</option>
-            <option value="Montenegro">Montenegro</option>
-            <option value="Pijao">Pijao</option>
-            <option value="Genova">Genova</option>
-            <option value="Tebaida">Tebaida</option>
-            <option value="Filandia">Filandia</option>
-            <option value="Circasia">Circasia</option>
-            <option value="Cordoba">Cordoba</option>
-            <option value="Salento">Salento</option>
+            <option value="buenavista">Buenavista</option>
+            <option value="calarca">Calarca</option>
+            <option value="quimbaya">Quimbaya</option>
+            <option value="montenegro">Montenegro</option>
+            <option value="pijao">Pijao</option>
+            <option value="genova">Genova</option>
+            <option value="tebaida">Tebaida</option>
+            <option value="filandia">Filandia</option>
+            <option value="circasia">Circasia</option>
+            <option value="cordoba">Cordoba</option>
+            <option value="salento">Salento</option>
           </select>
         </div>
 
@@ -106,7 +106,7 @@ export const PageTattooists = () => {
                 <CardTatuadores
                   key={data.id}
                   id={data.id}
-                  image={data[0].img}
+                  image={data.PerfilProfesional[0].img}
                   first_name={data.first_name}
                   last_name={data.last_name}
                   descripcion={data.PerfilProfesional[0].description}

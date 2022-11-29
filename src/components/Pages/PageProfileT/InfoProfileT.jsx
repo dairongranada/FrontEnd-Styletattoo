@@ -12,6 +12,7 @@ import { MetodoPUTdispo } from '../../../Helpers/put'
 import toast, { Toaster } from 'react-hot-toast';
 import { Input } from "reactstrap";
 import studioTattoModals from '../../../images/Tattos/studioTattoModals.jpg'
+import { MostrarCita } from '../../.././Helpers/ApiConsumer/AuthRegistro';
 
 
 
@@ -47,6 +48,7 @@ export const InfoProfileT = () => {
 
 
   }, [])
+
 
 
   const [infoD, setinfoD] = useState()

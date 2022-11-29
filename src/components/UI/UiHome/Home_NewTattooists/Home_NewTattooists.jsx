@@ -30,9 +30,12 @@ export const Home_NewTattooists = () => {
 
     return (
         <section className='NewTattooists'>
-            <div>
-                <h1 style={{marginTop:"2rem"}} className='titleMP4'>Artistas del momento</h1>
-            </div>
+            {(allTaoits.length >= 1)&&
+                <div>
+                    <h1 style={{marginTop:"2rem"}} className='titleMP4'>Artistas del momento</h1>
+                </div>
+            }
+            
             <div className="containerCardsArts">
                 {allTaoits.map(dat => (
                     (dat.PerfilProfesional.length >=1 && dat.iDispo[0].like >= 1) &&

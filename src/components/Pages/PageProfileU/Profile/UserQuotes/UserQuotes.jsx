@@ -6,7 +6,7 @@ import { NavigationBar } from '../../../../Layouts/NavigationBar/NavigationBar';
 import { NavFooter } from '../../../../Layouts/NavigationFooter/NavFooter/NavFooter';
 
 
-
+import { AceptarCita } from '../../../../.././Helpers/ApiConsumer/Citas'
 
 
 export const UserQuotes = () => {
@@ -16,24 +16,29 @@ export const UserQuotes = () => {
   const [perfil, setperfil] = useState([]);
 
   const [perfil2, setperfil2] = useState("");
-
-  const [nameA , setnameA] = useState([])
+  const [validationsLegthn , setValidationsLegthn] = useState([])
 
   useEffect(() => {
     MostrarCita()
       .then(info => {
         setperfil(info.data)
         setperfil2(info.data)
-        .then(info => {
-          setnameA(info.data);
-      })
+        setValidationsLegthn(info.data);
+
 
       })
   }, [])
 
-  let idLocal = InfoUser.id
 
-  console.log(perfil);
+  console.log(validationsLegthn);
+
+  let idLocal = InfoUser.id
+  const OnDeleteCita = (e) => {
+    let idUserCita = e.target.value
+  
+    AceptarCita({isActive: "destroy"},idUserCita)
+   window.location.reload()
+  }
 
 
 
@@ -61,26 +66,43 @@ export const UserQuotes = () => {
           
 
 
-          <div className='contentBoxFiles'>
-          <table id="customers">
-          
-          <tr>
-              <th>Fecha</th>
-              <th>Hora</th>
-              <th>Tatuador</th>
-              <th>Cancelar cita</th>
-            </tr>
+        <div className='contentBoxFiles'>
+        
+            <table id="customers">
+              <tr>
+                <th>Fecha</th>
+                <th>Hora</th>
+                <th>Tatuador</th>
+                <th>Cancelar</th>
+              </tr>
               {perfil.map(data =>  (
-              (idLocal == data.userID) &&
+              (idLocal == data.userID) && (data.isActive == "true") &&
               <tr >
                 <td>{data.date}</td>
                 <td>{data.time}</td>
                 <td>{data.userTatto}</td>
-                <td><span class="material-symbols-outlined"> delete </span></td>
+                {/* ELIMINAR CITA */}
+                <td>
+                  <input onClick={OnDeleteCita} className="Inputdelete" defaultValue={`${data.id_quotes}`} />
+                  <span className="delete material-symbols-outlined">delete</span>
+                </td>
               </tr>
               ))}
             </table>
+          
+
+
+
+
+
+
           </div>
+
+
+
+
+
+
 
 
 

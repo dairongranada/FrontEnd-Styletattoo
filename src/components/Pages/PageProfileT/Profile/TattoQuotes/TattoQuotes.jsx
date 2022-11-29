@@ -109,7 +109,7 @@ export const TattoQuotes = () => {
                     <td>{data.date}</td>
                     <td>{data.time}</td>
                     <td>{data.userName}</td>
-                    <td><a href={data.img}><AiFillFile /></a></td>
+                    <td><a href={data.img} className='imgFile'><AiFillFile/></a></td>
                     {/* ACEPTAR CITA */}
                     <td>
                       <input onClick={OnAceptarCita} className="Inputproved" defaultValue={`${data.id_quotes}`} />
@@ -152,7 +152,7 @@ export const TattoQuotes = () => {
                     <td>{data.date}</td>
                     <td>{data.time}</td>
                     <td>{data.userName}</td>
-                    <td><a href={data.img}><AiFillFile /></a></td>
+                    <td><a href={data.img}><AiFillFile/></a></td>
                   </tr>
                 ))}
               </table>

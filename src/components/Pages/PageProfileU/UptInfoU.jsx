@@ -20,14 +20,23 @@ export const UptInfoU = ({imagenURL}) => {
         } else {console.log("No se ha autenticado")}
     }, [])
 
+
+    const handleLogout = () => {
+        localStorage.removeItem("token");
+        localStorage.removeItem("usuario");
+        localStorage.removeItem("InfoUser");
+        localStorage.removeItem("TokenAcces")
+        window.location = "/IngresarSesion";
+    }
+
     return (
         <div className='perfil-usuario-content'>
             <div className="perfil-usuario-header">
                 <div className="perfil-usuario-portada">
                     <div className="perfil-usuario-avatar">
                         <img src={ userData.image } alt="img-avatar" />
-                        <a href="/user/edit-image" type="button" class="boton-avatar">
-                            <span class="material-symbols-outlined"> photo_camera </span>
+                        <a href="/user/edit-image" type="button" className="boton-avatar">
+                            <span className="material-symbols-outlined"> photo_camera </span>
                         </a>
                     </div>
                 </div>
@@ -41,7 +50,7 @@ export const UptInfoU = ({imagenURL}) => {
                 <div className="redes-sociales">
                     <a href="/" className="boton-redes facebook fab fa-facebook-f"><i className='bx bx-home-alt'></i></a>
                     <li className="boton-redes twitter fab fa-twitter"><i className='bx bxl-mailchimp'></i> </li>
-                    <li className="boton-redes instagram fab fa-instagram"><i className='bx bxs-paint'></i></li>
+                    <a onClick={handleLogout} className="boton-redes twitter fab fa-twitter"><span className="material-symbols-outlined Icons-Options">logout</span></a>
                 </div>
             </div>
         </div>

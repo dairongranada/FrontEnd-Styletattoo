@@ -91,6 +91,9 @@ export const ProfileProfessionall = () => {
 
   let idTatu = userData.id
 
+  let lastnameUser = InfoUser.last_name
+  let userName = InfoUser.first_name
+
 
   useEffect(() => {
     if (!!user) {
@@ -103,8 +106,6 @@ export const ProfileProfessionall = () => {
 
 
 
-  console.log(tokenID);
-  console.log(userData);
 
 
   useEffect(() => {
@@ -115,7 +116,7 @@ export const ProfileProfessionall = () => {
   }, [])
 
   
-  const [image, setImage] = useState("")
+  const [image2, setImage] = useState("")
 
   const uploadImage = async (e) => {
     const files = e.target.files;
@@ -158,6 +159,8 @@ export const ProfileProfessionall = () => {
 
   let IDisponiblidad = disponiblidad.id
 
+  const [nameArtst, setnameArtst] = useState([]);
+  const [lastArtst, setlastArtst] = useState([]);
 
 
   useEffect(() => {
@@ -169,6 +172,9 @@ export const ProfileProfessionall = () => {
         setPerilPortafolio(info.data.Portafolio)
         setdisponiblidad(info.data.iDispo[0])
         setLikes(info.data.iDispo[0].like)
+        setnameArtst(info.data.first_name)
+        setlastArtst(info.data.last_name)
+
       })
   }, [])
 
@@ -349,10 +355,13 @@ export const ProfileProfessionall = () => {
                   AgendarCita({
                     date: valores.date,
                     time: valores.time,
-                    img: image,
+                    img: image2,
                     description: valores.description,
                     userID: idTatu,
                     artist_tattoo: idTT,
+                    isActive: true,
+                    userTatto: nameArtst  +" "+ lastArtst,
+                    userName: userName  +" "+ lastnameUser,
 
 
                   }).then(info => {

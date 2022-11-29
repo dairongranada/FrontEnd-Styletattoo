@@ -5,7 +5,7 @@ import { MostrarCita } from '../../../../.././Helpers/ApiConsumer/AuthRegistro';
 import { getAllTatuadoresID } from '../../../../.././Helpers/ApiConsumer/Tattuadores'
 import { NavigationBar } from '../../../../Layouts/NavigationBar/NavigationBar';
 import { NavFooter } from '../../../../Layouts/NavigationFooter/NavFooter/NavFooter';
-
+import { AiFillFile } from "react-icons/ai";
 import './TattoQuotes.scss'
 
 
@@ -15,9 +15,10 @@ import './TattoQuotes.scss'
 
 export const TattoQuotes = () => {
 
+
   const [perfil, setperfil] = useState([]);
 
-  const [perfil2, setperfil2] = useState([]);
+  const [perfil2, setperfil2] = useState("");
 
   const [nameA , setnameA] = useState([])
 
@@ -26,8 +27,8 @@ export const TattoQuotes = () => {
   useEffect(() => {
     MostrarCita()
       .then(info => {
-        setperfil(info.data[0])
-        setperfil2(info.data[0].userID)
+        setperfil(info.data)
+        setperfil2(info.data)
         getAllTatuadoresID(perfil2)
         .then(info => {
           setnameA(info.data);
@@ -36,9 +37,12 @@ export const TattoQuotes = () => {
       })
   }, [])
 
+
+
   console.log(nameA);
 
-let sumadre = nameA
+  let sumadre = nameA
+
   return (
     <>
       <NavigationBar />
@@ -68,7 +72,8 @@ let sumadre = nameA
               </div>
             </div>
             <div className='contentBoxFiles'>
-              <table id="customers">
+            
+              <table id="customers" >
                 <tr>
                   <th>Fecha</th>
                   <th>Hora</th>
@@ -77,14 +82,16 @@ let sumadre = nameA
                   <th>Aceptar</th>
                   <th>Rechazar</th>
                 </tr>
-                <tr>
-                  <td>{perfil.date}</td>
-                  <td>{perfil.time}</td>
-                  <td>{nameA.first_name}</td>
-                  <td><a href={perfil.img}><i className='bx bxl-mailchimp'></i></a></td>
+                {perfil.map(data =>  (
+                  <tr>
+                  <td>{data.date}</td>
+                  <td>{data.time}</td>
+                  <td>{data.userName}</td>
+                  <td><a href={data.img}><AiFillFile/></a></td>
                   <td><span className="material-symbols-outlined"> file_download_done </span></td>
                   <td><span className="material-symbols-outlined"> delete </span></td>
                 </tr>
+              ))}
               </table>
             </div>
           </div>

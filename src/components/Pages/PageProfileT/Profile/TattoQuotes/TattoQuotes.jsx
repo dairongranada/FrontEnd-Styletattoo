@@ -49,14 +49,14 @@ export const TattoQuotes = () => {
   const OnAceptarCita = (e) => {
     let idUserCita = e.target.value
   
-    AceptarCita({isActive: true},idUserCita)
+    AceptarCita({isActive: "true"},idUserCita)
    window.location.reload()
   }
 
   const OnDeleteCita = (e) => {
     let idUserCita = e.target.value
   
-    DeleteCita(idUserCita)
+    AceptarCita({isActive: "destroy"},idUserCita)
    window.location.reload()
   }
 
@@ -103,7 +103,7 @@ export const TattoQuotes = () => {
                   <th>Rechazar</th>
                 </tr>
                 {perfil.map(data => (
-                  (idLocal == data.artist_tattoo) && (data.isActive == false) &&
+                  (idLocal == data.artist_tattoo) && (data.isActive == "false") &&
                   <tr key={data.id_quotes}>
                     {/* <input value={data.id_quotes} /> */}
                     <td>{data.date}</td>
@@ -147,7 +147,7 @@ export const TattoQuotes = () => {
                   <th>Imagen de referencia</th>
                 </tr>
                 {perfil.map(data => (
-                  (idLocal == data.artist_tattoo) && (data.isActive == true) &&
+                  (idLocal == data.artist_tattoo) && (data.isActive == "true") &&
                   <tr key={data.id_quotes}>
                     <td>{data.date}</td>
                     <td>{data.time}</td>

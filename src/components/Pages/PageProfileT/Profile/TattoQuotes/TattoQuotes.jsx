@@ -62,7 +62,7 @@ export const TattoQuotes = () => {
             ╚═╝░░░░░╚══════╝╚═╝░░╚══╝╚═════╝░╚═╝╚══════╝╚═╝░░╚══╝░░░╚═╝░░░╚══════╝╚═════╝░
         */}
 
-          <div style={{ width: "87%" }} className="perfil-usuario-body">
+          <div style={{ width: "100%" }} className="perfil-usuario-body">
             <div className="perfil-usuario-footer">
               <div className="BackgroundIcon">
                 <div className="BackgroundIcon">
@@ -100,7 +100,7 @@ export const TattoQuotes = () => {
             </div>
           </div>
 
-          <div style={{ width: "87%" }} className="perfil-usuario-body">
+          <div style={{ width: "100%" }} className="perfil-usuario-body">
             <div className="perfil-usuario-footer">
               <div className="BackgroundIcon">
                 <div className="BackgroundIcon">

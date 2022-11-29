@@ -1,4 +1,4 @@
-import { React , useState, useEffect  } from 'react'
+import { React, useState, useEffect } from 'react'
 import { UptInfoT } from '../../UptInfoT'
 import { ChevronsLeft } from '../../../../UI/ChevronsLeft/ChevronsLeft.jsx'
 import { MostrarCita } from '../../../../.././Helpers/ApiConsumer/AuthRegistro';
@@ -15,7 +15,7 @@ import './TattoQuotes.scss'
 
 export const TattoQuotes = () => {
 
-  const [InfoUser, setInfoUser] = useState(JSON.parse(localStorage.getItem("InfoUser"))); 
+  const [InfoUser, setInfoUser] = useState(JSON.parse(localStorage.getItem("InfoUser")));
 
   let idLocal = InfoUser.id
 
@@ -23,7 +23,7 @@ export const TattoQuotes = () => {
 
   const [perfil2, setperfil2] = useState("");
 
-  const [nameA , setnameA] = useState([])
+  const [nameA, setnameA] = useState([])
 
 
 
@@ -33,9 +33,9 @@ export const TattoQuotes = () => {
         setperfil(info.data)
         setperfil2(info.data)
         getAllTatuadoresID(perfil2)
-        .then(info => {
-          setnameA(info.data);
-      })
+          .then(info => {
+            setnameA(info.data);
+          })
 
       })
   }, [])
@@ -66,7 +66,7 @@ export const TattoQuotes = () => {
             <div className="perfil-usuario-footer">
               <div className="BackgroundIcon">
                 <div className="BackgroundIcon">
-                <div><ChevronsLeft LinkExotico="/userTatto/edit-profile" className="ChevronsLeft" /></div>
+                  <div><ChevronsLeft LinkExotico="/userTatto/edit-profile" className="ChevronsLeft" /></div>
                   <div className='BoxtTittleEditFiles'>
                     <h3 className='TittleEditsFiles'>Citas PENDIENTES</h3>
                   </div>
@@ -75,7 +75,7 @@ export const TattoQuotes = () => {
               </div>
             </div>
             <div className='contentBoxFiles'>
-            
+
               <table id="customers" >
                 <tr>
                   <th>Fecha</th>
@@ -85,17 +85,17 @@ export const TattoQuotes = () => {
                   <th>Aceptar</th>
                   <th>Rechazar</th>
                 </tr>
-                {perfil.map(data =>  (
+                {perfil.map(data => (
                   (idLocal == data.artist_tattoo) && (data.isActive == false) &&
                   <tr>
-                  <td>{data.date}</td>
-                  <td>{data.time}</td>
-                  <td>{data.userName}</td>
-                  <td><a href={data.img}><AiFillFile/></a></td>
-                  <td><span className="material-symbols-outlined"> file_download_done </span></td>
-                  <td><span className="material-symbols-outlined"> delete </span></td>
-                </tr>
-              ))}
+                    <td>{data.date}</td>
+                    <td>{data.time}</td>
+                    <td>{data.userName}</td>
+                    <td><a href={data.img}><AiFillFile /></a></td>
+                    <td><span className="material-symbols-outlined"> file_download_done </span></td>
+                    <td><span className="material-symbols-outlined"> delete </span></td>
+                  </tr>
+                ))}
               </table>
             </div>
           </div>
@@ -104,7 +104,7 @@ export const TattoQuotes = () => {
             <div className="perfil-usuario-footer">
               <div className="BackgroundIcon">
                 <div className="BackgroundIcon">
-                <div><ChevronsLeft LinkExotico="/userTatto/edit-profile" className="ChevronsLeft" /></div>
+                  <div><ChevronsLeft LinkExotico="/userTatto/edit-profile" className="ChevronsLeft" /></div>
                   <div className='BoxtTittleEditFiles'>
                     <h3 className='TittleEditsFiles'>Citas ACEPTADAS</h3>
                   </div>
@@ -113,7 +113,7 @@ export const TattoQuotes = () => {
               </div>
             </div>
             <div className='contentBoxFiles'>
-            
+
               <table id="customers" >
                 <tr>
                   <th>Fecha</th>
@@ -121,15 +121,15 @@ export const TattoQuotes = () => {
                   <th>Usuario</th>
                   <th>Imagen de referencia</th>
                 </tr>
-                {perfil.map(data =>  (
+                {perfil.map(data => (
                   (idLocal == data.artist_tattoo) && (data.isActive == true) &&
                   <tr>
-                  <td>{data.date}</td>
-                  <td>{data.time}</td>
-                  <td>{data.userName}</td>
-                  <td><a href={data.img}><AiFillFile/></a></td>
-                </tr>
-              ))}
+                    <td>{data.date}</td>
+                    <td>{data.time}</td>
+                    <td>{data.userName}</td>
+                    <td><a href={data.img}><AiFillFile /></a></td>
+                  </tr>
+                ))}
               </table>
             </div>
           </div>

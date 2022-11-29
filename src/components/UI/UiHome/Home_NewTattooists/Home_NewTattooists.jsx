@@ -62,16 +62,11 @@ export const Home_NewTattooists = () => {
                         </div>
                         <div className="detailsCard">
                             <p className='NmeLtatoo'>{dat.first_name} {dat.last_name}</p>
-                            <p>{dat.PerfilProfesional[0].description}</p>
                             <div className="rating">
-                                <span class="material-symbols-outlined">thumb_up</span>
-                                <p>{dat.iDispo[0].like}</p>
-                                <button className='ViewProfileCard'>
-                                    <a href={`/tatto/view/profile/${dat.id}`}>
-                                        Ver Perfil
-                                    </a>
-                                </button>
+                                <p><label>★</label><label>★</label><label>★</label><label>★</label><label>★</label></p>
                             </div>
+                            <p>{dat.PerfilProfesional[0].description}</p>
+                            <div><button className='ViewProfileCard'><a href={`/tatto/view/profile/${dat.id}`}>Ver Perfil</a></button></div>
                             
                         </div>
                     </div>

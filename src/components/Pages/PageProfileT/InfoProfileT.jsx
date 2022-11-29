@@ -291,7 +291,7 @@ export const InfoProfileT = () => {
 
                 CreateProfesionalprofile({
                   img: imgUrl,
-                  departament: valores.departament,
+                  departament: "Quindio",
                   municipio: valores.municipio,
                   direction: valores.direction,
                   experience: valores.experience,

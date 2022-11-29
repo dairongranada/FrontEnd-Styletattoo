@@ -104,11 +104,10 @@ export const TattoQuotes = () => {
             <div className="perfil-usuario-footer">
               <div className="BackgroundIcon">
                 <div className="BackgroundIcon">
-                <div><ChevronsLeft LinkExotico="/userTatto/edit-profile" className="ChevronsLeft" /></div>
                   <div className='BoxtTittleEditFiles'>
                     <h3 className='TittleEditsFiles'>Citas ACEPTADAS</h3>
                   </div>
-                  <div><i className='bx bxs-user-detail' ></i></div>
+                  <div></div>
                 </div>
               </div>
             </div>

@@ -119,3 +119,11 @@ i {
    .card-Nosotros:hover .social-media li:nth-child(3) {
     transition-delay: .2s;
    }
+
+
+   @media (max-width: 700px) {
+    .ContentNosotros{
+        margin-left: 0px;
+    }
+}
+

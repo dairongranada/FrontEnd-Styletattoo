@@ -19,13 +19,13 @@ export const Up = () => {
                 <div className='menuOpcionesCellW'>
                     <ul>
                         <li>
-                            <a href="/"><span id="iconsMenuCELL" class="material-symbols-outlined"> home </span></a>
+                            <a href="/"><span id="iconsMenuCELL" className="material-symbols-outlined"> home </span></a>
                         </li>
                         <li>
-                            <a href="#"><span id="iconsMenuCELL" class="material-symbols-outlined"> person </span></a>
+                            <a href="#"><span id="iconsMenuCELL" className="material-symbols-outlined"> person </span></a>
                         </li>
                         <li>
-                            <a href="#"><span id="iconsMenuCELL" class="material-symbols-outlined"> groups </span></a>
+                            <a href="#"><span id="iconsMenuCELL" className="material-symbols-outlined"> groups </span></a>
                         </li>
                     </ul>
                 </div>

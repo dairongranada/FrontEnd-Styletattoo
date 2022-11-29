@@ -30,8 +30,8 @@ export const Home_NewTattooists = () => {
 
     return (
         <section className='NewTattooists'>
-            <div className="contTittleCards">
-                <h1>Artistas del momento</h1>
+            <div>
+                <h1 style={{marginTop:"2rem"}} className='titleMP4'>Artistas del momento</h1>
             </div>
             <div className="containerCardsArts">
                 {allTaoits.map(dat => (

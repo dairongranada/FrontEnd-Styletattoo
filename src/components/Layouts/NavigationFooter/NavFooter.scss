@@ -150,6 +150,7 @@ footer {
 @media (max-width: 900px){
 
     footer{
+        margin-left: 73px;
         .Main_Container{
             flex-wrap: wrap;
             flex-direction: column;
@@ -168,11 +169,10 @@ footer {
     }
 }
 
-@media (max-width: 600px){
+@media (max-width: 700px){
 
     footer{    
-        margin-left: 73px;
-
+        margin-left: 0px;
 
 
         .Main_Container{

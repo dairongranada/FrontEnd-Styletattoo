@@ -52,7 +52,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 250px;
+        gap: 3rem;
         flex-wrap: wrap;
         background-color: rgba(0, 0, 0, 0.911);
 
@@ -72,8 +72,28 @@
     }
 }
 /*   R E S P O S I V E  */
-@media (max-width: 1000px) {
+@media (max-width: 700px) {
+    #ButtAdR.learn-more {
+        margin-top: 1.2rem;
+    }
     .Services{
-       margin-left: 80px; 
+       margin-left: 0px; 
+       gap: 2px
+    }
+
+    .Services_content{
+        width: 360px;
+        height: 399px;
+        gap: 15px;
+
+        p{font-size: 15px;}
+        h1{color: rgb(255, 255, 255);margin-bottom: 1rem;font-size: 39px;}
+    }
+
+
+    .Title_Services h1{
+
+        font-size: 56px;
     }
 }
+

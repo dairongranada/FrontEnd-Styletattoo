@@ -15,6 +15,9 @@ import './TattoQuotes.scss'
 
 export const TattoQuotes = () => {
 
+  const [InfoUser, setInfoUser] = useState(JSON.parse(localStorage.getItem("InfoUser"))); 
+
+  let idLocal = InfoUser.id
 
   const [perfil, setperfil] = useState([]);
 
@@ -39,7 +42,7 @@ export const TattoQuotes = () => {
 
 
 
-  console.log(nameA);
+  console.log(perfil);
 
   let sumadre = nameA
 
@@ -83,6 +86,7 @@ export const TattoQuotes = () => {
                   <th>Rechazar</th>
                 </tr>
                 {perfil.map(data =>  (
+                  (idLocal == data.artist_tattoo) &&
                   <tr>
                   <td>{data.date}</td>
                   <td>{data.time}</td>

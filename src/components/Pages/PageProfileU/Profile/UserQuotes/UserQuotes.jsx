@@ -64,18 +64,18 @@ export const UserQuotes = () => {
           <div className='contentBoxFiles'>
           <table id="customers">
           
-              <tr>
-                <th>Fecha</th>
-                <th>Hora</th>
-                <th>Tatuador</th>
-                <th>Cancelar cita</th>
-              </tr>
+          <tr>
+              <th>Fecha</th>
+              <th>Hora</th>
+              <th>Tatuador</th>
+              <th>Cancelar cita</th>
+            </tr>
               {perfil.map(data =>  (
               (idLocal == data.userID) &&
               <tr >
                 <td>{data.date}</td>
                 <td>{data.time}</td>
-                <td>{data.userTatto}</td>
+                <td>{data.time}</td>
                 <td><span class="material-symbols-outlined"> delete </span></td>
               </tr>
               ))}

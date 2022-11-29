@@ -359,7 +359,7 @@ export const ProfileProfessionall = () => {
                     description: valores.description,
                     userID: idTatu,
                     artist_tattoo: idTT,
-                    isActive: true,
+                    isActive: false,
                     userTatto: nameArtst  +" "+ lastArtst,
                     userName: userName  +" "+ lastnameUser,
 

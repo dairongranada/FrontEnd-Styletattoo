@@ -75,7 +75,7 @@ export const UserQuotes = () => {
               <tr >
                 <td>{data.date}</td>
                 <td>{data.time}</td>
-                <td>{data.time}</td>
+                <td>{data.userTatto}</td>
                 <td><span class="material-symbols-outlined"> delete </span></td>
               </tr>
               ))}

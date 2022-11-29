@@ -125,7 +125,37 @@
     }
 }
 
-
+@media (max-width: 700px) {
+    .contPrimary{
+        .HeadPresentationPt{
+            display: flex;
+            justify-content: center;
+            .contTextHead{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                text-align: center;
+                margin: 0rem;
+                p{
+                    margin-left: 5rem;
+                }
+                .contTittleStyleT{
+                    width: 60%;
+                    height: auto;
+                    display: flex;
+                    flex-direction: column;
+                    .gorroNavidad{
+                        position: absolute;
+                        width: 76px;
+                        z-index: 1;
+                        transform: translate(60px, -87px);
+                    }
+                }
+            }
+        }
+    }
+}
 
 @media (max-width: 700px) {
     .Services{

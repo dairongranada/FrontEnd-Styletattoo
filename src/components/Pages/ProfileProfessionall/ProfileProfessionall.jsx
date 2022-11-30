@@ -64,7 +64,7 @@ export const ProfileProfessionall = () => {
     theme: "light",
   });
 
-  const notifyTattoCitas = () => toast.warn('Ups, No puedes Agendar una Cita tu mismo', {
+  const notifyTattoCitas = () => toast.warn('Inicia sesion como usuario para poder usar esta funcion', {
     position: "top-right",
     autoClose: 5000,
     hideProgressBar: false,
@@ -229,7 +229,8 @@ export const ProfileProfessionall = () => {
           ██╔══██╗░░░██║░░░██║╚████║    ██║░░░░░██║██╔═██╗░██╔══╝░░
           ██████╦╝░░░██║░░░██║░╚███║    ███████╗██║██║░╚██╗███████╗
           ╚═════╝░░░░╚═╝░░░╚═╝░░╚══╝    ╚══════╝╚═╝╚═╝░░╚═╝╚══════╝*/}
-            {(!!idTatu && tokenID) &&
+            {(tokenID ) &&
+            (idTatu !== InfoUser && InfoUser.rol == "[ROLE_USUARIO]" ) &&
               <button onClick={likeBtn} className="like__btn">
                 <span id="count">{Numberslike}</span> Like
               </button>
@@ -239,7 +240,8 @@ export const ProfileProfessionall = () => {
                 <span>{Numberslike}</span> Likes
               </button>
             }
-            {(InfoUser == idTatu && tokenID) &&
+            {(tokenID ) &&
+            (InfoUser.rol == "[ROLE_ARTISTA]") &&
               <button style={{ cursor: "not-allowed" }} onClick={notifyTatto} className="like__btn btnBlocked">
                 <span>{Numberslike}</span> Like
               </button>
@@ -438,21 +440,21 @@ export const ProfileProfessionall = () => {
                     ╚═════╝░░░░╚═╝░░░╚═╝░░╚══╝    ░╚════╝░╚═╝░░░╚═╝░░░╚═╝░░╚═╝╚═════╝░ */}
 
                     <div className='Btn_Citas' >
-                      {(tokenID ) &&
-                        (idTatu !== InfoUser ) &&
+                    {(tokenID ) &&
+                      (idTatu !== InfoUser && InfoUser.rol == "[ROLE_USUARIO]" ) &&
                           <button
                           className="buttons_global_StyleTatto"
                           type="submit">
                           Agenda Tu Cita
                         </button>
-
                       }
                       {(tokenID == null) &&
                         <p onClick={notify} className="buttons_global_StyleTatto"
                           style={{ width: "22rem", cursor: "not-allowed" }}>
                           Agenda Tu Cita
                         </p>
-                      }{(InfoUser == idTatu && tokenID) &&
+                      }{(tokenID ) &&
+                        (InfoUser.rol == "[ROLE_ARTISTA]") &&
                         <p onClick={notifyTattoCitas} className="buttons_global_StyleTatto"
                           style={{ width: "22rem", cursor: "not-allowed" }}>
                           Agenda Tu Cita

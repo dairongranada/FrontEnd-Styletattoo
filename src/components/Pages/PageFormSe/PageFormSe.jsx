@@ -179,7 +179,7 @@ export const PageFormSe = () => {
                                 <button type='submit' className="buttons_global_StyleTatto">Iniciar sesión</button>
                             </div>
                             <div className="questions">
-                                <Link to="#"> ¿Has olvidado tu contraseña? </Link>
+                                <Link to="/Password-recovery"> ¿Has olvidado tu contraseña? </Link>
                                 <Link to="/Registro">¿No tienes una Cuenta?</Link>
                             </div>
                         </Form>

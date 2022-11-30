@@ -44,6 +44,9 @@ import { TattoQuotes } from './components/Pages/PageProfileT/Profile/TattoQuotes
 import { ProfileProfessionall } from './components/Pages/ProfileProfessionall/ProfileProfessionall'
 import { Up } from './components/UI/Up/Up'
 
+import { RecoveryP } from './components/Layouts/Password-recovery/RecoveryP'
+
+
 
 
 
@@ -58,6 +61,8 @@ function App() {
       <ToastContainer position="bottom-center"autoClose={5000} hideProgressBar={false} newestOnTop={false}closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover theme="light" />
 
               <Routes>
+                <Route path='/Password-recovery' exact element= {<RecoveryP />}/>
+
                 {/* 𝑳𝑶𝑮𝑰𝑵 𝒀 𝑹𝑬𝑮𝑰𝑺𝑻𝑹𝑶 */ }
                     <Route path='/IngresarSesion' exact element= {!!token ? <Navigate to="/" /> :<PageFormSe />}/>
                     <Route path='/Registro' exact element= {!!token ? <Navigate to="/" /> : <PageFormRe/>}/>

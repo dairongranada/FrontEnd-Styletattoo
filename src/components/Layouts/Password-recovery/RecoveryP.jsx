@@ -49,10 +49,10 @@ export const RecoveryP = () => {
         {first == false &&
             <div className="cardRecoveryP">
                 <h4 className="title">Recuperar Contraseña </h4>
-                <p className='TextParrafo'>Por favor introduce tu correo electrónico<br/> para recuperar tu contraseña</p>
+                <p className='TextParrafo'>Por favor introduce el codigo<br/> Que enviamos a tu Correo</p>
                 <form className='FormRecovery' onSubmit={sendEmail} >
                     <div className="field">
-                        <input autoComplete="off" id="logemail" placeholder="Email" className="input-field" name="logemail" type="email"/>
+                        <input autoComplete="off" id="logemail" placeholder="codigo" className="input-field" name="logemail" type="numer"/>
                     </div>
                     <button className="buttons_global_StyleTatto" type="submit">Enviar</button>
                 </form>

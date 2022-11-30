@@ -340,7 +340,7 @@ export const InfoProfileT = () => {
 
                   <div className="SelectContent">
                     <div>
-                      <Field required className='select' as="select" name="departament">
+                      <Field className='select' as="select" name="departament">
                         <option>Escoje tu departamento</option>
                         <option value="Quindio">Quindio</option>
                       </Field>
@@ -401,14 +401,14 @@ export const InfoProfileT = () => {
         </div>
       }
       {(abrir === 2) &&
-        <div style={{height: "81vh"}} className='FondBackGPp'>
+        <div style={{height: "86vh"}} className='FondBackGPp'>
           <div className='ModalBuildProfilep'>
             <div className='CloseBackProfileP'> <a href="/userTatto/edit-profile"><MdOutlineCancel /></a></div>
             <div className="contImgAndTittlear">
               <div className='ContIcontInMBPP'>
               </div>
               <div className="SecondContIconCMBPP">
-                <h3>Crea tu perfil profesional</h3>
+                <h3>Sube tus trabajos aqui</h3>
               </div>
             </div>
             <Formik
@@ -469,20 +469,58 @@ export const InfoProfileT = () => {
                 <div className="contInfoUserBoxes">
                   <div className="SelectContent">
                     <div>
-                      <Input onChange={uploadImage} required className='select' type='file' name="img1" />
+                      
+                      <button className="buttonUpWorks">
+                        <div className="iconUpWorsInp">
+                          <svg id='svgLogIUpwO' viewBox="0 0 16 16" className="bi bi-telegram" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z"></path>
+                          </svg>
+                        </div>
+                        <p>Sube un trabajo</p>
+                      </button>
+
+
+                      <Input onChange={uploadImage} required className='selectIorWrkos' type='file' name="img1" />
 
                     </div>
                     <div>
-                      <Input onChange={uploadImage2} required className='select' type='file' name="img2" />
+
+                      <button className="buttonUpWorks">
+                        <div className="iconUpWorsInp">
+                          <svg id='svgLogIUpwO' viewBox="0 0 16 16" className="bi bi-telegram" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z"></path>
+                          </svg>
+                        </div>
+                        <p>Sube un trabajo</p>
+                      </button>
+                      <Input onChange={uploadImage2} required className='selectIorWrkos' type='file' name="img2" />
 
                     </div>
                   </div>
                   <div className="SelectContent">
                     <div>
-                      <Input onChange={uploadImage3} className='inputProfile' placeholder='Ingresa Tu Expreciencia' type="file" name="img3" />
+
+                      <button className="buttonUpWorks">
+                        <div className="iconUpWorsInp">
+                          <svg id='svgLogIUpwO' viewBox="0 0 16 16" className="bi bi-telegram" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z"></path>
+                          </svg>
+                        </div>
+                        <p>Sube un trabajo</p>
+                      </button>
+                      <Input onChange={uploadImage3} className='selectIorWrkos' placeholder='Ingresa Tu Expreciencia' type="file" name="img3" />
+
                     </div>
                     <div>
-                      <Input onChange={uploadImage4} className='inputProfile' name='img4' required placeholder="Direccion" type="file" />
+                      <button className="buttonUpWorks">
+                        <div className="iconUpWorsInp">
+                          <svg id='svgLogIUpwO' viewBox="0 0 16 16" className="bi bi-telegram" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z"></path>
+                          </svg>
+                        </div>
+                        <p>Sube un trabajo</p>
+                      </button>
+                      <Input onChange={uploadImage4} className='selectIorWrkos' name='img4' required placeholder="Direccion" type="file" />
                     </div>
                   </div>
 
@@ -490,8 +528,18 @@ export const InfoProfileT = () => {
                     <div style={{ width: "100%", textAlign: "center", marginTop: "5px", marginBottom: "5px" }}>
 
 
-                      <div style={{ height: "40px", marginTop: "5px", marginBottom: "10px", marginLeft: "60px", color: "white" }} >
-                        <Input onChange={uploadImage5} className='sapos' type="file" name="img5" />
+                      <div className='ContUltInpWorkUp' style={{ height: "40px", marginTop: "5px", marginBottom: "10px", marginLeft: "60px", color: "white" }} >
+
+                        <button id='AnchButtonULwok' className="buttonUpWorks">
+                          <div className="iconUpWorsInp">
+                            <svg id='svgLogIUpwO' viewBox="0 0 16 16" className="bi bi-telegram" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z"></path>
+                            </svg>
+                          </div>
+                          <p>Sube un trabajo</p>
+                          <Input onChange={uploadImage5} className='selectIorWrkosBottomUlW' type="file" name="img5" />
+                        </button>
+
                       </div>
                     </div>
                   </div>
@@ -512,3 +560,4 @@ export const InfoProfileT = () => {
 
   );
 };
+

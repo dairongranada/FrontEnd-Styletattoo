@@ -35,6 +35,9 @@ export const UptInfoU = ({imagenURL}) => {
                 <div className="perfil-usuario-portada">
                     <div className="perfil-usuario-avatar">
                         <img src={ userData.image } alt="img-avatar" />
+                        <a href="/user/edit-image" type="button" className="boton-avatar">
+                            <span className="material-symbols-outlined"> photo_camera </span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -46,7 +49,7 @@ export const UptInfoU = ({imagenURL}) => {
                 </div>
                 <div className="redes-sociales">
                     <a href="/" className="boton-redes facebook fab fa-facebook-f"><i className='bx bx-home-alt'></i></a>
-                    <li className="boton-redes twitter fab fa-twitter"><i className='bx bxl-mailchimp'></i> </li>
+                    
                     <a onClick={handleLogout} className="boton-redes twitter fab fa-twitter"><span className="material-symbols-outlined Icons-Options">logout</span></a>
                 </div>
             </div>

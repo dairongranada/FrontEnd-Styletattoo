@@ -5,14 +5,6 @@ import { Link } from "react-router-dom";
 export const InfoProfileU = () => {
 
 
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("usuario");
-    localStorage.removeItem("InfoUser");
-    window.location = "/IngresarSesion";
-}
-
-
 
   return (
     

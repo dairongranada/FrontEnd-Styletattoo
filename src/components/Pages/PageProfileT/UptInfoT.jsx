@@ -74,7 +74,6 @@ export const UptInfoT = () => {
                     {/* <div className=" GorroRotate"><img className="gorroNavidadPerfil" src={gorroNavidad} alt={gorroNavidad} /></div> */}
                     <div className="perfil-usuario-avatar">
                         <img src={imagePROFILE} alt="img-avatar" />
-                        
                     </div>                    
                 </div>
             </div>

@@ -45,6 +45,12 @@ export const UserPassword = () => {
     }, 2000);
     
 }
+const handleLogout = () => {
+  localStorage.removeItem("token");
+  localStorage.removeItem("usuario");
+  localStorage.removeItem("InfoUser");
+  window.location = "/IngresarSesion";
+}
 
 
 
@@ -105,6 +111,7 @@ export const UserPassword = () => {
 
                   onSubmit = {(valores , {resetForm} ) =>{
                     let validacion = {};
+                      
 
                         CambiarContraseña({
                           old_password: valores.old_password,
@@ -113,8 +120,14 @@ export const UserPassword = () => {
                         ).then( info => {
                           validacion = info
                           if( validacion.status === 200 ){
+                           
                             toast.success('Contraseña Cambiada')
-                          }else if( validacion.status === 500 ){
+                            resetForm()
+                            handleLogout()
+                            setTimeout(function () {
+                              window.location = '/IngresarSesion';
+                          }, 1500);
+                          }else if( validacion.status === 500 ){  
                             toast.error("Verifica Tu contraseña")
                           }else if ( validacion.status === 400 ) {
                             toast.error("Verifica Tu contraseña")
@@ -123,7 +136,7 @@ export const UserPassword = () => {
                   } }
                 >
 
-              <Form onSubmit={sendEmail}>
+              <Form >
                 <div className='ContentBoxtext'>
                   <label className='label_global_style'>Contraseña Antigua</label>
                   <Field name='old_password' className='TheTextBox' type="password" placeholder='Escribe tu contraseña' /> 

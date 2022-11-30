@@ -71,7 +71,7 @@ export const TattoPassword = () => {
                   
                 //----------------------------------------------------------------
 
-                  onSubmit = {(valores) =>{
+                  onSubmit = {(valores, {resetForm} ) =>{
                     let validacion = {};
                         CambiarContraseña({
                           old_password: valores.old_password,
@@ -81,8 +81,10 @@ export const TattoPassword = () => {
                           validacion = info
                           if( validacion.status === 200 ){
                             toast.success('Contraseña Cambiada')
+                            resetForm()
+                            handleLogout()
                             setTimeout(function () {
-                              handleLogout()
+                              window.location = '/IngresarSesion';
                           }, 1500);
                           }else if( validacion.status === 500 ){
                             toast.error("Verifica Tu contraseña")

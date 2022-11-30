@@ -4,6 +4,11 @@ import emailjs from '@emailjs/browser';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import { NavigationBar } from '.././NavigationBar/NavigationBar';
+import { NavFooter } from '.././NavigationFooter/NavFooter/NavFooter';
+
+
+
 export const RecoveryP = () => {
     const [first, setfirst] = useState("true")
     const [Second, setSecond] = useState(false)
@@ -80,6 +85,7 @@ export const RecoveryP = () => {
     
     return (
         <>
+        <NavigationBar/>
             <div className='ContentcARDrECOVERYpASS'>
                 {first == "true" &&
                     <div className="cardRecoveryP">
@@ -122,6 +128,7 @@ export const RecoveryP = () => {
 
 
             </div>
+            <NavFooter/>
         </>
 
     )

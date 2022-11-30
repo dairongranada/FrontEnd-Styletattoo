@@ -5,6 +5,8 @@ import emailjs from '@emailjs/browser';
 
 export const RecoveryP = () => {
     const [first, setfirst] = useState(true)
+    const [Second, setSecond] = useState(false)
+
 
     // GENERAR CODIGO DE VERIFICACION DE CORREO 
 
@@ -24,10 +26,14 @@ export const RecoveryP = () => {
                 console.log(response.status),
                 setfirst(false))
             )
+    }
 
-        //    setTimeout(() => {
-        //         window.location.reload(false);
-        //     }, 2000);
+
+    const validacionCodigo = (event) => {
+        // if () {
+            
+            setSecond(true)
+        // }
     }
 
     return (
@@ -54,10 +60,25 @@ export const RecoveryP = () => {
                             <div className="field">
                                 <input autoComplete="off" id="logemail" placeholder="codigo" className="input-field" name="logemail" type="numer" />
                             </div>
+                            <button onClick={validacionCodigo} className="buttons_global_StyleTatto" type="submit">Enviar</button>
+                        </form>
+                    </div>
+                }
+                {Second == true &&
+                    <div className="cardRecoveryP">
+                        <h4 className="title">Recuperar Contraseña </h4>
+                        <form className='FormRecovery' onSubmit={sendEmail} >
+                            <div className="field">
+                                <input autoComplete="off" id="logemail" placeholder="Contraseña" className="input-field" name="logemail" type="password" />
+                                <input  style={{marginTop:"1.4rem"}} autoComplete="off" id="logemail" placeholder="Confirmar contraseña" className="input-field" name="logemail" type="password" />
+
+                            </div>
                             <button className="buttons_global_StyleTatto" type="submit">Enviar</button>
                         </form>
                     </div>
                 }
+
+
             </div>
         </>
 

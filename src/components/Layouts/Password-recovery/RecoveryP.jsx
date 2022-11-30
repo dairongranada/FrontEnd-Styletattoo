@@ -11,7 +11,7 @@ export const RecoveryP = () => {
         return Math.floor(Math.random() * (max -min) + min);
       }
 
-      let CodigoParaEmail = (getRandomInt(11111,9999))
+      let CodigoParaEmail = (getRandomInt(111111,99999))
       console.log(CodigoParaEmail)
 
 

@@ -12,7 +12,7 @@ export const RecoveryP = () => {
       }
 
       let CodigoParaEmail = (getRandomInt(11111,9999))
-      console.log(+CodigoParaEmail)
+      console.log(CodigoParaEmail)
 
 
    
@@ -24,7 +24,6 @@ export const RecoveryP = () => {
             console.log(response.status))
         )
 
-    
     //    setTimeout(() => {
     //         window.location.reload(false);
     //     }, 2000);
@@ -42,8 +41,6 @@ export const RecoveryP = () => {
                     <button className="buttons_global_StyleTatto" type="submit">Enviar</button>
                 </form>
             </div>
-
-
         </div>
     )
 }

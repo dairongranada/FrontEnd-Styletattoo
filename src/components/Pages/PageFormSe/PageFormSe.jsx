@@ -71,14 +71,12 @@ export const PageFormSe = () => {
                                         localStorage.setItem("usuario", JSON.stringify(parseJwt(tokenInfo, rol, TokenAcet)));
 
                                         const data = info.data.info;
-
-
                                         console.log(data);
 
                                         if (data.activate === true) {
                                             resetForm();
                                             if (data.rol === "[ROLE_USUARIO]") {
-                                                toast.success('Bienvenido a StyleTatto '+ (data.first_name+" "+data.last_name).toUpperCase() , {
+                                                toast.success('Bienvenido a StyleTatto '+ (data.first_name+" "+data.last_name).toUpperCase(),{
                                                     position: "top-right",
                                                     autoClose: 5000,
                                                     hideProgressBar: false,

@@ -83,12 +83,6 @@ export const RecoveryP = () => {
 
         }
     }
-    const handleLogout = () => {
-        localStorage.removeItem("token");
-        localStorage.removeItem("usuario");
-        localStorage.removeItem("InfoUser");
-        window.location = "/IngresarSesion";
-    }
 
 
 
@@ -141,57 +135,37 @@ export const RecoveryP = () => {
                                     if (val.confirm_password !== val.new_password) {
                                         setActive(0)
                                     }
-                                    else {
-                                        setActive(1)
-                                    }
+                                    else {setActive(1)}
                                 }
-
-
-
                             }}
 
-
-
-                            //----------------------------------------------------------------
-
-                            onSubmit={(valores, { resetForm }) => {
-                                let validacion = {};
-
-
-                                CambiarContraseña({
-                                    new_password: valores.new_password,
-                                }
-                                ).then(info => {
-                                    validacion = info
-                                    if (validacion.status === 200) {
-
-                                        toast.success('Contraseña Cambiada')
-                                        resetForm()
-                                        handleLogout()
-                                        setTimeout(function () {
-                                            window.location = '/IngresarSesion';
-                                        }, 1500);
-                                    } else if (validacion.status === 500) {
-                                        toast.error("Verifica Tu contraseña")
-                                    } else if (validacion.status === 400) {
-                                        toast.error("Verifica Tu contraseña")
-                                    }
+                            onSubmit={() => {
+                                toast.success('Tu contraseña ha sido cambiada', {
+                                    position: "top-right",
+                                    autoClose: 5000,
+                                    hideProgressBar: false,
+                                    closeOnClick: true,
+                                    pauseOnHover: true,
+                                    draggable: true,
+                                    progress: undefined,
+                                    theme: "light",
                                 })
+                                setTimeout(function () {
+                                    window.location = "/IngresarSesion";
+                                }, 2500);
                             }}
                         >
 
-                            <Form >
-                                <div className='ContentBoxtext'>
-                                    <label className='label_global_style'>Nueva Contraseña</label>
+                            <Form className='FormRecovery' >
+                                <div style={{marginTop: "1.2rem"}} className='ContentBoxtext'>
                                     <Field name='new_password' className='TheTextBox' required type="password" placeholder='Cambia tu contraseña' />
                                 </div>
 
                                 <div className='ContentBoxtext'>
-                                    <label className='label_global_style'>Confirmar Contraseña</label>
                                     <Field name='confirm_password' className='TheTextBox' required type="password" placeholder='Cambia tu contraseña' />
                                 </div>
                                 <div className='ContentBoxButtonConfirm'>
-                                    <button id={`${active === 0 && "btnBlocked"}`} type='sumbit' className='ButtonConfirmDates'>Guardar</button>
+                                    <button id={`${active === 0 && "btnBlocked"}`} type='sumbit' className='buttons_global_StyleTatto'>Guardar</button>
                                 </div>
 
                             </Form>

@@ -12,7 +12,7 @@ import { SubirTrabajos, CreateDisponibilidad } from '../../.././Helpers/ApiConsu
 import { getusers, getTatois } from '../../.././Helpers/ApiConsumer/PostUsers'
 import { MdOutlineCancel } from 'react-icons/md';
 
-
+import emailjs from '@emailjs/browser';
 import { useNavigate, useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 
@@ -208,8 +208,25 @@ export const ProfileProfessionall = () => {
     }
 
     MetodoPUTLikes(valores, IDisponiblidad)
+
+
+    
   };
 
+
+//   const sendEmail = (event)=>{
+//     event.preventDefault();
+//     // ALERTA CHIMBA
+//     toast.success('Se envio correctamente')
+//     emailjs.sendForm('service_6n0k3ay','template_jct8opt',event.target,'3shfZ5IuzLrmV8lcH')
+//     .then(response => console.log(response))
+//     .catch(err => console.error(err))
+
+//     setTimeout(() => {
+//         window.location.reload(false);
+//     }, 2000);
+    
+// }
   return (
     <>
       <NavigationBar />

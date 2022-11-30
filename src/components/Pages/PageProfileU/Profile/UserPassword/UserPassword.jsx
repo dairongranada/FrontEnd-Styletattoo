@@ -32,19 +32,7 @@ export const UserPassword = () => {
   // console.log(firstmane);
 
 
-  const sendEmail = (event)=>{
-    event.preventDefault();
-    // ALERTA CHIMBA
-    toast.success('Se envio correctamente')
-    emailjs.sendForm('service_6n0k3ay','template_jct8opt',event.target,'3shfZ5IuzLrmV8lcH')
-    .then(response => console.log(response))
-    .catch(err => console.error(err))
 
-    setTimeout(() => {
-        window.location.reload(false);
-    }, 2000);
-    
-}
 const handleLogout = () => {
   localStorage.removeItem("token");
   localStorage.removeItem("usuario");

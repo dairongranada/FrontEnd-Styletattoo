@@ -289,7 +289,7 @@ export const ProfileProfessionall = () => {
         </div>
 
         <div className='PortaFInftoTT'>
-          <div className='PortaFTitle'><h5>MI TRABAJO</h5></div>
+          <div className='PortaFTitle' ><p  style={{fontFamily: 'Amatic SC',fontWeight: "600", marginTop:"1rem"}}>MI TRABAJO</p></div>
           <div className='PortaFTitleImages'>
 
             {(perilPortafolio.length === 0) &&
@@ -306,7 +306,7 @@ export const ProfileProfessionall = () => {
                       <span style={{ width: "67px" }}  ></span>
                       <span style={{ width: "67px" }}  ></span>
                     </div>
-                    <p style={{ marginTop: "10px" }} >Este artista aun no tiene trabajos...</p>
+                    <p style={{ margin: "10px 0 10px 20px" }} >Este artista aun no tiene trabajos...</p>
                   </div>
                 </div>
               </>
@@ -398,7 +398,7 @@ export const ProfileProfessionall = () => {
               >
                 {({ errors, touched }) => (
                   <Form className='formCitas'>
-                    <h2>Agenda tu cITA</h2>
+                    <p  className="TitleCitasss" style={{fontFamily: 'Amatic SC',fontWeight: "500", margin:"1rem 0 2rem 0"}} >Agenda tu cita</p>
                     <div className="inputContentCitas">
                       <div>
                         <label style={{ fontWeight: "100" }}>Ingresa el dia</label>

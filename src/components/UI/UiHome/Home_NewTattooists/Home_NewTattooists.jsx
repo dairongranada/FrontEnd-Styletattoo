@@ -32,7 +32,7 @@ export const Home_NewTattooists = () => {
         <section className='NewTattooists'>
             {(allTaoits.length >= 1 || allTaoits.like >= 1)&&
                 <div>
-                    <h1 style={{marginTop:"2rem"}} className='titleMP4'>Artistas del momento</h1>
+                    <h1 style={{margin:"2rem 0 2rem 0"}} className='titleMP4'>Artistas del momento</h1>
                 </div>
             }
 

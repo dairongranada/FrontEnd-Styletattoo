@@ -2,7 +2,10 @@ import React from 'react'
 import { useState } from 'react'
 import './Home_MainView.scss'
 import img5 from '../../../../images/Tattos/portafolio9.jpg'
-import gorroNavidad from '../../../../images/Icons/gorroNavidad.png'
+
+import stylepng from '../../../../images/Letras/STYLE.png'
+import tattopng from '../../../../images/Letras/TATTOO.png'
+
 
 
 export const Home_MainView = () => {
@@ -47,9 +50,8 @@ const crearNeive = () => {
                         <div className="contTextHead">
                             <p>Style Tatto sabe todo sobre el tatuaje</p>
                             <div className="contTittleStyleT">  
-                                <img className = "gorroNavidad" src={gorroNavidad} alt={gorroNavidad} />
-                                <h2  style={{fontSize:"80px"}}>Style</h2>
-                                <h2 style={{fontSize:"80px"}} className='TittleTattoNThow'>Tattoo</h2>
+                            <img style={{width:"330px", height: "150px"}}  src={stylepng} alt={stylepng} />
+                            <img style={{width:"330px", height: "170px"}} src={tattopng} alt={tattopng} />  
                             </div>
                             <p>Creamos arte y contamos historias en tu piel</p>
                             <br />
@@ -65,9 +67,8 @@ const crearNeive = () => {
                         <div className="contTextHead">
                             <p>Style Tatto sabe todo sobre el tatuaje</p>
                             <div className="contTittleStyleT">  
-                                <img className = "gorroNavidad" src={gorroNavidad} alt={gorroNavidad} />
-                                <h2  style={{fontSize:"80px"}}>Style</h2>
-                                <h2 style={{fontSize:"80px"}} className='TittleTattoNThow'>Tattoo</h2>
+                                <img style={{width:"330px", height: "150px"}}  src={stylepng} alt={stylepng} />
+                                <img style={{width:"330px", height: "170px"}} src={tattopng} alt={tattopng} />  
                             </div>
                             <p>Creamos arte y contamos historias en tu piel</p>
                             <br />

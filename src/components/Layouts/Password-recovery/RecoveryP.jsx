@@ -22,7 +22,6 @@ export const RecoveryP = () => {
       emailjs.sendForm('service_2ubfxp4','template_kw2sbzv',event.target,'xn_UfOyxzbh71P4TH')
         .then(response => (
             console.log(response.status))
-            
         )
 
     

@@ -1,11 +1,12 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import './RecoveryP.scss'
 import emailjs from '@emailjs/browser';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import { Formik, Form, Field } from 'formik';
 import { NavigationBar } from '.././NavigationBar/NavigationBar';
 import { NavFooter } from '.././NavigationFooter/NavFooter/NavFooter';
+import { CambiarContraseña } from '../../.././Helpers/ApiConsumer/PostUsers'
 
 
 
@@ -15,7 +16,7 @@ export const RecoveryP = () => {
     const [contcodigo, setcontcodigo] = useState()
     const [validarCodigo, setvalidarCodigo] = useState()
 
-
+    const [active, setActive] = useState(0);
 
 
     // GENERAR CODIGO DE VERIFICACION DE CORREO 
@@ -37,7 +38,7 @@ export const RecoveryP = () => {
     const sendEmail = (event) => {
         event.preventDefault();
 
-        
+
         /// ALERTA CHIMBA
         emailjs.sendForm('service_2ubfxp4', 'template_kw2sbzv', event.target, 'xn_UfOyxzbh71P4TH')
             .then(response => (
@@ -45,8 +46,8 @@ export const RecoveryP = () => {
                 setfirst("false"))
             )
     }
-    const CapValues =(e)=>{setcontcodigo(e.target.value)}
-    
+    const CapValues = (e) => { setcontcodigo(e.target.value) }
+
     console.log(contcodigo);
     const validacionCodigo = () => {
         if (contcodigo == validarCodigo) {
@@ -55,7 +56,7 @@ export const RecoveryP = () => {
             console.log("El codigo es verdadero");
         }
         if (contcodigo != validarCodigo) {
-            toast.error('Error: Tu codigo es incorrecto',{
+            toast.error('Error: Tu codigo es incorrecto', {
                 position: "top-right",
                 autoClose: 3000,
                 hideProgressBar: false,
@@ -64,28 +65,36 @@ export const RecoveryP = () => {
                 draggable: true,
                 progress: undefined,
                 theme: "light",
-                });
+            });
 
-                setTimeout(function () {
-                    toast.warn('Advertencia: Solo Tienes 3 Intentos para colocar Tu codigo',{
-                        position: "top-right",
-                        autoClose: 5000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: "light",
-                        });
-                }, 2000);
-        
-            
+            setTimeout(function () {
+                toast.warn('Advertencia: Solo Tienes 3 Intentos para colocar Tu codigo', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
+            }, 2000);
+
+
         }
     }
-    
+    const handleLogout = () => {
+        localStorage.removeItem("token");
+        localStorage.removeItem("usuario");
+        localStorage.removeItem("InfoUser");
+        window.location = "/IngresarSesion";
+    }
+
+
+
     return (
         <>
-        <NavigationBar/>
+            <NavigationBar />
             <div className='ContentcARDrECOVERYpASS'>
                 {first == "true" &&
                     <div className="cardRecoveryP">
@@ -115,20 +124,85 @@ export const RecoveryP = () => {
                 {Second == true &&
                     <div className="cardRecoveryP">
                         <h4 className="title">Recuperar Contraseña </h4>
-                        <form className='FormRecovery' onSubmit={sendEmail} >
-                            <div className="field">
-                                <input autoComplete="off" id="logemail" placeholder="Contraseña" className="input-field" name="logemail" type="password" />
-                                <input  style={{marginTop:"1.4rem"}} autoComplete="off" id="logemail" placeholder="Confirmar contraseña" className="input-field" name="logemail" type="password" />
+                        <Formik
+                            initialValues={{
+                                new_password: '',
+                                confirm_password: ''
+                            }}
 
-                            </div>
-                            <button className="buttons_global_StyleTatto" type="submit">Enviar</button>
-                        </form>
+                            //validaciones de cambio de contraseñas
+
+                            validate={(val) => {
+                                let rgb = {}
+                                if (!val.confirm_password) {
+                                    rgb.confirm_password = "Porfavor confirma tu Contraseña"
+                                }
+                                if (val.confirm_password.length >= 6) {
+                                    if (val.confirm_password !== val.new_password) {
+                                        setActive(0)
+                                    }
+                                    else {
+                                        setActive(1)
+                                    }
+                                }
+
+
+
+                            }}
+
+
+
+                            //----------------------------------------------------------------
+
+                            onSubmit={(valores, { resetForm }) => {
+                                let validacion = {};
+
+
+                                CambiarContraseña({
+                                    new_password: valores.new_password,
+                                }
+                                ).then(info => {
+                                    validacion = info
+                                    if (validacion.status === 200) {
+
+                                        toast.success('Contraseña Cambiada')
+                                        resetForm()
+                                        handleLogout()
+                                        setTimeout(function () {
+                                            window.location = '/IngresarSesion';
+                                        }, 1500);
+                                    } else if (validacion.status === 500) {
+                                        toast.error("Verifica Tu contraseña")
+                                    } else if (validacion.status === 400) {
+                                        toast.error("Verifica Tu contraseña")
+                                    }
+                                })
+                            }}
+                        >
+
+                            <Form >
+                                <div className='ContentBoxtext'>
+                                    <label className='label_global_style'>Nueva Contraseña</label>
+                                    <Field name='new_password' className='TheTextBox' required type="password" placeholder='Cambia tu contraseña' />
+                                </div>
+
+                                <div className='ContentBoxtext'>
+                                    <label className='label_global_style'>Confirmar Contraseña</label>
+                                    <Field name='confirm_password' className='TheTextBox' required type="password" placeholder='Cambia tu contraseña' />
+                                </div>
+                                <div className='ContentBoxButtonConfirm'>
+                                    <button id={`${active === 0 && "btnBlocked"}`} type='sumbit' className='ButtonConfirmDates'>Guardar</button>
+                                </div>
+
+                            </Form>
+
+                        </Formik>
                     </div>
                 }
 
 
             </div>
-            <NavFooter/>
+            <NavFooter />
         </>
 
     )

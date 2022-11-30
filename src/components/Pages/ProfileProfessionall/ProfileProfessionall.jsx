@@ -366,20 +366,33 @@ export const ProfileProfessionall = () => {
                     isActive: "false",
                     userTatto: nameArtst  +" "+ lastArtst,
                     userName: InfoUser.first_name  +" "+ InfoUser.last_name,
-
-
                   }).then(info => {
                     validacion = info
                     setLoading(true);
                     if (validacion.status === 400) {
-                      setDuplicatedData(true);
-                      setServerError(false);
-                      setLoading(false);
+                      toast.warn('Tienes Capos sin llenar', {
+                        position: "top-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light",
+                      })
+
                     }
                     else if (validacion.status === 500) {
-                      setServerError(true);
-                      setDuplicatedData(false);
-                      setLoading(false);
+                      toast.warn('Tienes Capos sin llenar', {
+                        position: "top-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light",
+                      })
                     }
                     else {
                       setDuplicatedData(false);

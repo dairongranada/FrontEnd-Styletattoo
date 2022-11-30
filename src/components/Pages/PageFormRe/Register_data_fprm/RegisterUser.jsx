@@ -3,7 +3,8 @@ import './sass/userRegister.scss'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import emailjs from 'emailjs-com'
-
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { GoArrowSmallLeft } from 'react-icons/go';
 import { AiOutlineUserAdd } from 'react-icons/ai';
 
@@ -152,11 +153,32 @@ export const RegisterUser = ( { change_step } ) => {
                                 validacion = info
                                 setLoading(true);
                                 if ( validacion.status === 400 ) {
+                                    toast.warn('Tienes Capos sin llenar', {
+                                        position: "top-right",
+                                        autoClose: 5000,
+                                        hideProgressBar: false,
+                                        closeOnClick: true,
+                                        pauseOnHover: true,
+                                        draggable: true,
+                                        progress: undefined,
+                                        theme: "light",
+                                      })
+                
                                     setDuplicatedData( true );
                                     setServerError( false );
                                     setLoading(false);
                                 }
                                 else if( validacion.status === 500 ){
+                                    toast.warn('El Email ya se encuentra en uso', {
+                                        position: "top-right",
+                                        autoClose: 5000,
+                                        hideProgressBar: false,
+                                        closeOnClick: true,
+                                        pauseOnHover: true,
+                                        draggable: true,
+                                        progress: undefined,
+                                        theme: "light",
+                                      })
                                     setServerError( true );
                                     setDuplicatedData( false );
                                     setLoading( false );

@@ -6,6 +6,7 @@ import emailjs from '@emailjs/browser';
 export const RecoveryP = () => {
     const [first, setfirst] = useState(true)
     const [Second, setSecond] = useState(false)
+    const [contcodigo, setcontcodigo] = useState()
 
 
     // GENERAR CODIGO DE VERIFICACION DE CORREO 
@@ -20,6 +21,8 @@ export const RecoveryP = () => {
 
     const sendEmail = (event) => {
         event.preventDefault();
+
+        
         /// ALERTA CHIMBA
         emailjs.sendForm('service_2ubfxp4', 'template_kw2sbzv', event.target, 'xn_UfOyxzbh71P4TH')
             .then(response => (
@@ -27,15 +30,19 @@ export const RecoveryP = () => {
                 setfirst(false))
             )
     }
-
-
+    const CapValues =(e)=>{
+        const data = e.target.value;
+        setcontcodigo(e.target.value)
+    }
+    
+    
     const validacionCodigo = (event) => {
-        // if () {
+        if (contcodigo == CodigoParaEmail) {
             
             setSecond(true)
-        // }
+        }
     }
-
+    
     return (
         <>
             <div className='ContentcARDrECOVERYpASS'>
@@ -58,7 +65,7 @@ export const RecoveryP = () => {
                         <p className='TextParrafo'>Por favor introduce el codigo<br /> Que enviamos a tu Correo</p>
                         <form className='FormRecovery' onSubmit={sendEmail} >
                             <div className="field">
-                                <input autoComplete="off" id="logemail" placeholder="codigo" className="input-field" name="logemail" type="numer" />
+                                <input onChange={CapValues} autoComplete="off" id="logemail" placeholder="codigo" className="input-field" name="logemail" type="numer" />
                             </div>
                             <button onClick={validacionCodigo} className="buttons_global_StyleTatto" type="submit">Enviar</button>
                         </form>

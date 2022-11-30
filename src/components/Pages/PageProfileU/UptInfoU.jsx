@@ -35,9 +35,6 @@ export const UptInfoU = ({imagenURL}) => {
                 <div className="perfil-usuario-portada">
                     <div className="perfil-usuario-avatar">
                         <img src={ userData.image } alt="img-avatar" />
-                        <a href="/user/edit-image" type="button" className="boton-avatar">
-                            <span className="material-symbols-outlined"> photo_camera </span>
-                        </a>
                     </div>
                 </div>
             </div>

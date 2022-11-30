@@ -99,6 +99,9 @@
     text-decoration: none;
     color: var(--colorBlack);
 }
+.menuOpcionesCellW ul li a #iconsMenuCELL{
+    visibility: hidden;
+}
 #iconsMenuCELL{
     font-size: 2rem;
 }
@@ -110,5 +113,16 @@
 @media (max-width: 700px){
     .navigationBTNResp{
         visibility: visible;
+        .menuOpcionesCellW{
+            ul{
+                li{
+                    a{
+                        #iconsMenuCELL{
+                            visibility: visible;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

@@ -1,9 +1,10 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './RecoveryP.scss'
 import emailjs from '@emailjs/browser';
 
 
 export const RecoveryP = () => {
+    const [first, setfirst] = useState(true)
 
     // GENERAR CODIGO DE VERIFICACION DE CORREO 
 
@@ -21,7 +22,8 @@ export const RecoveryP = () => {
         /// ALERTA CHIMBA
       emailjs.sendForm('service_2ubfxp4','template_kw2sbzv',event.target,'xn_UfOyxzbh71P4TH')
         .then(response => (
-            console.log(response.status))
+            console.log(response.status),
+            setfirst(false))
         )
 
     //    setTimeout(() => {
@@ -30,7 +32,9 @@ export const RecoveryP = () => {
     }
 
     return (
+        <>
         <div className='ContentcARDrECOVERYpASS'>
+        {first == true &&
             <div className="cardRecoveryP">
                 <h4 className="title">Recuperar Contraseña </h4>
                 <p className='TextParrafo'>Por favor introduce tu correo electrónico<br/> para recuperar tu contraseña</p>
@@ -41,7 +45,22 @@ export const RecoveryP = () => {
                     <button className="buttons_global_StyleTatto" type="submit">Enviar</button>
                 </form>
             </div>
+        }
+        {first == false &&
+            <div className="cardRecoveryP">
+                <h4 className="title">Recuperar Contraseña </h4>
+                <p className='TextParrafo'>Por favor introduce tu correo electrónico<br/> para recuperar tu contraseña</p>
+                <form className='FormRecovery' onSubmit={sendEmail} >
+                    <div className="field">
+                        <input autoComplete="off" id="logemail" placeholder="Email" className="input-field" name="logemail" type="email"/>
+                    </div>
+                    <button className="buttons_global_StyleTatto" type="submit">Enviar</button>
+                </form>
+            </div>
+        }
         </div>
+        </>
+    
     )
 }
 

@@ -1,7 +1,8 @@
 import React, { useState,useEffect } from 'react'
 import './RecoveryP.scss'
 import emailjs from '@emailjs/browser';
-
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const RecoveryP = () => {
     const [first, setfirst] = useState("true")
@@ -47,6 +48,33 @@ export const RecoveryP = () => {
             setSecond(true)
             setfirst("destroy")
             console.log("El codigo es verdadero");
+        }
+        if (contcodigo != validarCodigo) {
+            toast.error('Error: Tu codigo es incorrecto',{
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                });
+
+                setTimeout(function () {
+                    toast.warn('Advertencia: Solo Tienes 3 Intentos para colocar Tu codigo',{
+                        position: "top-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light",
+                        });
+                }, 2000);
+        
+            
         }
     }
     

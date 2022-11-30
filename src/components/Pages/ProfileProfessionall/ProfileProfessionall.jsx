@@ -213,20 +213,21 @@ export const ProfileProfessionall = () => {
     
   };
 
-
-//   const sendEmail = (event)=>{
-//     event.preventDefault();
-//     // ALERTA CHIMBA
-//     toast.success('Se envio correctamente')
-//     emailjs.sendForm('service_6n0k3ay','template_jct8opt',event.target,'3shfZ5IuzLrmV8lcH')
-//     .then(response => console.log(response))
-//     .catch(err => console.error(err))
-
-//     setTimeout(() => {
-//         window.location.reload(false);
-//     }, 2000);
+//  const sendEmail = (event)=>{
+//         event.preventDefault();
+//         // ALERTA CHIMBA
+//         emailjs.sendForm('service_abfu3cf','template_u6bd07e',event.target,'Hc--z4JAH7zQRaJwb')
+//         .then(response => {
+//             alert('Gracias por registarse')
+//         })
+//         .catch(err => console.error(err))
     
-// }
+//         setTimeout(() => {
+//             window.location = "/IngresarSesion";
+//         }, 2000);
+        
+//     }
+
   return (
     <>
       <NavigationBar />

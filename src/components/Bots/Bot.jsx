@@ -7,10 +7,12 @@ export const Bot = () => {
 
 
   const [openChat, setOpenchat] = useState('ocultarBot')
+  const [upBot, setUpbot] = useState()
 
 
   const OpenchatStyleBotC =()=> {
     setOpenchat('mostrarBot')
+    setUpbot('Upbot')
   }
 
 
@@ -135,7 +137,7 @@ export const Bot = () => {
         </div>
       </div>
 
-        <div onClick={OpenchatStyleBotC}  className='OpenchatStylebot'></div>
+        <div onClick={OpenchatStyleBotC}  className={`OpenchatStylebot ${upBot}`}></div>
 
     </>
   )

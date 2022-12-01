@@ -138,8 +138,20 @@
     position: fixed;
     z-index: 999;
     right: 11px;
-    bottom: 13px;
+    bottom: 1px;
     background-image: url('https://cdn-icons-png.flaticon.com/512/4712/4712010.png');
     background-size: 100%;
-    
+}
+.Upbot{
+    width: 80px;
+    height: 65px;
+    position: fixed;
+    z-index: 999;
+    right: 11px;
+    bottom: -20px;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/4712/4712010.png');
+    background-size: 100%;
+    transition: 0.5s;
+    transform: translateY(-20px);
+    transition-delay: 0s, 0.5s, 0.5s;
 }

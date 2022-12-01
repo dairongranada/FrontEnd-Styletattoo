@@ -18,7 +18,7 @@ export const Bot = () => {
 
   useEffect(()=> {
     let res_msg = document.createElement('div')
-    res_msg.innerHTML = "Hola! soy Style Bot, ¿puedo ayudarte en algo?"
+    res_msg.innerHTML = `<p>Hola! soy Style Bot, ¿puedo ayudarte en algo</p>`
     res_msg.setAttribute("class","izquierdMesna")
 
     document.getElementById('msg_area').appendChild(res_msg)
@@ -30,11 +30,11 @@ export const Bot = () => {
   const Fasynyc = async(e) => {
 
     /*opciones*/
-    let artista = "como ser un artista"
-    let usuario = "como ser un usuario"
-    let subirTrabajo = "como subir mis trabajos"
-    let reacuperarContraseña = "como recupero mi contraseña"
-    let agendarCita = "como agendar una cita"
+    let artista = 8888
+    let usuario = 9999
+    let subirTrabajo = 1
+    let reacuperarContraseña = 3
+    let agendarCita = 2
     let no = "no"
     let si  = "si"
 
@@ -55,8 +55,14 @@ export const Bot = () => {
     else if( req == si){
 
       let res_msg = document.createElement('div')
-      res_msg.innerHTML = "dime en que puedo ayudarte segun la siguiente lista [como ser un artista, como ser un usuario, como subir mis trabajos, como agendar una cita, como recupero mi contraseña]"
-      res_msg.setAttribute("class","izquierdMesna")
+      res_msg.innerHTML = `<p>Dime en que puedo ayudarte segun la siguiente lista: </p>
+                            <p>1) como subir mis trabajos,</p> 
+                            <p>2) como agendar una cita,</p> 
+                            <p>3) como recupero mi contraseña</p>`
+      
+      
+      
+                  res_msg.setAttribute("class","izquierdMesna")
 
       document.getElementById('msg_area').appendChild(res_msg) 
       
@@ -72,7 +78,7 @@ export const Bot = () => {
       
     }
     
-    else if (req == artista || req == usuario) {
+    else if (req === artista || req === usuario) {
       let res_msgR = document.createElement('div')
       res_msgR.innerHTML = "Entendido te llevare enseguida"
       res_msgR.setAttribute("class","izquierdMesna")
@@ -82,21 +88,41 @@ export const Bot = () => {
     }
     else if(req == subirTrabajo) {
       let res_msgT = document.createElement('div')
-      res_msgT.innerHTML = "Primero debes registrarte como un artista, luego en tu perfil personal selecciona la opcion crear perfil profecional, una vez creado ve a tu perfil personal y selecciona la opcion subir trabajos, una vez subidos estaran en tu perfil profesional ¿puedo ayudarte en algo mas? (responde solo si o no)"
+      res_msgT.innerHTML = `
+      <p>Primero debes registrarte 
+      como un artista, luego en tu perfil personal selecciona 
+      la opcion crear perfil profesional, una vez creado 
+      selecciona la opcion subir trabajos, una vez 
+      subidos estaran en tu perfil profesional</p>
+
+      </br>
+      <p>¿Puedo ayudarte en algo mas? (responde solo si o no)</p>
+      `
       res_msgT.setAttribute("class","izquierdMesna")
 
       document.getElementById('msg_area').appendChild(res_msgT)
     }
     else if(req == agendarCita){
       let res_msgC = document.createElement('div')
-      res_msgC.innerHTML = "Primero debes registrarte como un usuario, luego ve al perfil del tatuador que mas te guste, habra un boton que dice (agendar cita) dale click y te llevara al registro de la cita.  ¿Puedo ayudarte en algo mas? (responde solo si o no)"
+      res_msgC.innerHTML = 
+      `<p>Primero debes registrarte como un usuario, luego ve al perfil del tatuador que mas te guste, habra 
+        un boton que dice (Agendar Cita) dale click y te llevara al registro de la cita.
+      </p></br>
+      <p>¿Puedo ayudarte en algo mas? (responde solo si o no)</p>
+      `
+      
       res_msgC.setAttribute("class","izquierdMesna")
 
       document.getElementById('msg_area').appendChild(res_msgC)
     }
     else if (req == reacuperarContraseña) {
       let res_msgRc = document.createElement('div')
-      res_msgRc.innerHTML = "Si olvidaste tu contraseña, en login hay una opcion que te pregunta si olvidaste tu contraseña, dale click y sigue los pasos que te indiquen.  ¿Puedo ayudarte en algo mas? (responde solo si o no)"
+      res_msgRc.innerHTML = `
+      <p>
+      Si olvidaste tu contraseña, en login hay una opcion que te pregunta si 
+      olvidaste tu contraseña, dale click y sigue los pasos que te indiquen.</p></br>
+      <p>¿Puedo ayudarte en algo mas? (responde solo si o no)</p>
+      `
       res_msgRc.setAttribute("class","izquierdMesna")
 
       document.getElementById('msg_area').appendChild(res_msgRc)

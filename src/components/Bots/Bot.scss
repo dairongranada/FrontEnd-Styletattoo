@@ -82,7 +82,7 @@
     font-family: monospace;
     display: inline-block;
     width: auto;
-    max-width: 60%;
+    max-width: 90%;
     padding: 14px;
     word-wrap: break-word;
     font-weight: 300;
@@ -135,10 +135,11 @@
 .OpenchatStylebot{
     width: 80px;
     height: 51px;
-    background-image: url(http://localhost:3000/static/media/icoo.cddc72a….ico);
     position: fixed;
     z-index: 999;
     right: 11px;
     bottom: 13px;
-    background-color: rgb(255, 0, 0);
+    background-image: url('https://cdn-icons-png.flaticon.com/512/4712/4712010.png');
+    background-size: 100%;
+    
 }

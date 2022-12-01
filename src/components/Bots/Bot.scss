@@ -112,23 +112,33 @@
 
 
 /*mostrar y ocultar*/
+.ContentBackOpenChat{
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    z-index: 998;
+    background-color: #000000ba;
+    position: fixed;
+}
 
-#ocultarBot{
+
+.ocultarBot{
     display: none;
     opacity: 0;
     visibility: hidden;
     position: fixed;
     top: -200rem;
 }
-#mostrarBot{
+.mostrarBot{
     top: 1rem;
-    display: flex;
 }
 .OpenchatStylebot{
-    width: 30%;
-    height: 30%;
-    background-image: url('../../images/Icons/icoo.ico');
+    width: 80px;
+    height: 51px;
+    background-image: url(http://localhost:3000/static/media/icoo.cddc72a….ico);
     position: fixed;
     z-index: 999;
-    right: 10rem;
+    right: 11px;
+    bottom: 13px;
+    background-color: rgb(255, 0, 0);
 }

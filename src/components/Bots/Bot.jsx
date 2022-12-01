@@ -15,6 +15,7 @@ export const Bot = () => {
 
 
 
+
   useEffect(()=> {
     let res_msg = document.createElement('div')
     res_msg.innerHTML = "Hola! soy Style Bot, ¿puedo ayudarte en algo?"
@@ -114,8 +115,8 @@ export const Bot = () => {
 
   return (
     <>
-      <div id={`${openChat}`}></div>
-        <div id='ContChatWinmain'>
+      <div className={`ContentBackOpenChat ${openChat}`}>
+        <div id='ContChatWinmain' >
           <h2 className='TittleChatB'>Style Bot</h2>
           <div id='msg_area'>
             <div id='robot'>
@@ -132,12 +133,9 @@ export const Bot = () => {
           </div>
 
         </div>
+      </div>
 
-
-
-        <div onClick={OpenchatStyleBotC} className='OpenchatStylebot'>
-
-        </div>
+        <div onClick={OpenchatStyleBotC}  className='OpenchatStylebot'></div>
 
     </>
   )

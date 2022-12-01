@@ -43,6 +43,7 @@ import { TattoQuotes } from './components/Pages/PageProfileT/Profile/TattoQuotes
 
 import { ProfileProfessionall } from './components/Pages/ProfileProfessionall/ProfileProfessionall'
 import { Up } from './components/UI/Up/Up'
+import { Bot } from './components/Bots/Bot';
 
 
 
@@ -92,6 +93,7 @@ function App() {
 
               </Routes>
               <Up/>
+              <Bot/>
     </div>
   );
 }

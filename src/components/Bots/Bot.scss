@@ -1,0 +1,98 @@
+::-webkit-scrollbar{
+    width: 0;
+}
+
+#ContChatWinmain{
+    width: 100vw;
+    max-width: 540px;
+    height: 100vh;
+    box-shadow: inset 0 0 10px 4px #1116;  
+}
+.TittleChatB{
+    text-align: center;
+    font-family: sans-serif;
+    background: #1c1c46;
+    padding: 8px;
+    text-shadow: 1px 1px 4px #111;
+    margin-bottom: 8px;
+}
+#msg_area{
+    height: 82%;
+    padding: 0 12px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+#bot{
+    width: 50px;
+    height: 50px;
+    background-image: url(../../images/Icons/Maquuina.png);
+    background-size: 100%;
+    border-radius: 50%;
+    margin: 10px;
+}
+#robot{
+    display: flex;
+    align-items: center;
+}
+#ChatBotAco{
+    font-family: monospace;
+    font-size: 20px;
+}
+#input{
+    height: 7%;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    margin: 8px 16px;
+    border-radius: 32px;
+    background: linear-gradient(#ececee 50%, #1c1f46 50%);
+    box-shadow: inset 0 1px 0 #777;
+}
+
+#text{
+    outline: none;
+    font-size: 20px;
+    background: #ececee;
+    color: #333;
+    padding: 0 16px;
+    border: solid 1px #777;
+    border-right: none;
+}
+#send{
+    outline: none;
+    font-size: 20px;
+    background: #1c1f46;
+    border: none;
+    border-radius: 32px;
+    transition-duration: 0.2;
+}
+#send:active{
+    font-size: 16px;
+}
+.izquierdMesna, .derechaMesna{
+    font-size: 18px;
+    font-family: monospace;
+    display: inline-block;
+    width: auto;
+    max-width: 60%;
+    padding: 14px;
+    word-wrap: break-word;
+}
+.izquierdMesna{
+    color: #000;
+    background: #b3bfca;
+    border-radius: 0 16px 16px 16px;
+    margin-bottom: 1rem;
+}
+.derechaMesna{
+    display: flex;
+    justify-content: end;
+    background: #b3bfca;
+    border-radius: 0 16px 16px 16px;
+    margin-bottom: 1rem;
+    color: var(--colorBlack);
+}
+
+.msgCon1, .msgCon2{
+    width: 100%;
+    display: inline-block;
+}

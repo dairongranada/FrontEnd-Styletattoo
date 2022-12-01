@@ -3,32 +3,39 @@
 }
 
 #ContChatWinmain{
-    width: 100vw;
+    width: 48vh;
     max-width: 540px;
-    height: 100vh;
-    box-shadow: inset 0 0 10px 4px #1116;  
+    height: 77vh;
+    box-shadow: inset 0 0 10px 4px rgb(17 17 17 / 40%);
+    right: 10rem;
+    position: fixed;
+    top: 1rem;
+    z-index: 999;
 }
 .TittleChatB{
+    letter-spacing: 7px;
     text-align: center;
-    font-family: sans-serif;
-    background: #1c1c46;
-    padding: 8px;
+    background: var(--colorOrange2);
     text-shadow: 1px 1px 4px #111;
-    margin-bottom: 8px;
+    border-radius: 15px 15px 0px 0px;
+    font-family: 'Amatic SC';
+    font-size: 59px;
 }
-#msg_area{
+#msg_area {
     height: 82%;
     padding: 0 12px;
     overflow-y: scroll;
     scroll-behavior: smooth;
+    background: #000;
 }
+
 #bot{
     width: 50px;
     height: 50px;
-    background-image: url(../../images/Icons/Maquuina.png);
+    background-image: url('https://cdn-icons-png.flaticon.com/512/4712/4712010.png');
     background-size: 100%;
     border-radius: 50%;
-    margin: 10px;
+    margin: 10px 0px 10px 8px;
 }
 #robot{
     display: flex;
@@ -37,33 +44,35 @@
 #ChatBotAco{
     font-family: monospace;
     font-size: 20px;
+    margin-top: 1rem;
 }
 #input{
     height: 7%;
     display: grid;
     grid-template-columns: 70% 30%;
-    margin: 8px 16px;
     border-radius: 32px;
     background: linear-gradient(#ececee 50%, #1c1f46 50%);
     box-shadow: inset 0 1px 0 #777;
 }
 
-#text{
+#text {
     outline: none;
-    font-size: 20px;
+    font-size: 17px;
     background: #ececee;
     color: #333;
-    padding: 0 16px;
+    padding: 0px 9px;
     border: solid 1px #777;
     border-right: none;
 }
 #send{
-    outline: none;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
     font-size: 20px;
-    background: #1c1f46;
+    background: var(--colorOrange2);
     border: none;
-    border-radius: 32px;
     transition-duration: 0.2;
+    display: flex;
 }
 #send:active{
     font-size: 16px;
@@ -76,10 +85,12 @@
     max-width: 60%;
     padding: 14px;
     word-wrap: break-word;
+    font-weight: 300;
+
 }
 .izquierdMesna{
-    color: #000;
-    background: #b3bfca;
+    color: #fff;
+    background: #3e3e3e;
     border-radius: 0 16px 16px 16px;
     margin-bottom: 1rem;
 }
@@ -87,9 +98,11 @@
     display: flex;
     justify-content: end;
     background: #b3bfca;
-    border-radius: 0 16px 16px 16px;
+    border-radius: 16px 0px 16px 16px;
     margin-bottom: 1rem;
     color: var(--colorBlack);
+    margin-left: 9rem;
+    width: auto;
 }
 
 .msgCon1, .msgCon2{

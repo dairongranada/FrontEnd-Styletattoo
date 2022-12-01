@@ -69,6 +69,21 @@ export const userUpdate = async ( valores,id ) => {
     }
 }
 
+export const BuscarUserEmail = async ( ) => {
+
+    try {
+        const resp = await axios({
+            url: URL+"auth/allUsers/",
+            method: "GET",
+            headers: {
+                "Content-Type":"application/json"}
+        })
+        return resp;
+    } catch (error) {
+    }
+}
+
+
 
 
 

@@ -6,38 +6,64 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Formik, Form, Field } from 'formik';
 import { NavigationBar } from '.././NavigationBar/NavigationBar';
 import { NavFooter } from '.././NavigationFooter/NavFooter/NavFooter';
-import { CambiarContraseña } from '../../.././Helpers/ApiConsumer/PostUsers'
+import { CambiarContraseña,BuscarUserEmail } from '../../.././Helpers/ApiConsumer/PostUsers'
+
 
 
 
 export const RecoveryP = () => {
+
+
     const [first, setfirst] = useState("true")
     const [Second, setSecond] = useState(false)
+
     const [contcodigo, setcontcodigo] = useState()
     const [validarCodigo, setvalidarCodigo] = useState()
 
     const [active, setActive] = useState(0);
 
 
+    /* Caputurar Email */
+    const [contEmail, setcontEmail] = useState()
+    /*GuardarEmail Desde la api */
+    const [ApiSaveEmail, setApiSaveEmail] = useState()
+    const [ApiSavePassword, setApiSavePassword] = useState()
+
+
+
     // GENERAR CODIGO DE VERIFICACION DE CORREO 
     let CodigoParaEmail
 
     useEffect(() => {
-        function getRandomInt(min, max) {
-            return Math.floor(Math.random() * (max - min) + min);
-        }
+        function getRandomInt(min, max) {return Math.floor(Math.random() * (max - min) + min)}
         CodigoParaEmail = (getRandomInt(111111, 99999))
         setvalidarCodigo(CodigoParaEmail)
+
+        BuscarUserEmail()
+        .then( info => setApiSaveEmail( info.data ));
+
+
     }, [])
 
-    console.log(validarCodigo)
+
+
+
+
+    const CapValuesEmail = (e) => { 
+        setcontEmail(e.target.value)
+
+        const VarEmail = ApiSaveEmail.filter(data => data.email.includes(contEmail))
+        setApiSavePassword(VarEmail[0].password)
+    
+    }
+
+    console.log(ApiSavePassword);
 
 
 
 
     const sendEmail = (event) => {
         event.preventDefault();
-
 
         /// ALERTA CHIMBA
         emailjs.sendForm('service_2ubfxp4', 'template_kw2sbzv', event.target, 'xn_UfOyxzbh71P4TH')
@@ -46,14 +72,15 @@ export const RecoveryP = () => {
                 setfirst("false"))
             )
     }
+
+
+
     const CapValues = (e) => { setcontcodigo(e.target.value) }
 
-    console.log(contcodigo);
     const validacionCodigo = () => {
         if (contcodigo == validarCodigo) {
             setSecond(true)
             setfirst("destroy")
-            console.log("El codigo es verdadero");
         }
         if (contcodigo != validarCodigo) {
             toast.error('Error: Tu codigo es incorrecto', {
@@ -79,10 +106,12 @@ export const RecoveryP = () => {
                     theme: "light",
                 });
             }, 2000);
-
-
         }
     }
+
+
+
+
 
 
 
@@ -97,7 +126,7 @@ export const RecoveryP = () => {
                         <form className='FormRecovery' onSubmit={sendEmail} >
                             <div className="field">
                                 <input className="input-codigo" name="codigo" type="text" value={validarCodigo} />
-                                <input autoComplete="off" id="logemail" placeholder="Email" className="input-field" name="logemail" type="email" />
+                                <input onChange={CapValuesEmail} autoComplete="off" id="logemail" placeholder="Email" className="input-field" name="logemail" type="email" />
                             </div>
                             <button className="buttons_global_StyleTatto" type="submit">Enviar</button>
                         </form>

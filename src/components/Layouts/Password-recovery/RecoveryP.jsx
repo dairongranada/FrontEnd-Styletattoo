@@ -122,7 +122,7 @@ export const RecoveryP = () => {
             <div className='ContentcARDrECOVERYpASS'>
                 {first == "true" &&
                     <div className="cardRecoveryP">
-                        <h4 className="title">Recuperar Contraseña </h4>
+                        <h4 className="titleRECO">Recuperar Contraseña </h4>
                         <p className='TextParrafo'>Por favor introduce tu correo electrónico<br /> para recuperar tu contraseña</p>
                         <form className='FormRecovery' onSubmit={sendEmail} >
                             <div className="field">
@@ -135,7 +135,7 @@ export const RecoveryP = () => {
                 }
                 {first == "false" &&
                     <div className="cardRecoveryP">
-                        <h4 className="title">Recuperar Contraseña </h4>
+                        <h4 className="titleRECO">Recuperar Contraseña </h4>
                         <p className='TextParrafo'>Por favor introduce el codigo<br /> Que enviamos a tu Correo</p>
                         <form className='FormRecovery' >
                             <div className="field">
@@ -147,7 +147,7 @@ export const RecoveryP = () => {
                 }
                 {Second == true &&
                     <div className="cardRecoveryP">
-                        <h4 className="title">Recuperar Contraseña </h4>
+                        <h4 className="titleRECO">Recuperar Contraseña </h4>
                         <Formik
                             initialValues={{
                                 new_password: '',

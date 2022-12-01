@@ -280,7 +280,7 @@ export const InfoProfileT = () => {
               initialValues={{
                 img: "",
                 like: 0,
-                departament: "",
+                departament: "Quindio",
                 municipio: "",
                 direction: "",
                 experience: "",

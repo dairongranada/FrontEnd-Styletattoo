@@ -1,8 +1,19 @@
 import React, { useEffect } from 'react'
+import { useState } from 'react'
 import './Bot.scss'
 
 
 export const Bot = () => {
+
+
+  const [openChat, setOpenchat] = useState('ocultarBot')
+
+
+  const OpenchatStyleBotC =()=> {
+    setOpenchat('mostrarBot')
+  }
+
+
 
   useEffect(()=> {
     let res_msg = document.createElement('div')
@@ -102,22 +113,32 @@ export const Bot = () => {
 
 
   return (
-    <div id='ContChatWinmain'>
-      <h2 className='TittleChatB'>Style Bot</h2>
-      <div id='msg_area'>
-        <div id='robot'>
-          <div id='bot'></div>
-          <h3 id='ChatBotAco'>StyleBot</h3>
+    <>
+      <div id={`${openChat}`}></div>
+        <div id='ContChatWinmain'>
+          <h2 className='TittleChatB'>Style Bot</h2>
+          <div id='msg_area'>
+            <div id='robot'>
+              <div id='bot'></div>
+              <h3 id='ChatBotAco'>StyleBot</h3>
+
+            </div>
+
+          </div>
+
+          <div id='input'>
+            <input type="text" placeholder='Escribe un mensaje' id='text'/>
+            <button onClick={Fasynyc} id='send'>Enviar <span class="material-symbols-outlined"> send </span></button>
+          </div>
 
         </div>
 
-      </div>
 
-      <div id='input'>
-        <input type="text" placeholder='Escribe un mensaje' id='text'/>
-        <button onClick={Fasynyc} id='send'>Enviar <span class="material-symbols-outlined"> send </span></button>
-      </div>
 
-    </div>
+        <div onClick={OpenchatStyleBotC} className='OpenchatStylebot'>
+
+        </div>
+
+    </>
   )
 }

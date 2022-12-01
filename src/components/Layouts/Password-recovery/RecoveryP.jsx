@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Formik, Form, Field } from 'formik';
 import { NavigationBar } from '.././NavigationBar/NavigationBar';
 import { NavFooter } from '.././NavigationFooter/NavFooter/NavFooter';
-import { RecuperarContraseña,BuscarUserEmail } from '../../.././Helpers/ApiConsumer/PostUsers'
+import { RecuperarContraseña ,BuscarUserEmail } from '../../.././Helpers/ApiConsumer/PostUsers'
 
 
 
@@ -35,12 +35,12 @@ export const RecoveryP = () => {
     let CodigoParaEmail
 
     useEffect(() => {
-        function getRandomInt(min, max) {return Math.floor(Math.random() * (max - min) + min)}
+        function getRandomInt(min, max) { return Math.floor(Math.random() * (max - min) + min) }
         CodigoParaEmail = (getRandomInt(111111, 99999))
         setvalidarCodigo(CodigoParaEmail)
 
         BuscarUserEmail()
-        .then( info => setApiSaveEmail( info.data ));
+            .then(info => setApiSaveEmail(info.data));
 
 
     }, [])
@@ -49,15 +49,16 @@ export const RecoveryP = () => {
 
 
 
-    const CapValuesEmail = (e) => { 
+    const CapValuesEmail = (e) => {
         setcontEmail(e.target.value)
 
         const VarEmail = ApiSaveEmail.filter(data => data.email.includes(contEmail))
         setApiSavePassword(VarEmail[0].password)
-    
+
     }
 
     console.log(ApiSavePassword);
+
 
 
 
@@ -150,7 +151,7 @@ export const RecoveryP = () => {
                         <Formik
                             initialValues={{
                                 new_password: '',
-                                confirm_password: ''
+                                confirm_password: '',
                             }}
 
                             //validaciones de cambio de contraseñas
@@ -164,11 +165,17 @@ export const RecoveryP = () => {
                                     if (val.confirm_password !== val.new_password) {
                                         setActive(0)
                                     }
-                                    else {setActive(1)}
+                                    else { setActive(1) }
                                 }
                             }}
 
-                            onSubmit={() => {
+                            onSubmit={(valores) => {
+
+                                RecuperarContraseña({
+                                    old_password: ApiSavePassword,
+                                    new_password: valores.new_password,
+                                })
+
                                 toast.success('Tu contraseña ha sido cambiada', {
                                     position: "top-right",
                                     autoClose: 5000,
@@ -179,17 +186,16 @@ export const RecoveryP = () => {
                                     progress: undefined,
                                     theme: "light",
                                 })
-                                setTimeout(function () {
-                                    window.location = "/IngresarSesion";
-                                }, 2500);
+                                // setTimeout(function () {
+                                //     window.location = "/IngresarSesion";
+                                // }, 2500);
                             }}
                         >
 
                             <Form className='FormRecovery' >
-                                <div style={{marginTop: "1.2rem"}} className='ContentBoxtext'>
+                                <div style={{ marginTop: "1.2rem" }} className='ContentBoxtext'>
                                     <Field name='new_password' className='TheTextBox' required type="password" placeholder='Cambia tu contraseña' />
                                 </div>
-
                                 <div className='ContentBoxtext'>
                                     <Field name='confirm_password' className='TheTextBox' required type="password" placeholder='Cambia tu contraseña' />
                                 </div>

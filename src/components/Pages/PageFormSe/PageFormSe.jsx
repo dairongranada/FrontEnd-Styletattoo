@@ -66,6 +66,7 @@ export const PageFormSe = () => {
 
                                         let rol = info.data.info.rol;
                                         localStorage.setItem("token", token);
+                                        localStorage.setItem("tokenContraseña", token);
                                         localStorage.setItem("TokenAcces", TokenAcet);
                                         localStorage.setItem("InfoUser", JSON.stringify(InfoUser));
                                         localStorage.setItem("usuario", JSON.stringify(parseJwt(tokenInfo, rol, TokenAcet)));

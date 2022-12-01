@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Formik, Form, Field } from 'formik';
 import { NavigationBar } from '.././NavigationBar/NavigationBar';
 import { NavFooter } from '.././NavigationFooter/NavFooter/NavFooter';
-import { CambiarContraseña,BuscarUserEmail } from '../../.././Helpers/ApiConsumer/PostUsers'
+import { RecuperarContraseña,BuscarUserEmail } from '../../.././Helpers/ApiConsumer/PostUsers'
 
 
 
@@ -196,7 +196,6 @@ export const RecoveryP = () => {
                                 <div className='ContentBoxButtonConfirm'>
                                     <button id={`${active === 0 && "btnBlocked"}`} type='sumbit' className='buttons_global_StyleTatto'>Guardar</button>
                                 </div>
-
                             </Form>
 
                         </Formik>

@@ -109,3 +109,26 @@
     width: 100%;
     display: inline-block;
 }
+
+
+/*mostrar y ocultar*/
+
+#ocultarBot{
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    top: -200rem;
+}
+#mostrarBot{
+    top: 1rem;
+    display: flex;
+}
+.OpenchatStylebot{
+    width: 30%;
+    height: 30%;
+    background-image: url('../../images/Icons/icoo.ico');
+    position: fixed;
+    z-index: 999;
+    right: 10rem;
+}

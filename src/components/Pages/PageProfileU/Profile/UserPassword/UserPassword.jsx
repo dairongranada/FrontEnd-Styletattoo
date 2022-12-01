@@ -34,14 +34,26 @@ export const UserPassword = () => {
 
 
 const handleLogout = () => {
-  localStorage.removeItem("token");
   localStorage.removeItem("usuario");
   localStorage.removeItem("InfoUser");
   window.location = "/IngresarSesion";
 }
 
 
+const sendEmail = (event)=>{
+  event.preventDefault();
+  /// ALERTA CHIMBA
+emailjs.sendForm('service_2ubfxp4','template_kw2sbzv',event.target,'xn_UfOyxzbh71P4TH')
+  .then(response => console.log(response))
 
+ setTimeout(() => {
+      window.location.reload(false);
+  }, 2000);
+  
+}
+const [InfoUser, setInfoUserUser] = useState(JSON.parse(localStorage.getItem("InfoUser")));
+
+console.log(InfoUser.email);
   return (
     <>
     <NavigationBar/>
@@ -125,6 +137,7 @@ const handleLogout = () => {
                 >
 
               <Form >
+              
                 <div className='ContentBoxtext'>
                   <label className='label_global_style'>Contraseña Antigua</label>
                   <Field name='old_password' className='TheTextBox' type="password" placeholder='Escribe tu contraseña' /> 
@@ -144,12 +157,20 @@ const handleLogout = () => {
                   <Field id='block' name='first_name' value={firstmane} />
                   <Field id='block'  name='last_name' value={lastname} />
                 </div>
-
+                
                 <div className='ContentBoxButtonConfirm'>
                   <button id={`${ active === 0 && "btnBlocked" }`}  type='sumbit' className='ButtonConfirmDates'>Guardar</button>
                 </div>
+               
               </Form>
+             
             </Formik>
+            {/* <form onSubmit={sendEmail} >
+              <div className='ContentBoxtext2'>
+                  <label className='label_global_style2'>tu email</label>
+                  <input autocomplete="off"  name='logemail' className='TheTextBox2' value={InfoUser.email}  />
+                </div>
+                </form> */}
           </div>
 
         </div>

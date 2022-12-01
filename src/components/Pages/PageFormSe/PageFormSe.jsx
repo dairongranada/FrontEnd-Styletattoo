@@ -66,6 +66,7 @@ export const PageFormSe = () => {
 
                                         let rol = info.data.info.rol;
                                         localStorage.setItem("token", token);
+                                        localStorage.setItem("tokenContraseña", token);
                                         localStorage.setItem("TokenAcces", TokenAcet);
                                         localStorage.setItem("InfoUser", JSON.stringify(InfoUser));
                                         localStorage.setItem("usuario", JSON.stringify(parseJwt(tokenInfo, rol, TokenAcet)));
@@ -179,7 +180,7 @@ export const PageFormSe = () => {
                                 <button type='submit' className="buttons_global_StyleTatto">Iniciar sesión</button>
                             </div>
                             <div className="questions">
-                                <Link to="#"> ¿Has olvidado tu contraseña? </Link>
+                                <Link to="/Password-recovery"> ¿Has olvidado tu contraseña? </Link>
                                 <Link to="/Registro">¿No tienes una Cuenta?</Link>
                             </div>
                         </Form>

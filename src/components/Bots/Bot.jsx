@@ -24,7 +24,7 @@ export const Bot = () => {
 
   useEffect(()=> {
     let res_msg = document.createElement('div')
-    res_msg.innerHTML = `<p>Hola! soy Style Bot, ¿puedo ayudarte en algo</p>`
+    res_msg.innerHTML = `<p>Hola! soy Style Bot, ¿puedo ayudarte en algo?</p>`
     res_msg.setAttribute("class","izquierdMesna")
 
     document.getElementById('msg_area').appendChild(res_msg)

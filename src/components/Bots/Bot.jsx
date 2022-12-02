@@ -9,13 +9,17 @@ export const Bot = () => {
   const [openChat, setOpenchat] = useState('ocultarBot')
   const [upBot, setUpbot] = useState()
 
-
+  /* abrir chat con style bot */
   const OpenchatStyleBotC =()=> {
     setOpenchat('mostrarBot')
     setUpbot('Upbot')
   }
 
-
+  /* cerrar chat con style bot */
+  const closeChatStyleBotC =()=> {
+    setOpenchat('ocultarBot')
+    setUpbot('OpenchatStylebot')
+  }
 
 
   useEffect(()=> {
@@ -145,7 +149,7 @@ export const Bot = () => {
     <>
       <div className={`ContentBackOpenChat ${openChat}`}>
         <div id='ContChatWinmain' >
-          <h2 className='TittleChatB'>Style Bot</h2>
+          <h2 className='TittleChatB'>Style Bot <span onClick={closeChatStyleBotC} id="IconCloseChatBot" className="material-symbols-outlined"> cancel </span></h2>
           <div id='msg_area'>
             <div id='robot'>
               <div id='bot'></div>

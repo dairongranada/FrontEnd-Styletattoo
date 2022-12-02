@@ -20,6 +20,14 @@
     border-radius: 15px 15px 0px 0px;
     font-family: 'Amatic SC';
     font-size: 59px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#IconCloseChatBot{
+    position: absolute;
+    transform: translate(15rem, -1rem);
+    cursor: pointer;
 }
 #msg_area {
     height: 82%;
@@ -138,9 +146,12 @@
     position: fixed;
     z-index: 999;
     right: 11px;
-    bottom: 1px;
+    bottom: -0.6rem;
     background-image: url('https://cdn-icons-png.flaticon.com/512/4712/4712010.png');
     background-size: 100%;
+    transition: 0.5s;
+    transform: translateY(-10px);
+    transition-delay: 0s, 0.5s, 0.5s;
 }
 .Upbot{
     width: 80px;

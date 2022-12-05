@@ -44,8 +44,9 @@
     transition: 6.5s;
 }
 .CardArtist span::before{
+    font-family: 'Amatic SC';
     content: 'Mas Destacado';
-    font-size: 13px;
+    font-size: 22px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,24 +57,18 @@
     transform: rotate(-45deg) translateY(-20px);
     text-transform: uppercase;
     color: #000;
-    letter-spacing: .01em;
+    letter-spacing: 0.1rem;
     box-shadow: 0 5px 10px rgb(0, 0, 0, 0.1);
 }
-.CardArtist span::after{
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 10px;
-    height: 10px;
-    z-index: -1;
-}
+
+
 .CardArtist .PosterTatuador{
     position: relative;
     overflow: hidden;
     height: 100%;
     overflow: hidden;
     border-radius: 20px;
+    transition: 1s;
 }
 .CardArtist .PosterTatuador::before{
     content: '';
@@ -88,6 +83,7 @@
 .CardArtist:hover .PosterTatuador::before{
     bottom: 0px;
 }
+
 .CardArtist .PosterTatuador img{
     width: 100%;
     height: 100%;
@@ -95,7 +91,7 @@
 }
 .CardArtist:hover .PosterTatuador img{
     transform: translateY(-50px);
-    filter: blur(5px)
+    filter: blur(1px);
 }
 
 .CardArtist .detailsCard{

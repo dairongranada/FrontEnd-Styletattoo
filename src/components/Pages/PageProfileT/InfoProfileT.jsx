@@ -472,7 +472,7 @@ export const InfoProfileT = () => {
                 <div className="contInfoUserBoxes">
                   <div className="SelectContent">
                     <div>
-                      <button className="buttonUpWorks">
+                      <button id={`${imgUrl1 && "ColorbuttonUpWorks"}`} className="buttonUpWorks">
                         <div className="iconUpWorsInp">
                           {!imgUrl1 &&
                             <span className="material-symbols-outlined"> image </span>
@@ -480,14 +480,13 @@ export const InfoProfileT = () => {
                           {imgUrl1 &&
                             <span class="material-symbols-outlined"> check_circle </span>
                           }
-
                         </div>
                         <p>Sube un trabajo</p>
                       </button>
                       <Input onChange={uploadImage} required className='selectIorWrkos' type='file' name="img1" />
                     </div>
                     <div>
-                      <button className="buttonUpWorks">
+                    <button id={`${imgUrl2 && "ColorbuttonUpWorks"}`} className="buttonUpWorks">
                         <div className="iconUpWorsInp">
                           {!imgUrl2 &&
                             <span className="material-symbols-outlined"> image </span>
@@ -504,7 +503,7 @@ export const InfoProfileT = () => {
                   <div className="SelectContent">
                     <div>
 
-                      <button className="buttonUpWorks">
+                    <button id={`${imgUrl3 && "ColorbuttonUpWorks"}`} className="buttonUpWorks">
                         <div className="iconUpWorsInp">
                           {!imgUrl3 &&
                             <span className="material-symbols-outlined"> image </span>
@@ -519,7 +518,7 @@ export const InfoProfileT = () => {
 
                     </div>
                     <div>
-                      <button className="buttonUpWorks">
+                    <button id={`${imgUrl4 && "ColorbuttonUpWorks"}`} className="buttonUpWorks">
                         <div className="iconUpWorsInp">
                           {!imgUrl4 &&
                             <span className="material-symbols-outlined"> image </span>
@@ -538,7 +537,7 @@ export const InfoProfileT = () => {
                     <div style={{ width: "100%", textAlign: "center", marginBottom: "5px" }}>
                       <div className='ContUltInpWorkUp' style={{ height: "40px", marginTop: "5px", color: "white" }} >
 
-                        <button style={{ width: "100%",}} id='AnchButtonULwok' className="buttonUpWorks">
+                        <button style={{ width: "100%",}} id={`${imgUrl5 && "ColorbuttonUpWorks"}`} className="buttonUpWorks">
                           <div className="iconUpWorsInp">
                             {!imgUrl5 &&
                               <span className="material-symbols-outlined"> image </span>

@@ -344,6 +344,10 @@
    
 
 /*  C L A S E    G L O B A L    P A R A    B O T O N */
+#ColorbuttonUpWorks{
+  background-color: var(--colorOrange2);
+  color: rgb(0, 0, 0);
+}
 
 .buttonUpWorks {
   cursor: pointer;
@@ -351,7 +355,6 @@
   justify-content: center;
   align-items: center;
   font-family: inherit;
-  background: var(--colorWhite);
   color: var(--colorBlack);
   padding: 0.35em 0;
   font-size: 17px;

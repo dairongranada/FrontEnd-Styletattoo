@@ -414,6 +414,7 @@ export const InfoProfileT = () => {
                 <h3 style={{ textAlign: "center", fontSize: "40px" }} >Sube tus trabajos aqui</h3>
               </div>
             </div>
+            <div style={{width:"100%",height:"1px", color:"var(--colorOrange2)"  }} id='ColorbuttonUpWorks' ></div>
             <Formik
               initialValues={{
                 img1: "",

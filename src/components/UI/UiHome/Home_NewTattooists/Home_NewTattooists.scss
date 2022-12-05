@@ -44,8 +44,9 @@
     transition: 6.5s;
 }
 .CardArtist span::before{
+    font-family: 'Amatic SC';
     content: 'Mas Destacado';
-    font-size: 13px;
+    font-size: 22px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,7 +57,7 @@
     transform: rotate(-45deg) translateY(-20px);
     text-transform: uppercase;
     color: #000;
-    letter-spacing: .01em;
+    letter-spacing: 0.1rem;
     box-shadow: 0 5px 10px rgb(0, 0, 0, 0.1);
 }
 .CardArtist span::after{

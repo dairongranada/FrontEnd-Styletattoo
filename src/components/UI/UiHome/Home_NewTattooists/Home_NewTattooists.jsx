@@ -61,7 +61,9 @@ export const Home_NewTattooists = () => {
 
                     <div className="CardArtist">
                         <div className="PosterTatuador">
-                            <span></span>
+                            {(dat.iDispo[0].like >= 1) &&                            
+                                <span></span>
+                            }
                             <img src={dat.PerfilProfesional[0].img} alt="..." />
                         </div>
                         <div className="detailsCard">

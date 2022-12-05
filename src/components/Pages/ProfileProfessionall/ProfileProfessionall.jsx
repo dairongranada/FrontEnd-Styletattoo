@@ -77,7 +77,7 @@ export const ProfileProfessionall = () => {
     theme: "light",
   });
 
-  const notifyTattoCitasParaAg = () => toast.warn('Tu cita ah sido registrada con exito', {
+  const notifyTattoCitasParaAg = () => toast.success('Tu cita ah sido registrada con exito', {
     position: "top-right",
     autoClose: 5000,
     hideProgressBar: false,
@@ -440,6 +440,23 @@ const reloaForm = () => {
                           value={InfoUser.email}
                         />
                     </div>
+                    <div style={{ display: "none"}} >
+                        <label style={{ fontWeight: "100" }}>Ingresa la hora</label>
+                        <input
+                          className='inputsCitas'
+                          name="first_name"
+                          type="text"
+                         value={InfoUser.first_name}
+                        />
+                        <input
+                          className='inputsCitas'
+                          name="last_name"
+                          type="text"
+                          value={InfoUser.last_name}
+                        />
+                        
+                      </div>
+                    
 
                     <div className="inputContentCitas">
 

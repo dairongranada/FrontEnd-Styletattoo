@@ -34,23 +34,13 @@ export const UserPassword = () => {
 
 
 const handleLogout = () => {
+  localStorage.removeItem("token");
   localStorage.removeItem("usuario");
   localStorage.removeItem("InfoUser");
   window.location = "/IngresarSesion";
 }
 
 
-const sendEmail = (event)=>{
-  event.preventDefault();
-  /// ALERTA CHIMBA
-emailjs.sendForm('service_2ubfxp4','template_kw2sbzv',event.target,'xn_UfOyxzbh71P4TH')
-  .then(response => console.log(response))
-
- setTimeout(() => {
-      window.location.reload(false);
-  }, 2000);
-  
-}
 const [InfoUser, setInfoUserUser] = useState(JSON.parse(localStorage.getItem("InfoUser")));
 
 console.log(InfoUser.email);
@@ -165,12 +155,6 @@ console.log(InfoUser.email);
               </Form>
              
             </Formik>
-            {/* <form onSubmit={sendEmail} >
-              <div className='ContentBoxtext2'>
-                  <label className='label_global_style2'>tu email</label>
-                  <input autocomplete="off"  name='logemail' className='TheTextBox2' value={InfoUser.email}  />
-                </div>
-                </form> */}
           </div>
 
         </div>

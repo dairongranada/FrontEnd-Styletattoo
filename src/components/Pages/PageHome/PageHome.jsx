@@ -39,27 +39,7 @@ export const PageHome = () => {
             <Home_MainView/>
             <Home_NewTattooists/>
             <Home_Services/>
-            <div className='EquOFDev'><h3>Equipo de desarrollo</h3></div>
-            <div className='ContentNosotros'>
-            {searchTattoo.map((Nosotros, index) => {
-                return <div className="card-Nosotros"  key={Nosotros.id}>
-                    <div className="card-img" key={index}>
-                        <img src={Nosotros.image} alt={Nosotros.image} />
-                    </div>
-                    <ul className="social-media">
-                        {/* <li><a href={Nosotros.gitHub}><i class='bx bxl-facebook-circle'></i></a></li> */}
-                        <li><a href={Nosotros.insta}><i className='bx bxl-instagram' ></i></a></li>
-                        <li><a href={Nosotros.gitHub}><i className='bx bxl-github' ></i></a></li>
-                    </ul>
-                    <div className="card-info">
-                        <p className="title">{Nosotros.name}</p>
-                        <p style={{color: "var(--colorOrange2)"}} className="subtitle">{Nosotros.rol}</p>
-                    </div>
-                </div>
-        
-            })}
-
-            </div>    
+            
         </div>
         <NavFooter/>
         </>

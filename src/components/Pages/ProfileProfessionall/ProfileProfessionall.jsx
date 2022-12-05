@@ -53,7 +53,7 @@ export const ProfileProfessionall = () => {
     theme: "light",
   });
 
-  const notifyTatto = () => toast.warn('Ups, No puedes darte Like tu mismo', {
+  const notifyTatto = () => toast.warn('Ups, Tu rol como artista no permite dar like', {
     position: "top-right",
     autoClose: 5000,
     hideProgressBar: false,

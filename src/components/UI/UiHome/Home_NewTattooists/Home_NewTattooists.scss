@@ -31,6 +31,43 @@
     border-radius: 20px;
     box-shadow: 0 15px 35px rgba(0,0,0,0.25);
 }
+.CardArtist span{
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: 6.5s;
+}
+.CardArtist span::before{
+    content: 'Mas Destacado';
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 150%;
+    height: 40px;
+    background: var(--colorOrange2);
+    transform: rotate(-45deg) translateY(-20px);
+    text-transform: uppercase;
+    color: #000;
+    letter-spacing: .01em;
+    box-shadow: 0 5px 10px rgb(0, 0, 0, 0.1);
+}
+.CardArtist span::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 10px;
+    height: 10px;
+    z-index: -1;
+}
 .CardArtist .PosterTatuador{
     position: relative;
     overflow: hidden;

@@ -555,7 +555,7 @@ export const InfoProfileT = () => {
                     </div>
                   </div>
                   <div>
-                    <button style={{ width: "100%", textAlign: "center" }} type='submit' className='buttons_global_StyleTatto'>Crear Perfil</button>
+                    <button style={{ width: "100%", textAlign: "center" }} type='submit' className='buttons_global_StyleTatto'>SUBIR TRABAJOS</button>
                   </div>
                 </div>
               </Form>

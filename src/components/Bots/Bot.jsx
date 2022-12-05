@@ -61,7 +61,7 @@ export const Bot = () => {
     else if( req == si){
 
       let res_msg = document.createElement('div')
-      res_msg.innerHTML = `<p>Dime en que puedo ayudarte segun la siguiente lista: </p>
+      res_msg.innerHTML = `<p>Dime en que puedo ayudarte segun la siguiente lista (Responde con el numero de la opcion que necesitas): </p>
                             <p>1) como subir mis trabajos,</p> 
                             <p>2) como agendar una cita,</p> 
                             <p>3) como recupero mi contraseña</p>`

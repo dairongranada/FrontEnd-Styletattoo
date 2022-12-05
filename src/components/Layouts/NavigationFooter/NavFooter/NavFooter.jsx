@@ -30,6 +30,10 @@ export const NavFooter = (widthStyle) => {
                             <a href="/all/artist/style"><span className="material-symbols-outlined"> recent_actors </span></a>
                             <span><a href="/all/artist/style">Artistas</a></span> 
                         </div>
+                        <div className="place">
+                            <a href="/"><span className="material-symbols-outlined"><i className='bx bx-user' ></i></span></a>
+                            <span><a href="/">Acerca de nosotros</a></span> 
+                        </div>
                     </div>
                 </div>
                 <NavAboutUsFooter NameAbout='Sugerencias' classSpanLogo='material-symbols-outlined' NameSpanLogo='mark_email_unread'/> 

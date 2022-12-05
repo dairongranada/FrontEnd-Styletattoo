@@ -186,9 +186,9 @@ export const RecoveryP = () => {
                                     progress: undefined,
                                     theme: "light",
                                 })
-                                // setTimeout(function () {
-                                //     window.location = "/IngresarSesion";
-                                // }, 2500);
+                                setTimeout(function () {
+                                    window.location = "/IngresarSesion";
+                                }, 2500);
                             }}
                         >
 

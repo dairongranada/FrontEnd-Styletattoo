@@ -4,7 +4,7 @@ import './citas.scss'
 import './Estrellas.scss'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import axios from "axios";
 import { getAllTatuadoresID, MetodoPUTLikes, MetodoGETLikes } from '../../../Helpers/ApiConsumer/Tattuadores'
 
 import { Formik, Form, Field } from 'formik';
@@ -64,6 +64,8 @@ export const ProfileProfessionall = () => {
     theme: "light",
   });
 
+
+
   const notifyTattoCitas = () => toast.warn('Inicia sesion como usuario para poder usar esta funcion', {
     position: "top-right",
     autoClose: 5000,
@@ -74,6 +76,18 @@ export const ProfileProfessionall = () => {
     progress: undefined,
     theme: "light",
   });
+
+  const notifyTattoCitasParaAg = () => toast.warn('Tu cita ah sido registrada con exito', {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+  });
+
 
 
 
@@ -213,20 +227,65 @@ export const ProfileProfessionall = () => {
     
   };
 
+  const [inputDate,setInputDate ] = useState("")
+  const valueDate = (e) => {
+    setInputDate(e.target.value);
 
-//   const sendEmail = (event)=>{
-//     event.preventDefault();
-//     // ALERTA CHIMBA
-//     toast.success('Se envio correctamente')
-//     emailjs.sendForm('service_6n0k3ay','template_jct8opt',event.target,'3shfZ5IuzLrmV8lcH')
-//     .then(response => console.log(response))
-//     .catch(err => console.error(err))
+  }
+  const [inputTime,setInputTime ] = useState("")
+  const valueTime = (e) => {
+    setInputTime(e.target.value);
+      
+  }
 
-//     setTimeout(() => {
-//         window.location.reload(false);
-//     }, 2000);
-    
-// }
+  const [inputDescription,setInputDescription ] = useState("")
+  const valueDescription = (e) => {
+    setInputDescription(e.target.value);
+      
+  }
+
+
+
+  const axiosfuntion = () =>{
+    axios.post('http://localhost:8000/quotes/', 
+        {
+          date: inputDate,
+          time: inputTime,
+          img: image2,
+          description: inputDescription,
+          userID: idTatu,
+          artist_tattoo: idTT,
+          isActive: "false",
+          userTatto: nameArtst  +" "+ lastArtst,
+          userName: InfoUser.first_name  +" "+ InfoUser.last_name,
+        })
+      .then(function (response) {
+        console.log(response);
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
+      notifyTattoCitasParaAg();
+}
+
+
+
+const sendEmail = (event) => {
+  event.preventDefault();
+
+  /// ALERTA CHIMBA
+  emailjs.sendForm('service_1n8igqi', 'template_fe15y1d', event.target, 'X8SzXW_IBwrAupBt3')
+      .then(response => (
+          console.log(response.status))
+      )
+}
+
+const reloaForm = () => {
+  document.getElementById('reloadFom').reset()
+}
+
   return (
     <>
       <NavigationBar />
@@ -344,118 +403,62 @@ export const ProfileProfessionall = () => {
           <div className="ContentHorarioBack">
             {/* <div className="loader"><span className="hour"></span><span className="min"></span><span className="circel"></span></div> */}
             <div style={{ marginLeft: "-4rem" }} className='Content_FormsPrincipal'>
-              <Formik
-                initialValues={{
-                  date: "",
-                  time: "",
-                  img: "",
-                  description: "",
-                }}
-
-                
-                onSubmit={(valores, { resetForm }) => {
-                  let validacion = {};
-
-                  AgendarCita({
-                    date: valores.date,
-                    time: valores.time,
-                    img: image2,
-                    description: valores.description,
-                    userID: idTatu,
-                    artist_tattoo: idTT,
-                    isActive: "false",
-                    userTatto: nameArtst  +" "+ lastArtst,
-                    userName: InfoUser.first_name  +" "+ InfoUser.last_name,
-                  }).then(info => {
-                    validacion = info
-                    setLoading(true);
-                    if (validacion.status === 400) {
-                      toast.warn('Tienes Capos sin llenar', {
-                        position: "top-right",
-                        autoClose: 5000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: "light",
-                      })
-
-                    }
-                    else if (validacion.status === 500) {
-                      toast.warn('Tienes Capos sin llenar', {
-                        position: "top-right",
-                        autoClose: 5000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: "light",
-                      })
-                    }
-                    else {
-                      setDuplicatedData(false);
-                      resetForm();
-                      setLoading(false);
-                      setRegistered(true);
-                      window.location = "/";
-                    }
-                  });
-
-
-                }}
-
-
-              >
-                {({ errors, touched }) => (
-                  <Form className='formCitas'>
+                  <form id="reloadFom" onSubmit={ (event )=>{
+                    sendEmail(event)
+                    reloaForm()
+                  }} 
+                  
+                  className='formCitas'>
                     <p  className="TitleCitasss" style={{fontFamily: 'Amatic SC',fontWeight: "500", margin:"1rem 0 2rem 0"}} >Agenda tu cita</p>
                     <div className="inputContentCitas">
                       <div>
                         <label style={{ fontWeight: "100" }}>Ingresa el dia</label>
-                        <Field
+                        <input
                           className='inputsCitas'
-                          name='date'
                           id='Date'
                           type="Date"
                           placeholder='Date'
+                          onChange={valueDate}
                         />
-                        {touched.name && errors.name && <span>{errors.name}</span>}
+                      
                       </div>
                       <div>
                         <label style={{ fontWeight: "100" }}>Ingresa la hora</label>
-                        <Field
+                        <input
                           className='inputsCitas'
-                          name='time'
                           id='Time'
                           type="Time"
+                          onChange={valueTime}
                         />
-                        {touched.last_name && errors.last_name && <span>{errors.last_name}</span>}
+                        
                       </div>
+                      <input
+                      style={{ display: "none"}}
+                          className='inputsCitas'
+                          name='logemail'
+                          type='email'
+                          value={InfoUser.email}
+                        />
                     </div>
 
                     <div className="inputContentCitas">
 
                       <div style={{ display: "flex", gap: ".5rem", flexDirection: "column", alignItems: "center" }}>
                         <label style={{ fontWeight: "100" }}>Muestrame tu idea</label>
-                          <Input onChange={uploadImage} name="img" type="file" id="btn-file" />
-                        {touched.email && errors.email && <span>{errors.email}</span>}
-
+                          <Input onChange={uploadImage} type="file" id="img" />
                       </div>
                     </div>
                     <div className="inputContentCitas">
                       <div>
                         <label style={{ fontWeight: "100" }}>Describe</label>
-                        <Field
+                        <textarea
+                          onChange={valueDescription}
                           className='inputsCitas'
-                          name='description'
                           id='Description'
-                          as="textarea"
                           placeholder='...'
                           maxLength='150'
                         />
-                        {touched.cellPhone && errors.cellPhone && <span>{errors.cellPhone}</span>}
+    
                       </div>
                     </div>
 
@@ -473,6 +476,7 @@ export const ProfileProfessionall = () => {
                     {(tokenID ) &&
                       (idTatu !== InfoUser && InfoUser.rol == "[ROLE_USUARIO]" ) &&
                           <button
+                          onClick={axiosfuntion}
                           className="buttons_global_StyleTatto"
                           type="submit">
                           Agenda Tu Cita
@@ -480,7 +484,7 @@ export const ProfileProfessionall = () => {
                       }
                       {(tokenID == null) &&
                         <p onClick={notify} className="buttons_global_StyleTatto"
-                          style={{ width: "22rem", cursor: "not-allowed" }}>
+                           style={{ width: "22rem", cursor: "not-allowed" }}>
                           Agenda Tu Cita
                         </p>
                       }{(tokenID ) &&
@@ -491,9 +495,8 @@ export const ProfileProfessionall = () => {
                         </p>
                       }
                     </div>
-                  </Form>
-                )}
-              </Formik>
+                  </form>
+
             </div>
           </div>
         </div>

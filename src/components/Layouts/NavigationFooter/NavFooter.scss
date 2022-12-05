@@ -99,6 +99,13 @@ footer {
                     text-decoration: underline;
 
                 }
+                a span i{
+
+                    color: var(--colorWhite);
+                }
+                a span i:hover{
+                    color:black 
+                }
             }
         }
     }

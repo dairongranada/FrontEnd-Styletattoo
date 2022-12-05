@@ -335,9 +335,6 @@ export const InfoProfileT = () => {
 
               <Form>
                 <div className="contInfoUserBoxes">
-
-
-
                   <div className="SelectContent">
                     <div>
                       <Field className='select' as="select" name="departament">
@@ -365,10 +362,10 @@ export const InfoProfileT = () => {
                   </div>
                   <div className="SelectContent">
                     <div>
-                      <Field autoComplete = 'off' className='inputProfile' placeholder='Ingresa Tu Expreciencia' type="number" name="experience" />
+                      <Field autoComplete='off' className='inputProfile' placeholder='Ingresa Tu Expreciencia' type="number" name="experience" />
                     </div>
                     <div>
-                      <Field autoComplete = 'off'  className='inputProfile' name='direction' required placeholder="Direccion" type="text" />
+                      <Field autoComplete='off' className='inputProfile' name='direction' required placeholder="Direccion" type="text" />
                     </div>
                   </div>
                   <div className="SelectContent">
@@ -381,7 +378,7 @@ export const InfoProfileT = () => {
 
                       <label style={{ fontSize: "12px", color: "#fffff9" }} htmlFor="">Añade una foto de perfil</label>
                       <div style={{ height: "40px", marginTop: "5px", marginBottom: "10px", color: "white" }} >
-  
+
                         <div className='ButtonBoxIntImgFp'>
                           <span className='MenssegeOrLetter'>Introduce una imagen</span><i className='ItheListOr'></i>
                           <input onChange={uploadImage} className='sapos' type="file" name="img" />
@@ -401,14 +398,20 @@ export const InfoProfileT = () => {
         </div>
       }
       {(abrir === 2) &&
-        <div style={{height: "86vh"}} className='FondBackGPp'>
+        <div style={{ height: "90vh" }} className='FondBackGPp'>
+
+          <div className='ImagenPorafolio'>
+            <div className="SecondContIconCMBPP">
+            </div>
+          </div>
+
           <div className='ModalBuildProfilep'>
             <div className='CloseBackProfileP'> <a href="/userTatto/edit-profile"><MdOutlineCancel /></a></div>
             <div className="contImgAndTittlear">
               <div className='ContIcontInMBPP'>
               </div>
               <div className="SecondContIconCMBPP">
-                <h3 style={{textAlign: "center", fontSize: "40px"}} >Sube tus trabajos aqui</h3>
+                <h3 style={{ textAlign: "center", fontSize: "40px" }} >Sube tus trabajos aqui</h3>
               </div>
             </div>
             <Formik
@@ -472,25 +475,25 @@ export const InfoProfileT = () => {
                       <button className="buttonUpWorks">
                         <div className="iconUpWorsInp">
                           {!imgUrl1 &&
-                           <span className="material-symbols-outlined"> image </span>
+                            <span className="material-symbols-outlined"> image </span>
                           }
                           {imgUrl1 &&
-                           <span class="material-symbols-outlined"> check_circle </span>
+                            <span class="material-symbols-outlined"> check_circle </span>
                           }
 
                         </div>
                         <p>Sube un trabajo</p>
                       </button>
-                      <Input  onChange={uploadImage} required className='selectIorWrkos' type='file' name="img1" />
+                      <Input onChange={uploadImage} required className='selectIorWrkos' type='file' name="img1" />
                     </div>
                     <div>
                       <button className="buttonUpWorks">
                         <div className="iconUpWorsInp">
                           {!imgUrl2 &&
-                           <span className="material-symbols-outlined"> image </span>
+                            <span className="material-symbols-outlined"> image </span>
                           }
                           {imgUrl2 &&
-                           <span class="material-symbols-outlined"> check_circle </span>
+                            <span class="material-symbols-outlined"> check_circle </span>
                           }
                         </div>
                         <p>Sube un trabajo</p>
@@ -502,12 +505,12 @@ export const InfoProfileT = () => {
                     <div>
 
                       <button className="buttonUpWorks">
-                      <div className="iconUpWorsInp">
+                        <div className="iconUpWorsInp">
                           {!imgUrl3 &&
-                           <span className="material-symbols-outlined"> image </span>
+                            <span className="material-symbols-outlined"> image </span>
                           }
                           {imgUrl3 &&
-                           <span class="material-symbols-outlined"> check_circle </span>
+                            <span class="material-symbols-outlined"> check_circle </span>
                           }
                         </div>
                         <p>Sube un trabajo</p>
@@ -517,12 +520,12 @@ export const InfoProfileT = () => {
                     </div>
                     <div>
                       <button className="buttonUpWorks">
-                      <div className="iconUpWorsInp">
+                        <div className="iconUpWorsInp">
                           {!imgUrl4 &&
-                           <span className="material-symbols-outlined"> image </span>
+                            <span className="material-symbols-outlined"> image </span>
                           }
                           {imgUrl4 &&
-                           <span class="material-symbols-outlined"> check_circle </span>
+                            <span class="material-symbols-outlined"> check_circle </span>
                           }
                         </div>
                         <p>Sube un trabajo</p>
@@ -532,18 +535,18 @@ export const InfoProfileT = () => {
                   </div>
 
                   <div className="SelectContent">
-                    <div style={{ width: "100%", textAlign: "center", marginTop: "5px", marginBottom: "5px" }}>
-                      <div className='ContUltInpWorkUp' style={{ height: "40px", marginTop: "5px", marginBottom: "10px", marginLeft: "60px", color: "white" }} >
+                    <div style={{ width: "100%", textAlign: "center", marginBottom: "5px" }}>
+                      <div className='ContUltInpWorkUp' style={{ height: "40px", marginTop: "5px", color: "white" }} >
 
-                        <button id='AnchButtonULwok' className="buttonUpWorks">
-                        <div className="iconUpWorsInp">
-                          {!imgUrl5 &&
-                           <span className="material-symbols-outlined"> image </span>
-                          }
-                          {imgUrl5 &&
-                           <span class="material-symbols-outlined"> check_circle </span>
-                          }
-                        </div>
+                        <button style={{ width: "100%",}} id='AnchButtonULwok' className="buttonUpWorks">
+                          <div className="iconUpWorsInp">
+                            {!imgUrl5 &&
+                              <span className="material-symbols-outlined"> image </span>
+                            }
+                            {imgUrl5 &&
+                              <span class="material-symbols-outlined"> check_circle </span>
+                            }
+                          </div>
                           <p>Sube un trabajo</p>
                           <Input onChange={uploadImage5} className='selectIorWrkosBottomUlW' type="file" name="img5" />
                         </button>

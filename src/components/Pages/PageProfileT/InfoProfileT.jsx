@@ -240,6 +240,7 @@ export const InfoProfileT = () => {
   let imgUrl5 = image5;
 
   let imgUrl = image;
+
   return (
     <>
       {(abrir === 0) &&
@@ -414,7 +415,7 @@ export const InfoProfileT = () => {
                 <h3 style={{ textAlign: "center", fontSize: "40px" }} >Sube tus trabajos aqui</h3>
               </div>
             </div>
-            <div style={{width:"100%",height:"1px", color:"var(--colorOrange2)"  }} id='ColorbuttonUpWorks' ></div>
+            <div style={{width:"100%",height:"1px", color:"#ffffff"  }} id='ColorbuttonUpWorks'></div>
             <Formik
               initialValues={{
                 img1: "",
@@ -476,13 +477,14 @@ export const InfoProfileT = () => {
                       <button id={`${imgUrl1 && "ColorbuttonUpWorks"}`} className="buttonUpWorks">
                         <div className="iconUpWorsInp">
                           {!imgUrl1 &&
-                            <span className="material-symbols-outlined"> image </span>
-                          }
-                          {imgUrl1 &&
-                            <span class="material-symbols-outlined"> check_circle </span>
-                          }
+                            <span className="material-symbols-outlined"> image </span>    
+                          }{imgUrl1 &&
+                            <span class="material-symbols-outlined"> check_circle </span>}
                         </div>
-                        <p>Sube un trabajo</p>
+
+                        {!imgUrl1 && <p>Sube un trabajo</p>}
+                        {imgUrl1 &&  <p>trabajo Cargado</p>}
+
                       </button>
                       <Input onChange={uploadImage} required className='selectIorWrkos' type='file' name="img1" />
                     </div>
@@ -496,7 +498,9 @@ export const InfoProfileT = () => {
                             <span class="material-symbols-outlined"> check_circle </span>
                           }
                         </div>
-                        <p>Sube un trabajo</p>
+                      
+                        {!imgUrl2 && <p>Sube un trabajo</p>}
+                        {imgUrl2 &&  <p>trabajo Cargado</p>}
                       </button>
                       <Input onChange={uploadImage2} required className='selectIorWrkos' type='file' name="img2" />
                     </div>
@@ -513,7 +517,8 @@ export const InfoProfileT = () => {
                             <span class="material-symbols-outlined"> check_circle </span>
                           }
                         </div>
-                        <p>Sube un trabajo</p>
+                        {!imgUrl3 && <p>Sube un trabajo</p>}
+                        {imgUrl3 &&  <p>trabajo Cargado</p>}
                       </button>
                       <Input onChange={uploadImage3} className='selectIorWrkos' placeholder='Ingresa Tu Expreciencia' type="file" name="img3" />
 
@@ -528,7 +533,8 @@ export const InfoProfileT = () => {
                             <span class="material-symbols-outlined"> check_circle </span>
                           }
                         </div>
-                        <p>Sube un trabajo</p>
+                        {!imgUrl4 && <p>Sube un trabajo</p>}
+                        {imgUrl4 &&  <p>trabajo Cargado</p>}
                       </button>
                       <Input onChange={uploadImage4} className='selectIorWrkos' name='img4' required placeholder="Direccion" type="file" />
                     </div>
@@ -547,7 +553,8 @@ export const InfoProfileT = () => {
                               <span class="material-symbols-outlined"> check_circle </span>
                             }
                           </div>
-                          <p>Sube un trabajo</p>
+                          {!imgUrl5 && <p>Sube un trabajo</p>}
+                        {imgUrl5 &&  <p>trabajo Cargado</p>}
                           <Input onChange={uploadImage5} className='selectIorWrkosBottomUlW' type="file" name="img5" />
                         </button>
 

@@ -1,6 +1,18 @@
 import React from 'react'
+import { useState } from 'react'
+import { Start } from '../.././Layouts/Start/Start'
+import { Start1 } from '../.././Layouts/Start/Start'
+import { Start2 } from '../.././Layouts/Start/Start'
+import { Start3 } from '../.././Layouts/Start/Start'
+import { Start4 } from '../.././Layouts/Start/Start'
+import { Start5 } from '../.././Layouts/Start/Start'
 
-export const CardTatuadores = ({id,image,first_name,last_name ,descripcion,departament,municipio}) => {
+export const CardTatuadores = ({like,id,image,first_name,last_name ,descripcion,departament,municipio}) => {
+
+    const [likeTattoist, setLikeTattoits] = useState(like)
+
+
+
   return (
         <>
             <div className="cardArtistptt">
@@ -15,11 +27,29 @@ export const CardTatuadores = ({id,image,first_name,last_name ,descripcion,depar
                          <p>{first_name} {last_name}</p>
                     </div>
                     <div className="rating">
-                        <span class="material-symbols-outlined">star</span>
-                        <span class="material-symbols-outlined">star</span>
-                        <span class="material-symbols-outlined">star</span>
-                        <span class="material-symbols-outlined">star</span>
-                        <span class="material-symbols-outlined">star</span>
+
+                        {(likeTattoist == 0) &&
+                            <Start/>
+                        }
+
+                        {(likeTattoist == 1) &&
+                            <Start1/>
+                        }
+                        {(likeTattoist == 2) &&
+                            <Start2/>
+                        }
+
+                        {(likeTattoist == 3) &&
+                            <Start3/>
+                        }
+
+                        {(likeTattoist == 4) &&
+                            <Start4/>
+                        }
+
+                        {(likeTattoist == 5) &&
+                            <Start5/>
+                        }
                     </div>
                     <div className='contentButtons'>
                         <div className="ButtonViewProfileApt">

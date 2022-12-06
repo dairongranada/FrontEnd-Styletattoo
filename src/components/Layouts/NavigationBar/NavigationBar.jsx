@@ -16,8 +16,8 @@ export const NavigationBar = () => {
     const [userData, setUserData] = useState({});
     
     useEffect(()=>{
-      let id = userToken.token.user_id;
-        if (userToken ) {
+        if (userToken) {
+          let id = userToken.token.user_id;
           getAllTatuadoresID(id)
             .then( data => setUserData(data.data));
         }else {
@@ -194,21 +194,40 @@ export const NavigationBar = () => {
                 (!userData.PerfilProfesional &&
                     <img src={userData.PerfilProfesional.img} alt={userData.PerfilProfesional.img} />
                 )
-              }{ (userToken.rol === null) && <li></li>}
-
+              }{ (userToken == null) && <li></li>}
               </div>
+
+
+
+              {(userToken ) && 
               <div className="name-job">
                 <div className="profile_name">
-                  { userData.first_name +" "+ userData.last_name }
+                {userData.first_name +" "+ userData.last_name }
+                  
                 </div>
                 <div className="job">
-                { (userData.rol === '[ROLE_USUARIO]') && <div className="job">| ROL: USUARIO  |</div>}
-                { (userData.rol === '[ROLE_ARTISTA]') && <div className="job">| ROL: ARTISTA  |</div>}
+                {userToken  && 
+                   (userData.rol === '[ROLE_USUARIO]') && <div className="job">| ROL: USUARIO  |</div>
+                }
+
+                {userToken  && 
+                 (userData.rol === '[ROLE_ARTISTA]') && <div className="job">| ROL: ARTISTA  |</div>
+                }
                 
                 </div>
               </div>
+              }
+              
+              { (!userToken == null ) && 
+              <div className="name-job"> </div>
+              }
+
+
+
               <i  onClick={handleLogout} style={{color:"#fff"}} className='bx bx-log-out' ></i>
             </div>
+            
+
           </li>
         </ul>
       </div>

@@ -124,7 +124,7 @@ export const NavigationBar = () => {
         { (userData.rol === '[ROLE_USUARIO]') &&
           <li>
             <div className="iocn-link">
-              <a href="/user/edit-profile">
+              <a  href="/user/edit-profile">
               <i className='bx bx-user' ></i>
                 <span className="link_name">Ver perfil</span>
               </a>
@@ -152,9 +152,8 @@ export const NavigationBar = () => {
           </li>
 
 
-
-          <li style={{marginTop:"20px"}}>
-            <a href="/infoTatuajes">
+          <li>
+            <a style={{height:"50px"}} href="/infoTatuajes">
               <img style={{width:"25px",marginLeft:"28px" }} src={Maquuina} alt={Maquuina} />
               <span style={{ marginLeft: "1.5rem"}} className="link_name">Tatuajes</span>
 
@@ -165,8 +164,8 @@ export const NavigationBar = () => {
           </li>
 
       
-          <li style={{marginTop:"25px"}}>
-            <a href="/infoPiercings">
+          <li>
+          <a style={{height:"50px"}} href="/infoPiercings">
               <img style={{width:"25px",marginLeft:"28px" }} src={Pirncings} alt={Maquuina} />
               <span style={{ marginLeft: "1.5rem"}} className="link_name">Piercings</span>
 

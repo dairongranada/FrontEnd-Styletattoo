@@ -142,12 +142,12 @@ export const NavigationBar = () => {
         }
 
           <li>
-            <a href="#">
+            <a href="/all/artist/style">
             <i className='bx bxs-user-account'></i>
               <span className="link_name">Artistas</span>
             </a>
             <ul className="sub-menu blank">
-              <li><a className="link_name" href="#">Setting</a></li>
+              <li><a className="link_name" href="/all/artist/style">Artistas</a></li>
             </ul>
           </li>
 

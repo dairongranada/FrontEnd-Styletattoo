@@ -73,7 +73,7 @@ export const Bot = () => {
       document.getElementById('msg_area').appendChild(res_msg) 
       
     }
-    else if(req > 3){
+    else if(req > 3 || req < 1){
       let res_msg = document.createElement('div')
       res_msg.innerHTML = `<p>Dime en que puedo ayudarte segun la siguiente lista (Responde con el numero de la opcion que necesitas): </p>
                             <p>1) como subir mis trabajos,</p> 
@@ -148,7 +148,7 @@ export const Bot = () => {
 
     else if(req != si || req != no || req != artista || req != usuario || req != subirTrabajo || req != agendarCita || req != reacuperarContraseña){
       let res_msgRErr = document.createElement('div')
-      res_msgRErr.innerHTML = "No entiendo que tratas de decirme :("
+      res_msgRErr.innerHTML = "debes enviar el numero que le corresponde a la opcion que necesitas :("
       res_msgRErr.setAttribute("class","izquierdMesna")
 
       document.getElementById('msg_area').appendChild(res_msgRErr)

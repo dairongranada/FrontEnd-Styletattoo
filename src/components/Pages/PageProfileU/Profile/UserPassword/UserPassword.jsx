@@ -8,6 +8,8 @@ import { CambiarContraseña } from '../../../../../Helpers/ApiConsumer/PostUsers
 import toast, { Toaster } from 'react-hot-toast';
 import emailjs from '@emailjs/browser';
 import {getTatois} from '../../../../.././Helpers/ApiConsumer/PostUsers'
+import swal from 'sweetalert';
+
 
 export const UserPassword = () => {
   const [active, setActive] = useState(0);
@@ -44,6 +46,40 @@ const handleLogout = () => {
 const [InfoUser, setInfoUserUser] = useState(JSON.parse(localStorage.getItem("InfoUser")));
 
 console.log(InfoUser.email);
+
+
+
+const Mostraralert = ()=>{
+  swal({
+      title: "Estas seguro de continuar?",
+      text: "Al cambiar tu contraseña deberas iniciar secion nuevamente!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        swal("Tu contraseña ah sido cambiada exitosamente!", {
+          icon: "success",
+          buttons: false,
+        });
+        handleLogout()
+        setTimeout(function () {
+              window.location = "/IngresarSesion";
+          }, 2500);
+      } else {
+        swal("Tu cambio de contraseña ah sido cancelado!",{
+            icon: "error",
+            buttons: false,
+        });
+        setTimeout(function () {
+          window.location = "/userTatto/edit-profile";
+      }, 200);
+      }
+    });
+
+
+}
   return (
     <>
     <NavigationBar/>
@@ -111,12 +147,8 @@ console.log(InfoUser.email);
                           validacion = info
                           if( validacion.status === 200 ){
                            
-                            toast.success('Contraseña Cambiada')
-                            resetForm()
-                            handleLogout()
-                            setTimeout(function () {
-                              window.location = '/IngresarSesion';
-                          }, 1500);
+                            Mostraralert()
+                           
                           }else if( validacion.status === 500 ){  
                             toast.error("Verifica Tu contraseña")
                           }else if ( validacion.status === 400 ) {

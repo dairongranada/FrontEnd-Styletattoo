@@ -76,7 +76,7 @@ export const Home_NewTattooists = () => {
                             <p className='NmeLtatoo'>{dat.first_name} {dat.last_name}</p>
                             <div className="rating">
                                 {/* <p><label>★</label><label>★</label><label>★</label><label>★</label><label>★</label></p> */}
-                                <div className=".CardArtist .detailsCard .rating">
+                                <div className="contStarsCardsH">
 
                                     {(dat.iDispo[0].like == 0) &&
                                         <Start/>

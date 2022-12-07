@@ -192,7 +192,7 @@ export const NavigationBar = () => {
                 )
               }
              
-              ){ (userData.rol === '[ROLE_ARTISTA]') && 
+              { (userData.rol === '[ROLE_ARTISTA]') && 
               ( userData.PerfilProfesional.length == 0 &&
                   <img src={imgnav} alt="..." />
               )

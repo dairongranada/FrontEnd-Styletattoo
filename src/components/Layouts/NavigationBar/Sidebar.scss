@@ -152,12 +152,12 @@
   transform: translateY(-50%);
 }
 .sidebar .profile-details{
+  text-align: center;
   position: fixed;
   bottom: 0;
   width: 260px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   background: var(--colorGray3);
   color: #080808;
   padding: 12px 0;

@@ -174,6 +174,17 @@ export const NavigationBar = () => {
           </li>
 
 
+          {userToken  && 
+          <li>
+            <a href="/all/artist/style">
+              <i  onClick={handleLogout} style={{color:"#fff"}} className='bx bx-log-out' ></i>
+              <span className="link_name">Cerrar Sesion</span>
+            </a>
+            <ul className="sub-menu blank">
+              <li><a className="link_name" href="/all/artist/style">Cerrar Sesion</a></li>
+            </ul>
+          </li>
+        }
 
 
 
@@ -208,17 +219,17 @@ export const NavigationBar = () => {
  
               {(userToken ) && 
               <div  className="name-job">
-                <div  style={{fontSize: "12px"}} className="profile_name">
+                <div  style={{fontSize: "15px"}}  className="profile_name">
                 {userData.first_name +" "+ userData.last_name }
                   
                 </div>
                 <div className="job">
                 {userToken  && 
-                   (userData.rol === '[ROLE_USUARIO]') && <div className="job">| ROL: USUARIO  |</div>
+                   (userData.rol === '[ROLE_USUARIO]') && <div style={{fontSize: "10px"}} className="job">| ROL: USUARIO  |</div>
                 }
 
                 {userToken  && 
-                 (userData.rol === '[ROLE_ARTISTA]') && <div className="job">| ROL: ARTISTA  |</div>
+                 (userData.rol === '[ROLE_ARTISTA]') && <div  style={{fontSize: "10px"}}  className="job">| ROL: ARTISTA  |</div>
                 }
                 
                 </div>
@@ -228,10 +239,6 @@ export const NavigationBar = () => {
               { (!userToken == null ) && 
               <div className="name-job"> </div>
               }
-
-
-
-              <i  onClick={handleLogout} style={{color:"#fff"}} className='bx bx-log-out' ></i>
             </div>
             
 

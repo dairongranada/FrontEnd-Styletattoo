@@ -14,13 +14,13 @@ const sendEmail = (event)=>{
     event.preventDefault();
     // ALERTA CHIMBA
     toast.success('Se envio correctamente')
-    // emailjs.sendForm('service_4mrciiq','template_mr2pmtq',event.target,'QiP2ouJ-zjh1PcZPE')
-    // .then(response => console.log(response))
-    // .catch(err => console.error(err))
+    emailjs.sendForm('service_4mrciiq','template_mr2pmtq',event.target,'QiP2ouJ-zjh1PcZPE')
+    .then(response => console.log(response))
+    .catch(err => console.error(err))
 
     setTimeout(() => {
         window.location.reload(false);
-    }, 2000);
+    }, 1000);
     
 }
 

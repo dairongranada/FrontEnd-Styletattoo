@@ -55,9 +55,6 @@ export const CardTatuadores = ({like,id,image,first_name,last_name ,descripcion,
                         <div className="ButtonViewProfileApt">
                             <a href={`/tatto/view/profile/${id}`} className='btnA_menu'>Ver perfil</a>
                         </div>
-                        <div className="ButtonViewProfileApt">
-                            <a href={`/tatto/view/profile/${id}`} className='btnA_menu'>Agendar cita</a>
-                        </div>
                     </div>
                 </div>
             </div>

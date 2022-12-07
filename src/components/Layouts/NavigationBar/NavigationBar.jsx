@@ -209,8 +209,8 @@ export const NavigationBar = () => {
 
  
               {(userToken ) && 
-              <div className="name-job">
-                <div className="profile_name">
+              <div  className="name-job">
+                <div  style={{fontSize: "12px"}} className="profile_name">
                 {userData.first_name +" "+ userData.last_name }
                   
                 </div>

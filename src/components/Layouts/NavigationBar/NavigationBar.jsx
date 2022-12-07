@@ -1,5 +1,3 @@
-import './NavigationBar.scss'
-
 import { useState , useEffect } from 'react'
 import perfilUsuarioAnonim from '../../../images/Icons/perfilUsuarioAnonim.jpg'
 import { getAllTatuadoresID }  from '../../../Helpers/ApiConsumer/Tattuadores';
@@ -176,6 +174,17 @@ export const NavigationBar = () => {
           </li>
 
 
+          {userToken  && 
+          <li>
+            <a href="/all/artist/style">
+              <i  onClick={handleLogout} style={{color:"#fff"}} className='bx bx-log-out' ></i>
+              <span className="link_name">Cerrar Sesion</span>
+            </a>
+            <ul className="sub-menu blank">
+              <li><a className="link_name" href="/all/artist/style">Cerrar Sesion</a></li>
+            </ul>
+          </li>
+        }
 
 
 
@@ -192,7 +201,7 @@ export const NavigationBar = () => {
                 )
               }
              
-              ){ (userData.rol === '[ROLE_ARTISTA]') && 
+              { (userData.rol === '[ROLE_ARTISTA]') && 
               ( userData.PerfilProfesional.length == 0 &&
                   <img src={imgnav} alt="..." />
               )
@@ -210,17 +219,17 @@ export const NavigationBar = () => {
  
               {(userToken ) && 
               <div  className="name-job">
-                <div  style={{fontSize: "12px"}} className="profile_name">
+                <div  style={{fontSize: "15px"}}  className="profile_name">
                 {userData.first_name +" "+ userData.last_name }
                   
                 </div>
                 <div className="job">
                 {userToken  && 
-                   (userData.rol === '[ROLE_USUARIO]') && <div className="job">| ROL: USUARIO  |</div>
+                   (userData.rol === '[ROLE_USUARIO]') && <div style={{fontSize: "10px"}} className="job">| ROL: USUARIO  |</div>
                 }
 
                 {userToken  && 
-                 (userData.rol === '[ROLE_ARTISTA]') && <div className="job">| ROL: ARTISTA  |</div>
+                 (userData.rol === '[ROLE_ARTISTA]') && <div  style={{fontSize: "10px"}}  className="job">| ROL: ARTISTA  |</div>
                 }
                 
                 </div>
@@ -230,10 +239,6 @@ export const NavigationBar = () => {
               { (!userToken == null ) && 
               <div className="name-job"> </div>
               }
-
-
-
-              <i  onClick={handleLogout} style={{color:"#fff"}} className='bx bx-log-out' ></i>
             </div>
             
 
@@ -243,166 +248,3 @@ export const NavigationBar = () => {
     </div>
   )
 }
-
-
-// import './NavigationBar.scss'
-
-// import { useState , useEffect } from 'react'
-// import perfilUsuarioAnonim from '../../../images/Icons/perfilUsuarioAnonim.jpg'
-// import { getusers }  from '../../../Helpers/ApiConsumer/PostUsers';
-
-// import logoStyleT from '../../../images/Icons/logopreview.png'
-// import LogoTextStyle from '../../../images/Icons/LogoTextStyle.jpg'
-
-
-
-
-
-// export const NavigationBar = () => {
-
-//     const [userToken, setUserToken] = useState(JSON.parse(localStorage.getItem("usuario")));
-//     const [token, setToken] = useState(localStorage.getItem("token"));
-//     const [userData, setUserData] = useState({});
-
-//     useEffect(()=>{
-//         if ( !!userToken ) {
-//             getusers( token )
-//             .then( data => setUserData( data.data ));
-//         }else {
-//           //console.log("No se ha autenticado");
-//         }
-        
-  
-//     }, [])
-
-//     const handleLogout = () => {
-//         localStorage.removeItem("token");
-//         localStorage.removeItem("usuario");
-//         localStorage.removeItem("InfoUser");
-//         localStorage.removeItem("TokenAcces");
-//         window.location = "/IngresarSesion";
-//    }
-   
-
-
-
-
-
-//     const [sidebarNav, setSidebarnav] = useState("")
-//     const [barMenuIcon, setBarMenuIcon] = useState("bx bx-menu")
-//     const [navClose, setNavClose] = useState(false)
-
-//     const handleChangeNavs = () => {
-//         if (navClose === false) {
-//             setSidebarnav("open")
-//             setBarMenuIcon("bx bx-menu-alt-right")
-//             setNavClose(true)
-//         }else{
-//             setSidebarnav("")
-//             setBarMenuIcon("bx bx-menu")
-//             setNavClose(false)
-
-//         }
-//     };
-
-
-//     return (
-//         <>
-//         { ( !!token ) &&
-//             <div id="sidebar" className={ sidebarNav } >
-//                 <div className="logo-details">
-//                 <div className="logo_name">STYLE TATTOO</div>
-//                     <i className={barMenuIcon} id="CloseBtnNav" onClick={handleChangeNavs} ></i>
-//                 </div>
-//                 <hr/>
-//                 <ul className="nav-list">
-//                     <li>
-//                         <a href="/">
-//                             <i className='bx bx-home' ></i>
-//                             <span className="links_name">Inicio</span>
-//                         </a>
-//                         <span className="tooltip">Inicio</span>
-//                     </li>
-                    
-//                         { (userData.rol === '[ROLE_USUARIO]') &&
-//                             <li>
-//                                 <a href="/user/edit-profile">
-//                                     <i className='bx bx-user' ></i>
-//                                     <span className="links_name">Cuenta</span>
-//                                 </a>
-//                                 <span className="tooltip">Cuenta</span>
-//                             </li> 
-//                         }
-                        
-//                         { (userData.rol === '[ROLE_ARTISTA]') &&
-//                             <li>
-//                                 <a href="/userTatto/edit-profile">
-//                                     <i className='bx bx-user' ></i>
-//                                     <span className="links_name">Cuenta</span>
-//                                 </a>
-//                                 <span className="tooltip">Cuenta</span>
-//                             </li>
-//                         }{ (userToken.rol === null) && <li></li>}
-                        
-//                     <li>
-//                         <a href="/all/artist/style">
-
-//                             <i className='bx bxs-user-account'></i>
-//                             <span className="links_name">Artistas</span>
-//                         </a>
-//                         <span className="tooltip">Artistas</span>
-//                     </li>
-//                     <hr/>
-//                     <div className="logo-details ImgLogoStyleContent" style={{ height:"15rem", justifyContent: "center"}}>
-//                         <img className='icon ImgLogoStyle' src={logoStyleT} alt="" style={{ width:"150px" }}/>
-//                     </div>
-
-
-//                     <li className="profile">
-//                         <div className="profile-details">
-//                             <img src={perfilUsuarioAnonim} alt="profileImg" />
-//                             <div className="name_job">
-//                                 <div className="name">{ userData.first_name +" "+ userData.last_name }</div>
-//                                 { (userData.rol === '[ROLE_USUARIO]') && <div className="job">| ROL: USUARIO  |</div>}
-//                                 { (userData.rol === '[ROLE_ARTISTA]') && <div className="job">| ROL: ARTISTA  |</div>}
-//                             </div>
-//                         </div>
-//                         <i className='bx bx-log-out' id="log_out" onClick={handleLogout}  ></i>
-//                     </li>
-//                 </ul>
-//             </div>
-
-//         }{ (token === null ) &&
-//             <div id="sidebar" className={ sidebarNav } >
-//                 <div className="logo-details">
-//                     <div className="logo_name">STYLE TATTOO</div>
-//                     <i className={barMenuIcon} id="CloseBtnNav" onClick={handleChangeNavs} ></i>
-//                 </div>
-//                 <hr/>
-//                 <ul className="nav-list">
-//                     <li>
-//                         <a href="/">
-//                             <i className='bx bx-home' ></i>
-//                             <span className="links_name">Inicio</span>
-//                         </a>
-//                         <span className="tooltip">Inicio</span>
-//                     </li>
-//                     <li>
-//                         <a href="/all/artist/style">
-//                             <i className='bx bxs-user-account'></i>
-//                             <span className="links_name">Artistas</span>
-//                         </a>
-//                         <span className="tooltip">Artistas</span>
-//                     </li>
-//                     <hr/>
-//                     <div className="logo-details ImgLogoStyleContent" style={{ height:"15rem", justifyContent: "center"}}>
-//                         <img className='icon ImgLogoStyle' src={logoStyleT} alt="" style={{ width:"150px" }}/>
-//                     </div>
-//                 </ul>
-//             </div>
-
-//         }
-        
-//         </>
-//     )
-// }

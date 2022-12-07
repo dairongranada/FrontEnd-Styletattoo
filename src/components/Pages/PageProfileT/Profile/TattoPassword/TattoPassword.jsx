@@ -48,7 +48,7 @@ const Mostraralert = ()=>{
         });
         setTimeout(function () {
           window.location = "/userTatto/edit-profile";
-      }, 200);
+      }, 500);
       }
     });
 

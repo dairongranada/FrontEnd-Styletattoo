@@ -74,7 +74,7 @@ const Mostraralert = ()=>{
         });
         setTimeout(function () {
           window.location = "/userTatto/edit-profile";
-      }, 200);
+      }, 500);
       }
     });
 
@@ -146,9 +146,7 @@ const Mostraralert = ()=>{
                         ).then( info => {
                           validacion = info
                           if( validacion.status === 200 ){
-                           
                             Mostraralert()
-                           
                           }else if( validacion.status === 500 ){  
                             toast.error("Verifica Tu contraseña")
                           }else if ( validacion.status === 400 ) {

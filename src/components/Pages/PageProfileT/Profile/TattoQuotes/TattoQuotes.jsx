@@ -63,8 +63,8 @@ export const TattoQuotes = () => {
 
   const Mostraralert = (e)=>{
     swal({
-        title: "Estas seguro de continuar?",
-        text: "Al cambiar tu contraseña deberas iniciar secion nuevamente!",
+        title: "Estas seguro de aceptar la cita?",
+        text: "Al aceptar una cita ya no podras cancelarla!",
         icon: "warning",
         buttons: true,
         dangerMode: true,
@@ -93,8 +93,8 @@ export const TattoQuotes = () => {
 
   const Borrarcita = (e)=>{
     swal({
-        title: "Estas seguro de continuar?",
-        text: "Al cambiar tu contraseña deberas iniciar secion nuevamente!",
+        title: "Estas seguro de cancelara la cita?",
+        text: "Al cancelar la cita ya no podras aceptarla nunca mas!",
         icon: "warning",
         buttons: true,
         dangerMode: true,

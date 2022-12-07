@@ -7,7 +7,7 @@ import { Formik, Form, Field } from 'formik';
 import { NavigationBar } from '.././NavigationBar/NavigationBar';
 import { NavFooter } from '.././NavigationFooter/NavFooter/NavFooter';
 import { RecuperarContraseña ,BuscarUserEmail } from '../../.././Helpers/ApiConsumer/PostUsers'
-
+import swal from 'sweetalert';
 
 
 
@@ -59,6 +59,7 @@ export const RecoveryP = () => {
 
     console.log(ApiSavePassword);
 
+   
 
 
 
@@ -110,12 +111,37 @@ export const RecoveryP = () => {
         }
     }
 
+const Mostraralert = ()=>{
+    swal({
+        title: "Estas seguro de continuar?",
+        text: "Al cambiar tu contraseña deberas iniciar secion nuevamente!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          swal("Tu contraseña ah sido cambiada exitosamente!", {
+            icon: "success",
+            buttons: false,
+          });
+          setTimeout(function () {
+                window.location = "/IngresarSesion";
+            }, 2500);
+        } else {
+          swal("Tu cambio de contraseña ah sido cancelado!",{
+              icon: "error",
+              buttons: false,
+          });
+          setTimeout(function () {
+            window.location = "/";
+        }, 2500);
+        }
+      });
 
 
-
-
-
-
+}
+  
     return (
         <>
             <NavigationBar />
@@ -186,21 +212,21 @@ export const RecoveryP = () => {
                                     progress: undefined,
                                     theme: "light",
                                 })
-                                setTimeout(function () {
-                                    window.location = "/IngresarSesion";
-                                }, 2500);
+                                // setTimeout(function () {
+                                //     window.location = "/IngresarSesion";
+                                // }, 2500);
                             }}
                         >
 
                             <Form className='FormRecovery' >
                                 <div style={{ marginTop: "1.2rem" }} className='ContentBoxtext'>
-                                    <Field name='new_password' className='TheTextBox' required type="password" placeholder='Cambia tu contraseña' />
+                                    <Field name='new_password' className='TheTextBox' required type="password" placeholder='Contraseña Nueva' />
                                 </div>
                                 <div className='ContentBoxtext'>
-                                    <Field name='confirm_password' className='TheTextBox' required type="password" placeholder='Cambia tu contraseña' />
+                                    <Field name='confirm_password' className='TheTextBox' required type="password" placeholder='Confirmar Contraseña' />
                                 </div>
                                 <div className='ContentBoxButtonConfirm'>
-                                    <button id={`${active === 0 && "btnBlocked"}`} type='sumbit' className='buttons_global_StyleTatto'>Guardar</button>
+                                    <button id={`${active === 0 && "btnBlocked"}`} onClick={Mostraralert} type='sumbit' className='buttons_global_StyleTatto'>Guardar</button>
                                 </div>
                             </Form>
 

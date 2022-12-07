@@ -7,7 +7,7 @@ import { NavigationBar } from '../../../../Layouts/NavigationBar/NavigationBar';
 import { NavFooter } from '../../../../Layouts/NavigationFooter/NavFooter/NavFooter';
 import { AiFillFile } from "react-icons/ai";
 import './TattoQuotes.scss'
-
+import swal from 'sweetalert';
 
 import { AceptarCita,DeleteCita } from '../../../../.././Helpers/ApiConsumer/Citas'
 
@@ -44,7 +44,7 @@ export const TattoQuotes = () => {
       })
   }, [])
 
-
+ 
 
   const OnAceptarCita = (e) => {
     let idUserCita = e.target.value
@@ -61,7 +61,65 @@ export const TattoQuotes = () => {
   }
 
 
+  const Mostraralert = (e)=>{
+    swal({
+        title: "Estas seguro de aceptar la cita?",
+        text: "Al aceptar una cita ya no podras cancelarla!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          setTimeout( swal("Cita aceptada con exito!", {
+            icon: "success",
+            buttons: false,
+          }
+          ),1000);
+          OnAceptarCita(e)
+        } else {
+          swal("Cita no aceptada con exito!",{
+              icon: "error",
+              buttons: false,
+          });
+          setTimeout(function () {
+            window.location.reload(false);
+        }, 800);
+        }
+      });
+  
+  
+  }
 
+  const Borrarcita = (e)=>{
+    swal({
+        title: "Estas seguro de cancelara la cita?",
+        text: "Al cancelar la cita ya no podras aceptarla nunca mas!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          setTimeout( swal("Cita aceptada con exito!", {
+            icon: "success",
+            buttons: false,
+          }
+          ),1000);
+          OnDeleteCita(e)
+        } else {
+          swal("has cerrado caancelar cita!",{
+              icon: "error",
+              buttons: false,
+          });
+          setTimeout(function () {
+            window.location.reload(false);
+        }, 800);
+        }
+      });
+  
+  
+  }
 
   return (
     <>
@@ -112,13 +170,13 @@ export const TattoQuotes = () => {
                     <td><a href={data.img} className='imgFile'><AiFillFile/></a></td>
                     {/* ACEPTAR CITA */}
                     <td>
-                      <input onClick={OnAceptarCita} className="Inputproved" defaultValue={`${data.id_quotes}`} />
+                      <input onClick={Mostraralert} className="Inputproved" defaultValue={`${data.id_quotes}`} />
                       <span className="proved material-symbols-outlined"> file_download_done </span>
                     </td>
 
                     {/* ELIMINAR CITA */}
                     <td>
-                      <input onClick={OnDeleteCita} className="Inputdelete" defaultValue={`${data.id_quotes}`} />
+                      <input style={{cursor: "pointer"}}  onClick={Borrarcita} className="Inputdelete" defaultValue={`${data.id_quotes}`} />
                       <span className="delete material-symbols-outlined">delete</span>
                     </td>
                   </tr>

@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import './Home_NewTattooists.scss'
 import { getAllTatuadores } from '../../../../Helpers/ApiConsumer/Tattuadores';
+import { Start } from '../../../Layouts/Start/Start'
+import { Start1 } from '../../../Layouts/Start/Start'
+import { Start2 } from '../../../Layouts/Start/Start'
+import { Start3 } from '../../../Layouts/Start/Start'
+import { Start4 } from '../../../Layouts/Start/Start'
+import { Start5 } from '../../../Layouts/Start/Start'
 
 // import tatuador3 from '../../../../images/Tatuadores/tatuador3.png'
 
@@ -69,7 +75,31 @@ export const Home_NewTattooists = () => {
                         <div className="detailsCard">
                             <p className='NmeLtatoo'>{dat.first_name} {dat.last_name}</p>
                             <div className="rating">
-                                <p><label>★</label><label>★</label><label>★</label><label>★</label><label>★</label></p>
+                                {/* <p><label>★</label><label>★</label><label>★</label><label>★</label><label>★</label></p> */}
+                                <div className="contStarsCardsH">
+
+                                    {(dat.iDispo[0].like == 0) &&
+                                        <Start/>
+                                    }
+                                    {(dat.iDispo[0].like == 1) &&
+                                        <Start1/>
+                                    }
+                                    {(dat.iDispo[0].like == 2) &&
+                                        <Start2/>
+                                    }
+
+                                    {(dat.iDispo[0].like == 3) &&
+                                        <Start3/>
+                                    }
+
+                                    {(dat.iDispo[0].like == 4) &&
+                                        <Start4/>
+                                    }
+
+                                    {(dat.iDispo[0].like == 5) &&
+                                        <Start5/>
+                                    }
+                                </div>
                             </div>
                             <p>{dat.PerfilProfesional[0].description}</p>
                             <div><button className='ViewProfileCard'><a href={`/tatto/view/profile/${dat.id}`}>Ver Perfil</a></button></div>

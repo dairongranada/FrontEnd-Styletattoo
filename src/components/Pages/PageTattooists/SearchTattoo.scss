@@ -409,3 +409,76 @@ img.imgtattooists{
   }
 }
 
+
+
+/*-------card----------*/
+.cardArtistptt{
+  width: 333px;
+  height: 390px;
+  background-color: #0a3394;
+  border-radius: 10px;
+  overflow: hidden;
+  .miniBannerArtist{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    background-color: var(--colorWhite);
+    // background-image: linear-gradient(to right bottom, #ff9e02, #ce662d, #8e3d32, #492025, #000000);
+    .contentImgCadrArtistpgt{
+      width:160px;
+      height:160px;
+      border-radius: 50%;
+      padding: 7px;
+      background-color: var(--colorOrange2);
+      margin-top: 45px;
+      .ImgProfleCardPGT{
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+      }
+    }
+  }
+  .contentInfoartist{
+    height: 65%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .SecondContenInfoTpg{
+      p{
+        font-weight: bold;
+        font-size: 15px;
+        letter-spacing: 2px;
+      }
+    }
+    .contentButtons{
+      width: 100%;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      .ButtonViewProfileApt{
+        border-radius: 20px;
+        cursor: pointer;
+        background-color: var(--colorOrange2);
+        height: 40px;
+        width: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 25px;
+        .btnA_menu{
+          text-decoration: none;
+          color: #000;
+        }
+      }
+    }
+  }
+}

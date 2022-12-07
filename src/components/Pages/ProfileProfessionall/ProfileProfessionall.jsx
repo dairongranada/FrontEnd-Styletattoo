@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import './ProfileProfessionall.scss'
 import './citas.scss'
-import './Estrellas.scss'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from "axios";
@@ -227,77 +226,31 @@ export const ProfileProfessionall = () => {
     
   };
 
-  const [inputDate,setInputDate ] = useState("")
-  const valueDate = (e) => {
-    setInputDate(e.target.value);
 
-  }
-  const [inputTime,setInputTime ] = useState("")
-  const valueTime = (e) => {
-    setInputTime(e.target.value);
-      
-  }
+//   const sendEmail = (event)=>{
+//     event.preventDefault();
+//     // ALERTA CHIMBA
+//     toast.success('Se envio correctamente')
+//     emailjs.sendForm('service_6n0k3ay','template_jct8opt',event.target,'3shfZ5IuzLrmV8lcH')
+//     .then(response => console.log(response))
+//     .catch(err => console.error(err))
 
-  const [inputDescription,setInputDescription ] = useState("")
-  const valueDescription = (e) => {
-    setInputDescription(e.target.value);
-      
-  }
-
-
-
-  const axiosfuntion = () =>{
-    axios.post('http://localhost:8000/quotes/', 
-        {
-          date: inputDate,
-          time: inputTime,
-          img: image2,
-          description: inputDescription,
-          userID: idTatu,
-          artist_tattoo: idTT,
-          isActive: "false",
-          userTatto: nameArtst  +" "+ lastArtst,
-          userName: InfoUser.first_name  +" "+ InfoUser.last_name,
-        })
-      .then(function (response) {
-        console.log(response);
-        console.log(response.data);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-
-      notifyTattoCitasParaAg();
-}
-
-
-
-const sendEmail = (event) => {
-  event.preventDefault();
-
-  /// ALERTA CHIMBA
-  emailjs.sendForm('service_1n8igqi', 'template_fe15y1d', event.target, 'X8SzXW_IBwrAupBt3')
-      .then(response => (
-          console.log(response.status))
-      )
-}
-
-const reloaForm = () => {
-  document.getElementById('reloadFom').reset()
-}
-
+//     setTimeout(() => {
+//         window.location.reload(false);
+//     }, 2000);
+    
+// }
   return (
     <>
       <NavigationBar />
       <div className='ContentBodyInfoTattois'>
         <div className='RightInftoTT'>
           <div className='ImgRightInftoTT'><img src={img} alt="" /></div>
-          <p style={{ display: "flex", fontSize: "15px", marginTop: "0.6rem", alignItems: "center" }} ><span style={{ fontSize: "19px" }} className="material-symbols-outlined">location_on</span>{municipio} -- {departament}</p>
-          <p style={{ display: "flex", fontSize: "15px", alignItems: "center" }}>Direccion:  {direction}</p>
+          <p style={{textTransform:"UpperCase",display: "flex", fontSize: "15px", alignItems: "center", textAlign:"center",justifyContent: "center"}}>{municipio} -- {departament}</p>
+          <p style={{ display: "flex", fontSize: "15px", alignItems: "center" }}><p className='direccion'>Direccion:</p>  {direction}</p>
+          <div style={{ display: "flex", gap: "1rem", alignItems: "flex-end" }} className='ButtonsRightInftoTT'></div>
+
           <div style={{ display: "flex", gap: "1rem", alignItems: "flex-end" }} className='ButtonsRightInftoTT'>
-            <button onClick={FunctionScroll} style={{ width: "190px" }} className='Btn-Citas buttons_global_StyleTatto'>AGENDAR CITA</button>
-
-
             {/* 
           ██████╗░████████╗███╗░░██╗    ██╗░░░░░██╗██╗░░██╗███████╗
           ██╔══██╗╚══██╔══╝████╗░██║    ██║░░░░░██║██║░██╔╝██╔════╝
@@ -307,18 +260,18 @@ const reloaForm = () => {
           ╚═════╝░░░░╚═╝░░░╚═╝░░╚══╝    ╚══════╝╚═╝╚═╝░░╚═╝╚══════╝*/}
             {(tokenID ) &&
             (idTatu !== InfoUser && InfoUser.rol == "[ROLE_USUARIO]" ) &&
-              <button onClick={likeBtn} className="like__btn">
+              <button style={{width: "100%" }} onClick={likeBtn} className="like__btn">
                 <span id="count">{Numberslike}</span> Like
               </button>
             }
             {(tokenID == null) &&
-              <button style={{ cursor: "not-allowed" }} onClick={notify} className="like__btn btnBlocked">
+              <button style={{ cursor: "not-allowed",width: "100%" }} onClick={notify} className="like__btn btnBlocked">
                 <span>{Numberslike}</span> Likes
               </button>
             }
             {(tokenID ) &&
             (InfoUser.rol == "[ROLE_ARTISTA]") &&
-              <button style={{ cursor: "not-allowed" }} onClick={notifyTatto} className="like__btn btnBlocked">
+              <button style={{ cursor: "not-allowed",width: "100%" }} onClick={notifyTatto} className="like__btn btnBlocked">
                 <span>{Numberslike}</span> Like
               </button>
             }
@@ -336,13 +289,13 @@ const reloaForm = () => {
           </div>
         </div>
 
+
         <div className='InfoTattois'>
           <div className='LeftInftoTT'>
+            
             <div className='NameLeftInftoTT'><h5> {first_name} {last_name} </h5></div>
-            <div className='EmailLeftInftoTT'><p> {email} </p></div>
+            <div style={{color: "#6f6f6f"}} className='EmailLeftInftoTT'><p> {email} </p></div>
             <div className='DescriLeftInftoTT'><p>{description}</p></div>
-            <div className='DescriLeftInftoTT' style={{ display: "flex", gap: "5px" }}> <p style={{ color: "var(--colorOrange2)" }} >Experiencia :</p><p>{experience} </p> <p>Años</p> </div>
-
           </div>
         </div>
 

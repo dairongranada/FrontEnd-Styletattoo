@@ -344,18 +344,22 @@
    
 
 /*  C L A S E    G L O B A L    P A R A    B O T O N */
+#ColorbuttonUpWorks{
+  background-color: #fff;
+  color: rgb(0, 0, 0);
+}
 
 .buttonUpWorks {
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: inherit;
-  background: var(--colorWhite);
   color: var(--colorBlack);
   padding: 0.35em 0;
   font-size: 17px;
   border: none;
-  border-radius: 0.7em;
+  border-radius: 0.3em;
   letter-spacing: 0.08em;
   position: relative;
   display: flex;
@@ -368,6 +372,7 @@
  }
  
  .buttonUpWorks .iconUpWorsInp {
+  cursor: pointer;
 
   height: 2em;
   width: 2em;
@@ -381,6 +386,7 @@
  }
  
  .iconUpWorsInp #svgLogIUpwO {
+  cursor: pointer;
   margin-left: 0.4em;
   transition: all 0.5s;
   color: #000000;

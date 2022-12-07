@@ -22,12 +22,12 @@ import { Home_Services } from '../.././UI/UiHome/Home_Services/Home_Services'
 export const PageHome = () => {
 
     const Nosotros = [
-        {name: 'Dairon Granada', image:'https://i.postimg.cc/cLWp6F6c/Dairon.jpg' ,gitHub: 'https://github.com/dairongranada',insta:'https://www.instagram.com/dairongranadaa23/',rol:'Front-End Developer'},
-        {name: 'Samuel Lopez',image:'https://i.postimg.cc/g0M2PN3g/samuel.jpg' , gitHub:'https://github.com/SAMUEL0126', insta:'https://www.instagram.com/samuel.lopez0114/', rol:'Front-End Developer' },
-        {name: 'Juan David Correa',image:'https://i.postimg.cc/pLHTQ92J/juanda.jpg',gitHub:'https://github.com/juandacorrea112',insta:'https://www.instagram.com/juandavidc02_bmx/ ',rol:'Front-End Developer'},
-        {name: 'Steven',image:'https://i.postimg.cc/rpQYKV62/steven.jpg',gitHub:'https://github.com/juandacorrea112',insta:'https://www.instagram.com/juandavidc02_bmx/ ',rol:'Back-End Developer'},
-        {name: 'Luisa',image:'https://i.postimg.cc/2jH0JFKS/luisa.jpg',gitHub:'https://github.com/lugsanchez',insta:'https://www.instagram.com/luisa_gsanchez/',rol:' Documentacion'},
-        {name: 'Santiago',image:'https://i.postimg.cc/0jXrXJJ2/santiago.jpg',gitHub:'https://github.com/santiagoortiz3',insta:'https://www.instagram.com/santiortiz0303/ ',rol:' Apoyar al equipo'}
+        {id:1,name: 'Dairon Granada', image:'https://i.postimg.cc/cLWp6F6c/Dairon.jpg' ,gitHub: 'https://github.com/dairongranada',insta:'https://www.instagram.com/dairongranadaa23/',rol:'Front-End y Back-EndㅤㅤㅤㅤㅤㅤDeveloper'},
+        {id:2,name: 'Samuel Lopez',image:'https://i.postimg.cc/g0M2PN3g/samuel.jpg' , gitHub:'https://github.com/SAMUEL0126', insta:'https://www.instagram.com/samuel.lopez0114/', rol:'Front-End Developer' },
+        {id:3,name: 'Juan David Correa',image:'https://i.postimg.cc/pLHTQ92J/juanda.jpg',gitHub:'https://github.com/juandacorrea112',insta:'https://www.instagram.com/juandavidc02_bmx/ ',rol:'Front-End Developer'},
+        {id:4,name: 'Steven',image:'https://i.postimg.cc/rpQYKV62/steven.jpg',gitHub:'https://github.com/juandacorrea112',insta:'https://www.instagram.com/juandavidc02_bmx/ ',rol:'Back-End Developer'},
+        {id:5,name: 'Luisa',image:'https://i.postimg.cc/2jH0JFKS/luisa.jpg',gitHub:'https://github.com/lugsanchez',insta:'https://www.instagram.com/luisa_gsanchez/',rol:' Documentacion'},
+        {id:6,name: 'Santiago',image:'https://i.postimg.cc/0jXrXJJ2/santiago.jpg',gitHub:'https://github.com/santiagoortiz3',insta:'https://www.instagram.com/santiortiz0303/ ',rol:' Apoyar al equipo'}
 
     ]
 
@@ -39,27 +39,7 @@ export const PageHome = () => {
             <Home_MainView/>
             <Home_NewTattooists/>
             <Home_Services/>
-            <div className='EquOFDev'><h3>Equipo de desarrollo</h3></div>
-            <div className='ContentNosotros'>
-            {searchTattoo.map((Nosotros, index) => {
-                return <div className="card-Nosotros">
-                    <div className="card-img" key={index}>
-                        <img src={Nosotros.image} alt={Nosotros.image} />
-                    </div>
-                    <ul className="social-media">
-                        {/* <li><a href={Nosotros.gitHub}><i class='bx bxl-facebook-circle'></i></a></li> */}
-                        <li><a href={Nosotros.insta}><i className='bx bxl-instagram' ></i></a></li>
-                        <li><a href={Nosotros.gitHub}><i className='bx bxl-github' ></i></a></li>
-                    </ul>
-                    <div className="card-info">
-                        <p className="title">{Nosotros.name}</p>
-                        <p style={{color: "var(--colorOrange2)"}} className="subtitle">{Nosotros.rol}</p>
-                    </div>
-                </div>
-        
-            })}
-
-            </div>    
+            
         </div>
         <NavFooter/>
         </>

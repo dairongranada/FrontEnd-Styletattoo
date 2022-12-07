@@ -57,6 +57,12 @@
            align-items: center;
            flex-direction: column;
            margin-left: 5rem;
+            p{
+                font-family: 'Amatic SC';
+                font-weight: 500;
+                font-size: 40px;
+                letter-spacing: 5px;
+            }
            .contTittleStyleT{
             display: flex;
             justify-content: space-around;

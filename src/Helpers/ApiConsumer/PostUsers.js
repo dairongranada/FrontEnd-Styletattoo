@@ -40,6 +40,8 @@ const URL = "http://localhost:8000/";
 
 
 let token = localStorage.getItem("token")
+let tokenRecuperar = localStorage.getItem("tokenContraseña")
+
 /*
 ███╗░░░███╗███████╗████████╗░█████╗░██████╗░░█████╗░    ██████╗░██╗░░░██╗████████╗
 ████╗░████║██╔════╝╚══██╔══╝██╔══██╗██╔══██╗██╔══██╗    ██╔══██╗██║░░░██║╚══██╔══╝
@@ -68,6 +70,21 @@ export const userUpdate = async ( valores,id ) => {
     } catch (error) {
     }
 }
+
+export const BuscarUserEmail = async ( ) => {
+
+    try {
+        const resp = await axios({
+            url: URL+"auth/allUsers/",
+            method: "GET",
+            headers: {
+                "Content-Type":"application/json"}
+        })
+        return resp;
+    } catch (error) {
+    }
+}
+
 
 
 
@@ -100,6 +117,34 @@ export const CambiarContraseña = async ( valores ) => {
     } catch (error) {
     }
 }
+
+
+// CAMBIAR CONTRASEÑA USUARIO
+export const RecuperarContraseña = async ( valores ) => {
+
+    try {
+        const resp = await axios({
+            url: URL+"auth/api/change-password/",
+            method: "PUT",
+            headers: {
+                "Authorization" :"Token "+tokenRecuperar,
+                "Content-Type":"application/json"
+            },
+            data: valores
+
+        }).catch( function( error ) {
+
+            if (error.response) {
+                return { status : error.response.status};
+            } 
+        });
+
+        return resp;
+
+    } catch (error) {
+    }
+}
+
 
 /* 
 ███╗░░░███╗███████╗████████╗░█████╗░██████╗░░█████╗░        ░██████╗░███████╗████████╗

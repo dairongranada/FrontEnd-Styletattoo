@@ -1,3 +1,21 @@
+.ImagenPorafolio{
+  margin-top: 3rem;
+  padding: 1rem;
+  width: 350px;
+  height: 480px;  
+  background-image: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.966)), url('../../../images//Tattos/tatto5.jpg');
+  background-position: center;
+  background-size: cover;
+  box-shadow: 7px 1px 52px #000;
+}
+
+
+
+
+
+
+
+
 /*  M O D A L    D E    C R E A C I O N    D E    P E R F I L    P R O F E C I O N A L */
 .ocultarliCreate{
   display: none;
@@ -43,12 +61,12 @@
       }
     }
     .ModalBuildProfilep{
-        margin-top: 3rem;
-        padding: 1rem;
-        width: 470px;
-        height: 520px;
-        background-color: #000;
-        box-shadow: 7px 1px 52px #000;
+      margin-top: 3rem;
+      padding: 1rem;
+      width: 410px;
+      height: 480px;
+      background-color: #000;
+      box-shadow: 7px 1px 52px #000;
 
         .contImgAndTittlear{
             width: 100%;
@@ -56,7 +74,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 25px;
+            padding: 15px 25px 15px 25px;
           .SecondContIconCMBPP{
             h3{
               color: var(--colorOrange2);

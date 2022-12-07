@@ -41,7 +41,9 @@ const handleLogout = () => {
 }
 
 
+const [InfoUser, setInfoUserUser] = useState(JSON.parse(localStorage.getItem("InfoUser")));
 
+console.log(InfoUser.email);
   return (
     <>
     <NavigationBar/>
@@ -125,6 +127,7 @@ const handleLogout = () => {
                 >
 
               <Form >
+              
                 <div className='ContentBoxtext'>
                   <label className='label_global_style'>Contraseña Antigua</label>
                   <Field name='old_password' className='TheTextBox' type="password" placeholder='Escribe tu contraseña' /> 
@@ -144,11 +147,13 @@ const handleLogout = () => {
                   <Field id='block' name='first_name' value={firstmane} />
                   <Field id='block'  name='last_name' value={lastname} />
                 </div>
-
+                
                 <div className='ContentBoxButtonConfirm'>
                   <button id={`${ active === 0 && "btnBlocked" }`}  type='sumbit' className='ButtonConfirmDates'>Guardar</button>
                 </div>
+               
               </Form>
+             
             </Formik>
           </div>
 

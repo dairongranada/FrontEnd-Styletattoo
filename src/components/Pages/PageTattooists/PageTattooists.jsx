@@ -30,7 +30,7 @@ export const PageTattooists = () => {
 
   const allTaoits = tatuadores.filter(data => data.rol.includes('[ROLE_ARTISTA]'))
 
-
+  console.log(allTaoits);
 
   /* Capturar el valor */
   const CapValues =(e)=>{
@@ -113,6 +113,7 @@ export const PageTattooists = () => {
                   departament={data.PerfilProfesional[0].departament}
                   municipio={data.PerfilProfesional[0].municipio}
                   ids={data.PerfilProfesional[0].id}
+                  like = {data.iDispo[0].like}
                 />
               ))}
             </main>

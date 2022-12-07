@@ -19,11 +19,11 @@ export const Home_NewTattooists = () => {
           })
       }, [])
 
-      console.log(tatuadores);
+    //   console.log(tatuadores);
 
       const allTaoits = tatuadores.filter(data => data.rol.includes('[ROLE_ARTISTA]'))
 
-
+      console.log(tatuadores);
     
 
 
@@ -61,6 +61,9 @@ export const Home_NewTattooists = () => {
 
                     <div className="CardArtist">
                         <div className="PosterTatuador">
+                            {(dat.iDispo[0].like >= 2) &&                            
+                                <span></span>
+                            }
                             <img src={dat.PerfilProfesional[0].img} alt="..." />
                         </div>
                         <div className="detailsCard">

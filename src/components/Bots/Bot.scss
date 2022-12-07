@@ -1,0 +1,168 @@
+::-webkit-scrollbar{
+    width: 0;
+}
+
+#ContChatWinmain{
+    width: 48vh;
+    max-width: 540px;
+    height: 77vh;
+    box-shadow: inset 0 0 10px 4px rgb(17 17 17 / 40%);
+    right: 10rem;
+    position: fixed;
+    top: 1rem;
+    z-index: 999;
+}
+.TittleChatB{
+    letter-spacing: 7px;
+    text-align: center;
+    background: var(--colorOrange2);
+    text-shadow: 1px 1px 4px #111;
+    border-radius: 15px 15px 0px 0px;
+    font-family: 'Amatic SC';
+    font-size: 59px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#IconCloseChatBot{
+    position: absolute;
+    transform: translate(15rem, -1rem);
+    cursor: pointer;
+}
+#msg_area {
+    height: 82%;
+    padding: 0 12px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    background: #000;
+}
+
+#bot{
+    width: 50px;
+    height: 50px;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/4712/4712010.png');
+    background-size: 100%;
+    border-radius: 50%;
+    margin: 10px 0px 10px 8px;
+}
+#robot{
+    display: flex;
+    align-items: center;
+}
+#ChatBotAco{
+    font-family: monospace;
+    font-size: 20px;
+    margin-top: 1rem;
+}
+#input{
+    height: 7%;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    border-radius: 32px;
+    background: linear-gradient(#ececee 50%, #1c1f46 50%);
+    box-shadow: inset 0 1px 0 #777;
+}
+
+#text {
+    outline: none;
+    font-size: 17px;
+    background: #ececee;
+    color: #333;
+    padding: 0px 9px;
+    border: solid 1px #777;
+    border-right: none;
+}
+#send{
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    background: var(--colorOrange2);
+    border: none;
+    transition-duration: 0.2;
+    display: flex;
+}
+#send:active{
+    font-size: 16px;
+}
+.izquierdMesna, .derechaMesna{
+    font-size: 18px;
+    font-family: monospace;
+    display: inline-block;
+    width: auto;
+    max-width: 90%;
+    padding: 14px;
+    word-wrap: break-word;
+    font-weight: 300;
+
+}
+.izquierdMesna{
+    color: #fff;
+    background: #3e3e3e;
+    border-radius: 0 16px 16px 16px;
+    margin-bottom: 1rem;
+}
+.derechaMesna{
+    display: flex;
+    justify-content: end;
+    background: #b3bfca;
+    border-radius: 16px 0px 16px 16px;
+    margin-bottom: 1rem;
+    color: var(--colorBlack);
+    margin-left: 9rem;
+    width: auto;
+}
+
+.msgCon1, .msgCon2{
+    width: 100%;
+    display: inline-block;
+}
+
+
+/*mostrar y ocultar*/
+.ContentBackOpenChat{
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    z-index: 998;
+    background-color: #000000ba;
+    position: fixed;
+}
+
+
+.ocultarBot{
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    top: -200rem;
+}
+.mostrarBot{
+    top: 1rem;
+}
+.OpenchatStylebot{
+    width: 80px;
+    height: 51px;
+    position: fixed;
+    z-index: 999;
+    right: 11px;
+    bottom: -0.6rem;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/4712/4712010.png');
+    background-size: 100%;
+    transition: 0.5s;
+    transform: translateY(-10px);
+    transition-delay: 0s, 0.5s, 0.5s;
+}
+.Upbot{
+    width: 80px;
+    height: 65px;
+    position: fixed;
+    z-index: 999;
+    right: 11px;
+    bottom: -20px;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/4712/4712010.png');
+    background-size: 100%;
+    transition: 0.5s;
+    transform: translateY(-20px);
+    transition-delay: 0s, 0.5s, 0.5s;
+}

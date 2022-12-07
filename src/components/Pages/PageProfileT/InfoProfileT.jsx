@@ -240,6 +240,7 @@ export const InfoProfileT = () => {
   let imgUrl5 = image5;
 
   let imgUrl = image;
+
   return (
     <>
       {(abrir === 0) &&
@@ -280,7 +281,7 @@ export const InfoProfileT = () => {
               initialValues={{
                 img: "",
                 like: 0,
-                departament: "",
+                departament: "Quindio",
                 municipio: "",
                 direction: "",
                 experience: "",
@@ -335,9 +336,6 @@ export const InfoProfileT = () => {
 
               <Form>
                 <div className="contInfoUserBoxes">
-
-
-
                   <div className="SelectContent">
                     <div>
                       <Field className='select' as="select" name="departament">
@@ -365,10 +363,10 @@ export const InfoProfileT = () => {
                   </div>
                   <div className="SelectContent">
                     <div>
-                      <Field autoComplete = 'off' className='inputProfile' placeholder='Ingresa Tu Expreciencia' type="number" name="experience" />
+                      <Field autoComplete='off' className='inputProfile' placeholder='Ingresa Tu Expreciencia' type="number" name="experience" />
                     </div>
                     <div>
-                      <Field autoComplete = 'off'  className='inputProfile' name='direction' required placeholder="Direccion" type="text" />
+                      <Field autoComplete='off' className='inputProfile' name='direction' required placeholder="Direccion" type="text" />
                     </div>
                   </div>
                   <div className="SelectContent">
@@ -381,7 +379,7 @@ export const InfoProfileT = () => {
 
                       <label style={{ fontSize: "12px", color: "#fffff9" }} htmlFor="">Añade una foto de perfil</label>
                       <div style={{ height: "40px", marginTop: "5px", marginBottom: "10px", color: "white" }} >
-  
+
                         <div className='ButtonBoxIntImgFp'>
                           <span className='MenssegeOrLetter'>Introduce una imagen</span><i className='ItheListOr'></i>
                           <input onChange={uploadImage} className='sapos' type="file" name="img" />
@@ -401,16 +399,23 @@ export const InfoProfileT = () => {
         </div>
       }
       {(abrir === 2) &&
-        <div style={{height: "86vh"}} className='FondBackGPp'>
+        <div style={{ height: "90vh" }} className='FondBackGPp'>
+
+          <div className='ImagenPorafolio'>
+            <div className="SecondContIconCMBPP">
+            </div>
+          </div>
+
           <div className='ModalBuildProfilep'>
             <div className='CloseBackProfileP'> <a href="/userTatto/edit-profile"><MdOutlineCancel /></a></div>
             <div className="contImgAndTittlear">
               <div className='ContIcontInMBPP'>
               </div>
               <div className="SecondContIconCMBPP">
-                <h3>Sube tus trabajos aqui</h3>
+                <h3 style={{ textAlign: "center", fontSize: "40px" }} >Sube tus trabajos aqui</h3>
               </div>
             </div>
+            <div style={{width:"100%",height:"1px", color:"#ffffff"  }} id='ColorbuttonUpWorks'></div>
             <Formik
               initialValues={{
                 img1: "",
@@ -469,74 +474,87 @@ export const InfoProfileT = () => {
                 <div className="contInfoUserBoxes">
                   <div className="SelectContent">
                     <div>
-                      
-                      <button className="buttonUpWorks">
+                      <button id={`${imgUrl1 && "ColorbuttonUpWorks"}`} className="buttonUpWorks">
                         <div className="iconUpWorsInp">
-                          <svg id='svgLogIUpwO' viewBox="0 0 16 16" className="bi bi-telegram" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z"></path>
-                          </svg>
+                          {!imgUrl1 &&
+                            <span className="material-symbols-outlined"> image </span>    
+                          }{imgUrl1 &&
+                            <span class="material-symbols-outlined"> check_circle </span>}
                         </div>
-                        <p>Sube un trabajo</p>
+
+                        {!imgUrl1 && <p>Sube un trabajo</p>}
+                        {imgUrl1 &&  <p>trabajo Cargado</p>}
+
                       </button>
-
-
                       <Input onChange={uploadImage} required className='selectIorWrkos' type='file' name="img1" />
-
                     </div>
                     <div>
-
-                      <button className="buttonUpWorks">
+                    <button id={`${imgUrl2 && "ColorbuttonUpWorks"}`} className="buttonUpWorks">
                         <div className="iconUpWorsInp">
-                          <svg id='svgLogIUpwO' viewBox="0 0 16 16" className="bi bi-telegram" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z"></path>
-                          </svg>
+                          {!imgUrl2 &&
+                            <span className="material-symbols-outlined"> image </span>
+                          }
+                          {imgUrl2 &&
+                            <span class="material-symbols-outlined"> check_circle </span>
+                          }
                         </div>
-                        <p>Sube un trabajo</p>
+                      
+                        {!imgUrl2 && <p>Sube un trabajo</p>}
+                        {imgUrl2 &&  <p>trabajo Cargado</p>}
                       </button>
                       <Input onChange={uploadImage2} required className='selectIorWrkos' type='file' name="img2" />
-
                     </div>
                   </div>
                   <div className="SelectContent">
                     <div>
 
-                      <button className="buttonUpWorks">
+                    <button id={`${imgUrl3 && "ColorbuttonUpWorks"}`} className="buttonUpWorks">
                         <div className="iconUpWorsInp">
-                          <svg id='svgLogIUpwO' viewBox="0 0 16 16" className="bi bi-telegram" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z"></path>
-                          </svg>
+                          {!imgUrl3 &&
+                            <span className="material-symbols-outlined"> image </span>
+                          }
+                          {imgUrl3 &&
+                            <span class="material-symbols-outlined"> check_circle </span>
+                          }
                         </div>
-                        <p>Sube un trabajo</p>
+                        {!imgUrl3 && <p>Sube un trabajo</p>}
+                        {imgUrl3 &&  <p>trabajo Cargado</p>}
                       </button>
                       <Input onChange={uploadImage3} className='selectIorWrkos' placeholder='Ingresa Tu Expreciencia' type="file" name="img3" />
 
                     </div>
                     <div>
-                      <button className="buttonUpWorks">
+                    <button id={`${imgUrl4 && "ColorbuttonUpWorks"}`} className="buttonUpWorks">
                         <div className="iconUpWorsInp">
-                          <svg id='svgLogIUpwO' viewBox="0 0 16 16" className="bi bi-telegram" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z"></path>
-                          </svg>
+                          {!imgUrl4 &&
+                            <span className="material-symbols-outlined"> image </span>
+                          }
+                          {imgUrl4 &&
+                            <span class="material-symbols-outlined"> check_circle </span>
+                          }
                         </div>
-                        <p>Sube un trabajo</p>
+                        {!imgUrl4 && <p>Sube un trabajo</p>}
+                        {imgUrl4 &&  <p>trabajo Cargado</p>}
                       </button>
                       <Input onChange={uploadImage4} className='selectIorWrkos' name='img4' required placeholder="Direccion" type="file" />
                     </div>
                   </div>
 
                   <div className="SelectContent">
-                    <div style={{ width: "100%", textAlign: "center", marginTop: "5px", marginBottom: "5px" }}>
+                    <div style={{ width: "100%", textAlign: "center", marginBottom: "5px" }}>
+                      <div className='ContUltInpWorkUp' style={{ height: "40px", marginTop: "5px", color: "white" }} >
 
-
-                      <div className='ContUltInpWorkUp' style={{ height: "40px", marginTop: "5px", marginBottom: "10px", marginLeft: "60px", color: "white" }} >
-
-                        <button id='AnchButtonULwok' className="buttonUpWorks">
+                        <button style={{ width: "100%",}} id={`${imgUrl5 && "ColorbuttonUpWorks"}`} className="buttonUpWorks">
                           <div className="iconUpWorsInp">
-                            <svg id='svgLogIUpwO' viewBox="0 0 16 16" className="bi bi-telegram" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z"></path>
-                            </svg>
+                            {!imgUrl5 &&
+                              <span className="material-symbols-outlined"> image </span>
+                            }
+                            {imgUrl5 &&
+                              <span class="material-symbols-outlined"> check_circle </span>
+                            }
                           </div>
-                          <p>Sube un trabajo</p>
+                          {!imgUrl5 && <p>Sube un trabajo</p>}
+                        {imgUrl5 &&  <p>trabajo Cargado</p>}
                           <Input onChange={uploadImage5} className='selectIorWrkosBottomUlW' type="file" name="img5" />
                         </button>
 
@@ -544,7 +562,7 @@ export const InfoProfileT = () => {
                     </div>
                   </div>
                   <div>
-                    <button style={{ width: "100%", textAlign: "center" }} type='submit' className='buttons_global_StyleTatto'>Crear Perfil</button>
+                    <button style={{ width: "100%", textAlign: "center" }} type='submit' className='buttons_global_StyleTatto'>SUBIR TRABAJOS</button>
                   </div>
                 </div>
               </Form>

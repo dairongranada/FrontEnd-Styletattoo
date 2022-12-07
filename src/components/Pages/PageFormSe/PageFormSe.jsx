@@ -9,8 +9,8 @@ import { parseJwt } from '../../.././Helpers/getPayLoad'
 
 import { Formik, Form, Field } from 'formik';
 
-import toast, { Toaster } from 'react-hot-toast';
-
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // EL ESTADO
 // 1 - BIEN
@@ -33,7 +33,6 @@ export const PageFormSe = () => {
         <div className='BackGround'>
             <div className="Content_FormsPrincipalLogin">
                 <div className="Content_Forms">
-                    <Toaster/>
                     <div className='CloseBackLogin'> <a href="/"><MdOutlineCancel /></a></div>
                     <h2>INICIO DE SESION</h2>
                     <Formik
@@ -67,30 +66,42 @@ export const PageFormSe = () => {
 
                                         let rol = info.data.info.rol;
                                         localStorage.setItem("token", token);
+                                        localStorage.setItem("tokenContraseña", token);
                                         localStorage.setItem("TokenAcces", TokenAcet);
                                         localStorage.setItem("InfoUser", JSON.stringify(InfoUser));
                                         localStorage.setItem("usuario", JSON.stringify(parseJwt(tokenInfo, rol, TokenAcet)));
 
                                         const data = info.data.info;
-
-
                                         console.log(data);
 
                                         if (data.activate === true) {
                                             resetForm();
                                             if (data.rol === "[ROLE_USUARIO]") {
-                                                toast.success('Bienvenido a StyleTattoo')
+                                                toast.success('Bienvenido a StyleTatto '+ (data.first_name+" "+data.last_name).toUpperCase(),{
+                                                    position: "top-right",
+                                                    autoClose: 5000,
+                                                    closeOnClick: true,
+                                                    pauseOnHover: true,
+                                                    draggable: true,
+                                                    theme: "light",
+                                                    });
                                                 setTimeout(function () {
                                                     window.location = '/user/edit-profile';
-                                                }, 1500);
+                                                }, 2100);
                                             }
                                             else if (data.rol === "[ROLE_ARTISTA]") {
-                                                toast.success('Bienvenido a StyleTattoo')
+                                                toast.success('Bienvenido a StyleTatto '+ (data.first_name+" "+data.last_name).toUpperCase() , {
+                                                    position: "top-right",
+                                                    autoClose: 5000,
+                                                    closeOnClick: true,
+                                                    pauseOnHover: true,
+                                                    draggable: true,
+                                                    theme: "light",
+                                                    });
                                                 setTimeout(function () {
                                                     window.location = '/userTatto/edit-profile';
-                                                }, 1500);
+                                                }, 2100);
                                             } else if (data.rol === "[ROLE_ADMIN]") {
-                                                console.log(11);
                                                 setTimeout(function () {
                                                     window.location = 'http://localhost:8000/admin/';
                                                 }, 1500);
@@ -116,13 +127,23 @@ export const PageFormSe = () => {
                                     if (info.status === 500) {
                                         setLoading(false);
                                     }
+                                    if (info.status === 401) {
+                                        toast.error('Correo y/o contraseña incorrecto ', {
+                                            position: "top-right",
+                                            autoClose: 5000,
+                                            hideProgressBar: false,
+                                            closeOnClick: true,
+                                            pauseOnHover: true,
+                                            draggable: true,
+                                            progress: undefined,
+                                            theme: "light",
+                                          })
+                                    }
 
                                     if (info.status === 0) {
                                         setLoading(false);
                                     }
                                 });
-
-                            if (status === 401) { toast.error('Verifica tus datos'); }
                             if (status === 0) { toast.error('Estamos Presentando problemas,Intentalo más tarde'); }
 
                         }}
@@ -155,7 +176,7 @@ export const PageFormSe = () => {
                                 <button type='submit' className="buttons_global_StyleTatto">Iniciar sesión</button>
                             </div>
                             <div className="questions">
-                                <Link to="#"> ¿Has olvidado tu contraseña? </Link>
+                                <Link to="/Password-recovery"> ¿Has olvidado tu contraseña? </Link>
                                 <Link to="/Registro">¿No tienes una Cuenta?</Link>
                             </div>
                         </Form>

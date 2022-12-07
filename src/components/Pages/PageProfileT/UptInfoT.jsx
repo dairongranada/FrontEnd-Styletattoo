@@ -79,7 +79,7 @@ export const UptInfoT = () => {
             </div>
             <div className="perfil-usuario-body">
                 <div className="perfil-usuario-bio">
-                    <i className='bx bxl-mailchimp'></i>
+                    {/* <i className='bx bxl-mailchimp'></i> */}
                     <h3 style={{ textAlign: "center" }} className="titulo">{userData.first_name + " " + userData.last_name}</h3>
                     <p className="textoTrasnparent">ㅤㅤ   ㅤ  ㅤ   ㅤ  ㅤ  ㅤ  ㅤ  ㅤ  ㅤ  ㅤ  ㅤ  ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</p>
                     <a style={{ position: "absolute", bottom: "3rem",color: "#161616b5"}} id={`${perfilProfesional === 0 && "ocultarliCreate"}`} href={`/tatto/view/profile/${idTatu}`}>Ver Perfil profesional</a>

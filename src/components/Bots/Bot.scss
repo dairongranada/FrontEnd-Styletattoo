@@ -71,6 +71,7 @@
     padding: 0px 9px;
     border: solid 1px #777;
     border-right: none;
+    border-radius: 0px 0px 0px 10px;
 }
 #send{
     justify-content: center;
@@ -81,6 +82,7 @@
     border: none;
     transition-duration: 0.2;
     display: flex;
+    border-radius: 0px 0px 10px 0px;
 }
 #send:active{
     font-size: 16px;

@@ -69,7 +69,7 @@ export const NavigationBar = () => {
 
 
   
-
+ const [imgnav , setimgnav] = useState("https://i.postimg.cc/T2N5CnwK/perfil-Usuario-Anonim.png")
 
 
 
@@ -185,19 +185,29 @@ export const NavigationBar = () => {
               { (userData.rol === '[ROLE_USUARIO]') && 
                 <img src={userData.image} alt="" />
               }
+             
               { (userData.rol === '[ROLE_ARTISTA]') && 
-                  ( userData.PerfilProfesional &&
-                      <img src={userData.PerfilProfesional[0].img} alt={userData.PerfilProfesional[0].img} />
-                  )
-              }{ (userData.rol === '[ROLE_ARTISTA]') && 
                 (!userData.PerfilProfesional &&
                     <img src={userData.PerfilProfesional.img} alt={userData.PerfilProfesional.img} />
                 )
-              }{ (userToken == null) && <li></li>}
+              }
+             
+              ){ (userData.rol === '[ROLE_ARTISTA]') && 
+              ( userData.PerfilProfesional.length == 0 &&
+                  <img src={imgnav} alt="..." />
+              )
+              }
+             { (userData.rol === '[ROLE_ARTISTA]') && 
+                  ( userData.PerfilProfesional.length >= 1 &&
+                      <img src={userData.PerfilProfesional[0].img} alt={userData.PerfilProfesional[0].img} />
+                  )
+              }
+              
+              { (userToken == null) && <li></li>
+              }
               </div>
 
-
-
+ 
               {(userToken ) && 
               <div className="name-job">
                 <div className="profile_name">

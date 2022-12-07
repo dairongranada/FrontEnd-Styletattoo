@@ -233,9 +233,9 @@ export const ProfileProfessionall = () => {
       <div className='ContentBodyInfoTattois'>
         <div className='RightInftoTT'>
           <div className='ImgRightInftoTT'><img src={img} alt="" /></div>
-          <p style={{ display: "flex", fontSize: "15px", marginTop: "0.6rem", alignItems: "center" }} ><span style={{ fontSize: "19px" }} className="material-symbols-outlined">location_on</span>{municipio} -- {departament}</p>
-          <p style={{ display: "flex", fontSize: "15px", alignItems: "center" }}>Direccion:  {direction}</p>
-          <div className='DescriLeftInftoTT' style={{ display: "flex", gap: "5px" }}> <p style={{ color: "var(--colorOrange2)" }} >Experiencia :</p><p>{experience} </p> <p>Años</p> </div>
+          <p style={{textTransform:"UpperCase",display: "flex", fontSize: "15px", alignItems: "center", textAlign:"center",justifyContent: "center"}}>{municipio} -- {departament}</p>
+          <p style={{ display: "flex", fontSize: "15px", alignItems: "center" }}><p className='direccion'>Direccion:</p>  {direction}</p>
+          <div style={{ display: "flex", gap: "1rem", alignItems: "flex-end" }} className='ButtonsRightInftoTT'></div>
 
           <div style={{ display: "flex", gap: "1rem", alignItems: "flex-end" }} className='ButtonsRightInftoTT'>
             {/* 
@@ -276,8 +276,10 @@ export const ProfileProfessionall = () => {
           </div>
         </div>
 
+
         <div className='InfoTattois'>
           <div className='LeftInftoTT'>
+            
             <div className='NameLeftInftoTT'><h5> {first_name} {last_name} </h5></div>
             <div style={{color: "#6f6f6f"}} className='EmailLeftInftoTT'><p> {email} </p></div>
             <div className='DescriLeftInftoTT'><p>{description}</p></div>

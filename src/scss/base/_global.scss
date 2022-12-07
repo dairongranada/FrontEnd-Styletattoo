@@ -170,12 +170,15 @@ p{
 
   .Disponible-btn::before{
     content: 'Disponible';
-    background: linear-gradient(210.41deg,#1b931b 1.14%,#2e8516 100.75%);;
+    background: linear-gradient(210.41deg,#bbb81a 1.14%,#c27c15 100.75%);
+    color: #000;
   }
 
   .Ocupado-btn::before{
     content: 'Ocupado';
-    background: linear-gradient(210.41deg,#e12110 1.14%,#b92424 100.75%);;
+    background: linear-gradient(210.41deg,#df5312 1.14%,#c27d15 100.75%);
+    color: #000;
+
   }
 
 

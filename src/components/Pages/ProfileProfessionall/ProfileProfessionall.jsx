@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import './ProfileProfessionall.scss'
 import './citas.scss'
-import './Estrellas.scss'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -234,12 +233,11 @@ export const ProfileProfessionall = () => {
       <div className='ContentBodyInfoTattois'>
         <div className='RightInftoTT'>
           <div className='ImgRightInftoTT'><img src={img} alt="" /></div>
-          <p style={{ display: "flex", fontSize: "15px", marginTop: "0.6rem", alignItems: "center" }} ><span style={{ fontSize: "19px" }} className="material-symbols-outlined">location_on</span>{municipio} -- {departament}</p>
-          <p style={{ display: "flex", fontSize: "15px", alignItems: "center" }}>Direccion:  {direction}</p>
+          <p style={{textTransform:"UpperCase",display: "flex", fontSize: "15px", alignItems: "center", textAlign:"center",justifyContent: "center"}}>{municipio} -- {departament}</p>
+          <p style={{ display: "flex", fontSize: "15px", alignItems: "center" }}><p className='direccion'>Direccion:</p>  {direction}</p>
+          <div style={{ display: "flex", gap: "1rem", alignItems: "flex-end" }} className='ButtonsRightInftoTT'></div>
+
           <div style={{ display: "flex", gap: "1rem", alignItems: "flex-end" }} className='ButtonsRightInftoTT'>
-            <button onClick={FunctionScroll} style={{ width: "190px" }} className='Btn-Citas buttons_global_StyleTatto'>AGENDAR CITA</button>
-
-
             {/* 
           ██████╗░████████╗███╗░░██╗    ██╗░░░░░██╗██╗░░██╗███████╗
           ██╔══██╗╚══██╔══╝████╗░██║    ██║░░░░░██║██║░██╔╝██╔════╝
@@ -249,18 +247,18 @@ export const ProfileProfessionall = () => {
           ╚═════╝░░░░╚═╝░░░╚═╝░░╚══╝    ╚══════╝╚═╝╚═╝░░╚═╝╚══════╝*/}
             {(tokenID ) &&
             (idTatu !== InfoUser && InfoUser.rol == "[ROLE_USUARIO]" ) &&
-              <button onClick={likeBtn} className="like__btn">
+              <button style={{width: "100%" }} onClick={likeBtn} className="like__btn">
                 <span id="count">{Numberslike}</span> Like
               </button>
             }
             {(tokenID == null) &&
-              <button style={{ cursor: "not-allowed" }} onClick={notify} className="like__btn btnBlocked">
+              <button style={{ cursor: "not-allowed",width: "100%" }} onClick={notify} className="like__btn btnBlocked">
                 <span>{Numberslike}</span> Likes
               </button>
             }
             {(tokenID ) &&
             (InfoUser.rol == "[ROLE_ARTISTA]") &&
-              <button style={{ cursor: "not-allowed" }} onClick={notifyTatto} className="like__btn btnBlocked">
+              <button style={{ cursor: "not-allowed",width: "100%" }} onClick={notifyTatto} className="like__btn btnBlocked">
                 <span>{Numberslike}</span> Like
               </button>
             }
@@ -278,13 +276,13 @@ export const ProfileProfessionall = () => {
           </div>
         </div>
 
+
         <div className='InfoTattois'>
           <div className='LeftInftoTT'>
+            
             <div className='NameLeftInftoTT'><h5> {first_name} {last_name} </h5></div>
-            <div className='EmailLeftInftoTT'><p> {email} </p></div>
+            <div style={{color: "#6f6f6f"}} className='EmailLeftInftoTT'><p> {email} </p></div>
             <div className='DescriLeftInftoTT'><p>{description}</p></div>
-            <div className='DescriLeftInftoTT' style={{ display: "flex", gap: "5px" }}> <p style={{ color: "var(--colorOrange2)" }} >Experiencia :</p><p>{experience} </p> <p>Años</p> </div>
-
           </div>
         </div>
 

@@ -153,7 +153,8 @@ export const Bot = () => {
 
       document.getElementById('msg_area').appendChild(res_msgRErr)
     }
-    
+    /*Limpiar input*/
+    document.getElementById('text').value=""
   }
 
 

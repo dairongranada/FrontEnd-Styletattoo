@@ -428,7 +428,7 @@ export const ProfileProfessionall = () => {
                 </div>
 
 
-             
+              {(tokenID) &&
                 <div style={{ display: "none" }} >
                 <input
                     style={{ display: "none" }}
@@ -450,7 +450,7 @@ export const ProfileProfessionall = () => {
                     value={InfoUser.last_name}
                   />
                 </div>
-              
+                }
 
                 <div className="inputContentCitas">
 

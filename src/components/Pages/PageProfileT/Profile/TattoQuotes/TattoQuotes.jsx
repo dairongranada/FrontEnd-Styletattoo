@@ -10,6 +10,7 @@ import './TattoQuotes.scss'
 import swal from 'sweetalert';
 
 import { AceptarCita,DeleteCita } from '../../../../.././Helpers/ApiConsumer/Citas'
+import emailjs from '@emailjs/browser';
 
 
 
@@ -36,6 +37,18 @@ export const TattoQuotes = () => {
   }, [])
 
  
+  const sendEmail = (event) => {
+
+    console.log(event);
+
+    event.preventDefault();
+
+    emailjs.sendForm('service_1n8igqi', 'template_fe15y1d', event.target, 'X8SzXW_IBwrAupBt3')
+      .then(response => (
+        console.log(response.status))
+      )
+  }
+
 
   const OnAceptarCita = (e) => {
     let idUserCita = e.target.value
@@ -90,14 +103,14 @@ export const TattoQuotes = () => {
       })
       .then((willDelete) => {
         if (willDelete) {
-          setTimeout( swal("Cita aceptada con exito!", {
+          setTimeout( swal("Cita Cancelada con exito!", {
             icon: "success",
             buttons: false,
           }
           ),1000);
           OnDeleteCita(e)
         } else {
-          swal("has cerrado caancelar cita!",{
+          swal("has cerrado cancelar cita!",{
               icon: "error",
               buttons: false,
           });
@@ -171,7 +184,6 @@ export const TattoQuotes = () => {
               </table>
             </div>
           </div>
-
 
 
 

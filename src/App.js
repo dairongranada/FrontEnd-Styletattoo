@@ -52,6 +52,7 @@ import { RecoveryP } from './components/Layouts/Password-recovery/RecoveryP'
 
 
 
+
 function App() {
 
   const token = localStorage.getItem("token");
@@ -88,7 +89,6 @@ function App() {
 
 
                 {/* 𝙑𝙄𝙎𝙏𝘼𝙎 𝙀𝙓𝙏𝙍𝘼𝙎𝙎𝙎𝙎𝙎 */ }
-
                     <Route path="*" element= {<Page404 />} />
                     <Route path='/' exact element= {<PageHome />} />
                     <Route path='/infoTatuajes' exact element= {<PageTattos/>}/>

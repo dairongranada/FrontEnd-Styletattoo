@@ -262,11 +262,9 @@ export const InfoProfileT = () => {
         </div>
       }      {(abrir === 1) &&
         <div className='FondBackGPp'>
-          <div className="conTinerImgExibitPrf">
-            <img className='studioTattoModals' src={studioTattoModals} alt="studioTattoModals" />
-            <div className="lentForImgExibit">
-
-            </div>
+          
+          <div className='ImagenPorafolio'> 
+            <div className="SecondContIconCMBPP"></div> 
           </div>
           <div className='ModalBuildProfilep'>
             <div className='CloseBackProfileP'> <a href="/userTatto/edit-profile"><MdOutlineCancel /></a></div>
@@ -338,13 +336,13 @@ export const InfoProfileT = () => {
                 <div className="contInfoUserBoxes">
                   <div className="SelectContent">
                     <div>
-                      <Field className='select' as="select" name="departament">
+                      <Field style={{width: "176px"}}  className='select' as="select" name="departament">
                         <option>Escoje tu departamento</option>
                         <option value="Quindio">Quindio</option>
                       </Field>
                     </div>
                     <div>
-                      <Field required className='select' as="select" name="municipio">
+                      <Field style={{width: "176px"}} required className='select' as="select" name="municipio">
                         <option>Escoje tu municipio</option>
                         <option value="armenia">armenia</option>
                         <option value="calarca">calarca</option>
@@ -363,14 +361,14 @@ export const InfoProfileT = () => {
                   </div>
                   <div className="SelectContent">
                     <div>
-                      <Field autoComplete='off' className='inputProfile' placeholder='Ingresa Tu Expreciencia' type="number" name="experience" />
+                      <Field style={{width: "176px"}} autoComplete='off' className='inputProfile' placeholder='Ingresa Tu Expreciencia' type="number" name="experience" />
                     </div>
                     <div>
-                      <Field autoComplete='off' className='inputProfile' name='direction' required placeholder="Direccion" type="text" />
+                      <Field  style={{width: "176px"}} autoComplete='off' className='inputProfile' name='direction' required placeholder="Direccion" type="text" />
                     </div>
                   </div>
                   <div className="SelectContent">
-                    <Field className="TextareaProfile" readonly maxLength="100" required as="textarea" placeholder='Descripcion' name="description" id="textarea" />
+                    <Field  className="TextareaProfile" readonly maxLength="100" required as="textarea" placeholder='Descripcion' name="description" id="textarea" />
                   </div>
 
 
@@ -385,8 +383,6 @@ export const InfoProfileT = () => {
                           <input onChange={uploadImage} className='sapos' type="file" name="img" />
                         </div>
                       </div>
-
-
                     </div>
                   </div>
                   <div>

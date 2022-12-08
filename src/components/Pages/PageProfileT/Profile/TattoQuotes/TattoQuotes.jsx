@@ -25,9 +25,6 @@ export const TattoQuotes = () => {
 
   const [perfil, setperfil] = useState([]);
 
-  const [perfil2, setperfil2] = useState("");
-
-  const [nameA, setnameA] = useState([])
 
 
 
@@ -35,12 +32,6 @@ export const TattoQuotes = () => {
     MostrarCita()
       .then(info => {
         setperfil(info.data)
-        setperfil2(info.data)
-        getAllTatuadoresID(perfil2)
-          .then(info => {
-            setnameA(info.data);
-          })
-
       })
   }, [])
 
@@ -48,14 +39,12 @@ export const TattoQuotes = () => {
 
   const OnAceptarCita = (e) => {
     let idUserCita = e.target.value
-  
     AceptarCita({isActive: "true"},idUserCita)
    window.location.reload()
   }
 
   const OnDeleteCita = (e) => {
     let idUserCita = e.target.value
-  
     AceptarCita({isActive: "destroy"},idUserCita)
    window.location.reload()
   }
@@ -150,7 +139,6 @@ export const TattoQuotes = () => {
               </div>
             </div>
             <div className='contentBoxFiles'>
-
               <table id="customers" >
                 <tr>
                   <th>Fecha</th>
@@ -163,34 +151,43 @@ export const TattoQuotes = () => {
                 {perfil.map(data => (
                   (idLocal == data.artist_tattoo) && (data.isActive == "false") &&
                   <tr key={data.id_quotes}>
-                    {/* <input value={data.id_quotes} /> */}
                     <td>{data.date}</td>
                     <td>{data.time}</td>
                     <td>{data.userName}</td>
                     <td><a href={data.img} className='imgFile'><AiFillFile/></a></td>
                     {/* ACEPTAR CITA */}
-                    <td>
-                      <input onClick={Mostraralert} className="Inputproved" defaultValue={`${data.id_quotes}`} />
-                      <span className="proved material-symbols-outlined"> file_download_done </span>
+                    <td><input onClick={Mostraralert} className="Inputproved" defaultValue={`${data.id_quotes}`} />
+                       <span className="proved material-symbols-outlined"> file_download_done </span>
                     </td>
-
                     {/* ELIMINAR CITA */}
                     <td>
-                      <input style={{cursor: "pointer"}}  onClick={Borrarcita} className="Inputdelete" defaultValue={`${data.id_quotes}`} />
-                      <span className="delete material-symbols-outlined">delete</span>
+                        <input style={{cursor: "pointer"}}  onClick={Borrarcita} className="Inputdelete" defaultValue={`${data.id_quotes}`} />
+                        <span className="delete material-symbols-outlined">delete</span>
                     </td>
                   </tr>
                 ))}
+
+
               </table>
             </div>
           </div>
+
+
+
+
+
+
+
+
+
+        {/* CITAS ACEPTADAS */}
 
           <div style={{ width: "100%" }} className="perfil-usuario-body">
             <div className="perfil-usuario-footer">
               <div className="BackgroundIcon">
                 <div className="BackgroundIcon">
                   <div className='BoxtTittleEditFiles'>
-                    <h3 className='TittleEditsFiles'>Citas ACEPTADAS</h3>
+                    <h3 className='TittleEditsFiles'>CITAS ACEPTADAS</h3>
                   </div>
                   <div></div>
                 </div>

@@ -112,7 +112,7 @@ export const ProfileProfessionall = () => {
   }
 
   const reloaForm = () => {
-    document.getElementById('reloadFom').reset()
+    document.getElementById('reloadForm').reset()
   }
 
 
@@ -280,20 +280,6 @@ export const ProfileProfessionall = () => {
 
   };
 
-
-  //   const sendEmail = (event)=>{
-  //     event.preventDefault();
-  //     // ALERTA CHIMBA
-  //     toast.success('Se envio correctamente')
-  //     emailjs.sendForm('service_6n0k3ay','template_jct8opt',event.target,'3shfZ5IuzLrmV8lcH')
-  //     .then(response => console.log(response))
-  //     .catch(err => console.error(err))
-
-  //     setTimeout(() => {
-  //         window.location.reload(false);
-  //     }, 2000);
-
-  // }
   return (
     <>
       <NavigationBar />
@@ -410,7 +396,7 @@ export const ProfileProfessionall = () => {
           <div className="ContentHorarioBack">
             {/* <div className="loader"><span className="hour"></span><span className="min"></span><span className="circel"></span></div> */}
             <div style={{ marginLeft: "-4rem" }} className='Content_FormsPrincipal'>
-              <form id="reloadFom" onSubmit={(event) => {
+              <form id="reloadForm" onSubmit={(event) => {
                 sendEmail(event)
                 reloaForm()
               }}
@@ -442,7 +428,7 @@ export const ProfileProfessionall = () => {
                 </div>
 
 
-              {!InfoUser == null &&
+             
                 <div style={{ display: "none" }} >
                 <input
                     style={{ display: "none" }}
@@ -464,7 +450,7 @@ export const ProfileProfessionall = () => {
                     value={InfoUser.last_name}
                   />
                 </div>
-              }
+              
 
                 <div className="inputContentCitas">
 

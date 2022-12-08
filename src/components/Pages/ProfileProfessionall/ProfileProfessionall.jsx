@@ -32,19 +32,44 @@ import { Input } from "reactstrap";
 
 export const ProfileProfessionall = () => {
 
+  const { id } = useParams();
+  const idTT = id
 
-  const [inputDate,setInputDate ] = useState("")
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("usuario")));
+  const [InfoUser, setInfoUser] = useState(JSON.parse(localStorage.getItem("InfoUser")));
+  const [tokenID, setToken] = useState(localStorage.getItem("token"));
+
+  const [userData, setUserData] = useState({});
+
+  let idTatu = userData.id
+
+
+
+
+  useEffect(() => {
+    if (!!user) {
+      getusers(tokenID)
+        .then(data => setUserData(data.data));
+    }
+
+
+  }, [])
+
+
+
+
+  const [inputDate, setInputDate] = useState("")
   const valueDate = (e) => {
     setInputDate(e.target.value);
 
   }
-  const [inputTime,setInputTime ] = useState("")
+  const [inputTime, setInputTime] = useState("")
   const valueTime = (e) => {
     setInputTime(e.target.value);
 
   }
 
-  const [inputDescription,setInputDescription ] = useState("")
+  const [inputDescription, setInputDescription] = useState("")
   const valueDescription = (e) => {
     setInputDescription(e.target.value);
 
@@ -52,19 +77,19 @@ export const ProfileProfessionall = () => {
 
 
 
-  const axiosfuntion = () =>{
-    axios.post('http://localhost:8000/quotes/', 
-        {
-          date: inputDate,
-          time: inputTime,
-          img: image2,
-          description: inputDescription,
-          userID: idTatu,
-          artist_tattoo: idTT,
-          isActive: "false",
-          userTatto: nameArtst  +" "+ lastArtst,
-          userName: InfoUser.first_name  +" "+ InfoUser.last_name,
-        })
+  const axiosfuntion = () => {
+    axios.post('http://localhost:8000/quotes/',
+      {
+        date: inputDate,
+        time: inputTime,
+        img: image2,
+        description: inputDescription,
+        userID: idTatu,
+        artist_tattoo: idTT,
+        isActive: "false",
+        userTatto: nameArtst + " " + lastArtst,
+        userName: InfoUser.first_name + " " + InfoUser.last_name,
+      })
       .then(function (response) {
         console.log(response);
         console.log(response.data);
@@ -73,22 +98,22 @@ export const ProfileProfessionall = () => {
         console.log(error);
       });
 
-      notifyTattoCitasParaAg();
-}
+    notifyTattoCitasParaAg();
+  }
 
 
-const sendEmail = (event) => {
-  event.preventDefault();
+  const sendEmail = (event) => {
+    event.preventDefault();
 
-  emailjs.sendForm('service_1n8igqi', 'template_fe15y1d', event.target, 'X8SzXW_IBwrAupBt3')
+    emailjs.sendForm('service_1n8igqi', 'template_fe15y1d', event.target, 'X8SzXW_IBwrAupBt3')
       .then(response => (
-          console.log(response.status))
+        console.log(response.status))
       )
-}
+  }
 
-const reloaForm = () => {
-  document.getElementById('reloadFom').reset()
-}
+  const reloaForm = () => {
+    document.getElementById('reloadFom').reset()
+  }
 
 
 
@@ -144,28 +169,6 @@ const reloaForm = () => {
 
 
 
-  const { id } = useParams();
-  const idTT = id
-
-  const [user, setUser] = useState(JSON.parse(localStorage.getItem("usuario")));
-  const [InfoUser, setInfoUser] = useState(JSON.parse(localStorage.getItem("InfoUser")));
-  const [tokenID, setToken] = useState(localStorage.getItem("token"));
-
-  const [userData, setUserData] = useState({});
-
-  let idTatu = userData.id
-
-
-
-
-  useEffect(() => {
-    if (!!user) {
-      getusers(tokenID)
-        .then(data => setUserData(data.data));
-    }
-
-
-  }, [])
 
 
 
@@ -178,7 +181,7 @@ const reloaForm = () => {
       })
   }, [])
 
-  
+
   const [image2, setImage] = useState("")
 
   const uploadImage = async (e) => {
@@ -274,30 +277,30 @@ const reloaForm = () => {
     MetodoPUTLikes(valores, IDisponiblidad)
 
 
-    
+
   };
 
 
-//   const sendEmail = (event)=>{
-//     event.preventDefault();
-//     // ALERTA CHIMBA
-//     toast.success('Se envio correctamente')
-//     emailjs.sendForm('service_6n0k3ay','template_jct8opt',event.target,'3shfZ5IuzLrmV8lcH')
-//     .then(response => console.log(response))
-//     .catch(err => console.error(err))
+  //   const sendEmail = (event)=>{
+  //     event.preventDefault();
+  //     // ALERTA CHIMBA
+  //     toast.success('Se envio correctamente')
+  //     emailjs.sendForm('service_6n0k3ay','template_jct8opt',event.target,'3shfZ5IuzLrmV8lcH')
+  //     .then(response => console.log(response))
+  //     .catch(err => console.error(err))
 
-//     setTimeout(() => {
-//         window.location.reload(false);
-//     }, 2000);
-    
-// }
+  //     setTimeout(() => {
+  //         window.location.reload(false);
+  //     }, 2000);
+
+  // }
   return (
     <>
       <NavigationBar />
       <div className='ContentBodyInfoTattois'>
         <div className='RightInftoTT'>
           <div className='ImgRightInftoTT'><img src={img} alt="" /></div>
-          <p style={{textTransform:"UpperCase",display: "flex", fontSize: "15px", alignItems: "center", textAlign:"center",justifyContent: "center"}}>{municipio} -- {departament}</p>
+          <p style={{ textTransform: "UpperCase", display: "flex", fontSize: "15px", alignItems: "center", textAlign: "center", justifyContent: "center" }}>{municipio} -- {departament}</p>
           <p style={{ display: "flex", fontSize: "15px", alignItems: "center" }}><p className='direccion'>Direccion:</p>  {direction}</p>
           <div style={{ display: "flex", gap: "1rem", alignItems: "flex-end" }} className='ButtonsRightInftoTT'></div>
 
@@ -309,20 +312,20 @@ const reloaForm = () => {
           ██╔══██╗░░░██║░░░██║╚████║    ██║░░░░░██║██╔═██╗░██╔══╝░░
           ██████╦╝░░░██║░░░██║░╚███║    ███████╗██║██║░╚██╗███████╗
           ╚═════╝░░░░╚═╝░░░╚═╝░░╚══╝    ╚══════╝╚═╝╚═╝░░╚═╝╚══════╝*/}
-            {(tokenID ) &&
-            (idTatu !== InfoUser && InfoUser.rol == "[ROLE_USUARIO]" ) &&
-              <button style={{width: "100%" }} onClick={likeBtn} className="like__btn">
+            {(tokenID) &&
+              (idTatu !== InfoUser && InfoUser.rol == "[ROLE_USUARIO]") &&
+              <button style={{ width: "100%" }} onClick={likeBtn} className="like__btn">
                 <span id="count">{Numberslike}</span> Like
               </button>
             }
             {(tokenID == null) &&
-              <button style={{ cursor: "not-allowed",width: "100%" }} onClick={notify} className="like__btn btnBlocked">
+              <button style={{ cursor: "not-allowed", width: "100%" }} onClick={notify} className="like__btn btnBlocked">
                 <span>{Numberslike}</span> Likes
               </button>
             }
-            {(tokenID ) &&
-            (InfoUser.rol == "[ROLE_ARTISTA]") &&
-              <button style={{ cursor: "not-allowed",width: "100%" }} onClick={notifyTatto} className="like__btn btnBlocked">
+            {(tokenID) &&
+              (InfoUser.rol == "[ROLE_ARTISTA]") &&
+              <button style={{ cursor: "not-allowed", width: "100%" }} onClick={notifyTatto} className="like__btn btnBlocked">
                 <span>{Numberslike}</span> Like
               </button>
             }
@@ -343,15 +346,15 @@ const reloaForm = () => {
 
         <div className='InfoTattois'>
           <div className='LeftInftoTT'>
-            
+
             <div className='NameLeftInftoTT'><h5> {first_name} {last_name} </h5></div>
-            <div style={{color: "#6f6f6f"}} className='EmailLeftInftoTT'><p> {email} </p></div>
+            <div style={{ color: "#6f6f6f" }} className='EmailLeftInftoTT'><p> {email} </p></div>
             <div className='DescriLeftInftoTT'><p>{description}</p></div>
           </div>
         </div>
 
         <div className='PortaFInftoTT'>
-          <div className='PortaFTitle' ><p  style={{fontFamily: 'Amatic SC',fontWeight: "600", marginTop:"1rem"}}>MI TRABAJO</p></div>
+          <div className='PortaFTitle' ><p style={{ fontFamily: 'Amatic SC', fontWeight: "600", marginTop: "1rem" }}>MI TRABAJO</p></div>
           <div className='PortaFTitleImages'>
 
             {(perilPortafolio.length === 0) &&
@@ -394,7 +397,7 @@ const reloaForm = () => {
         </div>
 
 
-      {/*
+        {/*
       ░█████╗░    ██╗    ████████╗    ░█████╗░    ░██████╗
       ██╔══██╗    ██║    ╚══██╔══╝    ██╔══██╗    ██╔════╝
       ██║░░╚═╝    ██║    ░░░██║░░░    ███████║    ╚█████╗░
@@ -407,85 +410,86 @@ const reloaForm = () => {
           <div className="ContentHorarioBack">
             {/* <div className="loader"><span className="hour"></span><span className="min"></span><span className="circel"></span></div> */}
             <div style={{ marginLeft: "-4rem" }} className='Content_FormsPrincipal'>
-                  <form id="reloadFom" onSubmit={ (event )=>{
-                    sendEmail(event)
-                    reloaForm()
-                  }} 
-                  
-                  className='formCitas'>
-                    <p  className="TitleCitasss" style={{fontFamily: 'Amatic SC',fontWeight: "500", margin:"1rem 0 2rem 0"}} >Agenda tu cita</p>
-                    <div className="inputContentCitas">
-                      <div>
-                        <label style={{ fontWeight: "100" }}>Ingresa el dia</label>
-                        <input
-                          className='inputsCitas'
-                          id='Date'
-                          type="Date"
-                          placeholder='Date'
-                          onChange={valueDate}
-                        />
-                      
-                      </div>
-                      <div>
-                        <label style={{ fontWeight: "100" }}>Ingresa la hora</label>
-                        <input
-                          className='inputsCitas'
-                          id='Time'
-                          type="Time"
-                          onChange={valueTime}
-                        />
-                        
-                      </div>
-                      <input
-                      style={{ display: "none"}}
-                          className='inputsCitas'
-                          name='logemail'
-                          type='email'
-                          value={InfoUser.email}
-                        />
-                    </div>
-                    <div style={{ display: "none"}} >
-                        <label style={{ fontWeight: "100" }}>Ingresa la hora</label>
-                        <input
-                          className='inputsCitas'
-                          name="first_name"
-                          type="text"
-                         value={InfoUser.first_name}
-                        />
-                        <input
-                          className='inputsCitas'
-                          name="last_name"
-                          type="text"
-                          value={InfoUser.last_name}
-                        />
-                        
-                      </div>
-                    
+              <form id="reloadFom" onSubmit={(event) => {
+                sendEmail(event)
+                reloaForm()
+              }}
 
-                    <div className="inputContentCitas">
+                className='formCitas'>
+                <p className="TitleCitasss" style={{ fontFamily: 'Amatic SC', fontWeight: "500", margin: "1rem 0 2rem 0" }} >Agenda tu cita</p>
+                <div className="inputContentCitas">
+                  <div>
+                    <label style={{ fontWeight: "100" }}>Ingresa el dia</label>
+                    <input
+                      className='inputsCitas'
+                      id='Date'
+                      type="Date"
+                      placeholder='Date'
+                      onChange={valueDate}
+                    />
 
-                      <div style={{ display: "flex", gap: ".5rem", flexDirection: "column", alignItems: "center" }}>
-                        <label style={{ fontWeight: "100" }}>Muestrame tu idea</label>
-                          <Input onChange={uploadImage} type="file" id="img" />
-                      </div>
-                    </div>
-                    <div className="inputContentCitas">
-                      <div>
-                        <label style={{ fontWeight: "100" }}>Describe</label>
-                        <textarea
-                          onChange={valueDescription}
-                          className='inputsCitas'
-                          id='Description'
-                          placeholder='...'
-                          maxLength='150'
-                        />
-    
-                      </div>
-                    </div>
+                  </div>
+                  <div>
+                    <label style={{ fontWeight: "100" }}>Ingresa la hora</label>
+                    <input
+                      className='inputsCitas'
+                      id='Time'
+                      type="Time"
+                      onChange={valueTime}
+                    />
+
+                  </div>
+                </div>
 
 
+              {!InfoUser == null &&
+                <div style={{ display: "none" }} >
+                <input
+                    style={{ display: "none" }}
+                    className='inputsCitas'
+                    name='logemail'
+                    type='email'
+                    value={InfoUser.email}
+                  />
+                  <input
+                    className='inputsCitas'
+                    name="first_name"
+                    type="text"
+                    value={InfoUser.first_name}
+                  />
+                  <input
+                    className='inputsCitas'
+                    name="last_name"
+                    type="text"
+                    value={InfoUser.last_name}
+                  />
+                </div>
+              }
 
-                    {/*
+                <div className="inputContentCitas">
+
+                  <div style={{ display: "flex", gap: ".5rem", flexDirection: "column", alignItems: "center" }}>
+                    <label style={{ fontWeight: "100" }}>Muestrame tu idea</label>
+                    <Input onChange={uploadImage} type="file" id="img" />
+                  </div>
+                </div>
+                <div className="inputContentCitas">
+                  <div>
+                    <label style={{ fontWeight: "100" }}>Describe</label>
+                    <textarea
+                      onChange={valueDescription}
+                      className='inputsCitas'
+                      id='Description'
+                      placeholder='...'
+                      maxLength='150'
+                    />
+
+                  </div>
+                </div>
+
+
+
+                {/*
                     ██████╗░████████╗███╗░░██╗    ░█████╗░██╗████████╗░█████╗░░██████╗
                     ██╔══██╗╚══██╔══╝████╗░██║    ██╔══██╗██║╚══██╔══╝██╔══██╗██╔════╝
                     ██████╦╝░░░██║░░░██╔██╗██║    ██║░░╚═╝██║░░░██║░░░███████║╚█████╗░
@@ -493,30 +497,30 @@ const reloaForm = () => {
                     ██████╦╝░░░██║░░░██║░╚███║    ╚█████╔╝██║░░░██║░░░██║░░██║██████╔╝
                     ╚═════╝░░░░╚═╝░░░╚═╝░░╚══╝    ░╚════╝░╚═╝░░░╚═╝░░░╚═╝░░╚═╝╚═════╝░ */}
 
-                    <div className='Btn_Citas' >
-                    {(tokenID ) &&
-                      (idTatu !== InfoUser && InfoUser.rol == "[ROLE_USUARIO]" ) &&
-                          <button
-                          onClick={axiosfuntion}
-                          className="buttons_global_StyleTatto"
-                          type="submit">
-                          Agenda Tu Cita
-                        </button>
-                      }
-                      {(tokenID == null) &&
-                        <p onClick={notify} className="buttons_global_StyleTatto"
-                           style={{ width: "22rem", cursor: "not-allowed" }}>
-                          Agenda Tu Cita
-                        </p>
-                      }{(tokenID ) &&
-                        (InfoUser.rol == "[ROLE_ARTISTA]") &&
-                        <p onClick={notifyTattoCitas} className="buttons_global_StyleTatto"
-                          style={{ width: "22rem", cursor: "not-allowed" }}>
-                          Agenda Tu Cita
-                        </p>
-                      }
-                    </div>
-                  </form>
+                <div className='Btn_Citas' >
+                  {(tokenID) &&
+                    (idTatu !== InfoUser && InfoUser.rol == "[ROLE_USUARIO]") &&
+                    <button
+                      onClick={axiosfuntion}
+                      className="buttons_global_StyleTatto"
+                      type="submit">
+                      Agenda Tu Cita
+                    </button>
+                  }
+                  {(tokenID == null) &&
+                    <p onClick={notify} className="buttons_global_StyleTatto"
+                      style={{ width: "22rem", cursor: "not-allowed" }}>
+                      Agenda Tu Cita
+                    </p>
+                  }{(tokenID) &&
+                    (InfoUser.rol == "[ROLE_ARTISTA]") &&
+                    <p onClick={notifyTattoCitas} className="buttons_global_StyleTatto"
+                      style={{ width: "22rem", cursor: "not-allowed" }}>
+                      Agenda Tu Cita
+                    </p>
+                  }
+                </div>
+              </form>
 
             </div>
           </div>
@@ -525,4 +529,3 @@ const reloaForm = () => {
     </>
   )
 }
-

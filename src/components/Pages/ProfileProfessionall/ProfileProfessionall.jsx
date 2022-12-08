@@ -31,13 +31,64 @@ import { Input } from "reactstrap";
 
 
 export const ProfileProfessionall = () => {
-  const FunctionScroll = () => {
-    window.scroll({
-      top: 1530,
-      behavior: 'smooth'
-    })
+
+
+  const [inputDate,setInputDate ] = useState("")
+  const valueDate = (e) => {
+    setInputDate(e.target.value);
+
+  }
+  const [inputTime,setInputTime ] = useState("")
+  const valueTime = (e) => {
+    setInputTime(e.target.value);
+
   }
 
+  const [inputDescription,setInputDescription ] = useState("")
+  const valueDescription = (e) => {
+    setInputDescription(e.target.value);
+
+  }
+
+
+
+  const axiosfuntion = () =>{
+    axios.post('http://localhost:8000/quotes/', 
+        {
+          date: inputDate,
+          time: inputTime,
+          img: image2,
+          description: inputDescription,
+          userID: idTatu,
+          artist_tattoo: idTT,
+          isActive: "false",
+          userTatto: nameArtst  +" "+ lastArtst,
+          userName: InfoUser.first_name  +" "+ InfoUser.last_name,
+        })
+      .then(function (response) {
+        console.log(response);
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
+      notifyTattoCitasParaAg();
+}
+
+
+const sendEmail = (event) => {
+  event.preventDefault();
+
+  emailjs.sendForm('service_1n8igqi', 'template_fe15y1d', event.target, 'X8SzXW_IBwrAupBt3')
+      .then(response => (
+          console.log(response.status))
+      )
+}
+
+const reloaForm = () => {
+  document.getElementById('reloadFom').reset()
+}
 
 
 

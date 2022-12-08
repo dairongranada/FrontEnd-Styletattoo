@@ -46,7 +46,7 @@ export const NavigationBar = () => {
 
   return (
     <>
-    {!!token && 
+    {token && 
       <div>
         <div className={`sidebar ${sidebarNav}`} >
           <div className="logo-details">
@@ -220,7 +220,7 @@ export const NavigationBar = () => {
       </div>
     }
 
-  {!token && 
+  {token == null && 
       <div>
         <div className={`sidebar ${sidebarNav}`} >
           <div className="logo-details">

@@ -133,6 +133,7 @@ export const PageTattooists = () => {
                 departament={data.PerfilProfesional[0].departament}
                 municipio={data.PerfilProfesional[0].municipio}
                 ids={data.PerfilProfesional[0].id}
+                like = {data.iDispo[0].like}
               />
             ))}
           </main>

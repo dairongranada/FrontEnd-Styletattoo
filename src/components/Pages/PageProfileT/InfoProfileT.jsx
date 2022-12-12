@@ -153,7 +153,16 @@ export const InfoProfileT = () => {
 
     setImage(file.secure_url)
     setFileU(file.secure_url)
+
+    console.log(file);
   }
+
+
+
+
+
+
+
 
   const uploadImage2 = async (e) => {
     const files = e.target.files;
@@ -321,10 +330,10 @@ export const InfoProfileT = () => {
                       iDispo: idTatu
                     })
                     setDuplicatedData(false);
-                    resetForm();
                     setLoading(false);
                     setRegistered(true);
                     window.location = `/tatto/view/profile/${idTatu}`;
+
                   }
                 })
 
@@ -344,18 +353,18 @@ export const InfoProfileT = () => {
                     <div>
                       <Field style={{width: "176px"}} required className='select' as="select" name="municipio">
                         <option>Escoje tu municipio</option>
-                        <option value="armenia">armenia</option>
-                        <option value="calarca">calarca</option>
-                        <option value="quimbaya">quimbaya</option>
-                        <option value="montenegro">montenegro</option>
-                        <option value="pijao">pijao</option>
-                        <option value="genova">genova</option>
-                        <option value="tebaida">tebaida</option>
-                        <option value="filandia">filandia</option>
-                        <option value="circacia">circacia</option>
-                        <option value="cordoba">cordoba</option>
-                        <option value="salento">salento</option>
-                        <option value="buena vista">buena vista</option>
+                        <option value="armenia">Armenia</option>
+                        <option value="calarca">Calarca</option>
+                        <option value="quimbaya">Quimbaya</option>
+                        <option value="montenegro">Montenegro</option>
+                        <option value="pijao">Pijao</option>
+                        <option value="genova">Genova</option>
+                        <option value="tebaida">Tebaida</option>
+                        <option value="filandia">Filandia</option>
+                        <option value="circacia">Circacia</option>
+                        <option value="cordoba">Cordoba</option>
+                        <option value="salento">Salento</option>
+                        <option value="buena vista">Buena Vista</option>
                       </Field>
                     </div>
                   </div>
@@ -368,7 +377,7 @@ export const InfoProfileT = () => {
                     </div>
                   </div>
                   <div className="SelectContent">
-                    <Field  className="TextareaProfile" readonly maxLength="100" required as="textarea" placeholder='Descripcion' name="description" id="textarea" />
+                    <Field  className="TextareaProfile" readonly maxLength="299" required as="textarea" placeholder='Descripcion' name="description" id="textarea" />
                   </div>
 
 

@@ -25,9 +25,12 @@
     align-items: center;
 }
 #IconCloseChatBot{
+    width: 17px;
     position: absolute;
-    transform: translate(15rem, -1rem);
+    /* transform: translate(15rem, -1rem); */
     cursor: pointer;
+    right: 37px;
+    font-size: 42px;
 }
 #msg_area {
     height: 82%;

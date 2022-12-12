@@ -58,25 +58,25 @@ export const Home_NewTattooists = () => {
                             <div className="rating">
                                 <div className="contStarsCardsH">
 
-                                    {(dat.iDispo[0].like == 0) &&
+                                    {(dat.iDispo[0].like <= 5) &&
                                         <Start/>
                                     }
-                                    {(dat.iDispo[0].like == 1) &&
+                                    {(dat.iDispo[0].like <= 10 && dat.iDispo[0].like >= 5) &&
                                         <Start1/>
                                     }
-                                    {(dat.iDispo[0].like == 2) &&
+                                    {(dat.iDispo[0].like <= 15 && dat.iDispo[0].like >= 10) &&
                                         <Start2/>
                                     }
 
-                                    {(dat.iDispo[0].like == 3) &&
+                                    {(dat.iDispo[0].like <= 20 && dat.iDispo[0].like >= 15) &&
                                         <Start3/>
                                     }
 
-                                    {(dat.iDispo[0].like == 4) &&
+                                    {(dat.iDispo[0].like <= 25 && dat.iDispo[0].like >= 20) &&
                                         <Start4/>
                                     }
 
-                                    {(dat.iDispo[0].like == 5) &&
+                                    {(dat.iDispo[0].like > 50) &&
                                         <Start5/>
                                     }
                                 </div>

@@ -6,7 +6,7 @@ import { BsStar } from "react-icons/bs";
 
 export const Start = () => {
   return (
-    <div>
+    <div style={{fontSize:"22px"}} >
         <BsStar/>
         <BsStar/>
         <BsStar/>

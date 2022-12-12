@@ -39,7 +39,6 @@ export const PageHome = () => {
             <Home_MainView/>
             <Home_NewTattooists/>
             <Home_Services/>
-            
         </div>
         <NavFooter/>
         </>

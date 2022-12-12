@@ -44,30 +44,11 @@ export const Home_NewTattooists = () => {
 
             <div className="containerCardsArts">
                 {allTaoits.map(dat => (
-                    (dat.PerfilProfesional.length >=1 && dat.iDispo[0].like >= 1) &&
-
-                    // <div className="CardArtist">
-
-                    //     <img src={dat.PerfilProfesional[0].img} alt="" />
-
-                    //     <div className="detailsCard">
-                    //         <h3>{dat.first_name} {dat.last_name}</h3>
-                    //         <div className='ContNumberLike'>
-                    //             <div className="contSimbolAndNumL">
-                    //                 <span class="material-symbols-outlined">thumb_up</span>
-                    //                 <p>{dat.iDispo[0].like}</p>
-                    //             </div>
-                    //         </div>
-
-                    //         <div className="descriptionCardTatt">
-                    //             <p style={{marginTop:"1rem"}} >{dat.PerfilProfesional[0].description}</p>
-                    //         </div>
-                    //     </div>
-                    // </div>
+                    (dat.PerfilProfesional.length >=1 && dat.iDispo[0].like >= 50) &&
 
                     <div className="CardArtist">
                         <div className="PosterTatuador">
-                            {(dat.iDispo[0].like >= 2) &&                            
+                            {(dat.iDispo[0].like >= 50) &&                            
                                 <span></span>
                             }
                             <img src={dat.PerfilProfesional[0].img} alt="..." />
@@ -75,7 +56,6 @@ export const Home_NewTattooists = () => {
                         <div className="detailsCard">
                             <p className='NmeLtatoo'>{dat.first_name} {dat.last_name}</p>
                             <div className="rating">
-                                {/* <p><label>★</label><label>★</label><label>★</label><label>★</label><label>★</label></p> */}
                                 <div className="contStarsCardsH">
 
                                     {(dat.iDispo[0].like == 0) &&

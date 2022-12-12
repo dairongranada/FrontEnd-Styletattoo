@@ -21,35 +21,38 @@ export const CardTatuadores = ({like,id,image,first_name,last_name ,descripcion,
                        <img className='ImgProfleCardPGT' src={image} alt="..." /> 
                     </div>
                 </div>
+                <div style={{position:"absolute", textAlign:"center", display:"flex", gap:"11rem", justifyContent:"center",width: "333px"  }} >
+                    <p>{municipio}</p>
+                    <p>{departament}</p>
+                </div>
                 <div className="contentInfoartist">
-                    <div className='SecondContenInfoTpg'>
-                         <p>{municipio}{" "}{departament}</p>
-                         <p>{first_name} {last_name}</p>
-                    </div>
                     <div className="rating">
 
-                        {(likeTattoist == 0) &&
+                        {(likeTattoist <= 5) &&
                             <Start/>
                         }
 
-                        {(likeTattoist == 1) &&
+                        {(likeTattoist <= 10 && likeTattoist >= 5 ) &&
                             <Start1/>
                         }
-                        {(likeTattoist == 2) &&
+                        {(likeTattoist <= 15 && likeTattoist >= 10 ) &&
                             <Start2/>
                         }
 
-                        {(likeTattoist == 3) &&
-                            <Start3/>
-                        }
+                        {(likeTattoist <= 20 && likeTattoist >= 15 ) &&
+                                                    <Start3/>
+                                                }
 
-                        {(likeTattoist == 4) &&
+                        {(likeTattoist <= 25 && likeTattoist >= 20 ) &&
                             <Start4/>
                         }
 
-                        {(likeTattoist == 5) &&
+                        {(likeTattoist > 50) &&
                             <Start5/>
                         }
+                         <div className='SecondContenInfoTpg'>
+                         <p>{first_name} {last_name}</p>
+                    </div>
                     </div>
                     <div className='contentButtons'>
                         <div className="ButtonViewProfileApt">

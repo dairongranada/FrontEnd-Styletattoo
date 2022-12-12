@@ -286,7 +286,7 @@ export const ProfileProfessionall = () => {
       <div className='ContentBodyInfoTattois'>
         <div className='RightInftoTT'>
           <div className='ImgRightInftoTT'><img src={img} alt="" /></div>
-          <p style={{ textTransform: "UpperCase", display: "flex", fontSize: "15px", alignItems: "center", textAlign: "center", justifyContent: "center" }}>{municipio} -- {departament}</p>
+          <p style={{ textTransform: "UpperCase", display: "flex", fontSize: "15px", alignItems: "center", textAlign: "center", justifyContent: "center", marginTop:"0.5rem" }}>{municipio} -- {departament}</p>
           <p style={{ display: "flex", fontSize: "15px", alignItems: "center" }}>{direction}</p>
           <div style={{ display: "flex", gap: "1rem", alignItems: "flex-end" }} className='ButtonsRightInftoTT'></div>
 

@@ -415,7 +415,6 @@ img.imgtattooists{
 .cardArtistptt{
   width: 333px;
   height: 390px;
-  background-color: #0a3394;
   border-radius: 10px;
   overflow: hidden;
   .miniBannerArtist{
@@ -423,8 +422,13 @@ img.imgtattooists{
     height: 40%;
     display: flex;
     justify-content: center;
-    background-color: var(--colorWhite);
-    // background-image: linear-gradient(to right bottom, #ff9e02, #ce662d, #8e3d32, #492025, #000000);
+    background-image: url("https://images.pexels.com/photos/1903702/pexels-photo-1903702.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-image: url("https://images.pexels.com/photos/691668/pexels-photo-691668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
     .contentImgCadrArtistpgt{
       width:160px;
       height:160px;

@@ -42,13 +42,19 @@ export const ChangeIMG = () => {
 
 
   useEffect(() => {
+    FunctionScroll()
     getTatois(tokenID)
       .then(info => {
         setInfoUsuario(info.data)
       })
   }, [])
 
-
+  const FunctionScroll = () => {
+    window.scroll({
+      top: 550,
+      bottom: 0,
+      behavior: 'smooth'})
+  }
 
   return (
     <>
